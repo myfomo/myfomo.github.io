@@ -11,7 +11,7 @@ const ICON={pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
 const CFG=window.APP_CONFIG||{};
 // invite link: ?join=CODE — remember it through sign-up, then clean the address bar
 let joinCode='';try{const u=new URL(location.href);const j=u.searchParams.get('join');if(j){localStorage.setItem('rs-join',j);u.searchParams.delete('join');history.replaceState(null,'',u.pathname+u.search+u.hash)}joinCode=localStorage.getItem('rs-join')||''}catch{}
-let inviteCode='';
+let lists=[],cur=null,myName='',chan=null;
 let sb=null,session=null,me=null,myId='',members=[],names={};
 let rows=[],loaded=false,view='all',q='',cuisF='',sort='recent',openId=null,mode='view',pickTimer=null,page='list',tlF='all',stYear=String(new Date().getFullYear());
 let installEvt=null;
@@ -62,26 +62,33 @@ async function upload(files,id){
 
 /* ---------- data ---------- */
 function applyPatch(r,p){const o={...r,...p};if(p.ratings)o.ratings={...(r.ratings||{}),...p.ratings};if(p.votes)o.votes={...(r.votes||{}),...p.votes};return o}
-async function loadAll(){const {data,error}=await sb.from('restaurants').select('id,data').order('updated_at',{ascending:false});if(error){$('#status').textContent='הרשימה לא נטענה: '+errMsg(error);return}
+async function loadAll(){if(!cur)return;const lid=cur.id;const {data,error}=await sb.from('restaurants').select('id,data').eq('list_id',lid).order('updated_at',{ascending:false});if(!cur||cur.id!==lid)return;if(error){$('#status').textContent='הרשימה לא נטענה: '+errMsg(error);return}
   rows=(data||[]).map(x=>({...(x.data||{}),id:x.id}));loaded=true;$('#status').textContent='';fixLegacy();render();if(openId&&mode==='view')renderDetail()}
 function save(id,patch,isNew){
   const prev=byId(id);
   if(isNew)rows.unshift({...patch,id});else if(prev)rows=rows.map(r=>r.id===id?applyPatch(r,patch):r);
   render();if(openId===id&&mode==='view')renderDetail();
-  const run=()=>isNew?sb.from('restaurants').insert({id,data:patch}):sb.rpc('patch_restaurant',{rid:id,patch});
+  const lid=cur.id;const run=()=>isNew?sb.from('restaurants').insert({id,list_id:lid,data:patch}):sb.rpc('patch_restaurant',{rid:id,patch});
   const p=(queues[id]||Promise.resolve()).then(run).then(({error})=>{if(error)throw error});
   queues[id]=p.catch(()=>{});
   return p.then(()=>true,e=>{toast(errMsg(e));loadAll();return false})}
 async function removeRow(r){const {error}=await sb.from('restaurants').delete().eq('id',r.id);if(error){toast(errMsg(error));return false}
   rows=rows.filter(x=>x.id!==r.id);const paths=(r.photos||[]).map(p=>p.path).filter(Boolean);if(paths.length)sb.storage.from('photos').remove(paths).catch(()=>{});render();return true}
-function subscribe(){sb.channel('restaurants-live').on('postgres_changes',{event:'*',schema:'public',table:'restaurants'},pl=>{
-  if(pl.eventType==='DELETE'){const id=pl.old&&pl.old.id;rows=rows.filter(r=>r.id!==id);if(openId===id&&mode==='view')closeSheet()}
-  else{const n=pl.new;if(!n)return;const row={...(n.data||{}),id:n.id};const i=rows.findIndex(r=>r.id===n.id);if(i>=0)rows[i]=row;else rows.unshift(row)}
+function subscribe(){if(chan)return;chan=sb.channel('restaurants-live').on('postgres_changes',{event:'*',schema:'public',table:'restaurants'},pl=>{
+  if(pl.eventType==='DELETE'){const id=pl.old&&pl.old.id;if(!byId(id))return;rows=rows.filter(r=>r.id!==id);if(openId===id&&mode==='view')closeSheet()}
+  else{const n=pl.new;if(!n||!cur||n.list_id!==cur.id)return;const row={...(n.data||{}),id:n.id};const i=rows.findIndex(r=>r.id===n.id);if(i>=0)rows[i]=row;else rows.unshift(row)}
   render();if(openId&&mode==='view')renderDetail()}).subscribe()}
-// ratings imported from the earlier version are stored under "owner": hand them to the first member
-function fixLegacy(){if(!me||!members.length||members[0].email!==me.email)return;for(const r of rows)if(r.ratings&&Number(r.ratings.owner)>0&&!(r.ratings[myId]>0))save(r.id,{ratings:{[myId]:Number(r.ratings.owner),owner:0}})}
-async function loadMembers(){try{const {data:st}=await sb.from('app_settings').select('join_code').eq('id',1).maybeSingle();inviteCode=(st&&st.join_code)||''}catch{}
-  const {data}=await sb.from('members').select('email,name,user_id,last_seen,added_at').order('added_at');members=data||[];names={};for(const m of members)if(m.user_id)names[m.user_id]=m.name||m.email.split('@')[0]}
+// ratings imported from the first version are stored under "owner": hand them to the list owner
+function fixLegacy(){if(!cur||cur.role!=='owner')return;for(const r of rows)if(r.ratings&&Number(r.ratings.owner)>0&&!(r.ratings[myId]>0))save(r.id,{ratings:{[myId]:Number(r.ratings.owner),owner:0}})}
+async function loadLists(){const {data,error}=await sb.from('list_members').select('role,list_id,lists(id,name,join_code)').eq('user_id',myId);if(error)throw error;
+  lists=(data||[]).filter(x=>x.lists).map(x=>({id:x.lists.id,name:x.lists.name,join_code:x.lists.join_code,role:x.role})).sort((a,b)=>a.name.localeCompare(b.name,'he'))}
+async function loadMembers(){if(!cur)return;const {data}=await sb.from('list_members').select('user_id,email,role,last_seen,added_at').eq('list_id',cur.id).order('added_at');members=data||[];
+  const ids=members.map(m=>m.user_id);let profs=[];if(ids.length){const {data:p}=await sb.from('profiles').select('user_id,name').in('user_id',ids);profs=p||[]}
+  names={};for(const m of members){const p=profs.find(x=>x.user_id===m.user_id);m.name=(p&&p.name)||'';names[m.user_id]=m.name||m.email.split('@')[0]||'מישהו'}}
+function setTitle(){const t=cur?cur.name:'המסעדות שלנו';$('h1').textContent=t;document.title=t}
+async function switchList(id){const l=lists.find(x=>x.id===id)||lists[0];if(!l)return;cur=l;try{localStorage.setItem('rs-list',l.id)}catch{}
+  rows=[];loaded=false;fitted=false;view='all';cuisF='';closeSheet();setTitle();render();
+  sb.rpc('touch_list',{lid:l.id}).then(()=>{},()=>{});await loadMembers();await loadAll()}
 
 /* ---------- list ---------- */
 function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t)));
@@ -300,19 +307,30 @@ async function camUpload(files){const id=camId,r=byId(id);if(!r||!files.length)r
   await upload(files,id);openDetail(id)}
 
 /* ---------- settings ---------- */
-const inviteUrl=()=>location.origin+location.pathname+(inviteCode?'?join='+encodeURIComponent(inviteCode):'');
+const inviteUrl=()=>location.origin+location.pathname+(cur&&cur.join_code?'?join='+encodeURIComponent(cur.join_code):'');
 const ago=t=>{if(!t)return 'עוד לא נכנס/ה';const m=(Date.now()-new Date(t))/6e4;return m<60?'פעיל/ה עכשיו':m<1440?'פעיל/ה היום':'פעיל/ה לפני '+Math.round(m/1440)+' ימים'};
 const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
-function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const mine=members.find(m=>m.email===me.email)||{};
-  const appUrl=location.origin+location.pathname;
+const isOwner=()=>cur&&cur.role==='owner';
+function listsSheet(){killFormMap();openId=null;mode='lists';openSheet();
+  $('#sb').innerHTML=`<div class="sec dh"><h2>הרשימות שלי</h2><p class="meta" style="margin-top:6px">כל רשימה היא עולם משלה: מקומות, תמונות, דירוגים ומשתתפים.</p>
+<ul class="toplist" style="margin-top:12px">${lists.map(l=>`<li data-act="pickList" data-id="${esc(l.id)}" tabindex="0"><span>${esc(l.name)}${cur&&l.id===cur.id?' <small class="meta">· פתוחה עכשיו</small>':''}</span><span class="meta">${l.role==='owner'?'שלי':'הצטרפתי'}</span></li>`).join('')}</ul></div>
+<div class="sec"><h4>רשימה חדשה</h4><form class="addrow" id="newListF"><input class="f" name="n" maxlength="40" placeholder="למשל: דייטים, ארוחות עבודה, טיול באיטליה" aria-label="שם הרשימה" required><button class="btn pri" type="submit">יצירה</button></form></div>
+<div class="sec"><h4>הצטרפות לרשימה של מישהו אחר</h4><form class="addrow" id="joinF"><input class="f" name="c" dir="ltr" placeholder="הדביקו כאן קישור הזמנה" aria-label="קישור הזמנה" required><button class="btn" type="submit">הצטרפות</button></form></div>`}
+function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const own=isOwner();
   $('#sb').innerHTML=`<div class="sec dh"><h2>הגדרות</h2><p class="meta" style="margin-top:6px">מחובר/ת בתור <span dir="ltr">${esc(me.email)}</span></p>
-<form class="addrow" id="nameF"><input class="f" name="n" maxlength="30" value="${esc(mine.name||'')}" placeholder="השם שלי" aria-label="השם שלי"><button class="btn" type="submit">שמירת שם</button></form></div>
-<div class="sec"><h4>הזמנת חברים לרשימה</h4><p class="note" style="margin:0 0 10px">מי שפותח את הקישור הזה יוצר חשבון עם המייל והסיסמה שלו ומצטרף לרשימה אוטומטית.</p><div class="row"><button class="btn pri" type="button" data-act="shareInvite">${ICON.share}שליחת קישור הזמנה</button><button class="btn" type="button" data-act="copyInvite">${ICON.copy}העתקה</button></div><p class="note" dir="ltr" style="word-break:break-all">${esc(inviteUrl())}</p><button class="link" type="button" data-act="resetInvite" style="background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;padding:6px 0">איפוס הקישור (הקישור הישן יפסיק לעבוד)</button></div>
-<div class="sec"><h4>מי ברשימה (${members.length})</h4>${members.map(m=>`<div class="mem"><span><b>${esc(m.name||m.email.split('@')[0])}</b>${m.email===me.email?' <small class="meta">(אני)</small>':''}<br><small class="meta" dir="ltr">${esc(m.email)}</small> <small class="meta">· ${ago(m.last_seen)}</small></span>${m.email!==me.email?`<button class="del" type="button" data-act="rmMember" data-e="${esc(m.email)}" aria-label="הסרה מהרשימה">×</button>`:''}</div>`).join('')}</div>
+<form class="addrow" id="nameF"><input class="f" name="n" maxlength="30" value="${esc(myName)}" placeholder="השם שלי" aria-label="השם שלי"><button class="btn" type="submit">שמירת שם</button></form></div>
+<div class="sec"><h4>הרשימה "${esc(cur.name)}"</h4>${own?`<form class="addrow" id="renameF" style="margin-top:0"><input class="f" name="n" maxlength="40" value="${esc(cur.name)}" aria-label="שם הרשימה"><button class="btn" type="submit">שינוי שם</button></form>`:'<p class="note" style="margin:0">הצטרפת לרשימה הזו בהזמנה.</p>'}
+<div class="row" style="margin-top:10px"><button class="btn" type="button" data-act="lists">כל הרשימות שלי / רשימה חדשה</button></div></div>
+<div class="sec"><h4>הזמנת חברים לרשימה הזו</h4><p class="note" style="margin:0 0 10px">מי שפותח את הקישור יוצר חשבון עם המייל והסיסמה שלו ומצטרף לרשימה. הוא יוכל גם לפתוח רשימות משלו.</p><div class="row"><button class="btn pri" type="button" data-act="shareInvite">${ICON.share}שליחת קישור הזמנה</button><button class="btn" type="button" data-act="copyInvite">${ICON.copy}העתקה</button></div><p class="note" dir="ltr" style="word-break:break-all">${esc(inviteUrl())}</p>${own?'<button class="link" type="button" data-act="resetInvite" style="background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;padding:6px 0">איפוס הקישור (הקישור הישן יפסיק לעבוד)</button>':''}</div>
+<div class="sec"><h4>מי ברשימה (${members.length})</h4>${members.map(m=>`<div class="mem"><span><b>${esc(m.name||m.email.split('@')[0])}</b>${m.user_id===myId?' <small class="meta">(אני)</small>':''}${m.role==='owner'?' <small class="meta">· מנהל/ת</small>':''}<br><small class="meta" dir="ltr">${esc(m.email)}</small> <small class="meta">· ${ago(m.last_seen)}</small></span>${own&&m.user_id!==myId?`<button class="del" type="button" data-act="rmMember" data-u="${esc(m.user_id)}" aria-label="הסרה מהרשימה">×</button>`:''}</div>`).join('')}
+<div class="row" style="margin-top:12px">${own?'<button class="btn" type="button" data-act="delList" style="color:var(--bad)">מחיקת הרשימה</button>':'<button class="btn" type="button" data-act="leaveList" style="color:var(--bad)">יציאה מהרשימה</button>'}</div></div>
 <div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
 </div>
 <div class="sec"><button class="btn" type="button" data-act="signout">התנתקות</button></div>`}
+const codeFrom=v=>{v=String(v||'').trim();try{const u=new URL(v);return u.searchParams.get('join')||''}catch{}return /^[a-f0-9]{8,40}$/i.test(v)?v:''};
+async function doCreateList(name){const {data,error}=await sb.rpc('create_list',{list_name:name});if(error){toast(errMsg(error));return null}await loadLists();return data}
+async function doJoin(code){const {data,error}=await sb.rpc('join_list',{code});if(error){toast(errMsg(error));return null}if(!data){toast('קישור ההזמנה לא תקף. אולי אופס? בקשו קישור חדש.');return null}await loadLists();return data}
 
 /* ---------- events ---------- */
 async function toggleVote(id){const r=byId(id);if(!r)return;await save(id,{votes:{[myId]:iVoted(r)?0:Date.now()}})}
@@ -338,6 +356,7 @@ $('#pickBtn').addEventListener('click',()=>pick());
 $('#fab').addEventListener('click',camSheet);
 $('#addBtn').addEventListener('click',newForm);
 $('#setBtn').addEventListener('click',settingsSheet);
+$('#listBtn').addEventListener('click',listsSheet);
 $('#closeBtn').addEventListener('click',closeSheet);
 $('#ov').addEventListener('click',e=>{if(e.target.id==='ov')closeSheet()});
 $('#lb').addEventListener('click',()=>$('#lb').hidden=true);
@@ -350,15 +369,18 @@ S.addEventListener('input',e=>{
     if(Number.isFinite(o.lat)){setPin(o.lat,o.lng,false,true);if(!o.exact)f.elements.llLevel.value='street'}
     $('#fillSt').textContent=o.short?'קישור מקוצר: הניווט יעבוד דרכו. כדי שהמקום יופיע במפה, חפשו אותו למעלה או סמנו אותו על המפה.':(o.name||Number.isFinite(o.lat)?(o.exact?'מילאנו מהקישור, כולל המיקום המדויק.':'מילאנו מהקישור. כדאי לבדוק שהסיכה על המקום.'):'')}
   if(e.target.name==='ll'){const f=$('#ef'),m=e.target.value.match(/(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)/);if(f&&m&&Math.abs(+m[1])<=90&&fmap){if(!fmarker)setPin(+m[1],+m[2],false,true);else{fmarker.setLatLng([+m[1],+m[2]]);fmap.setView([+m[1],+m[2]],17)}f.elements.llLevel.value='place'}}});
-S.addEventListener('keydown',e=>{if(e.target.id==='placeQ'&&e.key==='Enter'){e.preventDefault();placeSearch()}const li=e.target.closest('[data-act=camPick]');if(li&&e.key==='Enter')camStep(li.dataset.id)});
+S.addEventListener('keydown',e=>{const pl=e.target.closest('[data-act=pickList]');if(pl&&e.key==='Enter')switchList(pl.dataset.id);if(e.target.id==='placeQ'&&e.key==='Enter'){e.preventDefault();placeSearch()}const li=e.target.closest('[data-act=camPick]');if(li&&e.key==='Enter')camStep(li.dataset.id)});
 S.addEventListener('submit',async e=>{
   e.preventDefault();const fm=e.target;
   if(fm.id==='dishF'){const inp=fm.elements.d,v=inp.value.trim(),r=byId(openId);if(!v||!r)return;inp.value='';inp.blur();await save(r.id,{dishes:[...(r.dishes||[]),{name:v,v:'ok'}],updatedAt:Date.now()});return}
   if(fm.id==='visitF'){const r=byId(openId);if(!r)return;const d=fm.elements.d.value;if(!/^\d{4}-\d{2}-\d{2}$/.test(d)){toast('בחרו תאריך');return}
     const v={d,cost:Math.max(0,Math.round(Number(fm.elements.cost.value)||0)),occ:OCC[fm.elements.occ.value]!==undefined?fm.elements.occ.value:'',note:fm.elements.note.value.trim().slice(0,100)};
     document.activeElement&&document.activeElement.blur();await save(r.id,{visits:[...(r.visits||[]),v],status:'been',updatedAt:Date.now()});toast('הביקור נרשם');return}
-  if(fm.id==='nameF'){const n=fm.elements.n.value.trim();const {error}=await sb.rpc('claim_member',{display_name:n,join_code:''});if(error)toast(errMsg(error));else{toast('השם נשמר');await loadMembers();render()}return}
-  if(fm.id==='memF'){const em=fm.elements.e.value.trim().toLowerCase();if(!/^\S+@\S+\.\S+$/.test(em))return;const {error}=await sb.from('members').insert({email:em});if(error&&!/duplicate/i.test(error.message))toast(errMsg(error));else{toast('נוסף. שלחו לה/לו את הקישור.');await loadMembers();settingsSheet()}return}
+  if(fm.id==='nameF'){const n=fm.elements.n.value.trim().slice(0,30);const {error}=await sb.from('profiles').upsert({user_id:myId,name:n});if(error)toast(errMsg(error));else{myName=n;toast('השם נשמר');await loadMembers();render()}return}
+  if(fm.id==='renameF'){const n=fm.elements.n.value.trim().slice(0,40);if(!n)return;const {error}=await sb.from('lists').update({name:n}).eq('id',cur.id);if(error)toast(errMsg(error));else{cur.name=n;await loadLists();cur=lists.find(l=>l.id===cur.id)||cur;setTitle();toast('השם עודכן');settingsSheet()}return}
+  if(fm.id==='newListF'){const n=fm.elements.n.value.trim();if(!n)return;const id=await doCreateList(n);if(id){await switchList(id);toast('הרשימה נוצרה! אפשר להוסיף מקומות ולהזמין חברים.')}return}
+  if(fm.id==='joinF'){const c=codeFrom(fm.elements.c.value);if(!c){toast('זה לא נראה כמו קישור הזמנה');return}const id=await doJoin(c);if(id){await switchList(id);toast('הצטרפת לרשימה!')}return}
+  if(false&&fm.id==='memF'){const em=fm.elements.e.value.trim().toLowerCase();if(!/^\S+@\S+\.\S+$/.test(em))return;const {error}=await sb.from('members').insert({email:em});if(error&&!/duplicate/i.test(error.message))toast(errMsg(error));else{toast('נוסף. שלחו לה/לו את הקישור.');await loadMembers();settingsSheet()}return}
   if(fm.id!=='ef')return;
   const fd=new FormData(fm),llm=String(fd.get('ll')).match(/(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)/);
   const d={name:String(fd.get('name')).trim(),cuisine:String(fd.get('cuisine')).trim(),city:String(fd.get('city')).trim(),address:String(fd.get('address')).trim(),status:fd.get('status')==='been'?'been':'want',price:Number(fd.get('price'))||0,recBy:String(fd.get('recBy')).trim(),mapsUrl:safeUrl(fd.get('mapsUrl')),site:safeUrl(fd.get('site')),tags:fd.getAll('tags').map(String),notes:String(fd.get('notes')).trim(),updatedAt:Date.now()};
@@ -383,10 +405,14 @@ S.addEventListener('click',async e=>{
   if(a==='install'){if(installEvt){installEvt.prompt();installEvt=null;settingsSheet()}return}
   if(a==='shareInvite'){shareOrCopy('המסעדות שלנו','הצטרפו לרשימת המסעדות שלנו! פותחים את הקישור, יוצרים חשבון עם מייל וסיסמה, וזהו:',inviteUrl());return}
   if(a==='copyInvite'){try{await navigator.clipboard.writeText(inviteUrl());toast('הקישור הועתק')}catch{toast('לא הצלחנו להעתיק')}return}
-  if(a==='resetInvite'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב לאיפוס';return}const {data,error}=await sb.rpc('reset_join_code');if(error)toast(errMsg(error));else{inviteCode=data;toast('נוצר קישור חדש');settingsSheet()}return}
+  if(a==='resetInvite'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב לאיפוס';return}const {data,error}=await sb.rpc('reset_list_code',{lid:cur.id});if(error)toast(errMsg(error));else{cur.join_code=data;toast('נוצר קישור חדש');settingsSheet()}return}
+  if(a==='lists'){listsSheet();return}
+  if(a==='pickList'){await switchList(b.dataset.id);return}
+  if(a==='leaveList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב ליציאה';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',myId);if(error){toast(errMsg(error));return}await afterListGone('יצאת מהרשימה');return}
+  if(a==='delList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='למחוק את כל הרשימה לתמיד? לחצו שוב';return}const paths=rows.flatMap(r=>(r.photos||[]).map(p=>p.path).filter(Boolean));if(paths.length)await sb.storage.from('photos').remove(paths).catch(()=>{});const {error}=await sb.from('lists').delete().eq('id',cur.id);if(error){toast(errMsg(error));return}await afterListGone('הרשימה נמחקה');return}
   if(a==='shareApp'){shareOrCopy('המסעדות שלנו','האפליקציה שלנו למעקב אחרי מסעדות וברים:',location.origin+location.pathname);return}
   if(a==='signout'){await sb.auth.signOut();location.reload();return}
-  if(a==='rmMember'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='הסר?';b.style.fontSize='14px';return}const {error}=await sb.from('members').delete().eq('email',b.dataset.e);if(error)toast(errMsg(error));await loadMembers();settingsSheet();return}
+  if(a==='rmMember'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='הסר?';b.style.fontSize='14px';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',b.dataset.u);if(error)toast(errMsg(error));await loadMembers();settingsSheet();return}
   const r=byId(openId);if(!r)return;const now=Date.now();
   if(a==='share'){shareOrCopy(r.name,shareText(r));return}
   if(a==='copyLL'){try{await navigator.clipboard.writeText(`${r.lat}, ${r.lng}`);toast('הקואורדינטות הועתקו')}catch{toast(`${r.lat}, ${r.lng}`)}return}
@@ -415,24 +441,35 @@ function showLogin(email,signup){
     if(error){const m=error.message||'';$('#lerr').textContent=/invalid login/i.test(m)?'המייל או הסיסמה לא נכונים. אם זו הפעם הראשונה, לחצו "יצירת חשבון".':/already registered|already exists/i.test(m)?'למייל הזה כבר יש חשבון. לחצו "כבר יש לי חשבון".':/not confirmed/i.test(m)?'החשבון ממתין לאישור מייל. בקשו ממי שהקים את האפליקציה לכבות את "Confirm email" ב-Supabase.':/password/i.test(m)?'הסיסמה צריכה להיות לפחות 6 תווים.':'הכניסה נכשלה: '+m;return}
     if(signup&&!data.session){$('#lerr').textContent='החשבון נוצר, אבל ממתין לאישור מייל. בקשו ממי שהקים את האפליקציה לכבות את "Confirm email" ב-Supabase.';return}
     start()})}
-function notMember(){gate(`<p>נכנסת בתור <b dir="ltr">${esc(me.email)}</b>, אבל המייל הזה עוד לא ברשימת המשתתפים.</p><p>כדי להצטרף צריך קישור הזמנה. בקשו ממי שמשתמש באפליקציה לשלוח לכם אותו (הגדרות ← שליחת קישור הזמנה) ופתחו אותו.</p><button class="btn" type="button" id="retry" ${BRASS}>ניסיון חוזר</button><button class="link" type="button" id="so">התנתקות</button>`);
-  $('#retry').onclick=()=>start();$('#so').onclick=async()=>{await sb.auth.signOut();location.reload()}}
+function welcome(){gate(`<p><b>ברוכים הבאים${myName?', '+esc(myName):''}!</b></p><p>פתחו רשימה משלכם, או הצטרפו לרשימה של מישהו עם קישור ההזמנה שלו.</p>
+<form id="wl"><input id="wn" maxlength="40" placeholder="שם הרשימה, למשל: המסעדות שלנו" required><button class="btn" type="submit" ${BRASS}>יצירת רשימה חדשה</button></form>
+<form id="wj" style="margin-top:18px"><input id="wc" dir="ltr" placeholder="או הדביקו קישור הזמנה" required><button class="btn" type="submit" style="background:transparent;border-color:var(--brass);color:#f4ead2">הצטרפות לרשימה</button></form>
+<div class="err" id="lerr"></div><button class="link" type="button" id="so">התנתקות</button>`);
+  $('#so').onclick=async()=>{await sb.auth.signOut();location.reload()};
+  $('#wl').addEventListener('submit',async e=>{e.preventDefault();e.target.querySelector('button').disabled=true;const id=await doCreateList($('#wn').value.trim());if(id){try{localStorage.setItem('rs-list',id)}catch{}start()}else e.target.querySelector('button').disabled=false});
+  $('#wj').addEventListener('submit',async e=>{e.preventDefault();const c=codeFrom($('#wc').value);if(!c){$('#lerr').textContent='זה לא נראה כמו קישור הזמנה.';return}const id=await doJoin(c);if(id){try{localStorage.setItem('rs-list',id)}catch{}start()}else $('#lerr').textContent='קישור ההזמנה לא תקף. בקשו קישור חדש.'})}
+async function afterListGone(msg){closeSheet();await loadLists();toast(msg);if(!lists.length){cur=null;welcome();return}await switchList(lists[0].id)}
 
 let bound=false,visBound=false;
 async function start(){
   const {data:{session:s}}=await sb.auth.getSession();session=s;
   if(!s){showLogin('',!!joinCode);return}
   me={id:s.user.id,email:String(s.user.email||'').toLowerCase()};myId=me.id;
-  const {data:isM,error}=await sb.rpc('claim_member',{display_name:'',join_code:joinCode});
-  if(error){gate(`<p>לא הצלחנו להתחבר לשרת. בדקו את החיבור לאינטרנט.</p><button class="btn" type="button" id="rl" ${BRASS}>ניסיון חוזר</button>`);$('#rl').onclick=()=>location.reload();return}
-  if(!isM){notMember();return}
-  if(joinCode){try{localStorage.removeItem('rs-join')}catch{}joinCode=''}
+  try{
+    const {data:pr}=await sb.from('profiles').select('name').eq('user_id',myId).maybeSingle();
+    if(!pr)await sb.from('profiles').insert({user_id:myId,name:''});myName=(pr&&pr.name)||'';
+    let target=null;
+    if(joinCode){const c=joinCode;joinCode='';try{localStorage.removeItem('rs-join')}catch{}const {data:lid}=await sb.rpc('join_list',{code:c});if(lid){target=lid;setTimeout(()=>toast('הצטרפת לרשימה!'),600)}else setTimeout(()=>toast('קישור ההזמנה לא תקף. בקשו קישור חדש.'),600)}
+    await loadLists();
+    if(!lists.length){welcome();return}
+    let saved='';try{saved=localStorage.getItem('rs-list')||''}catch{}
+    cur=lists.find(l=>l.id===(target||saved))||lists.find(l=>l.role==='owner')||lists[0];
+  }catch(e){gate(`<p>לא הצלחנו להתחבר לשרת. בדקו את החיבור לאינטרנט.</p><button class="btn" type="button" id="rl" ${BRASS}>ניסיון חוזר</button>`);$('#rl').onclick=()=>location.reload();return}
   $('#gate').hidden=true;$('#app').hidden=false;
   if(!bound){bindUI();bound=true}
   try{const so=localStorage.getItem('rs-sort');if(so){sort=so;$('#sort').value=so}}catch{}
-  route();
-  await loadMembers();await loadAll();subscribe();
-  const mine=members.find(m=>m.email===me.email);if(mine&&!mine.name)setTimeout(()=>{settingsSheet();toast('איך לקרוא לך? כתבו שם ושמרו.')},400);
+  route();await switchList(cur.id);subscribe();
+  if(!myName)setTimeout(()=>{settingsSheet();toast('איך לקרוא לך? כתבו שם ושמרו.')},500);
   if(!visBound){visBound=true;document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&loaded)loadAll()})}
 }
 
