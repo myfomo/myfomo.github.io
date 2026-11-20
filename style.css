@@ -390,3 +390,24 @@ nav.tabs a svg{width:18px;height:18px;flex:none}
   .ov{padding:5vh 24px;padding-right:calc(272px + 24px)}
 }
 @media(min-width:1000px) and (max-height:700px){.brand{margin-bottom:12px}nav.tabs{margin-top:16px}nav.tabs a{padding:9px 14px}}
+
+/* passkey sign-in button */
+.pk-btn{position:relative;overflow:hidden;width:100%;display:flex;align-items:center;gap:14px;margin-top:6px;padding:12px 14px;border:0;border-radius:22px;background:#fff;color:#2A1630;cursor:pointer;text-align:start;box-shadow:0 14px 34px #a3123a40,0 0 0 1px #ffffffcc inset;transition:transform .3s var(--spring),box-shadow .3s;animation:sheetUp .6s var(--ease) .15s both}
+.pk-btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px #a3123a55}
+.pk-btn:active{transform:scale(.97)}
+.pk-btn::after{content:'';position:absolute;top:0;bottom:0;width:60%;left:-70%;background:linear-gradient(100deg,transparent,#ffe6d966 40%,#ffffffcc 50%,#ffe6d966 60%,transparent);transform:skewX(-18deg);animation:shine 4.5s ease-in-out 1.2s infinite;pointer-events:none}
+@keyframes shine{0%{left:-70%}35%,100%{left:130%}}
+.pk-ic{position:relative;overflow:hidden;flex:none;width:52px;height:52px;border-radius:16px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px #ff5a3c55}
+.pk-ic svg{width:30px;height:30px}
+.pk-scan{position:absolute;left:8px;right:8px;height:2px;border-radius:2px;background:#fff;box-shadow:0 0 10px 2px #fff;top:12px;opacity:.9;animation:scan 2.2s ease-in-out infinite}
+@keyframes scan{0%,100%{top:12px}50%{top:38px}}
+.pk-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.pk-tx b{font-family:Rubik,sans-serif;font-size:18px;font-weight:700;line-height:1.2}
+.pk-tx small{color:#8B7380;font-size:13px;font-weight:600}
+.pk-arrow{flex:none;width:24px;height:24px;color:#FF5E4D;transition:transform .3s var(--spring)}
+.pk-btn:hover .pk-arrow{transform:translateX(-4px)}
+.pk-btn.busy .pk-ic{animation:pkPulse 1s ease-in-out infinite}
+.pk-btn.busy .pk-arrow{opacity:.3}
+@keyframes pkPulse{50%{transform:scale(.9);box-shadow:0 0 0 8px #ff5a3c22}}
+.or{display:flex;align-items:center;gap:12px;margin:22px 0 2px;color:#fff;font-size:14px;font-weight:600;opacity:.9}
+.or::before,.or::after{content:'';flex:1;height:1px;background:#ffffff80}
