@@ -317,7 +317,8 @@ function listsSheet(){killFormMap();openId=null;mode='lists';openSheet();
 <ul class="toplist" style="margin-top:12px">${lists.map(l=>`<li data-act="pickList" data-id="${esc(l.id)}" tabindex="0"><span>${esc(l.name)}${cur&&l.id===cur.id?' <small class="meta">· פתוחה עכשיו</small>':''}</span><span class="meta">${l.role==='owner'?'שלי':'הצטרפתי'}</span></li>`).join('')}</ul></div>
 <div class="sec"><h4>רשימה חדשה</h4><form class="addrow" id="newListF"><input class="f" name="n" maxlength="40" placeholder="למשל: דייטים, ארוחות עבודה, טיול באיטליה" aria-label="שם הרשימה" required><button class="btn pri" type="submit">יצירה</button></form></div>
 <div class="sec"><h4>הצטרפות לרשימה של מישהו אחר</h4><form class="addrow" id="joinF"><input class="f" name="c" dir="ltr" placeholder="הדביקו כאן קישור הזמנה" aria-label="קישור הזמנה" required><button class="btn" type="submit">הצטרפות</button></form></div>`}
-function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const own=isOwner();
+async function loadPk(){const el=$('#pkList');if(!el)return;try{const {data,error}=await sb.auth.passkey.list();if(error)throw error;const arr=Array.isArray(data)?data:(data&&(data.passkeys||data.items))||[];el.innerHTML=arr.length?arr.map(p=>`<div class="mem"><span><b>${esc(p.friendly_name||p.friendlyName||'מפתח גישה')}</b><br><small class="meta">נוסף ${esc(fmtD(String(p.created_at||p.createdAt||'').slice(0,10)))}</small></span><button class="del" type="button" data-act="pkDel" data-id="${esc(p.id)}" aria-label="הסרה">×</button></div>`).join(''):'עוד לא הופעל באף מכשיר.';return arr}catch{el.textContent='';return null}}
+function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const own=isOwner();setTimeout(loadPk,0);
   $('#sb').innerHTML=`<div class="sec dh"><h2>הגדרות</h2><p class="meta" style="margin-top:6px">מחובר/ת בתור <span dir="ltr">${esc(me.email)}</span></p>
 <form class="addrow" id="nameF"><input class="f" name="n" maxlength="30" value="${esc(myName)}" placeholder="השם שלי" aria-label="השם שלי"><button class="btn" type="submit">שמירת שם</button></form></div>
 <div class="sec"><h4>הרשימה "${esc(cur.name)}"</h4>${own?`<form class="addrow" id="renameF" style="margin-top:0"><input class="f" name="n" maxlength="40" value="${esc(cur.name)}" aria-label="שם הרשימה"><button class="btn" type="submit">שינוי שם</button></form>`:'<p class="note" style="margin:0">הצטרפת לרשימה הזו בהזמנה.</p>'}
@@ -325,6 +326,7 @@ function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();c
 <div class="sec"><h4>הזמנת חברים לרשימה הזו</h4><p class="note" style="margin:0 0 10px">מי שפותח את הקישור יוצר חשבון עם המייל והסיסמה שלו ומצטרף לרשימה. הוא יוכל גם לפתוח רשימות משלו.</p><div class="row"><button class="btn pri" type="button" data-act="shareInvite">${ICON.share}שליחת קישור הזמנה</button><button class="btn" type="button" data-act="copyInvite">${ICON.copy}העתקה</button></div><p class="note" dir="ltr" style="word-break:break-all">${esc(inviteUrl())}</p>${own?'<button class="link" type="button" data-act="resetInvite" style="background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;padding:6px 0">איפוס הקישור (הקישור הישן יפסיק לעבוד)</button>':''}</div>
 <div class="sec"><h4>מי ברשימה (${members.length})</h4>${members.map(m=>`<div class="mem"><span><b>${esc(m.name||m.email.split('@')[0])}</b>${m.user_id===myId?' <small class="meta">(אני)</small>':''}${m.role==='owner'?' <small class="meta">· מנהל/ת</small>':''}<br><small class="meta" dir="ltr">${esc(m.email)}</small> <small class="meta">· ${ago(m.last_seen)}</small></span>${own&&m.user_id!==myId?`<button class="del" type="button" data-act="rmMember" data-u="${esc(m.user_id)}" aria-label="הסרה מהרשימה">×</button>`:''}</div>`).join('')}
 <div class="row" style="margin-top:12px">${own?'<button class="btn" type="button" data-act="delList" style="color:var(--bad)">מחיקת הרשימה</button>':'<button class="btn" type="button" data-act="leaveList" style="color:var(--bad)">יציאה מהרשימה</button>'}</div></div>
+${pkOK()?`<div class="sec"><h4>כניסה עם ${bioName()}</h4><p class="note" style="margin:0 0 10px">מפעילים פעם אחת בכל מכשיר, ומשם נכנסים בלי סיסמה.</p><div id="pkList" class="note">טוען…</div><button class="btn pri" type="button" data-act="pkAdd" style="margin-top:10px">הפעלת ${bioName()} במכשיר הזה</button></div>`:''}
 <div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
 </div>
 <div class="sec"><button class="btn" type="button" data-act="signout">התנתקות</button></div>`}
@@ -407,6 +409,10 @@ S.addEventListener('click',async e=>{
   if(a==='copyInvite'){try{await navigator.clipboard.writeText(inviteUrl());toast('הקישור הועתק')}catch{toast('לא הצלחנו להעתיק')}return}
   if(a==='resetInvite'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב לאיפוס';return}const {data,error}=await sb.rpc('reset_list_code',{lid:cur.id});if(error)toast(errMsg(error));else{cur.join_code=data;toast('נוצר קישור חדש');settingsSheet()}return}
   if(a==='lists'){listsSheet();return}
+  if(a==='pkAdd'){b.disabled=true;await registerBio();b.disabled=false;loadPk();return}
+  if(a==='pkDel'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='הסר?';b.style.fontSize='14px';return}try{const {error}=await sb.auth.passkey.delete({passkeyId:b.dataset.id});if(error)throw error;toast('הוסר')}catch(e){toast(errMsg(e))}loadPk();return}
+  if(a==='pkOffer'){b.disabled=true;await registerBio();closeSheet();return}
+  if(a==='pkLater'){closeSheet();return}
   if(a==='pickList'){await switchList(b.dataset.id);return}
   if(a==='leaveList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב ליציאה';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',myId);if(error){toast(errMsg(error));return}await afterListGone('יצאת מהרשימה');return}
   if(a==='delList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='למחוק את כל הרשימה לתמיד? לחצו שוב';return}const paths=rows.flatMap(r=>(r.photos||[]).map(p=>p.path).filter(Boolean));if(paths.length)await sb.storage.from('photos').remove(paths).catch(()=>{});const {error}=await sb.from('lists').delete().eq('id',cur.id);if(error){toast(errMsg(error));return}await afterListGone('הרשימה נמחקה');return}
@@ -431,11 +437,18 @@ S.addEventListener('click',async e=>{
 }
 
 /* ---------- sign-in gate ---------- */
+const pkOK=()=>!!(window.PublicKeyCredential&&navigator.credentials);
+const bioName=()=>/iphone|ipad|ipod|macintosh/i.test(navigator.userAgent)?'Face ID':/android/i.test(navigator.userAgent)?'טביעת אצבע':'מפתח גישה';
+const devName=()=>/iphone/i.test(navigator.userAgent)?'iPhone':/ipad/i.test(navigator.userAgent)?'iPad':/android/i.test(navigator.userAgent)?'Android':/mac/i.test(navigator.userAgent)?'Mac':/windows/i.test(navigator.userAgent)?'Windows':'מכשיר';
+const pkCancelled=e=>/abort|cancel|NotAllowed|timed out/i.test(String(e&&(e.name||'')+' '+(e.message||'')));
+async function registerBio(){try{const {data,error}=await sb.auth.registerPasskey();if(error)throw error;try{const id=data&&(data.id||(data.passkey&&data.passkey.id));if(id)await sb.auth.passkey.update({passkeyId:id,friendlyName:devName()})}catch{}try{localStorage.setItem('rs-pk','1')}catch{}toast(bioName()+' הופעל! מעכשיו אפשר להיכנס בלי סיסמה.');return true}
+  catch(e){if(!pkCancelled(e))toast('לא הצלחנו להפעיל את '+bioName()+': '+(e.message||''));return false}}
 const BRASS='style="background:var(--brass);border-color:var(--brass);color:#14251d"';
 function gate(html){const g=$('#gate');g.innerHTML=`<div class="box"><h1>המסעדות שלנו</h1>${html}</div>`;g.hidden=false;$('#app').hidden=true}
 function showLogin(email,signup){
-  gate(`${joinCode?'<p><b>הוזמנתם לרשימת המסעדות!</b></p>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':'כניסה עם המייל והסיסמה שלכם.'}</p><form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
+  gate(`${joinCode?'<p><b>הוזמנתם לרשימת המסעדות!</b></p>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':'כניסה עם המייל והסיסמה שלכם.'}</p>${!signup&&pkOK()?`<button class="btn" type="button" id="pkIn" ${BRASS}>כניסה עם ${bioName()}</button><p class="note" style="color:#f4ead2b0;margin:10px 0 0">או עם מייל וסיסמה:</p>`:''}<form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
   $('#sw').onclick=()=>showLogin($('#le').value,!signup);
+  const pk=$('#pkIn');if(pk)pk.onclick=async()=>{pk.disabled=true;$('#lerr').textContent='';try{const {error}=await sb.auth.signInWithPasskey();if(error)throw error;start()}catch(e){pk.disabled=false;if(!pkCancelled(e))$('#lerr').textContent='לא מצאנו '+bioName()+' שמחובר לחשבון במכשיר הזה. היכנסו עם מייל וסיסמה, ואז הפעילו '+bioName()+' בהגדרות.'}};
   $('#lf').addEventListener('submit',async e=>{e.preventDefault();const em=$('#le').value.trim().toLowerCase(),pw=$('#lp').value;const b=e.target.querySelector('button');b.disabled=true;$('#lerr').textContent='';
     const {data,error}=signup?await sb.auth.signUp({email:em,password:pw}):await sb.auth.signInWithPassword({email:em,password:pw});b.disabled=false;
     if(error){const m=error.message||'';$('#lerr').textContent=/invalid login/i.test(m)?'המייל או הסיסמה לא נכונים. אם זו הפעם הראשונה, לחצו "יצירת חשבון".':/already registered|already exists/i.test(m)?'למייל הזה כבר יש חשבון. לחצו "כבר יש לי חשבון".':/not confirmed/i.test(m)?'החשבון ממתין לאישור מייל. בקשו ממי שהקים את האפליקציה לכבות את "Confirm email" ב-Supabase.':/password/i.test(m)?'הסיסמה צריכה להיות לפחות 6 תווים.':'הכניסה נכשלה: '+m;return}
@@ -448,6 +461,10 @@ function welcome(){gate(`<p><b>ברוכים הבאים${myName?', '+esc(myName):
   $('#so').onclick=async()=>{await sb.auth.signOut();location.reload()};
   $('#wl').addEventListener('submit',async e=>{e.preventDefault();e.target.querySelector('button').disabled=true;const id=await doCreateList($('#wn').value.trim());if(id){try{localStorage.setItem('rs-list',id)}catch{}start()}else e.target.querySelector('button').disabled=false});
   $('#wj').addEventListener('submit',async e=>{e.preventDefault();const c=codeFrom($('#wc').value);if(!c){$('#lerr').textContent='זה לא נראה כמו קישור הזמנה.';return}const id=await doJoin(c);if(id){try{localStorage.setItem('rs-list',id)}catch{}start()}else $('#lerr').textContent='קישור ההזמנה לא תקף. בקשו קישור חדש.'})}
+async function offerBio(){if(!pkOK())return;let asked='';try{asked=localStorage.getItem('rs-pk')||''}catch{}if(asked)return;
+  try{const {data}=await sb.auth.passkey.list();const arr=Array.isArray(data)?data:(data&&(data.passkeys||data.items))||[];if(arr.length){localStorage.setItem('rs-pk','1');return}}catch{return}
+  try{localStorage.setItem('rs-pk','asked')}catch{}
+  setTimeout(()=>{if(!$('#ov').hidden)return;openId=null;mode='bio';openSheet();$('#sb').innerHTML=`<div class="pick"><h2>להיכנס בפעם הבאה עם ${bioName()}?</h2><p class="meta" style="margin-top:10px">בלי להקליד מייל וסיסמה. אפשר לשנות בכל רגע בהגדרות.</p><div class="row"><button class="btn pri" type="button" data-act="pkOffer">הפעלת ${bioName()}</button><button class="btn" type="button" data-act="pkLater">לא עכשיו</button></div></div>`},900)}
 async function afterListGone(msg){closeSheet();await loadLists();toast(msg);if(!lists.length){cur=null;welcome();return}await switchList(lists[0].id)}
 
 let bound=false,visBound=false;
@@ -470,6 +487,7 @@ async function start(){
   try{const so=localStorage.getItem('rs-sort');if(so){sort=so;$('#sort').value=so}}catch{}
   route();await switchList(cur.id);subscribe();
   if(!myName)setTimeout(()=>{settingsSheet();toast('איך לקרוא לך? כתבו שם ושמרו.')},500);
+  else offerBio();
   if(!visBound){visBound=true;document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&loaded)loadAll()})}
 }
 
@@ -477,5 +495,5 @@ window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 
 if(!CFG.supabaseUrl||!CFG.supabaseKey||!window.supabase){gate('<p>האפליקציה עוד לא מחוברת למסד הנתונים. צריך למלא את הקובץ config.js.</p>')}
-else{sb=window.supabase.createClient(CFG.supabaseUrl,CFG.supabaseKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});start()}
+else{sb=window.supabase.createClient(CFG.supabaseUrl,CFG.supabaseKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,experimental:{passkey:true}}});start()}
 }
