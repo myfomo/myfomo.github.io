@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Fomo</title>
-<meta name="theme-color" content="#173f30">
+<meta name="theme-color" content="#FF5E4D">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,7 +17,19 @@
 <link rel="stylesheet" href="vendor/leaflet.css">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="splashing">
+<div id="splash" role="presentation">
+  <div class="sp-blob b1"></div><div class="sp-blob b2"></div><div class="sp-blob b3"></div>
+  <svg class="sp-glass" viewBox="0 0 120 160" aria-hidden="true">
+    <defs><clipPath id="bowl"><path d="M14 22 H106 L60 84 Z"/></clipPath></defs>
+    <g clip-path="url(#bowl)"><rect class="liquid" x="0" y="20" width="120" height="70"/><path class="shine" d="M26 30 H44 L34 46 Z"/></g>
+    <circle class="bub" cx="52" cy="62" r="2.5"/><circle class="bub" cx="64" cy="54" r="2"/><circle class="bub" cx="58" cy="70" r="1.8"/>
+    <path class="outline" d="M10 20 H110 L60 86 Z M60 86 V140 M34 142 H86"/>
+    <g class="slice"><circle cx="100" cy="20" r="15" fill="#FF7A2F" stroke="#fff" stroke-width="3"/><path d="M100 7 V33 M88 14 L112 26 M88 26 L112 14" stroke="#FFD9B8" stroke-width="2"/></g>
+  </svg>
+  <div class="sp-word"><span>F</span><span>o</span><span>m</span><span>o</span></div>
+  <div class="sp-tag">המקומות שאסור לפספס</div>
+</div>
 <div id="gate" class="gate" hidden></div>
 <div id="app" hidden>
 <header class="band">
@@ -65,7 +77,7 @@
   </section>
   <section class="view band wrap" id="v-map" hidden>
     <div id="lmap" class="lmap" role="region" aria-label="מפת המסעדות"></div>
-    <div class="row" style="margin-top:12px"><button class="btn" type="button" id="locMe">המיקום שלי</button><button class="btn" type="button" id="fitAll">הצגת כל המסעדות</button><span class="note" style="margin:0"><i class="dot" style="background:var(--brass)"></i>היינו &nbsp; <i class="dot" style="background:var(--wine)"></i>רוצים ללכת</span></div>
+    <div class="row" style="margin-top:12px"><button class="btn" type="button" id="locMe">המיקום שלי</button><button class="btn" type="button" id="fitAll">הצגת כל המסעדות</button><span class="note" style="margin:0"><i class="dot" style="background:var(--mint)"></i>היינו &nbsp; <i class="dot" style="background:var(--wine)"></i>רוצים ללכת</span></div>
     <div id="nomap"></div>
   </section>
   <section class="view band wrap" id="v-timeline" hidden>

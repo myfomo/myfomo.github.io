@@ -43,7 +43,8 @@ const isMatch=r=>voters(r).length>=2;
 const nm=id=>id===myId?'אני':(names[id]||'מישהו');
 const hue=s=>{let h=0;for(const c of String(s))h=(h*31+c.charCodeAt(0))%360;return h};
 const uuid=()=>(crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx'.replace(/x/g,()=>(Math.random()*16|0).toString(16)));
-function plate(name){const h=hue(name),t=h%3;const glass=t===0?'<path d="M262 120h44l-22 34z" fill="#f4ead233" stroke="#f4ead2" stroke-width="3"/><path d="M284 154v40M268 196h32" stroke="#f4ead2" stroke-width="3" stroke-linecap="round"/><circle cx="296" cy="122" r="6" fill="#c2504a"/>':t===1?'<path d="M266 112h36c0 30-6 44-18 46c-12-2-18-16-18-46z" fill="#8c2a2a" stroke="#f4ead2" stroke-width="3"/><path d="M284 158v36M268 196h32" stroke="#f4ead2" stroke-width="3" stroke-linecap="round"/>':'<rect x="266" y="120" width="34" height="76" rx="6" fill="#c9a22766" stroke="#f4ead2" stroke-width="3"/><path d="M270 136h26" stroke="#f4ead2" stroke-width="3"/>';return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="lg${h}" cx="50%" cy="10%" r="80%"><stop offset="0" stop-color="#c9a227" stop-opacity=".55"/><stop offset=".55" stop-color="#c9a227" stop-opacity="0"/></radialGradient></defs><rect width="400" height="300" fill="hsl(${150+(h%40)} 45% 16%)"/><rect width="400" height="300" fill="url(#lg${h})"/><path d="M200 0v38" stroke="#c9a227" stroke-width="3"/><path d="M178 58q22-30 44 0z" fill="#c9a227"/><circle cx="200" cy="60" r="6" fill="#fff6d8"/><path d="M0 214h400v86H0z" fill="#3b2418"/><path d="M0 214h400" stroke="#c9a227" stroke-width="3"/><ellipse cx="200" cy="208" rx="70" ry="12" fill="#00000055"/><ellipse cx="200" cy="200" rx="66" ry="16" fill="#f4ead2"/><ellipse cx="200" cy="198" rx="44" ry="9" fill="none" stroke="#d9cfb8" stroke-width="2"/>${glass}<text x="200" y="150" text-anchor="middle" font-family="Frank Ruhl Libre,serif" font-weight="900" font-size="64" fill="#f4ead2">${esc((name||'?').trim().charAt(0))}</text></svg>`}
+const GRADS=[['#FF9A3C','#FF4E6A'],['#FFC24B','#FF7A2F'],['#2BD9A8','#14B88A'],['#FF8FB8','#FF4E8A'],['#8E7CFF','#5FD3F3'],['#FFD166','#FF8A5C']];
+function plate(name){const h=hue(name),g=GRADS[h%GRADS.length],t=h%3,id='pg'+h;const glass=t===0?'<path d="M268 118h48l-24 36z" fill="#ffffff40" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><path d="M292 154v38M276 194h32" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="306" cy="118" r="8" fill="#FFD166" stroke="#fff" stroke-width="3"/>':t===1?'<path d="M272 110h40c0 30-7 46-20 48c-13-2-20-18-20-48z" fill="#ffffff40" stroke="#fff" stroke-width="4"/><path d="M292 158v34M276 194h32" stroke="#fff" stroke-width="4" stroke-linecap="round"/>':'<rect x="272" y="118" width="38" height="76" rx="8" fill="#ffffff40" stroke="#fff" stroke-width="4"/><circle cx="284" cy="150" r="3" fill="#fff"/><circle cx="296" cy="166" r="2.5" fill="#fff"/><circle cx="290" cy="136" r="2" fill="#fff"/>';return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${g[0]}"/><stop offset="1" stop-color="${g[1]}"/></linearGradient></defs><rect width="400" height="300" fill="url(#${id})"/><circle cx="70" cy="40" r="90" fill="#ffffff22"/><circle cx="360" cy="280" r="110" fill="#ffffff18"/><ellipse cx="180" cy="206" rx="78" ry="14" fill="#00000018"/><circle cx="180" cy="150" r="70" fill="#fff"/><circle cx="180" cy="150" r="50" fill="none" stroke="${g[0]}" stroke-opacity=".35" stroke-width="3"/>${glass}<text x="180" y="170" text-anchor="middle" font-family="Rubik,sans-serif" font-weight="800" font-size="56" fill="${g[1]}">${esc((name||'?').trim().charAt(0))}</text></svg>`}
 
 /* ---------- photos (private storage, signed URLs) ---------- */
 const urlCache={};
@@ -88,7 +89,7 @@ async function loadMembers(){if(!cur)return;const {data}=await sb.from('list_mem
 function setTitle(){const t=cur?cur.name:'Fomo';$('#app h1').textContent=t;document.title=cur?cur.name+' · Fomo':'Fomo'}
 async function switchList(id){const l=lists.find(x=>x.id===id)||lists[0];if(!l)return;cur=l;try{localStorage.setItem('rs-list',l.id)}catch{}
   rows=[];loaded=false;fitted=false;view='all';cuisF='';closeSheet();setTitle();render();
-  sb.rpc('touch_list',{lid:l.id}).then(()=>{},()=>{});await loadMembers();await loadAll()}
+  sb.rpc('touch_list',{lid:l.id}).then(()=>{},()=>{});await loadMembers();await loadAll();if(page==='list')animIn()}
 
 /* ---------- list ---------- */
 function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t)));
@@ -100,11 +101,11 @@ function renderList(){
   if(cuisF&&!cs.includes(cuisF))cuisF='';
   $('#cuis').innerHTML=cs.length>1?[`<button type="button" class="chip" data-c="" aria-pressed="${!cuisF}">כל הסוגים</button>`,...cs.map(c=>`<button type="button" class="chip" data-c="${esc(c)}" aria-pressed="${cuisF===c}">${esc(c)}</button>`)].join(''):'';
   const g=$('#grid');
-  if(!loaded){g.innerHTML='';return}
+  if(!loaded){g.innerHTML='<div class="skel"></div><div class="skel"></div><div class="skel"></div>';return}
   if(!rows.length){g.innerHTML=`<div class="empty"><h2>עוד אין כאן מסעדות</h2><p>הוסיפו מקום שהייתם בו או מקום שאתם חולמים עליו, והרשימה תתחיל להתמלא.</p><button class="btn pri" type="button" data-act="add">הוסיפו את הראשונה</button></div>`;return}
   const list=filtered();
   if(!list.length){g.innerHTML=`<div class="empty"><h2>${view==='match'?'עוד אין מקום ששניכם בחרתם השבוע':'לא נמצא כלום'}</h2><p>${view==='match'?'לחצו "בא לי" על מקומות שבא לכם ללכת אליהם. כששניכם בוחרים אותו מקום, הוא יופיע כאן.':'נסו חיפוש אחר או הסירו סינון.'}</p></div>`;return}
-  g.innerHTML=list.map(r=>{const p=(r.photos||[]).find(x=>x.path),a=avg(r),mv=iVoted(r),mt=isMatch(r);return `<article class="card" tabindex="0" data-id="${esc(r.id)}"><div class="cover">${p?photoImg(p,'loading="lazy"'):plate(r.name)}<div class="badges"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${mt?'<span class="badge match">שנינו רוצים!</span>':''}</div>${r.fav?'<span class="heart" aria-label="מועדף">♥</span>':''}</div><div class="cbody"><h3>${esc(r.name)}</h3><p class="meta">${[r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')||'&nbsp;'}</p>${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}<div class="acts"><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button type="button" class="btn sm ${mv?'on':''}" data-vote="${esc(r.id)}" aria-pressed="${mv}">${mv?'♥':'♡'} בא לי</button></div></div></article>`}).join('');
+  g.innerHTML=list.map((r,idx)=>{const p=(r.photos||[]).find(x=>x.path),a=avg(r),mv=iVoted(r),mt=isMatch(r);return `<article class="card" tabindex="0" data-id="${esc(r.id)}" style="--i:${Math.min(idx,12)}"><div class="cover">${p?photoImg(p,'loading="lazy"'):plate(r.name)}<div class="badges"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${mt?'<span class="badge match">שנינו רוצים!</span>':''}</div>${r.fav?'<span class="heart" aria-label="מועדף">♥</span>':''}</div><div class="cbody"><h3>${esc(r.name)}</h3><p class="meta">${[r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')||'&nbsp;'}</p>${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}<div class="acts"><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button type="button" class="btn sm ${mv?'on':''} ${popId===r.id?'pop':''}" data-vote="${esc(r.id)}" aria-pressed="${mv}">${mv?'♥':'♡'} בא לי</button></div></div></article>`}).join('');
   hydrate();
 }
 
@@ -172,7 +173,7 @@ function render(){renderHead();if(page==='list')renderList();else if(page==='map
 function route(){const h=location.hash.replace('#','');page=['map','timeline','stats'].includes(h)?h:'list';document.body.dataset.page=page;window.scrollTo(0,0);
   document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!=='v-'+page);
   document.querySelectorAll('nav.tabs a,.tabbar a').forEach(a=>{if(a.dataset.v===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-  render()}
+  render();if(page==='list')animIn()}
 window.addEventListener('hashchange',route);
 
 /* ---------- sheet ---------- */
@@ -335,7 +336,9 @@ async function doCreateList(name){const {data,error}=await sb.rpc('create_list',
 async function doJoin(code){const {data,error}=await sb.rpc('join_list',{code});if(error){toast(errMsg(error));return null}if(!data){toast('קישור ההזמנה לא תקף. אולי אופס? בקשו קישור חדש.');return null}await loadLists();return data}
 
 /* ---------- events ---------- */
-async function toggleVote(id){const r=byId(id);if(!r)return;await save(id,{votes:{[myId]:iVoted(r)?0:Date.now()}})}
+let popId='';
+function animIn(){const g=$('#grid');if(!g)return;g.classList.remove('anim');void g.offsetWidth;g.classList.add('anim');clearTimeout(animIn.t);animIn.t=setTimeout(()=>g.classList.remove('anim'),1400)}
+async function toggleVote(id){const r=byId(id);if(!r)return;if(!iVoted(r)){popId=id;setTimeout(()=>{popId=''},700)}await save(id,{votes:{[myId]:iVoted(r)?0:Date.now()}})}
 async function shareOrCopy(title,text,url){if(navigator.share){try{await navigator.share(url?{title,text,url}:{title,text});return}catch(e){if(e&&e.name==='AbortError')return}}
   try{await navigator.clipboard.writeText(text+(url?'\n'+url:''));toast('הועתק. אפשר להדביק בוואטסאפ.')}catch{toast('לא הצלחנו להעתיק')}}
 function newForm(){killFormMap();openId=null;mode='new';openSheet();$('#sb').innerHTML=formHtml(null);initFormMap();$('#placeQ').focus()}
@@ -446,10 +449,10 @@ const devName=()=>/iphone/i.test(navigator.userAgent)?'iPhone':/ipad/i.test(navi
 const pkCancelled=e=>/abort|cancel|NotAllowed|timed out/i.test(String(e&&(e.name||'')+' '+(e.message||'')));
 async function registerBio(){try{const {data,error}=await sb.auth.registerPasskey();if(error)throw error;try{const id=data&&(data.id||(data.passkey&&data.passkey.id));if(id)await sb.auth.passkey.update({passkeyId:id,friendlyName:devName()})}catch{}try{localStorage.setItem('rs-pk','1')}catch{}toast(bioName()+' הופעל! מעכשיו אפשר להיכנס בלי סיסמה.');return true}
   catch(e){if(!pkCancelled(e))toast('לא הצלחנו להפעיל את '+bioName()+': '+(e.message||''));return false}}
-const BRASS='style="background:var(--brass);border-color:var(--brass);color:#14251d"';
+const BRASS='style="background:#fff;border-color:#fff;color:#FF4E50;box-shadow:0 8px 24px #a3123a33"';
 function gate(html){const g=$('#gate');g.innerHTML=`<div class="box"><div class="logo">Fomo</div><p class="tag">המקומות שאסור לפספס</p>${html}</div>`;g.hidden=false;$('#app').hidden=true}
 function showLogin(email,signup){
-  gate(`${joinCode?'<p><b>הוזמנתם לרשימת המסעדות!</b></p>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':'כניסה עם המייל והסיסמה שלכם.'}</p>${!signup&&pkOK()?`<button class="btn" type="button" id="pkIn" ${BRASS}>כניסה עם ${bioName()}</button><p class="note" style="color:#f4ead2b0;margin:10px 0 0">או עם מייל וסיסמה:</p>`:''}<form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
+  gate(`${joinCode?'<p><b>הוזמנתם לרשימת המסעדות!</b></p>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':'כניסה עם המייל והסיסמה שלכם.'}</p>${!signup&&pkOK()?`<button class="btn" type="button" id="pkIn" ${BRASS}>כניסה עם ${bioName()}</button><p class="note" style="color:#fff;opacity:.85;margin:12px 0 0">או עם מייל וסיסמה:</p>`:''}<form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
   $('#sw').onclick=()=>showLogin($('#le').value,!signup);
   const pk=$('#pkIn');if(pk)pk.onclick=async()=>{pk.disabled=true;$('#lerr').textContent='';try{const {error}=await sb.auth.signInWithPasskey();if(error)throw error;start()}catch(e){pk.disabled=false;if(!pkCancelled(e))$('#lerr').textContent='לא מצאנו '+bioName()+' שמחובר לחשבון במכשיר הזה. היכנסו עם מייל וסיסמה, ואז הפעילו '+bioName()+' בהגדרות.'}};
   $('#lf').addEventListener('submit',async e=>{e.preventDefault();const em=$('#le').value.trim().toLowerCase(),pw=$('#lp').value;const b=e.target.querySelector('button');b.disabled=true;$('#lerr').textContent='';
@@ -459,7 +462,7 @@ function showLogin(email,signup){
     start()})}
 function welcome(){gate(`<p><b>ברוכים הבאים${myName?', '+esc(myName):''}!</b></p><p>פתחו רשימה משלכם, או הצטרפו לרשימה של מישהו עם קישור ההזמנה שלו.</p>
 <form id="wl"><input id="wn" maxlength="40" placeholder="שם הרשימה, למשל: המסעדות שלנו" required><button class="btn" type="submit" ${BRASS}>יצירת רשימה חדשה</button></form>
-<form id="wj" style="margin-top:18px"><input id="wc" dir="ltr" placeholder="או הדביקו קישור הזמנה" required><button class="btn" type="submit" style="background:transparent;border-color:var(--brass);color:#f4ead2">הצטרפות לרשימה</button></form>
+<form id="wj" style="margin-top:18px"><input id="wc" dir="ltr" placeholder="או הדביקו קישור הזמנה" required><button class="btn" type="submit" style="background:#ffffff26;border-color:#ffffffaa;color:#fff">הצטרפות לרשימה</button></form>
 <div class="err" id="lerr"></div><button class="link" type="button" id="so">התנתקות</button>`);
   $('#so').onclick=async()=>{await sb.auth.signOut();location.reload()};
   $('#wl').addEventListener('submit',async e=>{e.preventDefault();e.target.querySelector('button').disabled=true;const id=await doCreateList($('#wn').value.trim());if(id){try{localStorage.setItem('rs-list',id)}catch{}start()}else e.target.querySelector('button').disabled=false});
@@ -494,6 +497,10 @@ async function start(){
   if(!visBound){visBound=true;document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&loaded)loadAll()})}
 }
 
+/* intro splash on every launch */
+{const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const hide=()=>{if(!sp||sp.classList.contains('out'))return;sp.classList.add('out');document.body.classList.remove('splashing');setTimeout(()=>sp.remove(),800)};
+ if(sp){sp.addEventListener('click',hide);setTimeout(hide,reduce?500:2600)}}
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=e});
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 
