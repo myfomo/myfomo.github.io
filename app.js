@@ -503,7 +503,9 @@ async function start(){
  const hide=()=>{if(!sp||sp.classList.contains('out'))return;sp.classList.add('out');document.body.classList.remove('splashing');setTimeout(()=>sp.remove(),800)};
  if(sp){sp.addEventListener('click',hide);setTimeout(hide,reduce?500:2600)}}
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=e});
-if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+if('serviceWorker' in navigator){let hadCtl=!!navigator.serviceWorker.controller,reloaded=false;
+  navigator.serviceWorker.addEventListener('controllerchange',()=>{if(hadCtl&&!reloaded){reloaded=true;location.reload()}});
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}))}
 
 if(!CFG.supabaseUrl||!CFG.supabaseKey||!window.supabase){gate('<p>האפליקציה עוד לא מחוברת למסד הנתונים. צריך למלא את הקובץ config.js.</p>')}
 else{sb=window.supabase.createClient(CFG.supabaseUrl,CFG.supabaseKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,experimental:{passkey:true}}});start()}
