@@ -66,7 +66,7 @@ async function upload(files,id){
 function applyPatch(r,p){const o={...r,...p};if(p.ratings)o.ratings={...(r.ratings||{}),...p.ratings};if(p.votes)o.votes={...(r.votes||{}),...p.votes};return o}
 async function loadAll(){if(!cur)return;const lid=cur.id;const {data,error}=await sb.from('restaurants').select('id,data').eq('list_id',lid).order('updated_at',{ascending:false});if(!cur||cur.id!==lid)return;if(error){const c=lsGet('rs-cache-'+lid,null);if(c&&isNetErr(error)){rows=c;loaded=true;render();setOffline();return}$('#status').textContent='הרשימה לא נטענה: '+errMsg(error);return}
   rows=(data||[]).map(x=>({...(x.data||{}),id:x.id}));const pend=lsGet('rs-outbox',[]).filter(o=>o.lid===lid);for(const o of pend){if(o.isNew){if(!byId(o.id))rows.unshift({...o.patch,id:o.id})}else rows=rows.map(r=>r.id===o.id?applyPatch(r,o.patch):r)}
-  loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch()}
+  loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch();setTimeout(backfillGeo,1500)}
 function save(id,patch,isNew){
   const prev=byId(id);
   if(isNew)rows.unshift({...patch,id});else if(prev)rows=rows.map(r=>r.id===id?applyPatch(r,patch):r);
@@ -202,7 +202,7 @@ function formHtml(r){r=r||{status:'want',tags:[]};const tg=r.tags||[];const ll=h
 <label class="l" style="margin-top:12px">או הדביקו קישור / "שיתוף" מגוגל מפות<textarea class="f paste" id="paste" dir="auto" placeholder="https://www.google.com/maps/place/…"></textarea></label><p class="note" id="fillSt"></p></div>
 <div class="grid2">
 <label class="l full">שם המקום *<input class="f" name="name" required maxlength="80" value="${esc(r.name)}"></label>
-<label class="l">סוג<input class="f" name="cuisine" list="cuisList" maxlength="40" value="${esc(r.cuisine)}" placeholder="מסעדת שף, בר יין…"></label>
+<label class="l">סוג${cuisSelect(r.cuisine)}</label>
 <label class="l">עיר<input class="f" name="city" maxlength="40" value="${esc(r.city)}"></label>
 <label class="l full">כתובת<input class="f" name="address" maxlength="120" value="${esc(r.address)}" placeholder="רחוב ומספר"></label>
 <div class="full"><div class="l">מיקום מדויק במפה</div><p class="note" style="margin:2px 0 0">לחצו על המפה או גררו את הסיכה למקום המדויק.</p><div class="mini" id="fmap"></div>
@@ -218,7 +218,7 @@ ${hoursForm(r)}
 <label class="l full">הערות<textarea class="f" name="notes" maxlength="2000" placeholder="מה שמענו, למה רוצים ללכת…">${esc(r.notes)}</textarea></label>
 </div><div class="row" style="margin-top:14px"><button class="btn pri" type="submit">שמירה</button><button class="btn" type="button" data-act="cancel">ביטול</button></div></form>`}
 
-function initFormMap(){const f=$('#ef');if(!f)return;killFormMap();
+function initFormMap(){const f=$('#ef');if(!f)return;killFormMap();formGeocode.auto=!f.elements.ll.value.trim()||f.elements.llLevel.value==='street';
   const m=String(f.elements.ll.value).match(/(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)/);
   const has=m&&Math.abs(+m[1])<=90;const c=has?[+m[1],+m[2]]:[32.08,34.78];
   fmap=L.map('fmap').setView(c,has?17:12);L.tileLayer(TILE,{maxZoom:19,attribution:ATTR}).addTo(fmap);
@@ -230,24 +230,11 @@ function setPin(lat,lng,manual,zoom){const f=$('#ef');if(!f||!fmap)return;lat=+l
   else fmarker.setLatLng([lat,lng]);
   if(zoom)fmap.setView([lat,lng],17);
   f.elements.ll.value=`${lat}, ${lng}`;f.elements.llLevel.value='place';
-  if(manual)reverseFill(lat,lng)}
+  if(manual){formGeocode.auto=false;reverseFill(lat,lng)}}
 async function reverseFill(lat,lng){const f=$('#ef');if(!f||(f.elements.address.value.trim()&&f.elements.city.value.trim()))return;
   try{const r=await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&accept-language=he&lat=${lat}&lon=${lng}`);const j=await r.json();const a=j.address||{};
     const city=a.city||a.town||a.village||a.municipality||'',addr=[a.road,a.house_number].filter(Boolean).join(' ');
     if(!f.elements.address.value.trim()&&addr)f.elements.address.value=addr;if(!f.elements.city.value.trim()&&city)f.elements.city.value=city}catch{}}
-async function placeSearch(){const qv=$('#placeQ').value.trim(),ul=$('#placeRes');if(!qv)return;ul.innerHTML='<li><small>מחפש…</small></li>';
-  const go=async cc=>{const r=await fetch(`https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=7&accept-language=he${cc?'&countrycodes=il':''}&q=${encodeURIComponent(qv)}`);return r.json()};
-  try{let res=await go(true);if(!res.length)res=await go(false);
-    if(!res.length){ul.innerHTML='<li><small>לא נמצא. נסו שם אחר, או סמנו את המקום ישירות על המפה למטה.</small></li>';return}
-    placeSearch.res=res;ul.innerHTML=res.map((x,i)=>`<li data-act="placePick" data-i="${i}"><b>${esc(x.name||x.display_name.split(',')[0])}</b><small>${esc(x.display_name)}</small></li>`).join('')}
-  catch{ul.innerHTML='<li><small>החיפוש לא זמין כרגע. אפשר לסמן ידנית על המפה.</small></li>'}}
-function placePick(i){const x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)return;const a=x.address||{};
-  const name=x.name||'';if(name&&!f.elements.name.value.trim())f.elements.name.value=name;
-  const city=a.city||a.town||a.village||a.municipality||'',addr=[a.road,a.house_number].filter(Boolean).join(' ');
-  if(addr)f.elements.address.value=addr;if(city)f.elements.city.value=city;
-  const kind={bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[x.type];if(kind&&!f.elements.cuisine.value)f.elements.cuisine.value=kind;
-  setPin(+x.lat,+x.lon,false,true);$('#placeRes').innerHTML='';$('#fillSt').textContent='מילאנו מהחיפוש. בדקו שהסיכה על המקום הנכון, ואם צריך גררו אותה.'}
-
 function parseMaps(txt){const out={};txt=String(txt||'');const um=txt.match(/https?:\/\/\S+/);const url=um?um[0].replace(/[)\].,]+$/,''):'';
   if(url){out.mapsUrl=url;let m=url.match(/!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/);if(m){out.lat=+m[1];out.lng=+m[2];out.exact=true}else if((m=url.match(/[?&](?:q|query|ll)=(-?\d+\.\d+),(-?\d+\.\d+)/))){out.lat=+m[1];out.lng=+m[2];out.exact=true}else if((m=url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/))){out.lat=+m[1];out.lng=+m[2]}
     m=url.match(/\/maps\/place\/([^/@?]+)/);if(m){try{out.name=decodeURIComponent(m[1].replace(/\+/g,' ')).replace(/[‎‏‪-‮]/g,'').split(',')[0].trim()}catch{}}
@@ -553,6 +540,56 @@ async function doImport(btn){const sel=[...document.querySelectorAll('.implist i
 function setTheme(t){try{if(t==='auto')localStorage.removeItem('rs-theme');else localStorage.setItem('rs-theme',t)}catch{}if(t==='auto')delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme=t;const m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='dark'?'#160E13':'#FF5E4D'}
 const curTheme=()=>{try{return localStorage.getItem('rs-theme')||'auto'}catch{return 'auto'}};
 
+/* ================= place search (Google + fallback) & geocoding ================= */
+const CUIS=['איטלקי','אסייתי','יפני / סושי','בשרים','דגים ופירות ים','ים-תיכוני','המבורגר','פיצה','מקסיקני','הודי','מסעדת שף','בר קוקטיילים','בר יין','בר','פאב','קפה ובראנץ\'','טבעוני','חומוס ומזרחי','קינוחים','אחר'];
+const GTYPE={italian_restaurant:'איטלקי',pizza_restaurant:'פיצה',japanese_restaurant:'יפני / סושי',sushi_restaurant:'יפני / סושי',ramen_restaurant:'יפני / סושי',chinese_restaurant:'אסייתי',thai_restaurant:'אסייתי',asian_restaurant:'אסייתי',vietnamese_restaurant:'אסייתי',korean_restaurant:'אסייתי',indonesian_restaurant:'אסייתי',steak_house:'בשרים',barbecue_restaurant:'בשרים',seafood_restaurant:'דגים ופירות ים',mediterranean_restaurant:'ים-תיכוני',greek_restaurant:'ים-תיכוני',spanish_restaurant:'ים-תיכוני',hamburger_restaurant:'המבורגר',mexican_restaurant:'מקסיקני',indian_restaurant:'הודי',fine_dining_restaurant:'מסעדת שף',cocktail_bar:'בר קוקטיילים',wine_bar:'בר יין',pub:'פאב',irish_pub:'פאב',bar:'בר',night_club:'בר',cafe:'קפה ובראנץ\'',coffee_shop:'קפה ובראנץ\'',brunch_restaurant:'קפה ובראנץ\'',breakfast_restaurant:'קפה ובראנץ\'',vegan_restaurant:'טבעוני',vegetarian_restaurant:'טבעוני',middle_eastern_restaurant:'חומוס ומזרחי',lebanese_restaurant:'חומוס ומזרחי',turkish_restaurant:'חומוס ומזרחי',dessert_shop:'קינוחים',dessert_restaurant:'קינוחים',ice_cream_shop:'קינוחים',bakery:'קינוחים',confectionery:'קינוחים'};
+const GPRICE={PRICE_LEVEL_INEXPENSIVE:1,PRICE_LEVEL_MODERATE:2,PRICE_LEVEL_EXPENSIVE:3,PRICE_LEVEL_VERY_EXPENSIVE:4};
+function cuisSelect(v){v=v||'';const opts=CUIS.includes(v)||!v?CUIS:[v,...CUIS];return `<select class="f" name="cuisine"><option value="">בחרו סוג…</option>${opts.map(o=>`<option ${o===v?'selected':''}>${esc(o)}</option>`).join('')}</select>`}
+let gReady=null;
+function gmaps(){const k=(window.APP_CONFIG||{}).googleKey;if(!k)return Promise.resolve(null);if(gReady)return gReady;
+  gReady=new Promise(res=>{window.__gmInit=()=>res(window.google);const s=document.createElement('script');s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(k)}&libraries=places&language=iw&region=IL&loading=async&callback=__gmInit`;s.async=true;s.onerror=()=>{gReady=null;res(null)};document.head.appendChild(s);setTimeout(()=>res(window.google||null),12000)});return gReady}
+const GF=['displayName','formattedAddress','addressComponents','location','googleMapsURI','websiteURI','regularOpeningHours','priceLevel','primaryType','types'];
+async function gSearch(q,fields){const g=await gmaps();if(!g||!g.maps||!g.maps.importLibrary)return null;const {Place}=await g.maps.importLibrary('places');
+  const {places}=await Place.searchByText({textQuery:q,fields:fields||GF,language:'iw',region:'il',maxResultCount:6,locationBias:{lat:31.9,lng:34.9}});return places||[]}
+function gComp(p,t){const c=(p.addressComponents||[]).find(c=>(c.types||[]).includes(t));return c?(c.longText||c.long_name||''):''}
+function gToItem(p){const loc=p.location;const lat=typeof loc.lat==='function'?loc.lat():loc.lat,lng=typeof loc.lng==='function'?loc.lng():loc.lng;
+  const ts=[p.primaryType,...(p.types||[])].filter(Boolean);const cuisine=ts.map(t=>GTYPE[t]).find(Boolean)||'';
+  const H={};const per=(p.regularOpeningHours&&p.regularOpeningHours.periods)||[];const pad=n=>String(n).padStart(2,'0');
+  for(const x of per){if(!x.open)continue;if(!x.close){for(let i=0;i<7;i++)H[i]=['00:00','23:59'];break}H[x.open.day]=[pad(x.open.hour)+':'+pad(x.open.minute),pad(x.close.hour)+':'+pad(x.close.minute)]}
+  if(per.length)for(let i=0;i<7;i++)if(!(i in H))H[i]=null;
+  return {g:true,name:p.displayName||'',full:p.formattedAddress||'',address:[gComp(p,'route'),gComp(p,'street_number')].filter(Boolean).join(' '),city:gComp(p,'locality')||gComp(p,'administrative_area_level_2'),lat,lng,mapsUrl:p.googleMapsURI||'',site:p.websiteURI||'',price:GPRICE[p.priceLevel]||0,cuisine,hours:per.length?H:null}}
+function osmToItem(x){const a=x.address||{};return {name:x.name||x.display_name.split(',')[0],full:x.display_name,address:[a.road,a.house_number].filter(Boolean).join(' '),city:a.city||a.town||a.village||a.municipality||'',lat:+x.lat,lng:+x.lon,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[x.type]||''}}
+function photonToItem(f){const p=f.properties||{},[lng,lat]=f.geometry.coordinates;return {name:p.name||p.street||'',full:[p.name,p.street&&(p.street+(p.housenumber?' '+p.housenumber:'')),p.city||p.town,p.country].filter(Boolean).join(', '),address:p.street?(p.street+(p.housenumber?' '+p.housenumber:'')):'',city:p.city||p.town||p.village||'',lat,lng,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[p.osm_value]||''}}
+const fetchJ=(u,ms)=>Promise.race([fetch(u).then(r=>r.json()),new Promise((_,j)=>setTimeout(()=>j(new Error('timeout')),ms||7000))]);
+async function osmSearch(q){let res=[];try{res=(await fetchJ(`https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=6&accept-language=he&countrycodes=il&q=${encodeURIComponent(q)}`)).map(osmToItem)}catch{}
+  if(res.length<2){try{const j=await fetchJ(`https://photon.komoot.io/api/?limit=6&lat=32.0&lon=34.8&q=${encodeURIComponent(q)}`);res=res.concat((j.features||[]).filter(f=>(f.properties||{}).countrycode==='IL').map(photonToItem))}catch{}}
+  return res}
+async function placeSearch(){const qv=$('#placeQ').value.trim(),ul=$('#placeRes');if(!qv)return;ul.innerHTML='<li><small>מחפש…</small></li>';
+  let res=null;try{const g=await gSearch(qv);if(g)res=g.map(gToItem)}catch(e){console.warn('google search',e)}
+  if(!res||!res.length)res=await osmSearch(qv);
+  if(!res.length){ul.innerHTML='<li><small>לא נמצא. נסו שם אחר, או סמנו את המקום ישירות על המפה למטה.</small></li>';return}
+  placeSearch.res=res;ul.innerHTML=res.map((x,i)=>`<li data-act="placePick" data-i="${i}"><b>${esc(x.name)}</b><small>${esc(x.full)}</small></li>`).join('')}
+function placePick(i){const x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)return;const E=f.elements;
+  if(x.name)E.name.value=x.name;if(x.address)E.address.value=x.address;if(x.city)E.city.value=x.city;
+  if(x.cuisine&&!E.cuisine.value)E.cuisine.value=x.cuisine;
+  if(x.mapsUrl)E.mapsUrl.value=x.mapsUrl;if(x.site&&!E.site.value)E.site.value=x.site;if(x.price&&!E.price.value)E.price.value=String(x.price);
+  if(x.hours){for(let d=0;d<7;d++){const h=x.hours[d];E['hx'+d].checked=h===null;E['ho'+d].value=h?h[0]:'';E['hc'+d].value=h?h[1]:''}const det=f.querySelector('details.hours');if(det)det.open=true}
+  setPin(x.lat,x.lng,false,true);$('#placeRes').innerHTML='';
+  $('#fillSt').textContent=x.g?'מילאנו מגוגל מפות: שם, כתובת, סוג, מחיר, אתר ושעות פתיחה. בדקו שהכל נכון.':'מילאנו מהחיפוש. בדקו שהסיכה על המקום הנכון, ואם צריך גררו אותה.'}
+async function geocode(address,city){const a=String(address||'').trim(),c=String(city||'').trim();if(!a&&!c)return null;const q=[a,c].filter(Boolean).join(', ');
+  try{const g=await gSearch(q+', ישראל',['location','formattedAddress']);if(g&&g[0]){const x=gToItem(Object.assign({addressComponents:[],types:[]},g[0]));return {lat:x.lat,lng:x.lng}}}catch{}
+  const tries=[];if(a&&c)tries.push(`street=${encodeURIComponent(a)}&city=${encodeURIComponent(c)}`);tries.push(`q=${encodeURIComponent(q)}`);
+  if(a&&c&&/\d/.test(a))tries.push(`street=${encodeURIComponent(a.replace(/\s*\d+\S*/g,'').trim())}&city=${encodeURIComponent(c)}`);
+  for(const t of tries){try{const j=await fetchJ(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=il&accept-language=he&${t}`,6000);if(j[0])return {lat:+j[0].lat,lng:+j[0].lon}}catch{}}
+  try{const j=await fetchJ(`https://photon.komoot.io/api/?limit=3&lat=32.0&lon=34.8&q=${encodeURIComponent(q)}`,6000);const f=(j.features||[]).find(f=>(f.properties||{}).countrycode==='IL');if(f)return {lat:f.geometry.coordinates[1],lng:f.geometry.coordinates[0]}}catch{}
+  return null}
+async function formGeocode(){const f=$('#ef');if(!f)return;const E=f.elements;if(E.ll.value.trim()&&E.llLevel.value==='place'&&!formGeocode.auto)return;
+  const p=await geocode(E.address.value,E.city.value);if(!p||!$('#ef'))return;setPin(p.lat,p.lng,false,true);E.llLevel.value='street';formGeocode.auto=true;$('#fillSt').textContent='הסיכה הוזזה לפי הכתובת. אם צריך, גררו אותה למקום המדויק.'}
+const geoTried=new Set();let geoBusy=false;
+async function backfillGeo(){if(geoBusy||!navigator.onLine)return;geoBusy=true;try{
+  for(const r of rows.filter(r=>!hasLL(r)&&(r.address||r.city)&&!geoTried.has(r.id))){geoTried.add(r.id);const p=await geocode(r.address,r.city);
+    if(p&&byId(r.id)&&!hasLL(byId(r.id))){await save(r.id,{lat:+p.lat.toFixed(6),lng:+p.lng.toFixed(6),llLevel:'street'})}await new Promise(z=>setTimeout(z,1200))}}finally{geoBusy=false}}
+
 /* ---------- events ---------- */
 let popId='';
 function animIn(){const g=$('#grid');if(!g)return;g.classList.remove('anim');void g.offsetWidth;g.classList.add('anim');clearTimeout(animIn.t);animIn.t=setTimeout(()=>g.classList.remove('anim'),1400)}
@@ -618,11 +655,13 @@ S.addEventListener('submit',async e=>{
   const d={name:String(fd.get('name')).trim(),cuisine:String(fd.get('cuisine')).trim(),city:String(fd.get('city')).trim(),address:String(fd.get('address')).trim(),status:fd.get('status')==='been'?'been':'want',price:Number(fd.get('price'))||0,recBy:String(fd.get('recBy')).trim(),mapsUrl:safeUrl(fd.get('mapsUrl')),site:safeUrl(fd.get('site')),tags:fd.getAll('tags').map(String),notes:String(fd.get('notes')).trim(),...readHours(fd),updatedAt:Date.now()};
   if(llm&&Math.abs(+llm[1])<=90&&Math.abs(+llm[2])<=180){d.lat=+llm[1];d.lng=+llm[2];d.llLevel=String(fd.get('llLevel')||'place')}else{d.lat=null;d.lng=null;d.llLevel=''}
   if(!d.name)return;
-  const btn=fm.querySelector('[type=submit]');btn.disabled=true;fitted=false;killFormMap();
+  const btn=fm.querySelector('[type=submit]');btn.disabled=true;
+  if(!Number.isFinite(d.lat)&&(d.address||d.city)){btn.textContent='מאתר את הכתובת…';const p=await geocode(d.address,d.city);if(p){d.lat=+p.lat.toFixed(6);d.lng=+p.lng.toFixed(6);d.llLevel='street'}}
+  fitted=false;killFormMap();
   if(mode==='new'){const id=uuid();logAct('add',id,`הוסיף/ה את ${d.name}`);const ok=await save(id,{...d,fav:false,ratings:{},votes:{},dishes:[],photos:[],visits:[],addedBy:myId,createdAt:Date.now()},true);if(ok){openId=id;mode='view';renderDetail()}else btn.disabled=false}
   else{mode='view';const ok=await save(openId,d);if(!ok)mode='edit';renderDetail()}
 });
-S.addEventListener('change',e=>{if(e.target.classList.contains('rcpt')){const f=e.target.files[0];if(f)scanReceipt(f);e.target.value='';return}if(e.target.id==='impFile'){readImport([...e.target.files]);return}if(e.target.classList.contains('up')){upload([...e.target.files],openId);e.target.value=''}if(e.target.classList.contains('camUp')){camUpload([...e.target.files]);e.target.value=''}});
+S.addEventListener('change',e=>{if(e.target.form&&e.target.form.id==='ef'&&(e.target.name==='address'||e.target.name==='city')){formGeocode();return}if(e.target.classList.contains('rcpt')){const f=e.target.files[0];if(f)scanReceipt(f);e.target.value='';return}if(e.target.id==='impFile'){readImport([...e.target.files]);return}if(e.target.classList.contains('up')){upload([...e.target.files],openId);e.target.value=''}if(e.target.classList.contains('camUp')){camUpload([...e.target.files]);e.target.value=''}});
 S.addEventListener('click',async e=>{
   const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act,i=Number(b.dataset.i);
   if(a==='pickm'){pick(b.dataset.m,true);return}
