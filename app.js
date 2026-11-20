@@ -85,7 +85,7 @@ async function loadLists(){const {data,error}=await sb.from('list_members').sele
 async function loadMembers(){if(!cur)return;const {data}=await sb.from('list_members').select('user_id,email,role,last_seen,added_at').eq('list_id',cur.id).order('added_at');members=data||[];
   const ids=members.map(m=>m.user_id);let profs=[];if(ids.length){const {data:p}=await sb.from('profiles').select('user_id,name').in('user_id',ids);profs=p||[]}
   names={};for(const m of members){const p=profs.find(x=>x.user_id===m.user_id);m.name=(p&&p.name)||'';names[m.user_id]=m.name||m.email.split('@')[0]||'מישהו'}}
-function setTitle(){const t=cur?cur.name:'המסעדות שלנו';$('#app h1').textContent=t;document.title=t}
+function setTitle(){const t=cur?cur.name:'Fomo';$('#app h1').textContent=t;document.title=cur?cur.name+' · Fomo':'Fomo'}
 async function switchList(id){const l=lists.find(x=>x.id===id)||lists[0];if(!l)return;cur=l;try{localStorage.setItem('rs-list',l.id)}catch{}
   rows=[];loaded=false;fitted=false;view='all';cuisF='';closeSheet();setTitle();render();
   sb.rpc('touch_list',{lid:l.id}).then(()=>{},()=>{});await loadMembers();await loadAll()}
@@ -408,7 +408,7 @@ S.addEventListener('click',async e=>{
   if(a==='fHere'){locateMe((la,ln,acc)=>{setPin(la,ln,true,true);if(acc>60)toast(`דיוק המיקום כ־${Math.round(acc)} מטר. אפשר לגרור את הסיכה.`)});return}
   if(a==='cancel'){killFormMap();if(mode==='new'){closeSheet();return}mode='view';renderDetail();return}
   if(a==='install'){if(installEvt){installEvt.prompt();installEvt=null;settingsSheet()}return}
-  if(a==='shareInvite'){shareOrCopy('המסעדות שלנו','הצטרפו לרשימת המסעדות שלנו! פותחים את הקישור, יוצרים חשבון עם מייל וסיסמה, וזהו:',inviteUrl());return}
+  if(a==='shareInvite'){shareOrCopy('Fomo',`הצטרפו לרשימה "${cur?cur.name:''}" ב-Fomo! פותחים את הקישור, יוצרים חשבון עם מייל וסיסמה, וזהו:`,inviteUrl());return}
   if(a==='copyInvite'){try{await navigator.clipboard.writeText(inviteUrl());toast('הקישור הועתק')}catch{toast('לא הצלחנו להעתיק')}return}
   if(a==='resetInvite'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב לאיפוס';return}const {data,error}=await sb.rpc('reset_list_code',{lid:cur.id});if(error)toast(errMsg(error));else{cur.join_code=data;toast('נוצר קישור חדש');settingsSheet()}return}
   if(a==='lists'){listsSheet();return}
@@ -419,7 +419,7 @@ S.addEventListener('click',async e=>{
   if(a==='pickList'){await switchList(b.dataset.id);return}
   if(a==='leaveList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב ליציאה';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',myId);if(error){toast(errMsg(error));return}await afterListGone('יצאת מהרשימה');return}
   if(a==='delList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='למחוק את כל הרשימה לתמיד? לחצו שוב';return}const paths=rows.flatMap(r=>(r.photos||[]).map(p=>p.path).filter(Boolean));if(paths.length)await sb.storage.from('photos').remove(paths).catch(()=>{});const {error}=await sb.from('lists').delete().eq('id',cur.id);if(error){toast(errMsg(error));return}await afterListGone('הרשימה נמחקה');return}
-  if(a==='shareApp'){shareOrCopy('המסעדות שלנו','האפליקציה שלנו למעקב אחרי מסעדות וברים:',location.origin+location.pathname);return}
+  if(a==='shareApp'){shareOrCopy('Fomo','Fomo – המקומות שאסור לפספס:',location.origin+location.pathname);return}
   if(a==='signout'){await sb.auth.signOut();location.reload();return}
   if(a==='rmMember'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='הסר?';b.style.fontSize='14px';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',b.dataset.u);if(error)toast(errMsg(error));await loadMembers();settingsSheet();return}
   const r=byId(openId);if(!r)return;const now=Date.now();
@@ -447,7 +447,7 @@ const pkCancelled=e=>/abort|cancel|NotAllowed|timed out/i.test(String(e&&(e.name
 async function registerBio(){try{const {data,error}=await sb.auth.registerPasskey();if(error)throw error;try{const id=data&&(data.id||(data.passkey&&data.passkey.id));if(id)await sb.auth.passkey.update({passkeyId:id,friendlyName:devName()})}catch{}try{localStorage.setItem('rs-pk','1')}catch{}toast(bioName()+' הופעל! מעכשיו אפשר להיכנס בלי סיסמה.');return true}
   catch(e){if(!pkCancelled(e))toast('לא הצלחנו להפעיל את '+bioName()+': '+(e.message||''));return false}}
 const BRASS='style="background:var(--brass);border-color:var(--brass);color:#14251d"';
-function gate(html){const g=$('#gate');g.innerHTML=`<div class="box"><h1>המסעדות שלנו</h1>${html}</div>`;g.hidden=false;$('#app').hidden=true}
+function gate(html){const g=$('#gate');g.innerHTML=`<div class="box"><div class="logo">Fomo</div><p class="tag">המקומות שאסור לפספס</p>${html}</div>`;g.hidden=false;$('#app').hidden=true}
 function showLogin(email,signup){
   gate(`${joinCode?'<p><b>הוזמנתם לרשימת המסעדות!</b></p>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':'כניסה עם המייל והסיסמה שלכם.'}</p>${!signup&&pkOK()?`<button class="btn" type="button" id="pkIn" ${BRASS}>כניסה עם ${bioName()}</button><p class="note" style="color:#f4ead2b0;margin:10px 0 0">או עם מייל וסיסמה:</p>`:''}<form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
   $('#sw').onclick=()=>showLogin($('#le').value,!signup);
