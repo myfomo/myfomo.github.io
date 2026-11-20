@@ -9,6 +9,9 @@ const SPECIAL=['bday','anniv','celeb'];
 const ICON={pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',nav:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8z"/></svg>',share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>',cam:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>',img:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-9 8"/></svg>',link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>',copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>',search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>',me:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>'};
 
 const CFG=window.APP_CONFIG||{};
+// invite link: ?join=CODE — remember it through sign-up, then clean the address bar
+let joinCode='';try{const u=new URL(location.href);const j=u.searchParams.get('join');if(j){localStorage.setItem('rs-join',j);u.searchParams.delete('join');history.replaceState(null,'',u.pathname+u.search+u.hash)}joinCode=localStorage.getItem('rs-join')||''}catch{}
+let inviteCode='';
 let sb=null,session=null,me=null,myId='',members=[],names={};
 let rows=[],loaded=false,view='all',q='',cuisF='',sort='recent',openId=null,mode='view',pickTimer=null,page='list',tlF='all',stYear=String(new Date().getFullYear());
 let installEvt=null;
@@ -77,7 +80,8 @@ function subscribe(){sb.channel('restaurants-live').on('postgres_changes',{event
   render();if(openId&&mode==='view')renderDetail()}).subscribe()}
 // ratings imported from the earlier version are stored under "owner": hand them to the first member
 function fixLegacy(){if(!me||!members.length||members[0].email!==me.email)return;for(const r of rows)if(r.ratings&&Number(r.ratings.owner)>0&&!(r.ratings[myId]>0))save(r.id,{ratings:{[myId]:Number(r.ratings.owner),owner:0}})}
-async function loadMembers(){const {data}=await sb.from('members').select('email,name,user_id').order('added_at');members=data||[];names={};for(const m of members)if(m.user_id)names[m.user_id]=m.name||m.email.split('@')[0]}
+async function loadMembers(){try{const {data:st}=await sb.from('app_settings').select('join_code').eq('id',1).maybeSingle();inviteCode=(st&&st.join_code)||''}catch{}
+  const {data}=await sb.from('members').select('email,name,user_id,last_seen,added_at').order('added_at');members=data||[];names={};for(const m of members)if(m.user_id)names[m.user_id]=m.name||m.email.split('@')[0]}
 
 /* ---------- list ---------- */
 function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t)));
@@ -296,16 +300,18 @@ async function camUpload(files){const id=camId,r=byId(id);if(!r||!files.length)r
   await upload(files,id);openDetail(id)}
 
 /* ---------- settings ---------- */
+const inviteUrl=()=>location.origin+location.pathname+(inviteCode?'?join='+encodeURIComponent(inviteCode):'');
+const ago=t=>{if(!t)return 'עוד לא נכנס/ה';const m=(Date.now()-new Date(t))/6e4;return m<60?'פעיל/ה עכשיו':m<1440?'פעיל/ה היום':'פעיל/ה לפני '+Math.round(m/1440)+' ימים'};
 const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
 const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const mine=members.find(m=>m.email===me.email)||{};
   const appUrl=location.origin+location.pathname;
   $('#sb').innerHTML=`<div class="sec dh"><h2>הגדרות</h2><p class="meta" style="margin-top:6px">מחובר/ת בתור <span dir="ltr">${esc(me.email)}</span></p>
 <form class="addrow" id="nameF"><input class="f" name="n" maxlength="30" value="${esc(mine.name||'')}" placeholder="השם שלי" aria-label="השם שלי"><button class="btn" type="submit">שמירת שם</button></form></div>
-<div class="sec"><h4>מי משתתף ברשימה</h4>${members.map(m=>`<div class="mem"><span><b>${esc(m.name||m.email.split('@')[0])}</b><br><small class="meta" dir="ltr">${esc(m.email)}</small>${m.user_id?'':' <small class="meta">· עוד לא נכנס/ה</small>'}</span>${m.email!==me.email?`<button class="del" type="button" data-act="rmMember" data-e="${esc(m.email)}" aria-label="הסרה">×</button>`:''}</div>`).join('')}
-<form class="addrow" id="memF"><input class="f" name="e" type="email" dir="ltr" placeholder="המייל של מי שמצטרף" aria-label="מייל להוספה" required><button class="btn pri" type="submit">הוספה</button></form><p class="note">אחרי ההוספה, שלחו לה/לו את הקישור. בכניסה הראשונה לוחצים "יצירת חשבון" עם אותו מייל ובוחרים סיסמה.</p></div>
+<div class="sec"><h4>הזמנת חברים לרשימה</h4><p class="note" style="margin:0 0 10px">מי שפותח את הקישור הזה יוצר חשבון עם המייל והסיסמה שלו ומצטרף לרשימה אוטומטית.</p><div class="row"><button class="btn pri" type="button" data-act="shareInvite">${ICON.share}שליחת קישור הזמנה</button><button class="btn" type="button" data-act="copyInvite">${ICON.copy}העתקה</button></div><p class="note" dir="ltr" style="word-break:break-all">${esc(inviteUrl())}</p><button class="link" type="button" data-act="resetInvite" style="background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;padding:6px 0">איפוס הקישור (הקישור הישן יפסיק לעבוד)</button></div>
+<div class="sec"><h4>מי ברשימה (${members.length})</h4>${members.map(m=>`<div class="mem"><span><b>${esc(m.name||m.email.split('@')[0])}</b>${m.email===me.email?' <small class="meta">(אני)</small>':''}<br><small class="meta" dir="ltr">${esc(m.email)}</small> <small class="meta">· ${ago(m.last_seen)}</small></span>${m.email!==me.email?`<button class="del" type="button" data-act="rmMember" data-e="${esc(m.email)}" aria-label="הסרה מהרשימה">×</button>`:''}</div>`).join('')}</div>
 <div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
-<div class="row" style="margin-top:12px"><button class="btn" type="button" data-act="shareApp">${ICON.share}שליחת קישור לאפליקציה</button><span class="note" style="margin:0" dir="ltr">${esc(appUrl)}</span></div></div>
+</div>
 <div class="sec"><button class="btn" type="button" data-act="signout">התנתקות</button></div>`}
 
 /* ---------- events ---------- */
@@ -351,7 +357,7 @@ S.addEventListener('submit',async e=>{
   if(fm.id==='visitF'){const r=byId(openId);if(!r)return;const d=fm.elements.d.value;if(!/^\d{4}-\d{2}-\d{2}$/.test(d)){toast('בחרו תאריך');return}
     const v={d,cost:Math.max(0,Math.round(Number(fm.elements.cost.value)||0)),occ:OCC[fm.elements.occ.value]!==undefined?fm.elements.occ.value:'',note:fm.elements.note.value.trim().slice(0,100)};
     document.activeElement&&document.activeElement.blur();await save(r.id,{visits:[...(r.visits||[]),v],status:'been',updatedAt:Date.now()});toast('הביקור נרשם');return}
-  if(fm.id==='nameF'){const n=fm.elements.n.value.trim();const {error}=await sb.rpc('claim_member',{display_name:n});if(error)toast(errMsg(error));else{toast('השם נשמר');await loadMembers();render()}return}
+  if(fm.id==='nameF'){const n=fm.elements.n.value.trim();const {error}=await sb.rpc('claim_member',{display_name:n,join_code:''});if(error)toast(errMsg(error));else{toast('השם נשמר');await loadMembers();render()}return}
   if(fm.id==='memF'){const em=fm.elements.e.value.trim().toLowerCase();if(!/^\S+@\S+\.\S+$/.test(em))return;const {error}=await sb.from('members').insert({email:em});if(error&&!/duplicate/i.test(error.message))toast(errMsg(error));else{toast('נוסף. שלחו לה/לו את הקישור.');await loadMembers();settingsSheet()}return}
   if(fm.id!=='ef')return;
   const fd=new FormData(fm),llm=String(fd.get('ll')).match(/(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)/);
@@ -375,9 +381,12 @@ S.addEventListener('click',async e=>{
   if(a==='fHere'){locateMe((la,ln,acc)=>{setPin(la,ln,true,true);if(acc>60)toast(`דיוק המיקום כ־${Math.round(acc)} מטר. אפשר לגרור את הסיכה.`)});return}
   if(a==='cancel'){killFormMap();if(mode==='new'){closeSheet();return}mode='view';renderDetail();return}
   if(a==='install'){if(installEvt){installEvt.prompt();installEvt=null;settingsSheet()}return}
+  if(a==='shareInvite'){shareOrCopy('המסעדות שלנו','הצטרפו לרשימת המסעדות שלנו! פותחים את הקישור, יוצרים חשבון עם מייל וסיסמה, וזהו:',inviteUrl());return}
+  if(a==='copyInvite'){try{await navigator.clipboard.writeText(inviteUrl());toast('הקישור הועתק')}catch{toast('לא הצלחנו להעתיק')}return}
+  if(a==='resetInvite'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב לאיפוס';return}const {data,error}=await sb.rpc('reset_join_code');if(error)toast(errMsg(error));else{inviteCode=data;toast('נוצר קישור חדש');settingsSheet()}return}
   if(a==='shareApp'){shareOrCopy('המסעדות שלנו','האפליקציה שלנו למעקב אחרי מסעדות וברים:',location.origin+location.pathname);return}
   if(a==='signout'){await sb.auth.signOut();location.reload();return}
-  if(a==='rmMember'){const {error}=await sb.from('members').delete().eq('email',b.dataset.e);if(error)toast(errMsg(error));await loadMembers();settingsSheet();return}
+  if(a==='rmMember'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='הסר?';b.style.fontSize='14px';return}const {error}=await sb.from('members').delete().eq('email',b.dataset.e);if(error)toast(errMsg(error));await loadMembers();settingsSheet();return}
   const r=byId(openId);if(!r)return;const now=Date.now();
   if(a==='share'){shareOrCopy(r.name,shareText(r));return}
   if(a==='copyLL'){try{await navigator.clipboard.writeText(`${r.lat}, ${r.lng}`);toast('הקואורדינטות הועתקו')}catch{toast(`${r.lat}, ${r.lng}`)}return}
@@ -399,24 +408,25 @@ S.addEventListener('click',async e=>{
 const BRASS='style="background:var(--brass);border-color:var(--brass);color:#14251d"';
 function gate(html){const g=$('#gate');g.innerHTML=`<div class="box"><h1>המסעדות שלנו</h1>${html}</div>`;g.hidden=false;$('#app').hidden=true}
 function showLogin(email,signup){
-  gate(`<p>${signup?'פעם ראשונה? בחרו סיסמה (לפחות 6 תווים).':'כניסה עם המייל והסיסמה שלכם.'}</p><form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
+  gate(`${joinCode?'<p><b>הוזמנתם לרשימת המסעדות!</b></p>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':'כניסה עם המייל והסיסמה שלכם.'}</p><form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
   $('#sw').onclick=()=>showLogin($('#le').value,!signup);
   $('#lf').addEventListener('submit',async e=>{e.preventDefault();const em=$('#le').value.trim().toLowerCase(),pw=$('#lp').value;const b=e.target.querySelector('button');b.disabled=true;$('#lerr').textContent='';
     const {data,error}=signup?await sb.auth.signUp({email:em,password:pw}):await sb.auth.signInWithPassword({email:em,password:pw});b.disabled=false;
     if(error){const m=error.message||'';$('#lerr').textContent=/invalid login/i.test(m)?'המייל או הסיסמה לא נכונים. אם זו הפעם הראשונה, לחצו "יצירת חשבון".':/already registered|already exists/i.test(m)?'למייל הזה כבר יש חשבון. לחצו "כבר יש לי חשבון".':/not confirmed/i.test(m)?'החשבון ממתין לאישור מייל. בקשו ממי שהקים את האפליקציה לכבות את "Confirm email" ב-Supabase.':/password/i.test(m)?'הסיסמה צריכה להיות לפחות 6 תווים.':'הכניסה נכשלה: '+m;return}
     if(signup&&!data.session){$('#lerr').textContent='החשבון נוצר, אבל ממתין לאישור מייל. בקשו ממי שהקים את האפליקציה לכבות את "Confirm email" ב-Supabase.';return}
     start()})}
-function notMember(){gate(`<p>נכנסת בתור <b dir="ltr">${esc(me.email)}</b>, אבל המייל הזה עוד לא ברשימת המשתתפים.</p><p>בקשו ממי ששלח לכם את הקישור להוסיף אתכם בהגדרות האפליקציה, ואז נסו שוב.</p><button class="btn" type="button" id="retry" ${BRASS}>ניסיון חוזר</button><button class="link" type="button" id="so">התנתקות</button>`);
+function notMember(){gate(`<p>נכנסת בתור <b dir="ltr">${esc(me.email)}</b>, אבל המייל הזה עוד לא ברשימת המשתתפים.</p><p>כדי להצטרף צריך קישור הזמנה. בקשו ממי שמשתמש באפליקציה לשלוח לכם אותו (הגדרות ← שליחת קישור הזמנה) ופתחו אותו.</p><button class="btn" type="button" id="retry" ${BRASS}>ניסיון חוזר</button><button class="link" type="button" id="so">התנתקות</button>`);
   $('#retry').onclick=()=>start();$('#so').onclick=async()=>{await sb.auth.signOut();location.reload()}}
 
 let bound=false,visBound=false;
 async function start(){
   const {data:{session:s}}=await sb.auth.getSession();session=s;
-  if(!s){showLogin('',false);return}
+  if(!s){showLogin('',!!joinCode);return}
   me={id:s.user.id,email:String(s.user.email||'').toLowerCase()};myId=me.id;
-  const {data:isM,error}=await sb.rpc('claim_member',{display_name:''});
+  const {data:isM,error}=await sb.rpc('claim_member',{display_name:'',join_code:joinCode});
   if(error){gate(`<p>לא הצלחנו להתחבר לשרת. בדקו את החיבור לאינטרנט.</p><button class="btn" type="button" id="rl" ${BRASS}>ניסיון חוזר</button>`);$('#rl').onclick=()=>location.reload();return}
   if(!isM){notMember();return}
+  if(joinCode){try{localStorage.removeItem('rs-join')}catch{}joinCode=''}
   $('#gate').hidden=true;$('#app').hidden=false;
   if(!bound){bindUI();bound=true}
   try{const so=localStorage.getItem('rs-sort');if(so){sort=so;$('#sort').value=so}}catch{}
