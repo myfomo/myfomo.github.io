@@ -549,7 +549,8 @@ let gReady=null;
 function gmaps(){const k=(window.APP_CONFIG||{}).googleKey;if(!k)return Promise.resolve(null);if(gReady)return gReady;
   gReady=new Promise(res=>{window.__gmInit=()=>res(window.google);const s=document.createElement('script');s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(k)}&libraries=places&language=iw&region=IL&loading=async&callback=__gmInit`;s.async=true;s.onerror=()=>{gReady=null;res(null)};document.head.appendChild(s);setTimeout(()=>res(window.google||null),12000)});return gReady}
 const GF=['displayName','formattedAddress','addressComponents','location','googleMapsURI','websiteURI','regularOpeningHours','priceLevel','primaryType','types'];
-async function gSearch(q,fields){const g=await gmaps();if(!g||!g.maps||!g.maps.importLibrary)return null;const {Place}=await g.maps.importLibrary('places');
+const GLIM=30;function gUsed(){return lsGet('rs-gq-'+today(),0)}
+async function gSearch(q,fields){if(!(window.APP_CONFIG||{}).googleKey||gUsed()>=GLIM)return null;const g=await gmaps();if(g)lsSet('rs-gq-'+today(),gUsed()+1);if(!g||!g.maps||!g.maps.importLibrary)return null;const {Place}=await g.maps.importLibrary('places');
   const {places}=await Place.searchByText({textQuery:q,fields:fields||GF,language:'iw',region:'il',maxResultCount:6,locationBias:{lat:31.9,lng:34.9}});return places||[]}
 function gComp(p,t){const c=(p.addressComponents||[]).find(c=>(c.types||[]).includes(t));return c?(c.longText||c.long_name||''):''}
 function gToItem(p){const loc=p.location;const lat=typeof loc.lat==='function'?loc.lat():loc.lat,lng=typeof loc.lng==='function'?loc.lng():loc.lng;
@@ -577,11 +578,11 @@ function placePick(i){const x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)retu
   setPin(x.lat,x.lng,false,true);$('#placeRes').innerHTML='';
   $('#fillSt').textContent=x.g?'מילאנו מגוגל מפות: שם, כתובת, סוג, מחיר, אתר ושעות פתיחה. בדקו שהכל נכון.':'מילאנו מהחיפוש. בדקו שהסיכה על המקום הנכון, ואם צריך גררו אותה.'}
 async function geocode(address,city){const a=String(address||'').trim(),c=String(city||'').trim();if(!a&&!c)return null;const q=[a,c].filter(Boolean).join(', ');
-  try{const g=await gSearch(q+', ישראל',['location','formattedAddress']);if(g&&g[0]){const x=gToItem(Object.assign({addressComponents:[],types:[]},g[0]));return {lat:x.lat,lng:x.lng}}}catch{}
   const tries=[];if(a&&c)tries.push(`street=${encodeURIComponent(a)}&city=${encodeURIComponent(c)}`);tries.push(`q=${encodeURIComponent(q)}`);
   if(a&&c&&/\d/.test(a))tries.push(`street=${encodeURIComponent(a.replace(/\s*\d+\S*/g,'').trim())}&city=${encodeURIComponent(c)}`);
   for(const t of tries){try{const j=await fetchJ(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=il&accept-language=he&${t}`,6000);if(j[0])return {lat:+j[0].lat,lng:+j[0].lon}}catch{}}
   try{const j=await fetchJ(`https://photon.komoot.io/api/?limit=3&lat=32.0&lon=34.8&q=${encodeURIComponent(q)}`,6000);const f=(j.features||[]).find(f=>(f.properties||{}).countrycode==='IL');if(f)return {lat:f.geometry.coordinates[1],lng:f.geometry.coordinates[0]}}catch{}
+  try{const g=await gSearch(q+', ישראל',['location','formattedAddress']);if(g&&g[0]){const x=gToItem(Object.assign({addressComponents:[],types:[]},g[0]));return {lat:x.lat,lng:x.lng}}}catch{}
   return null}
 async function formGeocode(){const f=$('#ef');if(!f)return;const E=f.elements;if(E.ll.value.trim()&&E.llLevel.value==='place'&&!formGeocode.auto)return;
   const p=await geocode(E.address.value,E.city.value);if(!p||!$('#ef'))return;setPin(p.lat,p.lng,false,true);E.llLevel.value='street';formGeocode.auto=true;$('#fillSt').textContent='הסיכה הוזזה לפי הכתובת. אם צריך, גררו אותה למקום המדויק.'}
