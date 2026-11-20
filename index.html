@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>המסעדות שלנו</title>
+<meta name="theme-color" content="#173f30">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="המסעדות שלנו">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Rubik:wght@500;700;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="gate" class="gate" hidden></div>
+<div id="app" hidden>
+<header class="band">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1>המסעדות שלנו</h1>
+        <div class="stats" id="stats">טוען…</div>
+      </div>
+      <div class="hbtns">
+        <button class="btn ghost" id="pickBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg>לאן הולכים הערב?</button>
+        <button class="btn" id="addBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>מסעדה חדשה</button>
+        <button class="btn ghost icon" id="setBtn" type="button" aria-label="הגדרות" title="הגדרות"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="תצוגות">
+      <a href="#" data-v="list">רשימה</a>
+      <a href="#map" data-v="map">מפה</a>
+      <a href="#timeline" data-v="timeline">ציר זמן</a>
+      <a href="#stats" data-v="stats">סטטיסטיקות</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="view" id="v-list">
+    <div class="band tools wrap">
+      <div class="seg" role="group" aria-label="סינון לפי מצב">
+        <button type="button" data-view="all" aria-pressed="true">הכל</button>
+        <button type="button" data-view="want" aria-pressed="false">רוצים ללכת</button>
+        <button type="button" data-view="been" aria-pressed="false">היינו</button>
+        <button type="button" data-view="match" aria-pressed="false">שנינו רוצים השבוע</button>
+      </div>
+      <input class="search" id="q" type="search" placeholder="חיפוש לפי שם, עיר, מנה, ממליץ…" aria-label="חיפוש">
+      <select id="sort" aria-label="מיון">
+        <option value="recent">עודכנו לאחרונה</option>
+        <option value="rating">הכי אהבנו</option>
+        <option value="visit">ביקור אחרון</option>
+        <option value="name">לפי שם</option>
+      </select>
+    </div>
+    <div class="band wrap" style="padding-top:4px;padding-bottom:0"><div class="chips" id="cuis"></div></div>
+    <div class="band wrap"><p class="status" id="status"></p><div class="grid" id="grid"></div></div>
+  </section>
+  <section class="view band wrap" id="v-map" hidden>
+    <div id="lmap" class="lmap" role="region" aria-label="מפת המסעדות"></div>
+    <div class="row" style="margin-top:12px"><button class="btn" type="button" id="locMe">המיקום שלי</button><button class="btn" type="button" id="fitAll">הצגת כל המסעדות</button><span class="note" style="margin:0"><i class="dot" style="background:var(--brass)"></i>היינו &nbsp; <i class="dot" style="background:var(--wine)"></i>רוצים ללכת</span></div>
+    <div id="nomap"></div>
+  </section>
+  <section class="view band wrap" id="v-timeline" hidden>
+    <div id="memory"></div>
+    <div class="row"><div class="seg" role="group" aria-label="סינון ביקורים"><button type="button" data-tl="all" aria-pressed="true">כל הביקורים</button><button type="button" data-tl="special" aria-pressed="false">רק ימים מיוחדים</button></div></div>
+    <div id="tl"></div>
+  </section>
+  <section class="view band wrap" id="v-stats" hidden>
+    <div class="row" style="justify-content:space-between;margin-bottom:16px"><h2 style="font-size:clamp(26px,3.5vw,34px)" id="stTitle">הסטטיסטיקות שלנו</h2><select id="stYear" aria-label="תקופה"></select></div>
+    <div id="st"></div>
+  </section>
+</main>
+<button class="fab" id="fab" type="button" aria-label="צילום במסעדה" title="צילום במסעדה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></button>
+</div>
+<div class="ov" id="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-label="פרטים"><button class="x" type="button" id="closeBtn" aria-label="סגירה">×</button><div id="sb"></div></div></div>
+<div class="lb" id="lb" hidden><img id="lbImg" alt=""></div>
+<div class="toast" id="toast" hidden></div>
+<datalist id="cuisList"><option>איטלקי</option><option>אסייתי</option><option>יפני / סושי</option><option>בשרים</option><option>דגים ופירות ים</option><option>ים-תיכוני</option><option>המבורגר</option><option>פיצה</option><option>מקסיקני</option><option>הודי</option><option>מסעדת שף</option><option>בר קוקטיילים</option><option>בר יין</option><option>פאב</option><option>קפה ובראנץ'</option><option>טבעוני</option><option>חומוס ומזרחי</option><option>קינוחים</option></datalist>
+<script src="config.js"></script>
+<script src="vendor/supabase.js"></script>
+<script src="vendor/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
