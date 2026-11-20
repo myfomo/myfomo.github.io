@@ -85,7 +85,7 @@ async function loadLists(){const {data,error}=await sb.from('list_members').sele
 async function loadMembers(){if(!cur)return;const {data}=await sb.from('list_members').select('user_id,email,role,last_seen,added_at').eq('list_id',cur.id).order('added_at');members=data||[];
   const ids=members.map(m=>m.user_id);let profs=[];if(ids.length){const {data:p}=await sb.from('profiles').select('user_id,name').in('user_id',ids);profs=p||[]}
   names={};for(const m of members){const p=profs.find(x=>x.user_id===m.user_id);m.name=(p&&p.name)||'';names[m.user_id]=m.name||m.email.split('@')[0]||'מישהו'}}
-function setTitle(){const t=cur?cur.name:'המסעדות שלנו';$('h1').textContent=t;document.title=t}
+function setTitle(){const t=cur?cur.name:'המסעדות שלנו';$('#app h1').textContent=t;document.title=t}
 async function switchList(id){const l=lists.find(x=>x.id===id)||lists[0];if(!l)return;cur=l;try{localStorage.setItem('rs-list',l.id)}catch{}
   rows=[];loaded=false;fitted=false;view='all';cuisF='';closeSheet();setTitle();render();
   sb.rpc('touch_list',{lid:l.id}).then(()=>{},()=>{});await loadMembers();await loadAll()}
@@ -169,9 +169,9 @@ function renderStats(){
 
 /* ---------- routing ---------- */
 function render(){renderHead();if(page==='list')renderList();else if(page==='map')drawMap();else if(page==='timeline')renderTimeline();else renderStats()}
-function route(){const h=location.hash.replace('#','');page=['map','timeline','stats'].includes(h)?h:'list';
+function route(){const h=location.hash.replace('#','');page=['map','timeline','stats'].includes(h)?h:'list';document.body.dataset.page=page;window.scrollTo(0,0);
   document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!=='v-'+page);
-  document.querySelectorAll('nav.tabs a').forEach(a=>{if(a.dataset.v===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  document.querySelectorAll('nav.tabs a,.tabbar a').forEach(a=>{if(a.dataset.v===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   render()}
 window.addEventListener('hashchange',route);
 
@@ -359,6 +359,9 @@ $('#fab').addEventListener('click',camSheet);
 $('#addBtn').addEventListener('click',newForm);
 $('#setBtn').addEventListener('click',settingsSheet);
 $('#listBtn').addEventListener('click',listsSheet);
+$('#app h1').addEventListener('click',listsSheet);
+$('#addBtnM').addEventListener('click',newForm);
+$('#pickBtnM').addEventListener('click',()=>pick());
 $('#closeBtn').addEventListener('click',closeSheet);
 $('#ov').addEventListener('click',e=>{if(e.target.id==='ov')closeSheet()});
 $('#lb').addEventListener('click',()=>$('#lb').hidden=true);

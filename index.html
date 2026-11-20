@@ -52,12 +52,12 @@
         <button type="button" data-view="match" aria-pressed="false">שנינו רוצים השבוע</button>
       </div>
       <input class="search" id="q" type="search" placeholder="חיפוש לפי שם, עיר, מנה, ממליץ…" aria-label="חיפוש">
-      <select id="sort" aria-label="מיון">
+      <div class="sortrow"><select id="sort" aria-label="מיון">
         <option value="recent">עודכנו לאחרונה</option>
         <option value="rating">הכי אהבנו</option>
         <option value="visit">ביקור אחרון</option>
         <option value="name">לפי שם</option>
-      </select>
+      </select><button class="btn mobonly" id="pickBtnM" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg>לאן הולכים?</button></div>
     </div>
     <div class="band wrap" style="padding-top:4px;padding-bottom:0"><div class="chips" id="cuis"></div></div>
     <div class="band wrap"><p class="status" id="status"></p><div class="grid" id="grid"></div></div>
@@ -77,6 +77,13 @@
     <div id="st"></div>
   </section>
 </main>
+<nav class="tabbar" aria-label="ניווט">
+  <a href="#" data-v="list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>רשימה</span></a>
+  <a href="#map" data-v="map"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>מפה</span></a>
+  <button type="button" class="tb-add" id="addBtnM" aria-label="מקום חדש"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></button>
+  <a href="#timeline" data-v="timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>ציר זמן</span></a>
+  <a href="#stats" data-v="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>נתונים</span></a>
+</nav>
 <button class="fab" id="fab" type="button" aria-label="צילום במסעדה" title="צילום במסעדה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></button>
 </div>
 <div class="ov" id="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-label="פרטים"><button class="x" type="button" id="closeBtn" aria-label="סגירה">×</button><div id="sb"></div></div></div>
