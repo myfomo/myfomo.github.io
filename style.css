@@ -687,3 +687,6 @@ details.hours summary::before{content:'+ ';color:var(--red)}details.hours[open] 
 #pollBar .notice.swiping{transition:none!important;cursor:grabbing}
 #pollBar .notice.swiping::after{content:'✕ הסרה';position:absolute;inset-inline-end:100%;top:50%;transform:translateY(-50%);margin-inline-end:12px;font-size:13px;color:var(--mute);white-space:nowrap}
 #pollBar .notice{position:relative}
+.qrow{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;align-items:end;padding:10px 0;border-top:1px solid var(--line,rgba(0,0,0,.08))}
+.qrow b,.qrow .meta{grid-column:span 1}.qrow label{display:grid;gap:3px;font-size:13px}.qrow .f{width:100%}.qrow .btn{grid-column:1/-1;justify-self:start}
+.qwho{display:grid;grid-template-columns:1fr auto auto;gap:4px 12px;font-size:14px}

@@ -67,7 +67,7 @@ async function upload(files,id){
 function applyPatch(r,p){const o={...r,...p};if(p.ratings)o.ratings={...(r.ratings||{}),...p.ratings};if(p.votes)o.votes={...(r.votes||{}),...p.votes};return o}
 async function loadAll(){if(!cur)return;const lid=cur.id;const {data,error}=await sb.from('restaurants').select('id,data').eq('list_id',lid).order('updated_at',{ascending:false});if(!cur||cur.id!==lid)return;if(error){const c=lsGet('rs-cache-'+lid,null);if(c&&isNetErr(error)){rows=c;loaded=true;render();setOffline();return}$('#status').textContent='הרשימה לא נטענה: '+errMsg(error);return}
   rows=(data||[]).map(x=>({...(x.data||{}),id:x.id}));takeMeta(lid);const pend=lsGet('rs-outbox',[]).filter(o=>o.lid===lid);for(const o of pend){if(o.isNew){if(!byId(o.id))rows.unshift({...o.patch,id:o.id})}else rows=rows.map(r=>r.id===o.id?applyPatch(r,o.patch):r)}
-  loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch();setTimeout(backfillGeo,1500);setTimeout(backfillGPhotos,6000)}
+  loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch();setTimeout(backfillGeo,1500)}
 function save(id,patch,isNew){
   const prev=byId(id);
   if(isNew)rows.unshift({...patch,id});else if(prev)rows=rows.map(r=>r.id===id?applyPatch(r,patch):r);
@@ -265,7 +265,7 @@ ${r.recBy?`<p class="meta" style="margin-top:4px">המליץ/ה: <b style="color
 <p class="note">${exact(r)?'מיקום מדויק נשמר.':hasLL(r)?'המיקום משוער. אפשר לדייק אותו בעריכה.':'עוד אין מיקום מדויק. בעריכה אפשר לחפש את המקום או לסמן אותו על המפה.'}</p></div>
 ${hoursView(r)}<div class="sec"><h4>בא לנו השבוע?</h4><div class="row"><button class="btn ${mv?'on':''}" type="button" data-act="vote" aria-pressed="${mv}">${mv?'♥ בא לי!':'♡ בא לי השבוע'}</button><span class="meta">${vt.length?vt.map(k=>esc(nm(k))).join(', ')+' גם רוצה':'עוד אף אחד אחר לא בחר'}</span></div><p class="note">הבחירה תקפה לשבוע. כששניכם בוחרים, המקום עולה לראש ההגרלה.</p></div>
 <div class="sec"><h4>הדירוג שלנו</h4><div class="rlist"><div class="r"><b style="min-width:56px">אני</b><span class="stars" role="group" aria-label="הדירוג שלי">${[1,2,3,4,5].map(n=>`<button type="button" class="${n<=mine?'on':''}" data-act="rate" data-v="${n}" aria-label="${n} כוכבים">★</button>`).join('')}</span></div>${others.map(k=>`<div class="r"><b>${esc(nm(k))}</b><span class="rate"><i>${'★'.repeat(ratings[k])}</i><span style="color:var(--line)">${'★'.repeat(5-ratings[k])}</span></span></div>`).join('')}</div></div>
-${commentsHtml(r)}<div class="sec"><h4>תמונות</h4>${photos.length?`<div class="gal">${(r.photos||[]).map((p,i)=>p.path?`<div class="ph">${photoImg(p,`loading="lazy" data-act="zoom" data-i="${i}"`)}${p.src==='google'?`<span class="gattr">Google${p.attr?' · '+esc(p.attr):''}</span>`:''}<button type="button" data-act="rmPhoto" data-i="${i}" aria-label="הסרת תמונה">×</button></div>`:'').join('')}</div>`:`<p class="note">עוד אין תמונות. צלמו את המנות, את הקוקטיילים או את שניכם.</p>${(window.APP_CONFIG||{}).googleKey?'<button class="btn sm" type="button" data-act="gPhotos" style="margin-top:8px">'+ICON.search+'תמונות של המקום מגוגל</button>':''}`}
+${commentsHtml(r)}<div class="sec"><h4>תמונות</h4>${photos.length?`<div class="gal">${(r.photos||[]).map((p,i)=>p.path?`<div class="ph">${photoImg(p,`loading="lazy" data-act="zoom" data-i="${i}"`)}${p.src==='google'?`<span class="gattr">Google${p.attr?' · '+esc(p.attr):''}</span>`:''}<button type="button" data-act="rmPhoto" data-i="${i}" aria-label="הסרת תמונה">×</button></div>`:'').join('')}</div>`:`<p class="note">עוד אין תמונות. צלמו את המנות, את הקוקטיילים או את שניכם.</p>${(window.APP_CONFIG||{}).googleKey?'<button class="btn sm" type="button" data-act="gPhotos" style="margin-top:8px">'+ICON.search+'תמונה מגוגל</button>':''}`}
 <div class="row" style="margin-top:12px"><label class="btn pri">${ICON.cam}צלמו עכשיו<input type="file" accept="image/*" capture="environment" hidden class="up"></label><label class="btn">${ICON.img}מהגלריה<input type="file" accept="image/*" multiple hidden class="up"></label><span class="note" id="upst" style="margin:0"></span></div></div>
 <div class="sec"><h4>ביקורים${spent?` · סה"כ ${ils(spent)}`:''}</h4>${visits.length?visits.map(v=>`<div class="vrow ${isPlanV(v)?'plan':''}"><b>${esc(fmtD(v.d))}${v.t?' · '+esc(v.t):''}</b>${isPlanV(v)?`<span class="occ sp">${esc(whenTxt(v))}</span><a class="btn sm" href="${icsData(r,v)}" download="fomo.ics">${ICON.cal}ליומן</a><a class="btn sm" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener">Google</a>`:''}${v.occ?`<span class="occ ${SPECIAL.includes(v.occ)?'sp':''}">${esc(OCC[v.occ]||'')}</span>`:''}${v.note?`<span class="meta">${esc(v.note)}</span>`:''}${withOf(v).length?`<span class="meta">👥 עם ${esc(withOf(v).join(', '))}</span>`:''}<span class="money">${Number(v.cost)?ils(v.cost):''}</span><button type="button" class="del" data-act="rmVisit" data-i="${v.i}" aria-label="הסרת ביקור">×</button></div>`).join(''):'<p class="note">עוד לא רשמתם ביקור.</p>'}
 ${visitForm()}</div>
@@ -331,7 +331,7 @@ function listsSheet(){killFormMap();openId=null;mode='lists';openSheet();
 <div class="sec"><h4>רשימה חדשה</h4><form class="addrow" id="newListF"><input class="f" name="n" maxlength="40" placeholder="למשל: דייטים, ארוחות עבודה, טיול באיטליה" aria-label="שם הרשימה" required><button class="btn pri" type="submit">יצירה</button></form></div>
 <div class="sec"><h4>הצטרפות לרשימה של מישהו אחר</h4><form class="addrow" id="joinF"><input class="f" name="c" dir="ltr" placeholder="הדביקו כאן קישור הזמנה" aria-label="קישור הזמנה" required><button class="btn" type="submit">הצטרפות</button></form></div>`}
 async function loadPk(){const el=$('#pkList');if(!el)return;try{const {data,error}=await sb.auth.passkey.list();if(error)throw error;const arr=Array.isArray(data)?data:(data&&(data.passkeys||data.items))||[];el.innerHTML=arr.length?arr.map(p=>`<div class="mem"><span><b>${esc(p.friendly_name||p.friendlyName||'מפתח גישה')}</b><br><small class="meta">נוסף ${esc(fmtD(String(p.created_at||p.createdAt||'').slice(0,10)))}</small></span><button class="del" type="button" data-act="pkDel" data-id="${esc(p.id)}" aria-label="הסרה">×</button></div>`).join(''):'עוד לא הופעל באף מכשיר.';return arr}catch{el.textContent='';return null}}
-function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const own=isOwner();setTimeout(loadPk,0);setTimeout(fillPushSec,0);
+function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const own=isOwner();setTimeout(loadPk,0);setTimeout(fillPushSec,0);setTimeout(fillQuotaAdm,0);
   $('#sb').innerHTML=`<div class="sec dh"><h2>הגדרות</h2><p class="meta" style="margin-top:6px">מחובר/ת בתור <span dir="ltr">${esc(me.email)}</span></p>
 <form class="addrow" id="nameF"><input class="f" name="n" maxlength="30" value="${esc(myName)}" placeholder="השם שלי" aria-label="השם שלי"><button class="btn" type="submit">שמירת שם</button></form></div>
 <div class="sec"><h4>הרשימה "${esc(cur.name)}"</h4>${own?`<form class="addrow" id="renameF" style="margin-top:0"><input class="f" name="n" maxlength="40" value="${esc(cur.name)}" aria-label="שם הרשימה"><button class="btn" type="submit">שינוי שם</button></form>`:'<p class="note" style="margin:0">הצטרפת לרשימה הזו בהזמנה.</p>'}
@@ -342,7 +342,7 @@ function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();c
 ${pkOK()?`<div class="sec"><h4>כניסה עם ${bioName()}</h4><p class="note" style="margin:0 0 10px">מפעילים פעם אחת בכל מכשיר, ומשם נכנסים בלי סיסמה.</p><div id="pkList" class="note">טוען…</div><button class="btn pri" type="button" data-act="pkAdd" style="margin-top:10px">הפעלת ${bioName()} במכשיר הזה</button></div>`:''}
 ${dietSecHtml()}${specialSecHtml()}<div class="sec"><h4>התראות לטלפון</h4><div id="pushSec"><p class="note">בודק…</p></div></div>
 <div class="sec"><h4>צ׳ק־אין אוטומטי</h4><p class="note" style="margin:0 0 10px">כשאתם פותחים את האפליקציה ליד מקום מהרשימה, היא שואלת אם לרשום ביקור. צריך לאשר גישה למיקום.</p><div class="seg" role="group" aria-label="צ׳ק־אין אוטומטי"><button type="button" data-act="ciSet" data-v="on" aria-pressed="${lsGet('rs-checkin','on')!=='off'}">פעיל</button><button type="button" data-act="ciSet" data-v="off" aria-pressed="${lsGet('rs-checkin','on')==='off'}">כבוי</button></div></div>
-${pubSecHtml()}
+${pubSecHtml()}<div id="qAdm"></div>
 <div class="sec"><h4>מראה</h4><div class="seg" role="group" aria-label="ערכת צבעים">${[['auto','אוטומטי'],['light','בהיר'],['dark','כהה']].map(([k,t])=>`<button type="button" data-act="theme" data-t="${k}" aria-pressed="${curTheme()===k}">${t}</button>`).join('')}</div></div>
 <div class="sec"><h4>ייבוא</h4><button class="btn" type="button" data-act="import">${ICON.pin}ייבוא מקומות שמורים מגוגל מפות</button></div>
 <div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
@@ -552,16 +552,44 @@ let gReady=null;
 function gmaps(){const k=(window.APP_CONFIG||{}).googleKey;if(!k)return Promise.resolve(null);if(gReady)return gReady;
   gReady=new Promise(res=>{window.__gmInit=()=>res(window.google);const s=document.createElement('script');s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(k)}&libraries=places&language=iw&region=IL&loading=async&callback=__gmInit`;s.async=true;s.onerror=()=>{gReady=null;res(null)};document.head.appendChild(s);setTimeout(()=>res(window.google||null),12000)});return gReady}
 const GF=['delivery','servesVegetarianFood','photos','displayName','formattedAddress','addressComponents','location','googleMapsURI','websiteURI','regularOpeningHours','priceLevel','primaryType','types'];
-const GLIM=30;function gUsed(){return lsGet('rs-gq-'+today(),0)}
-async function gSearch(q,fields){if(!(window.APP_CONFIG||{}).googleKey||gUsed()>=GLIM)return null;const g=await gmaps();if(g)lsSet('rs-gq-'+today(),gUsed()+1);if(!g||!g.maps||!g.maps.importLibrary)return null;const {Place}=await g.maps.importLibrary('places');
-  const {places}=await Place.searchByText({textQuery:q,fields:fields||GF,language:'iw',region:'il',maxResultCount:6,locationBias:{lat:31.9,lng:34.9}});return places||[]}
+/* ---- shared Google quota (server-side, per day for everyone + per user) ---- */
+const QK={place:{what:'החיפושים בגוגל',unit:'חיפושים',alt:'בינתיים החיפוש הרגיל ממשיך לעבוד: הוא ימלא שם וכתובת, ואת השאר אפשר להשלים ידנית או לסמן את המקום במפה.'},
+  photo:{what:'הבאת התמונות מגוגל',unit:'תמונות',alt:'בינתיים אפשר להעלות תמונה מהטלפון בכפתור התמונות.'},
+  vision:{what:'סריקות הקבלות של גוגל',unit:'סריקות',alt:'בינתיים הקבלה נקראת ישירות במכשיר. זה קצת פחות מדויק, אז כדאי לעבור על התוצאה.'}};
+async function takeQuota(k){if(!sb||!myId||!navigator.onLine)return {ok:false,reason:'err'};
+  try{const {data,error}=await sb.rpc('take_quota',{k});if(error||!data)throw error||new Error('no data');if(!data.ok)quotaMsg(k,data);return data}catch(e){console.warn('quota',e);return {ok:false,reason:'err'}}}
+function quotaMsg(k,q){if(!q||q.ok||!QK[k]||(q.reason!=='user'&&q.reason!=='global'))return;const K=QK[k],key='rs-qmsg-'+k+'-'+q.reason+'-'+today();
+  const title=q.reason==='user'?`ניצלת את כל ${q.ucap} ${K.unit==='חיפושים'?'החיפושים':K.unit==='תמונות'?'התמונות':'הסריקות'} שלך בגוגל להיום`:`המכסה המשותפת של ${K.what} נגמרה להיום`;
+  const body=q.reason==='user'?`כדי ש־FOMO תישאר חינמית לכולם, לכל אחד יש מכסה יומית קטנה של ${K.what}. <b>המכסה שלך תתחדש מחר</b> 🌙`:`כל המשתמשים של FOMO כבר השתמשו היום במכסה המשותפת. <b>היא תתחדש מחר</b> ואז הכל יחזור לעבוד כרגיל 🌙`;
+  if(lsGet(key,0)){toast(title+'. המכסה תתחדש מחר.');return}lsSet(key,1);
+  const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label',title);
+  d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:28px">⏳</div><h3>${esc(title)}</h3><p class="meta">${body}</p><p class="note" style="margin:0">${esc(K.alt)}</p><button class="btn pri" type="button" data-wx>הבנתי, תודה</button></div>`;
+  d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-wx]'))setTimeout(()=>d.remove(),150)});document.body.appendChild(d);setTimeout(()=>{const b=d.querySelector('button');if(b)b.focus()},50)}
+const QNAME={place:'פרטי מקום',photo:'תמונות',vision:'סריקת קבלות'};
+async function fillQuotaAdm(){const el=$('#qAdm');if(!el||!sb)return;let st=null;try{const {data}=await sb.rpc('quota_stats');st=data}catch{}if(!st||!$('#qAdm'))return;
+  const tot={};for(const x of st.today||[])tot[x.kind]=(tot[x.kind]||0)+x.n;
+  el.className='sec';el.innerHTML=`<h4>שימוש בגוגל (רק את/ה רואה את זה)</h4><p class="note" style="margin:0 0 10px">מכסה יומית לכל המערכת ולכל משתמש. מתאפס כל לילה בחצות.</p>
+${(st.cfg||[]).map(c=>`<form class="qrow" data-k="${esc(c.kind)}"><b>${esc(QNAME[c.kind]||c.kind)}</b><span class="meta">היום ${tot[c.kind]||0}/${c.g} · החודש ${(st.month||{})[c.kind]||0}</span>
+<label>לכולם ביום<input class="f" name="g" type="number" min="0" max="1000" value="${c.g}" inputmode="numeric"></label><label>לכל משתמש<input class="f" name="u" type="number" min="0" max="100" value="${c.u}" inputmode="numeric"></label><button class="btn" type="submit">שמירה</button></form>`).join('')}
+<h4 style="margin-top:14px">מי השתמש היום</h4>${(st.today||[]).length?`<div class="qwho">${st.today.map(x=>`<span>${esc(x.user||'?')}</span><span class="meta">${esc(QNAME[x.kind]||x.kind)}</span><b>${x.n}</b>`).join('')}</div>`:'<p class="note" style="margin:0">עוד לא היה שימוש היום.</p>'}`}
+async function quotaSave(f){const k=f.dataset.k,g=+f.elements.g.value,u=+f.elements.u.value;if(!(g>=0&&u>=0))return;const {error}=await sb.rpc('set_quota',{k,g,u});toast(error?'השמירה לא הצליחה':'המכסה עודכנה');if(!error)fillQuotaAdm()}
+/* ---- Google place search: autocomplete is free inside a session, only picking a place counts ---- */
+let gTok=null;
+async function gSuggest(q){if(!(window.APP_CONFIG||{}).googleKey)return null;const g=await gmaps();if(!g||!g.maps||!g.maps.importLibrary)return null;
+  const P=await g.maps.importLibrary('places');if(!P.AutocompleteSuggestion)return null;if(!gTok)gTok=new P.AutocompleteSessionToken();
+  const {suggestions}=await P.AutocompleteSuggestion.fetchAutocompleteSuggestions({input:q,sessionToken:gTok,language:'iw',region:'il',includedRegionCodes:['il'],origin:{lat:31.9,lng:34.9}});
+  return (suggestions||[]).map(s=>s.placePrediction).filter(Boolean).slice(0,6).map(p=>({g:true,pred:p,name:(p.mainText&&p.mainText.text)||String(p.text||''),full:(p.secondaryText&&p.secondaryText.text)||''}))}
+async function gDetails(pred){const q=await takeQuota('place');if(!q.ok)return null;const pl=pred.toPlace();await pl.fetchFields({fields:GF});gTok=null;return pl}
+/* text search, used only by the manual "photo from Google" button */
+async function gSearch(q,fields){if(!(window.APP_CONFIG||{}).googleKey)return null;const g=await gmaps();if(!g||!g.maps||!g.maps.importLibrary)return null;const {Place}=await g.maps.importLibrary('places');
+  const {places}=await Place.searchByText({textQuery:q,fields:fields||GF,language:'iw',region:'il',maxResultCount:3,locationBias:{lat:31.9,lng:34.9}});return places||[]}
 function gComp(p,t){const c=(p.addressComponents||[]).find(c=>(c.types||[]).includes(t));return c?(c.longText||c.long_name||''):''}
 function gToItem(p){const loc=p.location;const lat=typeof loc.lat==='function'?loc.lat():loc.lat,lng=typeof loc.lng==='function'?loc.lng():loc.lng;
   const ts=[p.primaryType,...(p.types||[])].filter(Boolean);const cuisine=ts.map(t=>GTYPE[t]).find(Boolean)||'';
   const H={};const per=(p.regularOpeningHours&&p.regularOpeningHours.periods)||[];const pad=n=>String(n).padStart(2,'0');
   for(const x of per){if(!x.open)continue;if(!x.close){for(let i=0;i<7;i++)H[i]=['00:00','23:59'];break}H[x.open.day]=[pad(x.open.hour)+':'+pad(x.open.minute),pad(x.close.hour)+':'+pad(x.close.minute)]}
   if(per.length)for(let i=0;i<7;i++)if(!(i in H))H[i]=null;
-  return {g:true,name:p.displayName||'',full:p.formattedAddress||'',address:[gComp(p,'route'),gComp(p,'street_number')].filter(Boolean).join(' '),city:gComp(p,'locality')||gComp(p,'administrative_area_level_2'),lat,lng,mapsUrl:p.googleMapsURI||'',site:p.websiteURI||'',price:GPRICE[p.priceLevel]||0,cuisine,hours:per.length?H:null,gphotos:gPhotos(p,3),veg:!!p.servesVegetarianFood,delivery:typeof p.delivery==='boolean'?p.delivery:null}}
+  return {g:true,name:p.displayName||'',full:p.formattedAddress||'',address:[gComp(p,'route'),gComp(p,'street_number')].filter(Boolean).join(' '),city:gComp(p,'locality')||gComp(p,'administrative_area_level_2'),lat,lng,mapsUrl:p.googleMapsURI||'',site:p.websiteURI||'',price:GPRICE[p.priceLevel]||0,cuisine,hours:per.length?H:null,gphotos:gPhotos(p,1),veg:!!p.servesVegetarianFood,delivery:typeof p.delivery==='boolean'?p.delivery:null}}
 function osmToItem(x){const a=x.address||{};return {name:x.name||x.display_name.split(',')[0],full:x.display_name,address:[a.road,a.house_number].filter(Boolean).join(' '),city:a.city||a.town||a.village||a.municipality||'',lat:+x.lat,lng:+x.lon,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[x.type]||''}}
 function photonToItem(f){const p=f.properties||{},[lng,lat]=f.geometry.coordinates;return {name:p.name||p.street||'',full:[p.name,p.street&&(p.street+(p.housenumber?' '+p.housenumber:'')),p.city||p.town,p.country].filter(Boolean).join(', '),address:p.street?(p.street+(p.housenumber?' '+p.housenumber:'')):'',city:p.city||p.town||p.village||'',lat,lng,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[p.osm_value]||''}}
 const fetchJ=(u,ms)=>Promise.race([fetch(u).then(r=>r.json()),new Promise((_,j)=>setTimeout(()=>j(new Error('timeout')),ms||7000))]);
@@ -569,23 +597,26 @@ async function osmSearch(q){let res=[];try{res=(await fetchJ(`https://nominatim.
   if(res.length<2){try{const j=await fetchJ(`https://photon.komoot.io/api/?limit=6&lat=32.0&lon=34.8&q=${encodeURIComponent(q)}`);res=res.concat((j.features||[]).filter(f=>(f.properties||{}).countrycode==='IL').map(photonToItem))}catch{}}
   return res}
 async function placeSearch(){const qv=$('#placeQ').value.trim(),ul=$('#placeRes');if(!qv)return;ul.innerHTML='<li><small>מחפש…</small></li>';
-  let res=null;try{const g=await gSearch(qv);if(g)res=g.map(gToItem)}catch(e){console.warn('google search',e)}
+  let res=null;try{res=await gSuggest(qv)}catch(e){console.warn('google suggest',e)}
   if(!res||!res.length)res=await osmSearch(qv);
   if(!res.length){ul.innerHTML='<li><small>לא נמצא. נסו שם אחר, או סמנו את המקום ישירות על המפה למטה.</small></li>';return}
   placeSearch.res=res;ul.innerHTML=res.map((x,i)=>`<li data-act="placePick" data-i="${i}"><b>${esc(x.name)}</b><small>${esc(x.full)}</small></li>`).join('')}
-function placePick(i){const x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)return;const E=f.elements;
+async function placePick(i){let x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)return;
+  if(x.pred){const ul=$('#placeRes');ul.innerHTML='<li><small>מביא את הפרטים מגוגל…</small></li>';let pl=null;try{pl=await gDetails(x.pred)}catch(e){console.warn('google details',e)}
+    if(pl)x=gToItem(pl);else{const o=await osmSearch([x.name,x.full].filter(Boolean).join(' '));x=o[0]?Object.assign(o[0],{name:x.name}):{name:x.name}}
+    f=$('#ef');if(!f)return}
+  const E=f.elements;
   if(x.name)E.name.value=x.name;if(x.address)E.address.value=x.address;if(x.city)E.city.value=x.city;
   if(x.cuisine&&!E.cuisine.value)E.cuisine.value=x.cuisine;
   if(x.mapsUrl)E.mapsUrl.value=x.mapsUrl;if(x.site&&!E.site.value)E.site.value=x.site;if(x.price&&!E.price.value)E.price.value=String(x.price);
   if(x.hours){for(let d=0;d<7;d++){const h=x.hours[d];E['hx'+d].checked=h===null;E['ho'+d].value=h?h[0]:'';E['hc'+d].value=h?h[1]:''}const det=f.querySelector('details.hours');if(det)det.open=true}
-  pendDel=typeof x.delivery==='boolean'?x.delivery:null;if(x.veg){const cb=f.querySelector('[name=tags][value="צמחוני-פרנדלי"]');if(cb)cb.checked=true}pendG=x.gphotos&&x.gphotos.length?x.gphotos:null;setPin(x.lat,x.lng,false,true);$('#placeRes').innerHTML='';
-  $('#fillSt').textContent=x.g?'מילאנו מגוגל מפות: שם, כתובת, סוג, מחיר, אתר ושעות פתיחה'+(x.gphotos&&x.gphotos.length?', ותמונות של המקום יתווספו בשמירה':'')+'. בדקו שהכל נכון.':'מילאנו מהחיפוש. בדקו שהסיכה על המקום הנכון, ואם צריך גררו אותה.'}
+  pendDel=typeof x.delivery==='boolean'?x.delivery:null;if(x.veg){const cb=f.querySelector('[name=tags][value="צמחוני-פרנדלי"]');if(cb)cb.checked=true}pendG=x.gphotos&&x.gphotos.length?x.gphotos:null;if(x.lat!=null)setPin(x.lat,x.lng,false,true);$('#placeRes').innerHTML='';
+  $('#fillSt').textContent=x.g?'מילאנו מגוגל מפות: שם, כתובת, סוג, מחיר, אתר ושעות פתיחה'+(x.gphotos&&x.gphotos.length?', ותמונה של המקום תתווסף בשמירה':'')+'. בדקו שהכל נכון.':'מילאנו מהחיפוש. בדקו שהסיכה על המקום הנכון, ואם צריך גררו אותה.'}
 async function geocode(address,city){const a=String(address||'').trim(),c=String(city||'').trim();if(!a&&!c)return null;const q=[a,c].filter(Boolean).join(', ');
   const tries=[];if(a&&c)tries.push(`street=${encodeURIComponent(a)}&city=${encodeURIComponent(c)}`);tries.push(`q=${encodeURIComponent(q)}`);
   if(a&&c&&/\d/.test(a))tries.push(`street=${encodeURIComponent(a.replace(/\s*\d+\S*/g,'').trim())}&city=${encodeURIComponent(c)}`);
   for(const t of tries){try{const j=await fetchJ(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=il&accept-language=he&${t}`,6000);if(j[0])return {lat:+j[0].lat,lng:+j[0].lon}}catch{}}
   try{const j=await fetchJ(`https://photon.komoot.io/api/?limit=3&lat=32.0&lon=34.8&q=${encodeURIComponent(q)}`,6000);const f=(j.features||[]).find(f=>(f.properties||{}).countrycode==='IL');if(f)return {lat:f.geometry.coordinates[1],lng:f.geometry.coordinates[0]}}catch{}
-  try{const g=await gSearch(q+', ישראל',['location','formattedAddress']);if(g&&g[0]){const x=gToItem(Object.assign({addressComponents:[],types:[]},g[0]));return {lat:x.lat,lng:x.lng}}}catch{}
   return null}
 async function formGeocode(){const f=$('#ef');if(!f)return;const E=f.elements;if(E.ll.value.trim()&&E.llLevel.value==='place'&&!formGeocode.auto)return;
   const p=await geocode(E.address.value,E.city.value);if(!p||!$('#ef'))return;setPin(p.lat,p.lng,false,true);E.llLevel.value='street';formGeocode.auto=true;$('#fillSt').textContent='הסיכה הוזזה לפי הכתובת. אם צריך, גררו אותה למקום המדויק.'}
@@ -600,18 +631,12 @@ function gPhotos(p,n){return (p.photos||[]).slice(0,n||3).map(ph=>{try{return {u
 async function importGPhotos(id,list){const r=byId(id);if(!r||!list||!list.length||!navigator.onLine)return false;const added=[];
   for(const g of list){try{const res=await fetch(g.uri);if(!res.ok)continue;const b=await shrink(await res.blob());const path=`${id}/${uuid()}.jpg`;const {error}=await sb.storage.from('photos').upload(path,b,{contentType:'image/jpeg',upsert:false});if(error)throw error;added.push({path,by:myId,at:Date.now(),src:'google',attr:String(g.attr||'').slice(0,60)})}catch(e){console.warn('gphoto',e)}}
   if(!added.length)return false;const c=byId(id);return save(id,{photos:[...((c&&c.photos)||[]),...added],updatedAt:Date.now()})}
-async function gPhotosFor(r,n){const q=[r.name,r.address,r.city].filter(Boolean).join(' ');const res=await gSearch(q,['displayName','photos','location']);if(!res||!res.length)return null;
+async function gPhotosFor(r,n){const qq=await takeQuota('photo');if(!qq.ok)return qq.reason==='err'?null:false;const q=[r.name,r.address,r.city].filter(Boolean).join(' ');const res=await gSearch(q,['displayName','photos','location']);if(!res||!res.length)return null;
   let best=res[0];if(hasLL(r)){let bd=1e9;for(const p of res){const x=gToItem(Object.assign({addressComponents:[],types:[]},p));const d=Math.hypot(x.lat-r.lat,x.lng-r.lng);if(d<bd){bd=d;best=p}}if(bd>0.01)return []}
   return gPhotos(best,n)}
 async function fetchGPhotosBtn(id){const r=byId(id);if(!r)return;if(!(window.APP_CONFIG||{}).googleKey){toast('החיבור לגוגל לא זמין');return}
-  toast('מחפש תמונות בגוגל…');const list=await gPhotosFor(r,3);if(list===null){toast(gUsed()>=GLIM?'הגעתם למכסת החיפושים היומית בגוגל. נסו מחר.':'לא נמצא בגוגל');return}if(!list.length){toast('לא נמצאו תמונות של המקום בגוגל');return}
-  const ok=await importGPhotos(id,list);toast(ok?'התמונות מגוגל נוספו':'לא הצלחנו להביא את התמונות');if(ok&&openId===id&&mode==='view')renderDetail()}
-let gpBusy=false;
-async function backfillGPhotos(){if(gpBusy||!navigator.onLine||!(window.APP_CONFIG||{}).googleKey)return;gpBusy=true;try{
-  const tried=lsGet('rs-gp-tried',[]);const day='rs-gp-'+today();let n=lsGet(day,0);
-  for(const r of rows.filter(r=>!(r.photos||[]).some(p=>p.path)&&!tried.includes(r.id))){if(n>=5||gUsed()>=GLIM-5)break;tried.push(r.id);lsSet('rs-gp-tried',tried.slice(-500));n++;lsSet(day,n);
-    try{const list=await gPhotosFor(r,1);if(list&&list.length&&byId(r.id)&&!(byId(r.id).photos||[]).some(p=>p.path))await importGPhotos(r.id,list)}catch{}await new Promise(z=>setTimeout(z,1500))}}finally{gpBusy=false}}
-
+  toast('מחפש תמונה בגוגל…');const list=await gPhotosFor(r,1);if(list===false)return;if(list===null){toast('לא נמצא בגוגל');return}if(!list.length){toast('לא נמצאו תמונות של המקום בגוגל');return}
+  const ok=await importGPhotos(id,list);toast(ok?'התמונה מגוגל נוספה':'לא הצלחנו להביא את התמונה');if(ok&&openId===id&&mode==='view')renderDetail()}
 /* ================= calendar ================= */
 function calPrompt(r,v){const old=$('#calp');if(old)old.remove();const d=document.createElement('div');d.id='calp';d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','הוספה ליומן');
   d.innerHTML=`<div class="calp-in"><div class="calp-ic">${ICON.cal}</div><h3>להוסיף ליומן?</h3><p class="meta">${esc(r.name)} · ${esc(whenTxt(v))}</p><a class="btn pri" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener" data-calx>הוספה ליומן Google</a><a class="btn" href="${icsData(r,v)}" download="fomo.ics" data-calx>יומן אחר (אייפון / Outlook)</a><button class="link-btn" type="button" data-calx>לא עכשיו</button></div>`;
@@ -874,7 +899,7 @@ function voiceAdd(btn){if(!SR){toast('הדפדפן הזה לא תומך בהקל
   const q=$('#placeQ'),st=$('#fillSt');btn.classList.add('rec');btn.setAttribute('aria-pressed','true');if(st)st.textContent='מקשיב… אמרו למשל: "מוזמביק בר בתל אביב"';
   rec.onresult=e=>{let t='';for(const r of e.results)t+=r[0].transcript;fin=t;if(q)q.value=cleanVoice(t)};
   rec.onerror=e=>{btn.classList.remove('rec');btn.setAttribute('aria-pressed','false');if(st)st.textContent=e.error==='not-allowed'?'צריך לאשר גישה למיקרופון':'לא שמעתי. נסו שוב.'};
-  rec.onend=async()=>{btn.classList.remove('rec');btn.setAttribute('aria-pressed','false');const t=cleanVoice(fin);if(!t)return;if(q)q.value=t;if(st)st.textContent='מחפש: '+t;await placeSearch();const res=placeSearch.res||[];if(res.length){placePick(0);if(st)st.textContent=(st.textContent||'')+' (נבחרה התוצאה הראשונה. אם זה לא המקום, בחרו תוצאה אחרת בחיפוש.)'}};
+  rec.onend=async()=>{btn.classList.remove('rec');btn.setAttribute('aria-pressed','false');const t=cleanVoice(fin);if(!t)return;if(q)q.value=t;if(st)st.textContent='מחפש: '+t;await placeSearch();const res=placeSearch.res||[];if(res.length){await placePick(0);if(st)st.textContent=(st.textContent||'')+' (נבחרה התוצאה הראשונה. אם זה לא המקום, בחרו תוצאה אחרת בחיפוש.)'}};
   try{rec.start()}catch{btn.classList.remove('rec')}}
 const cleanVoice=t=>String(t||'').replace(/^(תוסיף|תוסיפי|הוסף|הוסיפי|תכניס|תכניסי|תשמור|שמור)\s+(את\s+)?/,'').replace(/^(מסעדה|בר)\s+(בשם\s+)?/,'').trim();
 
@@ -924,10 +949,9 @@ const showWolt=r=>!!woltDirect(r)||(r.delivery!==false&&(r.delivery===true||!NO_
 const deliveryUrl=r=>{const s=woltDirect(r);if(s)return s;const c=String(r.city||'')+' '+String(r.address||'');const slug=(WOLT_CITY.find(([rx])=>rx.test(c))||[0,'tel-aviv'])[1];return `https://wolt.com/he/isr/${slug}/search?q=${encodeURIComponent(r.name)}`};
 
 /* ================= receipt reading (Google Vision + on-device fallback) ================= */
-const VLIM=15;
 const blobB64=b=>new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(String(fr.result).split(',')[1]);fr.onerror=rej;fr.readAsDataURL(b)});
 async function ocrImg(f,max){try{const bm=await createImageBitmap(f,{imageOrientation:'from-image'});const k=Math.min(1,max/Math.max(bm.width,bm.height));const c=document.createElement('canvas');c.width=Math.round(bm.width*k);c.height=Math.round(bm.height*k);c.getContext('2d').drawImage(bm,0,0,c.width,c.height);return await new Promise(res=>c.toBlob(b=>res(b||f),'image/jpeg',.9))}catch{return f}}
-async function visionOCR(blob){const k=(window.APP_CONFIG||{}).googleKey;if(!k||!navigator.onLine)return null;const day='rs-vq-'+today();if(lsGet(day,0)>=VLIM)return null;lsSet(day,lsGet(day,0)+1);
+async function visionOCR(blob){const k=(window.APP_CONFIG||{}).googleKey;if(!k||!navigator.onLine)return null;const q=await takeQuota('vision');if(!q.ok)return null;
   const res=await fetch('https://vision.googleapis.com/v1/images:annotate?key='+encodeURIComponent(k),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({requests:[{image:{content:await blobB64(blob)},features:[{type:'DOCUMENT_TEXT_DETECTION'}],imageContext:{languageHints:['he','en']}}]})});
   const j=await res.json().catch(()=>({}));if(!res.ok||j.error||!j.responses)throw new Error((j.error&&j.error.message)||'vision '+res.status);return j.responses[0]||{}}
 function visionRows(resp){const W=[];for(const pg of ((resp.fullTextAnnotation||{}).pages||[]))for(const b of pg.blocks||[])for(const p of b.paragraphs||[])for(const w of p.words||[]){const t=(w.symbols||[]).map(s=>s.text).join('');const v=((w.boundingBox||{}).vertices)||[];if(!t||v.length<4)continue;
@@ -1031,6 +1055,7 @@ S.addEventListener('input',e=>{if(e.target.id==='gq'){const v=e.target.value.tri
   if(e.target.name==='ll'){const f=$('#ef'),m=e.target.value.match(/(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)/);if(f&&m&&Math.abs(+m[1])<=90&&fmap){if(!fmarker)setPin(+m[1],+m[2],false,true);else{fmarker.setLatLng([+m[1],+m[2]]);fmap.setView([+m[1],+m[2]],17)}f.elements.llLevel.value='place'}}});
 S.addEventListener('keydown',e=>{const pl=e.target.closest('[data-act=pickList]');if(pl&&e.key==='Enter')switchList(pl.dataset.id);if(e.target.id==='placeQ'&&e.key==='Enter'){e.preventDefault();placeSearch()}const li=e.target.closest('[data-act=camPick]');if(li&&e.key==='Enter')camStep(li.dataset.id)});
 S.addEventListener('submit',async e=>{
+  if(e.target.classList.contains('qrow')){e.preventDefault();quotaSave(e.target);return}
   e.preventDefault();const fm=e.target;
   if(fm.id==='dishF'){const inp=fm.elements.d,v=inp.value.trim(),r=byId(openId);if(!v||!r)return;inp.value='';inp.blur();await save(r.id,{dishes:[...(r.dishes||[]),{name:v,v:'ok'}],updatedAt:Date.now()});return}
   if(fm.id==='visitF'){const r=byId(openId);if(!r)return;const d=fm.elements.d.value;if(!/^\d{4}-\d{2}-\d{2}$/.test(d)){toast('בחרו תאריך');return}
