@@ -640,3 +640,28 @@ details.hours summary::before{content:'+ ';color:var(--red)}details.hours[open] 
 .pub-r{margin:0;font-weight:800;color:var(--brass,#c8902f)}
 .pub-f{text-align:center;padding:34px 10px 10px}.pub-f p{color:var(--mute)}
 .pub-empty{text-align:center;padding:80px 20px}
+
+/* ===== v4: reviews, special days, surprise, leaderboard, voice, diet ===== */
+.notice.rev,.notice.spd,.notice.sur{cursor:default}
+.notice.sur{background:linear-gradient(120deg,color-mix(in srgb,#7C5CFF 14%,var(--card)),var(--card))}
+.notice.spd{background:linear-gradient(120deg,color-mix(in srgb,#FF7AA2 16%,var(--card)),var(--card))}
+.notice .ni{font-size:22px}
+.splist{list-style:none;padding:0;margin:0 0 8px;display:grid;gap:6px}
+.splist li{display:grid;grid-template-columns:28px 1fr auto auto;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.splist small{color:var(--mute)}
+.surtog{display:flex;gap:12px;align-items:flex-start;margin-top:14px;padding:12px 14px;border-radius:16px;border:1.5px dashed color-mix(in srgb,#7C5CFF 45%,var(--line));background:color-mix(in srgb,#7C5CFF 6%,var(--card));cursor:pointer}
+.surtog input{width:20px;height:20px;margin-top:3px;accent-color:#7C5CFF;flex:0 0 auto}
+.surtog span{display:grid;gap:2px}.surtog small{color:var(--mute)}
+.surf{margin-top:10px}
+.lboard{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.lb{position:relative;display:grid;grid-template-columns:34px 1fr;gap:8px;padding:12px;border-radius:16px;background:var(--soft,rgba(0,0,0,.03));border:1px solid var(--line)}
+.lbe{font-size:24px;line-height:1.2}.lbt small{color:var(--mute);font-size:12px}
+.lbt ol{list-style:none;padding:0;margin:6px 0 0;display:grid;gap:3px}
+.lbt li{display:flex;justify-content:space-between;gap:8px;font-size:14px}.lbt li span{font-weight:800}
+.lbt li.win b,.lbt li.win span{color:var(--red)}
+.crown{position:absolute;top:-10px;inset-inline-end:10px;font-size:20px}
+.btn.mic{padding-inline:14px;font-size:18px}
+.btn.mic.rec{background:#e0483a;color:#fff;border-color:#e0483a;animation:micP 1s infinite}
+@keyframes micP{50%{box-shadow:0 0 0 8px rgba(224,72,58,.18)}}
+.dwarn{color:var(--bad)!important;white-space:normal!important}
+@media(prefers-reduced-motion:reduce){.btn.mic.rec{animation:none}}
