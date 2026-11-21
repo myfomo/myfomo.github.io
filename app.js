@@ -6,7 +6,7 @@ const TAGS=['דייט','מתאים לחברים','כשר','טבעוני-פרנד
 const VERD={must:'חובה להזמין',ok:'סבבה',skip:'לא שוב'};
 const OCC={'':'ביקור רגיל',date:'דייט',bday:'יום הולדת',anniv:'יום נישואין',celeb:'חגיגה',friends:'עם חברים',family:'עם המשפחה'};
 const SPECIAL=['bday','anniv','celeb'];
-const ICON={pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',nav:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8z"/></svg>',share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>',cam:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>',img:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-9 8"/></svg>',link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>',copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>',search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>',cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',vote:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 20V10h3v10M11 20V5h3v15M16 20v-7h3v7"/></svg>',card:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M4 13h16M8 17h8"/></svg>',me:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>'};
+const ICON={game:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="12" rx="6"/><path d="M7 11v4M5 13h4"/><circle cx="15.5" cy="12" r="1" fill="currentColor"/><circle cx="18" cy="14.5" r="1" fill="currentColor"/></svg>',pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',nav:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8z"/></svg>',share:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>',cam:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>',img:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-9 8"/></svg>',link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>',copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>',search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>',cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',vote:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 20V10h3v10M11 20V5h3v15M16 20v-7h3v7"/></svg>',card:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M4 13h16M8 17h8"/></svg>',me:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>'};
 
 const CFG=window.APP_CONFIG||{};
 // invite link: ?join=CODE — remember it through sign-up, then clean the address bar
@@ -66,7 +66,7 @@ async function upload(files,id){
 function applyPatch(r,p){const o={...r,...p};if(p.ratings)o.ratings={...(r.ratings||{}),...p.ratings};if(p.votes)o.votes={...(r.votes||{}),...p.votes};return o}
 async function loadAll(){if(!cur)return;const lid=cur.id;const {data,error}=await sb.from('restaurants').select('id,data').eq('list_id',lid).order('updated_at',{ascending:false});if(!cur||cur.id!==lid)return;if(error){const c=lsGet('rs-cache-'+lid,null);if(c&&isNetErr(error)){rows=c;loaded=true;render();setOffline();return}$('#status').textContent='הרשימה לא נטענה: '+errMsg(error);return}
   rows=(data||[]).map(x=>({...(x.data||{}),id:x.id}));const pend=lsGet('rs-outbox',[]).filter(o=>o.lid===lid);for(const o of pend){if(o.isNew){if(!byId(o.id))rows.unshift({...o.patch,id:o.id})}else rows=rows.map(r=>r.id===o.id?applyPatch(r,o.patch):r)}
-  loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch();setTimeout(backfillGeo,1500)}
+  loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch();setTimeout(backfillGeo,1500);setTimeout(backfillGPhotos,6000)}
 function save(id,patch,isNew){
   const prev=byId(id);
   if(isNew)rows.unshift({...patch,id});else if(prev)rows=rows.map(r=>r.id===id?applyPatch(r,patch):r);
@@ -194,7 +194,7 @@ window.addEventListener('hashchange',route);
 let fmap=null,fmarker=null;
 function killFormMap(){if(fmap){fmap.remove();fmap=null;fmarker=null}}
 function openSheet(){$('#ov').hidden=false;document.body.style.overflow='hidden'}
-function closeSheet(){if(story){clearTimeout(story.t);story=null}$('#ov').classList.remove('story-ov');$('#ov').hidden=true;document.body.style.overflow='';openId=null;mode='view';clearInterval(pickTimer);killFormMap()}
+function closeSheet(){if(story){clearTimeout(story.t);story=null}if(gm&&gm.s)clearTimeout(gm.s.t);$('#ov').classList.remove('story-ov');$('#ov').hidden=true;document.body.style.overflow='';openId=null;mode='view';clearInterval(pickTimer);killFormMap()}
 function openDetail(id){killFormMap();openId=id;mode='view';openSheet();renderDetail();$('#ov').scrollTop=0}
 
 function formHtml(r){r=r||{status:'want',tags:[]};const tg=r.tags||[];const ll=hasLL(r)?`${r.lat}, ${r.lng}`:'';return `<form id="ef" class="sec dh"><h2 style="margin-bottom:18px">${r.id?'עריכת מקום':'מקום חדש'}</h2>
@@ -218,7 +218,7 @@ ${hoursForm(r)}
 <label class="l full">הערות<textarea class="f" name="notes" maxlength="2000" placeholder="מה שמענו, למה רוצים ללכת…">${esc(r.notes)}</textarea></label>
 </div><div class="row" style="margin-top:14px"><button class="btn pri" type="submit">שמירה</button><button class="btn" type="button" data-act="cancel">ביטול</button></div></form>`}
 
-function initFormMap(){const f=$('#ef');if(!f)return;killFormMap();formGeocode.auto=!f.elements.ll.value.trim()||f.elements.llLevel.value==='street';
+function initFormMap(){const f=$('#ef');if(!f)return;killFormMap();pendG=null;formGeocode.auto=!f.elements.ll.value.trim()||f.elements.llLevel.value==='street';
   const m=String(f.elements.ll.value).match(/(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)/);
   const has=m&&Math.abs(+m[1])<=90;const c=has?[+m[1],+m[2]]:[32.08,34.78];
   fmap=L.map('fmap').setView(c,has?17:12);L.tileLayer(TILE,{maxZoom:19,attribution:ATTR}).addTo(fmap);
@@ -262,7 +262,7 @@ ${r.recBy?`<p class="meta" style="margin-top:4px">המליץ/ה: <b style="color
 <p class="note">${exact(r)?'מיקום מדויק נשמר.':hasLL(r)?'המיקום משוער. אפשר לדייק אותו בעריכה.':'עוד אין מיקום מדויק. בעריכה אפשר לחפש את המקום או לסמן אותו על המפה.'}</p></div>
 ${hoursView(r)}<div class="sec"><h4>בא לנו השבוע?</h4><div class="row"><button class="btn ${mv?'on':''}" type="button" data-act="vote" aria-pressed="${mv}">${mv?'♥ בא לי!':'♡ בא לי השבוע'}</button><span class="meta">${vt.length?vt.map(k=>esc(nm(k))).join(', ')+' גם רוצה':'עוד אף אחד אחר לא בחר'}</span></div><p class="note">הבחירה תקפה לשבוע. כששניכם בוחרים, המקום עולה לראש ההגרלה.</p></div>
 <div class="sec"><h4>הדירוג שלנו</h4><div class="rlist"><div class="r"><b style="min-width:56px">אני</b><span class="stars" role="group" aria-label="הדירוג שלי">${[1,2,3,4,5].map(n=>`<button type="button" class="${n<=mine?'on':''}" data-act="rate" data-v="${n}" aria-label="${n} כוכבים">★</button>`).join('')}</span></div>${others.map(k=>`<div class="r"><b>${esc(nm(k))}</b><span class="rate"><i>${'★'.repeat(ratings[k])}</i><span style="color:var(--line)">${'★'.repeat(5-ratings[k])}</span></span></div>`).join('')}</div></div>
-${commentsHtml(r)}<div class="sec"><h4>תמונות</h4>${photos.length?`<div class="gal">${(r.photos||[]).map((p,i)=>p.path?`<div class="ph">${photoImg(p,`loading="lazy" data-act="zoom" data-i="${i}"`)}<button type="button" data-act="rmPhoto" data-i="${i}" aria-label="הסרת תמונה">×</button></div>`:'').join('')}</div>`:'<p class="note">עוד אין תמונות. צלמו את המנות, את הקוקטיילים או את שניכם.</p>'}
+${commentsHtml(r)}<div class="sec"><h4>תמונות</h4>${photos.length?`<div class="gal">${(r.photos||[]).map((p,i)=>p.path?`<div class="ph">${photoImg(p,`loading="lazy" data-act="zoom" data-i="${i}"`)}${p.src==='google'?`<span class="gattr">Google${p.attr?' · '+esc(p.attr):''}</span>`:''}<button type="button" data-act="rmPhoto" data-i="${i}" aria-label="הסרת תמונה">×</button></div>`:'').join('')}</div>`:`<p class="note">עוד אין תמונות. צלמו את המנות, את הקוקטיילים או את שניכם.</p>${(window.APP_CONFIG||{}).googleKey?'<button class="btn sm" type="button" data-act="gPhotos" style="margin-top:8px">'+ICON.search+'תמונות של המקום מגוגל</button>':''}`}
 <div class="row" style="margin-top:12px"><label class="btn pri">${ICON.cam}צלמו עכשיו<input type="file" accept="image/*" capture="environment" hidden class="up"></label><label class="btn">${ICON.img}מהגלריה<input type="file" accept="image/*" multiple hidden class="up"></label><span class="note" id="upst" style="margin:0"></span></div></div>
 <div class="sec"><h4>ביקורים${spent?` · סה"כ ${ils(spent)}`:''}</h4>${visits.length?visits.map(v=>`<div class="vrow ${v.d>today()||(v.d===today()&&v.t)?'plan':''}"><b>${esc(fmtD(v.d))}${v.t?' · '+esc(v.t):''}</b>${v.d>today()||(v.d===today()&&v.t)?`<span class="occ sp">${esc(whenTxt(v))}</span><a class="btn sm" href="${icsData(r,v)}" download="fomo.ics">${ICON.cal}ליומן</a><a class="btn sm" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener">Google</a>`:''}${v.occ?`<span class="occ ${SPECIAL.includes(v.occ)?'sp':''}">${esc(OCC[v.occ]||'')}</span>`:''}${v.note?`<span class="meta">${esc(v.note)}</span>`:''}<span class="money">${Number(v.cost)?ils(v.cost):''}</span><button type="button" class="del" data-act="rmVisit" data-i="${v.i}" aria-label="הסרת ביקור">×</button></div>`).join(''):'<p class="note">עוד לא רשמתם ביקור.</p>'}
 ${visitForm()}</div>
@@ -287,12 +287,12 @@ async function pick(m,keep){
   const ch=(k,v,t,on)=>`<button type="button" class="chip" data-act="pf" data-k="${k}" data-v="${v}" data-m="${m}" aria-pressed="${on}">${t}</button>`;
   const hasH=rows.some(r=>r.hours&&Object.keys(r.hours).length);
   const filters=`<div class="pfil"><div class="chips">${ch('price',0,'כל מחיר',!pickF.price)}${ch('price',2,'עד ₪₪',pickF.price===2)}${ch('price',3,'עד ₪₪₪',pickF.price===3)}</div><div class="chips">${ch('tag','','כל אירוע',!pickF.tag)}${ch('tag','דייט','דייט',pickF.tag==='דייט')}${ch('tag','מתאים לחברים','עם חברים',pickF.tag==='מתאים לחברים')}</div><div class="chips">${ch('near',pickF.near?'':'1','עד 5 ק״מ ממני',pickF.near)}${hasH?ch('open',pickF.open?'':'1','פתוח עכשיו',pickF.open):''}</div></div>`;
-  const pollB=`<button class="btn" type="button" data-act="pollNew" style="margin-top:16px">${ICON.vote}הצבעה עם חברים</button>`;
+  const pollB=`<div class="row" style="margin-top:16px"><button class="btn" type="button" data-act="gameNew">${ICON.game}משחק: מי בוחר?</button><button class="btn" type="button" data-act="pollNew">${ICON.vote}הצבעה עם חברים</button></div>`;
   const s=$('#sb');
   if(!pool.length){s.innerHTML=`<div class="pick"><h2>לאן הולכים הערב?</h2>${seg}${filters}<p class="note" style="margin-top:18px">${pickF.price||pickF.tag||pickF.near||pickF.open?'אין מקום שמתאים לסינון. נסו להרחיב אותו.':m==='match'?'עוד אין מקום ששניכם לחצתם עליו "בא לי" השבוע.':m==='fav'?'עוד אין מקומות מועדפים או עם דירוג 4 ומעלה.':'הוסיפו מקומות לרשימת "רוצים ללכת", וההגרלה תבחר בשבילכם.'}</p>${pollB}</div>`;return}
   s.innerHTML=`<div class="pick"><h2>לאן הולכים הערב?</h2>${seg}${filters}${cuisF?`<p class="note">רק ${esc(cuisF)}</p>`:''}<div class="nm" id="pn" aria-live="polite"></div><p class="meta" id="pm"></p><div class="row" id="pa"></div>${pollB}</div>`;
   const choice=pool[Math.floor(Math.random()*pool.length)];
-  const done=()=>{$('#pn').textContent=choice.name;$('#pm').textContent=[choice.cuisine,choice.city,distKm(choice)!=null?distTxt(distKm(choice)):''].filter(Boolean).join(' · ');$('#pa').innerHTML=`<a class="btn pri" href="${esc(wazeUrl(choice))}" target="_blank" rel="noopener">${ICON.nav}יוצאים! Waze</a><button class="btn" type="button" data-act="open" data-id="${esc(choice.id)}">פרטים</button><button class="btn" type="button" data-act="pickm" data-m="${m}">הגרלה נוספת</button>`};
+  const done=()=>{$('#pn').textContent=choice.name;$('#pm').textContent=[choice.cuisine,choice.city,distKm(choice)!=null?distTxt(distKm(choice)):''].filter(Boolean).join(' · ');$('#pa').innerHTML=`<a class="btn pri" href="${esc(wazeUrl(choice))}" target="_blank" rel="noopener">${ICON.nav}יוצאים! Waze</a><button class="btn" type="button" data-act="planNew" data-id="${esc(choice.id)}">${ICON.cal}קביעה + יומן</button><button class="btn" type="button" data-act="open" data-id="${esc(choice.id)}">פרטים</button><button class="btn" type="button" data-act="pickm" data-m="${m}">הגרלה נוספת</button>`};
   clearInterval(pickTimer);
   if(matchMedia('(prefers-reduced-motion: reduce)').matches||pool.length<2){done();return}
   let n=0;pickTimer=setInterval(()=>{const el=$('#pn');if(!el){clearInterval(pickTimer);return}el.textContent=pool[n++%pool.length].name;if(n>14){clearInterval(pickTimer);done()}},80)}
@@ -406,7 +406,7 @@ function pollWinner(p){const c=pollCounts(p);let best=null,bn=-1;for(const o of 
 function pollSheet(pid){const p=polls.find(x=>x.id===pid);if(!p)return;killFormMap();openId=null;mode='poll';openPoll=pid;openSheet();renderPoll()}
 function renderPoll(){const p=polls.find(x=>x.id===openPoll);if(!p||mode!=='poll')return;const c=pollCounts(p),tot=Object.keys(p.votes||{}).length,mine=(p.votes||{})[myId],canEnd=p.created_by===myId||isOwner();
   const voters=o=>Object.entries(p.votes||{}).filter(([,v])=>v===o).map(([u])=>nm(u));
-  if(p.closed){const w=byId(pollWinner(p));$('#sb').innerHTML=`<div class="pick"><p class="meta">${esc(p.title)} · ${tot} הצביעו</p><h2 style="margin-top:8px">והמנצח הוא…</h2><div class="nm">${esc(w?w.name:'—')}</div>${w?`<p class="meta">${esc([w.cuisine,w.city].filter(Boolean).join(' · '))}</p><div class="row"><a class="btn pri" href="${esc(wazeUrl(w))}" target="_blank" rel="noopener">${ICON.nav}יוצאים! Waze</a><button class="btn" type="button" data-act="open" data-id="${esc(w.id)}">פרטים</button></div>`:''}${canEnd?'<button class="link-btn" type="button" data-act="pollDel">מחיקת ההצבעה</button>':''}</div>`;return}
+  if(p.closed){const w=byId(pollWinner(p));$('#sb').innerHTML=`<div class="pick"><p class="meta">${esc(p.title)} · ${tot} הצביעו</p><h2 style="margin-top:8px">והמנצח הוא…</h2><div class="nm">${esc(w?w.name:'—')}</div>${w?`<p class="meta">${esc([w.cuisine,w.city].filter(Boolean).join(' · '))}</p><div class="row"><a class="btn pri" href="${esc(wazeUrl(w))}" target="_blank" rel="noopener">${ICON.nav}יוצאים! Waze</a><button class="btn" type="button" data-act="planNew" data-id="${esc(w.id)}">${ICON.cal}קביעה + יומן</button><button class="btn" type="button" data-act="open" data-id="${esc(w.id)}">פרטים</button></div>`:''}${canEnd?'<button class="link-btn" type="button" data-act="pollDel">מחיקת ההצבעה</button>':''}</div>`;return}
   $('#sb').innerHTML=`<div class="sec dh"><h2>${esc(p.title)}</h2><p class="meta" style="margin-top:6px">${tot} הצביעו · ${mine?'אפשר לשנות את ההצבעה':'בחרו את המקום שהכי בא לכם'}</p></div><div class="sec"><div class="popts">${(p.options||[]).map(o=>{const r=byId(o),n=c[o]||0,pc=tot?Math.round(n/tot*100):0;return `<button type="button" class="popt ${mine===o?'sel':''}" data-act="pollVote" data-o="${esc(o)}"><span class="pb" style="width:${pc}%"></span><span class="pt"><b>${esc(r?r.name:'מקום שנמחק')}</b><small>${esc(r?[r.cuisine,r.city].filter(Boolean).join(' · '):'')}${voters(o).length?' · '+esc(voters(o).join(', ')):''}</small></span><span class="pn">${n}</span></button>`}).join('')}</div>
 <div class="row" style="margin-top:16px">${canEnd?'<button class="btn pri" type="button" data-act="pollClose">סיום והכרזה על המנצח</button><button class="btn" type="button" data-act="pollDel" style="color:var(--bad)">מחיקה</button>':''}<button class="btn" type="button" data-act="shareInvite">${ICON.share}הזמנת חברים להצביע</button></div><p class="note">חברים צריכים להיות ברשימה כדי להצביע. אפשר לשלוח להם את קישור ההזמנה.</p></div>`}
 function pollNewSheet(){killFormMap();openId=null;mode='pollnew';openSheet();const cands=rows.filter(r=>r.status!=='been'||r.fav||avg(r)>=4);
@@ -424,7 +424,7 @@ function icsData(r,v){const d=v.d.replace(/-/g,''),t=(v.t||'').replace(':','');c
   const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Fomo//HE','BEGIN:VEVENT',`UID:${r.id}-${d}@fomo`,`DTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').slice(0,15)}Z`,st,t?'DURATION:PT2H':'DURATION:P1D',`SUMMARY:${r.name} · Fomo`,`LOCATION:${[r.address,r.city].filter(Boolean).join(', ')}`,`URL:${mapsUrl(r)}`,'BEGIN:VALARM','TRIGGER:-PT2H','ACTION:DISPLAY',`DESCRIPTION:${r.name}`,'END:VALARM','END:VEVENT','END:VCALENDAR'];
   return 'data:text/calendar;charset=utf-8,'+encodeURIComponent(L.join('\r\n'))}
 function gcalUrl(r,v){const d=v.d.replace(/-/g,'');let dates;if(v.t){const [h,m]=v.t.split(':').map(Number);const e=new Date(2000,0,1,h+2,m);dates=`${d}T${v.t.replace(':','')}00/${d}T${String(e.getHours()).padStart(2,'0')}${String(e.getMinutes()).padStart(2,'0')}00`}else{const n=new Date(v.d+'T12:00');n.setDate(n.getDate()+1);dates=`${d}/${n.toLocaleDateString('en-CA').replace(/-/g,'')}`}
-  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(r.name+' · Fomo')+'&dates='+dates+'&location='+encodeURIComponent([r.address,r.city].filter(Boolean).join(', '))}
+  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(r.name+' · Fomo')+'&dates='+dates+'&location='+encodeURIComponent([r.address,r.city].filter(Boolean).join(', '))+'&details='+encodeURIComponent('נקבע ב-Fomo · ניווט: '+wazeUrl(r))+(v.t?'&ctz=Asia/Jerusalem':'')}
 
 /* ================= opening hours ================= */
 const DAYS=['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'];
@@ -548,7 +548,7 @@ function cuisSelect(v){v=v||'';const opts=CUIS.includes(v)||!v?CUIS:[v,...CUIS];
 let gReady=null;
 function gmaps(){const k=(window.APP_CONFIG||{}).googleKey;if(!k)return Promise.resolve(null);if(gReady)return gReady;
   gReady=new Promise(res=>{window.__gmInit=()=>res(window.google);const s=document.createElement('script');s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(k)}&libraries=places&language=iw&region=IL&loading=async&callback=__gmInit`;s.async=true;s.onerror=()=>{gReady=null;res(null)};document.head.appendChild(s);setTimeout(()=>res(window.google||null),12000)});return gReady}
-const GF=['displayName','formattedAddress','addressComponents','location','googleMapsURI','websiteURI','regularOpeningHours','priceLevel','primaryType','types'];
+const GF=['photos','displayName','formattedAddress','addressComponents','location','googleMapsURI','websiteURI','regularOpeningHours','priceLevel','primaryType','types'];
 const GLIM=30;function gUsed(){return lsGet('rs-gq-'+today(),0)}
 async function gSearch(q,fields){if(!(window.APP_CONFIG||{}).googleKey||gUsed()>=GLIM)return null;const g=await gmaps();if(g)lsSet('rs-gq-'+today(),gUsed()+1);if(!g||!g.maps||!g.maps.importLibrary)return null;const {Place}=await g.maps.importLibrary('places');
   const {places}=await Place.searchByText({textQuery:q,fields:fields||GF,language:'iw',region:'il',maxResultCount:6,locationBias:{lat:31.9,lng:34.9}});return places||[]}
@@ -558,7 +558,7 @@ function gToItem(p){const loc=p.location;const lat=typeof loc.lat==='function'?l
   const H={};const per=(p.regularOpeningHours&&p.regularOpeningHours.periods)||[];const pad=n=>String(n).padStart(2,'0');
   for(const x of per){if(!x.open)continue;if(!x.close){for(let i=0;i<7;i++)H[i]=['00:00','23:59'];break}H[x.open.day]=[pad(x.open.hour)+':'+pad(x.open.minute),pad(x.close.hour)+':'+pad(x.close.minute)]}
   if(per.length)for(let i=0;i<7;i++)if(!(i in H))H[i]=null;
-  return {g:true,name:p.displayName||'',full:p.formattedAddress||'',address:[gComp(p,'route'),gComp(p,'street_number')].filter(Boolean).join(' '),city:gComp(p,'locality')||gComp(p,'administrative_area_level_2'),lat,lng,mapsUrl:p.googleMapsURI||'',site:p.websiteURI||'',price:GPRICE[p.priceLevel]||0,cuisine,hours:per.length?H:null}}
+  return {g:true,name:p.displayName||'',full:p.formattedAddress||'',address:[gComp(p,'route'),gComp(p,'street_number')].filter(Boolean).join(' '),city:gComp(p,'locality')||gComp(p,'administrative_area_level_2'),lat,lng,mapsUrl:p.googleMapsURI||'',site:p.websiteURI||'',price:GPRICE[p.priceLevel]||0,cuisine,hours:per.length?H:null,gphotos:gPhotos(p,3)}}
 function osmToItem(x){const a=x.address||{};return {name:x.name||x.display_name.split(',')[0],full:x.display_name,address:[a.road,a.house_number].filter(Boolean).join(' '),city:a.city||a.town||a.village||a.municipality||'',lat:+x.lat,lng:+x.lon,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[x.type]||''}}
 function photonToItem(f){const p=f.properties||{},[lng,lat]=f.geometry.coordinates;return {name:p.name||p.street||'',full:[p.name,p.street&&(p.street+(p.housenumber?' '+p.housenumber:'')),p.city||p.town,p.country].filter(Boolean).join(', '),address:p.street?(p.street+(p.housenumber?' '+p.housenumber:'')):'',city:p.city||p.town||p.village||'',lat,lng,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[p.osm_value]||''}}
 const fetchJ=(u,ms)=>Promise.race([fetch(u).then(r=>r.json()),new Promise((_,j)=>setTimeout(()=>j(new Error('timeout')),ms||7000))]);
@@ -575,8 +575,8 @@ function placePick(i){const x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)retu
   if(x.cuisine&&!E.cuisine.value)E.cuisine.value=x.cuisine;
   if(x.mapsUrl)E.mapsUrl.value=x.mapsUrl;if(x.site&&!E.site.value)E.site.value=x.site;if(x.price&&!E.price.value)E.price.value=String(x.price);
   if(x.hours){for(let d=0;d<7;d++){const h=x.hours[d];E['hx'+d].checked=h===null;E['ho'+d].value=h?h[0]:'';E['hc'+d].value=h?h[1]:''}const det=f.querySelector('details.hours');if(det)det.open=true}
-  setPin(x.lat,x.lng,false,true);$('#placeRes').innerHTML='';
-  $('#fillSt').textContent=x.g?'מילאנו מגוגל מפות: שם, כתובת, סוג, מחיר, אתר ושעות פתיחה. בדקו שהכל נכון.':'מילאנו מהחיפוש. בדקו שהסיכה על המקום הנכון, ואם צריך גררו אותה.'}
+  pendG=x.gphotos&&x.gphotos.length?x.gphotos:null;setPin(x.lat,x.lng,false,true);$('#placeRes').innerHTML='';
+  $('#fillSt').textContent=x.g?'מילאנו מגוגל מפות: שם, כתובת, סוג, מחיר, אתר ושעות פתיחה'+(x.gphotos&&x.gphotos.length?', ותמונות של המקום יתווספו בשמירה':'')+'. בדקו שהכל נכון.':'מילאנו מהחיפוש. בדקו שהסיכה על המקום הנכון, ואם צריך גררו אותה.'}
 async function geocode(address,city){const a=String(address||'').trim(),c=String(city||'').trim();if(!a&&!c)return null;const q=[a,c].filter(Boolean).join(', ');
   const tries=[];if(a&&c)tries.push(`street=${encodeURIComponent(a)}&city=${encodeURIComponent(c)}`);tries.push(`q=${encodeURIComponent(q)}`);
   if(a&&c&&/\d/.test(a))tries.push(`street=${encodeURIComponent(a.replace(/\s*\d+\S*/g,'').trim())}&city=${encodeURIComponent(c)}`);
@@ -590,6 +590,112 @@ const geoTried=new Set();let geoBusy=false;
 async function backfillGeo(){if(geoBusy||!navigator.onLine)return;geoBusy=true;try{
   for(const r of rows.filter(r=>!hasLL(r)&&(r.address||r.city)&&!geoTried.has(r.id))){geoTried.add(r.id);const p=await geocode(r.address,r.city);
     if(p&&byId(r.id)&&!hasLL(byId(r.id))){await save(r.id,{lat:+p.lat.toFixed(6),lng:+p.lng.toFixed(6),llLevel:'street'})}await new Promise(z=>setTimeout(z,1200))}}finally{geoBusy=false}}
+
+/* ================= Google photos ================= */
+let pendG=null;
+function gPhotos(p,n){return (p.photos||[]).slice(0,n||3).map(ph=>{try{return {uri:ph.getURI({maxWidth:1400}),attr:((ph.authorAttributions||[])[0]||{}).displayName||''}}catch{return null}}).filter(Boolean)}
+async function importGPhotos(id,list){const r=byId(id);if(!r||!list||!list.length||!navigator.onLine)return false;const added=[];
+  for(const g of list){try{const res=await fetch(g.uri);if(!res.ok)continue;const b=await shrink(await res.blob());const path=`${id}/${uuid()}.jpg`;const {error}=await sb.storage.from('photos').upload(path,b,{contentType:'image/jpeg',upsert:false});if(error)throw error;added.push({path,by:myId,at:Date.now(),src:'google',attr:String(g.attr||'').slice(0,60)})}catch(e){console.warn('gphoto',e)}}
+  if(!added.length)return false;const c=byId(id);return save(id,{photos:[...((c&&c.photos)||[]),...added],updatedAt:Date.now()})}
+async function gPhotosFor(r,n){const q=[r.name,r.address,r.city].filter(Boolean).join(' ');const res=await gSearch(q,['displayName','photos','location']);if(!res||!res.length)return null;
+  let best=res[0];if(hasLL(r)){let bd=1e9;for(const p of res){const x=gToItem(Object.assign({addressComponents:[],types:[]},p));const d=Math.hypot(x.lat-r.lat,x.lng-r.lng);if(d<bd){bd=d;best=p}}if(bd>0.01)return []}
+  return gPhotos(best,n)}
+async function fetchGPhotosBtn(id){const r=byId(id);if(!r)return;if(!(window.APP_CONFIG||{}).googleKey){toast('החיבור לגוגל לא זמין');return}
+  toast('מחפש תמונות בגוגל…');const list=await gPhotosFor(r,3);if(list===null){toast(gUsed()>=GLIM?'הגעתם למכסת החיפושים היומית בגוגל. נסו מחר.':'לא נמצא בגוגל');return}if(!list.length){toast('לא נמצאו תמונות של המקום בגוגל');return}
+  const ok=await importGPhotos(id,list);toast(ok?'התמונות מגוגל נוספו':'לא הצלחנו להביא את התמונות');if(ok&&openId===id&&mode==='view')renderDetail()}
+let gpBusy=false;
+async function backfillGPhotos(){if(gpBusy||!navigator.onLine||!(window.APP_CONFIG||{}).googleKey)return;gpBusy=true;try{
+  const tried=lsGet('rs-gp-tried',[]);const day='rs-gp-'+today();let n=lsGet(day,0);
+  for(const r of rows.filter(r=>!(r.photos||[]).some(p=>p.path)&&!tried.includes(r.id))){if(n>=5||gUsed()>=GLIM-5)break;tried.push(r.id);lsSet('rs-gp-tried',tried.slice(-500));n++;lsSet(day,n);
+    try{const list=await gPhotosFor(r,1);if(list&&list.length&&byId(r.id)&&!(byId(r.id).photos||[]).some(p=>p.path))await importGPhotos(r.id,list)}catch{}await new Promise(z=>setTimeout(z,1500))}}finally{gpBusy=false}}
+
+/* ================= calendar ================= */
+function calPrompt(r,v){const old=$('#calp');if(old)old.remove();const d=document.createElement('div');d.id='calp';d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','הוספה ליומן');
+  d.innerHTML=`<div class="calp-in"><div class="calp-ic">${ICON.cal}</div><h3>להוסיף ליומן?</h3><p class="meta">${esc(r.name)} · ${esc(whenTxt(v))}</p><a class="btn pri" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener" data-calx>הוספה ליומן Google</a><a class="btn" href="${icsData(r,v)}" download="fomo.ics" data-calx>יומן אחר (אייפון / Outlook)</a><button class="link-btn" type="button" data-calx>לא עכשיו</button></div>`;
+  d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-calx]'))setTimeout(()=>d.remove(),150)});document.body.appendChild(d)}
+function planSheet(id){const r=byId(id);if(!r)return;killFormMap();openId=null;mode='plan';openSheet();const ds=k=>{const x=new Date();x.setDate(x.getDate()+k);return x.toLocaleDateString('en-CA')};const th=(4-new Date().getDay()+7)%7;
+  $('#sb').innerHTML=`<form id="planF" class="sec dh" data-id="${esc(id)}"><h2>קביעת יציאה</h2><p class="meta" style="margin-top:6px">${esc(r.name)}${r.city?' · '+esc(r.city):''}</p><div class="chips" style="margin-top:14px"><button type="button" class="chip" data-act="planD" data-d="${ds(0)}">הערב</button><button type="button" class="chip" data-act="planD" data-d="${ds(1)}">מחר</button>${th>1?`<button type="button" class="chip" data-act="planD" data-d="${ds(th)}">ביום חמישי</button>`:''}</div><div class="grid2" style="margin-top:12px"><label class="l">תאריך<input class="f" type="date" name="d" required min="${today()}" value="${today()}"></label><label class="l">שעה<input class="f" type="time" name="t" value="20:00"></label><label class="l full">סוג היציאה<select class="f" name="occ">${Object.entries(OCC).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select></label></div><div class="row" style="margin-top:16px"><button class="btn pri" type="submit">${ICON.cal}קובעים!</button><button class="btn" type="button" data-act="open" data-id="${esc(id)}">ביטול</button></div></form>`}
+async function savePlan(fm){const id=fm.dataset.id,r=byId(id);if(!r)return;const d=fm.elements.d.value;if(!/^\d{4}-\d{2}-\d{2}$/.test(d)||d<today()){toast('בחרו תאריך מהיום והלאה');return}
+  const v={d,t:fm.elements.t.value||'',cost:0,occ:OCC[fm.elements.occ.value]!==undefined?fm.elements.occ.value:'',note:''};if(!v.t)delete v.t;
+  const ok=await save(id,{visits:[...(r.visits||[]),v],updatedAt:Date.now()});if(!ok)return;logAct('plan',id,`קבע/ה יציאה ל${r.name} ${whenTxt(v)}`);renderNotices();openId=id;mode='view';renderDetail();calPrompt(r,v)}
+
+/* ================= games ================= */
+const GAMES=[{k:'react',n:'מי מהיר יותר',e:'⚡',d:'מחכים לירוק ולוחצים ראשונים. הטוב מ-3.',max:2},{k:'ttt',n:'איקס עיגול',e:'⭕',d:'הקלאסיקה. תיקו? משחקים שוב.',max:2},{k:'rps',n:'אבן נייר ומספריים',e:'✊',d:'כל אחד בוחר בסתר. הטוב מ-3.',max:2},{k:'dice',n:'קוביות',e:'🎲',d:'כל אחד מטיל 2 קוביות. הגבוה מנצח.',max:4},{k:'wheel',n:'גלגל המזל',e:'🎡',d:'מסובבים, והגלגל מחליט.',max:4}];
+let gm=null;
+function gameNames(){const ns=[myName||names[myId]||'אני',...members.filter(m=>m.user_id!==myId).map(m=>names[m.user_id]).filter(Boolean)];return ns}
+function gameSheet(){clearInterval(pickTimer);killFormMap();openId=null;mode='game';openSheet();const ns=gameNames();
+  if(!gm||gm.stage!=='setup')gm={stage:'setup',how:(gm&&gm.how)||'winner',players:[{name:ns[0]||'שחקן 1',place:''},{name:ns[1]||'שחקן 2',place:''}],game:'react'};renderGameSetup()}
+function gamePlaces(){return rows.filter(r=>r.status!=='been'||r.fav||avg(r)>=4).sort((a,b)=>a.name.localeCompare(b.name,'he'))}
+function renderGameSetup(err){const P=gm.players,places=gamePlaces(),pre=gm.how==='pre';
+  const opts=sel=>`<option value="">בחרו מקום…</option>${places.map(r=>`<option value="${esc(r.id)}" ${sel===r.id?'selected':''}>${esc(r.name)}</option>`).join('')}`;
+  $('#sb').innerHTML=`<div class="sec dh gset"><h2>${ICON.game}משחק: מי בוחר?</h2><p class="meta" style="margin-top:6px">משחקים על הטלפון הזה, ומי שמנצח קובע לאן הולכים.</p>
+<div class="seg" role="group" aria-label="איך מחליטים" style="margin-top:14px"><button type="button" data-act="gHow" data-v="winner" aria-pressed="${!pre}">המנצח בוחר לאן</button><button type="button" data-act="gHow" data-v="pre" aria-pressed="${pre}">כל אחד בוחר מקום מראש</button></div>
+<div class="gpl">${P.map((p,i)=>`<div class="gp"><span class="gp-n">${i+1}</span><input class="f" data-gp="${i}" maxlength="20" value="${esc(p.name)}" aria-label="שם שחקן ${i+1}">${pre?`<select class="f" data-gpp="${i}" aria-label="המקום של ${esc(p.name)}">${opts(p.place)}</select>`:''}${P.length>2?`<button type="button" class="del" data-act="gRm" data-i="${i}" aria-label="הסרת שחקן">×</button>`:''}</div>`).join('')}</div>
+${P.length<4?'<button type="button" class="link-btn" data-act="gAdd">+ עוד שחקן</button>':''}
+${pre&&places.length<P.length?'<p class="note">צריך לפחות מקום אחד ברשימה לכל שחקן.</p>':''}
+<h4 style="margin-top:18px">בוחרים משחק</h4><div class="gcards">${GAMES.map(g=>{const dis=P.length>g.max;return `<button type="button" class="gcard" data-act="gPick" data-k="${g.k}" aria-pressed="${gm.game===g.k}" ${dis?'disabled':''}><span class="ge">${g.e}</span><b>${g.n}</b><small>${dis?'עד 2 שחקנים':g.d}</small></button>`}).join('')}</div>
+<p class="note gerr" aria-live="polite">${err?esc(err):''}</p><div class="row" style="margin-top:8px"><button class="btn pri" type="button" data-act="gStart">יאללה, משחקים!</button></div></div>`}
+function readGameSetup(){for(const el of document.querySelectorAll('[data-gp]'))gm.players[+el.dataset.gp].name=el.value.trim().slice(0,20);for(const el of document.querySelectorAll('[data-gpp]'))gm.players[+el.dataset.gpp].place=el.value}
+function gameStart(){readGameSetup();const P=gm.players;
+  if(P.some(p=>!p.name))return renderGameSetup('תנו שם לכל שחקן');
+  if(new Set(P.map(p=>p.name)).size<P.length)return renderGameSetup('לכל שחקן צריך שם אחר');
+  if(gm.how==='pre'){if(P.some(p=>!p.place))return renderGameSetup('כל שחקן צריך לבחור מקום');if(new Set(P.map(p=>p.place)).size<P.length)return renderGameSetup('כל אחד צריך לבחור מקום אחר. אי אפשר לבחור את אותו מקום.')}
+  const g=GAMES.find(x=>x.k===gm.game);if(!g||P.length>g.max)return renderGameSetup('המשחק הזה מתאים ל-2 שחקנים בלבד');
+  gm.stage='play';gm.s={};({react:reactStart,ttt:tttStart,rps:rpsStart,dice:diceStart,wheel:wheelStart})[gm.game]()}
+const gHead=t=>`<div class="ghead"><button type="button" class="link-btn" data-act="gBack">← הגדרות</button><b>${t}</b></div>`;
+const pName=i=>esc(gm.players[i].name);
+/* reaction */
+function reactStart(){gm.s={score:[0,0],round:1,state:'idle'};reactRender()}
+function reactRender(msg){const s=gm.s;$('#sb').innerHTML=`<div class="game">${gHead('⚡ מי מהיר יותר · סיבוב '+s.round)}<p class="gsc">${pName(0)} <b>${s.score[0]}</b> : <b>${s.score[1]}</b> ${pName(1)}</p><div class="rx rx-${s.state}">${[0,1].map(i=>`<button type="button" class="rxp" data-act="rxTap" data-i="${i}"><span>${pName(i)}</span><small>${s.state==='go'?'לחץ!':s.state==='wait'?'חכו…':'לוחצים כאן'}</small></button>`).join('')}</div><p class="gmsg" aria-live="assertive">${msg||(s.state==='idle'?'שימו אצבע כל אחד על הצד שלו. כשהמסך יהיה ירוק, לוחצים!':s.state==='wait'?'חכו לירוק… מי שלוחץ מוקדם מפסיד את הסיבוב':'עכשיו!')}</p>${s.state==='idle'?'<button class="btn pri" type="button" data-act="rxGo">מתחילים סיבוב</button>':''}</div>`}
+function reactGo(){const s=gm.s;s.state='wait';reactRender();clearTimeout(s.t);s.t=setTimeout(()=>{if(gm&&gm.s===s&&s.state==='wait'){s.state='go';s.at=performance.now();reactRender();if(navigator.vibrate)navigator.vibrate(60)}},1500+Math.random()*3000)}
+function reactTap(i){const s=gm.s;if(s.state==='idle'||s.state==='done')return;let w,msg;
+  if(s.state==='wait'){clearTimeout(s.t);w=1-i;msg=`${gm.players[i].name} לחץ/ה מוקדם מדי! הנקודה ל${gm.players[w].name}`}else{w=i;msg=`${gm.players[i].name} מהיר/ה יותר! (${Math.round(performance.now()-s.at)} מ״ש)`}
+  s.score[w]++;s.state='done';if(s.score[w]>=2){reactRender(msg);setTimeout(()=>gameWin(w),1200);return}s.round++;s.state='idle';reactRender(msg)}
+/* tic tac toe */
+function tttStart(){gm.s={b:Array(9).fill(''),turn:Math.random()<.5?0:1,games:1};tttRender()}
+const TTTL=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+function tttRender(msg){const s=gm.s,M=['✕','◯'];$('#sb').innerHTML=`<div class="game">${gHead('⭕ איקס עיגול')}<p class="gsc">${pName(0)} = ✕ · ${pName(1)} = ◯</p><p class="gmsg" aria-live="polite">${msg||`תור של <b>${pName(s.turn)}</b> (${M[s.turn]})`}</p><div class="ttt">${s.b.map((c,i)=>`<button type="button" data-act="tttMv" data-i="${i}" ${c?'disabled':''} aria-label="משבצת ${i+1}">${c}</button>`).join('')}</div></div>`}
+function tttMove(i){const s=gm.s;if(s.b[i]||s.over)return;const M=['✕','◯'];s.b[i]=M[s.turn];
+  const won=TTTL.some(l=>l.every(k=>s.b[k]===M[s.turn]));if(won){s.over=true;tttRender(`${gm.players[s.turn].name} ניצח/ה!`);const w=s.turn;setTimeout(()=>gameWin(w),1100);return}
+  if(s.b.every(Boolean)){s.over=true;tttRender('תיקו! עוד משחק…');setTimeout(()=>{if(gm&&gm.game==='ttt'){gm.s={b:Array(9).fill(''),turn:1-s.turn};tttRender()}},1400);return}
+  s.turn=1-s.turn;tttRender()}
+/* rock paper scissors */
+const RPS=[['rock','✊','אבן'],['paper','✋','נייר'],['scissors','✌️','מספריים']];
+function rpsStart(){gm.s={score:[0,0],turn:0,ch:[null,null],round:1};rpsRender()}
+function rpsRender(msg){const s=gm.s;$('#sb').innerHTML=`<div class="game">${gHead('✊ אבן נייר ומספריים · סיבוב '+s.round)}<p class="gsc">${pName(0)} <b>${s.score[0]}</b> : <b>${s.score[1]}</b> ${pName(1)}</p>
+${s.reveal?`<div class="rps-rev"><div><span>${RPS.find(x=>x[0]===s.ch[0])[1]}</span><small>${pName(0)}</small></div><b>מול</b><div><span>${RPS.find(x=>x[0]===s.ch[1])[1]}</span><small>${pName(1)}</small></div></div><p class="gmsg" aria-live="polite">${msg||''}</p>${s.end?'':'<button class="btn pri" type="button" data-act="rpsNext">סיבוב הבא</button>'}`
+:s.pass?`<p class="gmsg">${pName(0)} בחר/ה. עכשיו מעבירים את הטלפון ל<b>${pName(1)}</b> בלי להציץ!</p><button class="btn pri" type="button" data-act="rpsReady">אני ${pName(1)}, מוכן/ה</button>`
+:`<p class="gmsg">תור של <b>${pName(s.turn)}</b>. בחר/י בסתר:</p><div class="rps">${RPS.map(x=>`<button type="button" data-act="rpsPick" data-v="${x[0]}"><span>${x[1]}</span><small>${x[2]}</small></button>`).join('')}</div>`}</div>`}
+function rpsPick(v){const s=gm.s;s.ch[s.turn]=v;if(s.turn===0){s.turn=1;s.pass=true;rpsRender();return}
+  const a=s.ch[0],b=s.ch[1],beats={rock:'scissors',paper:'rock',scissors:'paper'};s.reveal=true;let msg;
+  if(a===b)msg='תיקו! עוד סיבוב';else{const w=beats[a]===b?0:1;s.score[w]++;msg=`הנקודה ל${gm.players[w].name}`;if(s.score[w]>=2){s.end=true;rpsRender(msg);setTimeout(()=>gameWin(w),1300);return}}rpsRender(msg)}
+/* dice */
+function diceStart(){gm.s={rolls:gm.players.map(()=>null),turn:0,alive:gm.players.map((_,i)=>i)};diceRender()}
+const DF=['⚀','⚁','⚂','⚃','⚄','⚅'];
+function diceRender(msg){const s=gm.s;$('#sb').innerHTML=`<div class="game">${gHead('🎲 קוביות')}<div class="dice-l">${gm.players.map((p,i)=>`<div class="dl ${s.alive.includes(i)?'':'out'} ${s.turn===i&&!s.done?'now':''}"><b>${esc(p.name)}</b><span class="dd" id="dd${i}">${s.rolls[i]?s.rolls[i].map(n=>DF[n-1]).join(' '):'– –'}</span><small>${s.rolls[i]?s.rolls[i][0]+s.rolls[i][1]:''}</small></div>`).join('')}</div><p class="gmsg" aria-live="polite">${msg||(s.done?'':`תור של <b>${pName(s.turn)}</b>`)}</p>${s.done?'':'<button class="btn pri big" type="button" data-act="diceRoll">🎲 מטילים!</button>'}</div>`}
+function diceRoll(){const s=gm.s;if(s.rolling||s.done)return;s.rolling=true;const i=s.turn;let n=0;const el=()=>$('#dd'+i);
+  const iv=setInterval(()=>{const e=el();if(e)e.textContent=DF[Math.random()*6|0]+' '+DF[Math.random()*6|0];if(++n>10){clearInterval(iv);s.rolling=false;s.rolls[i]=[1+(Math.random()*6|0),1+(Math.random()*6|0)];
+    const next=s.alive.find(k=>s.rolls[k]===null);if(next!==undefined){s.turn=next;diceRender();return}
+    const sum=k=>s.rolls[k][0]+s.rolls[k][1],best=Math.max(...s.alive.map(sum)),top=s.alive.filter(k=>sum(k)===best);
+    if(top.length===1){s.done=true;diceRender(`${gm.players[top[0]].name} ניצח/ה עם ${best}!`);setTimeout(()=>gameWin(top[0]),1300);return}
+    s.alive=top;for(const k of top)s.rolls[k]=null;s.turn=top[0];diceRender(`תיקו בין ${top.map(k=>gm.players[k].name).join(' ו')}! מטילים שוב`)}},70)}
+/* wheel */
+const WC=['#FF5E4D','#FFB347','#FF7AA2','#7C5CFF'];
+function wheelStart(){const P=gm.players,n=P.length,seg=360/n;gm.s={rot:0};
+  const grad=P.map((_,i)=>`${WC[i%4]} ${i*seg}deg ${(i+1)*seg}deg`).join(',');
+  $('#sb').innerHTML=`<div class="game">${gHead('🎡 גלגל המזל')}<div class="wheel-w"><div class="wheel-ptr">▼</div><div class="wheel" id="wheel" style="background:conic-gradient(${grad})">${P.map((p,i)=>`<span style="transform:rotate(${i*seg+seg/2}deg) translateY(-34%)"><b style="transform:rotate(${-(i*seg+seg/2)}deg)">${esc(p.name)}</b></span>`).join('')}</div></div><p class="gmsg" aria-live="polite"></p><button class="btn pri big" type="button" data-act="wheelSpin">מסובבים!</button></div>`}
+function wheelSpin(b){const s=gm.s;if(s.spun)return;s.spun=true;if(b)b.disabled=true;const n=gm.players.length,w=Math.random()*n|0,seg=360/n;
+  const target=360*6+(360-(w*seg+seg/2))+(Math.random()-.5)*seg*.6;const el=$('#wheel');el.style.transition='transform 4.2s cubic-bezier(.17,.67,.12,1)';requestAnimationFrame(()=>el.style.transform=`rotate(${target}deg)`);
+  setTimeout(()=>{const m=$('.gmsg');if(m)m.textContent=`${gm.players[w].name}!`;setTimeout(()=>gameWin(w),900)},4400)}
+/* result */
+function gameWin(w){if(!gm||mode!=='game')return;gm.stage='win';gm.w=w;const p=gm.players[w];confetti(120);if(navigator.vibrate)navigator.vibrate([60,40,120]);
+  const g=GAMES.find(x=>x.k===gm.game);
+  if(gm.how==='pre'){const r=byId(p.place);logAct('game',r?r.id:null,`${p.name} ניצח/ה ב${g.n}${r?' והולכים ל'+r.name:''}`);return gameResult(r)}
+  logAct('game',null,`${p.name} ניצח/ה ב${g.n} ובוחר/ת לאן הולכים`);
+  const places=gamePlaces();
+  $('#sb').innerHTML=`<div class="game gwin"><div class="trophy">🏆</div><h2>${esc(p.name)} ניצח/ה!</h2><p class="meta">אז ${esc(p.name)} בוחר/ת לאן הולכים:</p><input class="f" id="gq" placeholder="חיפוש מקום…" style="margin-top:12px"><div class="gchoose" id="gch">${places.map(r=>`<button type="button" class="gco" data-act="gChoose" data-id="${esc(r.id)}" data-n="${esc(r.name.toLowerCase())}"><b>${esc(r.name)}</b><small>${esc([r.cuisine,r.city].filter(Boolean).join(' · '))}</small></button>`).join('')||'<p class="note">אין עדיין מקומות ברשימה.</p>'}</div><div class="row" style="margin-top:12px"><button class="btn" type="button" data-act="gAgain">משחק חוזר</button></div></div>`}
+function gameResult(r){const p=gm.players[gm.w];
+  $('#sb').innerHTML=`<div class="pick gwin"><div class="trophy">🏆</div><p class="meta">${esc(p.name)} ניצח/ה, אז הולכים ל…</p><div class="nm">${esc(r?r.name:'—')}</div>${r?`<p class="meta">${esc([r.cuisine,r.city].filter(Boolean).join(' · '))}</p><div class="row"><button class="btn pri" type="button" data-act="planNew" data-id="${esc(r.id)}">${ICON.cal}קביעת יציאה + יומן</button><a class="btn" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button class="btn" type="button" data-act="open" data-id="${esc(r.id)}">פרטים</button></div>`:''}<button class="link-btn" type="button" data-act="gAgain">משחק חוזר</button></div>`}
 
 /* ---------- events ---------- */
 let popId='';
@@ -629,7 +735,7 @@ $('#lb').addEventListener('click',()=>$('#lb').hidden=true);
 document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(!$('#lb').hidden)$('#lb').hidden=true;else if(!$('#ov').hidden)closeSheet()});
 
 const S=$('#sb');
-S.addEventListener('input',e=>{
+S.addEventListener('input',e=>{if(e.target.id==='gq'){const v=e.target.value.trim().toLowerCase();for(const el of document.querySelectorAll('.gco'))el.hidden=!!v&&!el.dataset.n.includes(v);return}
   if(e.target.id==='paste'){const o=parseMaps(e.target.value),f=$('#ef');if(!f)return;
     for(const k of ['name','city','address','mapsUrl'])if(o[k]&&(k==='mapsUrl'||!f.elements[k].value.trim()))f.elements[k].value=o[k];
     if(Number.isFinite(o.lat)){setPin(o.lat,o.lng,false,true);if(!o.exact)f.elements.llLevel.value='street'}
@@ -643,9 +749,10 @@ S.addEventListener('submit',async e=>{
     const v={d,cost:Math.max(0,Math.round(Number(fm.elements.cost.value)||0)),occ:OCC[fm.elements.occ.value]!==undefined?fm.elements.occ.value:'',note:fm.elements.note.value.trim().slice(0,100)};
     const t=fm.elements.t&&fm.elements.t.value;if(t)v.t=t;const fut=d>today()||(d===today()&&t&&t>new Date().toTimeString().slice(0,5));
     document.activeElement&&document.activeElement.blur();await save(r.id,{visits:[...(r.visits||[]),v],...(fut?{}:{status:'been'}),updatedAt:Date.now()});
-    if(fut){toast('היציאה נקבעה! אפשר להוסיף אותה ליומן');logAct('plan',r.id,`קבע/ה יציאה ל${r.name} ${whenTxt(v)}`)}else{toast('הביקור נרשם');logAct('visit',r.id,`סימן/ה ביקור ב${r.name}`)}renderNotices();return}
+    if(fut){calPrompt(r,v);logAct('plan',r.id,`קבע/ה יציאה ל${r.name} ${whenTxt(v)}`)}else{toast('הביקור נרשם');logAct('visit',r.id,`סימן/ה ביקור ב${r.name}`)}renderNotices();return}
   if(fm.id==='cmtF'){const r=byId(openId);if(!r)return;const v=fm.elements.c.value;fm.elements.c.value='';fm.elements.c.blur();await sendComment(r,v);return}
   if(fm.id==='pollF'){await createPoll(fm);return}
+  if(fm.id==='planF'){await savePlan(fm);return}
   if(fm.id==='nameF'){const n=fm.elements.n.value.trim().slice(0,30);const {error}=await sb.from('profiles').upsert({user_id:myId,name:n});if(error)toast(errMsg(error));else{myName=n;toast('השם נשמר');await loadMembers();render()}return}
   if(fm.id==='renameF'){const n=fm.elements.n.value.trim().slice(0,40);if(!n)return;const {error}=await sb.from('lists').update({name:n}).eq('id',cur.id);if(error)toast(errMsg(error));else{cur.name=n;await loadLists();cur=lists.find(l=>l.id===cur.id)||cur;setTitle();toast('השם עודכן');settingsSheet()}return}
   if(fm.id==='newListF'){const n=fm.elements.n.value.trim();if(!n)return;const id=await doCreateList(n);if(id){await switchList(id);toast('הרשימה נוצרה! אפשר להוסיף מקומות ולהזמין חברים.')}return}
@@ -659,15 +766,36 @@ S.addEventListener('submit',async e=>{
   const btn=fm.querySelector('[type=submit]');btn.disabled=true;
   if(!Number.isFinite(d.lat)&&(d.address||d.city)){btn.textContent='מאתר את הכתובת…';const p=await geocode(d.address,d.city);if(p){d.lat=+p.lat.toFixed(6);d.lng=+p.lng.toFixed(6);d.llLevel='street'}}
   fitted=false;killFormMap();
-  if(mode==='new'){const id=uuid();logAct('add',id,`הוסיף/ה את ${d.name}`);const ok=await save(id,{...d,fav:false,ratings:{},votes:{},dishes:[],photos:[],visits:[],addedBy:myId,createdAt:Date.now()},true);if(ok){openId=id;mode='view';renderDetail()}else btn.disabled=false}
-  else{mode='view';const ok=await save(openId,d);if(!ok)mode='edit';renderDetail()}
+  if(mode==='new'){const id=uuid();logAct('add',id,`הוסיף/ה את ${d.name}`);const ok=await save(id,{...d,fav:false,ratings:{},votes:{},dishes:[],photos:[],visits:[],addedBy:myId,createdAt:Date.now()},true);if(ok){openId=id;mode='view';renderDetail();const pg=pendG;pendG=null;if(pg)importGPhotos(id,pg).then(k=>{if(k&&openId===id&&mode==='view')renderDetail()})}else btn.disabled=false}
+  else{const eid=openId;mode='view';const ok=await save(eid,d);if(!ok)mode='edit';renderDetail();const pg=pendG;pendG=null;if(ok&&pg&&!(byId(eid).photos||[]).some(p=>p.path))importGPhotos(eid,pg).then(k=>{if(k&&openId===eid&&mode==='view')renderDetail()})}
 });
 S.addEventListener('change',e=>{if(e.target.form&&e.target.form.id==='ef'&&(e.target.name==='address'||e.target.name==='city')){formGeocode();return}if(e.target.classList.contains('rcpt')){const f=e.target.files[0];if(f)scanReceipt(f);e.target.value='';return}if(e.target.id==='impFile'){readImport([...e.target.files]);return}if(e.target.classList.contains('up')){upload([...e.target.files],openId);e.target.value=''}if(e.target.classList.contains('camUp')){camUpload([...e.target.files]);e.target.value=''}});
+S.addEventListener('pointerdown',e=>{const t=e.target.closest('[data-act=rxTap]');if(t&&gm&&mode==='game'){e.preventDefault();reactTap(+t.dataset.i)}});
 S.addEventListener('click',async e=>{
   const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act,i=Number(b.dataset.i);
   if(a==='pickm'){pick(b.dataset.m,true);return}
   if(a==='pf'){const k=b.dataset.k,v=b.dataset.v;pickF[k]=k==='price'?Number(v):k==='tag'?v:!!v;pick(b.dataset.m,true);return}
   if(a==='pollNew'){clearInterval(pickTimer);pollNewSheet();return}
+  if(a==='gameNew'){gm=null;gameSheet();return}
+  if(a==='planNew'){planSheet(b.dataset.id);return}
+  if(a==='planD'){const f=$('#planF');if(f)f.elements.d.value=b.dataset.d;return}
+  if(a==='gPhotos'){b.disabled=true;await fetchGPhotosBtn(openId);b.disabled=false;return}
+  if(gm&&mode==='game'){
+    if(a==='gHow'){readGameSetup();gm.how=b.dataset.v;renderGameSetup();return}
+    if(a==='gAdd'){readGameSetup();if(gm.players.length<4){const ns=gameNames();gm.players.push({name:ns[gm.players.length]||'שחקן '+(gm.players.length+1),place:''})}if(GAMES.find(g=>g.k===gm.game).max<gm.players.length)gm.game='dice';renderGameSetup();return}
+    if(a==='gRm'){readGameSetup();gm.players.splice(i,1);renderGameSetup();return}
+    if(a==='gPick'){readGameSetup();gm.game=b.dataset.k;renderGameSetup();return}
+    if(a==='gStart'){gameStart();return}
+    if(a==='gBack'||a==='gAgain'){if(gm.s)clearTimeout(gm.s.t);gm.stage='setup';gm.s=null;renderGameSetup();return}
+    if(a==='rxGo'){reactGo();return}
+    if(a==='tttMv'){tttMove(i);return}
+    if(a==='rpsPick'){rpsPick(b.dataset.v);return}
+    if(a==='rpsReady'){gm.s.pass=false;rpsRender();return}
+    if(a==='rpsNext'){Object.assign(gm.s,{reveal:false,ch:[null,null],turn:0,round:gm.s.round+1});rpsRender();return}
+    if(a==='diceRoll'){diceRoll();return}
+    if(a==='wheelSpin'){wheelSpin(b);return}
+    if(a==='gChoose'){const r=byId(b.dataset.id);if(r){logAct('game',r.id,`${gm.players[gm.w].name} בחר/ה ללכת ל${r.name}`);gameResult(r)}return}
+  }
   if(a==='pollVote'){const p=polls.find(x=>x.id===openPoll);if(!p)return;p.votes={...(p.votes||{}),[myId]:b.dataset.o};renderPoll();renderNotices();const {error}=await sb.rpc('vote_poll',{pid:p.id,choice:b.dataset.o});if(error)toast(errMsg(error));return}
   if(a==='pollClose'){const p=polls.find(x=>x.id===openPoll);if(!p)return;const {error}=await sb.from('polls').update({closed:true}).eq('id',p.id);if(error){toast(errMsg(error));return}p.closed=true;renderPoll();renderNotices();confetti();const w=byId(pollWinner(p));if(w)logAct('poll',w.id,`סגר/ה את ההצבעה: יוצאים ל${w.name}!`);return}
   if(a==='pollDel'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב';return}await sb.from('polls').delete().eq('id',openPoll);polls=polls.filter(p=>p.id!==openPoll);renderNotices();closeSheet();return}
