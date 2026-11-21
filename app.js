@@ -19,7 +19,7 @@ const queues={};
 
 /* ---------- helpers ---------- */
 function toast(m){if(!m)return;const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,3500)}
-function errMsg(e){const m=String(e&&(e.message||e.error_description)||'');if(/row-level|permission|not allowed|42501/i.test(m))return 'אין לך הרשאה לפעולה הזו.';if(/fetch|network|Failed/i.test(m))return 'אין חיבור לאינטרנט כרגע.';return 'משהו השתבש, נסו שוב.'}
+function errMsg(e){const m=String(e&&(e.message||e.error_description)||'');if(/banned/i.test(m))return 'החשבון הזה הושהה על ידי מנהל האפליקציה.';if(/row-level|permission|not allowed|42501/i.test(m))return 'אין לך הרשאה לפעולה הזו.';if(/fetch|network|Failed/i.test(m))return 'אין חיבור לאינטרנט כרגע.';return 'משהו השתבש, נסו שוב.'}
 const byId=id=>rows.find(r=>r.id===id);
 const safeUrl=u=>/^https?:\/\//i.test(String(u||'').trim())?String(u).trim():'';
 const qText=r=>[r.name,r.address,r.city].filter(Boolean).join(' ');
@@ -48,26 +48,31 @@ const GRADS=[['#FF9A3C','#FF4E6A'],['#FFC24B','#FF7A2F'],['#2BD9A8','#14B88A'],[
 function plate(name){const h=hue(name),g=GRADS[h%GRADS.length],t=h%3,id='pg'+h;const glass=t===0?'<path d="M268 118h48l-24 36z" fill="#ffffff40" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><path d="M292 154v38M276 194h32" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="306" cy="118" r="8" fill="#FFD166" stroke="#fff" stroke-width="3"/>':t===1?'<path d="M272 110h40c0 30-7 46-20 48c-13-2-20-18-20-48z" fill="#ffffff40" stroke="#fff" stroke-width="4"/><path d="M292 158v34M276 194h32" stroke="#fff" stroke-width="4" stroke-linecap="round"/>':'<rect x="272" y="118" width="38" height="76" rx="8" fill="#ffffff40" stroke="#fff" stroke-width="4"/><circle cx="284" cy="150" r="3" fill="#fff"/><circle cx="296" cy="166" r="2.5" fill="#fff"/><circle cx="290" cy="136" r="2" fill="#fff"/>';return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${g[0]}"/><stop offset="1" stop-color="${g[1]}"/></linearGradient></defs><rect width="400" height="300" fill="url(#${id})"/><circle cx="70" cy="40" r="90" fill="#ffffff22"/><circle cx="360" cy="280" r="110" fill="#ffffff18"/><ellipse cx="180" cy="206" rx="78" ry="14" fill="#00000018"/><circle cx="180" cy="150" r="70" fill="#fff"/><circle cx="180" cy="150" r="50" fill="none" stroke="${g[0]}" stroke-opacity=".35" stroke-width="3"/>${glass}<text x="180" y="170" text-anchor="middle" font-family="Rubik,sans-serif" font-weight="800" font-size="56" fill="${g[1]}">${esc((name||'?').trim().charAt(0))}</text></svg>`}
 
 /* ---------- photos (private storage, signed URLs) ---------- */
-const urlCache={};
+function lsGetEarly(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch{return d}}
+const urlCache={};{const c=lsGetEarly('rs-urls',{}),now=Date.now();for(const [k,v] of Object.entries(c))if(v&&v.e>now+864e5)urlCache[k]=v.u}
+const urlExp={};function saveUrls(){const now=Date.now(),o={};for(const [k,u] of Object.entries(urlCache)){const e=urlExp[k]||(lsGetEarly('rs-urls',{})[k]||{}).e;if(e&&e>now)o[k]={u,e}}try{localStorage.setItem('rs-urls',JSON.stringify(o))}catch{}}
 const photoImg=(p,extra='')=>p&&p.path?`<img data-path="${esc(p.path)}" alt="" ${extra}${urlCache[p.path]?` src="${esc(urlCache[p.path])}"`:''}>`:'';
 async function hydrate(){const els=[...document.querySelectorAll('img[data-path]:not([src])')];if(!els.length||!sb)return;
   const paths=[...new Set(els.map(e=>e.dataset.path))].filter(p=>!urlCache[p]);
-  if(paths.length){try{const {data}=await sb.storage.from('photos').createSignedUrls(paths,60*60*24*7);for(const d of data||[])if(d.signedUrl)urlCache[d.path]=d.signedUrl}catch{}}
+  if(paths.length){try{const {data}=await sb.storage.from('photos').createSignedUrls(paths,60*60*24*7);for(const d of data||[])if(d.signedUrl){urlCache[d.path]=d.signedUrl;urlExp[d.path]=Date.now()+6.5*864e5}saveUrls()}catch{}}
   for(const e of document.querySelectorAll('img[data-path]:not([src])'))if(urlCache[e.dataset.path])e.src=urlCache[e.dataset.path]}
-async function shrink(f){try{const bm=await createImageBitmap(f,{imageOrientation:'from-image'});const k=Math.min(1,1600/Math.max(bm.width,bm.height));const c=document.createElement('canvas');c.width=Math.round(bm.width*k);c.height=Math.round(bm.height*k);c.getContext('2d').drawImage(bm,0,0,c.width,c.height);return await new Promise(res=>c.toBlob(b=>res(b||f),'image/jpeg',.85))}catch{return f}}
+async function shrink(f,max,qual){try{const bm=await createImageBitmap(f,{imageOrientation:'from-image'});const k=Math.min(1,(max||1600)/Math.max(bm.width,bm.height));const c=document.createElement('canvas');c.width=Math.round(bm.width*k);c.height=Math.round(bm.height*k);c.getContext('2d').drawImage(bm,0,0,c.width,c.height);return await new Promise(res=>c.toBlob(b=>res(b||f),'image/jpeg',qual||.85))}catch{return f}}
+/* uploads a photo + a small thumbnail for the list cards */
+async function putPhoto(id,blob){const b=await shrink(blob);const k=uuid(),path=`${id}/${k}.jpg`;const {error}=await sb.storage.from('photos').upload(path,b,{contentType:'image/jpeg',upsert:false});if(error)throw error;
+  let thumb;try{const t=await shrink(b,520,.78);const tp=`${id}/t_${k}.jpg`;const r=await sb.storage.from('photos').upload(tp,t,{contentType:'image/jpeg',upsert:false});if(!r.error)thumb=tp}catch{}return thumb?{path,thumb}:{path}}
 async function upload(files,id){
   const r=byId(id);if(!r||!files.length)return false;
   if(!navigator.onLine){for(const f of files){try{await idbAdd({rid:id,blob:await shrink(f),by:myId,at:Date.now()})}catch{}}toast('אין חיבור. התמונות נשמרו במכשיר ויעלו כשהחיבור יחזור.');return true}const st=()=>$('#upst'),added=[];
   for(let i=0;i<files.length;i++){if(st())st().textContent=`מעלה ${i+1} מתוך ${files.length}…`;
-    try{const b=await shrink(files[i]);const path=`${id}/${uuid()}.jpg`;const {error}=await sb.storage.from('photos').upload(path,b,{contentType:b.type||'image/jpeg',upsert:false});if(error)throw error;added.push({path,by:myId,at:Date.now()})}catch(e){toast('העלאת תמונה נכשלה: '+errMsg(e))}}
+    try{const ph=await putPhoto(id,files[i]);added.push({...ph,by:myId,at:Date.now()})}catch(e){toast('העלאת תמונה נכשלה: '+errMsg(e))}}
   let ok=false;if(added.length){const cur=byId(id);ok=await save(id,{photos:[...((cur&&cur.photos)||[]),...added],updatedAt:Date.now()});if(ok){toast(added.length===1?'התמונה נשמרה':`${added.length} תמונות נשמרו`);logAct('photo',id,`העלה/תה ${added.length===1?'תמונה':added.length+' תמונות'} ב${r.name}`)}}
   if(st())st().textContent='';return ok}
 
 /* ---------- data ---------- */
 function applyPatch(r,p){const o={...r,...p};if(p.ratings)o.ratings={...(r.ratings||{}),...p.ratings};if(p.votes)o.votes={...(r.votes||{}),...p.votes};return o}
 async function loadAll(){if(!cur)return;const lid=cur.id;const {data,error}=await sb.from('restaurants').select('id,data').eq('list_id',lid).order('updated_at',{ascending:false});if(!cur||cur.id!==lid)return;if(error){const c=lsGet('rs-cache-'+lid,null);if(c&&isNetErr(error)){rows=c;loaded=true;render();setOffline();return}$('#status').textContent='הרשימה לא נטענה: '+errMsg(error);return}
-  rows=(data||[]).map(x=>({...(x.data||{}),id:x.id}));takeMeta(lid);const pend=lsGet('rs-outbox',[]).filter(o=>o.lid===lid);for(const o of pend){if(o.isNew){if(!byId(o.id))rows.unshift({...o.patch,id:o.id})}else rows=rows.map(r=>r.id===o.id?applyPatch(r,o.patch):r)}
-  loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch();setTimeout(backfillGeo,1500)}
+  rows=(data||[]).map(x=>({...(x.data||{}),id:x.id}));takeMeta(lid);const pend=lsGet('rs-outbox',[]).filter(o=>o.lid===lid);for(const o of pend){if(o.t==='del'){rows=rows.filter(r=>r.id!==o.id);continue}if(o.t)continue;if(o.isNew){if(!byId(o.id))rows.unshift({...o.patch,id:o.id})}else rows=rows.map(r=>r.id===o.id?applyPatch(r,o.patch):r)}
+  loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch();setTimeout(backfillGeo,1500);setTimeout(thumbBackfill,9000)}
 function save(id,patch,isNew){
   const prev=byId(id);
   if(isNew)rows.unshift({...patch,id});else if(prev)rows=rows.map(r=>r.id===id?applyPatch(r,patch):r);
@@ -77,8 +82,8 @@ function save(id,patch,isNew){
   const p=(queues[id]||Promise.resolve()).then(run).then(({error})=>{if(error)throw error});
   queues[id]=p.catch(()=>{});
   return p.then(()=>{cacheRows();setTimeout(checkAch,300);return true},e=>{if(isNetErr(e)){queueOp({id,patch,isNew,lid});return true}toast(errMsg(e));loadAll();return false})}
-async function removeRow(r){const {error}=await sb.from('restaurants').delete().eq('id',r.id);if(error){toast(errMsg(error));return false}
-  rows=rows.filter(x=>x.id!==r.id);const paths=(r.photos||[]).map(p=>p.path).filter(Boolean);if(paths.length)sb.storage.from('photos').remove(paths).catch(()=>{});render();return true}
+async function removeRow(r){if(!navigator.onLine){queueOp({t:'del',id:r.id,lid:cur.id,paths:(r.photos||[]).flatMap(p=>[p.path,p.thumb]).filter(Boolean)});rows=rows.filter(x=>x.id!==r.id);cacheRows();render();return true}const {error}=await sb.from('restaurants').delete().eq('id',r.id);if(error){toast(errMsg(error));return false}
+  rows=rows.filter(x=>x.id!==r.id);const paths=(r.photos||[]).flatMap(p=>[p.path,p.thumb]).filter(Boolean);if(paths.length)sb.storage.from('photos').remove(paths).catch(()=>{});render();return true}
 function subscribe(){if(chan)return;chan=sb.channel('restaurants-live').on('postgres_changes',{event:'*',schema:'public',table:'restaurants'},pl=>{
   if(pl.eventType==='DELETE'){const id=pl.old&&pl.old.id;if(!byId(id))return;rows=rows.filter(r=>r.id!==id);if(openId===id&&mode==='view')closeSheet()}
   else{const n=pl.new;if(!n||!cur||n.list_id!==cur.id)return;const row={...(n.data||{}),id:n.id};if(row._meta){if(!meta.id||meta.id===row.id){meta={id:row.id,special:row.special||[],diets:row.diets||{}};lsSet('rs-meta-'+cur.id,meta);renderNotices();if(mode==='pick')pick(undefined,true)}return}const i=rows.findIndex(r=>r.id===n.id);if(i>=0)rows[i]=row;else rows.unshift(row)}
@@ -105,7 +110,7 @@ function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!ope
   const s={recent:(a,b)=>(b.updatedAt||0)-(a.updatedAt||0),rating:(a,b)=>avg(b)-avg(a),visit:(a,b)=>lastVisit(b).localeCompare(lastVisit(a)),name:(a,b)=>String(a.name).localeCompare(String(b.name),'he'),near:(a,b)=>(distKm(a)??1e9)-(distKm(b)??1e9)}[sort]||((a,b)=>0);return list.sort(s)}
 function renderHead(){const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,m=rows.filter(isMatch).length;
   $('#stats').innerHTML=loaded?`היינו ב־<b>${been}</b> · רוצים לנסות <b>${want}</b>${m?` · <b>${m}</b> ששנינו רוצים השבוע`:''}`:'טוען…'}
-function renderList(){
+function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove());
   const cs=[...new Set(rows.map(r=>r.cuisine).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'he'));
   if(cuisF&&!cs.includes(cuisF))cuisF='';
   const hasHours=rows.some(r=>r.hours&&Object.keys(r.hours).length);
@@ -115,7 +120,10 @@ function renderList(){
   if(!rows.length){g.innerHTML=`<div class="empty"><h2>עוד אין כאן מסעדות</h2><p>הוסיפו מקום שהייתם בו או מקום שאתם חולמים עליו, והרשימה תתחיל להתמלא.</p><button class="btn pri" type="button" data-act="add">הוסיפו את הראשונה</button></div>`;return}
   const list=filtered();
   if(!list.length){g.innerHTML=`<div class="empty"><h2>${view==='match'?'עוד אין מקום ששניכם בחרתם השבוע':'לא נמצא כלום'}</h2><p>${view==='match'?'לחצו "בא לי" על מקומות שבא לכם ללכת אליהם. כששניכם בוחרים אותו מקום, הוא יופיע כאן.':'נסו חיפוש אחר או הסירו סינון.'}</p></div>`;return}
-  g.innerHTML=list.map((r,idx)=>{const p=(r.photos||[]).find(x=>x.path),a=avg(r),mv=iVoted(r),mt=isMatch(r);return `<article class="card" tabindex="0" data-id="${esc(r.id)}" style="--i:${Math.min(idx,12)}"><div class="cover">${p?photoImg(p,'loading="lazy"'):plate(r.name)}<div class="badges"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${mt?'<span class="badge match">שנינו רוצים!</span>':''}${(()=>{const u=upcoming().find(x=>x.r.id===r.id);return u?`<span class="badge plan">${esc(whenTxt(u.v))}</span>`:''})()}${hhNow(r)?'<span class="badge hh">האפי אוור עכשיו</span>':''}</div>${r.fav?'<span class="heart" aria-label="מועדף">♥</span>':''}</div><div class="cbody"><h3>${esc(r.name)}</h3><p class="meta">${[r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')||'&nbsp;'}</p><div class="mrow">${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}${(()=>{const o=openState(r);return o?`<span class="open ${o.open?'on':''}">${o.open?'פתוח':'סגור'}</span>`:''})()}${distKm(r)!=null?`<span class="dist">${esc(distTxt(distKm(r)))}</span>`:''}</div><div class="acts"><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button type="button" class="btn sm ${mv?'on':''} ${popId===r.id?'pop':''}" data-vote="${esc(r.id)}" aria-pressed="${mv}">${mv?'♥':'♡'} בא לי</button></div></div></article>`}).join('');
+  const upM=new Map();for(const u of upcoming())if(!upM.has(u.r.id))upM.set(u.r.id,u);
+  const card=(r,idx)=>{const p=(r.photos||[]).find(x=>x.path),a=avg(r),mv=iVoted(r),mt=isMatch(r);return `<article class="card" tabindex="0" data-id="${esc(r.id)}" style="--i:${Math.min(idx,12)}"><div class="cover">${p?photoImg(p.thumb?{path:p.thumb}:p,'loading="lazy" decoding="async"'):plate(r.name)}<div class="badges"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${mt?'<span class="badge match">שנינו רוצים!</span>':''}${(()=>{const u=upM.get(r.id);return u?`<span class="badge plan">${esc(whenTxt(u.v))}</span>`:''})()}${hhNow(r)?'<span class="badge hh">האפי אוור עכשיו</span>':''}</div>${r.fav?'<span class="heart" aria-label="מועדף">♥</span>':''}</div><div class="cbody"><h3>${esc(r.name)}</h3><p class="meta">${[r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')||'&nbsp;'}</p><div class="mrow">${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}${(()=>{const o=openState(r);return o?`<span class="open ${o.open?'on':''}">${o.open?'פתוח':'סגור'}</span>`:''})()}${distKm(r)!=null?`<span class="dist">${esc(distTxt(distKm(r)))}</span>`:''}</div><div class="acts"><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button type="button" class="btn sm ${mv?'on':''} ${popId===r.id?'pop':''}" data-vote="${esc(r.id)}" aria-pressed="${mv}">${mv?'♥':'♡'} בא לי</button></div></div></article>`};
+  const CH=24;let shown=Math.max(CH,renderList.keep||0);g.innerHTML=list.slice(0,shown).map(card).join('');if(renderList.io)renderList.io.disconnect();
+  if(list.length>shown&&'IntersectionObserver' in window){const sen=document.createElement('div');sen.className='more-sen';g.after(sen);renderList.io=new IntersectionObserver(es=>{if(!es.some(e=>e.isIntersecting))return;const nx=list.slice(shown,shown+CH);g.insertAdjacentHTML('beforeend',nx.map((r,i)=>card(r,shown+i)).join(''));shown+=nx.length;renderList.keep=shown;hydrate();if(shown>=list.length){renderList.io.disconnect();sen.remove()}},{rootMargin:'800px'});renderList.io.observe(sen)}else if(list.length>shown){g.innerHTML+=list.slice(shown).map((r,i)=>card(r,shown+i)).join('')}
   hydrate();
 }
 
@@ -331,7 +339,7 @@ function listsSheet(){killFormMap();openId=null;mode='lists';openSheet();
 <div class="sec"><h4>רשימה חדשה</h4><form class="addrow" id="newListF"><input class="f" name="n" maxlength="40" placeholder="למשל: דייטים, ארוחות עבודה, טיול באיטליה" aria-label="שם הרשימה" required><button class="btn pri" type="submit">יצירה</button></form></div>
 <div class="sec"><h4>הצטרפות לרשימה של מישהו אחר</h4><form class="addrow" id="joinF"><input class="f" name="c" dir="ltr" placeholder="הדביקו כאן קישור הזמנה" aria-label="קישור הזמנה" required><button class="btn" type="submit">הצטרפות</button></form></div>`}
 async function loadPk(){const el=$('#pkList');if(!el)return;try{const {data,error}=await sb.auth.passkey.list();if(error)throw error;const arr=Array.isArray(data)?data:(data&&(data.passkeys||data.items))||[];el.innerHTML=arr.length?arr.map(p=>`<div class="mem"><span><b>${esc(p.friendly_name||p.friendlyName||'מפתח גישה')}</b><br><small class="meta">נוסף ${esc(fmtD(String(p.created_at||p.createdAt||'').slice(0,10)))}</small></span><button class="del" type="button" data-act="pkDel" data-id="${esc(p.id)}" aria-label="הסרה">×</button></div>`).join(''):'עוד לא הופעל באף מכשיר.';return arr}catch{el.textContent='';return null}}
-function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const own=isOwner();setTimeout(loadPk,0);setTimeout(fillPushSec,0);setTimeout(fillQuotaAdm,0);
+function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const own=isOwner();setTimeout(loadPk,0);setTimeout(fillPushSec,0);setTimeout(fillQuotaAdm,0);setTimeout(fillBackups,0);
   $('#sb').innerHTML=`<div class="sec dh"><h2>הגדרות</h2><p class="meta" style="margin-top:6px">מחובר/ת בתור <span dir="ltr">${esc(me.email)}</span></p>
 <form class="addrow" id="nameF"><input class="f" name="n" maxlength="30" value="${esc(myName)}" placeholder="השם שלי" aria-label="השם שלי"><button class="btn" type="submit">שמירת שם</button></form></div>
 <div class="sec"><h4>הרשימה "${esc(cur.name)}"</h4>${own?`<form class="addrow" id="renameF" style="margin-top:0"><input class="f" name="n" maxlength="40" value="${esc(cur.name)}" aria-label="שם הרשימה"><button class="btn" type="submit">שינוי שם</button></form>`:'<p class="note" style="margin:0">הצטרפת לרשימה הזו בהזמנה.</p>'}
@@ -342,12 +350,12 @@ function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();c
 ${pkOK()?`<div class="sec"><h4>כניסה עם ${bioName()}</h4><p class="note" style="margin:0 0 10px">מפעילים פעם אחת בכל מכשיר, ומשם נכנסים בלי סיסמה.</p><div id="pkList" class="note">טוען…</div><button class="btn pri" type="button" data-act="pkAdd" style="margin-top:10px">הפעלת ${bioName()} במכשיר הזה</button></div>`:''}
 ${dietSecHtml()}${specialSecHtml()}<div class="sec"><h4>התראות לטלפון</h4><div id="pushSec"><p class="note">בודק…</p></div></div>
 <div class="sec"><h4>צ׳ק־אין אוטומטי</h4><p class="note" style="margin:0 0 10px">כשאתם פותחים את האפליקציה ליד מקום מהרשימה, היא שואלת אם לרשום ביקור. צריך לאשר גישה למיקום.</p><div class="seg" role="group" aria-label="צ׳ק־אין אוטומטי"><button type="button" data-act="ciSet" data-v="on" aria-pressed="${lsGet('rs-checkin','on')!=='off'}">פעיל</button><button type="button" data-act="ciSet" data-v="off" aria-pressed="${lsGet('rs-checkin','on')==='off'}">כבוי</button></div></div>
-${pubSecHtml()}<div id="qAdm"></div>
+${pubSecHtml()}${backupSecHtml()}<div id="qAdm"></div>
 <div class="sec"><h4>מראה</h4><div class="seg" role="group" aria-label="ערכת צבעים">${[['auto','אוטומטי'],['light','בהיר'],['dark','כהה']].map(([k,t])=>`<button type="button" data-act="theme" data-t="${k}" aria-pressed="${curTheme()===k}">${t}</button>`).join('')}</div></div>
 <div class="sec"><h4>ייבוא</h4><button class="btn" type="button" data-act="import">${ICON.pin}ייבוא מקומות שמורים מגוגל מפות</button></div>
 <div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
 </div>
-<div class="sec"><button class="btn" type="button" data-act="signout">התנתקות</button></div>`}
+<div class="sec"><div class="row"><button class="btn" type="button" data-act="onb">הדרכה קצרה על האפליקציה</button><button class="btn" type="button" data-act="signout">התנתקות</button></div></div>`}
 const codeFrom=v=>{v=String(v||'').trim();try{const u=new URL(v);return u.searchParams.get('join')||''}catch{}return /^[a-f0-9]{8,40}$/i.test(v)?v:''};
 async function doCreateList(name){const {data,error}=await sb.rpc('create_list',{list_name:name});if(error){toast(errMsg(error));return null}await loadLists();return data}
 async function doJoin(code){const {data,error}=await sb.rpc('join_list',{code});if(error){toast(errMsg(error));return null}if(!data){toast('קישור ההזמנה לא תקף. אולי אופס? בקשו קישור חדש.');return null}await loadLists();return data}
@@ -358,27 +366,30 @@ const lsGet=(k,d)=>{try{const v=localStorage.getItem(k);return v==null?d:JSON.pa
 const lsSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
 function cacheRows(){if(cur)lsSet('rs-cache-'+cur.id,rows)}
 let offToast=0;
-function queueOp(op){const q=lsGet('rs-outbox',[]);q.push(op);lsSet('rs-outbox',q);if(Date.now()-offToast>8000){offToast=Date.now();toast('אין חיבור. השינוי נשמר במכשיר ויסונכרן כשהחיבור יחזור.')}cacheRows();setOffline()}
+function queueOp(op,silent){const q=lsGet('rs-outbox',[]);const last=q[q.length-1];
+  if(op.t==='del'&&q.some(o=>!o.t&&o.isNew&&o.id===op.id)){lsSet('rs-outbox',q.filter(o=>o.t||o.id!==op.id));cacheRows();setOffline();return}
+  let m=null;if(!op.t&&!op.isNew){if(last&&!last.t&&last.id===op.id&&last.lid===op.lid)m=last;else m=q.find(o=>!o.t&&o.isNew&&o.id===op.id&&o.lid===op.lid)||null}
+  if(m)m.patch=applyPatch(m.patch,op.patch);else q.push(op);lsSet('rs-outbox',q);if(!silent&&Date.now()-offToast>8000){offToast=Date.now();toast('אין חיבור. השינוי נשמר במכשיר ויסונכרן כשהחיבור יחזור.')}cacheRows();setOffline()}
 let flushing=false;
 async function flushOutbox(){if(flushing||!navigator.onLine||!sb)return;flushing=true;let q=lsGet('rs-outbox',[]),done=0;
-  while(q.length){const op=q[0];try{const {error}=op.isNew?await sb.from('restaurants').insert({id:op.id,list_id:op.lid,data:op.patch}):await sb.rpc('patch_restaurant',{rid:op.id,patch:op.patch});if(error&&isNetErr(error))break;q.shift();done++;lsSet('rs-outbox',q)}catch(e){if(isNetErr(e))break;q.shift();lsSet('rs-outbox',q)}}
+  while(q.length){const op=q[0];try{const {error}=op.t==='del'?await sb.from('restaurants').delete().eq('id',op.id):op.t==='cmt'?await sb.from('comments').insert({list_id:op.lid,restaurant_id:op.rid,body:op.body}):op.t==='act'?await sb.from('activity').insert({list_id:op.lid,kind:op.kind,restaurant_id:op.rid||null,text:op.text}):op.isNew?await sb.from('restaurants').insert({id:op.id,list_id:op.lid,data:op.patch}):await sb.rpc('patch_restaurant',{rid:op.id,patch:op.patch});if(error&&(isNetErr(error)||/JWT|token/i.test(error.message||'')))break;if(!error&&op.t==='del'&&op.paths&&op.paths.length)sb.storage.from('photos').remove(op.paths).catch(()=>{});q.shift();done++;lsSet('rs-outbox',q)}catch(e){if(isNetErr(e))break;q.shift();lsSet('rs-outbox',q)}}
   flushing=false;await flushPhotos();if(done){toast('השינויים שנשמרו במכשיר סונכרנו');loadAll()}setOffline()}
 const idb=()=>new Promise((res,rej)=>{const r=indexedDB.open('fomo',1);r.onupgradeneeded=()=>r.result.createObjectStore('up',{autoIncrement:true});r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
 async function idbAdd(v){const d=await idb();return new Promise(r=>{const t=d.transaction('up','readwrite');t.objectStore('up').add(v);t.oncomplete=()=>r()})}
 async function idbAll(){const d=await idb();return new Promise(r=>{const out=[];const t=d.transaction('up');t.objectStore('up').openCursor().onsuccess=e=>{const c=e.target.result;if(c){out.push({k:c.key,v:c.value});c.continue()}else r(out)}})}
 async function idbDel(k){const d=await idb();return new Promise(r=>{const t=d.transaction('up','readwrite');t.objectStore('up').delete(k);t.oncomplete=()=>r()})}
 async function flushPhotos(){if(!navigator.onLine)return;let items=[];try{items=await idbAll()}catch{return}
-  for(const {k,v} of items){try{const path=`${v.rid}/${uuid()}.jpg`;const {error}=await sb.storage.from('photos').upload(path,v.blob,{contentType:'image/jpeg'});if(error)throw error;
+  for(const {k,v} of items){try{const ph=await putPhoto(v.rid,v.blob);
     let r=byId(v.rid);if(!r){const {data}=await sb.from('restaurants').select('data').eq('id',v.rid).maybeSingle();r=data&&data.data}
-    if(r){const photos=[...(r.photos||[]),{path,by:v.by,at:v.at}];if(byId(v.rid))await save(v.rid,{photos,updatedAt:Date.now()});else await sb.rpc('patch_restaurant',{rid:v.rid,patch:{photos}})}
+    if(r){const photos=[...(r.photos||[]),{...ph,by:v.by,at:v.at}];if(byId(v.rid))await save(v.rid,{photos,updatedAt:Date.now()});else await sb.rpc('patch_restaurant',{rid:v.rid,patch:{photos}})}
     await idbDel(k)}catch(e){if(isNetErr(e))return}}}
-function setOffline(){const n=lsGet('rs-outbox',[]).length;const el=$('#status');if(!el)return;if(!navigator.onLine)el.textContent='אין חיבור לאינטרנט · מוצגים הנתונים השמורים במכשיר'+(n?` · ${n} שינויים ממתינים לסנכרון`:'');else if(el.textContent.startsWith('אין חיבור'))el.textContent=''}
+function setOffline(){const n=lsGet('rs-outbox',[]).length;const el=$('#status');if(!el)return;if(!navigator.onLine)el.textContent='אין חיבור לאינטרנט · מוצגים הנתונים השמורים במכשיר'+(n?` · ${n===1?'שינוי אחד ממתין':n+' שינויים ממתינים'} לסנכרון`:'');else if(n)el.textContent=`מסנכרן ${n===1?'שינוי אחד':n+' שינויים'} שנשמרו במכשיר…`;else if(/^אין חיבור|^מסנכרן/.test(el.textContent))el.textContent=''}
 window.addEventListener('online',()=>{setOffline();flushOutbox()});window.addEventListener('offline',setOffline);
 
 /* ================= activity feed ================= */
 let acts=[];
 const relT=t=>{const m=(Date.now()-new Date(t))/6e4;return m<1?'עכשיו':m<60?`לפני ${Math.round(m)} דק׳`:m<1440?`לפני ${Math.round(m/60)} שע׳`:m<2880?'אתמול':fmtD(String(t).slice(0,10),{day:'numeric',month:'short'})};
-function logAct(kind,rid,text){if(!cur||!navigator.onLine)return;sb.from('activity').insert({list_id:cur.id,kind,restaurant_id:rid||null,text}).then(()=>{},()=>{})}
+function logAct(kind,rid,text){if(!cur)return;if(!navigator.onLine){queueOp({t:'act',lid:cur.id,kind,rid:rid||null,text},true);return}sb.from('activity').insert({list_id:cur.id,kind,restaurant_id:rid||null,text}).then(()=>{},()=>{})}
 async function loadActivity(){if(!cur)return;const lid=cur.id;try{const {data}=await sb.from('activity').select('*').eq('list_id',lid).order('created_at',{ascending:false}).limit(60);if(cur&&cur.id===lid){acts=data||[];renderBell()}}catch{}}
 const seenKey=()=>'rs-seen-'+(cur&&cur.id);
 function unread(){const s=lsGet(seenKey(),0);return acts.filter(a=>a.user_id!==myId&&new Date(a.created_at).getTime()>s).length}
@@ -395,7 +406,7 @@ function commentsHtml(r){if(cmts[r.id]===undefined){cmts[r.id]=null;loadComments
   return `<div class="sec"><h4>שיחה על המקום</h4><div class="cmts">${arr===null?'<p class="note">טוען…</p>':arr.length?arr.map(c=>`<div class="cmt ${c.user_id===myId?'me':''}"><span class="av" style="--h:${hue(c.user_id)}">${esc(nm(c.user_id).charAt(0))}</span><div class="bub"><b>${esc(nm(c.user_id))}</b><p>${esc(c.body)}</p><small>${relT(c.created_at)}</small></div>${c.user_id===myId||isOwner()?`<button type="button" class="del" data-act="rmCmt" data-cid="${esc(c.id)}" aria-label="מחיקת תגובה">×</button>`:''}</div>`).join(''):'<p class="note">עוד אין תגובות. מה דעתכם על המקום?</p>'}</div>
 <div class="emo">${EMO.map(e=>`<button type="button" class="emo-b" data-act="emo" data-e="${e}">${e}</button>`).join('')}</div>
 <form class="addrow" id="cmtF"><input class="f" name="c" maxlength="500" placeholder="כתבו משהו…" aria-label="תגובה"><button class="btn pri" type="submit">שליחה</button></form></div>`}
-async function sendComment(r,body){body=String(body||'').trim().slice(0,500);if(!body)return;if(!navigator.onLine){toast('צריך חיבור לאינטרנט כדי להגיב');return}
+async function sendComment(r,body){body=String(body||'').trim().slice(0,500);if(!body)return;if(!navigator.onLine){cmts[r.id]=[...(cmts[r.id]||[]),{id:'tmp-'+uuid(),user_id:myId,body,created_at:new Date().toISOString(),restaurant_id:r.id}];queueOp({t:'cmt',lid:cur.id,rid:r.id,body});logAct('comment',r.id,`הגיב/ה על ${r.name}: "${body.slice(0,60)}"`);renderDetail();return}
   const {data,error}=await sb.from('comments').insert({list_id:cur.id,restaurant_id:r.id,body}).select().single();if(error){toast(errMsg(error));return}
   cmts[r.id]=[...(cmts[r.id]||[]).filter(c=>c.id!==data.id),data];logAct('comment',r.id,`הגיב/ה על ${r.name}: "${body.slice(0,60)}"`);renderDetail()}
 
@@ -456,7 +467,7 @@ function distKm(r){if(!myLoc||!hasLL(r))return null;const R=6371,t=x=>x*Math.PI/
 const distTxt=d=>d==null?'':(d<1?Math.round(d*1000/10)*10+' מ׳':d.toFixed(d<10?1:0)+' ק״מ')+' · ~'+Math.max(2,Math.round(d*2.2+2))+' דק׳';
 
 /* ================= notices (today plans + polls) ================= */
-function renderNotices(){setTimeout(()=>{if($('#cdT')&&!cdTimer)cdTimer=setInterval(cdTick,30000)},0);const el=$('#pollBar');if(!el)return;const tp=upcoming().filter(({v})=>daysTo(v.d)<=1);const op=polls.filter(p=>!p.closed);const ev=(typeof events!=='undefined'?events:[]).filter(e=>e.d>=today()&&daysTo(e.d)<=3);
+function renderNotices(){outBadge();setTimeout(()=>{if($('#cdT')&&!cdTimer)cdTimer=setInterval(cdTick,30000)},0);const el=$('#pollBar');if(!el)return;const tp=upcoming().filter(({v})=>daysTo(v.d)<=1);const op=polls.filter(p=>!p.closed);const ev=(typeof events!=='undefined'?events:[]).filter(e=>e.d>=today()&&daysTo(e.d)<=3);
   const rv=pendingReviews(),sp=upcomingSpecial().slice(0,2),sur=surprisesForMe().slice(0,2);
   const cd=nextOuting(),wp=lsGet('rs-wx-x','')===today()?null:wxTypes();
   el.innerHTML=[...(cd?[(()=>{const c=cdText(cd);return `<button type="button" class="notice cdown ${c.now?'now':''}" ${cd.ev?`data-ev="${esc(cd.ev)}"`:cd.id?`data-cdo="${esc(cd.id)}"`:''}><span class="ni">${c.now?'🎉':'⏳'}</span><span class="nt"><b id="cdT">${esc(c.big)}</b><small>${esc(cd.title)} · ${esc(whenTxt(cd.v))}</small></span></button>`})()]:[]),...(wp?[`<div class="notice wx"><span class="ni">${wp.m.e}</span><span class="nt"><b>${esc(wp.m.title)}</b><small>${esc(wp.m.why)}${wp.types.length||wp.tag?'. מתאים היום:':''}</small>${wp.types.length||wp.tag?`<span class="wxchips">${wp.types.map(c=>`<button type="button" class="chip" data-wxc="${esc(c)}" aria-pressed="${cuisF===c}">${esc(c)}</button>`).join('')}${wp.tag?`<button type="button" class="chip" data-wxt="${esc(wp.tag)}">${esc(wp.tag)}</button>`:''}</span>`:''}</span><span class="nbtns"><button type="button" class="del" data-wxx="1" aria-label="להסתיר להיום">×</button></span></div>`]:[]),...sur.map(({v})=>`<div class="notice sur"><span class="ni">🤫</span><span class="nt"><b>יציאת הפתעה ${esc(whenTxt(v))}!</b><small>${esc(nm(v.surprise.by))} מתכנן/ת${v.surprise.dress?' · לבוש: '+esc(v.surprise.dress):''}${v.surprise.hint?' · רמז: '+esc(v.surprise.hint):''} · נחשף ביום עצמו</small></span></div>`),...sp.map((x,i)=>{const r=specialPick(x,spSkip[x.md]);const n=daysTo(x.next);return `<div class="notice spd"><span class="ni">${(SPK[x.kind]||SPK.other)[1]}</span><span class="nt"><b>${n===0?'היום':n===1?'מחר':'בעוד '+n+' ימים'}: ${esc(x.name||(SPK[x.kind]||SPK.other)[0])}</b><small>${r?'הצעה: '+esc(r.name)+(r.city?' · '+esc(r.city):''):'הוסיפו מקומות לרשימה כדי לקבל הצעה'}</small></span>${r?`<span class="nbtns"><button type="button" class="btn sm pri" data-spplan="${esc(r.id)}">לקבוע</button><button type="button" class="btn sm" data-spnext="${esc(x.md)}" data-rid="${esc(r.id)}">אחר</button></span>`:''}</div>`}),...rv.map(({r,v,key,rated})=>`<div class="notice rev"><span class="ni">⭐</span><span class="nt"><b>איך היה ב${esc(r.name)} ${agoTxt(v.d)}?</b><small>${rated?'הוסיפו תמונות ומנות שאהבתם':'דרגו, הוסיפו תמונות ומנות'}</small></span><span class="nbtns"><button type="button" class="btn sm pri" data-rev="${esc(r.id)}">${rated?'להוסיף':'לדרג'}</button><button type="button" class="del" data-revx="${esc(key)}" aria-label="לא עכשיו">×</button></span></div>`),...(pushAsk?[`<div class="notice push"><span class="ni">🔔</span><span class="nt"><b>לקבל התראות לטלפון?</b><small>כשמישהו מוסיף מקום, קובע ערב או מנצח במשחק, ובבוקר של יום יציאה</small></span><span class="nbtns"><button type="button" class="btn sm pri" data-push="on">הפעלה</button><button type="button" class="del" data-push="no" aria-label="לא תודה">×</button></span></div>`]:[]),...ev.map(e=>{const k=(e.rsvp||{})[myId],y=Object.values(e.rsvp||{}).filter(v=>v==='yes').length;return `<button type="button" class="notice plan" data-ev="${esc(e.id)}"><span class="ni">${ICON.users}</span><span class="nt"><b>${esc(whenTxt({d:e.d,t:e.t||''}))}: ${esc(e.title)}</b><small>${y} מגיעים · ${k==='yes'?'את/ה מגיע/ה':k==='maybe'?'סימנת אולי':k==='no'?'סימנת שלא':'עוד לא ענית'}</small></span><span class="ng">${k?'פרטים':'לענות'}</span></button>`}),...tp.map(({r,v})=>`<button type="button" class="notice plan" data-open="${esc(r.id)}"><span class="ni">${ICON.cal}</span><span class="nt"><b>${esc(whenTxt(v))}: ${esc(r.name)}</b><small>${esc([r.address,r.city].filter(Boolean).join(', ')||'יציאה מתוכננת')}</small></span><span class="ng">פרטים</span></button>`),
@@ -568,10 +579,10 @@ function quotaMsg(k,q){if(!q||q.ok||!QK[k]||(q.reason!=='user'&&q.reason!=='glob
 const QNAME={place:'פרטי מקום',photo:'תמונות',vision:'סריקת קבלות'};
 async function fillQuotaAdm(){const el=$('#qAdm');if(!el||!sb)return;let st=null;try{const {data}=await sb.rpc('quota_stats');st=data}catch{}if(!st||!$('#qAdm'))return;
   const tot={};for(const x of st.today||[])tot[x.kind]=(tot[x.kind]||0)+x.n;
-  el.className='sec';el.innerHTML=`<h4>שימוש בגוגל (רק את/ה רואה את זה)</h4><p class="note" style="margin:0 0 10px">מכסה יומית לכל המערכת ולכל משתמש. מתאפס כל לילה בחצות.</p>
+  el.className='sec';el.innerHTML=`<h4>ניהול המערכת (רק את/ה רואה את זה)</h4><h4 style="margin-top:6px">שימוש בגוגל</h4><p class="note" style="margin:0 0 10px">מכסה יומית לכל המערכת ולכל משתמש. מתאפס כל לילה בחצות.</p>
 ${(st.cfg||[]).map(c=>`<form class="qrow" data-k="${esc(c.kind)}"><b>${esc(QNAME[c.kind]||c.kind)}</b><span class="meta">היום ${tot[c.kind]||0}/${c.g} · החודש ${(st.month||{})[c.kind]||0}</span>
 <label>לכולם ביום<input class="f" name="g" type="number" min="0" max="1000" value="${c.g}" inputmode="numeric"></label><label>לכל משתמש<input class="f" name="u" type="number" min="0" max="100" value="${c.u}" inputmode="numeric"></label><button class="btn" type="submit">שמירה</button></form>`).join('')}
-<h4 style="margin-top:14px">מי השתמש היום</h4>${(st.today||[]).length?`<div class="qwho">${st.today.map(x=>`<span>${esc(x.user||'?')}</span><span class="meta">${esc(QNAME[x.kind]||x.kind)}</span><b>${x.n}</b>`).join('')}</div>`:'<p class="note" style="margin:0">עוד לא היה שימוש היום.</p>'}`}
+<h4 style="margin-top:14px">מי השתמש בגוגל היום</h4>${(st.today||[]).length?`<div class="qwho">${st.today.map(x=>`<span>${esc(x.user||'?')}</span><span class="meta">${esc(QNAME[x.kind]||x.kind)}</span><b>${x.n}</b>`).join('')}</div>`:'<p class="note" style="margin:0">עוד לא היה שימוש היום.</p>'}`;fillAdminMore()}
 async function quotaSave(f){const k=f.dataset.k,g=+f.elements.g.value,u=+f.elements.u.value;if(!(g>=0&&u>=0))return;const {error}=await sb.rpc('set_quota',{k,g,u});toast(error?'השמירה לא הצליחה':'המכסה עודכנה');if(!error)fillQuotaAdm()}
 /* ---- Google place search: autocomplete is free inside a session, only picking a place counts ---- */
 let gTok=null;
@@ -629,7 +640,7 @@ async function backfillGeo(){if(geoBusy||!navigator.onLine)return;geoBusy=true;t
 let pendG=null,pendDel=null;
 function gPhotos(p,n){return (p.photos||[]).slice(0,n||3).map(ph=>{try{return {uri:ph.getURI({maxWidth:1400}),attr:((ph.authorAttributions||[])[0]||{}).displayName||''}}catch{return null}}).filter(Boolean)}
 async function importGPhotos(id,list){const r=byId(id);if(!r||!list||!list.length||!navigator.onLine)return false;const added=[];
-  for(const g of list){try{const res=await fetch(g.uri);if(!res.ok)continue;const b=await shrink(await res.blob());const path=`${id}/${uuid()}.jpg`;const {error}=await sb.storage.from('photos').upload(path,b,{contentType:'image/jpeg',upsert:false});if(error)throw error;added.push({path,by:myId,at:Date.now(),src:'google',attr:String(g.attr||'').slice(0,60)})}catch(e){console.warn('gphoto',e)}}
+  for(const g of list){try{const res=await fetch(g.uri);if(!res.ok)continue;const ph=await putPhoto(id,await res.blob());added.push({...ph,by:myId,at:Date.now(),src:'google',attr:String(g.attr||'').slice(0,60)})}catch(e){console.warn('gphoto',e)}}
   if(!added.length)return false;const c=byId(id);return save(id,{photos:[...((c&&c.photos)||[]),...added],updatedAt:Date.now()})}
 async function gPhotosFor(r,n){const qq=await takeQuota('photo');if(!qq.ok)return qq.reason==='err'?null:false;const q=[r.name,r.address,r.city].filter(Boolean).join(' ');const res=await gSearch(q,['displayName','photos','location']);if(!res||!res.length)return null;
   let best=res[0];if(hasLL(r)){let bd=1e9;for(const p of res){const x=gToItem(Object.assign({addressComponents:[],types:[]},p));const d=Math.hypot(x.lat-r.lat,x.lng-r.lng);if(d<bd){bd=d;best=p}}if(bd>0.01)return []}
@@ -731,7 +742,7 @@ function gameResult(r){const p=gm.players[gm.w];
 
 /* ================= evenings with friends & routes ================= */
 let events=[],openEv=null,evDraft=null;
-async function loadEvents(){if(!cur)return;const lid=cur.id;try{const {data}=await sb.from('events').select('*').eq('list_id',lid).gte('d',today()).order('d');if(cur&&cur.id===lid){events=data||[];renderNotices();if(mode==='event')renderEvent()}}catch{}}
+async function loadEvents(){if(!cur)return;const lid=cur.id;try{const {data,error}=await sb.from('events').select('*').eq('list_id',lid).gte('d',today()).order('d');if(error)throw error;if(cur&&cur.id===lid){events=data||[];lsSet('rs-ev-'+lid,events);renderNotices();if(mode==='event')renderEvent()}}catch{if(cur&&cur.id===lid&&!events.length){events=lsGet('rs-ev-'+lid,[]).filter(e=>e.d>=today());renderNotices()}}}
 const evStops=e=>(e.stops||[]).map(byId).filter(Boolean);
 function evR(e){const s=evStops(e)[0]||{};return {...s,id:e.id,name:e.title||s.name||'ערב עם חברים'}}
 const mHav=(a,b,c,d)=>{const R=6371e3,t=Math.PI/180,x=Math.sin((c-a)*t/2)**2+Math.cos(a*t)*Math.cos(c*t)*Math.sin((d-b)*t/2)**2;return 2*R*Math.asin(Math.sqrt(x))};
@@ -922,11 +933,11 @@ function wxPick(){const m=wxMood();if(!m)return null;const sc=r=>(m.cu.includes(
   const pool=rows.filter(r=>!wxSkip.includes(r.id)&&sc(r)>=2.6).sort((a,b)=>sc(b)-sc(a));return {m,r:pool[0]||null}}
 
 /* ================= countdown to the next outing ================= */
-function nextOuting(){const now=Date.now(),L=[];const at=(d,t)=>new Date(`${d}T${t||'20:00'}:00`).getTime();
+function nextOuting(maxD){const now=Date.now(),L=[];const at=(d,t)=>new Date(`${d}T${t||'20:00'}:00`).getTime();
   for(const {r,v} of upcoming())L.push({at:at(v.d,v.t),title:r.name,id:r.id,v});
   for(const {v} of surprisesForMe())L.push({at:at(v.d,v.t),title:'יציאת הפתעה 🤫',sur:true,v});
   for(const e of (typeof events!=='undefined'?events:[]))L.push({at:at(e.d,e.t),title:e.title,ev:e.id,v:{d:e.d,t:e.t||''}});
-  return L.filter(x=>x.at>now-3*3600e3&&x.at-now<7*864e5).sort((a,b)=>a.at-b.at)[0]||null}
+  return L.filter(x=>x.at>now-3*3600e3&&x.at-now<(maxD||7)*864e5).sort((a,b)=>a.at-b.at)[0]||null}
 function cdText(x){const ms=x.at-Date.now();if(ms<=0)return {big:'יוצאים עכשיו! 🥳',now:true};const m=Math.floor(ms/6e4),d=Math.floor(m/1440),h=Math.floor(m%1440/60),mm=m%60;
   if(x.v.d===today())return {big:h?`היום! עוד ${h}:${String(mm).padStart(2,'0')} שעות`:`היום! עוד ${mm} דקות`,now:true};
   return {big:`עוד ${d?d===1?'יום':d+' ימים':''}${d&&h?', ':''}${h?h===1?'שעה':h+' שעות':''}${!d&&!h?mm+' דקות':''}`,now:false}}
@@ -1026,7 +1037,7 @@ $('#nomap').addEventListener('click',e=>{const b=e.target.closest('[data-edit]')
 $('#locMe').addEventListener('click',()=>locateMe((la,ln)=>{ensureMap();if(meMarker)meMarker.remove();meMarker=L.circleMarker([la,ln],{radius:9,color:'#fff',weight:3,fillColor:'#2b7bd6',fillOpacity:1}).addTo(lmap).bindPopup('אתם כאן');lmap.setView([la,ln],15)}));
 $('#fitAll').addEventListener('click',fitAll);
 document.querySelectorAll('.bell-btn').forEach(b=>b.addEventListener('click',feedSheet));
-$('#pollBar').addEventListener('click',e=>{const co=e.target.closest('[data-cdo]');if(co){openDetail(co.dataset.cdo);return}const wc=e.target.closest('[data-wxc]');if(wc){cuisF=cuisF===wc.dataset.wxc?'':wc.dataset.wxc;q='';const qi=$('#q');if(qi)qi.value='';renderList();renderNotices();const g=$('#grid');if(g)g.scrollIntoView({behavior:'smooth',block:'start'});return}const wt=e.target.closest('[data-wxt]');if(wt){cuisF='';q=wt.dataset.wxt;const qi=$('#q');if(qi)qi.value=q;renderList();const g=$('#grid');if(g)g.scrollIntoView({behavior:'smooth',block:'start'});return}if(e.target.closest('[data-wxx]')){lsSet('rs-wx-x',today());renderNotices();return}const rv=e.target.closest('[data-rev]');if(rv){openDetail(rv.dataset.rev);return}const rx=e.target.closest('[data-revx]');if(rx){const d=lsGet('rs-rev-dis',[]);d.push(rx.dataset.revx);lsSet('rs-rev-dis',d.slice(-200));renderNotices();return}const spp=e.target.closest('[data-spplan]');if(spp){planSheet(spp.dataset.spplan);return}const spn=e.target.closest('[data-spnext]');if(spn){(spSkip[spn.dataset.spnext]=spSkip[spn.dataset.spnext]||[]).push(spn.dataset.rid);renderNotices();return}const pu=e.target.closest('[data-push]');if(pu){pushAsk=false;lsSet('rs-push-asked',1);if(pu.dataset.push==='on')pushOn();else renderNotices();return}const ev=e.target.closest('[data-ev]');if(ev){evSheet(ev.dataset.ev);return}const p=e.target.closest('[data-poll]');if(p){pollSheet(p.dataset.poll);return}const o=e.target.closest('[data-open]');if(o)openDetail(o.dataset.open)});
+$('#pollBar').addEventListener('click',e=>{const co=e.target.closest('[data-cdo]');if(co){outSheet();return}const wc=e.target.closest('[data-wxc]');if(wc){cuisF=cuisF===wc.dataset.wxc?'':wc.dataset.wxc;q='';const qi=$('#q');if(qi)qi.value='';renderList();renderNotices();const g=$('#grid');if(g)g.scrollIntoView({behavior:'smooth',block:'start'});return}const wt=e.target.closest('[data-wxt]');if(wt){cuisF='';q=wt.dataset.wxt;const qi=$('#q');if(qi)qi.value=q;renderList();const g=$('#grid');if(g)g.scrollIntoView({behavior:'smooth',block:'start'});return}if(e.target.closest('[data-wxx]')){lsSet('rs-wx-x',today());renderNotices();return}const rv=e.target.closest('[data-rev]');if(rv){openDetail(rv.dataset.rev);return}const rx=e.target.closest('[data-revx]');if(rx){const d=lsGet('rs-rev-dis',[]);d.push(rx.dataset.revx);lsSet('rs-rev-dis',d.slice(-200));renderNotices();return}const spp=e.target.closest('[data-spplan]');if(spp){planSheet(spp.dataset.spplan);return}const spn=e.target.closest('[data-spnext]');if(spn){(spSkip[spn.dataset.spnext]=spSkip[spn.dataset.spnext]||[]).push(spn.dataset.rid);renderNotices();return}const pu=e.target.closest('[data-push]');if(pu){pushAsk=false;lsSet('rs-push-asked',1);if(pu.dataset.push==='on')pushOn();else renderNotices();return}const ev=e.target.closest('[data-ev]');if(ev){evSheet(ev.dataset.ev);return}const p=e.target.closest('[data-poll]');if(p){pollSheet(p.dataset.poll);return}const o=e.target.closest('[data-open]');if(o)openDetail(o.dataset.open)});
 document.querySelectorAll('#v-list .seg button').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;document.querySelectorAll('#v-list .seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderList()}));
 document.querySelectorAll('[data-tl]').forEach(b=>b.addEventListener('click',()=>{tlF=b.dataset.tl;document.querySelectorAll('[data-tl]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderTimeline()}));
 $('#stYear').addEventListener('change',e=>{stYear=e.target.value;renderStats()});
@@ -1087,7 +1098,7 @@ S.addEventListener('submit',async e=>{
   if(mode==='new'){const id=uuid();logAct('add',id,`הוסיף/ה את ${d.name}`);const ok=await save(id,{...d,fav:false,ratings:{},votes:{},dishes:[],photos:[],visits:[],addedBy:myId,createdAt:Date.now()},true);if(ok){openId=id;mode='view';renderDetail();const pg=pendG;pendG=null;if(pg)importGPhotos(id,pg).then(k=>{if(k&&openId===id&&mode==='view')renderDetail()})}else btn.disabled=false}
   else{const eid=openId;mode='view';const ok=await save(eid,d);if(!ok)mode='edit';renderDetail();const pg=pendG;pendG=null;if(ok&&pg&&!(byId(eid).photos||[]).some(p=>p.path))importGPhotos(eid,pg).then(k=>{if(k&&openId===eid&&mode==='view')renderDetail()})}
 });
-S.addEventListener('change',e=>{if(e.target.name==='sur'){const f=$('.surf');if(f)f.hidden=!e.target.checked;return}if(e.target.id==='evAdd'){const v=e.target.value;e.target.value='';if(v&&evDraft&&!evDraft.stops.includes(v)&&evDraft.stops.length<5){evDraft.stops.push(v);evStopsRender()}return}if(e.target.form&&e.target.form.id==='ef'&&(e.target.name==='address'||e.target.name==='city')){formGeocode();return}if(e.target.classList.contains('rcpt')){const f=e.target.files[0];if(f)scanReceipt(f);e.target.value='';return}if(e.target.id==='impFile'){readImport([...e.target.files]);return}if(e.target.classList.contains('up')){upload([...e.target.files],openId);e.target.value=''}if(e.target.classList.contains('camUp')){camUpload([...e.target.files]);e.target.value=''}});
+S.addEventListener('change',e=>{if(e.target.id==='bkIn'){const f=e.target.files&&e.target.files[0];e.target.value='';bkFromFile(f);return}if(e.target.name==='sur'){const f=$('.surf');if(f)f.hidden=!e.target.checked;return}if(e.target.id==='evAdd'){const v=e.target.value;e.target.value='';if(v&&evDraft&&!evDraft.stops.includes(v)&&evDraft.stops.length<5){evDraft.stops.push(v);evStopsRender()}return}if(e.target.form&&e.target.form.id==='ef'&&(e.target.name==='address'||e.target.name==='city')){formGeocode();return}if(e.target.classList.contains('rcpt')){const f=e.target.files[0];if(f)scanReceipt(f);e.target.value='';return}if(e.target.id==='impFile'){readImport([...e.target.files]);return}if(e.target.classList.contains('up')){upload([...e.target.files],openId);e.target.value=''}if(e.target.classList.contains('camUp')){camUpload([...e.target.files]);e.target.value=''}});
 S.addEventListener('pointerdown',e=>{const t=e.target.closest('[data-act=rxTap]');if(t&&gm&&mode==='game'){e.preventDefault();reactTap(+t.dataset.i)}});
 S.addEventListener('click',async e=>{
   const orr=e.target.closest('[data-open-r]');if(orr&&!e.target.closest('a,button')){openDetail(orr.dataset.openR);return}
@@ -1153,6 +1164,16 @@ S.addEventListener('click',async e=>{
   if(a==='camPick'){camStep(b.dataset.id);return}
   if(a==='camNear'){locateMe((la,ln)=>camList($('#camQ').value,[la,ln]));return}
   if(a==='placeSearch'){placeSearch();return}
+  if(a==='bkFile'){b.disabled=true;await bkFile();b.disabled=false;return}
+  if(a==='bkNow'){b.disabled=true;const {error}=await sb.rpc('backup_now',{lid:cur.id});b.disabled=false;toast(error?(/too soon/.test(error.message||'')?'כבר גיבית לפני כמה דקות 🙂':'הגיבוי נכשל: '+errMsg(error)):'הגיבוי נשמר בשרת ✅');fillBackups();return}
+  if(a==='bkRestore'){if(!await askSure(`לשחזר את הגיבוי מ־${b.dataset.d}?`,`${esc(b.dataset.n)} המקומות שבגיבוי יחזרו למצב שהיה אז, כולל מקומות שנמחקו. מקומות שנוספו אחרי הגיבוי יישארו. לפני השחזור נשמר גיבוי של המצב הנוכחי, כך שאפשר לבטל.`,'שחזור',true))return;toast('משחזר…');const {data,error}=await sb.rpc('restore_backup',{bid:Number(b.dataset.b)});if(error){toast('השחזור נכשל: '+errMsg(error));return}bkRestoreDone(data);return}
+  if(a==='uBlock'){const on=b.dataset.on==='1',n=b.dataset.n;if(!await askSure(on?`לחסום את ${n}?`:`לבטל את החסימה של ${n}?`,on?'המשתמש ינותק ולא יוכל להיכנס, להוסיף או לערוך. הנתונים שלו נשארים, ואפשר לבטל את החסימה בכל רגע.':'המשתמש יוכל להיכנס שוב כרגיל.',on?'חסימה':'ביטול חסימה',on))return;const {error}=await sb.rpc('admin_block',{uid:b.dataset.u,on_:on});toast(error?'הפעולה נכשלה: '+errMsg(error):on?`${n} נחסם/ה`:`החסימה של ${n} בוטלה`);fillQuotaAdm();return}
+  if(a==='errClear'){const {error}=await sb.rpc('admin_clear_errors');toast(error?'הפעולה נכשלה':'רשימת התקלות נוקתה');fillQuotaAdm();return}
+  if(a==='onb'){lsSet('rs-onb',0);onbSheet();return}
+  if(a==='closeOut'){closeSheet();return}
+  if(a==='outOpen'){clearInterval(outTimer);openDetail(b.dataset.id);return}
+  if(a==='outEv'){clearInterval(outTimer);evSheet(b.dataset.id);return}
+  if(a==='outShare'){outShare();return}
   if(a==='placePick'){placePick(i);return}
   if(a==='fHere'){locateMe((la,ln,acc)=>{setPin(la,ln,true,true);if(acc>60)toast(`דיוק המיקום כ־${Math.round(acc)} מטר. אפשר לגרור את הסיכה.`)});return}
   if(a==='cancel'){killFormMap();if(mode==='new'){closeSheet();return}mode='view';renderDetail();return}
@@ -1186,7 +1207,7 @@ S.addEventListener('click',async e=>{
   if(a==='fav'){await save(r.id,{fav:!r.fav,updatedAt:now});return}
   if(a==='verd'){const ds=(r.dishes||[]).map(d=>({...d}));if(!ds[i])return;const order=['ok','must','skip'];ds[i].v=order[(order.indexOf(ds[i].v||'ok')+1)%3];await save(r.id,{dishes:ds,updatedAt:now});return}
   if(a==='rmDish'){await save(r.id,{dishes:(r.dishes||[]).filter((_,j)=>j!==i),updatedAt:now});return}
-  if(a==='rmPhoto'){const p=(r.photos||[])[i];const ok=await save(r.id,{photos:(r.photos||[]).filter((_,j)=>j!==i),updatedAt:now});if(ok&&p&&p.path)sb.storage.from('photos').remove([p.path]).catch(()=>{});return}
+  if(a==='rmPhoto'){const p=(r.photos||[])[i];const ok=await save(r.id,{photos:(r.photos||[]).filter((_,j)=>j!==i),updatedAt:now});if(ok&&p&&p.path)sb.storage.from('photos').remove([p.path,p.thumb].filter(Boolean)).catch(()=>{});return}
   if(a==='rmVisit'){await save(r.id,{visits:(r.visits||[]).filter((_,j)=>j!==i),updatedAt:now});return}
 });
 }
@@ -1200,6 +1221,7 @@ const pkCancelled=e=>/abort|cancel|NotAllowed|timed out/i.test(String(e&&(e.name
 async function registerBio(){try{const {data,error}=await sb.auth.registerPasskey();if(error)throw error;try{const id=data&&(data.id||(data.passkey&&data.passkey.id));if(id)await sb.auth.passkey.update({passkeyId:id,friendlyName:devName()})}catch{}try{localStorage.setItem('rs-pk','1')}catch{}toast(bioName()+' הופעל! מעכשיו אפשר להיכנס בלי סיסמה.');return true}
   catch(e){if(!pkCancelled(e))toast('לא הצלחנו להפעיל את '+bioName()+': '+(e.message||''));return false}}
 const BRASS='style="background:#fff;border-color:#fff;color:#FF4E50;box-shadow:0 8px 24px #a3123a33"';
+function blockedGate(){gate('<p>החשבון הזה הושהה על ידי מנהל האפליקציה.</p><p class="note">אם זו טעות, פנו למי ששלח לכם את הקישור.</p><button class="btn" type="button" id="so2">התנתקות</button>');const b=$('#so2');if(b)b.onclick=async()=>{await sb.auth.signOut();location.reload()}}
 function gate(html){const g=$('#gate');g.innerHTML=`<div class="box"><div class="logo">Fomo</div><p class="tag">המקומות שאסור לפספס</p>${html}</div>`;g.hidden=false;$('#app').hidden=true}
 function showLogin(email,signup){
   gate(`${joinCode?'<p><b>הוזמנתם לרשימת המסעדות!</b></p>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':(pkOK()?'טוב לראות אותך שוב!':'כניסה עם המייל והסיסמה שלכם.')}</p>${!signup&&pkOK()?`<button class="pk-btn" type="button" id="pkIn"><span class="pk-ic">${bioIcon()}<i class="pk-scan"></i></span><span class="pk-tx"><b>כניסה עם ${bioName()}</b><small>מהיר ובטוח, בלי להקליד סיסמה</small></span><svg class="pk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><div class="or"><span>או עם מייל וסיסמה</span></div>`:''}<form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
@@ -1227,7 +1249,8 @@ let bound=false,visBound=false;
 async function start(){
   const {data:{session:s}}=await sb.auth.getSession();session=s;
   if(!s){showLogin('',!!joinCode);return}
-  me={id:s.user.id,email:String(s.user.email||'').toLowerCase()};myId=me.id;
+  me={id:s.user.id,email:String(s.user.email||'').toLowerCase(),created:s.user.created_at};myId=me.id;
+  try{const {data:bl}=await sb.rpc('is_blocked');if(bl===true){blockedGate();return}}catch{}
   try{
     const {data:pr,error:pe}=await sb.from('profiles').select('name').eq('user_id',myId).maybeSingle();if(pe&&isNetErr(pe))throw pe;
     if(!pr)await sb.from('profiles').insert({user_id:myId,name:''});myName=(pr&&pr.name)||'';
@@ -1242,12 +1265,114 @@ async function start(){
   if(!bound){bindUI();bound=true}
   try{const so=localStorage.getItem('rs-sort');if(so){sort=so;$('#sort').value=so}}catch{}
   route();await switchList(cur.id);subscribe();flushOutbox();
-  {const sp=new URLSearchParams(location.search),op=sp.get('open'),ev=sp.get('ev');if(op||ev){history.replaceState(null,'',location.pathname+location.hash);if(ev)setTimeout(()=>{if(events.some(x=>x.id===ev))evSheet(ev);else loadEvents().then(()=>{if(events.some(x=>x.id===ev))evSheet(ev)})},700);else if(op&&byId(op))setTimeout(()=>openDetail(op),300)}}
+  {const sp=new URLSearchParams(location.search),op=sp.get('open'),ev=sp.get('ev');if(sp.get('next')){history.replaceState(null,'',location.pathname+location.hash);setTimeout(outSheet,500)}if(op||ev){history.replaceState(null,'',location.pathname+location.hash);if(ev)setTimeout(()=>{if(events.some(x=>x.id===ev))evSheet(ev);else loadEvents().then(()=>{if(events.some(x=>x.id===ev))evSheet(ev)})},700);else if(op&&byId(op))setTimeout(()=>openDetail(op),300)}}
   pushSync();setTimeout(pushMaybeAsk,4000);setTimeout(autoCheckin,2500);setTimeout(loadWeather,3000);
+  if(needOnb())setTimeout(onbSheet,2800);
   if(!myName)setTimeout(()=>{settingsSheet();toast('איך לקרוא לך? כתבו שם ושמרו.')},500);
   else offerBio();
   if(!visBound){visBound=true;document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&loaded){loadAll();setTimeout(autoCheckin,1500);setTimeout(loadWeather,2500)}})}
 }
+
+/* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
+const APPV='29';
+/* ---- error tracking: real errors go to the admin panel ---- */
+let errN=0;const errSeen=new Set();
+function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
+  if(/ResizeObserver|^Script error\.?$|Load failed|NetworkError|Failed to fetch|AbortError|operation was aborted|cancell?ed|Importing a module script failed|play\(\) request/i.test(msg))return;
+  errSeen.add(msg);errN++;const pg=String(mode==='view'&&openId?'place':mode!=='view'?mode:page).slice(0,60);
+  sb.from('app_errors').insert({user_id:myId,msg,src:String(src||'').slice(0,300),stack:String(stack||'').slice(0,2000),ua:navigator.userAgent.slice(0,300),ver:APPV,page:pg}).then(()=>{},()=>{})}catch{}}
+window.addEventListener('error',e=>{if(e.message)reportErr(e.message,String(e.filename||'').split('/').pop()+':'+(e.lineno||'')+':'+(e.colno||''),e.error&&e.error.stack)});
+window.addEventListener('unhandledrejection',e=>{const r=e.reason;reportErr(r&&(r.message||r),'promise',r&&r.stack)});
+const uaName=ua=>{ua=String(ua||'');return /iPhone/.test(ua)?'אייפון':/iPad/.test(ua)?'אייפד':/Android/.test(ua)?'אנדרואיד':/Macintosh/.test(ua)?'מק':/Windows/.test(ua)?'מחשב':'מכשיר'};
+
+/* ---- small confirm dialog ---- */
+function askSure(title,body,ok,danger){return new Promise(res=>{const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label',title);
+  d.innerHTML=`<div class="calp-in"><h3>${esc(title)}</h3>${body?`<p class="meta">${body}</p>`:''}<button class="btn pri ${danger?'danger':''}" type="button" data-y>${esc(ok||'אישור')}</button><button class="link-btn" type="button" data-n>ביטול</button></div>`;
+  const done=v=>{d.remove();res(v)};d.addEventListener('click',e=>{if(e.target.closest('[data-y]'))done(true);else if(e.target===d||e.target.closest('[data-n]'))done(false)});document.body.appendChild(d);setTimeout(()=>{const b=d.querySelector('[data-n]');if(b)b.focus()},50)})}
+
+/* ---- backups ---- */
+const KINDN={auto:'שבועי אוטומטי',manual:'ידני','before-restore':'לפני שחזור'};
+function backupSecHtml(){const own=isOwner();return `<div class="sec"><h4>גיבוי ושחזור</h4><p class="note" style="margin:0 0 10px">כל יום ראשון בלילה נשמר גיבוי אוטומטי של הרשימה בשרת (6 האחרונים נשמרים). אפשר גם להוריד עותק לטלפון.</p>
+<div class="row"><button class="btn" type="button" data-act="bkFile">${ICON.share}הורדת גיבוי לקובץ</button>${own?`<button class="btn" type="button" data-act="bkNow">גיבוי עכשיו</button><label class="btn">שחזור מקובץ<input type="file" id="bkIn" accept=".json,application/json" hidden></label>`:''}</div>
+<div id="bkList" style="margin-top:10px"><p class="note" style="margin:0">טוען גיבויים…</p></div></div>`}
+async function fillBackups(){const el=$('#bkList');if(!el||!cur||!sb)return;let L=null;try{const {data,error}=await sb.rpc('my_backups',{lid:cur.id});if(!error)L=data||[]}catch{}if(!$('#bkList'))return;const own=isOwner();
+  if(L===null){el.innerHTML='<p class="note" style="margin:0">אין חיבור לשרת כרגע.</p>';return}
+  el.innerHTML=L.length?`<div class="bkl">${L.map(b=>`<div class="bk"><span><b>${esc(fmtD(String(b.at).slice(0,10),{weekday:'short',day:'numeric',month:'long'}))}</b> <small class="meta">${esc(new Date(b.at).toTimeString().slice(0,5))} · ${esc(KINDN[b.kind]||b.kind)} · ${b.n} מקומות</small></span>${own?`<button class="btn sm" type="button" data-act="bkRestore" data-b="${b.id}" data-n="${b.n}" data-d="${esc(fmtD(String(b.at).slice(0,10),{day:'numeric',month:'long'}))}">שחזור</button>`:''}</div>`).join('')}</div>`:'<p class="note" style="margin:0">עוד אין גיבויים בשרת. הראשון ייווצר ביום ראשון בלילה.</p>'}
+async function bkFile(){let R=null,E=[];try{const {data,error}=await sb.from('restaurants').select('id,data').eq('list_id',cur.id);if(error)throw error;R=data||[];const ev=await sb.from('events').select('*').eq('list_id',cur.id);E=(ev.data||[]).map(({list_id,...x})=>x)}catch{R=rows.map(({id,...data})=>({id,data}))}
+  const payload={app:'fomo',v:1,list:cur.name,at:new Date().toISOString(),restaurants:R,events:E};const blob=new Blob([JSON.stringify(payload)],{type:'application/json'});
+  const name=`fomo-${String(cur.name||'list').replace(/[^\p{L}\p{N}]+/gu,'-')}-${today()}.json`;
+  if(isIOS()&&navigator.canShare){const file=new File([blob],name,{type:'application/json'});if(navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:'גיבוי Fomo'});return}catch(e){if(e&&e.name==='AbortError')return}}}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);toast(`הגיבוי ירד: ${R.filter(x=>!(x.data||{})._meta).length} מקומות`)}
+async function bkRestoreDone(n){toast(`שוחזרו ${n} מקומות ✅`);await loadAll();loadEvents();fillBackups()}
+async function bkFromFile(f){if(!f)return;let p=null;try{p=JSON.parse(await f.text())}catch{}
+  if(!p||p.app!=='fomo'||!Array.isArray(p.restaurants)){toast('זה לא קובץ גיבוי של Fomo');return}
+  const n=p.restaurants.filter(x=>x&&x.data&&!x.data._meta).length;
+  if(!await askSure(`לשחזר ${n===1?'מקום אחד':n+' מקומות'} מהקובץ?`,`הגיבוי מ־${esc(fmtD(String(p.at||'').slice(0,10),{day:'numeric',month:'long',year:'numeric'}))}. מקומות מהקובץ יחזרו למצב שהיה בגיבוי, ומקומות שנוספו אחריו יישארו. לפני השחזור נשמר גיבוי של המצב הנוכחי, כך שאפשר לבטל.`,'שחזור',true))return;
+  toast('משחזר…');const {data,error}=await sb.rpc('restore_rows',{lid:cur.id,payload:p});if(error){toast('השחזור נכשל: '+errMsg(error));return}bkRestoreDone(data)}
+
+/* ---- offline: periodic sync ---- */
+setInterval(()=>{if(navigator.onLine&&sb&&myId&&lsGet('rs-outbox',[]).length)flushOutbox()},30000);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&navigator.onLine&&sb&&myId)flushOutbox()});
+
+/* ---- performance: small thumbnails for existing cover photos ---- */
+let thBusy=false;
+async function thumbBackfill(){if(thBusy||!navigator.onLine||!sb)return;const c=navigator.connection;if(c&&(c.saveData||/2g/.test(c.effectiveType||'')))return;thBusy=true;let n=0;try{
+  for(const r of rows.slice()){if(n>=8)break;const ph=r.photos||[];const i=ph.findIndex(p=>p.path);if(i<0||ph[i].thumb)continue;n++;
+    try{const u=await signed(ph[i].path);if(!u)continue;const res=await fetch(u);if(!res.ok)continue;const t=await shrink(await res.blob(),520,.78);const tp=ph[i].path.replace(/([^/]+)$/,'t_$1');
+      const {error}=await sb.storage.from('photos').upload(tp,t,{contentType:'image/jpeg',upsert:false});if(error&&!/exist|duplicate/i.test(error.message||''))continue;
+      const c2=byId(r.id);if(!c2)continue;const p2=(c2.photos||[]).slice();const j=p2.findIndex(p=>p.path===ph[i].path);if(j<0)continue;p2[j]={...p2[j],thumb:tp};await save(r.id,{photos:p2})}catch{}
+    await new Promise(z=>setTimeout(z,900))}}finally{thBusy=false}}
+
+/* ---- admin: users + errors ---- */
+async function fillAdminMore(){const el=$('#qAdm');if(!el||!sb)return;let U=null,E=null;try{const [a,b]=await Promise.all([sb.rpc('admin_users'),sb.rpc('admin_errors')]);U=a.data;E=b.data}catch{}if(!$('#qAdm'))return;
+  const wk=Date.now()-7*864e5;let h='';const nm=u=>u.name||String(u.email||'').split('@')[0];
+  if(U){const act=U.filter(u=>u.seen&&new Date(u.seen)>wk).length,nw=U.filter(u=>new Date(u.joined)>wk).length;
+    h+=`<h4 style="margin-top:18px">משתמשים</h4><div class="ustat"><div><b>${U.length}</b><small>רשומים</small></div><div><b>${act}</b><small>פעילים השבוע</small></div><div><b>${nw}</b><small>הצטרפו השבוע</small></div></div>
+<details class="ulist"><summary>כל המשתמשים (${U.length})</summary>${U.map(u=>`<div class="urow ${u.blocked?'blk':''}"><span><b>${esc(nm(u))}</b>${u.admin?' <small class="meta">· מנהל</small>':''}${u.blocked?' <small class="bad">· חסום</small>':''}<br><small class="meta" dir="ltr">${esc(u.email||'')}</small><br><small class="meta">הצטרפות ${esc(relT(u.joined))} · נראה ${u.seen?esc(relT(u.seen)):'אף פעם'} · ${u.places} מקומות · ${u.lists} רשימות</small></span>${u.admin?'':`<button class="btn sm" type="button" data-act="uBlock" data-u="${esc(u.id)}" data-on="${u.blocked?0:1}" data-n="${esc(nm(u))}">${u.blocked?'ביטול חסימה':'חסימה'}</button>`}</div>`).join('')}</details>`}
+  if(E){const L=E.list||[];h+=`<h4 style="margin-top:18px">תקלות באפליקציה</h4><p class="note" style="margin:0 0 8px">${E.week?`${E.week} תקלות נרשמו בשבוע האחרון.`:'אין תקלות בשבוע האחרון 🎉'}</p>${L.length?`<details class="ulist"><summary>פירוט (${L.length} סוגים)</summary>${L.map(x=>`<div class="erow"><b dir="ltr">${esc(x.msg)}</b><small class="meta">${x.n} פעמים · ${x.users} משתמשים · אחרונה ${esc(relT(x.last))} אצל ${esc(x.who||'?')} · ${esc(uaName(x.ua))} · גרסה ${esc(x.ver||'?')}</small>${x.src?`<small class="meta" dir="ltr">${esc(x.src)}</small>`:''}</div>`).join('')}<button class="btn sm" type="button" data-act="errClear" style="margin-top:8px">ניקוי הרשימה</button></details>`:''}`}
+  let box=$('#admMore');if(!box){box=document.createElement('div');box.id='admMore';el.appendChild(box)}box.innerHTML=h}
+
+/* ---- onboarding for new friends ---- */
+const ONB=[{e:'🍽️',t:'ברוכים הבאים ל־FOMO',p:'כל המקומות שאסור לפספס במקום אחד: איפה הייתם, לאן בא לכם ללכת, תמונות, דירוגים ומפה. הכל משותף עם מי שברשימה.'},
+  {e:'➕',t:'מוסיפים מקום בשניות',p:'לוחצים על הפלוס, מחפשים בשם או אומרים בקול 🎤, ובוחרים מהרשימה. השם, הכתובת, סוג המטבח ושעות הפתיחה מתמלאים לבד.'},
+  {e:'⭐',t:'מדרגים, מתכננים, יוצאים',p:'אחרי ביקור נותנים כוכבים, מסמנים מנות חובה ומצלמים את הקבלה. לוחצים "בא לי" על מקומות, וכשכולם רוצים אותו מקום יש התאמה. קובעים יציאה ומקבלים ספירה לאחור.'},
+  {e:'📲',t:'שמים במסך הבית',inst:true}];
+function onbInst(){return isStandalone()?'מעולה, האפליקציה כבר מותקנת 🎉 כדאי להפעיל התראות בהגדרות, כדי לדעת כשמישהו מוסיף מקום, מגיב או קובע יציאה.'
+  :isIOS()?'בספארי לוחצים על כפתור השיתוף <b>⬆️</b> בתחתית המסך, גוללים ובוחרים <b>"הוספה למסך הבית"</b>. ככה FOMO נפתחת כמו אפליקציה רגילה, ואפשר לקבל התראות.'
+  :installEvt?'לוחצים על הכפתור למטה, ו־FOMO תיפתח כמו אפליקציה רגילה עם התראות.':'בתפריט הדפדפן (⋮) בוחרים <b>"התקנת אפליקציה"</b> או <b>"הוספה למסך הבית"</b>.'}
+const needOnb=()=>!lsGet('rs-onb',0)&&me&&me.created&&Date.now()-new Date(me.created).getTime()<14*864e5;
+function onbSheet(){if($('.onb'))return;let i=0;const d=document.createElement('div');d.className='onb';d.dir='rtl';d.setAttribute('role','dialog');d.setAttribute('aria-label','הדרכה קצרה');
+  const draw=()=>{const s=ONB[i],last=i===ONB.length-1;d.innerHTML=`<div class="onb-in"><button class="onb-skip" type="button" data-o="end">דלג</button><div class="onb-e" aria-hidden="true">${s.e}</div><h2>${esc(s.t)}</h2><p>${s.inst?onbInst():esc(s.p)}</p>
+<div class="onb-dots">${ONB.map((_,k)=>`<i class="${k===i?'on':''}"></i>`).join('')}</div><div class="onb-b">${last&&installEvt&&!isStandalone()?'<button class="btn" type="button" data-o="inst">התקנה</button>':''}${i?'<button class="btn" type="button" data-o="prev">הקודם</button>':''}<button class="btn pri" type="button" data-o="${last?'end':'next'}">${last?'יאללה, מתחילים':'הבא'}</button></div></div>`;
+    const b=d.querySelector('[data-o=next],[data-o=end]:not(.onb-skip)');if(b)b.focus()};
+  const end=()=>{lsSet('rs-onb',1);d.classList.add('out');setTimeout(()=>d.remove(),250)};
+  d.addEventListener('click',e=>{const o=(e.target.closest('[data-o]')||{}).dataset;if(!o||!o.o)return;if(o.o==='next'&&i<ONB.length-1){i++;draw()}else if(o.o==='prev'&&i>0){i--;draw()}else if(o.o==='inst'&&installEvt){installEvt.prompt();installEvt=null;draw()}else if(o.o==='end')end()});
+  let x0=null;d.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});d.addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)<50)return;if(dx>0&&i<ONB.length-1){i++;draw()}else if(dx<0&&i>0){i--;draw()}},{passive:true});
+  draw();document.body.appendChild(d)}
+
+/* ---- next outing: full screen with live countdown (opens from the morning notification) ---- */
+let outTimer=null;
+function outSheet(){const x=nextOuting(60);killFormMap();openId=null;mode='out';openSheet();clearInterval(outTimer);
+  if(!x){$('#sb').innerHTML=`<div class="sec dh"><h2>היציאה הבאה</h2></div><div class="empty"><h2>אין יציאה מתוכננת</h2><p>בוחרים מקום ולוחצים "קביעת יציאה". הספירה לאחור תופיע כאן ובמסך הראשי.</p><button class="btn pri" type="button" data-act="closeOut">לרשימה</button></div>`;return}
+  const r=x.id?byId(x.id):null,ev=x.ev?(typeof events!=='undefined'?events:[]).find(e=>e.id===x.ev):null,v=x.v,ph=r&&(r.photos||[]).find(p=>p.path);
+  const when=fmtD(v.d,{weekday:'long',day:'numeric',month:'long'})+(v.t?' · '+v.t:'');outSheet.x={title:x.title,when,r};
+  const who=r?withOf(v):[],must=r?(r.dishes||[]).filter(d=>d.v==='must').map(d=>d.name).slice(0,6):[];
+  $('#sb').innerHTML=`<div class="out"><div class="out-hero">${ph?photoImg(ph):r?plate(r.name):''}<div class="out-shade"></div><div class="out-top"><span class="out-k">${x.sur?'🤫 יציאת הפתעה':ev?'🎉 ערב עם חברים':'🍽️ היציאה הבאה'}</span><h2>${esc(x.title)}</h2><p>${esc(when)}</p></div></div>
+<div class="out-cd" id="outCd" aria-live="off"></div>
+<div class="sec out-info">${r&&(r.address||r.city)?`<p>📍 ${esc([r.address,r.city].filter(Boolean).join(', '))}</p>`:''}${who.length?`<p>👥 עם ${esc(who.join(', '))}</p>`:''}<p id="outWx" hidden></p>${x.sur?'<p>מישהו מתכנן לכם הפתעה. פנו את הערב, והפרטים יתגלו ביום עצמו 😉</p>':''}${ev&&ev.note?`<p>📝 ${esc(ev.note)}</p>`:''}</div>
+${must.length?`<div class="sec"><h4>חובה להזמין</h4><div class="mchips">${must.map(m=>`<span>${esc(m)}</span>`).join('')}</div></div>`:''}
+<div class="sec out-acts">${r?`<a class="btn pri" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}נסיעה עם Waze</a><a class="btn" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener">📅 ליומן</a><a class="btn" href="${esc(bookUrl(r))}" target="_blank" rel="noopener">🪑 הזמנת מקום</a><button class="btn" type="button" data-act="outOpen" data-id="${esc(r.id)}">לדף המקום</button>`:''}${ev?`<button class="btn pri" type="button" data-act="outEv" data-id="${esc(ev.id)}">לפרטי הערב</button>`:''}${x.sur?'':`<button class="btn" type="button" data-act="outShare">${ICON.share}שיתוף</button>`}</div></div>`;
+  hydrate();outTick();outTimer=setInterval(outTick,1000);if(r&&hasLL(r))outWx(r,v.d)}
+function outTick(){const el=$('#outCd');if(!el||mode!=='out'||$('#ov').hidden){clearInterval(outTimer);outTimer=null;return}const x=nextOuting(60);if(!x)return;const ms=x.at-Date.now();
+  if(ms<=0){el.innerHTML='<div class="out-now">יוצאים עכשיו! 🥳</div>';return}
+  const s=Math.floor(ms/1e3),D=Math.floor(s/86400),H=Math.floor(s%86400/3600),M=Math.floor(s%3600/60),Z=s%60;
+  el.innerHTML=[[D,'ימים'],[H,'שעות'],[M,'דקות'],[Z,'שניות']].filter((p,k)=>k||p[0]).map(([n,l])=>`<div><b>${String(n).padStart(2,'0')}</b><small>${l}</small></div>`).join('')}
+async function outWx(r,d){const dd=daysTo(d);if(dd<0||dd>6)return;try{const j=await fetchJ(`https://api.open-meteo.com/v1/forecast?latitude=${r.lat.toFixed(2)}&longitude=${r.lng.toFixed(2)}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=auto&start_date=${d}&end_date=${d}`,8000);
+  const D=j.daily;if(!D||!D.time||!D.time.length)return;const k=WXK(D.weather_code[0]),e={storm:'⛈️',snow:'🌨️',rain:'🌧️',fog:'🌫️',clear:'☀️',cloud:'⛅'}[k],pp=(D.precipitation_probability_max||[])[0];
+  const el=$('#outWx');if(!el)return;el.hidden=false;el.textContent=`${e} ${Math.round(D.temperature_2m_min[0])}°–${Math.round(D.temperature_2m_max[0])}° באותו יום${pp>=30?` · ${pp}% סיכוי לגשם`:''}${k==='rain'||k==='storm'?' · כדאי מטרייה ☂️':''}`}catch{}}
+async function outShare(){const o=outSheet.x;if(!o)return;const text=`יוצאים ל${o.title}, ${o.when} 🎉`;const url=o.r?mapsUrl(o.r):location.origin+location.pathname;
+  try{if(navigator.share){await navigator.share({title:'FOMO',text,url});return}}catch(e){if(e&&e.name==='AbortError')return}try{await navigator.clipboard.writeText(text+'\n'+url);toast('הועתק, אפשר להדביק')}catch{toast(text)}}
+function outBadge(){try{if(!('setAppBadge' in navigator))return;const x=nextOuting(1);(x&&x.v.d===today()?navigator.setAppBadge(1):navigator.clearAppBadge()).catch(()=>{})}catch{}}
 
 /* intro splash on every launch */
 {const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
