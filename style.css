@@ -665,3 +665,19 @@ details.hours summary::before{content:'+ ';color:var(--red)}details.hours[open] 
 @keyframes micP{50%{box-shadow:0 0 0 8px rgba(224,72,58,.18)}}
 .dwarn{color:var(--bad)!important;white-space:normal!important}
 @media(prefers-reduced-motion:reduce){.btn.mic.rec{animation:none}}
+
+/* ===== v5: countdown, weather, with, receipt review ===== */
+.notice.cdown{background:linear-gradient(120deg,color-mix(in srgb,var(--red) 12%,var(--card)),var(--card))}
+.notice.cdown #cdT{font-size:19px;font-variant-numeric:tabular-nums}
+.notice.cdown.now{background:linear-gradient(110deg,#FFB347,#FF5E4D,#FF7AA2,#FFB347);background-size:300% 100%;color:#fff;animation:cdGlow 4s linear infinite;border-color:transparent}
+.notice.cdown.now small{color:rgba(255,255,255,.9)}.notice.cdown.now .ni{background:rgba(255,255,255,.25)}
+@keyframes cdGlow{to{background-position:300% 0}}
+.notice.wx{cursor:default;background:linear-gradient(120deg,color-mix(in srgb,#4DA3FF 12%,var(--card)),var(--card))}
+.wlast{display:block;margin:-2px 0 8px;font-size:12px}
+.rcl{display:grid;gap:6px;margin-top:8px;max-height:46vh;overflow:auto;padding:2px}
+.rci{display:grid;grid-template-columns:24px 1fr auto auto;gap:8px;align-items:center}
+.rci input[type=checkbox]{width:20px;height:20px;accent-color:var(--red)}
+.rci .f{padding:9px 12px;min-height:0}
+.rcq{color:var(--mute);font-size:13px}
+.rcsum{margin:8px 0 0}
+@media(prefers-reduced-motion:reduce){.notice.cdown.now{animation:none}}
