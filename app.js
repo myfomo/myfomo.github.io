@@ -935,7 +935,7 @@ const numOf=t=>Number(String(t).replace(/[₪–-]/g,'').replace(',','.'));
 function parseReceipt(rowsTok){const items=[],tot=[];let fallbackMax=0;
   for(const toks of rowsTok){const line=toks.map(x=>x.t).join(' ');const prices=toks.filter(x=>isPriceTok(x.t)).map(x=>({v:numOf(x.t),dec:/[.,]\d/.test(x.t),x:x.x}));
     for(const p of prices)if(p.dec&&p.v>fallbackMax&&p.v<20000)fallbackMax=p.v;
-    if(RC_TOTAL.test(line)&&!RC_NOTTOTAL.test(line)){const c=prices.filter(p=>p.v>0&&p.v<20000);if(c.length)tot.push({v:Math.max(...c.map(p=>p.v)),strong:/לתשלום|כולל|total/i.test(line)});continue}
+    if(RC_TOTAL.test(line)&&(/כולל|לתשלום/.test(line)&&!/לפני/.test(line)||!RC_NOTTOTAL.test(line))){const c=prices.filter(p=>p.v>0&&p.v<20000);if(c.length)tot.push({v:Math.max(...c.map(p=>p.v)),strong:/לתשלום|כולל|total/i.test(line)});continue}
     if(RC_SKIP.test(line))continue;
     const words=toks.filter(x=>/[A-Za-zא-ת]/.test(x.t)&&!/^[xX×*]\d{0,2}$|^\d{1,2}[xX×*]$/.test(x.t)).map(x=>x.t.replace(/^[^A-Za-zא-ת0-9"״']+|[^A-Za-zא-ת0-9"״')]+$/g,''));const name=words.join(' ').replace(/\s{2,}/g,' ').trim();
     const letters=(name.match(/[A-Za-zא-ת]/g)||[]).length;if(letters<2||name.length>40)continue;
