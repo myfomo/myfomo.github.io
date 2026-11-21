@@ -683,3 +683,7 @@ details.hours summary::before{content:'+ ';color:var(--red)}details.hours[open] 
 @media(prefers-reduced-motion:reduce){.notice.cdown.now{animation:none}}
 .wxchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .wxchips .chip{padding:6px 12px;font-size:13px;min-height:0}
+#pollBar .notice{touch-action:pan-y;will-change:transform}
+#pollBar .notice.swiping{transition:none!important;cursor:grabbing}
+#pollBar .notice.swiping::after{content:'✕ הסרה';position:absolute;inset-inline-end:100%;top:50%;transform:translateY(-50%);margin-inline-end:12px;font-size:13px;color:var(--mute);white-space:nowrap}
+#pollBar .notice{position:relative}
