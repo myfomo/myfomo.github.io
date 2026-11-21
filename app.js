@@ -26,6 +26,14 @@ const qText=r=>[r.name,r.address,r.city].filter(Boolean).join(' ');
 const hasLL=r=>Number.isFinite(r.lat)&&Number.isFinite(r.lng)&&Math.abs(r.lat)<=90&&Math.abs(r.lng)<=180;
 const exact=r=>hasLL(r)&&(!r.llLevel||r.llLevel==='place');
 const mapsUrl=r=>safeUrl(r.mapsUrl)||(exact(r)?`https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lng}`:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(qText(r)));
+/* Moovit: official deep link (app) + official web link (fallback) */
+const moovitOk=r=>hasLL(r);
+function moovitUrls(r,v){const n=encodeURIComponent(r.name||''),la=(+r.lat).toFixed(6),lo=(+r.lng).toFixed(6);
+  let app=`moovit://directions?dest_lat=${la}&dest_lon=${lo}&dest_name=${n}&partner_id=fomo&auto_run=true`;
+  if(v&&v.d&&v.t&&isPlanV(v)){const dt=new Date(`${v.d}T${v.t}:00`);if(!isNaN(dt)){const off=-dt.getTimezoneOffset(),sg=off>=0?'+':'-',hh=String(Math.floor(Math.abs(off)/60)).padStart(2,'0'),mm=String(Math.abs(off)%60).padStart(2,'0');app+='&date='+encodeURIComponent(`${v.d}T${v.t}:00${sg}${hh}:${mm}`)}}
+  return {app,web:`https://moovit.com/?to=${n}&tll=${la}_${lo}&lang=he`}}
+function openMoovit(r,v){if(!r||!moovitOk(r))return;const u=moovitUrls(r,v);let left=false;const onHide=()=>{if(document.visibilityState==='hidden')left=true};document.addEventListener('visibilitychange',onHide);
+  const t0=Date.now();location.href=u.app;setTimeout(()=>{document.removeEventListener('visibilitychange',onHide);if(!left&&document.visibilityState==='visible'&&Date.now()-t0<4000)window.open(u.web,'_blank','noopener')},1600)}
 const wazeUrl=r=>exact(r)?`https://waze.com/ul?ll=${r.lat},${r.lng}&navigate=yes`:'https://waze.com/ul?q='+encodeURIComponent(qText(r))+'&navigate=yes';
 const gEmbed=r=>'https://maps.google.com/maps?hl=iw&z=16&output=embed&q='+encodeURIComponent(exact(r)?`${r.lat},${r.lng}`:qText(r));
 const shareText=r=>r.name+(r.address||r.city?'\n'+[r.address,r.city].filter(Boolean).join(', '):'')+'\nגוגל מפות: '+mapsUrl(r)+'\nWaze: '+wazeUrl(r);
@@ -268,7 +276,7 @@ function renderDetail(){
   box.innerHTML=`<div class="sec dh"><div class="row" style="margin-bottom:8px"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${isMatch(r)?'<span class="badge match">שנינו רוצים השבוע!</span>':''}${(r.tags||[]).map(t=>`<span class="chip" style="cursor:default">${esc(t)}</span>`).join('')}</div>
 <h2>${esc(r.name)}</h2><p class="meta" style="margin-top:6px">${[r.cuisine,r.address,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')}</p>
 ${r.recBy?`<p class="meta" style="margin-top:4px">המליץ/ה: <b style="color:var(--ink)">${esc(r.recBy)}</b></p>`:''}
-<div class="row" style="margin-top:14px"><a class="btn pri" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}גוגל מפות</a><a class="btn pri" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}ניווט ב־Waze</a><a class="btn" href="${esc(bookUrl(r))}" target="_blank" rel="noopener">${ICON.book}הזמנת שולחן</a>${showWolt(r)?(isStandalone()&&isIOS()?`<button class="btn" type="button" data-act="wolt">🛵 הזמנה בוולט</button>`:`<a class="btn" href="${esc(deliveryUrl(r))}" rel="noopener">🛵 ${woltDirect(r)?'הזמנה בוולט':'חיפוש בוולט'}</a>`):''}${site&&!BOOKRX.test(site)?`<a class="btn" href="${esc(site)}" target="_blank" rel="noopener">${ICON.link}אתר</a>`:''}<button class="btn" type="button" data-act="evNew" data-id="${esc(r.id)}">${ICON.users}ערב עם חברים</button><button class="btn" type="button" data-act="share">${ICON.share}שליחת מיקום</button><button class="btn" type="button" data-act="shareCard">${ICON.card}כרטיס לשיתוף</button>${exact(r)?`<button class="btn" type="button" data-act="copyLL">${ICON.copy}העתקת קואורדינטות</button>`:''}</div>
+<div class="row" style="margin-top:14px"><a class="btn pri" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}גוגל מפות</a><a class="btn pri" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}ניווט ב־Waze</a>${moovitOk(r)?`<button class="btn" type="button" data-act="moovit">🚌 תחבורה ציבורית</button>`:''}<a class="btn" href="${esc(bookUrl(r))}" target="_blank" rel="noopener">${ICON.book}הזמנת שולחן</a>${showWolt(r)?(isStandalone()&&isIOS()?`<button class="btn" type="button" data-act="wolt">🛵 הזמנה בוולט</button>`:`<a class="btn" href="${esc(deliveryUrl(r))}" rel="noopener">🛵 ${woltDirect(r)?'הזמנה בוולט':'חיפוש בוולט'}</a>`):''}${site&&!BOOKRX.test(site)?`<a class="btn" href="${esc(site)}" target="_blank" rel="noopener">${ICON.link}אתר</a>`:''}<button class="btn" type="button" data-act="evNew" data-id="${esc(r.id)}">${ICON.users}ערב עם חברים</button><button class="btn" type="button" data-act="share">${ICON.share}שליחת מיקום</button><button class="btn" type="button" data-act="shareCard">${ICON.card}כרטיס לשיתוף</button>${exact(r)?`<button class="btn" type="button" data-act="copyLL">${ICON.copy}העתקת קואורדינטות</button>`:''}</div>
 <div class="mini" id="gwrap"></div>
 <p class="note">${exact(r)?'מיקום מדויק נשמר.':hasLL(r)?'המיקום משוער. אפשר לדייק אותו בעריכה.':'עוד אין מיקום מדויק. בעריכה אפשר לחפש את המקום או לסמן אותו על המפה.'}</p></div>
 ${hoursView(r)}<div class="sec"><h4>בא לנו השבוע?</h4><div class="row"><button class="btn ${mv?'on':''}" type="button" data-act="vote" aria-pressed="${mv}">${mv?'♥ בא לי!':'♡ בא לי השבוע'}</button><span class="meta">${vt.length?vt.map(k=>esc(nm(k))).join(', ')+' גם רוצה':'עוד אף אחד אחר לא בחר'}</span></div><p class="note">הבחירה תקפה לשבוע. כששניכם בוחרים, המקום עולה לראש ההגרלה.</p></div>
@@ -1149,6 +1157,8 @@ S.addEventListener('click',async e=>{
   if(a==='gameNew'){gm=null;gameSheet();return}
   if(a==='spRm'){const L=special().slice();L.splice(i,1);if(await setSpecial(L))settingsSheet();return}
   if(a==='voice'){voiceAdd(b);return}
+  if(a==='moovit'){openMoovit(byId(openId));return}
+  if(a==='moovitOut'){const x=nextOuting(60);if(x&&x.id)openMoovit(byId(x.id),x.v);return}
   if(a==='wolt'){const r=byId(openId);if(!r)return;let ok=false;try{await navigator.clipboard.writeText(r.name);ok=true}catch{}
     const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','פתיחת וולט');
     d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:28px">🛵</div><h3>פותחים את וולט</h3><p class="meta">${ok?`השם <b>${esc(r.name)}</b> הועתק.`:`חפשו בוולט: <b>${esc(r.name)}</b>.`} ייפתח עמוד של וולט בחנות האפליקציות: לוחצים <b>פתיחה</b>, בוולט נכנסים לחיפוש ${ok?'ומדביקים':'ומקלידים את השם'}.</p><a class="btn pri" href="itms-apps://apps.apple.com/app/id943905271" data-wx>לפתיחת וולט</a><button class="link-btn" type="button" data-wx>ביטול</button></div>`;
@@ -1315,7 +1325,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='31';
+const APPV='32';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1402,7 +1412,7 @@ function outSheet(){const x=nextOuting(60);killFormMap();openId=null;mode='out';
 <div class="out-cd" id="outCd" aria-live="off"></div>
 <div class="sec out-info">${r&&(r.address||r.city)?`<p>📍 ${esc([r.address,r.city].filter(Boolean).join(', '))}</p>`:''}${who.length?`<p>👥 עם ${esc(who.join(', '))}</p>`:''}<p id="outWx" hidden></p>${x.sur?'<p>מישהו מתכנן לכם הפתעה. פנו את הערב, והפרטים יתגלו ביום עצמו 😉</p>':''}${ev&&ev.note?`<p>📝 ${esc(ev.note)}</p>`:''}</div>
 ${must.length?`<div class="sec"><h4>חובה להזמין</h4><div class="mchips">${must.map(m=>`<span>${esc(m)}</span>`).join('')}</div></div>`:''}
-<div class="sec out-acts">${r?`<a class="btn pri" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}נסיעה עם Waze</a><a class="btn" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener">📅 ליומן</a><a class="btn" href="${esc(bookUrl(r))}" target="_blank" rel="noopener">🪑 הזמנת מקום</a><button class="btn" type="button" data-act="outOpen" data-id="${esc(r.id)}">לדף המקום</button>`:''}${ev?`<button class="btn pri" type="button" data-act="outEv" data-id="${esc(ev.id)}">לפרטי הערב</button>`:''}${x.sur?'':`<button class="btn" type="button" data-act="outShare">${ICON.share}שיתוף</button>`}</div></div>`;
+<div class="sec out-acts">${r?`<a class="btn pri" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}נסיעה עם Waze</a>${moovitOk(r)?`<button class="btn" type="button" data-act="moovitOut">🚌 מוביט</button>`:''}<a class="btn" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener">📅 ליומן</a><a class="btn" href="${esc(bookUrl(r))}" target="_blank" rel="noopener">🪑 הזמנת מקום</a><button class="btn" type="button" data-act="outOpen" data-id="${esc(r.id)}">לדף המקום</button>`:''}${ev?`<button class="btn pri" type="button" data-act="outEv" data-id="${esc(ev.id)}">לפרטי הערב</button>`:''}${x.sur?'':`<button class="btn" type="button" data-act="outShare">${ICON.share}שיתוף</button>`}</div></div>`;
   hydrate();outTick();outTimer=setInterval(outTick,1000);if(r&&hasLL(r))outWx(r,v.d)}
 function outTick(){const el=$('#outCd');if(!el||mode!=='out'||$('#ov').hidden){clearInterval(outTimer);outTimer=null;return}const x=nextOuting(60);if(!x)return;const ms=x.at-Date.now();
   if(ms<=0){el.innerHTML='<div class="out-now">יוצאים עכשיו! 🥳</div>';return}
