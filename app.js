@@ -590,7 +590,7 @@ let gTok=null;
 async function gSuggest(q){if(!(window.APP_CONFIG||{}).googleKey)return null;const g=await gmaps();if(!g||!g.maps||!g.maps.importLibrary)return null;
   const P=await g.maps.importLibrary('places');if(!P.AutocompleteSuggestion)return null;if(!gTok)gTok=new P.AutocompleteSessionToken();
   const {suggestions}=await P.AutocompleteSuggestion.fetchAutocompleteSuggestions({input:q,sessionToken:gTok,language:'iw',region:'il',includedRegionCodes:['il'],origin:{lat:31.9,lng:34.9}});
-  return (suggestions||[]).map(s=>s.placePrediction).filter(Boolean).slice(0,6).map(p=>({g:true,pred:p,name:(p.mainText&&p.mainText.text)||String(p.text||''),full:(p.secondaryText&&p.secondaryText.text)||''}))}
+  return (suggestions||[]).map(s=>s.placePrediction).filter(p=>p&&isFoodG(p.types)).slice(0,6).map(p=>({g:true,pred:p,name:(p.mainText&&p.mainText.text)||String(p.text||''),full:(p.secondaryText&&p.secondaryText.text)||''}))}
 async function gDetails(pred){const q=await takeQuota('place');if(!q.ok)return null;const pl=pred.toPlace();await pl.fetchFields({fields:GF});gTok=null;return pl}
 /* text search, used only by the manual "photo from Google" button */
 async function gSearch(q,fields){if(!(window.APP_CONFIG||{}).googleKey)return null;const g=await gmaps();if(!g||!g.maps||!g.maps.importLibrary)return null;const {Place}=await g.maps.importLibrary('places');
@@ -605,39 +605,44 @@ function gToItem(p){const loc=p.location;const lat=typeof loc.lat==='function'?l
 function osmToItem(x){const a=x.address||{},e=x.extratags||{};return {osm:(x.osm_type||'').charAt(0)+(x.osm_id||''),site:safeUrl(e.website||e['contact:website']||''),phone:e.phone||e['contact:phone']||'',name:x.name||x.display_name.split(',')[0],full:x.display_name,address:[a.road,a.house_number].filter(Boolean).join(' '),city:a.city||a.town||a.village||a.municipality||'',lat:+x.lat,lng:+x.lon,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[x.type]||''}}
 function photonToItem(f){const p=f.properties||{},[lng,lat]=f.geometry.coordinates;return {name:p.name||p.street||'',full:[p.name,p.street&&(p.street+(p.housenumber?' '+p.housenumber:'')),p.city||p.town,p.country].filter(Boolean).join(', '),address:p.street?(p.street+(p.housenumber?' '+p.housenumber:'')):'',city:p.city||p.town||p.village||'',lat,lng,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[p.osm_value]||''}}
 const fetchJ=(u,ms)=>Promise.race([fetch(u).then(r=>r.json()),new Promise((_,j)=>setTimeout(()=>j(new Error('timeout')),ms||7000))]);
-async function osmSearch(q){let res=[];try{res=(await fetchJ(`https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&extratags=1&limit=6&accept-language=he&countrycodes=il&q=${encodeURIComponent(q)}`)).map(osmToItem)}catch{}
-  if(res.length<2){try{const j=await fetchJ(`https://photon.komoot.io/api/?limit=6&lat=32.0&lon=34.8&q=${encodeURIComponent(q)}`);res=res.concat((j.features||[]).filter(f=>(f.properties||{}).countrycode==='IL').map(photonToItem))}catch{}}
-  return res}
+/* only food & drink businesses */
+const FOOD_AMEN=new Set(['restaurant','cafe','bar','pub','fast_food','ice_cream','food_court','biergarten','nightclub']),FOOD_SHOP=new Set(['bakery','confectionery','pastry','deli','coffee','tea','wine','alcohol','beverages','chocolate','cheese']);
+const isFoodOsm=(k,v)=>(k==='amenity'&&FOOD_AMEN.has(v))||(k==='shop'&&FOOD_SHOP.has(v));
+const FOOD_GT=/(^|\s)(\w+_)?(restaurant|cafe|coffee_shop|cafeteria|bar|pub|bakery|food|meal_takeaway|meal_delivery|dessert_shop|dessert_restaurant|ice_cream_shop|confectionery|deli|juice_shop|tea_house|winery|brewery|brewpub|bistro|diner|pizzeria|steak_house|chocolate_shop|candy_store|donut_shop|bagel_shop|sandwich_shop|night_club|food_court|wine_bar|cocktail_bar|lounge_bar|sports_bar|hookah_bar|gastropub|beer_garden|bar_and_grill|acai_shop|bubble_tea_store)(\s|$)/;
+const isFoodG=types=>FOOD_GT.test(' '+(types||[]).join(' ')+' ');
+async function osmSearch(q,any){let res=[];try{res=(await fetchJ(`https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&extratags=1&limit=10&accept-language=he&countrycodes=il&q=${encodeURIComponent(q)}`)).filter(x=>any||isFoodOsm(x.category,x.type)).map(osmToItem)}catch{}
+  if(res.length<2){try{const j=await fetchJ(`https://photon.komoot.io/api/?limit=10&lat=32.0&lon=34.8&q=${encodeURIComponent(q)}`);res=res.concat((j.features||[]).filter(f=>{const p=f.properties||{};return p.countrycode==='IL'&&(any||isFoodOsm(p.osm_key,p.osm_value))}).map(photonToItem))}catch{}}
+  const seen=new Set();return res.filter(x=>{const k=x.name+'|'+x.address;if(seen.has(k))return false;seen.add(k);return true}).slice(0,8)}
 let formSrc={};
 const catToItem=p=>({cat:true,pid:p.id,name:p.name,full:[p.address,p.city].filter(Boolean).join(', '),address:p.address||'',city:p.city||'',lat:p.lat,lng:p.lng,cuisine:p.cuisine||'',site:p.site||'',phone:p.phone||'',price:p.price||0,hours:p.hours||null,gpid:p.gpid||'',score:+p.score||0,uses:p.uses||1});
 async function catSearch(q){if(!sb||!navigator.onLine)return [];try{const {data,error}=await sb.rpc('find_places',{q,ulat:myLoc?myLoc.lat:null,ulng:myLoc?myLoc.lng:null});if(error)throw error;const L=(data||[]).map(catToItem);const top=L[0]?L[0].score:0;return L.filter(x=>x.score>=Math.max(.3,top-.25))}catch(e){console.warn('catalog',e);return []}}
 async function aiCall(body){if(!sb||!navigator.onLine||!myId)return null;try{const {data,error}=await sb.functions.invoke('ai',{body});if(error)throw error;if(data&&data.quota){quotaMsg('ai',data.quota);return null}if(!data||data.error){if(data&&data.error!=='nokey')console.warn('ai',data.error,data.detail||'');return null}return data}catch(e){console.warn('ai',e);return null}}
-const SRC_LBL={cat:'⚡ מהמאגר של FOMO',osm:'🗺️ מפה פתוחה',g:'🔎 גוגל'};
+const BUSY='<li class="busy" aria-live="polite"><span class="spin" aria-hidden="true"></span>מחפש…</li>';
 function placeRes(res,note){const ul=$('#placeRes');if(!ul)return;placeSearch.res=res;
-  ul.innerHTML=res.map((x,i)=>`<li data-act="placePick" data-i="${i}"><b>${esc(x.name)}</b><small>${esc(x.full)}</small><span class="src ${x.cat?'cat':x.g?'g':'osm'}">${SRC_LBL[x.cat?'cat':x.g?'g':'osm']}</span></li>`).join('')
+  ul.innerHTML=res.map((x,i)=>`<li data-act="placePick" data-i="${i}"><b>${esc(x.name)}</b><small>${esc(x.full)}</small></li>`).join('')
   +(note?`<li class="nores"><small>${note}</small></li>`:'')
-  +(res.some(x=>x.g)||!(window.APP_CONFIG||{}).googleKey?'':`<li class="gmore" data-act="gSearchNow"><small>לא מצאתם את המקום? <b>חיפוש בגוגל</b></small></li>`)}
-async function placeSearch(){const qv=$('#placeQ').value.trim(),ul=$('#placeRes');if(!qv)return;const seq=placeSearch.seq=(placeSearch.seq||0)+1;ul.innerHTML='<li><small>מחפש במאגר של FOMO…</small></li>';
+  +(res.some(x=>x.g)||!(window.APP_CONFIG||{}).googleKey?'':`<li class="gmore" data-act="gSearchNow"><small>לא מצאתם את המקום? <b>חיפוש מורחב</b></small></li>`)}
+async function placeSearch(){const qv=$('#placeQ').value.trim(),ul=$('#placeRes');if(!qv)return;const seq=placeSearch.seq=(placeSearch.seq||0)+1;ul.innerHTML=BUSY;
   let res=await catSearch(qv);const found=()=>res.some(x=>x.cat&&x.score>=.45);let q2=qv;
-  if(!found()){ul.innerHTML='<li><small>מנסה להבין למה התכוונתם…</small></li>';const ai=await aiCall({action:'parse',q:qv});if(seq!==placeSearch.seq)return;
+  if(!found()){const ai=await aiCall({action:'parse',q:qv});if(seq!==placeSearch.seq)return;
     if(ai&&ai.name){q2=[ai.name,ai.city].filter(Boolean).join(' ');const tries=[q2,...(ai.alt||[]).map(a=>[a,ai.city].filter(Boolean).join(' '))].filter((x,i,A)=>x&&x!==qv&&A.indexOf(x)===i).slice(0,3);
       for(const t of tries){const more=await catSearch(t);for(const m of more)if(!res.some(x=>x.pid===m.pid))res.push(m);if(found())break}res.sort((a,b)=>b.score-a.score)}}
   if(seq!==placeSearch.seq)return;
-  if(!found()){ul.innerHTML='<li><small>מחפש במפה הפתוחה…</small></li>';const o=await osmSearch(q2);if(seq!==placeSearch.seq)return;res=res.concat(o)}
-  if(!res.length){await gSearchNow(q2,'לא מצאנו במאגר ובמפה הפתוחה, אז חיפשנו בגוגל:');return}
+  if(!found()){const o=await osmSearch(q2);if(seq!==placeSearch.seq)return;res=res.concat(o)}
+  if(!res.length){await gSearchNow(q2);return}
   placeRes(res)}
-async function gSearchNow(qOverride,note){const qv=qOverride||$('#placeQ').value.trim(),ul=$('#placeRes');if(!qv||!ul)return;ul.innerHTML='<li><small>מחפש בגוגל…</small></li>';
+async function gSearchNow(qOverride,note){const qv=qOverride||$('#placeQ').value.trim(),ul=$('#placeRes');if(!qv||!ul)return;ul.innerHTML=BUSY;
   let g=null;try{g=await gSuggest(qv)}catch(e){console.warn('google suggest',e)}
-  if(!g||!g.length){ul.innerHTML='<li><small>לא נמצא. נסו שם אחר, או סמנו את המקום ישירות על המפה למטה.</small></li>';return}
+  if(!g||!g.length){ul.innerHTML='<li class="nores"><small>לא מצאנו מסעדה, בר או בית קפה בשם הזה. נסו שם אחר, או סמנו את המקום ישירות על המפה למטה.</small></li>';return}
   placeRes(g,note||'')}
-async function enrichFromSite(url,quiet){const f0=$('#ef');if(!f0||!url)return;const st=$('#fillSt');const before=st?st.textContent:'';if(st&&!quiet)st.textContent=before+' קורא את האתר של המקום…';
+async function enrichFromSite(url,quiet){const f0=$('#ef');if(!f0||!url)return;const st=$('#fillSt');const before=st?st.textContent:'';if(st&&!quiet)st.textContent=before+' משלים פרטים…';
   const d=await aiCall({action:'enrich',url,cuisines:CUIS});const f=$('#ef');if(!f)return;if(st&&!quiet)st.textContent=before;if(!d||!d.ok)return;const E=f.elements,got=[];
   if(d.name&&!E.name.value.trim()){E.name.value=d.name;got.push('שם')}if(d.address&&!E.address.value.trim()){E.address.value=d.address;got.push('כתובת')}if(d.city&&!E.city.value.trim())E.city.value=d.city;
   if(d.cuisine&&!E.cuisine.value){E.cuisine.value=d.cuisine;got.push('סוג')}if(d.price&&!E.price.value){E.price.value=String(d.price);got.push('מחיר')}
   const hasH=[0,1,2,3,4,5,6].some(i=>E['ho'+i].value||E['hx'+i].checked);
   if(d.hours&&!hasH){for(let i=0;i<7;i++){const h=d.hours[i];E['hx'+i].checked=h===null;E['ho'+i].value=h?h[0]:'';E['hc'+i].value=h?h[1]:''}const det=f.querySelector('details.hours');if(det)det.open=true;formSrc.hoursSrc='web';got.push('שעות פתיחה')}
   if(d.phone)formSrc.phone=d.phone;if(d.dishes&&d.dishes.length)formSrc.dishes=d.dishes;
-  if(st&&got.length)st.textContent=(st.textContent?st.textContent+' ':'')+`✨ השלמנו מהאתר של המקום: ${got.join(', ')}.`}
+  if(st&&got.length)st.textContent=st.textContent?st.textContent+` השלמנו גם: ${got.join(', ')}.`:`✨ מילאנו: ${got.join(', ')}. בדקו שהכל נכון.`}
 function contribute(d){if(!sb||!navigator.onLine||!d||!d.name)return Promise.resolve(null);const hz=d.hours&&Object.keys(d.hours).length?d.hours:null;
   const p={name:d.name,city:d.city,address:d.address,cuisine:d.cuisine,site:d.site,price:d.price||0,phone:formSrc.phone||'',place_id:formSrc.pid||d.placeId||'',gpid:formSrc.gpid||'',osm:formSrc.osm||''};
   if(Number.isFinite(d.lat)&&d.llLevel!=='street'){p.lat=d.lat;p.lng=d.lng}
@@ -645,8 +650,8 @@ function contribute(d){if(!sb||!navigator.onLine||!d||!d.name)return Promise.res
   return sb.rpc('contribute_place',{p}).then(({data})=>data||null,()=>null)}
 async function placePick(i){let x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)return;
   formSrc={};if(x.cat)formSrc={pid:x.pid,hoursSrc:x.hours?'user':'',phone:x.phone};else if(x.osm)formSrc={osm:x.osm,phone:x.phone};
-  if(x.pred){const ul=$('#placeRes');ul.innerHTML='<li><small>מביא את הפרטים מגוגל…</small></li>';let pl=null;try{pl=await gDetails(x.pred)}catch(e){console.warn('google details',e)}
-    if(pl){x=gToItem(pl);formSrc={gpid:pl.id||'',hoursSrc:'google'}}else{const o=await osmSearch([x.name,x.full].filter(Boolean).join(' '));x=o[0]?Object.assign(o[0],{name:x.name}):{name:x.name}}
+  if(x.pred){const ul=$('#placeRes');ul.innerHTML=BUSY;let pl=null;try{pl=await gDetails(x.pred)}catch(e){console.warn('google details',e)}
+    if(pl){x=gToItem(pl);formSrc={gpid:pl.id||'',hoursSrc:'google'}}else{const o=await osmSearch([x.name,x.full].filter(Boolean).join(' '),true);x=o[0]?Object.assign(o[0],{name:x.name}):{name:x.name}}
     f=$('#ef');if(!f)return}
   const E=f.elements;
   if(x.name)E.name.value=x.name;if(x.address)E.address.value=x.address;if(x.city)E.city.value=x.city;
@@ -654,7 +659,7 @@ async function placePick(i){let x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)
   if(x.mapsUrl)E.mapsUrl.value=x.mapsUrl;if(x.site&&!E.site.value)E.site.value=x.site;if(x.cat&&x.price&&!E.price.value)E.price.value=String(x.price);if(x.price&&!E.price.value)E.price.value=String(x.price);
   if(x.hours){for(let d=0;d<7;d++){const h=x.hours[d];E['hx'+d].checked=h===null;E['ho'+d].value=h?h[0]:'';E['hc'+d].value=h?h[1]:''}const det=f.querySelector('details.hours');if(det)det.open=true}
   pendDel=typeof x.delivery==='boolean'?x.delivery:null;if(x.veg){const cb=f.querySelector('[name=tags][value="צמחוני-פרנדלי"]');if(cb)cb.checked=true}pendG=x.gphotos&&x.gphotos.length?x.gphotos:null;if(x.lat!=null)setPin(x.lat,x.lng,false,true);$('#placeRes').innerHTML='';
-  $('#fillSt').textContent=x.cat?'⚡ מילאנו מהמאגר של FOMO, בלי חיפוש בגוגל. בדקו שהכל נכון.':x.g?'מילאנו מגוגל מפות: שם, כתובת, סוג, מחיר, אתר ושעות פתיחה'+(x.gphotos&&x.gphotos.length?', ותמונה של המקום תתווסף בשמירה':'')+'. בדקו שהכל נכון.':'מילאנו מהמפה הפתוחה. בדקו שהסיכה על המקום הנכון, ואם צריך גררו אותה.';
+  $('#fillSt').textContent='✨ מילאנו את הפרטים'+(x.gphotos&&x.gphotos.length?', ותמונה של המקום תתווסף בשמירה':'')+'. בדקו שהכל נכון, ושהסיכה במפה במקום הנכון.';
   if(!x.g&&x.site&&!x.hours)enrichFromSite(x.site)}
 async function geocode(address,city){const a=String(address||'').trim(),c=String(city||'').trim();if(!a&&!c)return null;const q=[a,c].filter(Boolean).join(', ');
   const tries=[];if(a&&c)tries.push(`street=${encodeURIComponent(a)}&city=${encodeURIComponent(c)}`);tries.push(`q=${encodeURIComponent(q)}`);
@@ -1310,7 +1315,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='30';
+const APPV='31';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;

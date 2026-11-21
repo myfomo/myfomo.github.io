@@ -1,5 +1,5 @@
 // Fomo service worker: always tries the network first (fresh version), falls back to cache offline.
-const CACHE='fomo-v30';
+const CACHE='fomo-v31';
 const SHELL=['./','index.html','style.css','app.js','config.js','manifest.webmanifest','vendor/supabase.js','vendor/leaflet.js','vendor/leaflet.css','icons/icon-192.png','icons/icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL.map(u=>new Request(u,{cache:'reload'})))).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
