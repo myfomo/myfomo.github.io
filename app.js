@@ -771,7 +771,7 @@ async function pushSync(){if(!pushOK()||Notification.permission!=='granted')retu
 let pushAsk=false;
 async function pushMaybeAsk(){if(lsGet('rs-push-asked',0))return;const st=await pushState();pushAsk=st==='off'||st==='ios';renderNotices()}
 async function fillPushSec(){const el=$('#pushSec');if(!el)return;const st=await pushState();
-  el.innerHTML=st==='on'?'<p class="note" style="margin:0 0 10px">ההתראות פעילות במכשיר הזה 🔔</p><button class="btn" type="button" data-act="pushOff">כיבוי התראות במכשיר הזה</button>'
+  el.innerHTML=st==='on'?'<p class="note" style="margin:0 0 10px">ההתראות פעילות במכשיר הזה 🔔</p><div class="row"><button class="btn pri" type="button" data-act="pushTest">שליחת התראת בדיקה</button><button class="btn" type="button" data-act="pushOff">כיבוי התראות במכשיר הזה</button></div>'
   :st==='denied'?'<p class="note" style="margin:0">ההתראות חסומות. כדי להפעיל: הגדרות הטלפון ← Fomo (או הדפדפן) ← התראות.</p>'
   :st==='ios'?'<p class="note" style="margin:0">באייפון התראות עובדות רק מהאפליקציה שבמסך הבית. מוסיפים את Fomo למסך הבית (למטה), פותחים משם ומפעילים כאן.</p>'
   :st==='na'?'<p class="note" style="margin:0">המכשיר או הדפדפן הזה לא תומך בהתראות.</p>'
@@ -1056,6 +1056,7 @@ S.addEventListener('click',async e=>{
   if(a==='evDel'){if(confirmDel(b))evDelete();return}
   if(a==='pushOn'){b.disabled=true;await pushOn();fillPushSec();return}
   if(a==='pushOff'){await pushOff();fillPushSec();return}
+  if(a==='pushTest'){b.disabled=true;try{const s2=await pushSub();if(s2)await pushSave(s2);const {data,error}=await sb.functions.invoke('notify',{body:{type:'test'}});if(error)throw error;toast(data&&data.sent?'נשלחה התראת בדיקה. אם האפליקציה פתוחה, ייתכן שתופיע רק במרכז ההתראות':'לא נמצא מכשיר רשום. כבו והפעילו את ההתראות מחדש')}catch(e){toast('השליחה נכשלה: '+(e.message||e))}b.disabled=false;return}
   if(a==='ciSet'){lsSet('rs-checkin',b.dataset.v);if(b.dataset.v==='on'){const ok=await getLoc();if(!ok)toast('צריך לאשר גישה למיקום');else autoCheckin()}settingsSheet();return}
   if(a==='pubOn'){pubSet(true);return}
   if(a==='pubOff'){pubSet(false);return}
