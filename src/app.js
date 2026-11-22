@@ -1349,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='50';
+const APPV='51';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1840,6 +1840,8 @@ const sxSrcLbl=x=>x.cat?'מהקטלוג':x.g?'מגוגל':(x.osm||!x.cat)?'מה�
 function sxInList(x){if(!x||!x.name)return null;return rows.find(r=>(x.pid&&r.placeId===x.pid)||sameP({name:x.name,lat:x.lat,lng:x.lng},{name:r.name,lat:hasLL(r)?r.lat:undefined,lng:hasLL(r)?r.lng:undefined}))||null}
 /* basic Google fields only for the result list (cheaper); full details are fetched when a result is added */
 const SXF=['id','displayName','formattedAddress','addressComponents','location','types','primaryType','googleMapsURI','businessStatus'];
+/* name similarity (letter pairs), so a city in the query can't make unrelated places match */
+function sxDice(a,b){a=fomoNorm(a).replace(/\s+/g,'');b=fomoNorm(b).replace(/\s+/g,'');if(!a||!b)return 0;if(a.includes(b)||b.includes(a))return 1;const P=s=>{const m=new Map();for(let i=0;i<s.length-1;i++){const k=s.slice(i,i+2);m.set(k,(m.get(k)||0)+1)}return m};const A=P(a),B=P(b);let n=0;for(const [k,v] of A)n+=Math.min(v,B.get(k)||0);return 2*n/Math.max(1,(a.length-1)+(b.length-1))}
 var sxIntent=null;var sxCache=new Map();
 function sxWhy(x,I){if(!I)return '';const w=[];if(I.cuisine&&x.cuisine===I.cuisine)w.push(x.cuisine);else if(x.cuisine)w.push(x.cuisine);
   if(I.city&&x.city&&(fomoNorm(x.city).includes(fomoNorm(I.city))||fomoNorm(I.city).includes(fomoNorm(x.city))))w.push('ב'+x.city);if(I.cheap&&x.price&&x.price<=2)w.push('לא יקר');if(I.fancy&&x.price>=3)w.push('יוקרתי');
@@ -1856,7 +1858,8 @@ async function sxSearch(v,opt){v=v.trim();const key=v+'|'+(opt&&opt.desc?1:0);if
   if(!out){let res=await catSearch(v);const found=()=>res.some(x=>x.cat&&x.score>=.45);let q2=v;
     if(!found()&&!(opt&&opt.noAi)){const ai=await aiCall({action:'parse',q:v});if(ai&&ai.name){track('ai');placeSearch.last={q:v,ai};q2=[ai.name,ai.city].filter(Boolean).join(' ');
       for(const t of [q2,...(ai.alt||[]).map(a=>[a,ai.city].filter(Boolean).join(' '))].filter((x,i,A)=>x&&x!==v&&A.indexOf(x)===i).slice(0,3)){const more=await catSearch(t);for(const m of more)if(!res.some(x=>x.pid===m.pid))res.push(m);if(found())break}res.sort((a,b)=>b.score-a.score)}}
-    if(!found()){const o=await osmSearch(q2);res=res.concat(o.filter(y=>!res.some(x=>sameP(x,y))))}
+    {const L=placeSearch.last&&placeSearch.last.q===v&&placeSearch.last.ai?placeSearch.last.ai:null;const names=[v,L&&L.name,...((L&&L.alt)||[])].filter(Boolean);res=res.filter(x=>!x.cat||names.some(n=>sxDice(x.name,n)>=.5))}
+    if(!res.some(x=>x.cat)){const o=await osmSearch(q2);res=res.concat(o.filter(y=>!res.some(x=>sameP(x,y))&&[v,q2].some(n=>sxDice(y.name,n.split(' ').slice(0,3).join(' '))>=.4)))}
     if(!res.length){let g=null;try{g=await gSuggest(q2)}catch(e){console.warn('google suggest',e)}res=g||[]}
     out={mode:'name',items:res.slice(0,8)}}
   sxCache.set(key,out);if(sxCache.size>40)sxCache.delete(sxCache.keys().next().value);return out}
