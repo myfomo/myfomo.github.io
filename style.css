@@ -828,3 +828,8 @@ html[data-hc] .meta,html[data-hc] .note{color:var(--ink)}
 .hhdays{margin-top:8px;gap:6px}
 /* QR */
 .qr-in{max-width:340px}.qr-box{background:#fff;border-radius:18px;padding:12px;margin:6px auto 4px;width:min(260px,70vw)}.qr-box svg{width:100%;height:auto;display:block}
+/* v37 update banner + usage bars */
+.upd{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top) + 10px);z-index:400;display:flex;align-items:center;gap:12px;background:#2A1630;color:#fff;border-radius:999px;padding:8px 8px 8px 16px;box-shadow:0 10px 30px #0004;font-weight:700;font-size:14px;max-width:calc(100% - 24px);animation:sheetUp .4s var(--ease)}
+.upd button{border:0;background:var(--grad);color:#fff;font:inherit;font-weight:800;border-radius:999px;padding:8px 16px;cursor:pointer}
+.ubar{margin:8px 0}.ubar-t{display:flex;justify-content:space-between;gap:8px;font-size:13px}.ubar-t b{font-weight:700;color:var(--mute)}
+.ubar-b{height:8px;border-radius:5px;background:var(--soft);overflow:hidden;margin-top:4px}.ubar-b i{display:block;height:100%;background:#14B88A;border-radius:5px}.ubar-b i.warm{background:#FFB547}.ubar-b i.hot{background:var(--bad)}
