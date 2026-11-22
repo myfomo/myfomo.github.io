@@ -114,7 +114,7 @@ async function switchList(id){const l=lists.find(x=>x.id===id)||lists[0];if(!l)r
   acts=[];polls=[];events=[];gameActs=null;meta={id:null,special:[],diets:{}};renderBell();renderNotices();sb.rpc('touch_list',{lid:l.id}).then(()=>{},()=>{});await loadMembers();await loadAll();if(page==='list')animIn();loadActivity();loadPolls();loadEvents();loadGameActs()}
 
 /* ---------- list ---------- */
-function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!openF||(openState(r)||{}).open)&&(!likeF||iVoted(r))&&(!hhF||(hhInfo(r)||{}).now)&&(!tagF.size||[...tagF].every(t=>(r.tags||[]).includes(t)))&&(!nearF||(distKm(r)??99)<=3)&&(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t)));
+function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!openF||(openState(r)||{}).open)&&(!likeF||iVoted(r))&&(!hhF||(hhInfo(r)||{}).now)&&(!tagF.size||[...tagF].every(t=>(r.tags||[]).includes(t)))&&(!nearF||(distKm(r)??99)<=3)&&(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||(sxIntent&&sxIntent.q===q.trim()?sxOwnFilter(r,sxIntent):[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t))));
   const s={recent:(a,b)=>(b.updatedAt||0)-(a.updatedAt||0),rating:(a,b)=>avg(b)-avg(a),visit:(a,b)=>lastVisit(b).localeCompare(lastVisit(a)),name:(a,b)=>String(a.name).localeCompare(String(b.name),'he'),near:(a,b)=>(distKm(a)??1e9)-(distKm(b)??1e9)}[sort]||((a,b)=>0);return list.sort(s)}
 function renderHead(){const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,m=rows.filter(isMatch).length;
   $('#stats').innerHTML=loaded?`היינו ב־<b>${been}</b> · רוצים לנסות <b>${want}</b>${m?` · <b>${m}</b> ששנינו רוצים השבוע`:''}`:'טוען…';renderGreet()}
@@ -127,12 +127,12 @@ function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove
   if(!loaded){g.innerHTML=SKEL.repeat(6);return}
   if(!rows.length){g.innerHTML=`<div class="empty"><h2>עוד אין כאן מסעדות</h2><p>הוסיפו מקום שהייתם בו או מקום שאתם חולמים עליו, והרשימה תתחיל להתמלא.</p><button class="btn pri" type="button" data-act="add">הוסיפו את הראשונה</button></div>`;return}
   const list=filtered();
-  if(!list.length){g.innerHTML=`<div class="empty"><h2>${view==='match'?'עוד אין מקום ששניכם בחרתם השבוע':'לא נמצא כלום'}</h2><p>${view==='match'?'לחצו "בא לי" על מקומות שבא לכם ללכת אליהם. כששניכם בוחרים אותו מקום, הוא יופיע כאן.':'נסו חיפוש אחר או הסירו סינון.'}</p></div>`;return}
+  if(!list.length){g.innerHTML=`<div class="empty"><h2>${view==='match'?'עוד אין מקום ששניכם בחרתם השבוע':'לא נמצא כלום'}</h2><p>${view==='match'?'לחצו "בא לי" על מקומות שבא לכם ללכת אליהם. כששניכם בוחרים אותו מקום, הוא יופיע כאן.':'נסו חיפוש אחר או הסירו סינון.'}</p></div>`;sxListAfter(0);return}
   const upM=new Map();for(const u of upcoming())if(!upM.has(u.r.id))upM.set(u.r.id,u);
-  const card=(r,idx)=>{const p=(r.photos||[]).find(x=>x.path),a=avg(r),mv=iVoted(r),mt=isMatch(r);return `<article class="card" tabindex="0" data-id="${esc(r.id)}" style="--i:${Math.min(idx,12)}"><div class="cover">${p?photoImg(p.thumb?{path:p.thumb}:p,'loading="lazy" decoding="async"'):plate(r.name)}<div class="badges"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${mt?'<span class="badge match">שנינו רוצים!</span>':''}${(()=>{const u=upM.get(r.id);return u?`<span class="badge plan">${esc(whenTxt(u.v))}</span>`:''})()}${(()=>{const h=hhInfo(r);return h?`<span class="badge hh${h.now?'':' soon'}">${esc(h.t)}</span>`:''})()}</div>${r.fav?'<span class="heart" aria-label="מועדף">♥</span>':''}</div><div class="cbody"><h3>${esc(r.name)}</h3><p class="meta">${[r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')||'&nbsp;'}</p><div class="mrow">${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}${liveSt(r)}${distKm(r)!=null?`<span class="dist">${esc(distTxt(distKm(r)))}</span>`:''}</div><div class="acts"><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button type="button" class="btn sm ${mv?'on':''} ${popId===r.id?'pop':''}" data-vote="${esc(r.id)}" aria-pressed="${mv}">${mv?'♥':'♡'} בא לי</button></div></div></article>`};
+  const card=(r,idx)=>{const p=(r.photos||[]).find(x=>x.path),a=avg(r),mv=iVoted(r),mt=isMatch(r);return `<article class="card" tabindex="0" data-id="${esc(r.id)}" style="--i:${Math.min(idx,12)}"><div class="cover">${p?photoImg(p.thumb?{path:p.thumb}:p,'loading="lazy" decoding="async"'):plate(r.name)}<div class="badges">${q.trim().length>=2?'<span class="badge sx-in-b">✓ ברשימה</span>':''}<span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${mt?'<span class="badge match">שנינו רוצים!</span>':''}${(()=>{const u=upM.get(r.id);return u?`<span class="badge plan">${esc(whenTxt(u.v))}</span>`:''})()}${(()=>{const h=hhInfo(r);return h?`<span class="badge hh${h.now?'':' soon'}">${esc(h.t)}</span>`:''})()}</div>${r.fav?'<span class="heart" aria-label="מועדף">♥</span>':''}</div><div class="cbody"><h3>${esc(r.name)}</h3><p class="meta">${[r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')||'&nbsp;'}</p><div class="mrow">${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}${liveSt(r)}${distKm(r)!=null?`<span class="dist">${esc(distTxt(distKm(r)))}</span>`:''}</div><div class="acts"><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button type="button" class="btn sm ${mv?'on':''} ${popId===r.id?'pop':''}" data-vote="${esc(r.id)}" aria-pressed="${mv}">${mv?'♥':'♡'} בא לי</button></div></div></article>`};
   const CH=24;let shown=Math.max(CH,renderList.keep||0);g.innerHTML=list.slice(0,shown).map(card).join('');if(renderList.io)renderList.io.disconnect();
   if(list.length>shown&&'IntersectionObserver' in window){const sen=document.createElement('div');sen.className='more-sen';g.after(sen);renderList.io=new IntersectionObserver(es=>{if(!es.some(e=>e.isIntersecting))return;const nx=list.slice(shown,shown+CH);g.insertAdjacentHTML('beforeend',nx.map((r,i)=>card(r,shown+i)).join(''));shown+=nx.length;renderList.keep=shown;hydrate();if(shown>=list.length){renderList.io.disconnect();sen.remove()}},{rootMargin:'800px'});renderList.io.observe(sen)}else if(list.length>shown){g.innerHTML+=list.slice(shown).map((r,i)=>card(r,shown+i)).join('')}
-  hydrate();
+  hydrate();sxListAfter(list.length);
 }
 
 /* ---------- map (Leaflet + OpenStreetMap) ---------- */
@@ -1110,11 +1110,11 @@ $('#cuis').addEventListener('click',async e=>{const qf=e.target.closest('[data-q
   if(e.target.closest('[data-open-f]')){openF=!openF;renderList();stickTop();return}const b=e.target.closest('[data-c]');if(b){cuisF=b.dataset.c;renderList();stickTop()}});
 $('#pickBtn').addEventListener('click',()=>pick());
 $('#fab').addEventListener('click',camSheet);
-$('#addBtn').addEventListener('click',newForm);
+$('#addBtn').addEventListener('click',addSheet);
 $('#setBtn').addEventListener('click',settingsSheet);
 $('#listBtn').addEventListener('click',listsSheet);
 $('#app h1').addEventListener('click',listsSheet);
-$('#addBtnM').addEventListener('click',newForm);
+$('#addBtnM').addEventListener('click',addSheet);
 $('#pickBtnM').addEventListener('click',()=>pick());
 $('#closeBtn').addEventListener('click',()=>closeSheetAnim());
 $('#ov').addEventListener('click',e=>{if(e.target.id==='ov')closeSheet()});
@@ -1228,7 +1228,7 @@ S.addEventListener('click',async e=>{
   if(a==='impGo'){doImport(b);return}
   if(a==='copyHours'){const f=$('#ef');if(!f)return;for(let j=1;j<7;j++){f.elements['ho'+j].value=f.elements.ho0.value;f.elements['hc'+j].value=f.elements.hc0.value;f.elements['hx'+j].checked=f.elements.hx0.checked}toast('הועתק לכל הימים');return}
   if(a==='open'){clearInterval(pickTimer);openDetail(b.dataset.id);return}
-  if(a==='add'){newForm();return}
+  if(a==='add'){addSheet();return}
   if(a==='camPick'){camStep(b.dataset.id);return}
   if(a==='camNear'){locateMe((la,ln)=>camList($('#camQ').value,[la,ln]));return}
   if(a==='placeSearch'){placeSearch();return}
@@ -1349,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='45';
+const APPV='46';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1679,7 +1679,7 @@ let adminP=null;const amAdmin=()=>adminP||(adminP=(async()=>{if(!sb||!myId)retur
 const TIPS={
   list:[{s:'#stickyBar',t:'סינון בלחיצה',d:'פתוח עכשיו, קרוב אליי, בא לי, האפי אוור ועוד. הסרגל נשאר למעלה גם כשגוללים.'},
     {s:'#grid .card [data-vote]',t:'♥ בא לי',d:'מסמנים מקומות שבא לכם. כששניכם מסמנים אותו מקום, יש התאמה!'},
-    {s:'#addBtnM,#addBtn',t:'הוספת מקום',d:'מחפשים בשם, גם עם שגיאות כתיב, וכל הפרטים מתמלאים לבד.'},
+    {s:'#addBtnM,#addBtn',t:'הוספת מקום',d:'מחפשים בשם או מתארים במילים שלכם, וכל הפרטים מתמלאים לבד.'},
     {t:'עוד שני טריקים',d:'משיכה למטה בראש הרשימה מרעננת אותה, ולחיצה על כרטיס פותחת את כל הפרטים.'}],
   form:[{s:'#placeQ',t:'חיפוש חכם',d:'כותבים איך שזוכרים, למשל "בלבוי" או "קפה משלוש", ובוחרים מהרשימה.'},
     {s:'#paste',t:'יש קישור?',d:'מדביקים קישור מגוגל מפות או מהאתר של המסעדה, והפרטים מתמלאים מעצמם.'},
@@ -1718,7 +1718,7 @@ function coach(name,steps){let i=0;const d=document.createElement('div');d.class
 function resetTips(){lsSet('rs-tips',{});lsSet('rs-tips-off',0)}
 
 /* ---- what's new after an update ---- */
-const WHATSNEW={'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר ברשימה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
+const WHATSNEW={'46':['✨ חיפוש חכם בדף הרשימה: מוצא גם מקומות שעוד לא ברשימה, עם כפתור הוספה','💬 אפשר לתאר במילים, למשל "בר יין שקט בתל אביב"','＋ פותח את אותו חיפוש, עם הוספה ידנית למטה','📝 כרטיס ההוספה מסודר: מה שמולא לבד למעלה, השאר מקופל'],'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר ברשימה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
 function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNew,3000);return}const seen=lsGet('rs-seen-ver','');lsSet('rs-seen-ver',APPV);const L=WHATSNEW[APPV];if(!seen||seen===APPV||!L)return;
   const d=document.createElement('div');d.className='calp upd-new';d.setAttribute('role','dialog');d.setAttribute('aria-label','מה חדש');
   d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:30px">🎁</div><h3>מה חדש ב־FOMO</h3><ul class="wn">${L.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><button class="btn pri" type="button" data-wx>מעולה!</button></div>`;
@@ -1832,6 +1832,99 @@ async function fillMissingHours(){if(fillMissingHours.busy||!sb||!myId||!loaded|
   finally{fillMissingHours.busy=false}
   if(n)toast(`🕒 השלמנו שעות פתיחה ל־${n} ${n===1?'מקום':'מקומות'}`)}
 setTimeout(fillMissingHours,20000);
+
+/* ================= v46: one smart search (list page + ＋) ================= */
+const SX_DESC=/(^|\s)(משהו|מקום|מקומות|שקט|שקטה|זול|זולה|יקר|לא יקר|פתוח|פתוחה|עכשיו|ליד|קרוב|רומנטי|רומנטית|לדייט|דייט|טוב|טובה|הכי|עם|בלי|כשר|טבעוני|צמחוני|אווירה|נוף|ים|ארוחת|בראנץ'?|ערב|צהריים|ילדים|כלבים|חברים|בחוץ|מסעדה|מסעדות|בר|ברים|קפה|בית קפה|פאב|לאכול|לשתות|איפה|מה)(\s|$)/;
+const sxIsDesc=v=>{const w=v.trim().split(/\s+/).filter(Boolean);return w.length>=3||(w.length>=2&&SX_DESC.test(' '+v+' '))};
+const sxSrcLbl=x=>x.cat?'מהקטלוג':x.g?'מגוגל':(x.osm||!x.cat)?'מהמפה':'';
+function sxInList(x){if(!x||!x.name)return null;return rows.find(r=>(x.pid&&r.placeId===x.pid)||sameP({name:x.name,lat:x.lat,lng:x.lng},{name:r.name,lat:hasLL(r)?r.lat:undefined,lng:hasLL(r)?r.lng:undefined}))||null}
+var sxIntent=null;var sxCache=new Map();
+function sxWhy(x,I){if(!I)return '';const w=[];if(I.cuisine&&x.cuisine===I.cuisine)w.push(x.cuisine);else if(x.cuisine)w.push(x.cuisine);
+  if(I.city&&x.city&&fomoNorm(x.city).includes(fomoNorm(I.city)))w.push('ב'+x.city);if(I.cheap&&x.price&&x.price<=2)w.push('לא יקר');if(I.fancy&&x.price>=3)w.push('יוקרתי');
+  if(I.open_now&&x.hours){const o=openState(x);if(o&&o.open)w.push('פתוח עכשיו')}return w.slice(0,3).join(' · ')}
+/* the search itself: names -> catalog, AI spelling fix, map, Google suggestions; descriptions -> AI intent, catalog by type/city, Google text search */
+async function sxSearch(v,opt){v=v.trim();const key=v+'|'+(opt&&opt.desc?1:0);if(sxCache.has(key))return sxCache.get(key);let out=null;
+  if(opt&&opt.desc){const I=await aiCall({action:'intent',q:v,cuisines:CUIS,tags:TAGS});
+    if(I&&I.ok&&I.kind==='describe'){track('ai-search');const L=[];
+      try{const {data}=await sb.rpc('browse_places',{c:I.cuisine,cty:I.city,lim:8});for(const p of data||[])L.push(catToItem(p))}catch(e){console.warn('browse',e)}
+      if(I.query&&(window.APP_CONFIG||{}).googleKey){const qq=await takeQuota('place');if(qq.ok){try{const ps=await gSearch(I.query,GF);for(const p of ps||[]){if(!isFoodG([p.primaryType,...(p.types||[])]))continue;const it=gToItem(p);it.gpid=p.id||'';if(!L.some(y=>sameP(y,it)))L.push(it)}}catch(e){console.warn('g text',e)}}}
+      const ok=x=>(!I.cuisine||!x.cuisine||x.cuisine===I.cuisine)&&(!I.cheap||!x.price||x.price<=2)&&(!I.fancy||!x.price||x.price>=3)&&(!I.open_now||!x.hours||(openState(x)||{}).open);
+      const items=L.filter(ok).slice(0,8);items.forEach(x=>x.why=sxWhy(x,I));out={mode:'ai',intent:I,items}}
+    else if(I&&I.ok&&I.kind==='name'&&I.name)v=[I.name,I.city].filter(Boolean).join(' ')}
+  if(!out){let res=await catSearch(v);const found=()=>res.some(x=>x.cat&&x.score>=.45);let q2=v;
+    if(!found()&&!(opt&&opt.noAi)){const ai=await aiCall({action:'parse',q:v});if(ai&&ai.name){track('ai');placeSearch.last={q:v,ai};q2=[ai.name,ai.city].filter(Boolean).join(' ');
+      for(const t of [q2,...(ai.alt||[]).map(a=>[a,ai.city].filter(Boolean).join(' '))].filter((x,i,A)=>x&&x!==v&&A.indexOf(x)===i).slice(0,3)){const more=await catSearch(t);for(const m of more)if(!res.some(x=>x.pid===m.pid))res.push(m);if(found())break}res.sort((a,b)=>b.score-a.score)}}
+    if(!found()){const o=await osmSearch(q2);res=res.concat(o.filter(y=>!res.some(x=>sameP(x,y))))}
+    if(!res.length){let g=null;try{g=await gSuggest(q2)}catch(e){console.warn('google suggest',e)}res=g||[]}
+    out={mode:'name',items:res.slice(0,8)}}
+  sxCache.set(key,out);if(sxCache.size>40)sxCache.delete(sxCache.keys().next().value);return out}
+const sxAv=x=>`<div class="sx-av" aria-hidden="true">${esc((x.name||'?').trim().charAt(0))}</div>`;
+function sxRow(x,i,ctx){const ex=sxInList(x),meta=[x.cuisine,x.full||x.city,x.price?'₪'.repeat(x.price):''].filter(Boolean).join(' · ');const o=x.hours?openState(x):null;
+  const right=ex?`<button class="sx-in" type="button" data-sx-open="${esc(ex.id)}">✓ כבר ברשימה<br><u>לפתוח</u></button>`:`<button class="sx-add" type="button" data-sx-add="${ctx}:${i}">➕ הוספה</button>`;
+  return `<div class="sx-row">${sxAv(x)}<div class="sx-t"><b>${esc(x.name)}</b>${meta?`<p class="meta">${esc(meta)}</p>`:''}${x.why?`<div class="sx-why">✨ ${esc(x.why)}</div>`:''}<div class="sx-tags">${o&&o.open?'<span class="op">פתוח עכשיו</span>':''}<span>${sxSrcLbl(x)}</span></div></div>${right}</div>`}
+const sxIntentHtml=I=>`<div class="sx-intent">${[I.cuisine&&'סוג: '+I.cuisine,I.city&&'עיר: '+I.city,I.area&&'אזור: '+I.area,I.cheap&&'לא יקר',I.fancy&&'יוקרתי',I.open_now&&'פתוח עכשיו',...(I.tags||[])].filter(Boolean).map(c=>`<span>${esc(c)}</span>`).join('')||'<span>חיפוש כללי</span>'}</div>`;
+const sxThink=steps=>`<div class="sx-think">${steps.map((s,i)=>`<div class="r ${i===0?'run':''}"><span class="d"></span>${s}</div>`).join('')}</div>`;
+function sxStep(box){const R=box?[...box.querySelectorAll('.sx-think .r')]:[];let i=0;const t=setInterval(()=>{if(!R[i]||!R[i].isConnected){clearInterval(t);return}R[i].classList.remove('run');R[i].classList.add('on');R[i].querySelector('.d').textContent='✓';i++;if(R[i])R[i].classList.add('run');else clearInterval(t)},650);return ()=>clearInterval(t)}
+var sxRes={list:[],plus:[]};
+/* ---- list page ---- */
+function sxOwnFilter(r,I){if(I.cuisine&&r.cuisine!==I.cuisine)return false;if(I.city&&!(r.city&&fomoNorm(r.city).includes(fomoNorm(I.city))))return false;if(I.area&&![r.address,r.city,r.notes].join(' ').includes(I.area))return false;
+  if(I.cheap&&r.price>2)return false;if(I.fancy&&r.price&&r.price<3)return false;if(I.open_now&&!(openState(r)||{}).open)return false;if(I.tags&&I.tags.length&&!I.tags.every(t=>(r.tags||[]).includes(t)))return false;return true}
+var sxT=null,sxSeq=0;
+function sxListAfter(n){const v=q.trim(),on=v.length>=2,band=$('#grid').parentElement;
+  ['#friendsLoved','#soon'].forEach(s=>{const e=$(s);if(e)e.classList.toggle('sx-hide',on)});
+  let h=$('#sxMineH'),m=$('#sxMore');if(!on){if(h)h.remove();if(m)m.remove();sxIntent=null;return}
+  if(!h){h=document.createElement('div');h.id='sxMineH';h.className='sx-h';$('#grid').before(h)}h.innerHTML=`ברשימה שלכם <small>${n||'אין'}</small>`;
+  if(!m){m=document.createElement('div');m.id='sxMore';band.appendChild(m)}
+  const g=$('#grid');if(!n&&g){const e=g.querySelector('.empty');if(e)e.outerHTML=`<p class="sx-note">${sxIntent&&sxIntent.q===v?'אין ברשימה מקום שמתאים לזה.':'המקום עוד לא ברשימה שלכם.'}</p>`}
+  if(m.dataset.q===v)return;clearTimeout(sxT);const desc=sxIsDesc(v);
+  sxT=setTimeout(()=>sxListRun(v,desc),desc?1100:450)}
+async function sxListRun(v,desc){if(q.trim()!==v)return;const m=$('#sxMore');if(!m)return;m.dataset.q=v;const seq=++sxSeq;const W=$('#q').closest('.sx-qwrap');
+  m.innerHTML=`<div class="sx-h">מקומות נוספים ${desc?'':'<small><span class="sx-fast">⚡ מיידי</span></small>'}</div>`+(desc?sxThink(['מבין את הבקשה','מחפש בקטלוג, במפה ובגוגל','משאיר רק אוכל ושתייה','מסדר לפי מה שמתאים']):`<div class="sx-list"><p class="sx-note">מחפש…</p></div>`);
+  if(W&&desc)W.classList.add('busy');const stop=desc?sxStep(m):()=>{};let r=null;try{r=await sxSearch(v,{desc})}finally{stop();if(W)W.classList.remove('busy')}
+  if(seq!==sxSeq||q.trim()!==v)return;
+  if(r.mode==='ai'){sxIntent={...r.intent,q:v};renderList()}
+  const items=r.items.filter(x=>!sxInList(x));sxRes.list=items;
+  const mm=$('#sxMore');if(!mm)return;mm.dataset.q=v;
+  mm.innerHTML=`<div class="sx-h">מקומות נוספים ${r.mode==='name'?'<small><span class="sx-fast">⚡ מיידי</span></small>':''}</div>`+(r.mode==='ai'?sxIntentHtml(r.intent):'')
+    +`<div class="sx-list">${items.length?items.map((x,i)=>sxRow(x,i,'list')).join(''):`<p class="sx-note">${r.items.length?'כל מה שמצאנו כבר ברשימה שלכם 👌':'לא מצאנו מקומות נוספים. נסו לנסח אחרת.'}</p>`}</div>`}
+/* ---- ＋ sheet ---- */
+function addSheet(){killFormMap();openId=null;mode='add';openSheet();track('plus');
+  $('#sb').innerHTML=`<div class="sec dh"><h2 style="margin-bottom:12px">מקום חדש</h2><form class="sx-sheethead" id="sxPF"><span class="sx-qwrap"><span class="sx-spark" aria-hidden="true">✨</span><input class="f" id="sxPQ" autocomplete="off" enterkeyhint="search" placeholder="חיפוש חכם: איזה מקום להוסיף?" aria-label="חיפוש מקום להוספה"></span><button class="btn pri" type="submit">חיפוש</button></form>
+  <div id="sxPB"><p class="note" style="margin:0 2px">כותבים שם של מקום, או מתארים, למשל "בר יין שקט בתל אביב".</p></div>
+  <button class="btn sx-manual" type="button" data-sx-manual>✍️ הוספה ידנית, בלי חיפוש</button><p class="note sx-alt">אפשר גם: <button type="button" class="linkb" data-sx-voice>🎤 בקול</button> · <button type="button" class="linkb" data-sx-paste>📋 קישור מגוגל מפות</button></p></div>`;
+  setTimeout(()=>{const i=$('#sxPQ');if(i)i.focus()},300)}
+var sxPT=null,sxPSeq=0;
+async function sxPlusRun(v,force){v=(v||'').trim();const B=$('#sxPB');if(!B)return;if(v.length<2){return}const desc=sxIsDesc(v);if(desc&&!force)return;const seq=++sxPSeq;const W=$('#sxPQ').closest('.sx-qwrap');
+  B.innerHTML=desc?sxThink(['מבין את הבקשה','מחפש בקטלוג, במפה ובגוגל','משאיר רק אוכל ושתייה']):'<p class="sx-note">מחפש…</p>';if(desc&&W)W.classList.add('busy');const stop=desc?sxStep(B):()=>{};
+  let r=null;try{r=await sxSearch(v,{desc})}finally{stop();if(W)W.classList.remove('busy')}if(seq!==sxPSeq||!$('#sxPB'))return;
+  sxRes.plus=r.items;$('#sxPB').innerHTML=(r.mode==='name'?'<p style="margin:0 2px 10px"><span class="sx-fast">⚡ מיידי</span></p>':sxIntentHtml(r.intent))+`<div class="sx-list">${r.items.length?r.items.map((x,i)=>sxRow(x,i,'plus')).join(''):'<p class="sx-note">לא מצאנו. אפשר להוסיף ידנית 👇</p>'}</div>`}
+/* ---- picking a result opens the form, filled and arranged ---- */
+async function sxAdd(x){track('sx-add');try{await loadLeaflet()}catch{}newForm();const f=$('#ef');if(!f)return;const qi=$('#placeQ');if(qi)qi.blur();
+  f.classList.add('sx-compact');placeSearch.res=[x];await placePick(0);sxCompact()}
+function sxCompact(){const f=$('#ef');if(!f||f.dataset.sx)return;f.dataset.sx='1';const E=f.elements,g=f.querySelector('.grid2'),quick=f.querySelector('.quick');
+  const st=$('#fillSt'),dn=$('#dupN');if(quick){if(st)quick.before(st);if(dn)quick.before(dn);quick.hidden=true}
+  const lab=n=>{const el=E[n];return el&&(el.closest('label')||el)};
+  const more=document.createElement('details');more.className='sx-more';more.innerHTML='<summary>פרטים נוספים · מפה, קישורים ושעות</summary><div class="sx-in-grid"></div>';const MG=more.querySelector('.sx-in-grid');
+  ['name','cuisine','city','price','address'].forEach(n=>{const l=lab(n);if(l)MG.appendChild(l)});const mp=f.querySelector('#fmap');if(mp)MG.appendChild(mp.closest('.full'));
+  ['mapsUrl','site','woltUrl'].forEach(n=>{const l=lab(n);if(l)MG.appendChild(l)});const hrs=f.querySelector('details.hours');if(hrs){hrs.classList.remove('full');MG.appendChild(hrs)}
+  g.insertAdjacentHTML('afterbegin','<div class="sx-sec">מה שרק אתם יודעים</div>');const notes=lab('notes');if(notes)notes.after(more);else g.appendChild(more);
+  more.addEventListener('toggle',()=>{if(more.open&&fmap)setTimeout(()=>fmap.invalidateSize(),60)});
+  const pr=+E.price.value||0,o=null;const meta=[E.cuisine.value,[E.address.value,E.city.value].filter(Boolean).join(', '),pr?'₪'.repeat(pr):''].filter(Boolean).join(' · ');
+  const sum=document.createElement('div');sum.className='sx-sum';sum.innerHTML=`${sxAv({name:E.name.value})}<div class="sx-t"><b>${esc(E.name.value)}</b><p class="meta">${esc(meta)}</p></div><button class="btn sm" type="button" data-sx-edit>עריכה</button>`;
+  (st||g).before(sum);
+  E.name.addEventListener('input',()=>{const b=sum.querySelector('b');if(b)b.textContent=E.name.value})}
+/* ---- events ---- */
+document.addEventListener('click',e=>{const t=e.target;
+  const ad=t.closest('[data-sx-add]');if(ad){const [c,i]=ad.dataset.sxAdd.split(':');const x=(sxRes[c]||[])[+i];if(x)sxAdd(x);return}
+  const op=t.closest('[data-sx-open]');if(op){const r=byId(op.dataset.sxOpen);if(r){openDetail(r.id)}return}
+  if(t.closest('[data-sx-manual]')){track('sx-manual');newForm();const f=$('#ef');if(f){const qk=f.querySelector('.quick');if(qk)qk.hidden=true;const n=f.elements.name;if(n)n.focus()}return}
+  if(t.closest('[data-sx-voice]')){newForm();const v=document.querySelector('#ef [data-act="voice"]');if(v)v.click();return}
+  if(t.closest('[data-sx-paste]')){newForm();const p=$('#paste');if(p)p.focus();return}
+  if(t.closest('[data-sx-edit]')){const d=document.querySelector('details.sx-more');if(d){d.open=true;d.scrollIntoView({behavior:RM()?'auto':'smooth',block:'start'})}return}});
+document.addEventListener('submit',e=>{if(e.target.id!=='sxPF')return;e.preventDefault();sxPlusRun($('#sxPQ').value,true)});
+document.addEventListener('input',e=>{if(e.target.id!=='sxPQ')return;clearTimeout(sxPT);const v=e.target.value;sxPT=setTimeout(()=>sxPlusRun(v,false),450)});
+/* sticky close bar: solid background once the sheet scrolls */
+$('#ov').addEventListener('scroll',()=>{const b=document.querySelector('#ov .sx-bar');if(b)b.classList.toggle('stuck',$('#ov').scrollTop>12)},{passive:true});
 
 /* 43: install banner (Safari/Android, not installed yet) */
 function instBanner(){try{if(isStandalone()||!isPhone()||lsGet('rs-inst-done',0))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;

@@ -877,3 +877,77 @@ html[data-hc] .meta,html[data-hc] .note{color:var(--ink)}
 .inote{font-size:14px;opacity:.9;margin:0 0 10px;text-align:right}
 .gate .ilater{background:none;border:0;color:#fff;opacity:.85;text-decoration:underline;font:inherit;font-size:15px;margin-top:18px;cursor:pointer;padding:8px}
 .calp-in .isteps{margin:6px 0 4px}
+
+/* ================= v46: smart search, ＋ sheet, compact add form, close bar ================= */
+
+.sx-h{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;font-family:Rubik;font-weight:800;font-size:17px;margin:6px 2px -2px}
+.sx-h small{font-family:Assistant;font-weight:700;color:var(--mute);font-size:13px}
+.sx-note{grid-column:1/-1;color:var(--mute);margin:0 2px;font-size:15px}
+.sx-list{grid-column:1/-1;display:grid;gap:10px}
+.sx-row{display:flex;gap:12px;align-items:center;background:var(--card);border-radius:22px;padding:12px;box-shadow:var(--shadow-sm);animation:sheetUp .4s var(--ease) both}
+.sx-av{width:58px;height:58px;border-radius:16px;flex:none;display:flex;align-items:center;justify-content:center;font-family:Rubik;font-weight:800;font-size:26px;color:#fff;background:var(--grad)}
+.sx-t{flex:1;min-width:0}
+.sx-t b{display:block;font-family:Rubik;font-size:17px;line-height:1.2}
+.sx-t .meta{margin:2px 0 0;font-size:14px}
+.sx-why{color:#5B3FD6;font-weight:700;font-size:13.5px;margin-top:3px}
+.sx-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
+.sx-tags span{font-size:11.5px;font-weight:800;border-radius:999px;padding:1px 8px;background:var(--soft);color:#B5361C}
+.sx-tags .op{background:#D8F5EA;color:#0B6E52}
+.sx-add{flex:none;border:0;background:var(--grad);color:#fff;border-radius:14px;padding:9px 12px;font-weight:800;font-family:Rubik;font-size:14px;cursor:pointer;box-shadow:0 8px 18px #ff5a3c33}
+.sx-in{flex:none;border:0;background:#D8F5EA;color:#0B6E52;border-radius:14px;padding:7px 10px;font-weight:800;font-size:13px;cursor:pointer;line-height:1.25;text-align:center}
+.sx-in u{font-weight:700}
+.sx-fast{display:inline-flex;gap:4px;align-items:center;font-size:12px;font-weight:800;color:#0B6E52;background:#D8F5EA;border-radius:999px;padding:2px 9px}
+.sx-think{grid-column:1/-1;background:var(--card);border:1px solid #E3DBFF;border-radius:20px;padding:12px 14px}
+.sx-think .r{display:flex;gap:9px;align-items:center;font-weight:700;padding:3px 0;opacity:.3;transition:opacity .3s}
+.sx-think .r.on{opacity:1}
+.sx-think .d{width:18px;height:18px;border-radius:50%;border:2px solid #d9d0ff;flex:none;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff}
+.sx-think .r.on .d{background:#7B5CFF;border-color:#7B5CFF}
+.sx-think .r.run .d{border-color:#7B5CFF;border-top-color:transparent;animation:sxspin .8s linear infinite}
+@keyframes sxspin{to{transform:rotate(360deg)}}
+.sx-intent{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px}
+.sx-intent span{background:#EFEAFF;color:#4B33C4;border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:800}
+.sx-filt{grid-column:1/-1;font-size:13px;color:var(--mute);border:1px dashed var(--line);border-radius:14px;padding:8px 11px;background:var(--card)}
+.badge.sx-in-b{background:#D8F5EA;color:#0B6E52}
+/* add sheet */
+.sx-sheethead{display:flex;gap:8px;margin:4px 0 14px}
+.sx-sheethead .f{flex:1}
+.sx-manual{width:100%;margin-top:16px}
+.sx-tries{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 6px}
+.sx-tries .chip{cursor:pointer}
+/* sticky close bar: fixes the ✕ floating over the fields and the status bar overlapping the form */
+.sheet .sx-bar{position:sticky;top:0;z-index:3;background:transparent;padding:calc(env(safe-area-inset-top) + 8px) 12px 8px;display:flex;justify-content:flex-end;margin:0 0 -68px;pointer-events:none;transition:background .2s,box-shadow .2s}
+.sheet .sx-bar .x{pointer-events:auto;display:flex;align-items:center;justify-content:center}
+.sheet .sx-bar.stuck{background:var(--bg);box-shadow:0 6px 14px #2a16300f}
+.sx-nw{white-space:nowrap}
+.sheet .sx-bar .x{position:static;margin:0}
+/* reorganized form */
+.sx-sum{display:flex;gap:12px;align-items:center;background:var(--card);border-radius:22px;padding:12px;box-shadow:var(--shadow-sm);margin:0 0 6px}
+.sx-sum .sx-t b{font-size:19px}
+.sx-sum button{flex:none}
+.sx-got{color:#0B6E52;font-weight:700;font-size:14px;margin:0 2px 14px}
+details.sx-more{grid-column:1/-1;background:var(--soft);border-radius:20px;padding:4px 14px}
+details.sx-more>summary{cursor:pointer;font-family:Rubik;font-weight:800;padding:12px 0;list-style:none}
+details.sx-more>summary::before{content:'+ ';color:var(--red)}
+details.sx-more[open]>summary::before{content:'− '}
+details.sx-more .sx-in-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;padding-bottom:12px}
+details.sx-more .sx-in-grid>.full,details.sx-more .sx-in-grid>details{grid-column:1/-1}
+.sx-sec{grid-column:1/-1;font-family:Rubik;font-weight:800;font-size:15px;color:var(--mute);margin:4px 2px -4px}
+/* AI mark in the search fields */
+.sx-qwrap{position:relative;display:block;flex:1 1 100%;min-width:0}
+.sx-qwrap>input{width:100%;box-sizing:border-box}
+.sx-qwrap>.sx-spark{position:absolute;inset-inline-start:14px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none;line-height:1;transition:transform .2s}
+.sx-qwrap>input{padding-inline-start:42px!important}
+.sx-qwrap.busy>.sx-spark{animation:sxspark 1s ease-in-out infinite}
+@keyframes sxspark{0%,100%{transform:translateY(-50%) scale(1) rotate(0);filter:none}50%{transform:translateY(-50%) scale(1.25) rotate(12deg);filter:drop-shadow(0 0 6px #b58cff)}}
+.sx-sheethead .sx-qwrap{flex:1}
+
+/* v46 extras */
+.sx-hide{display:none!important}
+.sx-alt{margin:12px 2px 0;text-align:center}
+.linkb{background:none;border:0;padding:2px 4px;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#sxMore{margin-top:18px;display:grid;gap:12px}
+#sxMineH{margin:4px 2px 12px}
+.ov.story-ov .sx-bar{background:none!important;box-shadow:none!important}
+.sx-qwrap{flex:1 1 220px}
+@media(max-width:700px){.sx-qwrap{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){.sx-qwrap.busy>.sx-spark{animation:none}}
