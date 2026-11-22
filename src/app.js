@@ -1349,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='51';
+const APPV='52';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1864,7 +1864,7 @@ async function sxSearch(v,opt){v=v.trim();const key=v+'|'+(opt&&opt.desc?1:0);if
     out={mode:'name',items:res.slice(0,8)}}
   sxCache.set(key,out);if(sxCache.size>40)sxCache.delete(sxCache.keys().next().value);return out}
 const sxAv=x=>`<div class="sx-av" aria-hidden="true">${esc((x.name||'?').trim().charAt(0))}</div>`;
-function sxRow(x,i,ctx){const ex=sxInList(x),meta=[x.cuisine,x.full||x.city,x.price?'₪'.repeat(x.price):''].filter(Boolean).join(' · ');const o=x.hours?openState(x):null;
+function sxRow(x,i,ctx){const ex=sxInList(x),loc=[x.address,x.city].filter(Boolean).join(', ')||String(x.full||'').split(',').slice(0,2).join(','),meta=[x.cuisine,loc,x.price?'₪'.repeat(x.price):''].filter(Boolean).join(' · ');const o=x.hours?openState(x):null;
   const right=ex?`<button class="sx-in" type="button" data-sx-open="${esc(ex.id)}">✓ כבר ברשימה<br><u>לפתוח</u></button>`:`<button class="sx-add" type="button" data-sx-add="${ctx}:${i}">➕ הוספה</button>`;
   return `<div class="sx-row">${sxAv(x)}<div class="sx-t"><b>${esc(x.name)}</b>${meta?`<p class="meta">${esc(meta)}</p>`:''}${x.why?`<div class="sx-why">✨ ${esc(x.why)}</div>`:''}<div class="sx-tags">${o&&o.open?'<span class="op">פתוח עכשיו</span>':''}<span>${sxSrcLbl(x)}</span></div></div>${right}</div>`}
 const sxIntentHtml=I=>`<div class="sx-intent">${[I.cuisine&&'סוג: '+I.cuisine,I.city&&'עיר: '+I.city,I.area&&'אזור: '+I.area,I.cheap&&'לא יקר',I.fancy&&'יוקרתי',I.open_now&&'פתוח עכשיו',...(I.tags||[])].filter(Boolean).map(c=>`<span>${esc(c)}</span>`).join('')||'<span>חיפוש כללי</span>'}</div>`;
