@@ -1341,7 +1341,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='39';
+const APPV='40';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1658,12 +1658,12 @@ async function deleteMe(){const solo=lists.filter(l=>l.role==='owner').map(l=>l.
 
 /* ---- send the app itself (not a list invite) ---- */
 const APP_URL=location.origin+location.pathname.replace(/index\.html$/,'');
-const APP_TXT='FOMO 🍽️ אפליקציה לשמור ולתכנן מסעדות, ברים ובתי קפה עם חברים. חינם, נכנסים ונרשמים:';
+const APP_TXT='היי! 🍽️ גיליתי אפליקציה שאני ממש אוהב: FOMO 💛\nשומרים בה את כל המסעדות, הברים ובתי הקפה שבא לנו לנסות או שכבר היינו בהם, מדרגים, מתכננים יציאות עם חברים, ואף מקום טוב לא נשכח יותר.\nזה חינם, ונכנסים בלחיצה 👇';
 async function appShareDlg(){let svg='';try{const Q=await loadQR();const qr=Q(0,'M');qr.addData(APP_URL);qr.make();svg=qr.createSvgTag({cellSize:6,margin:2,scalable:true})}catch{}
   const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','שליחת האפליקציה');
   d.innerHTML=`<div class="calp-in qr-in"><h3>📲 שליחת FOMO לחבר</h3><p class="meta" style="margin:0">הקישור לאפליקציה עצמה, בלי הצטרפות לרשימה שלכם. החבר נרשם ופותח רשימה משלו.</p>${svg?`<div class="qr-box">${svg}</div>`:''}<p class="note" dir="ltr" style="margin:0;word-break:break-all">${esc(APP_URL)}</p>
-<button class="btn pri" type="button" data-as="share">${ICON.share}שליחה</button><button class="btn" type="button" data-as="copy">${ICON.copy}העתקת הקישור</button><button class="link-btn" type="button" data-wx>סגירה</button></div>`;
-  d.addEventListener('click',async e=>{const b=e.target.closest('[data-as]');if(b){if(b.dataset.as==='share'){await shareOrCopy('FOMO',APP_TXT,APP_URL)}else{try{await navigator.clipboard.writeText(APP_TXT+' '+APP_URL);toast('הקישור הועתק')}catch{toast(APP_URL)}}return}if(e.target===d||e.target.closest('[data-wx]'))d.remove()});document.body.appendChild(d)}
+<button class="btn pri" type="button" data-as="share">${ICON.share}שליחה</button><button class="btn" type="button" data-as="copy">${ICON.copy}העתקת ההודעה והקישור</button><button class="link-btn" type="button" data-wx>סגירה</button></div>`;
+  d.addEventListener('click',async e=>{const b=e.target.closest('[data-as]');if(b){if(b.dataset.as==='share'){await shareOrCopy('FOMO',APP_TXT,APP_URL)}else{try{await navigator.clipboard.writeText(APP_TXT+'\n'+APP_URL);toast('ההודעה והקישור הועתקו')}catch{toast(APP_URL)}}return}if(e.target===d||e.target.closest('[data-wx]'))d.remove()});document.body.appendChild(d)}
 
 /* ================= v39: guided tips per screen + "what's new" ================= */
 let adminP=null;const amAdmin=()=>adminP||(adminP=(async()=>{if(!sb||!myId)return false;const c=lsGet('rs-adm-'+myId,null);if(c!==null)return c;try{const {data}=await sb.rpc('is_quota_admin');const v=data===true;lsSet('rs-adm-'+myId,v);return v}catch{return false}})());
