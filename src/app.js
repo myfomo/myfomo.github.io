@@ -615,10 +615,10 @@ function gComp(p,t){const c=(p.addressComponents||[]).find(c=>(c.types||[]).incl
 function gToItem(p){const loc=p.location;const lat=typeof loc.lat==='function'?loc.lat():loc.lat,lng=typeof loc.lng==='function'?loc.lng():loc.lng;
   const ts=[p.primaryType,...(p.types||[])].filter(Boolean);const cuisine=ts.map(t=>GTYPE[t]).find(Boolean)||'';
   const H={};const per=(p.regularOpeningHours&&p.regularOpeningHours.periods)||[];const pad=n=>String(n).padStart(2,'0');
-  for(const x of per){if(!x.open)continue;if(!x.close){for(let i=0;i<7;i++)H[i]=['00:00','23:59'];break}H[x.open.day]=[pad(x.open.hour)+':'+pad(x.open.minute),pad(x.close.hour)+':'+pad(x.close.minute)]}
+  for(const x of per){if(!x.open)continue;if(!x.close){for(let i=0;i<7;i++)H[i]=['00:00','23:59'];break}{const o=pad(x.open.hour)+':'+pad(x.open.minute),c=pad(x.close.hour)+':'+pad(x.close.minute);H[x.open.day]=H[x.open.day]?[H[x.open.day][0],c]:[o,c]}}
   if(per.length)for(let i=0;i<7;i++)if(!(i in H))H[i]=null;
   return {g:true,name:p.displayName||'',full:p.formattedAddress||'',address:[gComp(p,'route'),gComp(p,'street_number')].filter(Boolean).join(' '),city:gComp(p,'locality')||gComp(p,'administrative_area_level_2'),lat,lng,mapsUrl:p.googleMapsURI||'',site:p.websiteURI||'',price:GPRICE[p.priceLevel]||0,cuisine,hours:per.length?H:null,gphotos:gPhotos(p,1),veg:!!p.servesVegetarianFood,delivery:typeof p.delivery==='boolean'?p.delivery:null}}
-function osmToItem(x){const a=x.address||{},e=x.extratags||{};return {osm:(x.osm_type||'').charAt(0)+(x.osm_id||''),site:safeUrl(e.website||e['contact:website']||''),phone:e.phone||e['contact:phone']||'',name:x.name||x.display_name.split(',')[0],full:x.display_name,address:[a.road,a.house_number].filter(Boolean).join(' '),city:a.city||a.town||a.village||a.municipality||'',lat:+x.lat,lng:+x.lon,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[x.type]||''}}
+function osmToItem(x){const a=x.address||{},e=x.extratags||{};return {osm:(x.osm_type||'').charAt(0)+(x.osm_id||''),site:safeUrl(e.website||e['contact:website']||''),phone:e.phone||e['contact:phone']||'',name:x.name||x.display_name.split(',')[0],full:x.display_name,address:[a.road,a.house_number].filter(Boolean).join(' '),city:a.city||a.town||a.village||a.municipality||'',lat:+x.lat,lng:+x.lon,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[x.type]||'',hours:parseOH(e.opening_hours)}}
 function photonToItem(f){const p=f.properties||{},[lng,lat]=f.geometry.coordinates;return {name:p.name||p.street||'',full:[p.name,p.street&&(p.street+(p.housenumber?' '+p.housenumber:'')),p.city||p.town,p.country].filter(Boolean).join(', '),address:p.street?(p.street+(p.housenumber?' '+p.housenumber:'')):'',city:p.city||p.town||p.village||'',lat,lng,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[p.osm_value]||''}}
 const fetchJ=(u,ms)=>Promise.race([fetch(u).then(r=>r.json()),new Promise((_,j)=>setTimeout(()=>j(new Error('timeout')),ms||7000))]);
 /* only food & drink businesses */
@@ -665,7 +665,7 @@ function contribute(d){if(!sb||!navigator.onLine||!d||!d.name)return Promise.res
   if(hz&&formSrc.hoursSrc!=='google'){p.hours=hz;p.hours_src=formSrc.hoursSrc||'user'}
   return sb.rpc('contribute_place',{p}).then(({data})=>data||null,()=>null)}
 async function placePick(i){let x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)return;
-  formSrc={};if(x.cat)formSrc={pid:x.pid,hoursSrc:x.hours?'user':'',phone:x.phone};else if(x.osm)formSrc={osm:x.osm,phone:x.phone};
+  formSrc={};if(x.cat)formSrc={pid:x.pid,hoursSrc:x.hours?'user':'',phone:x.phone};else if(x.osm)formSrc={osm:x.osm,phone:x.phone,hoursSrc:x.hours?'osm':''};
   if(x.pred){const ul=$('#placeRes');ul.innerHTML=BUSY;let pl=null;try{pl=await gDetails(x.pred)}catch(e){console.warn('google details',e)}
     if(pl){x=gToItem(pl);formSrc={gpid:pl.id||'',hoursSrc:'google'}}else{const o=await osmSearch([x.name,x.full].filter(Boolean).join(' '),true);x=o[0]?Object.assign(o[0],{name:x.name}):{name:x.name}}
     f=$('#ef');if(!f)return}
@@ -676,7 +676,7 @@ async function placePick(i){let x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)
   if(x.hours){for(let d=0;d<7;d++){const h=x.hours[d];E['hx'+d].checked=h===null;E['ho'+d].value=h?h[0]:'';E['hc'+d].value=h?h[1]:''}const det=f.querySelector('details.hours');if(det)det.open=true}
   pendDel=typeof x.delivery==='boolean'?x.delivery:null;if(x.veg){const cb=f.querySelector('[name=tags][value="צמחוני-פרנדלי"]');if(cb)cb.checked=true}pendG=x.gphotos&&x.gphotos.length?x.gphotos:null;if(x.lat!=null)setPin(x.lat,x.lng,false,true);$('#placeRes').innerHTML='';
   $('#fillSt').textContent='✨ מילאנו את הפרטים'+(x.gphotos&&x.gphotos.length?', ותמונה של המקום תתווסף בשמירה':'')+'. בדקו שהכל נכון, ושהסיכה במפה במקום הנכון.';
-  if(!x.g&&x.site&&!x.hours)enrichFromSite(x.site);
+  if(!x.g&&!x.hours)fillHoursChain(x);
   dupNote({name:x.name,city:x.city,lat:x.lat,lng:x.lng,placeId:x.pid});
   {const L=placeSearch.last;if(x.cat&&x.pid&&L&&L.ai&&sb){const ns=[L.q,L.ai.name,...(L.ai.alt||[])].filter(Boolean).map(String).slice(0,6);sb.rpc('add_place_alias',{pid:x.pid,names:ns}).then(()=>{},()=>{})}}}
 async function geocode(address,city){const a=String(address||'').trim(),c=String(city||'').trim();if(!a&&!c)return null;const q=[a,c].filter(Boolean).join(', ');
@@ -1349,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='44';
+const APPV='45';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1788,6 +1788,50 @@ document.addEventListener('click',async e=>{const b=e.target.closest('[data-ig]'
   if(k==='install'&&installEvt){const ev=installEvt;installEvt=null;ev.prompt();let ok=false;try{const c=await ev.userChoice;ok=!!(c&&c.outcome==='accepted')}catch{}
     if(ok){lsSet('rs-inst-done',1);const ib=document.querySelector('.instb');if(ib)ib.remove();if($('.istep'))gate('<h2 class="ih">מעולה, FOMO על המסך 🎉</h2><p class="isub">אפשר לפתוח אותה מהמסך, או להמשיך כאן.</p><button class="btn" type="button" data-ig="later" '+BRASS+'>המשך</button>');else toast('FOMO הותקנה 🎉')}
     else if(installGate.redraw)installGate.redraw()}});
+
+/* 57: OpenStreetMap opening_hours -> our {0..6:[open,close]|null} */
+function parseOH(s){if(!s||typeof s!=='string')return null;s=s.trim();const p=n=>String(n).padStart(2,'0'),all=v=>{const H={};for(let i=0;i<7;i++)H[i]=v;return H};
+  if(/^24\/7$/.test(s))return all(['00:00','23:59']);
+  const D={Su:0,Mo:1,Tu:2,We:3,Th:4,Fr:5,Sa:6},DR='(?:Mo|Tu|We|Th|Fr|Sa|Su)',H={};let any=false;
+  for(let rule of s.split(';')){rule=rule.trim();if(!rule)continue;if(/\b(PH|SH)\b/.test(rule)&&!new RegExp('\\b'+DR+'\\b').test(rule))continue;
+    const m=rule.match(new RegExp('^((?:'+DR+'(?:-'+DR+')?)(?:\\s*,\\s*'+DR+'(?:-'+DR+')?)*)?\\s*(.*)$'));if(!m)continue;
+    let days=[];if(m[1]){for(const part of m[1].split(',')){const [a,b]=part.trim().split('-');let i=D[a];const j=b!==undefined?D[b]:i;for(let k=0;k<7;k++){days.push(i);if(i===j)break;i=(i+1)%7}}}else days=[0,1,2,3,4,5,6];
+    const t=m[2].replace(/,?\s*PH\b.*$/,'').trim();
+    if(/^(off|closed)$/i.test(t)){days.forEach(d=>H[d]=null);any=true;continue}
+    const rs=[...t.matchAll(/(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})\+?/g)];if(!rs.length)continue;
+    const c=rs[rs.length-1];let ch=+c[3];if(ch>=24)ch-=24;const v=[p(+rs[0][1])+':'+rs[0][2],p(ch)+':'+c[4]];days.forEach(d=>H[d]=v);any=true}
+  if(!any)return null;for(let i=0;i<7;i++)if(!(i in H))H[i]=null;return H}
+const okHours=H=>!!H&&typeof H==='object'&&Object.values(H).some(v=>Array.isArray(v)&&v[0]);
+const formHasHours=E=>[0,1,2,3,4,5,6].some(i=>E['ho'+i].value||E['hx'+i].checked);
+function fillFormHours(E,H){for(let i=0;i<7;i++){const h=H[i];E['hx'+i].checked=h===null;E['ho'+i].value=h?h[0]:'';E['hc'+i].value=h?h[1]:''}const det=E[0]&&E[0].form?E[0].form.querySelector('details.hours'):null;if(det)det.open=true}
+const kmBetween=(a,b)=>{const R=6371,t=v=>v*Math.PI/180,dl=t(b.lat-a.lat),dg=t(b.lng-a.lng);return 2*R*Math.asin(Math.sqrt(Math.sin(dl/2)**2+Math.cos(t(a.lat))*Math.cos(t(b.lat))*Math.sin(dg/2)**2))};
+function sameP(cand,x){const a=fomoNorm(cand.name||''),b=fomoNorm(x.name||'');if(!a||!b)return false;const nm=a===b||a.includes(b)||b.includes(a);
+  if(Number.isFinite(cand.lat)&&Number.isFinite(x.lat)&&x.lat){const k=kmBetween(cand,x);return k<=.35||(nm&&k<=1.5)}return nm}
+
+/* 58: Google as a safety net (hours stay on the user's own place, never in the shared catalog) */
+async function gHoursFor(x){if(!(window.APP_CONFIG||{}).googleKey||!navigator.onLine||!x||!x.name)return null;
+  const q=await takeQuota('place');if(!q.ok)return null;let ps=null;
+  try{ps=await gSearch([x.name,x.address,x.city].filter(Boolean).join(' '),['id','displayName','location','regularOpeningHours'])}catch(e){console.warn('g hours',e)}
+  for(const p of ps||[]){const it=gToItem(p);if(it.hours&&sameP(it,x))return {hours:it.hours,gpid:p.id||''}}return null}
+async function fillHoursChain(x){const st=$('#fillSt');
+  if(x.site)await enrichFromSite(x.site);let f=$('#ef');if(!f||formHasHours(f.elements))return;
+  const g=await gHoursFor(x);f=$('#ef');if(!g||!f||formHasHours(f.elements))return;
+  fillFormHours(f.elements,g.hours);formSrc.hoursSrc='google';if(g.gpid&&!formSrc.gpid)formSrc.gpid=g.gpid;
+  if(st)st.textContent=(st.textContent?st.textContent+' ':'')+'🕒 השלמנו שעות פתיחה מגוגל.'}
+
+/* 62: fill hours for places already in the list (a few per visit, each place at most once a month) */
+async function fillMissingHours(){if(fillMissingHours.busy||!sb||!myId||!loaded||!navigator.onLine||document.visibilityState!=='visible')return;fillMissingHours.busy=true;
+  const now=Date.now(),todo=rows.filter(r=>!okHours(r.hours)&&!r.permClosed&&!(r.hoursTry>now-30*864e5)&&r.name).slice(0,4);let n=0;
+  try{for(const r of todo){let H=null;
+      try{const o=await osmSearch([r.name,r.city].filter(Boolean).join(' '),true);const m=o.find(i=>i.hours&&sameP(i,r));if(m)H=m.hours}catch{}
+      if(!H&&r.site){const d=await aiCall({action:'enrich',url:r.site,cuisines:CUIS});if(d&&d.ok&&okHours(d.hours))H=d.hours}
+      if(!H){const g=await gHoursFor(r);if(g)H=g.hours}
+      const fresh=byId(r.id);if(!fresh||okHours(fresh.hours))continue;
+      await save(r.id,H?{hours:H,hoursTry:now}:{hoursTry:now});if(H)n++;
+      await new Promise(res=>setTimeout(res,1200))}}
+  finally{fillMissingHours.busy=false}
+  if(n)toast(`🕒 השלמנו שעות פתיחה ל־${n} ${n===1?'מקום':'מקומות'}`)}
+setTimeout(fillMissingHours,20000);
 
 /* 43: install banner (Safari/Android, not installed yet) */
 function instBanner(){try{if(isStandalone()||!isPhone()||lsGet('rs-inst-done',0))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;
