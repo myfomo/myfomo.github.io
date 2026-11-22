@@ -208,7 +208,7 @@ function route(){const h=location.hash.replace('#','');const np=PAGES.includes(h
   const go=()=>{page=np;document.body.dataset.page=page;window.scrollTo(0,0);
     document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!=='v-'+page);
     document.querySelectorAll('nav.tabs a,.tabbar a').forEach(a=>{if(a.dataset.v===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-    if(page!=='map')hideMapCard();render();if(page==='list'&&!document.startViewTransition)animIn()};
+    if(page!=='map')hideMapCard();render();maybeTour(page,page==='map'?1600:900);if(page==='list'&&!document.startViewTransition)animIn()};
   if(document.startViewTransition&&loaded&&np!==page&&!RM()){document.documentElement.dataset.vt=PAGES.indexOf(np)>PAGES.indexOf(page)?'fwd':'back';document.startViewTransition(go)}else go()}
 window.addEventListener('hashchange',route);
 
@@ -217,7 +217,7 @@ let fmap=null,fmarker=null;
 function killFormMap(){if(fmap){fmap.remove();fmap=null;fmarker=null}}
 function openSheet(){const was=!$('#ov').hidden;$('#ov').hidden=false;document.body.style.overflow='hidden';const fr=flipFrom;flipFrom=null;if(fr&&!was)requestAnimationFrame(()=>requestAnimationFrame(()=>flipIn(fr)))}
 function closeSheet(){if(story){clearTimeout(story.t);story=null}if(typeof evMap!=='undefined'&&evMap){evMap.remove();evMap=null}if(gm&&gm.s)clearTimeout(gm.s.t);$('#ov').classList.remove('story-ov');$('#ov').hidden=true;document.body.style.overflow='';openId=null;mode='view';clearInterval(pickTimer);killFormMap()}
-function openDetail(id){killFormMap();openId=id;mode='view';openSheet();renderDetail();$('#ov').scrollTop=0}
+function openDetail(id){killFormMap();openId=id;mode='view';openSheet();renderDetail();$('#ov').scrollTop=0;maybeTour('detail',1000)}
 
 function formHtml(r){r=r||{status:'want',tags:[]};const tg=r.tags||[];const ll=hasLL(r)?`${r.lat}, ${r.lng}`:'';return `<form id="ef" class="sec dh"><h2 style="margin-bottom:18px">${r.id?'עריכת מקום':'מקום חדש'}</h2>
 <div class="quick"><label class="l">חיפוש המקום (שם ועיר)<div class="addrow" style="margin-top:0"><input class="f" id="placeQ" placeholder="למשל: בל בוי תל אביב" value="${esc(r.id?[r.name,r.city].filter(Boolean).join(' '):'')}"><button class="btn" type="button" data-act="placeSearch">${ICON.search}חיפוש</button>${SR?`<button class="btn mic" type="button" data-act="voice" aria-label="הוספה בקול" aria-pressed="false">🎤</button>`:''}</div></label><ul class="res" id="placeRes"></ul>
@@ -1079,7 +1079,7 @@ function animIn(){const g=$('#grid');if(!g)return;g.classList.remove('anim');voi
 async function toggleVote(id){const r=byId(id);if(!r)return;if(!iVoted(r)){popId=id;setTimeout(()=>{popId=''},700);if(voters(r).length>=1&&!isMatch(r))setTimeout(()=>{const x=byId(id);if(x&&isMatch(x)){logAct('match',id,`גם רוצה את ${x.name}! שניכם רוצים ללכת`);confetti(50)}},50)}await save(id,{votes:{[myId]:iVoted(r)?0:Date.now()}})}
 async function shareOrCopy(title,text,url){if(navigator.share){try{await navigator.share(url?{title,text,url}:{title,text});return}catch(e){if(e&&e.name==='AbortError')return}}
   try{await navigator.clipboard.writeText(text+(url?'\n'+url:''));toast('הועתק. אפשר להדביק בוואטסאפ.')}catch{toast('לא הצלחנו להעתיק')}}
-function newForm(){killFormMap();openId=null;mode='new';openSheet();$('#sb').innerHTML=formHtml(null);initFormMap();$('#placeQ').focus()}
+function newForm(){killFormMap();openId=null;mode='new';openSheet();$('#sb').innerHTML=formHtml(null);initFormMap();maybeTour('form',1100);$('#placeQ').focus()}
 
 function bindUI(){bindSwipe();$('#v-stats').addEventListener('click',e=>{const b=e.target.closest('[data-act=recap]');if(b)recapSheet(stYear)});
 $('#grid').addEventListener('click',e=>{if(e.target.closest('a'))return;const vb=e.target.closest('[data-vote]');if(vb){toggleVote(vb.dataset.vote);return}if(e.target.closest('[data-act=add]')){newForm();return}const c=e.target.closest('.card');if(c){flipFrom=c.getBoundingClientRect();openDetail(c.dataset.id)}});
@@ -1233,7 +1233,7 @@ S.addEventListener('click',async e=>{
   if(a==='bkRestore'){if(!await askSure(`לשחזר את הגיבוי מ־${b.dataset.d}?`,`${esc(b.dataset.n)} המקומות שבגיבוי יחזרו למצב שהיה אז, כולל מקומות שנמחקו. מקומות שנוספו אחרי הגיבוי יישארו. לפני השחזור נשמר גיבוי של המצב הנוכחי, כך שאפשר לבטל.`,'שחזור',true))return;toast('משחזר…');const {data,error}=await sb.rpc('restore_backup',{bid:Number(b.dataset.b)});if(error){toast('השחזור נכשל: '+errMsg(error));return}bkRestoreDone(data);return}
   if(a==='uBlock'){const on=b.dataset.on==='1',n=b.dataset.n;if(!await askSure(on?`לחסום את ${n}?`:`לבטל את החסימה של ${n}?`,on?'המשתמש ינותק ולא יוכל להיכנס, להוסיף או לערוך. הנתונים שלו נשארים, ואפשר לבטל את החסימה בכל רגע.':'המשתמש יוכל להיכנס שוב כרגיל.',on?'חסימה':'ביטול חסימה',on))return;const {error}=await sb.rpc('admin_block',{uid:b.dataset.u,on_:on});toast(error?'הפעולה נכשלה: '+errMsg(error):on?`${n} נחסם/ה`:`החסימה של ${n} בוטלה`);fillQuotaAdm();return}
   if(a==='errClear'){const {error}=await sb.rpc('admin_clear_errors');toast(error?'הפעולה נכשלה':'רשימת התקלות נוקתה');fillQuotaAdm();return}
-  if(a==='onb'){lsSet('rs-onb',0);onbSheet();return}
+  if(a==='onb'){resetTips();closeSheet();onbSheet();return}
   if(a==='closeOut'){closeSheet();return}
   if(a==='outOpen'){clearInterval(outTimer);openDetail(b.dataset.id);return}
   if(a==='outEv'){clearInterval(outTimer);evSheet(b.dataset.id);return}
@@ -1334,14 +1334,14 @@ async function start(){
   route();await switchList(cur.id);subscribe();flushOutbox();
   {const sp=new URLSearchParams(location.search),op=sp.get('open'),ev=sp.get('ev');if(sp.get('next')){history.replaceState(null,'',location.pathname+location.hash);setTimeout(outSheet,500)}if(sp.get('vouchers')){history.replaceState(null,'',location.pathname+location.hash);setTimeout(()=>vouchersSheet(),500)}if(op||ev){history.replaceState(null,'',location.pathname+location.hash);if(ev)setTimeout(()=>{if(events.some(x=>x.id===ev))evSheet(ev);else loadEvents().then(()=>{if(events.some(x=>x.id===ev))evSheet(ev)})},700);else if(op&&byId(op))setTimeout(()=>openDetail(op),300)}}
   pushSync();setTimeout(pushMaybeAsk,4000);setTimeout(autoCheckin,2500);setTimeout(loadWeather,3000);
-  if(needOnb())setTimeout(onbSheet,2800);
+  setTimeout(async()=>{if(lsGet('rs-onb2',0)){whatsNew();return}if(await amAdmin()){lsSet('rs-onb2',1);whatsNew();return}lsSet('rs-seen-ver',APPV);onbSheet()},2800);
   if(!myName)setTimeout(()=>{settingsSheet();toast('איך לקרוא לך? כתבו שם ושמרו.')},500);
   else offerBio();
   if(!visBound){visBound=true;document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&loaded){loadAll();setTimeout(autoCheckin,1500);setTimeout(loadWeather,2500)}})}
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='38';
+const APPV='39';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1400,9 +1400,10 @@ async function fillAdminMore(){const el=$('#qAdm');if(!el||!sb)return;let U=null
   h+=await usageHtml();if(!$('#qAdm'))return;let box=$('#admMore');if(!box){box=document.createElement('div');box.id='admMore';$('#qAdm').appendChild(box)}box.innerHTML=h}
 
 /* ---- onboarding for new friends ---- */
-const ONB=[{e:'🍽️',t:'ברוכים הבאים ל־FOMO',p:'כל המקומות שאסור לפספס במקום אחד: איפה הייתם, לאן בא לכם ללכת, תמונות, דירוגים ומפה. הכל משותף עם מי שברשימה.'},
-  {e:'➕',t:'מוסיפים מקום בשניות',p:'לוחצים על הפלוס, מחפשים בשם או אומרים בקול 🎤, ובוחרים מהרשימה. השם, הכתובת, סוג המטבח ושעות הפתיחה מתמלאים לבד.'},
-  {e:'⭐',t:'מדרגים, מתכננים, יוצאים',p:'אחרי ביקור נותנים כוכבים, מסמנים מנות חובה ומצלמים את הקבלה. לוחצים "בא לי" על מקומות, וכשכולם רוצים אותו מקום יש התאמה. קובעים יציאה ומקבלים ספירה לאחור.'},
+const ONB=[{e:'🍽️',t:'ברוכים הבאים ל־FOMO',p:'כל המקומות שאסור לפספס במקום אחד: מסעדות, ברים ובתי קפה, עם תמונות, דירוגים, מפה וזיכרונות מכל יציאה. הכל משותף עם מי שברשימה.'},
+  {e:'🔎',t:'מוסיפים מקום בשניות',p:'לוחצים על ＋ וכותבים שם, גם עם שגיאות כתיב, או מדביקים קישור. ה־AI מבין, והשם, הכתובת, הסוג ושעות הפתיחה מתמלאים לבד.'},
+  {e:'🥂',t:'מתכננים ויוצאים',p:'"בא לי" על מקומות, התאמה כששניכם רוצים, קביעת יציאה עם ספירה לאחור, Waze ומוביט בלחיצה, וסריקת קבלה שממלאת את המנות.'},
+  {e:'🎁',t:'ועוד כמה הפתעות',p:'ארנק שוברים עם תזכורות, האפי אוור, סינון "פתוח עכשיו" ו"קרוב אליי", והתראה כל חמישי לתכנן את הסופ"ש.'},
   {e:'📲',t:'שמים במסך הבית',inst:true}];
 function onbInst(){return isStandalone()?'מעולה, האפליקציה כבר מותקנת 🎉 כדאי להפעיל התראות בהגדרות, כדי לדעת כשמישהו מוסיף מקום, מגיב או קובע יציאה.'
   :isIOS()?'בספארי לוחצים על כפתור השיתוף <b>⬆️</b> בתחתית המסך, גוללים ובוחרים <b>"הוספה למסך הבית"</b>. ככה FOMO נפתחת כמו אפליקציה רגילה, ואפשר לקבל התראות.'
@@ -1412,7 +1413,7 @@ function onbSheet(){if($('.onb'))return;let i=0;const d=document.createElement('
   const draw=()=>{const s=ONB[i],last=i===ONB.length-1;d.innerHTML=`<div class="onb-in"><button class="onb-skip" type="button" data-o="end">דלג</button><div class="onb-e" aria-hidden="true">${s.e}</div><h2>${esc(s.t)}</h2><p>${s.inst?onbInst():esc(s.p)}</p>
 <div class="onb-dots">${ONB.map((_,k)=>`<i class="${k===i?'on':''}"></i>`).join('')}</div><div class="onb-b">${last&&installEvt&&!isStandalone()?'<button class="btn" type="button" data-o="inst">התקנה</button>':''}${i?'<button class="btn" type="button" data-o="prev">הקודם</button>':''}<button class="btn pri" type="button" data-o="${last?'end':'next'}">${last?'יאללה, מתחילים':'הבא'}</button></div></div>`;
     const b=d.querySelector('[data-o=next],[data-o=end]:not(.onb-skip)');if(b)b.focus()};
-  const end=()=>{lsSet('rs-onb',1);d.classList.add('out');setTimeout(()=>d.remove(),250)};
+  const end=()=>{lsSet('rs-onb',1);lsSet('rs-onb2',1);d.classList.add('out');setTimeout(()=>{d.remove();maybeTour(page,500)},250)};
   d.addEventListener('click',e=>{const o=(e.target.closest('[data-o]')||{}).dataset;if(!o||!o.o)return;if(o.o==='next'&&i<ONB.length-1){i++;draw()}else if(o.o==='prev'&&i>0){i--;draw()}else if(o.o==='inst'&&installEvt){installEvt.prompt();installEvt=null;draw()}else if(o.o==='end')end()});
   let x0=null;d.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});d.addEventListener('touchend',e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)<50)return;if(dx>0&&i<ONB.length-1){i++;draw()}else if(dx<0&&i>0){i--;draw()}},{passive:true});
   draw();document.body.appendChild(d)}
@@ -1528,7 +1529,7 @@ function renderMe(){const el=$('#me');if(!el)return;const nmMe=myName||String((m
 <div class="me-stats"><div><b>${been}</b><small>היינו</small></div><div><b>${want}</b><small>רוצים ללכת</small></div><div><b>${vis}</b><small>ביקורים</small></div></div>
 <div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">🍽️</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">📊</span>הנתונים שלנו</a><button type="button" data-me="lists"><span aria-hidden="true">📋</span>הרשימות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">🔔</span>מה חדש</button><button type="button" data-me="app"><span aria-hidden="true">📲</span>שליחת האפליקציה</button><button type="button" data-me="vch"><span aria-hidden="true">🎁</span>שוברים</button><button type="button" data-me="set"><span aria-hidden="true">⚙️</span>הגדרות</button><button type="button" data-me="onb"><span aria-hidden="true">💡</span>הדרכה</button></div>
 <div class="me-sec"><h4>תצוגה</h4>${dispHtml()}</div>`}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='vch')vouchersSheet();else if(k==='app')appShareDlg();else if(k==='onb'){lsSet('rs-onb',0);onbSheet()}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='vch')vouchersSheet();else if(k==='app')appShareDlg();else if(k==='onb'){resetTips();onbSheet()}});
 
 /* ---- map: preview card ---- */
 let mkById={},mcSel=null;
@@ -1579,8 +1580,9 @@ function vouchersSheet(editId){killFormMap();openId=null;mode='vouchers';openShe
 <label><span class="l">בתוקף עד</span><input class="f" name="exp" type="date" value="${esc(ed&&ed.exp?ed.exp:'')}"></label>
 <label class="full"><span class="l">למקום מסוים? (אופציונלי)</span><select class="f" name="rid"><option value="">כל מקום / לא משנה</option>${opts}</select></label>
 <label class="full"><span class="l">קוד מימוש (אופציונלי)</span><input class="f" name="code" maxlength="80" dir="ltr" value="${esc(ed&&ed.code?ed.code:'')}"></label>
-<label class="full"><span class="l">הערה</span><input class="f" name="note" maxlength="120" value="${esc(ed&&ed.note?ed.note:'')}"></label></div>
+<label class="full"><span class="l">הערה</span><input class="f" name="note" maxlength="120" value="${esc(ed&&ed.note?ed.note:'')}"></label></div>${(vouchersTour(),'')}
 <div class="row" style="margin-top:12px"><button class="btn pri" type="submit">${ed?'שמירה':'הוספה לארנק'}</button>${ed?'<button class="btn" type="button" data-vact="cancel">ביטול</button>':''}</div></form>`}
+function vouchersTour(){maybeTour('vouchers',700)}
 async function vouchersSave(list){const ok=await metaSave({vouchers:list});if(ok){renderNotices();if(mode==='vouchers')vouchersSheet()}return ok}
 document.addEventListener('click',async e=>{const b=e.target.closest('[data-vact]');if(!b)return;const id=b.dataset.v,k=b.dataset.vact;const L=(meta.vouchers||[]).slice();const i=L.findIndex(v=>v.id===id);
   if(k==='cancel'){vouchersSheet();return}if(k==='edit'){vouchersSheet(id);setTimeout(()=>{const f=$('#vf');if(f)f.scrollIntoView({behavior:'smooth'})},50);return}if(i<0)return;
@@ -1662,6 +1664,56 @@ async function appShareDlg(){let svg='';try{const Q=await loadQR();const qr=Q(0,
   d.innerHTML=`<div class="calp-in qr-in"><h3>📲 שליחת FOMO לחבר</h3><p class="meta" style="margin:0">הקישור לאפליקציה עצמה, בלי הצטרפות לרשימה שלכם. החבר נרשם ופותח רשימה משלו.</p>${svg?`<div class="qr-box">${svg}</div>`:''}<p class="note" dir="ltr" style="margin:0;word-break:break-all">${esc(APP_URL)}</p>
 <button class="btn pri" type="button" data-as="share">${ICON.share}שליחה</button><button class="btn" type="button" data-as="copy">${ICON.copy}העתקת הקישור</button><button class="link-btn" type="button" data-wx>סגירה</button></div>`;
   d.addEventListener('click',async e=>{const b=e.target.closest('[data-as]');if(b){if(b.dataset.as==='share'){await shareOrCopy('FOMO',APP_TXT,APP_URL)}else{try{await navigator.clipboard.writeText(APP_TXT+' '+APP_URL);toast('הקישור הועתק')}catch{toast(APP_URL)}}return}if(e.target===d||e.target.closest('[data-wx]'))d.remove()});document.body.appendChild(d)}
+
+/* ================= v39: guided tips per screen + "what's new" ================= */
+let adminP=null;const amAdmin=()=>adminP||(adminP=(async()=>{if(!sb||!myId)return false;const c=lsGet('rs-adm-'+myId,null);if(c!==null)return c;try{const {data}=await sb.rpc('is_quota_admin');const v=data===true;lsSet('rs-adm-'+myId,v);return v}catch{return false}})());
+const TIPS={
+  list:[{s:'#stickyBar',t:'סינון בלחיצה',d:'פתוח עכשיו, קרוב אליי, בא לי, האפי אוור ועוד. הסרגל נשאר למעלה גם כשגוללים.'},
+    {s:'#grid .card [data-vote]',t:'♥ בא לי',d:'מסמנים מקומות שבא לכם. כששניכם מסמנים אותו מקום, יש התאמה!'},
+    {s:'#addBtnM,#addBtn',t:'הוספת מקום',d:'מחפשים בשם, גם עם שגיאות כתיב, וכל הפרטים מתמלאים לבד.'},
+    {t:'עוד שני טריקים',d:'משיכה למטה בראש הרשימה מרעננת אותה, ולחיצה על כרטיס פותחת את כל הפרטים.'}],
+  form:[{s:'#placeQ',t:'חיפוש חכם',d:'כותבים איך שזוכרים, למשל "בלבוי" או "קפה משלוש", ובוחרים מהרשימה.'},
+    {s:'#paste',t:'יש קישור?',d:'מדביקים קישור מגוגל מפות או מהאתר של המסעדה, והפרטים מתמלאים מעצמם.'},
+    {s:'#fmap',t:'המיקום על המפה',d:'אפשר לגרור את הסיכה או ללחוץ על המפה כדי לדייק את המקום.'}],
+  detail:[{s:'#sb .dbar',t:'הכל בהישג אצבע',d:'Waze, מוביט, הזמנת שולחן ווולט. הסרגל תמיד למטה.'},
+    {s:'#visitF',t:'היינו פה?',d:'מוסיפים ביקור, מנות ודירוג, ושומרים זיכרונות מכל יציאה.'},
+    {s:'#sb .rcpt-b',t:'סריקת קבלה',d:'מצלמים את הקבלה, וה־AI ממלא לבד את המנות ואת הסכום.'},
+    {t:'לסגור בקלות',d:'גוררים את החלון למטה, או לוחצים על ה־X למעלה.'}],
+  map:[{s:'#lmap',t:'המפה שלכם',d:'ירוק = היינו, אדום = רוצים ללכת. עיגול עם מספר הוא כמה מקומות קרובים, ולחיצה עליו מגדילה.'},
+    {s:'#locMe',t:'מה קרוב אליי?',d:'מציג את המיקום שלך על המפה. לחיצה על נקודה פותחת כרטיס עם ניווט.'}],
+  timeline:[{s:'#soon .soon-hero,#soon',t:'היציאה הבאה',d:'ספירה לאחור, ובלחיצה: ניווט, מוביט, מזג אוויר ומה חובה להזמין.'},
+    {s:'#memory,#tl',t:'איפה היינו',d:'כל הביקורים שלכם לפי תאריך, כולל ימים מיוחדים.'}],
+  me:[{s:'[data-me=vch]',t:'ארנק שוברים',d:'שומרים שוברים ותווי מתנה, ומקבלים תזכורת לפני שפג התוקף.'},
+    {s:'[data-me=app]',t:'שליחת האפליקציה',d:'שולחים את FOMO לחברים, בלי לצרף אותם לרשימה שלכם.'},
+    {s:'#me .seg',t:'נוח לקרוא',d:'אפשר להגדיל את הטקסט או להפעיל ניגודיות גבוהה.'}],
+  vouchers:[{s:'#vf',t:'שובר חדש',d:'שם, סכום ותאריך תפוגה. שובר למקום מסוים יופיע גם בדף של המקום.'}]};
+const tipsDone=()=>lsGet('rs-tips',{});
+function visEl(sel){for(const el of document.querySelectorAll(sel)){const r=el.getBoundingClientRect();if(r.width>4&&r.height>4&&getComputedStyle(el).visibility!=='hidden')return el}return null}
+async function maybeTour(name,delay){if(lsGet('rs-tips-off',0)||tipsDone()[name]||!TIPS[name])return;if(await amAdmin())return;if(!lsGet('rs-onb2',0)){maybeTour.q=name;return}if(!loaded){setTimeout(()=>maybeTour(name,delay),1000);return}
+  setTimeout(()=>{if(tipsDone()[name]||document.querySelector('.coach'))return;if(document.querySelector('.onb,.calp,.upd-new')){maybeTour.q=name;return}
+    const want=name==='list'||name==='map'||name==='timeline'||name==='me'?page===name&&$('#ov').hidden:!$('#ov').hidden;if(!want)return;
+    const steps=TIPS[name].filter(x=>!x.s||visEl(x.s));if(steps.length)coach(name,steps)},delay||900)}
+function coach(name,steps){let i=0;const d=document.createElement('div');d.className='coach';d.setAttribute('role','dialog');d.setAttribute('aria-label','טיפ');d.dir='rtl';
+  d.innerHTML='<div class="co-spot"></div><div class="co-b" role="document"><b class="co-t"></b><p class="co-d"></p><div class="co-r"><span class="co-n"></span><button type="button" class="co-skip">דלג על כל הטיפים</button><button type="button" class="btn sm pri co-next"></button></div></div>';
+  document.body.appendChild(d);const spot=d.querySelector('.co-spot'),bub=d.querySelector('.co-b');
+  const place=()=>{const st=steps[i],el=st.s&&visEl(st.s);d.querySelector('.co-t').textContent=st.t;d.querySelector('.co-d').textContent=st.d;d.querySelector('.co-n').textContent=steps.length>1?`${i+1}/${steps.length}`:'';
+    d.querySelector('.co-next').textContent=i<steps.length-1?'הבא':'הבנתי 👍';
+    if(!el){spot.style.cssText='left:50%;top:50%;width:0;height:0';bub.style.cssText='left:50%;top:50%;transform:translate(-50%,-50%)';return}
+    let r=el.getBoundingClientRect();if(!place.sc&&(r.top<70||r.bottom>innerHeight-90)){place.sc=1;const sc=el.closest('.ov')||null,dy=r.top+r.height/2-innerHeight/2;if(sc)sc.scrollTop+=dy;else window.scrollBy(0,dy);r=el.getBoundingClientRect()}
+    const pad=6,top=Math.max(4,r.top-pad),h=Math.min(r.height+pad*2,innerHeight*.55);spot.style.cssText=`left:${r.left-pad}px;top:${top}px;width:${r.width+pad*2}px;height:${h}px`;
+    const bw=Math.min(320,innerWidth-24),left=Math.min(Math.max(12,r.left+r.width/2-bw/2),innerWidth-bw-12);const below=top+h+12,bh=bub.offsetHeight||130;
+    const y=below+bh<innerHeight-10?below:Math.max(12,top-bh-12);bub.style.cssText=`left:${left}px;top:${y}px;width:${bw}px`};
+  const done=all=>{const t=tipsDone();t[name]=1;lsSet('rs-tips',t);if(all)lsSet('rs-tips-off',1);d._off&&d._off();d.remove();removeEventListener('resize',place);if(maybeTour.q&&maybeTour.q!==name){const q=maybeTour.q;maybeTour.q=null;maybeTour(q,400)}};
+  d.addEventListener('click',e=>{if(e.target.closest('.co-skip')){done(true);toast('אפשר להפעיל את הטיפים מחדש במסך "אני" ← הדרכה');return}if(i<steps.length-1){i++;place.sc=0;place()}else done(false)});
+  const onSc=()=>requestAnimationFrame(place);addEventListener('resize',place);addEventListener('scroll',onSc,{passive:true,capture:true});d._off=()=>removeEventListener('scroll',onSc,{capture:true});place();requestAnimationFrame(place);setTimeout(place,350);setTimeout(()=>{const b=d.querySelector('.co-next');if(b)b.focus()},60)}
+function resetTips(){lsSet('rs-tips',{});lsSet('rs-tips-off',0)}
+
+/* ---- what's new after an update ---- */
+const WHATSNEW={'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
+function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNew,3000);return}const seen=lsGet('rs-seen-ver','');lsSet('rs-seen-ver',APPV);const L=WHATSNEW[APPV];if(!seen||seen===APPV||!L)return;
+  const d=document.createElement('div');d.className='calp upd-new';d.setAttribute('role','dialog');d.setAttribute('aria-label','מה חדש');
+  d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:30px">🎁</div><h3>מה חדש ב־FOMO</h3><ul class="wn">${L.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><button class="btn pri" type="button" data-wx>מעולה!</button></div>`;
+  d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-wx]')){d.remove();if(maybeTour.q){const q=maybeTour.q;maybeTour.q=null;maybeTour(q,400)}}});document.body.appendChild(d)}
 
 /* intro splash on every launch */
 {const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;

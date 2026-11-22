@@ -30,7 +30,7 @@ async def main():
         for pat in ["**/tile.openstreetmap.org/**", "**/photon.komoot.io/**", "**/api.open-meteo.com/**", "**/maps.googleapis.com/**", "**/google.com/**"]:
             await pg.route(pat, lambda r: r.abort())
         await pg.goto(BASE)
-        await pg.evaluate("localStorage.setItem('rs-pk','1');localStorage.setItem('rs-list','L1');localStorage.setItem('rs-onb','1');localStorage.setItem('rs-push-asked','1')")
+        await pg.evaluate("localStorage.setItem('rs-pk','1');localStorage.setItem('rs-list','L1');localStorage.setItem('rs-onb','1');localStorage.setItem('rs-onb2','1');localStorage.setItem('rs-tips-off','1');localStorage.setItem('rs-push-asked','1')")
         await pg.reload(); await pg.wait_for_timeout(4000)
         await pg.evaluate("document.querySelectorAll('.calp,.onb').forEach(x=>x.remove())")
 

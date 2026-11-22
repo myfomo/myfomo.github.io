@@ -833,3 +833,14 @@ html[data-hc] .meta,html[data-hc] .note{color:var(--ink)}
 .upd button{border:0;background:var(--grad);color:#fff;font:inherit;font-weight:800;border-radius:999px;padding:8px 16px;cursor:pointer}
 .ubar{margin:8px 0}.ubar-t{display:flex;justify-content:space-between;gap:8px;font-size:13px}.ubar-t b{font-weight:700;color:var(--mute)}
 .ubar-b{height:8px;border-radius:5px;background:var(--soft);overflow:hidden;margin-top:4px}.ubar-b i{display:block;height:100%;background:#14B88A;border-radius:5px}.ubar-b i.warm{background:#FFB547}.ubar-b i.hot{background:var(--bad)}
+/* v39 coach marks */
+.coach{position:fixed;inset:0;z-index:350;cursor:pointer}
+.co-spot{position:fixed;border-radius:18px;box-shadow:0 0 0 9999px rgba(20,8,24,.62);transition:all .3s var(--ease);pointer-events:none}
+.co-b{position:fixed;background:var(--card);color:var(--ink);border-radius:20px;padding:14px 16px 12px;box-shadow:0 16px 40px #0005;display:grid;gap:6px;cursor:default;animation:sheetUp .3s var(--ease);transition:top .3s var(--ease),left .3s var(--ease)}
+.co-t{font-size:17px}.co-d{margin:0;color:var(--mute);line-height:1.55;font-size:15px}
+.co-r{display:flex;align-items:center;gap:10px;margin-top:4px}.co-n{color:var(--mute);font-size:13px;font-weight:700}
+.co-skip{margin-inline-start:auto;background:none;border:0;color:var(--mute);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer;padding:6px}
+.wn{text-align:start;margin:4px 0 8px;padding-inline-start:18px;display:grid;gap:6px;line-height:1.5}
+@media(prefers-reduced-motion:reduce){.co-spot,.co-b{transition:none;animation:none}}
+.featrow[hidden]{display:none}
+.co-next{white-space:nowrap}
