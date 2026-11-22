@@ -344,6 +344,8 @@ async function camUpload(files){const id=camId,r=byId(id);if(!r||!files.length)r
 const inviteUrl=()=>location.origin+location.pathname+(cur&&cur.join_code?'?join='+encodeURIComponent(cur.join_code):'');
 const ago=t=>{if(!t)return 'עוד לא נכנס/ה';const m=(Date.now()-new Date(t))/6e4;return m<60?'פעיל/ה עכשיו':m<1440?'פעיל/ה היום':'פעיל/ה לפני '+Math.round(m/1440)+' ימים'};
 const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+const isSamsung=()=>/SamsungBrowser/i.test(navigator.userAgent);
+const CHROME_URL='intent://myfomo.github.io/#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.android.chrome;end';
 const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 const isOwner=()=>cur&&cur.role==='owner';
 function listsSheet(){killFormMap();openId=null;mode='lists';openSheet();
@@ -367,7 +369,7 @@ ${pubSecHtml()}${backupSecHtml()}<div id="qAdm"></div>
 <div class="sec"><h4>מראה</h4><div class="seg" role="group" aria-label="ערכת צבעים">${[['auto','אוטומטי'],['light','בהיר'],['dark','כהה']].map(([k,t])=>`<button type="button" data-act="theme" data-t="${k}" aria-pressed="${curTheme()===k}">${t}</button>`).join('')}</div></div>
 <div class="sec"><h4>תצוגה</h4>${dispHtml()}</div>
 <div class="sec"><h4>ייבוא</h4><button class="btn" type="button" data-act="import">${ICON.pin}ייבוא מקומות שמורים מגוגל מפות</button></div>
-<div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
+<div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':isSamsung()?`<p class="note" style="margin:0 0 10px">בדפדפן של סמסונג (Samsung Internet) גוגל חוסמת את ההתקנה ומציגה הודעה על "גרסת אנדרואיד ישנה". מתקינים דרך Chrome:</p><a class="btn pri" href="${CHROME_URL}">פתיחה ב־Chrome</a><ol class="steps"><li>ב־Chrome לוחצים על התפריט (⋮).</li><li>בוחרים "התקנת אפליקציה" או "הוספה למסך הבית".</li></ol>`:installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
 </div>
 <div class="sec"><h4>שליחת האפליקציה לחברים</h4><p class="note" style="margin:0 0 10px">קישור קבוע לאפליקציה עצמה, בלי הצטרפות לרשימה שלכם. מי שנכנס נרשם ופותח רשימה משלו.</p><button class="btn" type="button" data-act="shareApp">📲 שליחת האפליקציה</button></div>${accountSecHtml()}<div class="sec"><div class="row"><button class="btn" type="button" data-act="onb">הדרכה קצרה על האפליקציה</button><button class="btn" type="button" data-act="signout">התנתקות</button></div></div>`}
 const codeFrom=v=>{v=String(v||'').trim();try{const u=new URL(v);return u.searchParams.get('join')||''}catch{}return /^[a-f0-9]{8,40}$/i.test(v)?v:''};
@@ -1347,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='41';
+const APPV='42';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1412,6 +1414,7 @@ const ONB=[{e:'🍽️',t:'ברוכים הבאים ל־FOMO',p:'כל המקומ�
   {e:'🎁',t:'ועוד כמה הפתעות',p:'ארנק שוברים עם תזכורות, האפי אוור, סינון "פתוח עכשיו" ו"קרוב אליי", והתראה כל חמישי לתכנן את הסופ"ש.'},
   {e:'📲',t:'שמים במסך הבית',inst:true}];
 function onbInst(){return isStandalone()?'מעולה, האפליקציה כבר מותקנת 🎉 כדאי להפעיל התראות בהגדרות, כדי לדעת כשמישהו מוסיף מקום, מגיב או קובע יציאה.'
+  :isSamsung()?'בדפדפן של סמסונג ההתקנה נחסמת אצל גוגל, אז מתקינים דרך <b>Chrome</b>: <a href="'+CHROME_URL+'"><b>פתיחה ב־Chrome</b></a>, ושם בתפריט (⋮) בוחרים <b>"התקנת אפליקציה"</b>.'
   :isIOS()?'בספארי לוחצים על כפתור השיתוף <b>⬆️</b> בתחתית המסך, גוללים ובוחרים <b>"הוספה למסך הבית"</b>. ככה FOMO נפתחת כמו אפליקציה רגילה, ואפשר לקבל התראות.'
   :installEvt?'לוחצים על הכפתור למטה, ו־FOMO תיפתח כמו אפליקציה רגילה עם התראות.':'בתפריט הדפדפן (⋮) בוחרים <b>"התקנת אפליקציה"</b> או <b>"הוספה למסך הבית"</b>.'}
 const needOnb=()=>!lsGet('rs-onb',0)&&me&&me.created&&Date.now()-new Date(me.created).getTime()<14*864e5;
@@ -1725,7 +1728,7 @@ function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNe
 {const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const hide=()=>{if(!sp||sp.classList.contains('out'))return;sp.classList.add('out');document.body.classList.remove('splashing');setTimeout(()=>sp.remove(),800)};
  if(sp){sp.addEventListener('click',hide);setTimeout(hide,reduce?500:2600)}}
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=e});
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();if(isSamsung())return;installEvt=e});
 if('serviceWorker' in navigator){let hadCtl=!!navigator.serviceWorker.controller,reloaded=false;
   navigator.serviceWorker.addEventListener('controllerchange',()=>{if(hadCtl&&!reloaded){reloaded=true;location.reload()}});
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}))}
@@ -1750,13 +1753,13 @@ async function featHtml(){let L=null;try{const {data}=await sb.rpc('admin_featur
    +`<h4 style="margin-top:14px">כמעט לא בשימוש</h4><p class="note" style="margin:0">${[...low.map(x=>esc(lab(x.f))+` (${x.n})`),...zero.map(k=>esc(FL[k])+' (0)')].join(' · ')||'הכל בשימוש 👌'}</p><p class="note" style="margin:6px 0 0">נספר רק כמה פעמים השתמשו בכל דבר, בלי לשמור מי.</p>`}
 
 /* 43: install banner (Safari/Android, not installed yet) */
-function instBanner(){try{if(isStandalone()||!(isIOS()||installEvt))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;
+function instBanner(){try{if(isStandalone()||!(isIOS()||installEvt||isSamsung()))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;
   if(!myId||!loaded||!lsGet('rs-onb2',0)||document.querySelector('.onb,.coach,.calp,.upd')){setTimeout(instBanner,15000);return}
   const safari=isIOS()&&!/crios|fxios|edgios|gsa\//i.test(navigator.userAgent);
   const d=document.createElement('div');d.className='instb';d.setAttribute('role','region');d.setAttribute('aria-label','התקנת האפליקציה');
-  d.innerHTML=`<span class="instb-ic" aria-hidden="true">📲</span><div class="instb-t"><b>FOMO על מסך הבית</b><small>נפתחת כמו אפליקציה, עם התראות</small></div><button class="btn pri" type="button" data-ib="go">${installEvt?'התקנה':'איך?'}</button><button class="instb-x" type="button" data-ib="x" aria-label="לא עכשיו">×</button>`;
+  d.innerHTML=`<span class="instb-ic" aria-hidden="true">📲</span><div class="instb-t"><b>FOMO על מסך הבית</b><small>${isSamsung()?'מתקינים דרך Chrome, כאן גוגל חוסמת':'נפתחת כמו אפליקציה, עם התראות'}</small></div>${isSamsung()?`<a class="btn pri" href="${CHROME_URL}" data-ib="chrome">פתיחה ב־Chrome</a>`:`<button class="btn pri" type="button" data-ib="go">${installEvt?'התקנה':'איך?'}</button>`}<button class="instb-x" type="button" data-ib="x" aria-label="לא עכשיו">×</button>`;
   d.addEventListener('click',e=>{const b=e.target.closest('[data-ib]');if(!b)return;if(b.dataset.ib==='x'){lsSet('rs-inst-dis',Date.now()+14*864e5);d.classList.remove('in');setTimeout(()=>d.remove(),250);return}
-    track('install-banner');if(installEvt){const ev=installEvt;installEvt=null;ev.prompt();(ev.userChoice||Promise.resolve()).then(c=>{if(c&&c.outcome==='accepted')d.remove()}).catch(()=>{});return}instHow(safari)});
+    if(b.dataset.ib==='chrome'){track('install-chrome');return}track('install-banner');if(installEvt){const ev=installEvt;installEvt=null;ev.prompt();(ev.userChoice||Promise.resolve()).then(c=>{if(c&&c.outcome==='accepted')d.remove()}).catch(()=>{});return}instHow(safari)});
   document.body.appendChild(d);requestAnimationFrame(()=>d.classList.add('in'))}catch{}}
 function instHow(safari){const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','איך מתקינים');
   d.innerHTML=`<div class="calp-in"><h3>התקנה באייפון</h3>${safari?'':'<p class="meta">קודם פותחים את הקישור ב־<b>Safari</b>. באייפון רק הוא יודע להתקין.</p>'}<ol class="steps"><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה) בתחתית המסך.</li><li>גוללים ובוחרים <b>"הוספה למסך הבית"</b>.</li><li>לוחצים <b>"הוספה"</b>. זהו, FOMO על המסך, עם התראות.</li></ol><button class="btn pri" type="button" data-n>הבנתי</button></div>`;
