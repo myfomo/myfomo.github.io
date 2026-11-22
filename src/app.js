@@ -573,12 +573,12 @@ const curTheme=()=>{try{return localStorage.getItem('rs-theme')||'auto'}catch{re
 /* ================= place search (Google + fallback) & geocoding ================= */
 const CUIS=['איטלקי','אסייתי','יפני / סושי','בשרים','דגים ופירות ים','ים-תיכוני','המבורגר','פיצה','מקסיקני','הודי','מסעדת שף','בר קוקטיילים','בר יין','בר','פאב','קפה ובראנץ\'','טבעוני','חומוס ומזרחי','קינוחים','אחר'];
 const GTYPE={italian_restaurant:'איטלקי',pizza_restaurant:'פיצה',japanese_restaurant:'יפני / סושי',sushi_restaurant:'יפני / סושי',ramen_restaurant:'יפני / סושי',chinese_restaurant:'אסייתי',thai_restaurant:'אסייתי',asian_restaurant:'אסייתי',vietnamese_restaurant:'אסייתי',korean_restaurant:'אסייתי',indonesian_restaurant:'אסייתי',steak_house:'בשרים',barbecue_restaurant:'בשרים',seafood_restaurant:'דגים ופירות ים',mediterranean_restaurant:'ים-תיכוני',greek_restaurant:'ים-תיכוני',spanish_restaurant:'ים-תיכוני',hamburger_restaurant:'המבורגר',mexican_restaurant:'מקסיקני',indian_restaurant:'הודי',fine_dining_restaurant:'מסעדת שף',cocktail_bar:'בר קוקטיילים',wine_bar:'בר יין',pub:'פאב',irish_pub:'פאב',bar:'בר',night_club:'בר',cafe:'קפה ובראנץ\'',coffee_shop:'קפה ובראנץ\'',brunch_restaurant:'קפה ובראנץ\'',breakfast_restaurant:'קפה ובראנץ\'',vegan_restaurant:'טבעוני',vegetarian_restaurant:'טבעוני',middle_eastern_restaurant:'חומוס ומזרחי',lebanese_restaurant:'חומוס ומזרחי',falafel_restaurant:'חומוס ומזרחי',shawarma_restaurant:'חומוס ומזרחי',hummus_restaurant:'חומוס ומזרחי',israeli_restaurant:'חומוס ומזרחי',turkish_restaurant:'חומוס ומזרחי',dessert_shop:'קינוחים',dessert_restaurant:'קינוחים',ice_cream_shop:'קינוחים',bakery:'קינוחים',confectionery:'קינוחים'};
-const GPRICE={PRICE_LEVEL_INEXPENSIVE:1,PRICE_LEVEL_MODERATE:2,PRICE_LEVEL_EXPENSIVE:3,PRICE_LEVEL_VERY_EXPENSIVE:4};
+const GPRICE={PRICE_LEVEL_INEXPENSIVE:1,PRICE_LEVEL_MODERATE:2,PRICE_LEVEL_EXPENSIVE:3,PRICE_LEVEL_VERY_EXPENSIVE:4,INEXPENSIVE:1,MODERATE:2,EXPENSIVE:3,VERY_EXPENSIVE:4};
 function cuisSelect(v){v=v||'';const opts=CUIS.includes(v)||!v?CUIS:[v,...CUIS];return `<select class="f" name="cuisine"><option value="">בחרו סוג…</option>${opts.map(o=>`<option ${o===v?'selected':''}>${esc(o)}</option>`).join('')}</select>`}
 let gReady=null;
 function gmaps(){const k=(window.APP_CONFIG||{}).googleKey;if(!k)return Promise.resolve(null);if(gReady)return gReady;
   gReady=new Promise(res=>{window.__gmInit=()=>res(window.google);const s=document.createElement('script');s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(k)}&libraries=places&language=iw&region=IL&loading=async&callback=__gmInit`;s.async=true;s.onerror=()=>{gReady=null;res(null)};document.head.appendChild(s);setTimeout(()=>res(window.google||null),12000)});return gReady}
-const GF=['delivery','servesVegetarianFood','photos','displayName','formattedAddress','addressComponents','location','googleMapsURI','websiteURI','regularOpeningHours','priceLevel','primaryType','types'];
+const GF=['hasDelivery','servesVegetarianFood','photos','displayName','formattedAddress','addressComponents','location','googleMapsURI','websiteURI','regularOpeningHours','priceLevel','primaryType','types'];
 /* ---- shared Google quota (server-side, per day for everyone + per user) ---- */
 const QK={gsearch:{what:'החיפושים החכמים בגוגל',unit:'חיפושים',alt:'בינתיים אפשר לחפש לפי שם, וזה ממשיך לעבוד כרגיל.'},place:{what:'החיפושים בגוגל',unit:'חיפושים',alt:'בינתיים החיפוש הרגיל ממשיך לעבוד: הוא ימלא שם וכתובת, ואת השאר אפשר להשלים ידנית או לסמן את המקום במפה.'},
   photo:{what:'הבאת התמונות מגוגל',unit:'תמונות',alt:'בינתיים אפשר להעלות תמונה מהטלפון בכפתור התמונות.'},
@@ -617,7 +617,7 @@ function gToItem(p){const loc=p.location;const lat=typeof loc.lat==='function'?l
   const H={};const per=(p.regularOpeningHours&&p.regularOpeningHours.periods)||[];const pad=n=>String(n).padStart(2,'0');
   for(const x of per){if(!x.open)continue;if(!x.close){for(let i=0;i<7;i++)H[i]=['00:00','23:59'];break}{const o=pad(x.open.hour)+':'+pad(x.open.minute),c=pad(x.close.hour)+':'+pad(x.close.minute);H[x.open.day]=H[x.open.day]?[H[x.open.day][0],c]:[o,c]}}
   if(per.length)for(let i=0;i<7;i++)if(!(i in H))H[i]=null;
-  return {g:true,name:p.displayName||'',full:p.formattedAddress||'',address:[gComp(p,'route'),gComp(p,'street_number')].filter(Boolean).join(' '),city:gComp(p,'locality')||gComp(p,'administrative_area_level_2'),lat,lng,mapsUrl:p.googleMapsURI||'',site:p.websiteURI||'',price:GPRICE[p.priceLevel]||0,cuisine,hours:per.length?H:null,gphotos:gPhotos(p,1),veg:!!p.servesVegetarianFood,delivery:typeof p.delivery==='boolean'?p.delivery:null}}
+  return {g:true,name:p.displayName||'',full:p.formattedAddress||'',address:[gComp(p,'route'),gComp(p,'street_number')].filter(Boolean).join(' '),city:gComp(p,'locality')||gComp(p,'administrative_area_level_2'),lat,lng,mapsUrl:p.googleMapsURI||'',site:p.websiteURI||'',price:GPRICE[p.priceLevel]||0,cuisine,hours:per.length?H:null,gphotos:gPhotos(p,1),veg:!!p.servesVegetarianFood,delivery:typeof p.hasDelivery==='boolean'?p.hasDelivery:typeof p.delivery==='boolean'?p.delivery:null}}
 function osmToItem(x){const a=x.address||{},e=x.extratags||{};return {osm:(x.osm_type||'').charAt(0)+(x.osm_id||''),site:safeUrl(e.website||e['contact:website']||''),phone:e.phone||e['contact:phone']||'',name:x.name||x.display_name.split(',')[0],full:x.display_name,address:[a.road,a.house_number].filter(Boolean).join(' '),city:a.city||a.town||a.village||a.municipality||'',lat:+x.lat,lng:+x.lon,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[x.type]||'',hours:parseOH(e.opening_hours)}}
 function photonToItem(f){const p=f.properties||{},[lng,lat]=f.geometry.coordinates;return {name:p.name||p.street||'',full:[p.name,p.street&&(p.street+(p.housenumber?' '+p.housenumber:'')),p.city||p.town,p.country].filter(Boolean).join(', '),address:p.street?(p.street+(p.housenumber?' '+p.housenumber:'')):'',city:p.city||p.town||p.village||'',lat,lng,cuisine:{bar:'בר',pub:'פאב',cafe:'קפה ובראנץ\''}[p.osm_value]||''}}
 const fetchJ=(u,ms)=>Promise.race([fetch(u).then(r=>r.json()),new Promise((_,j)=>setTimeout(()=>j(new Error('timeout')),ms||7000))]);
@@ -1349,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='49';
+const APPV='50';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
