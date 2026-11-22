@@ -9,14 +9,15 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Fomo">
-<script>try{var t=localStorage.getItem("rs-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{var d=document.documentElement,t=localStorage.getItem("rs-theme");if(t)d.dataset.theme=t;var f=localStorage.getItem("rs-fs");if(f)d.dataset.fs=f;if(localStorage.getItem("rs-hc"))d.dataset.hc="1"}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Playfair+Display:ital,wght@1,800&family=Rubik:wght@500;700;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="vendor/leaflet.css?v=32">
-<link rel="stylesheet" href="style.css?v=32">
+<link rel="stylesheet" href="vendor/leaflet.css?v=33">
+<link rel="stylesheet" href="vendor/markercluster.css?v=33">
+<link rel="stylesheet" href="style.css?v=33">
 </head>
 <body class="splashing">
 <div id="splash" role="presentation">
@@ -52,8 +53,9 @@
     <nav class="tabs" aria-label="תצוגות">
       <a href="#" data-v="list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>רשימה</span></a>
       <a href="#map" data-v="map"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>מפה</span></a>
-      <a href="#timeline" data-v="timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>ציר זמן</span></a>
-      <a href="#stats" data-v="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>סטטיסטיקות</span></a>
+      <a href="#timeline" data-v="timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>יציאות</span></a>
+      <a href="#stats" data-v="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>נתונים</span></a>
+      <a href="#me" data-v="me"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span>אני</span></a>
     </nav>
   </div>
 </header>
@@ -80,11 +82,12 @@
     <div class="band wrap"><p class="status" id="status"></p><div class="grid" id="grid"></div></div>
   </section>
   <section class="view band wrap" id="v-map" hidden>
-    <div id="lmap" class="lmap" role="region" aria-label="מפת המסעדות"></div>
+    <div class="mapwrap"><div id="lmap" class="lmap" role="region" aria-label="מפת המסעדות"></div><div id="mapCard" class="mapcard" hidden></div></div>
     <div class="row" style="margin-top:12px"><button class="btn" type="button" id="locMe">המיקום שלי</button><button class="btn" type="button" id="fitAll">הצגת כל המסעדות</button><span class="note" style="margin:0"><i class="dot" style="background:var(--mint)"></i>היינו &nbsp; <i class="dot" style="background:var(--wine)"></i>רוצים ללכת</span></div>
     <div id="nomap"></div>
   </section>
   <section class="view band wrap" id="v-timeline" hidden>
+    <div id="soon"></div>
     <div id="memory"></div>
     <div class="row"><div class="seg" role="group" aria-label="סינון ביקורים"><button type="button" data-tl="all" aria-pressed="true">כל הביקורים</button><button type="button" data-tl="special" aria-pressed="false">רק ימים מיוחדים</button></div></div>
     <div id="tl"></div>
@@ -93,23 +96,27 @@
     <div class="row" style="justify-content:space-between;margin-bottom:16px"><h2 style="font-size:clamp(26px,3.5vw,34px)" id="stTitle">הסטטיסטיקות שלנו</h2><select id="stYear" aria-label="תקופה"></select></div>
     <div id="st"></div>
   </section>
+  <section class="view band wrap" id="v-me" hidden><div id="me"></div></section>
 </main>
 <nav class="tabbar" aria-label="ניווט">
   <a href="#" data-v="list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>רשימה</span></a>
   <a href="#map" data-v="map"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>מפה</span></a>
   <button type="button" class="tb-add" id="addBtnM" aria-label="מקום חדש"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></button>
-  <a href="#timeline" data-v="timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>ציר זמן</span></a>
-  <a href="#stats" data-v="stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>נתונים</span></a>
+  <a href="#timeline" data-v="timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>יציאות</span></a>
+  <a href="#me" data-v="me"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span>אני</span></a>
 </nav>
 <button class="fab" id="fab" type="button" aria-label="צילום במסעדה" title="צילום במסעדה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></button>
 </div>
 <div class="ov" id="ov" hidden><div class="sheet" role="dialog" aria-modal="true" aria-label="פרטים"><button class="x" type="button" id="closeBtn" aria-label="סגירה">×</button><div id="sb"></div></div></div>
 <div class="lb" id="lb" hidden><img id="lbImg" alt=""></div>
 <div class="toast" id="toast" hidden></div>
+<div class="utoast" id="utoast" hidden role="status"><span id="utTxt"></span><button type="button" id="utBtn">ביטול</button><i id="utBar"></i></div>
+<div class="ptr" id="ptr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 4v12M6 10l6 6 6-6"/></svg></div>
 <datalist id="cuisList"><option>איטלקי</option><option>אסייתי</option><option>יפני / סושי</option><option>בשרים</option><option>דגים ופירות ים</option><option>ים-תיכוני</option><option>המבורגר</option><option>פיצה</option><option>מקסיקני</option><option>הודי</option><option>מסעדת שף</option><option>בר קוקטיילים</option><option>בר יין</option><option>פאב</option><option>קפה ובראנץ'</option><option>טבעוני</option><option>חומוס ומזרחי</option><option>קינוחים</option></datalist>
-<script src="config.js?v=32"></script>
-<script src="vendor/supabase.js?v=32"></script>
-<script src="vendor/leaflet.js?v=32"></script>
-<script src="app.js?v=32"></script>
+<script src="config.js?v=33"></script>
+<script src="vendor/supabase.js?v=33"></script>
+<script src="vendor/leaflet.js?v=33"></script>
+<script src="vendor/leaflet.markercluster.js?v=33"></script>
+<script src="app.js?v=33"></script>
 </body>
 </html>

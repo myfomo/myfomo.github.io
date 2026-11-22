@@ -79,7 +79,7 @@ async function upload(files,id){
 /* ---------- data ---------- */
 function applyPatch(r,p){const o={...r,...p};if(p.ratings)o.ratings={...(r.ratings||{}),...p.ratings};if(p.votes)o.votes={...(r.votes||{}),...p.votes};return o}
 async function loadAll(){if(!cur)return;const lid=cur.id;const {data,error}=await sb.from('restaurants').select('id,data').eq('list_id',lid).order('updated_at',{ascending:false});if(!cur||cur.id!==lid)return;if(error){const c=lsGet('rs-cache-'+lid,null);if(c&&isNetErr(error)){rows=c;loaded=true;render();setOffline();return}$('#status').textContent='הרשימה לא נטענה: '+errMsg(error);return}
-  rows=(data||[]).map(x=>({...(x.data||{}),id:x.id}));takeMeta(lid);const pend=lsGet('rs-outbox',[]).filter(o=>o.lid===lid);for(const o of pend){if(o.t==='del'){rows=rows.filter(r=>r.id!==o.id);continue}if(o.t)continue;if(o.isNew){if(!byId(o.id))rows.unshift({...o.patch,id:o.id})}else rows=rows.map(r=>r.id===o.id?applyPatch(r,o.patch):r)}
+  rows=(data||[]).map(x=>({...(x.data||{}),id:x.id})).filter(x=>!delQ.has(x.id));takeMeta(lid);const pend=lsGet('rs-outbox',[]).filter(o=>o.lid===lid);for(const o of pend){if(o.t==='del'){rows=rows.filter(r=>r.id!==o.id);continue}if(o.t)continue;if(o.isNew){if(!byId(o.id))rows.unshift({...o.patch,id:o.id})}else rows=rows.map(r=>r.id===o.id?applyPatch(r,o.patch):r)}
   loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch();setTimeout(backfillGeo,1500);setTimeout(thumbBackfill,9000)}
 function save(id,patch,isNew){
   const prev=byId(id);
@@ -124,12 +124,12 @@ function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove
   const hasHours=rows.some(r=>r.hours&&Object.keys(r.hours).length);
   $('#cuis').innerHTML=(hasHours?`<button type="button" class="chip openchip" data-open-f="1" aria-pressed="${openF}">פתוח עכשיו</button>`:'')+(cs.length>1?[`<button type="button" class="chip" data-c="" aria-pressed="${!cuisF}">כל הסוגים</button>`,...cs.map(c=>`<button type="button" class="chip" data-c="${esc(c)}" aria-pressed="${cuisF===c}">${esc(c)}</button>`)].join(''):'');renderNotices();
   const g=$('#grid');
-  if(!loaded){g.innerHTML='<div class="skel"></div><div class="skel"></div><div class="skel"></div>';return}
+  if(!loaded){g.innerHTML=SKEL.repeat(6);return}
   if(!rows.length){g.innerHTML=`<div class="empty"><h2>עוד אין כאן מסעדות</h2><p>הוסיפו מקום שהייתם בו או מקום שאתם חולמים עליו, והרשימה תתחיל להתמלא.</p><button class="btn pri" type="button" data-act="add">הוסיפו את הראשונה</button></div>`;return}
   const list=filtered();
   if(!list.length){g.innerHTML=`<div class="empty"><h2>${view==='match'?'עוד אין מקום ששניכם בחרתם השבוע':'לא נמצא כלום'}</h2><p>${view==='match'?'לחצו "בא לי" על מקומות שבא לכם ללכת אליהם. כששניכם בוחרים אותו מקום, הוא יופיע כאן.':'נסו חיפוש אחר או הסירו סינון.'}</p></div>`;return}
   const upM=new Map();for(const u of upcoming())if(!upM.has(u.r.id))upM.set(u.r.id,u);
-  const card=(r,idx)=>{const p=(r.photos||[]).find(x=>x.path),a=avg(r),mv=iVoted(r),mt=isMatch(r);return `<article class="card" tabindex="0" data-id="${esc(r.id)}" style="--i:${Math.min(idx,12)}"><div class="cover">${p?photoImg(p.thumb?{path:p.thumb}:p,'loading="lazy" decoding="async"'):plate(r.name)}<div class="badges"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${mt?'<span class="badge match">שנינו רוצים!</span>':''}${(()=>{const u=upM.get(r.id);return u?`<span class="badge plan">${esc(whenTxt(u.v))}</span>`:''})()}${hhNow(r)?'<span class="badge hh">האפי אוור עכשיו</span>':''}</div>${r.fav?'<span class="heart" aria-label="מועדף">♥</span>':''}</div><div class="cbody"><h3>${esc(r.name)}</h3><p class="meta">${[r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')||'&nbsp;'}</p><div class="mrow">${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}${(()=>{const o=openState(r);return o?`<span class="open ${o.open?'on':''}">${o.open?'פתוח':'סגור'}</span>`:''})()}${distKm(r)!=null?`<span class="dist">${esc(distTxt(distKm(r)))}</span>`:''}</div><div class="acts"><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button type="button" class="btn sm ${mv?'on':''} ${popId===r.id?'pop':''}" data-vote="${esc(r.id)}" aria-pressed="${mv}">${mv?'♥':'♡'} בא לי</button></div></div></article>`};
+  const card=(r,idx)=>{const p=(r.photos||[]).find(x=>x.path),a=avg(r),mv=iVoted(r),mt=isMatch(r);return `<article class="card" tabindex="0" data-id="${esc(r.id)}" style="--i:${Math.min(idx,12)}"><div class="cover">${p?photoImg(p.thumb?{path:p.thumb}:p,'loading="lazy" decoding="async"'):plate(r.name)}<div class="badges"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${mt?'<span class="badge match">שנינו רוצים!</span>':''}${(()=>{const u=upM.get(r.id);return u?`<span class="badge plan">${esc(whenTxt(u.v))}</span>`:''})()}${hhNow(r)?'<span class="badge hh">האפי אוור עכשיו</span>':''}</div>${r.fav?'<span class="heart" aria-label="מועדף">♥</span>':''}</div><div class="cbody"><h3>${esc(r.name)}</h3><p class="meta">${[r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')||'&nbsp;'}</p><div class="mrow">${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}${liveSt(r)}${distKm(r)!=null?`<span class="dist">${esc(distTxt(distKm(r)))}</span>`:''}</div><div class="acts"><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button type="button" class="btn sm ${mv?'on':''} ${popId===r.id?'pop':''}" data-vote="${esc(r.id)}" aria-pressed="${mv}">${mv?'♥':'♡'} בא לי</button></div></div></article>`};
   const CH=24;let shown=Math.max(CH,renderList.keep||0);g.innerHTML=list.slice(0,shown).map(card).join('');if(renderList.io)renderList.io.disconnect();
   if(list.length>shown&&'IntersectionObserver' in window){const sen=document.createElement('div');sen.className='more-sen';g.after(sen);renderList.io=new IntersectionObserver(es=>{if(!es.some(e=>e.isIntersecting))return;const nx=list.slice(shown,shown+CH);g.insertAdjacentHTML('beforeend',nx.map((r,i)=>card(r,shown+i)).join(''));shown+=nx.length;renderList.keep=shown;hydrate();if(shown>=list.length){renderList.io.disconnect();sen.remove()}},{rootMargin:'800px'});renderList.io.observe(sen)}else if(list.length>shown){g.innerHTML+=list.slice(shown).map((r,i)=>card(r,shown+i)).join('')}
   hydrate();
@@ -139,11 +139,12 @@ function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove
 let lmap=null,layer=null,meMarker=null,fitted=false;
 const TILE='https://tile.openstreetmap.org/{z}/{x}/{y}.png',ATTR='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 const pinIcon=r=>L.divIcon({className:'pin-wrap',html:`<div class="pin ${r.status==='been'?'b':'w'} ${exact(r)?'':'apx'}"></div>`,iconSize:[26,26],iconAnchor:[13,26],popupAnchor:[0,-24]});
-function ensureMap(){if(lmap)return;lmap=L.map('lmap',{zoomControl:true}).setView([32.08,34.78],12);L.tileLayer(TILE,{maxZoom:19,attribution:ATTR}).addTo(lmap);layer=L.layerGroup().addTo(lmap);
+function ensureMap(){if(lmap)return;lmap=L.map('lmap',{zoomControl:true}).setView([32.08,34.78],12);L.tileLayer(TILE,{maxZoom:19,attribution:ATTR}).addTo(lmap);layer=(L.markerClusterGroup?L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:46,spiderfyOnMaxZoom:true,iconCreateFunction:c=>{const n=c.getChildCount();return L.divIcon({className:'clu-wrap',html:`<div class="clu">${n}</div>`,iconSize:[40,40]})}}):L.layerGroup()).addTo(lmap);lmap.on('click',hideMapCard);
   lmap.on('popupopen',e=>{const el=e.popup.getElement();el&&el.addEventListener('click',ev=>{const o=ev.target.closest('[data-open]');if(o){lmap.closePopup();openDetail(o.dataset.open)}})})}
 function drawMap(){if(page!=='map')return;ensureMap();setTimeout(()=>lmap.invalidateSize(),50);layer.clearLayers();
   const pts=rows.filter(hasLL);
-  for(const r of pts){L.marker([r.lat,r.lng],{icon:pinIcon(r),title:r.name}).bindPopup(`<b>${esc(r.name)}</b>${esc([r.cuisine,r.address||r.city].filter(Boolean).join(' · '))}${exact(r)?'':'<br><small>מיקום משוער</small>'}<div class="row"><button class="btn sm pri" type="button" data-open="${esc(r.id)}">פרטים</button><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">Waze</a><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">גוגל</a></div>`).addTo(layer)}
+  mkById={};mcSel=null;for(const r of pts){const mk=L.marker([r.lat,r.lng],{icon:pinIcon(r),title:r.name,keyboard:true});mk.on('click',ev=>{if(ev.originalEvent)L.DomEvent.stopPropagation(ev.originalEvent);showMapCard(r)});mkById[r.id]=mk;layer.addLayer(mk)}
+  {const mc=$('#mapCard');if(mc&&!mc.hidden){const r=byId(mc.dataset.id);if(r&&hasLL(r))showMapCard(r);else hideMapCard()}}
   if(!fitted&&pts.length){fitAll();fitted=true}
   renderNoMap()}
 function fitAll(){const pts=rows.filter(hasLL);if(!lmap||!pts.length)return;lmap.fitBounds(L.latLngBounds(pts.map(r=>[r.lat,r.lng])).pad(.2),{maxZoom:15})}
@@ -154,13 +155,13 @@ function renderNoMap(){const miss=rows.filter(r=>!hasLL(r)),el=$('#nomap');if(!l
 
 /* ---------- timeline ---------- */
 function allVisits(){const out=[];const td=today();for(const r of rows)for(const v of visitsOf(r))if(v.d<=td)out.push({r,v});return out.sort((a,b)=>b.v.d.localeCompare(a.v.d))}
-function renderTimeline(){
+function renderTimeline(){renderSoon();
   let vs=allVisits();const now=new Date(),md=d=>d.slice(5);
   const mem=vs.filter(({v})=>{const y=Number(v.d.slice(0,4));if(y>=now.getFullYear())return false;const t=new Date(now.getFullYear()+'-'+md(v.d)+'T12:00');return Math.abs(t-now)<3*864e5});
   $('#memory').innerHTML=mem.slice(0,3).map(({r,v})=>{const n=now.getFullYear()-Number(v.d.slice(0,4));return `<div class="memory">לפני ${n===1?'שנה':n+' שנים'}, ב־${esc(fmtD(v.d,{day:'numeric',month:'long'}))}, הייתם ב<a href="#timeline" data-open="${esc(r.id)}">${esc(r.name)}</a>${v.occ?' · '+esc(OCC[v.occ]||''):''}</div>`}).join('');
   if(tlF==='special')vs=vs.filter(({v})=>SPECIAL.includes(v.occ)||v.occ==='date');
   const el=$('#tl');if(!loaded){el.innerHTML='';return}
-  const up=upcoming();const upH=up.length?`<div class="tl-month"><h3>בקרוב</h3><span class="meta">${up.length} יציאות מתוכננות</span></div>`+up.map(({r,v})=>`<div class="tl-item upc" data-open="${esc(r.id)}" tabindex="0"><span class="tl-day">${Number(v.d.slice(8))}</span><div class="tl-main"><b>${esc(r.name)}</b><div class="meta">${esc(fmtD(v.d,{weekday:'long',day:'numeric',month:'long'}))}${v.t?' · '+esc(v.t):''}</div></div><span class="occ sp">${esc(whenTxt(v))}</span></div>`).join(''):'';
+  const up=[];const upH=up.length?`<div class="tl-month"><h3>בקרוב</h3><span class="meta">${up.length} יציאות מתוכננות</span></div>`+up.map(({r,v})=>`<div class="tl-item upc" data-open="${esc(r.id)}" tabindex="0"><span class="tl-day">${Number(v.d.slice(8))}</span><div class="tl-main"><b>${esc(r.name)}</b><div class="meta">${esc(fmtD(v.d,{weekday:'long',day:'numeric',month:'long'}))}${v.t?' · '+esc(v.t):''}</div></div><span class="occ sp">${esc(whenTxt(v))}</span></div>`).join(''):'';
   if(!vs.length&&upH){el.innerHTML=upH;return}
   if(!vs.length){el.innerHTML=`<div class="empty"><h2>${tlF==='special'?'עוד אין ימים מיוחדים':'עוד אין ביקורים'}</h2><p>בכל מקום אפשר להוסיף ביקור עם תאריך, סכום וסוג אירוע. הם יופיעו כאן לפי הסדר.</p></div>`;return}
   const groups={};for(const x of vs)(groups[x.v.d.slice(0,7)]=groups[x.v.d.slice(0,7)]||[]).push(x);
@@ -201,17 +202,20 @@ ${leaderHtml()}${withHtml()}<div class="panel wide"><h3>ההישגים שלנו 
 </div>`}
 
 /* ---------- routing ---------- */
-function render(){renderHead();if(page==='list')renderList();else if(page==='map')drawMap();else if(page==='timeline')renderTimeline();else renderStats()}
-function route(){const h=location.hash.replace('#','');page=['map','timeline','stats'].includes(h)?h:'list';document.body.dataset.page=page;window.scrollTo(0,0);
-  document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!=='v-'+page);
-  document.querySelectorAll('nav.tabs a,.tabbar a').forEach(a=>{if(a.dataset.v===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-  render();if(page==='list')animIn()}
+function render(){renderHead();if(page==='list')renderList();else if(page==='map')drawMap();else if(page==='timeline')renderTimeline();else if(page==='me')renderMe();else renderStats()}
+const PAGES=['list','map','timeline','stats','me'];
+function route(){const h=location.hash.replace('#','');const np=PAGES.includes(h)?h:'list';
+  const go=()=>{page=np;document.body.dataset.page=page;window.scrollTo(0,0);
+    document.querySelectorAll('.view').forEach(v=>v.hidden=v.id!=='v-'+page);
+    document.querySelectorAll('nav.tabs a,.tabbar a').forEach(a=>{if(a.dataset.v===page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+    if(page!=='map')hideMapCard();render();if(page==='list'&&!document.startViewTransition)animIn()};
+  if(document.startViewTransition&&loaded&&np!==page&&!RM()){document.documentElement.dataset.vt=PAGES.indexOf(np)>PAGES.indexOf(page)?'fwd':'back';document.startViewTransition(go)}else go()}
 window.addEventListener('hashchange',route);
 
 /* ---------- sheet ---------- */
 let fmap=null,fmarker=null;
 function killFormMap(){if(fmap){fmap.remove();fmap=null;fmarker=null}}
-function openSheet(){$('#ov').hidden=false;document.body.style.overflow='hidden'}
+function openSheet(){const was=!$('#ov').hidden;$('#ov').hidden=false;document.body.style.overflow='hidden';const fr=flipFrom;flipFrom=null;if(fr&&!was)requestAnimationFrame(()=>requestAnimationFrame(()=>flipIn(fr)))}
 function closeSheet(){if(story){clearTimeout(story.t);story=null}if(typeof evMap!=='undefined'&&evMap){evMap.remove();evMap=null}if(gm&&gm.s)clearTimeout(gm.s.t);$('#ov').classList.remove('story-ov');$('#ov').hidden=true;document.body.style.overflow='';openId=null;mode='view';clearInterval(pickTimer);killFormMap()}
 function openDetail(id){killFormMap();openId=id;mode='view';openSheet();renderDetail();$('#ov').scrollTop=0}
 
@@ -360,6 +364,7 @@ ${dietSecHtml()}${specialSecHtml()}<div class="sec"><h4>התראות לטלפו�
 <div class="sec"><h4>צ׳ק־אין אוטומטי</h4><p class="note" style="margin:0 0 10px">כשאתם פותחים את האפליקציה ליד מקום מהרשימה, היא שואלת אם לרשום ביקור. צריך לאשר גישה למיקום.</p><div class="seg" role="group" aria-label="צ׳ק־אין אוטומטי"><button type="button" data-act="ciSet" data-v="on" aria-pressed="${lsGet('rs-checkin','on')!=='off'}">פעיל</button><button type="button" data-act="ciSet" data-v="off" aria-pressed="${lsGet('rs-checkin','on')==='off'}">כבוי</button></div></div>
 ${pubSecHtml()}${backupSecHtml()}<div id="qAdm"></div>
 <div class="sec"><h4>מראה</h4><div class="seg" role="group" aria-label="ערכת צבעים">${[['auto','אוטומטי'],['light','בהיר'],['dark','כהה']].map(([k,t])=>`<button type="button" data-act="theme" data-t="${k}" aria-pressed="${curTheme()===k}">${t}</button>`).join('')}</div></div>
+<div class="sec"><h4>תצוגה</h4>${dispHtml()}</div>
 <div class="sec"><h4>ייבוא</h4><button class="btn" type="button" data-act="import">${ICON.pin}ייבוא מקומות שמורים מגוגל מפות</button></div>
 <div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
 </div>
@@ -1076,7 +1081,7 @@ async function shareOrCopy(title,text,url){if(navigator.share){try{await navigat
 function newForm(){killFormMap();openId=null;mode='new';openSheet();$('#sb').innerHTML=formHtml(null);initFormMap();$('#placeQ').focus()}
 
 function bindUI(){bindSwipe();$('#v-stats').addEventListener('click',e=>{const b=e.target.closest('[data-act=recap]');if(b)recapSheet(stYear)});
-$('#grid').addEventListener('click',e=>{if(e.target.closest('a'))return;const vb=e.target.closest('[data-vote]');if(vb){toggleVote(vb.dataset.vote);return}if(e.target.closest('[data-act=add]')){newForm();return}const c=e.target.closest('.card');if(c)openDetail(c.dataset.id)});
+$('#grid').addEventListener('click',e=>{if(e.target.closest('a'))return;const vb=e.target.closest('[data-vote]');if(vb){toggleVote(vb.dataset.vote);return}if(e.target.closest('[data-act=add]')){newForm();return}const c=e.target.closest('.card');if(c){flipFrom=c.getBoundingClientRect();openDetail(c.dataset.id)}});
 $('#grid').addEventListener('keydown',e=>{const c=e.target.closest('.card');if(c&&(e.key==='Enter'||e.key===' ')&&e.target===c){e.preventDefault();openDetail(c.dataset.id)}});
 for(const sel of ['#v-timeline','#v-stats'])$(sel).addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o){e.preventDefault();openDetail(o.dataset.open)}});
 $('#v-timeline').addEventListener('keydown',e=>{const o=e.target.closest('.tl-item');if(o&&e.key==='Enter')openDetail(o.dataset.open)});
@@ -1099,7 +1104,7 @@ $('#listBtn').addEventListener('click',listsSheet);
 $('#app h1').addEventListener('click',listsSheet);
 $('#addBtnM').addEventListener('click',newForm);
 $('#pickBtnM').addEventListener('click',()=>pick());
-$('#closeBtn').addEventListener('click',closeSheet);
+$('#closeBtn').addEventListener('click',()=>closeSheetAnim());
 $('#ov').addEventListener('click',e=>{if(e.target.id==='ov')closeSheet()});
 $('#lb').addEventListener('click',()=>$('#lb').hidden=true);
 document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(!$('#lb').hidden)$('#lb').hidden=true;else if(!$('#ov').hidden)closeSheet()});
@@ -1251,7 +1256,7 @@ S.addEventListener('click',async e=>{
   if(a==='copyLL'){try{await navigator.clipboard.writeText(`${r.lat}, ${r.lng}`);toast('הקואורדינטות הועתקו')}catch{toast(`${r.lat}, ${r.lng}`)}return}
   if(a==='zoom'){const p=(r.photos||[])[i];if(p&&urlCache[p.path]){$('#lbImg').src=urlCache[p.path];$('#lb').hidden=false}return}
   if(a==='edit'){mode='edit';$('#sb').innerHTML='';renderDetail();return}
-  if(a==='del'){mode='confirm';renderDetail();return}
+  if(a==='del'){delWithUndo(r);return}
   if(a==='reallyDel'){if(await removeRow(r)){closeSheet();toast('נמחק')}return}
   if(a==='vote'){await toggleVote(r.id);return}
   if(a==='rate'){const v=Number(b.dataset.v);const cur=(r.ratings||{})[myId]||0;await save(r.id,{ratings:{[myId]:cur===v?0:v},updatedAt:now});return}
@@ -1325,7 +1330,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='32';
+const APPV='33';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1424,6 +1429,105 @@ async function outWx(r,d){const dd=daysTo(d);if(dd<0||dd>6)return;try{const j=aw
 async function outShare(){const o=outSheet.x;if(!o)return;const text=`יוצאים ל${o.title}, ${o.when} 🎉`;const url=o.r?mapsUrl(o.r):location.origin+location.pathname;
   try{if(navigator.share){await navigator.share({title:'FOMO',text,url});return}}catch(e){if(e&&e.name==='AbortError')return}try{await navigator.clipboard.writeText(text+'\n'+url);toast('הועתק, אפשר להדביק')}catch{toast(text)}}
 function outBadge(){try{if(!('setAppBadge' in navigator))return;const x=nextOuting(1);(x&&x.v.d===today()?navigator.setAppBadge(1):navigator.clearAppBadge()).catch(()=>{})}catch{}}
+
+/* ================= v33: interface ================= */
+const RM=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* ---- live open/closed status ---- */
+function openInfo(r){const o=openState(r);if(!o)return null;const n=new Date(),m=n.getHours()*60+n.getMinutes(),H=r.hours||{};
+  if(o.open){const left=(hm(o.until)-m+1440)%1440;return left<=60?{c:'soon',t:`נסגר בעוד ${left} דק'`}:{c:'on',t:`פתוח עד ${o.until}`}}
+  if(o.from){const inn=hm(o.from)-m;return inn<=60?{c:'soon',t:`נפתח בעוד ${inn} דק'`}:{c:'off',t:`נפתח ב־${o.from}`}}
+  const d=n.getDay();for(let k=1;k<=7;k++){const h=H[(d+k)%7];if(h)return {c:'off',t:k===1?`נפתח מחר ${h[0]}`:`נפתח ביום ${DAYS[(d+k)%7]} ${h[0]}`}}
+  return {c:'off',t:'סגור'}}
+function liveSt(r){const i=openInfo(r);return i?`<span class="open ${i.c}" data-ost="${esc(r.id)}">${esc(i.t)}</span>`:''}
+setInterval(()=>{if(document.visibilityState!=='visible')return;document.querySelectorAll('[data-ost]').forEach(el=>{const r=byId(el.dataset.ost);const i=r&&openInfo(r);if(!i)return;el.className='open '+i.c;el.textContent=i.t})},60000);
+
+/* ---- skeleton cards ---- */
+const SKEL='<div class="skel" aria-hidden="true"><div class="sk-c"></div><div class="sk-b"><i style="width:70%"></i><i style="width:45%"></i><i style="width:55%"></i></div></div>';
+
+/* ---- undo delete ---- */
+const delQ=new Map();
+function undoToast(msg,onUndo,ms){const el=$('#utoast');if(!el)return;$('#utTxt').textContent=msg;el.hidden=false;const bar=$('#utBar');bar.style.transition='none';bar.style.transform='scaleX(1)';requestAnimationFrame(()=>{bar.style.transition=`transform ${ms}ms linear`;bar.style.transform='scaleX(0)'});
+  clearTimeout(undoToast.t);undoToast.t=setTimeout(()=>{el.hidden=true},ms);$('#utBtn').onclick=()=>{clearTimeout(undoToast.t);el.hidden=true;onUndo()}}
+function delWithUndo(r){if(!r||delQ.has(r.id))return;const snap=byId(r.id);rows=rows.filter(x=>x.id!==r.id);closeSheetAnim(true);render();
+  delQ.set(r.id,{r:snap,t:setTimeout(()=>commitDel(r.id),6000)});
+  undoToast(`"${r.name}" נמחק`,()=>{const p=delQ.get(r.id);if(!p)return;clearTimeout(p.t);delQ.delete(r.id);if(!byId(r.id))rows.unshift(p.r);render();toast('המחיקה בוטלה')},6000)}
+async function commitDel(id){const p=delQ.get(id);if(!p)return;clearTimeout(p.t);delQ.delete(id);const ok=await removeRow(p.r);if(ok)logAct('del',id,`מחק/ה את ${p.r.name}`);else{if(!byId(id))rows.unshift(p.r);render()}}
+const flushDel=()=>{for(const id of [...delQ.keys()])commitDel(id)};
+window.addEventListener('pagehide',flushDel);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')flushDel()});
+
+/* ---- card -> sheet transition (FLIP) ---- */
+let flipFrom=null;
+function flipIn(fr){const ov=$('#ov'),sh=ov&&ov.querySelector('.sheet');if(!sh||RM()||!sh.animate)return;const b=sh.getBoundingClientRect();const h=Math.min(b.height,innerHeight);if(!b.width||!h)return;
+  sh.classList.add('flip');ov.animate([{backgroundColor:'transparent'},{}],{duration:260,easing:'ease-out'});
+  const a=sh.animate([{transformOrigin:'0 0',transform:`translate(${fr.left-b.left}px,${fr.top-b.top}px) scale(${fr.width/b.width},${fr.height/h})`,borderRadius:'22px',opacity:.35},{transformOrigin:'0 0',transform:'none',opacity:1}],{duration:380,easing:'cubic-bezier(.2,.85,.25,1)'});
+  a.onfinish=()=>sh.classList.remove('flip')}
+function closeSheetAnim(fast){const ov=$('#ov'),sh=ov&&ov.querySelector('.sheet');if(!ov||ov.hidden){return}
+  if(fast||RM()||!sh||!sh.animate||ov.classList.contains('story-ov')){closeSheet();return}
+  const id=openId,card=id&&page==='list'&&document.querySelector(`.card[data-id="${CSS.escape(id)}"]`);const cr=card&&card.getBoundingClientRect();const b=sh.getBoundingClientRect();const h=Math.min(b.height,innerHeight);
+  const vis=cr&&cr.bottom>0&&cr.top<innerHeight;
+  const to=vis?{transformOrigin:'0 0',transform:`translate(${cr.left-b.left}px,${cr.top-b.top}px) scale(${cr.width/b.width},${cr.height/h})`,borderRadius:'22px',opacity:0}:{transform:`translateY(${innerHeight*.6}px)`,opacity:0};
+  ov.animate([{},{backgroundColor:'transparent'}],{duration:260,fill:'forwards'});
+  const a=sh.animate([{transformOrigin:'0 0',transform:'none',opacity:1},to],{duration:vis?320:260,easing:'cubic-bezier(.4,0,.2,1)',fill:'forwards'});
+  a.onfinish=()=>{closeSheet();a.cancel();ov.getAnimations().forEach(x=>x.cancel())}}
+
+/* ---- drag the sheet down to close ---- */
+(function(){const ov=$('#ov');if(!ov)return;let y0=null,x0=0,dy=0,t0=0,drag=false;
+  ov.addEventListener('touchstart',e=>{y0=null;if(ov.classList.contains('story-ov')||e.touches.length>1)return;if(e.target.closest('.leaflet-container,input,textarea,select,[contenteditable],.res,.hscroll,.gal,.chips,.seg'))return;if(ov.scrollTop>2)return;y0=e.touches[0].clientY;x0=e.touches[0].clientX;dy=0;t0=Date.now();drag=false},{passive:true});
+  ov.addEventListener('touchmove',e=>{if(y0==null)return;const t=e.touches[0],d=t.clientY-y0,dx=Math.abs(t.clientX-x0);
+    if(!drag){if(d>8&&d>dx*1.5&&ov.scrollTop<=0)drag=true;else{if(Math.abs(d)>8||dx>8)y0=null;return}}
+    dy=Math.max(0,d);const sh=ov.querySelector('.sheet');sh.style.transition='none';sh.style.transform=`translateY(${dy}px)`;ov.style.background=`rgba(42,22,48,${Math.max(0,.35-dy/1200)})`},{passive:true});
+  const end=()=>{if(y0==null||!drag){y0=null;return}const sh=ov.querySelector('.sheet'),v=dy/Math.max(1,Date.now()-t0);y0=null;drag=false;sh.style.transition='transform .26s cubic-bezier(.2,.8,.2,1)';
+    if(dy>110||v>.6){sh.style.transform=`translateY(${innerHeight}px)`;setTimeout(()=>{closeSheet();sh.style.transform='';sh.style.transition='';ov.style.background=''},240)}
+    else{sh.style.transform='';ov.style.background='';setTimeout(()=>{sh.style.transition=''},280)}};
+  ov.addEventListener('touchend',end);ov.addEventListener('touchcancel',end)})();
+
+/* ---- pull to refresh (installed app only; browsers have their own) ---- */
+(function(){const ind=$('#ptr');if(!ind)return;let y0=null,dy=0,busy=false;const on=()=>isStandalone()&&(page==='list'||page==='timeline'||page==='me');
+  document.addEventListener('touchstart',e=>{y0=null;if(busy||!on()||!$('#ov').hidden||document.querySelector('.onb,.calp')||window.scrollY>0||e.touches.length>1)return;if(e.target.closest('.leaflet-container,.res,input,textarea,select'))return;y0=e.touches[0].clientY;dy=0},{passive:true});
+  document.addEventListener('touchmove',e=>{if(y0==null)return;dy=e.touches[0].clientY-y0;if(window.scrollY>0||dy<=0){ind.classList.remove('vis','ready');ind.style.transform='';return}
+    const p=Math.min(dy*.5,90);ind.classList.add('vis');ind.classList.toggle('ready',p>64);ind.style.transform=`translate(-50%,${p}px)`;ind.firstElementChild.style.transform=`rotate(${p>64?180:Math.round(p*2)}deg)`},{passive:true});
+  document.addEventListener('touchend',async()=>{if(y0==null)return;y0=null;const p=Math.min(dy*.5,90);
+    if(p>64&&!busy){busy=true;ind.classList.add('spin');ind.style.transform='translate(-50%,64px)';try{await Promise.all([loadAll(),loadEvents()])}catch{}await new Promise(z=>setTimeout(z,350));busy=false;toast('עודכן ✓')}
+    ind.classList.remove('vis','ready','spin');ind.style.transform='';ind.firstElementChild.style.transform=''})})();
+
+/* ---- "outings" tab: what's coming up ---- */
+function renderSoon(){const el=$('#soon');if(!el)return;if(!loaded){el.innerHTML='';return}const up=upcoming(),evs=(events||[]).filter(e=>e.d>=today()),sur=surprisesForMe();
+  const items=[...up.map(u=>({d:u.v.d,t:u.v.t||'',k:'p',u})),...evs.map(e=>({d:e.d,t:e.t||'',k:'e',e})),...sur.map(s=>({d:s.v.d,t:s.v.t||'',k:'s'}))].sort((a,b)=>(a.d+a.t).localeCompare(b.d+b.t)).slice(0,10);
+  const x=nextOuting(60);
+  el.innerHTML=`<h2 class="soon-h">בקרוב</h2>${x?`<button type="button" class="soon-hero" data-soon="out"><span class="sh-k">${x.sur?'🤫 יציאת הפתעה':x.ev?'🎉 הערב הבא':'🍽️ היציאה הבאה'}</span><b>${esc(x.title)}</b><span>${esc(whenTxt(x.v))}</span><span class="sh-cd">${esc(cdText(x).big)}</span></button>`:''}
+${items.length?`<div class="soon-list">${items.map(it=>{const dd=it.d,day=fmtD(dd,{weekday:'short'}),num=fmtD(dd,{day:'numeric',month:'short'});
+  if(it.k==='p'){const w=withOf(it.u.v);return `<button type="button" class="soon-it" data-soon="p" data-id="${esc(it.u.r.id)}"><span class="si-d"><small>${esc(day)}</small><b>${esc(num)}</b></span><span class="si-b"><b>${esc(it.u.r.name)}</b><small>${esc([it.t,w.length?'עם '+w.join(', '):''].filter(Boolean).join(' · '))}</small></span></button>`}
+  if(it.k==='e')return `<button type="button" class="soon-it" data-soon="e" data-id="${esc(it.e.id)}"><span class="si-d"><small>${esc(day)}</small><b>${esc(num)}</b></span><span class="si-b"><b>🎉 ${esc(it.e.title||'ערב עם חברים')}</b><small>${esc([it.t,(it.e.stops||[]).length?(it.e.stops.length+' תחנות'):''].filter(Boolean).join(' · '))}</small></span></button>`;
+  return `<div class="soon-it"><span class="si-d"><small>${esc(day)}</small><b>${esc(num)}</b></span><span class="si-b"><b>🤫 הפתעה</b><small>הפרטים יתגלו ביום עצמו</small></span></div>`}).join('')}</div>`
+  :`<div class="soon-empty"><p>אין יציאות מתוכננות.</p><p class="note" style="margin:0">בוחרים מקום מהרשימה ולוחצים "קביעת יציאה", או יוצרים ערב עם כמה תחנות.</p><button class="btn" type="button" data-soon="ev">🎉 ערב חדש עם חברים</button></div>`}
+<h2 class="soon-h" style="margin-top:22px">איפה היינו</h2>`}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-soon]');if(!b)return;const k=b.dataset.soon;if(k==='out')outSheet();else if(k==='p')openDetail(b.dataset.id);else if(k==='e')evSheet(b.dataset.id);else if(k==='ev')evNewSheet()});
+
+/* ---- "me" tab + display settings ---- */
+const curFs=()=>document.documentElement.dataset.fs||'1';
+function dispHtml(){const fs=curFs(),hc=!!document.documentElement.dataset.hc;return `<label class="l" style="margin-top:0">גודל טקסט</label><div class="seg" role="group" aria-label="גודל טקסט">${[['1','רגיל'],['2','גדול'],['3','גדול מאוד']].map(([k,t])=>`<button type="button" data-fs="${k}" aria-pressed="${fs===k}">${t}</button>`).join('')}</div>
+<label class="chip" style="margin-top:12px"><input type="checkbox" data-hc ${hc?'checked':''}><span>ניגודיות גבוהה</span></label>`}
+function setFs(k){try{if(k==='1')localStorage.removeItem('rs-fs');else localStorage.setItem('rs-fs',k)}catch{}if(k==='1')delete document.documentElement.dataset.fs;else document.documentElement.dataset.fs=k;document.querySelectorAll('[data-fs]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.fs===k)));if(lmap)setTimeout(()=>lmap.invalidateSize(),100)}
+function setHc(on){try{if(on)localStorage.setItem('rs-hc','1');else localStorage.removeItem('rs-hc')}catch{}if(on)document.documentElement.dataset.hc='1';else delete document.documentElement.dataset.hc}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-fs]');if(b&&b.tagName==='BUTTON')setFs(b.dataset.fs)});
+document.addEventListener('change',e=>{if(e.target.matches('[data-hc]'))setHc(e.target.checked)});
+function renderMe(){const el=$('#me');if(!el)return;const nmMe=myName||String((me&&me.email)||'').split('@')[0]||'אני';
+  const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,vis=allVisits().length;
+  el.innerHTML=`<div class="me-card"><div class="me-av" aria-hidden="true">${esc(nmMe.trim().charAt(0))}</div><div><h2>${esc(nmMe)}</h2><p class="meta">${esc(cur?cur.name:'')}</p></div></div>
+<div class="me-stats"><div><b>${been}</b><small>היינו</small></div><div><b>${want}</b><small>רוצים ללכת</small></div><div><b>${vis}</b><small>ביקורים</small></div></div>
+<div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">🍽️</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">📊</span>הנתונים שלנו</a><button type="button" data-me="lists"><span aria-hidden="true">📋</span>הרשימות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">🔔</span>מה חדש</button><button type="button" data-me="set"><span aria-hidden="true">⚙️</span>הגדרות</button><button type="button" data-me="onb"><span aria-hidden="true">💡</span>הדרכה</button></div>
+<div class="me-sec"><h4>תצוגה</h4>${dispHtml()}</div>`}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='onb'){lsSet('rs-onb',0);onbSheet()}});
+
+/* ---- map: preview card ---- */
+let mkById={},mcSel=null;
+function showMapCard(r){const el=$('#mapCard');if(!el||!r)return;const p=(r.photos||[]).find(x=>x.path),a=avg(r);
+  el.innerHTML=`<button class="mc-x" type="button" data-mc="x" aria-label="סגירה">×</button><div class="mc-ph">${p?photoImg(p.thumb?{path:p.thumb}:p,'decoding="async"'):plate(r.name)}</div><div class="mc-b"><h3>${esc(r.name)}</h3><p class="meta">${[r.status==='been'?'היינו':'רוצים ללכת',r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')}</p><div class="mrow">${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}${liveSt(r)}${distKm(r)!=null?`<span class="dist">${esc(distTxt(distKm(r)))}</span>`:''}</div>
+<div class="mc-acts"><button class="btn sm pri" type="button" data-mc="open">פרטים</button><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a>${moovitOk(r)?'<button class="btn sm" type="button" data-mc="moovit">🚌</button>':''}</div></div>`;
+  el.dataset.id=r.id;el.hidden=false;hydrate();
+  if(mcSel){const o=mcSel.getElement&&mcSel.getElement();if(o)o.classList.remove('sel')}mcSel=mkById[r.id]||null;const ne=mcSel&&mcSel.getElement&&mcSel.getElement();if(ne)ne.classList.add('sel')}
+function hideMapCard(){const el=$('#mapCard');if(el)el.hidden=true;if(mcSel){const o=mcSel.getElement&&mcSel.getElement();if(o)o.classList.remove('sel');mcSel=null}}
+document.addEventListener('click',e=>{const b=e.target.closest('#mapCard [data-mc]');if(!b)return;const id=$('#mapCard').dataset.id,k=b.dataset.mc;if(k==='x')hideMapCard();else if(k==='open')openDetail(id);else if(k==='moovit')openMoovit(byId(id))});
 
 /* intro splash on every launch */
 {const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
