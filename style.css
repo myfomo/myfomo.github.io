@@ -863,3 +863,17 @@ html[data-hc] .meta,html[data-hc] .note{color:var(--ink)}
 .open.gone{background:light-dark(#fde2e2,#4a1d1d);color:light-dark(#a11,#f9b4b4)}
 .gone-sec{background:light-dark(#fff1f1,#2e1717);border-radius:16px}
 .me-grid [hidden]{display:none}
+/* v44: install-first screen */
+.gate .istep{font-family:Rubik;font-weight:700;font-size:13px;letter-spacing:.04em;opacity:.85;margin:6px 0 4px}
+.gate .ih{font-family:Rubik;font-size:24px;line-height:1.2;margin:0 0 8px}
+.gate .isub{opacity:.92;margin:0 0 16px}
+.gate .ibox{background:#ffffff1f;border:1px solid #ffffff40;border-radius:20px;padding:14px;text-align:right}
+.isteps{list-style:none;margin:0;padding:0;display:grid;gap:10px;text-align:right}
+.isteps li{display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.isteps li b{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Rubik;font-size:14px;background:var(--grad);color:#fff}
+.gate .isteps li b{background:#fff;color:#FF4E50}
+.ikey{display:inline-block;padding:0 8px;border-radius:8px;font-weight:800;background:light-dark(#FFEFE3,#3a2630);color:inherit;white-space:nowrap}
+.gate .ikey{background:#ffffff33}
+.inote{font-size:14px;opacity:.9;margin:0 0 10px;text-align:right}
+.gate .ilater{background:none;border:0;color:#fff;opacity:.85;text-decoration:underline;font:inherit;font-size:15px;margin-top:18px;cursor:pointer;padding:8px}
+.calp-in .isteps{margin:6px 0 4px}

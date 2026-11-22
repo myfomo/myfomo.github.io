@@ -369,7 +369,7 @@ ${pubSecHtml()}${backupSecHtml()}<div id="qAdm"></div>
 <div class="sec"><h4>מראה</h4><div class="seg" role="group" aria-label="ערכת צבעים">${[['auto','אוטומטי'],['light','בהיר'],['dark','כהה']].map(([k,t])=>`<button type="button" data-act="theme" data-t="${k}" aria-pressed="${curTheme()===k}">${t}</button>`).join('')}</div></div>
 <div class="sec"><h4>תצוגה</h4>${dispHtml()}</div>
 <div class="sec"><h4>ייבוא</h4><button class="btn" type="button" data-act="import">${ICON.pin}ייבוא מקומות שמורים מגוגל מפות</button></div>
-<div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':isSamsung()?`<p class="note" style="margin:0 0 10px">בדפדפן של סמסונג (Samsung Internet) גוגל חוסמת את ההתקנה ומציגה הודעה על "גרסת אנדרואיד ישנה". מתקינים דרך Chrome:</p><a class="btn pri" href="${CHROME_URL}">פתיחה ב־Chrome</a><ol class="steps"><li>ב־Chrome לוחצים על התפריט (⋮).</li><li>בוחרים "התקנת אפליקציה" או "הוספה למסך הבית".</li></ol>`:installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
+<div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':isPhone()?instSteps(instPlat())+instBtn(instPlat()).replace('class="btn"','class="btn pri"').replace(BRASS,''):'<p class="note" style="margin:0">פותחים את הקישור בטלפון ומתקינים משם.</p>'}
 </div>
 <div class="sec"><h4>שליחת האפליקציה לחברים</h4><p class="note" style="margin:0 0 10px">קישור קבוע לאפליקציה עצמה, בלי הצטרפות לרשימה שלכם. מי שנכנס נרשם ופותח רשימה משלו.</p><button class="btn" type="button" data-act="shareApp">📲 שליחת האפליקציה</button></div>${accountSecHtml()}<div class="sec"><div class="row"><button class="btn" type="button" data-act="onb">הדרכה קצרה על האפליקציה</button><button class="btn" type="button" data-act="signout">התנתקות</button></div></div>`}
 const codeFrom=v=>{v=String(v||'').trim();try{const u=new URL(v);return u.searchParams.get('join')||''}catch{}return /^[a-f0-9]{8,40}$/i.test(v)?v:''};
@@ -1323,7 +1323,7 @@ async function afterListGone(msg){closeSheet();await loadLists();toast(msg);if(!
 let bound=false,visBound=false;
 async function start(){
   const {data:{session:s}}=await sb.auth.getSession();session=s;
-  if(!s){showLogin('',!!joinCode);return}
+  if(!s){if(!joinCode&&needInstallGate())installGate(()=>showLogin('',false));else showLogin('',!!joinCode);return}
   me={id:s.user.id,email:String(s.user.email||'').toLowerCase(),created:s.user.created_at};myId=me.id;
   try{const {data:bl}=await sb.rpc('is_blocked');if(bl===true){blockedGate();return}}catch{}
   try{
@@ -1349,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='43';
+const APPV='44';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1728,7 +1728,7 @@ function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNe
 {const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const hide=()=>{if(!sp||sp.classList.contains('out'))return;sp.classList.add('out');document.body.classList.remove('splashing');setTimeout(()=>sp.remove(),800)};
  if(sp){sp.addEventListener('click',hide);setTimeout(hide,reduce?500:2600)}}
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();if(isSamsung())return;installEvt=e});
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();if(isSamsung())return;installEvt=e;if(installGate.redraw)installGate.redraw()});
 if('serviceWorker' in navigator){let hadCtl=!!navigator.serviceWorker.controller,reloaded=false;
   navigator.serviceWorker.addEventListener('controllerchange',()=>{if(hadCtl&&!reloaded){reloaded=true;location.reload()}});
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}))}
@@ -1756,20 +1756,53 @@ async function featHtml(){let L=null;try{const {data}=await sb.rpc('admin_featur
 async function adminSheet(){if(!sb)return;let ok=false;try{const {data}=await sb.rpc('is_quota_admin');ok=data===true}catch{}if(!ok){toast('המסך הזה רק למנהל המערכת');return}
   killFormMap();openId=null;mode='admin';openSheet();$('#sb').innerHTML=`<div class="sec dh"><h2>🛠️ ניהול המערכת</h2><p class="meta" style="margin-top:6px">רק את/ה רואה את המסך הזה.</p></div><div id="qAdm" class="sec"><p class="note" style="margin:0">טוען…</p></div>`;fillQuotaAdm()}
 
+/* install first: a dedicated screen before login on phones, steps per device */
+function instPlat(){const ua=navigator.userAgent;
+  if(isIOS()){if(/Instagram|FBAN|FBAV|Line\/|Snapchat|TikTok|musical_ly|GSA\//i.test(ua))return 'ios-inapp';if(/CriOS/i.test(ua))return 'ios-chrome';if(/FxiOS|EdgiOS|OPiOS|DuckDuckGo/i.test(ua))return 'ios-other';
+    const v=+((ua.match(/Version\/(\d+)/)||[])[1]||0);return v>=26?'ios26':'ios'}
+  if(/Android/i.test(ua)){if(isSamsung())return 'and-samsung';if(/; wv\)|Instagram|FBAN|FBAV|Line\/|TikTok|musical_ly/i.test(ua))return 'and-inapp';if(/Chrome\//i.test(ua)&&!/EdgA|OPR|Firefox|YaBrowser|MiuiBrowser|HuaweiBrowser/i.test(ua))return 'and-chrome';return 'and-other'}
+  return 'desktop'}
+const isPhone=()=>instPlat()!=='desktop';
+function instSteps(pl){const L=a=>`<ol class="isteps">${a.map((t,i)=>`<li><b>${i+1}</b><span>${t}</span></li>`).join('')}</ol>`,K=t=>`<span class="ikey">${t}</span>`;
+  if(pl==='ios26')return L([`לוחצים על ${K('⋯')} ליד שורת הכתובת, למטה.`,`בוחרים ${K('שיתוף')} (ריבוע עם חץ למעלה).`,`גוללים למטה ובוחרים ${K('הוספה למסך הבית')}`,`משאירים את המתג שמופיע שם דלוק, ולוחצים ${K('הוספה')}`]);
+  if(pl==='ios')return L([`לוחצים על כפתור השיתוף ${K('⬆️')} בתחתית המסך.`,`גוללים ובוחרים ${K('הוספה למסך הבית')}`,`לוחצים ${K('הוספה')}`]);
+  if(pl==='ios-chrome')return L([`לוחצים על כפתור השיתוף ${K('⬆️')} בשורת הכתובת.`,`בוחרים ${K('הוספה למסך הבית')}`,`לוחצים ${K('הוספה')}`]);
+  if(pl==='ios-inapp'||pl==='ios-other')return `<p class="inote">הדפדפן הזה לא יודע להוסיף למסך הבית. פותחים את הקישור ב־<b>Safari</b>:</p>`+L([`לוחצים על ${K('העתקת הקישור')} כאן למטה.`,`פותחים את <b>Safari</b> ומדביקים בשורת הכתובת.`,`ושם עושים "הוספה למסך הבית".`]);
+  if(pl==='and-chrome')return installEvt?'<p class="inote">לחיצה אחת, וזה על המסך.</p>':L([`לוחצים על התפריט ${K('⋮')} למעלה.`,`בוחרים ${K('התקנת אפליקציה')} או ${K('הוספה למסך הבית')}`,`מאשרים ${K('התקנה')}`]);
+  if(pl==='and-samsung')return '<p class="inote">בדפדפן של סמסונג גוגל חוסמת את ההתקנה. ב־<b>Chrome</b> זה עובד בלחיצה אחת:</p>'+L([`לוחצים ${K('פתיחה ב־Chrome')}`,`שם לוחצים ${K('התקנה')}`]);
+  return '<p class="inote">הכי פשוט להתקין דרך <b>Chrome</b>:</p>'+L([`לוחצים ${K('פתיחה ב־Chrome')}`,`שם לוחצים ${K('התקנה')}`])}
+function instBtn(pl){if(pl==='and-chrome'&&installEvt)return '<button class="btn" type="button" data-ig="install" '+BRASS+'>📲 התקנת FOMO</button>';
+  if(/^and-(samsung|inapp|other)$/.test(pl))return `<a class="btn" href="${CHROME_URL}" data-ig="chrome" ${BRASS}>פתיחה ב־Chrome</a>`;
+  if(pl==='ios-inapp'||pl==='ios-other')return '<button class="btn" type="button" data-ig="copy" '+BRASS+'>העתקת הקישור</button>';return ''}
+function needInstallGate(){try{return isPhone()&&!isStandalone()&&!sessionStorage.getItem('rs-inst-skip')&&!lsGet('rs-inst-done',0)}catch{return false}}
+function installGate(next){const pl=instPlat(),ios=pl.startsWith('ios');track('install-gate');
+  const draw=()=>{gate(`<p class="istep">שלב 1 מתוך 2</p><h2 class="ih">קודם, FOMO על מסך הבית 📲</h2><p class="isub">ככה היא נפתחת כמו אפליקציה רגילה, עם התראות, ולא הולכת לאיבוד בין הלשוניות.</p>
+    <div class="ibox">${instSteps(pl)}</div>${instBtn(pl)}${ios?'<p class="inote" style="margin-top:12px">אחרי ההוספה פותחים את FOMO מהמסך ונכנסים שם. כך תצטרכו להתחבר רק פעם אחת.</p>':''}
+    <button class="ilater" type="button" data-ig="later">המשך בדפדפן בינתיים</button>`);
+    const g=$('#gate');g.onclick=e=>{const b=e.target.closest('[data-ig=later]');if(!b)return;try{sessionStorage.setItem('rs-inst-skip','1')}catch{}track('install-later');g.onclick=null;installGate.redraw=null;next()}};
+  draw();installGate.redraw=()=>{if($('#gate')&&!$('#gate').hidden&&$('.istep'))draw()}}
+window.addEventListener('appinstalled',()=>{lsSet('rs-inst-done',1)});
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-ig]');if(!b)return;const k=b.dataset.ig;
+  if(k==='copy'){try{await navigator.clipboard.writeText(location.origin+'/');b.textContent='✓ הועתק. עכשיו פותחים את Safari'}catch{b.textContent=location.origin}return}
+  if(k==='chrome'){track('install-chrome');return}
+  if(k==='install'&&installEvt){const ev=installEvt;installEvt=null;ev.prompt();let ok=false;try{const c=await ev.userChoice;ok=!!(c&&c.outcome==='accepted')}catch{}
+    if(ok){lsSet('rs-inst-done',1);const ib=document.querySelector('.instb');if(ib)ib.remove();if($('.istep'))gate('<h2 class="ih">מעולה, FOMO על המסך 🎉</h2><p class="isub">אפשר לפתוח אותה מהמסך, או להמשיך כאן.</p><button class="btn" type="button" data-ig="later" '+BRASS+'>המשך</button>');else toast('FOMO הותקנה 🎉')}
+    else if(installGate.redraw)installGate.redraw()}});
+
 /* 43: install banner (Safari/Android, not installed yet) */
-function instBanner(){try{if(isStandalone()||!(isIOS()||installEvt||isSamsung()))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;
+function instBanner(){try{if(isStandalone()||!isPhone()||lsGet('rs-inst-done',0))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;
   if(!myId||!loaded||!lsGet('rs-onb2',0)||document.querySelector('.onb,.coach,.calp,.upd')){setTimeout(instBanner,15000);return}
   const safari=isIOS()&&!/crios|fxios|edgios|gsa\//i.test(navigator.userAgent);
   const d=document.createElement('div');d.className='instb';d.setAttribute('role','region');d.setAttribute('aria-label','התקנת האפליקציה');
-  d.innerHTML=`<span class="instb-ic" aria-hidden="true">📲</span><div class="instb-t"><b>FOMO על מסך הבית</b><small>${isSamsung()?'מתקינים דרך Chrome, כאן גוגל חוסמת':'נפתחת כמו אפליקציה, עם התראות'}</small></div>${isSamsung()?`<a class="btn pri" href="${CHROME_URL}" data-ib="chrome">פתיחה ב־Chrome</a>`:`<button class="btn pri" type="button" data-ib="go">${installEvt?'התקנה':'איך?'}</button>`}<button class="instb-x" type="button" data-ib="x" aria-label="לא עכשיו">×</button>`;
-  d.addEventListener('click',e=>{const b=e.target.closest('[data-ib]');if(!b)return;if(b.dataset.ib==='x'){lsSet('rs-inst-dis',Date.now()+14*864e5);d.classList.remove('in');setTimeout(()=>d.remove(),250);return}
-    if(b.dataset.ib==='chrome'){track('install-chrome');return}track('install-banner');if(installEvt){const ev=installEvt;installEvt=null;ev.prompt();(ev.userChoice||Promise.resolve()).then(c=>{if(c&&c.outcome==='accepted')d.remove()}).catch(()=>{});return}instHow(safari)});
+  d.innerHTML=`<span class="instb-ic" aria-hidden="true">📲</span><div class="instb-t"><b>FOMO על מסך הבית</b><small>${/^and-(samsung|inapp|other)$/.test(instPlat())?'מתקינים דרך Chrome, בלחיצה':'נפתחת כמו אפליקציה, עם התראות'}</small></div>${/^and-(samsung|inapp|other)$/.test(instPlat())?`<a class="btn pri" href="${CHROME_URL}" data-ib="chrome">פתיחה ב־Chrome</a>`:`<button class="btn pri" type="button" data-ib="go">${installEvt?'התקנה':'איך?'}</button>`}<button class="instb-x" type="button" data-ib="x" aria-label="לא עכשיו">×</button>`;
+  d.addEventListener('click',e=>{const b=e.target.closest('[data-ib]');if(!b)return;if(b.dataset.ib==='x'){lsSet('rs-inst-dis',Date.now()+3*864e5);d.classList.remove('in');setTimeout(()=>d.remove(),250);return}
+    if(b.dataset.ib==='chrome'){track('install-chrome');return}track('install-banner');if(installEvt){const ev=installEvt;installEvt=null;ev.prompt();(ev.userChoice||Promise.resolve()).then(c=>{if(c&&c.outcome==='accepted')d.remove()}).catch(()=>{});return}instHow()});
   document.body.appendChild(d);requestAnimationFrame(()=>d.classList.add('in'))}catch{}}
-function instHow(safari){const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','איך מתקינים');
-  d.innerHTML=`<div class="calp-in"><h3>התקנה באייפון</h3>${safari?'':'<p class="meta">קודם פותחים את הקישור ב־<b>Safari</b>. באייפון רק הוא יודע להתקין.</p>'}<ol class="steps"><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה) בתחתית המסך.</li><li>גוללים ובוחרים <b>"הוספה למסך הבית"</b>.</li><li>לוחצים <b>"הוספה"</b>. זהו, FOMO על המסך, עם התראות.</li></ol><button class="btn pri" type="button" data-n>הבנתי</button></div>`;
+function instHow(){const pl=instPlat();const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','איך מתקינים');
+  d.innerHTML=`<div class="calp-in"><h3>FOMO על מסך הבית</h3>${instSteps(pl)}${instBtn(pl)}<button class="btn" type="button" data-n style="margin-top:10px">הבנתי</button></div>`;
   d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-n]'))d.remove()});document.body.appendChild(d)}
 window.addEventListener('appinstalled',()=>{const b=document.querySelector('.instb');if(b)b.remove()});
-setTimeout(instBanner,25000);
+setTimeout(instBanner,8000);
 
 /* 45: personal greeting */
 function greetHtml(){if(!loaded)return '';const h=new Date().getHours();const [g,ic]=h>=5&&h<12?['בוקר טוב','☀️']:h>=12&&h<17?['צהריים טובים','🌤️']:h>=17&&h<22?['ערב טוב','🌆']:['לילה טוב','🌙'];
