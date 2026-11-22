@@ -806,3 +806,25 @@ html[data-hc] .meta,html[data-hc] .note{color:var(--ink)}
 .dbar svg{width:22px;height:22px;color:var(--red)}.dbar b{font-size:20px;line-height:22px;font-weight:400}
 .dbar>:first-child{background:var(--grad);color:#fff}.dbar>:first-child svg{color:#fff}
 @media(max-width:700px){.sheet{padding-bottom:calc(10px + env(safe-area-inset-bottom))}}
+/* v36 vouchers */
+.vch{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px dashed var(--line)}.vch.old{opacity:.6}
+.vch-ic{width:42px;height:42px;border-radius:14px;background:var(--grad);display:grid;place-items:center;font-size:22px;flex:none}
+.vch-b{flex:1;min-width:0;display:grid;gap:2px}.vch-b small{color:var(--mute)}.vch-b small.warn{color:light-dark(#B45309,#FFCB73);font-weight:700}
+.vch-code{font-family:ui-monospace,monospace;background:var(--soft);border-radius:8px;padding:2px 8px;justify-self:start;color:var(--ink)!important}
+.vch-a{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:46%}
+.vban{display:block;width:100%;margin-top:12px;text-align:start;border:0;cursor:pointer;font:inherit;color:inherit;background:linear-gradient(90deg,#FFE8B3,#FFD3E0);border-radius:16px;padding:10px 14px;color:#2a1630}
+.vban small{color:#6B3A2E}
+/* friends loved */
+#friendsLoved:empty{display:none}#friendsLoved{margin:4px 0 14px}
+.fl-h{display:grid;gap:2px;margin-bottom:8px}.fl-h small{color:var(--mute)}
+.fl-row{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 8px;scroll-snap-type:x mandatory}.fl-row::-webkit-scrollbar{display:none}
+.fl-card{flex:none;width:156px;scroll-snap-align:start;display:grid;gap:3px;text-align:start;border:0;background:var(--card);border-radius:20px;padding:0 0 12px;overflow:hidden;box-shadow:var(--shadow-sm,var(--shadow));font:inherit;color:inherit;cursor:pointer}
+.fl-card>*:not(.fl-pl){padding:0 12px}.fl-pl{display:block;height:84px;background:var(--soft);overflow:hidden}.fl-pl svg{width:100%;height:100%}
+.fl-card b{font-size:15px;margin-top:6px}.fl-card small{color:var(--mute);font-size:12px}.fl-r{font-size:13px;font-weight:700}.fl-r i{color:#FFB547;font-style:normal}
+.fl-add{color:var(--red);font-weight:800;font-size:13px;margin-top:2px}
+/* practical filters + happy hour */
+.featrow{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:6px 0 2px}.featrow::-webkit-scrollbar{display:none}.featrow .chip{flex:none}
+.badge.hh.soon{opacity:.85}
+.hhdays{margin-top:8px;gap:6px}
+/* QR */
+.qr-in{max-width:340px}.qr-box{background:#fff;border-radius:18px;padding:12px;margin:6px auto 4px;width:min(260px,70vw)}.qr-box svg{width:100%;height:auto;display:block}
