@@ -580,7 +580,7 @@ function gmaps(){const k=(window.APP_CONFIG||{}).googleKey;if(!k)return Promise.
   gReady=new Promise(res=>{window.__gmInit=()=>res(window.google);const s=document.createElement('script');s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(k)}&libraries=places&language=iw&region=IL&loading=async&callback=__gmInit`;s.async=true;s.onerror=()=>{gReady=null;res(null)};document.head.appendChild(s);setTimeout(()=>res(window.google||null),12000)});return gReady}
 const GF=['delivery','servesVegetarianFood','photos','displayName','formattedAddress','addressComponents','location','googleMapsURI','websiteURI','regularOpeningHours','priceLevel','primaryType','types'];
 /* ---- shared Google quota (server-side, per day for everyone + per user) ---- */
-const QK={place:{what:'החיפושים בגוגל',unit:'חיפושים',alt:'בינתיים החיפוש הרגיל ממשיך לעבוד: הוא ימלא שם וכתובת, ואת השאר אפשר להשלים ידנית או לסמן את המקום במפה.'},
+const QK={gsearch:{what:'החיפושים החכמים בגוגל',unit:'חיפושים',alt:'בינתיים אפשר לחפש לפי שם, וזה ממשיך לעבוד כרגיל.'},place:{what:'החיפושים בגוגל',unit:'חיפושים',alt:'בינתיים החיפוש הרגיל ממשיך לעבוד: הוא ימלא שם וכתובת, ואת השאר אפשר להשלים ידנית או לסמן את המקום במפה.'},
   photo:{what:'הבאת התמונות מגוגל',unit:'תמונות',alt:'בינתיים אפשר להעלות תמונה מהטלפון בכפתור התמונות.'},
   ai:{what:'עוזר ה־AI',unit:'בקשות',the:'בקשות ה־AI',alt:'בינתיים החיפוש והסריקה ממשיכים לעבוד בדרך הרגילה, רק בלי העזרה החכמה.'},
   vision:{what:'סריקות הקבלות של גוגל',unit:'סריקות',alt:'בינתיים הקבלה נקראת ישירות במכשיר. זה קצת פחות מדויק, אז כדאי לעבור על התוצאה.'}};
@@ -665,7 +665,7 @@ function contribute(d){if(!sb||!navigator.onLine||!d||!d.name)return Promise.res
   if(hz&&formSrc.hoursSrc!=='google'){p.hours=hz;p.hours_src=formSrc.hoursSrc||'user'}
   return sb.rpc('contribute_place',{p}).then(({data})=>data||null,()=>null)}
 async function placePick(i){let x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)return;
-  formSrc={};if(x.cat)formSrc={pid:x.pid,hoursSrc:x.hours?'user':'',phone:x.phone};else if(x.osm)formSrc={osm:x.osm,phone:x.phone,hoursSrc:x.hours?'osm':''};
+  formSrc={};if(x.cat)formSrc={pid:x.pid,hoursSrc:x.hours?'user':'',phone:x.phone};else if(x.osm)formSrc={osm:x.osm,phone:x.phone,hoursSrc:x.hours?'osm':''};else if(x.g&&!x.pred)formSrc={gpid:x.gpid||'',hoursSrc:'google'};
   if(x.pred){const ul=$('#placeRes');ul.innerHTML=BUSY;let pl=null;try{pl=await gDetails(x.pred)}catch(e){console.warn('google details',e)}
     if(pl){x=gToItem(pl);formSrc={gpid:pl.id||'',hoursSrc:'google'}}else{const o=await osmSearch([x.name,x.full].filter(Boolean).join(' '),true);x=o[0]?Object.assign(o[0],{name:x.name}):{name:x.name}}
     f=$('#ef');if(!f)return}
@@ -1349,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='47';
+const APPV='48';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1838,6 +1838,8 @@ const SX_DESC=/(^|\s)(משהו|מקום|מקומות|שקט|שקטה|זול|זו
 const sxIsDesc=v=>{const w=v.trim().split(/\s+/).filter(Boolean);return w.length>=3||(w.length>=2&&SX_DESC.test(' '+v+' '))};
 const sxSrcLbl=x=>x.cat?'מהקטלוג':x.g?'מגוגל':(x.osm||!x.cat)?'מהמפה':'';
 function sxInList(x){if(!x||!x.name)return null;return rows.find(r=>(x.pid&&r.placeId===x.pid)||sameP({name:x.name,lat:x.lat,lng:x.lng},{name:r.name,lat:hasLL(r)?r.lat:undefined,lng:hasLL(r)?r.lng:undefined}))||null}
+/* basic Google fields only for the result list (cheaper); full details are fetched when a result is added */
+const SXF=['id','displayName','formattedAddress','addressComponents','location','types','primaryType','googleMapsURI','businessStatus'];
 var sxIntent=null;var sxCache=new Map();
 function sxWhy(x,I){if(!I)return '';const w=[];if(I.cuisine&&x.cuisine===I.cuisine)w.push(x.cuisine);else if(x.cuisine)w.push(x.cuisine);
   if(I.city&&x.city&&(fomoNorm(x.city).includes(fomoNorm(I.city))||fomoNorm(I.city).includes(fomoNorm(x.city))))w.push('ב'+x.city);if(I.cheap&&x.price&&x.price<=2)w.push('לא יקר');if(I.fancy&&x.price>=3)w.push('יוקרתי');
@@ -1847,7 +1849,7 @@ async function sxSearch(v,opt){v=v.trim();const key=v+'|'+(opt&&opt.desc?1:0);if
   if(opt&&opt.desc){const I=await aiCall({action:'intent',q:v,cuisines:CUIS,tags:TAGS});
     if(I&&I.ok&&I.kind==='describe'){track('ai-search');if(I.city)I.city=String(I.city).replace(/^תל[\s-]?אביב\s*[-–]?\s*יפו$/,'תל אביב');const L=[];
       try{const {data}=await sb.rpc('browse_places',{c:I.cuisine,cty:I.city,lim:8});for(const p of data||[])L.push(catToItem(p))}catch(e){console.warn('browse',e)}
-      if(I.query&&(window.APP_CONFIG||{}).googleKey){const qq=await takeQuota('place');if(qq.ok){try{const ps=await gSearch(I.query,GF);for(const p of ps||[]){if(!isFoodG([p.primaryType,...(p.types||[])]))continue;const it=gToItem(p);it.gpid=p.id||'';if(!L.some(y=>sameP(y,it)))L.push(it)}}catch(e){console.warn('g text',e)}}}
+      if(I.query&&(window.APP_CONFIG||{}).googleKey){const qq=await takeQuota('gsearch');if(qq.ok){try{const ps=await gSearch(I.query,SXF);for(const p of ps||[]){if(p.businessStatus==='CLOSED_PERMANENTLY'||!isFoodG([p.primaryType,...(p.types||[])]))continue;const it=gToItem(p);it.gpid=p.id||'';if(!L.some(y=>sameP(y,it)))L.push(it)}}catch(e){console.warn('g text',e)}}}
       const ok=x=>(x.g||!I.cuisine||!x.cuisine||x.cuisine===I.cuisine)&&(!I.cheap||!x.price||x.price<=2)&&(!I.fancy||!x.price||x.price>=3)&&(!I.open_now||!x.hours||(openState(x)||{}).open);
       const items=L.filter(ok).slice(0,8);items.forEach(x=>x.why=sxWhy(x,I));out={mode:'ai',intent:I,items}}
     else if(I&&I.ok&&I.kind==='name'&&I.name)v=[I.name,I.city].filter(Boolean).join(' ')}
@@ -1899,7 +1901,9 @@ async function sxPlusRun(v,force){v=(v||'').trim();const B=$('#sxPB');if(!B)retu
   let r=null;try{r=await sxSearch(v,{desc})}finally{stop();if(W)W.classList.remove('busy')}if(seq!==sxPSeq||!$('#sxPB'))return;
   sxRes.plus=r.items;$('#sxPB').innerHTML=(r.mode==='name'?'<p style="margin:0 2px 10px"><span class="sx-fast">⚡ מיידי</span></p>':sxIntentHtml(r.intent))+`<div class="sx-list">${r.items.length?r.items.map((x,i)=>sxRow(x,i,'plus')).join(''):'<p class="sx-note">לא מצאנו. אפשר להוסיף ידנית 👇</p>'}</div>`}
 /* ---- picking a result opens the form, filled and arranged ---- */
-async function sxAdd(x){track('sx-add');try{await loadLeaflet()}catch{}newForm();const f=$('#ef');if(!f)return;const qi=$('#placeQ');if(qi)qi.blur();
+async function sxAdd(x){track('sx-add');try{await loadLeaflet()}catch{}
+  if(x.g&&x.gpid&&!x.pred){const qq=await takeQuota('place');if(qq.ok){try{const g=await gmaps();const {Place}=await g.maps.importLibrary('places');const pl=new Place({id:x.gpid});await pl.fetchFields({fields:GF});const it=gToItem(pl);it.gpid=x.gpid;x=it}catch(e){console.warn('g details',e)}}}
+  newForm();const f=$('#ef');if(!f)return;const qi=$('#placeQ');if(qi)qi.blur();
   f.classList.add('sx-compact');placeSearch.res=[x];await placePick(0);sxCompact()}
 function sxCompact(){const f=$('#ef');if(!f||f.dataset.sx)return;f.dataset.sx='1';const E=f.elements,g=f.querySelector('.grid2'),quick=f.querySelector('.quick');
   const st=$('#fillSt'),dn=$('#dupN');if(quick){if(st)quick.before(st);if(dn)quick.before(dn);quick.hidden=true}
