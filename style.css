@@ -862,3 +862,4 @@ html[data-hc] .meta,html[data-hc] .note{color:var(--ink)}
 .dupn[hidden]{display:none}.dupn span{flex:1 1 100%}
 .open.gone{background:light-dark(#fde2e2,#4a1d1d);color:light-dark(#a11,#f9b4b4)}
 .gone-sec{background:light-dark(#fff1f1,#2e1717);border-radius:16px}
+.me-grid [hidden]{display:none}

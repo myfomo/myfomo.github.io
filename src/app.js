@@ -1349,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='42';
+const APPV='43';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1536,9 +1536,9 @@ function renderMe(){const el=$('#me');if(!el)return;const nmMe=myName||String((m
   const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,vis=allVisits().length;
   el.innerHTML=`<div class="me-card"><div class="me-av" aria-hidden="true">${esc(nmMe.trim().charAt(0))}</div><div><h2>${esc(nmMe)}</h2><p class="meta">${esc(cur?cur.name:'')}</p></div></div>
 <div class="me-stats"><div><b>${been}</b><small>היינו</small></div><div><b>${want}</b><small>רוצים ללכת</small></div><div><b>${vis}</b><small>ביקורים</small></div></div>
-<div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">🍽️</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">📊</span>הנתונים שלנו</a><button type="button" data-me="lists"><span aria-hidden="true">📋</span>הרשימות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">🔔</span>מה חדש</button><button type="button" data-me="app"><span aria-hidden="true">📲</span>שליחת האפליקציה</button><button type="button" data-me="vch"><span aria-hidden="true">🎁</span>שוברים</button><button type="button" data-me="set"><span aria-hidden="true">⚙️</span>הגדרות</button><button type="button" data-me="onb"><span aria-hidden="true">💡</span>הדרכה</button></div>
-<div class="me-sec"><h4>תצוגה</h4>${dispHtml()}</div>`}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='vch')vouchersSheet();else if(k==='app')appShareDlg();else if(k==='onb'){resetTips();onbSheet()}});
+<div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">🍽️</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">📊</span>הנתונים שלנו</a><button type="button" data-me="lists"><span aria-hidden="true">📋</span>הרשימות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">🔔</span>מה חדש</button><button type="button" data-me="app"><span aria-hidden="true">📲</span>שליחת האפליקציה</button><button type="button" data-me="vch"><span aria-hidden="true">🎁</span>שוברים</button><button type="button" data-me="set"><span aria-hidden="true">⚙️</span>הגדרות</button><button type="button" data-me="onb"><span aria-hidden="true">💡</span>הדרכה</button><button type="button" data-me="adm" id="meAdm" hidden><span aria-hidden="true">🛠️</span>ניהול המערכת</button></div>
+<div class="me-sec"><h4>תצוגה</h4>${dispHtml()}</div>`;amAdmin().then(v=>{const b=$('#meAdm');if(b)b.hidden=!v})}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='vch')vouchersSheet();else if(k==='app')appShareDlg();else if(k==='onb'){resetTips();onbSheet()}else if(k==='adm')adminSheet()});
 
 /* ---- map: preview card ---- */
 let mkById={},mcSel=null;
@@ -1741,7 +1741,7 @@ document.addEventListener('click',e=>{try{const t=e.target.closest('[data-act],[
   const f=ds.act?'act:'+ds.act:ds.qf?'qf:'+ds.qf:ds.me?'me:'+ds.me:ds.v?'tab:'+ds.v:ds.fl!==undefined?'friendsLoved':ds.vopen!==undefined?'voucher':ds.openF?'qf:open':ds.tf?'tag':ds.gr?'greet:'+ds.gr:t.id?'btn:'+t.id:'';if(f)track(f)}catch{}},true);
 const FL={'tab:list':'לשונית רשימה','tab:map':'לשונית מפה','tab:timeline':'לשונית יציאות','tab:stats':'נתונים','tab:me':'לשונית אני','btn:addBtn':'הוספת מקום','btn:pickBtn':'לאן הולכים הערב?','btn:bellBtn':'פעמון עדכונים','btn:listBtn':'הרשימות שלי','btn:setBtn':'הגדרות',
   'qf:open':'פילטר פתוח עכשיו','qf:near':'קרוב אליי','qf:like':'בא לי','qf:new':'עוד לא ביקרנו','qf:hh':'האפי אוור עכשיו','qf:more':'פילטרים נוספים','tag':'פילטר תגיות','friendsLoved':'חברים אהבו','voucher':'שוברים','detail':'פתיחת מקום','search':'חיפוש מקום','ai':'זיהוי חכם בחיפוש',
-  'me:app':'שליחת האפליקציה','me:out':'יציאות (מסך אני)','me:vch':'ארנק שוברים','me:set':'הגדרות (מסך אני)','me:lists':'רשימות (מסך אני)','me:onb':'הדרכה מחדש','me:bell':'עדכונים (מסך אני)',
+  'me:app':'שליחת האפליקציה','me:out':'יציאות (מסך אני)','me:vch':'ארנק שוברים','me:set':'הגדרות (מסך אני)','me:lists':'רשימות (מסך אני)','me:onb':'הדרכה מחדש','me:bell':'עדכונים (מסך אני)','me:adm':'מסך ניהול',
   'act:moovit':'מוביט','act:wolt':'וולט','act:vote':'הצבעה בא לי','act:rate':'דירוג','act:fav':'מועדף','act:share':'שיתוף מקום','act:shareCard':'כרטיס שיתוף','act:qrInvite':'הזמנה ב־QR','act:shareInvite':'הזמנה לרשימה','act:shareApp':'שליחת האפליקציה',
   'act:planNew':'תכנון יציאה','act:evNew':'ערב עם כמה תחנות','act:pollNew':'סקר','act:wheelSpin':'גלגל הגורל','act:diceRoll':'קוביה','act:gameNew':'משחקים','act:camNear':'צילום בקרבת מקום','act:voice':'הקלטה קולית','act:recap':'סיכום תקופה','act:pubOn':'דף ציבורי','act:import':'ייבוא',
   'act:edit':'עריכת מקום','act:placeSearch':'חיפוש בטופס','act:gSearchNow':'חיפוש מורחב','act:theme':'ערכת צבעים','act:pushOn':'הפעלת התראות','act:install':'התקנה','install-banner':'באנר התקנה','act:dupOpen':'מניעת כפילות','greet:open':'ברכה: פתוחים עכשיו','greet:hh':'ברכה: האפי אוור'};
@@ -1751,6 +1751,10 @@ async function featHtml(){let L=null;try{const {data}=await sb.rpc('admin_featur
   const used=new Set(L.map(x=>x.f)),zero=Object.keys(FL).filter(k=>!used.has(k)&&!/^btn:|^tab:/.test(k)).slice(0,10),low=L.filter(x=>x.n<=2).slice(-6);
   return head+top.map(x=>`<div class="ubar"><div class="ubar-t"><span>${esc(lab(x.f))}</span><b>${x.n} · עד ${x.u} אנשים ביום</b></div><div class="ubar-b"><i style="width:${Math.max(2,Math.round(x.n/mx*100))}%"></i></div></div>`).join('')
    +`<h4 style="margin-top:14px">כמעט לא בשימוש</h4><p class="note" style="margin:0">${[...low.map(x=>esc(lab(x.f))+` (${x.n})`),...zero.map(k=>esc(FL[k])+' (0)')].join(' · ')||'הכל בשימוש 👌'}</p><p class="note" style="margin:6px 0 0">נספר רק כמה פעמים השתמשו בכל דבר, בלי לשמור מי.</p>`}
+
+/* admin screen (server decides: every admin call checks is_quota_admin) */
+async function adminSheet(){if(!sb)return;let ok=false;try{const {data}=await sb.rpc('is_quota_admin');ok=data===true}catch{}if(!ok){toast('המסך הזה רק למנהל המערכת');return}
+  killFormMap();openId=null;mode='admin';openSheet();$('#sb').innerHTML=`<div class="sec dh"><h2>🛠️ ניהול המערכת</h2><p class="meta" style="margin-top:6px">רק את/ה רואה את המסך הזה.</p></div><div id="qAdm" class="sec"><p class="note" style="margin:0">טוען…</p></div>`;fillQuotaAdm()}
 
 /* 43: install banner (Safari/Android, not installed yet) */
 function instBanner(){try{if(isStandalone()||!(isIOS()||installEvt||isSamsung()))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;
