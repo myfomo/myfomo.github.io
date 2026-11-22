@@ -280,7 +280,7 @@ function renderDetail(){
   box.innerHTML=`<div class="sec dh"><div class="row" style="margin-bottom:8px"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${isMatch(r)?'<span class="badge match">שנינו רוצים השבוע!</span>':''}${(r.tags||[]).map(t=>`<span class="chip" style="cursor:default">${esc(t)}</span>`).join('')}</div>
 <h2>${esc(r.name)}</h2><p class="meta" style="margin-top:6px">${[r.cuisine,r.address,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')}</p>
 ${r.recBy?`<p class="meta" style="margin-top:4px">המליץ/ה: <b style="color:var(--ink)">${esc(r.recBy)}</b></p>`:''}
-<div class="row" style="margin-top:14px"><a class="btn pri" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}גוגל מפות</a><a class="btn pri" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}ניווט ב־Waze</a>${moovitOk(r)?`<button class="btn" type="button" data-act="moovit">🚌 תחבורה ציבורית</button>`:''}<a class="btn" href="${esc(bookUrl(r))}" target="_blank" rel="noopener">${ICON.book}הזמנת שולחן</a>${showWolt(r)?(isStandalone()&&isIOS()?`<button class="btn" type="button" data-act="wolt">🛵 הזמנה בוולט</button>`:`<a class="btn" href="${esc(deliveryUrl(r))}" rel="noopener">🛵 ${woltDirect(r)?'הזמנה בוולט':'חיפוש בוולט'}</a>`):''}${site&&!BOOKRX.test(site)?`<a class="btn" href="${esc(site)}" target="_blank" rel="noopener">${ICON.link}אתר</a>`:''}<button class="btn" type="button" data-act="evNew" data-id="${esc(r.id)}">${ICON.users}ערב עם חברים</button><button class="btn" type="button" data-act="share">${ICON.share}שליחת מיקום</button><button class="btn" type="button" data-act="shareCard">${ICON.card}כרטיס לשיתוף</button>${exact(r)?`<button class="btn" type="button" data-act="copyLL">${ICON.copy}העתקת קואורדינטות</button>`:''}</div>
+<div class="row" style="margin-top:14px">${site&&!BOOKRX.test(site)?`<a class="btn" href="${esc(site)}" target="_blank" rel="noopener">${ICON.link}אתר</a>`:''}<button class="btn" type="button" data-act="evNew" data-id="${esc(r.id)}">${ICON.users}ערב עם חברים</button><button class="btn" type="button" data-act="share">${ICON.share}שליחת מיקום</button><button class="btn" type="button" data-act="shareCard">${ICON.card}כרטיס לשיתוף</button>${exact(r)?`<button class="btn" type="button" data-act="copyLL">${ICON.copy}העתקת קואורדינטות</button>`:''}</div>
 <div class="mini" id="gwrap"></div>
 <p class="note">${exact(r)?'מיקום מדויק נשמר.':hasLL(r)?'המיקום משוער. אפשר לדייק אותו בעריכה.':'עוד אין מיקום מדויק. בעריכה אפשר לחפש את המקום או לסמן אותו על המפה.'}</p></div>
 ${hoursView(r)}<div class="sec"><h4>בא לנו השבוע?</h4><div class="row"><button class="btn ${mv?'on':''}" type="button" data-act="vote" aria-pressed="${mv}">${mv?'♥ בא לי!':'♡ בא לי השבוע'}</button><span class="meta">${vt.length?vt.map(k=>esc(nm(k))).join(', ')+' גם רוצה':'עוד אף אחד אחר לא בחר'}</span></div><p class="note">הבחירה תקפה לשבוע. כששניכם בוחרים, המקום עולה לראש ההגרלה.</p></div>
@@ -294,6 +294,7 @@ ${visitForm()}</div>
 ${r.notes?`<div class="sec"><h4>הערות</h4><p style="margin:0;white-space:pre-wrap">${esc(r.notes)}</p></div>`:''}
 <div class="sec row"><button class="btn" type="button" data-act="fav">${r.fav?'♥ מועדף':'♡ סמנו כמועדף'}</button><button class="btn" type="button" data-act="edit">עריכה</button><button class="btn" type="button" data-act="del" style="color:var(--bad)">מחיקה</button></div>`;
   const gw=$('#gwrap');if(keep)gw.appendChild(keep);else gw.innerHTML=`<iframe id="gframe" data-src="${esc(gEmbed(r))}" src="${esc(gEmbed(r))}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="מפת גוגל"></iframe>`;
+  box.insertAdjacentHTML('beforeend',dbarHtml(r));
   hydrate();
 }
 
@@ -1335,7 +1336,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='34';
+const APPV='35';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1544,6 +1545,15 @@ function stickSetup(){const sen=$('#stkSen'),bar=$('#stickyBar');if(!sen||!bar)r
 function stickTop(){const bar=$('#stickyBar');if(!bar||!bar.classList.contains('stuck'))return;const g=$('#grid');if(!g)return;const y=g.getBoundingClientRect().top+window.scrollY-bar.offsetHeight-hdrOff()-8;if(window.scrollY>y)window.scrollTo({top:y,behavior:RM()?'auto':'smooth'})}
 stickSetup();addEventListener('resize',()=>{clearTimeout(stickSetup.t);stickSetup.t=setTimeout(stickSetup,150)});
 {const h=document.querySelector('header.band');if(h&&'ResizeObserver' in window)new ResizeObserver(()=>{clearTimeout(stickSetup.t);stickSetup.t=setTimeout(stickSetup,100)}).observe(h)}
+
+/* ---- sticky action bar at the bottom of a place ---- */
+function dbarHtml(r){const it=[];
+  it.push(`<a href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}<span>Waze</span></a>`);
+  if(moovitOk(r))it.push(`<button type="button" data-act="moovit"><b aria-hidden="true">🚌</b><span>מוביט</span></button>`);
+  it.push(`<a href="${esc(bookUrl(r))}" target="_blank" rel="noopener">${ICON.book}<span>הזמנה</span></a>`);
+  if(showWolt(r))it.push(isStandalone()&&isIOS()?`<button type="button" data-act="wolt"><b aria-hidden="true">🛵</b><span>וולט</span></button>`:`<a href="${esc(deliveryUrl(r))}" rel="noopener"><b aria-hidden="true">🛵</b><span>וולט</span></a>`);
+  it.push(`<a href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}<span>מפות</span></a>`);
+  return `<nav class="dbar" aria-label="פעולות מהירות" style="--n:${it.length}">${it.join('')}</nav>`}
 
 /* intro splash on every launch */
 {const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;

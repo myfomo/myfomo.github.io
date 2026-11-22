@@ -799,3 +799,10 @@ html[data-hc] .meta,html[data-hc] .note{color:var(--ink)}
 .stickybar .chip{flex:none}
 .chip-sep{flex:none;width:1px;align-self:stretch;margin:4px 2px;background:var(--line)}
 .chip[aria-busy=true]{opacity:.6}
+/* sticky action bar in a place */
+.dbar{position:sticky;bottom:calc(10px + env(safe-area-inset-bottom));z-index:8;margin:18px 14px 0;display:grid;grid-template-columns:repeat(var(--n),1fr);gap:4px;padding:6px;border-radius:22px;background:color-mix(in srgb,var(--card) 90%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 10px 30px #2a163033,0 0 0 1px var(--line)}
+.dbar>*{display:grid;justify-items:center;gap:3px;padding:8px 2px;border:0;border-radius:16px;background:none;color:inherit;font:inherit;font-size:12px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .2s var(--spring),background .2s}
+.dbar>*:active{transform:scale(.92);background:var(--soft)}
+.dbar svg{width:22px;height:22px;color:var(--red)}.dbar b{font-size:20px;line-height:22px;font-weight:400}
+.dbar>:first-child{background:var(--grad);color:#fff}.dbar>:first-child svg{color:#fff}
+@media(max-width:700px){.sheet{padding-bottom:calc(10px + env(safe-area-inset-bottom))}}
