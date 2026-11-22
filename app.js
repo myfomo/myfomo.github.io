@@ -11,7 +11,7 @@ const ICON={users:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 const CFG=window.APP_CONFIG||{};
 // invite link: ?join=CODE — remember it through sign-up, then clean the address bar
 let joinCode='';try{const u=new URL(location.href);const j=u.searchParams.get('join');if(j){localStorage.setItem('rs-join',j);u.searchParams.delete('join');history.replaceState(null,'',u.pathname+u.search+u.hash)}joinCode=localStorage.getItem('rs-join')||''}catch{}
-let lists=[],cur=null,myName='',chan=null,openF=false;
+let lists=[],cur=null,myName='',chan=null,openF=false,nearF=false,likeF=false;
 let sb=null,session=null,me=null,myId='',members=[],names={};
 let rows=[],loaded=false,view='all',q='',cuisF='',sort='recent',openId=null,mode='view',pickTimer=null,page='list',tlF='all',stYear=String(new Date().getFullYear());
 let installEvt=null;
@@ -114,7 +114,7 @@ async function switchList(id){const l=lists.find(x=>x.id===id)||lists[0];if(!l)r
   acts=[];polls=[];events=[];gameActs=null;meta={id:null,special:[],diets:{}};renderBell();renderNotices();sb.rpc('touch_list',{lid:l.id}).then(()=>{},()=>{});await loadMembers();await loadAll();if(page==='list')animIn();loadActivity();loadPolls();loadEvents();loadGameActs()}
 
 /* ---------- list ---------- */
-function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!openF||(openState(r)||{}).open)&&(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t)));
+function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!openF||(openState(r)||{}).open)&&(!likeF||iVoted(r))&&(!nearF||(distKm(r)??99)<=3)&&(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t)));
   const s={recent:(a,b)=>(b.updatedAt||0)-(a.updatedAt||0),rating:(a,b)=>avg(b)-avg(a),visit:(a,b)=>lastVisit(b).localeCompare(lastVisit(a)),name:(a,b)=>String(a.name).localeCompare(String(b.name),'he'),near:(a,b)=>(distKm(a)??1e9)-(distKm(b)??1e9)}[sort]||((a,b)=>0);return list.sort(s)}
 function renderHead(){const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,m=rows.filter(isMatch).length;
   $('#stats').innerHTML=loaded?`היינו ב־<b>${been}</b> · רוצים לנסות <b>${want}</b>${m?` · <b>${m}</b> ששנינו רוצים השבוע`:''}`:'טוען…'}
@@ -122,7 +122,7 @@ function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove
   const cs=[...new Set(rows.map(r=>r.cuisine).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'he'));
   if(cuisF&&!cs.includes(cuisF))cuisF='';
   const hasHours=rows.some(r=>r.hours&&Object.keys(r.hours).length);
-  $('#cuis').innerHTML=(hasHours?`<button type="button" class="chip openchip" data-open-f="1" aria-pressed="${openF}">פתוח עכשיו</button>`:'')+(cs.length>1?[`<button type="button" class="chip" data-c="" aria-pressed="${!cuisF}">כל הסוגים</button>`,...cs.map(c=>`<button type="button" class="chip" data-c="${esc(c)}" aria-pressed="${cuisF===c}">${esc(c)}</button>`)].join(''):'');renderNotices();
+  $('#cuis').innerHTML=(hasHours?`<button type="button" class="chip openchip" data-open-f="1" aria-pressed="${openF}">פתוח עכשיו</button>`:'')+`<button type="button" class="chip" data-qf="near" aria-pressed="${nearF}">📍 קרוב אליי</button><button type="button" class="chip" data-qf="like" aria-pressed="${likeF}">♥ בא לי</button><button type="button" class="chip" data-qf="new" aria-pressed="${view==='want'}">✨ עוד לא ביקרנו</button>`+(cs.length>1?'<span class="chip-sep" aria-hidden="true"></span>':'')+(cs.length>1?[`<button type="button" class="chip" data-c="" aria-pressed="${!cuisF}">כל הסוגים</button>`,...cs.map(c=>`<button type="button" class="chip" data-c="${esc(c)}" aria-pressed="${cuisF===c}">${esc(c)}</button>`)].join(''):'');renderNotices();
   const g=$('#grid');
   if(!loaded){g.innerHTML=SKEL.repeat(6);return}
   if(!rows.length){g.innerHTML=`<div class="empty"><h2>עוד אין כאן מסעדות</h2><p>הוסיפו מקום שהייתם בו או מקום שאתם חולמים עליו, והרשימה תתחיל להתמלא.</p><button class="btn pri" type="button" data-act="add">הוסיפו את הראשונה</button></div>`;return}
@@ -1095,7 +1095,12 @@ document.querySelectorAll('[data-tl]').forEach(b=>b.addEventListener('click',()=
 $('#stYear').addEventListener('change',e=>{stYear=e.target.value;renderStats()});
 $('#q').addEventListener('input',e=>{q=e.target.value;renderList()});
 $('#sort').addEventListener('change',async e=>{sort=e.target.value;if(sort==='near'){const l=await getLoc();if(!l){toast('צריך הרשאת מיקום כדי למיין לפי מרחק');}}try{localStorage.setItem('rs-sort',sort)}catch{}renderList()});
-$('#cuis').addEventListener('click',e=>{if(e.target.closest('[data-open-f]')){openF=!openF;renderList();return}const b=e.target.closest('[data-c]');if(b){cuisF=b.dataset.c;renderList()}});
+$('#cuis').addEventListener('click',async e=>{const qf=e.target.closest('[data-qf]');if(qf){const k=qf.dataset.qf;
+    if(k==='like')likeF=!likeF;
+    else if(k==='new'){view=view==='want'?'all':'want';document.querySelectorAll('#v-list .seg button').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.view===view)))}
+    else if(k==='near'){if(!nearF){qf.setAttribute('aria-busy','true');const l=await getLoc();qf.removeAttribute('aria-busy');if(!l){toast('צריך לאשר גישה למיקום כדי לסנן לפי קרבה');return}}nearF=!nearF}
+    renderList();stickTop();return}
+  if(e.target.closest('[data-open-f]')){openF=!openF;renderList();stickTop();return}const b=e.target.closest('[data-c]');if(b){cuisF=b.dataset.c;renderList();stickTop()}});
 $('#pickBtn').addEventListener('click',()=>pick());
 $('#fab').addEventListener('click',camSheet);
 $('#addBtn').addEventListener('click',newForm);
@@ -1330,7 +1335,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='33';
+const APPV='34';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1528,6 +1533,17 @@ function showMapCard(r){const el=$('#mapCard');if(!el||!r)return;const p=(r.phot
   if(mcSel){const o=mcSel.getElement&&mcSel.getElement();if(o)o.classList.remove('sel')}mcSel=mkById[r.id]||null;const ne=mcSel&&mcSel.getElement&&mcSel.getElement();if(ne)ne.classList.add('sel')}
 function hideMapCard(){const el=$('#mapCard');if(el)el.hidden=true;if(mcSel){const o=mcSel.getElement&&mcSel.getElement();if(o)o.classList.remove('sel');mcSel=null}}
 document.addEventListener('click',e=>{const b=e.target.closest('#mapCard [data-mc]');if(!b)return;const id=$('#mapCard').dataset.id,k=b.dataset.mc;if(k==='x')hideMapCard();else if(k==='open')openDetail(id);else if(k==='moovit')openMoovit(byId(id))});
+
+/* ---- sticky quick-filter bar (sits right under the header when the header is sticky) ---- */
+let stkIO=null;
+const hdrOff=()=>{const h=document.querySelector('header.band');return h&&getComputedStyle(h).position==='sticky'?h.offsetHeight:0};
+function stickSetup(){const sen=$('#stkSen'),bar=$('#stickyBar');if(!sen||!bar)return;const off=hdrOff();
+  document.documentElement.style.setProperty('--hdrH',off+'px');document.documentElement.style.setProperty('--stkPad',off?'0px':'env(safe-area-inset-top)');
+  if(!('IntersectionObserver' in window))return;if(stkIO)stkIO.disconnect();
+  stkIO=new IntersectionObserver(([en])=>{bar.classList.toggle('stuck',!en.isIntersecting&&en.boundingClientRect.top<off+1)},{threshold:0,rootMargin:`-${off}px 0px 0px 0px`});stkIO.observe(sen)}
+function stickTop(){const bar=$('#stickyBar');if(!bar||!bar.classList.contains('stuck'))return;const g=$('#grid');if(!g)return;const y=g.getBoundingClientRect().top+window.scrollY-bar.offsetHeight-hdrOff()-8;if(window.scrollY>y)window.scrollTo({top:y,behavior:RM()?'auto':'smooth'})}
+stickSetup();addEventListener('resize',()=>{clearTimeout(stickSetup.t);stickSetup.t=setTimeout(stickSetup,150)});
+{const h=document.querySelector('header.band');if(h&&'ResizeObserver' in window)new ResizeObserver(()=>{clearTimeout(stickSetup.t);stickSetup.t=setTimeout(stickSetup,100)}).observe(h)}
 
 /* intro splash on every launch */
 {const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;

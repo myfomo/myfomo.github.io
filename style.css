@@ -790,3 +790,12 @@ html[data-hc] .card,html[data-hc] .soon-it,html[data-hc] .me-grid>*,html[data-hc
 html[data-hc] .badge{box-shadow:0 0 0 1.5px #0006}
 html[data-hc] .meta,html[data-hc] .note{color:var(--ink)}
 .utoast[hidden],.mapcard[hidden]{display:none}
+/* sticky quick filters */
+.stk-sen{height:1px}
+.stickybar{position:sticky;top:var(--hdrH,0px);z-index:5;padding-top:6px!important;padding-bottom:6px!important;background:var(--bg);transition:box-shadow .2s,padding .2s}
+.stickybar.stuck{padding-top:calc(var(--stkPad,0px) + 8px)!important;box-shadow:0 8px 18px -12px #2a163055;background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.stickybar #cuis{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:2px 0 4px;-webkit-overflow-scrolling:touch}
+.stickybar #cuis::-webkit-scrollbar{display:none}
+.stickybar .chip{flex:none}
+.chip-sep{flex:none;width:1px;align-self:stretch;margin:4px 2px;background:var(--line)}
+.chip[aria-busy=true]{opacity:.6}
