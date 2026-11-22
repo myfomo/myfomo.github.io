@@ -1349,7 +1349,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='46';
+const APPV='47';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1840,15 +1840,15 @@ const sxSrcLbl=x=>x.cat?'מהקטלוג':x.g?'מגוגל':(x.osm||!x.cat)?'מה�
 function sxInList(x){if(!x||!x.name)return null;return rows.find(r=>(x.pid&&r.placeId===x.pid)||sameP({name:x.name,lat:x.lat,lng:x.lng},{name:r.name,lat:hasLL(r)?r.lat:undefined,lng:hasLL(r)?r.lng:undefined}))||null}
 var sxIntent=null;var sxCache=new Map();
 function sxWhy(x,I){if(!I)return '';const w=[];if(I.cuisine&&x.cuisine===I.cuisine)w.push(x.cuisine);else if(x.cuisine)w.push(x.cuisine);
-  if(I.city&&x.city&&fomoNorm(x.city).includes(fomoNorm(I.city)))w.push('ב'+x.city);if(I.cheap&&x.price&&x.price<=2)w.push('לא יקר');if(I.fancy&&x.price>=3)w.push('יוקרתי');
+  if(I.city&&x.city&&(fomoNorm(x.city).includes(fomoNorm(I.city))||fomoNorm(I.city).includes(fomoNorm(x.city))))w.push('ב'+x.city);if(I.cheap&&x.price&&x.price<=2)w.push('לא יקר');if(I.fancy&&x.price>=3)w.push('יוקרתי');
   if(I.open_now&&x.hours){const o=openState(x);if(o&&o.open)w.push('פתוח עכשיו')}return w.slice(0,3).join(' · ')}
 /* the search itself: names -> catalog, AI spelling fix, map, Google suggestions; descriptions -> AI intent, catalog by type/city, Google text search */
 async function sxSearch(v,opt){v=v.trim();const key=v+'|'+(opt&&opt.desc?1:0);if(sxCache.has(key))return sxCache.get(key);let out=null;
   if(opt&&opt.desc){const I=await aiCall({action:'intent',q:v,cuisines:CUIS,tags:TAGS});
-    if(I&&I.ok&&I.kind==='describe'){track('ai-search');const L=[];
+    if(I&&I.ok&&I.kind==='describe'){track('ai-search');if(I.city)I.city=String(I.city).replace(/^תל[\s-]?אביב\s*[-–]?\s*יפו$/,'תל אביב');const L=[];
       try{const {data}=await sb.rpc('browse_places',{c:I.cuisine,cty:I.city,lim:8});for(const p of data||[])L.push(catToItem(p))}catch(e){console.warn('browse',e)}
       if(I.query&&(window.APP_CONFIG||{}).googleKey){const qq=await takeQuota('place');if(qq.ok){try{const ps=await gSearch(I.query,GF);for(const p of ps||[]){if(!isFoodG([p.primaryType,...(p.types||[])]))continue;const it=gToItem(p);it.gpid=p.id||'';if(!L.some(y=>sameP(y,it)))L.push(it)}}catch(e){console.warn('g text',e)}}}
-      const ok=x=>(!I.cuisine||!x.cuisine||x.cuisine===I.cuisine)&&(!I.cheap||!x.price||x.price<=2)&&(!I.fancy||!x.price||x.price>=3)&&(!I.open_now||!x.hours||(openState(x)||{}).open);
+      const ok=x=>(x.g||!I.cuisine||!x.cuisine||x.cuisine===I.cuisine)&&(!I.cheap||!x.price||x.price<=2)&&(!I.fancy||!x.price||x.price>=3)&&(!I.open_now||!x.hours||(openState(x)||{}).open);
       const items=L.filter(ok).slice(0,8);items.forEach(x=>x.why=sxWhy(x,I));out={mode:'ai',intent:I,items}}
     else if(I&&I.ok&&I.kind==='name'&&I.name)v=[I.name,I.city].filter(Boolean).join(' ')}
   if(!out){let res=await catSearch(v);const found=()=>res.some(x=>x.cat&&x.score>=.45);let q2=v;
@@ -1867,7 +1867,7 @@ const sxThink=steps=>`<div class="sx-think">${steps.map((s,i)=>`<div class="r ${
 function sxStep(box){const R=box?[...box.querySelectorAll('.sx-think .r')]:[];let i=0;const t=setInterval(()=>{if(!R[i]||!R[i].isConnected){clearInterval(t);return}R[i].classList.remove('run');R[i].classList.add('on');R[i].querySelector('.d').textContent='✓';i++;if(R[i])R[i].classList.add('run');else clearInterval(t)},650);return ()=>clearInterval(t)}
 var sxRes={list:[],plus:[]};
 /* ---- list page ---- */
-function sxOwnFilter(r,I){if(I.cuisine&&r.cuisine!==I.cuisine)return false;if(I.city&&!(r.city&&fomoNorm(r.city).includes(fomoNorm(I.city))))return false;if(I.area&&![r.address,r.city,r.notes].join(' ').includes(I.area))return false;
+function sxOwnFilter(r,I){if(I.cuisine&&r.cuisine!==I.cuisine)return false;if(I.city){const a=fomoNorm(r.city||''),b=fomoNorm(I.city);if(!a||!(a.includes(b)||b.includes(a)))return false}if(I.area&&![r.address,r.city,r.notes].join(' ').includes(I.area))return false;
   if(I.cheap&&r.price>2)return false;if(I.fancy&&r.price&&r.price<3)return false;if(I.open_now&&!(openState(r)||{}).open)return false;if(I.tags&&I.tags.length&&!I.tags.every(t=>(r.tags||[]).includes(t)))return false;return true}
 var sxT=null,sxSeq=0;
 function sxListAfter(n){const v=q.trim(),on=v.length>=2,band=$('#grid').parentElement;
