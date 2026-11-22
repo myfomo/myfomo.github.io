@@ -117,7 +117,7 @@ async function switchList(id){const l=lists.find(x=>x.id===id)||lists[0];if(!l)r
 function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!openF||(openState(r)||{}).open)&&(!likeF||iVoted(r))&&(!hhF||(hhInfo(r)||{}).now)&&(!tagF.size||[...tagF].every(t=>(r.tags||[]).includes(t)))&&(!nearF||(distKm(r)??99)<=3)&&(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t)));
   const s={recent:(a,b)=>(b.updatedAt||0)-(a.updatedAt||0),rating:(a,b)=>avg(b)-avg(a),visit:(a,b)=>lastVisit(b).localeCompare(lastVisit(a)),name:(a,b)=>String(a.name).localeCompare(String(b.name),'he'),near:(a,b)=>(distKm(a)??1e9)-(distKm(b)??1e9)}[sort]||((a,b)=>0);return list.sort(s)}
 function renderHead(){const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,m=rows.filter(isMatch).length;
-  $('#stats').innerHTML=loaded?`היינו ב־<b>${been}</b> · רוצים לנסות <b>${want}</b>${m?` · <b>${m}</b> ששנינו רוצים השבוע`:''}`:'טוען…'}
+  $('#stats').innerHTML=loaded?`היינו ב־<b>${been}</b> · רוצים לנסות <b>${want}</b>${m?` · <b>${m}</b> ששנינו רוצים השבוע`:''}`:'טוען…';renderGreet()}
 function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove());
   const cs=[...new Set(rows.map(r=>r.cuisine).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'he'));
   if(cuisF&&!cs.includes(cuisF))cuisF='';
@@ -217,11 +217,11 @@ let fmap=null,fmarker=null;
 function killFormMap(){if(fmap){fmap.remove();fmap=null;fmarker=null}}
 function openSheet(){const was=!$('#ov').hidden;$('#ov').hidden=false;document.body.style.overflow='hidden';const fr=flipFrom;flipFrom=null;if(fr&&!was)requestAnimationFrame(()=>requestAnimationFrame(()=>flipIn(fr)))}
 function closeSheet(){if(story){clearTimeout(story.t);story=null}if(typeof evMap!=='undefined'&&evMap){evMap.remove();evMap=null}if(gm&&gm.s)clearTimeout(gm.s.t);$('#ov').classList.remove('story-ov');$('#ov').hidden=true;document.body.style.overflow='';openId=null;mode='view';clearInterval(pickTimer);killFormMap()}
-function openDetail(id){killFormMap();openId=id;mode='view';openSheet();renderDetail();$('#ov').scrollTop=0;maybeTour('detail',1000)}
+function openDetail(id){track('detail');killFormMap();openId=id;mode='view';openSheet();renderDetail();$('#ov').scrollTop=0;maybeTour('detail',1000)}
 
 function formHtml(r){r=r||{status:'want',tags:[]};const tg=r.tags||[];const ll=hasLL(r)?`${r.lat}, ${r.lng}`:'';return `<form id="ef" class="sec dh"><h2 style="margin-bottom:18px">${r.id?'עריכת מקום':'מקום חדש'}</h2>
 <div class="quick"><label class="l">חיפוש המקום (שם ועיר)<div class="addrow" style="margin-top:0"><input class="f" id="placeQ" placeholder="למשל: בל בוי תל אביב" value="${esc(r.id?[r.name,r.city].filter(Boolean).join(' '):'')}"><button class="btn" type="button" data-act="placeSearch">${ICON.search}חיפוש</button>${SR?`<button class="btn mic" type="button" data-act="voice" aria-label="הוספה בקול" aria-pressed="false">🎤</button>`:''}</div></label><ul class="res" id="placeRes"></ul>
-<label class="l" style="margin-top:12px">או הדביקו קישור / "שיתוף" מגוגל מפות<textarea class="f paste" id="paste" dir="auto" placeholder="https://www.google.com/maps/place/…"></textarea></label><p class="note" id="fillSt"></p></div>
+<label class="l" style="margin-top:12px">או הדביקו קישור / "שיתוף" מגוגל מפות<textarea class="f paste" id="paste" dir="auto" placeholder="https://www.google.com/maps/place/…"></textarea></label><p class="note" id="fillSt"></p><div class="dupn" id="dupN" hidden></div></div>
 <div class="grid2">
 <label class="l full">שם המקום *<input class="f" name="name" required maxlength="80" value="${esc(r.name)}"></label>
 <label class="l">סוג${cuisSelect(r.cuisine)}</label>
@@ -303,7 +303,7 @@ let pickF={price:0,tag:'',near:false,open:false,fit:false};
 async function pick(m,keep){
   killFormMap();openId=null;mode='pick';openSheet();if(!keep)pickF={price:0,tag:'',near:false,open:false,fit:dietUsers().length>0};
   if(pickF.near)await getLoc();
-  const fil=r=>(!cuisF||r.cuisine===cuisF)&&(!pickF.price||(r.price&&r.price<=pickF.price))&&(!pickF.tag||(r.tags||[]).includes(pickF.tag))&&(!pickF.open||(openState(r)||{}).open)&&(!pickF.near||((distKm(r)??99)<=5))&&(!pickF.fit||fitsAll(r,dietUsers()));
+  const fil=r=>!r.permClosed&&(!cuisF||r.cuisine===cuisF)&&(!pickF.price||(r.price&&r.price<=pickF.price))&&(!pickF.tag||(r.tags||[]).includes(pickF.tag))&&(!pickF.open||(openState(r)||{}).open)&&(!pickF.near||((distKm(r)??99)<=5))&&(!pickF.fit||fitsAll(r,dietUsers()));
   const matches=rows.filter(r=>isMatch(r)&&fil(r)),wants=rows.filter(r=>r.status!=='been'&&fil(r)),favs=rows.filter(r=>(r.fav||avg(r)>=4)&&fil(r));
   if(!m)m=matches.length?'match':'want';
   const pool=m==='match'?matches:m==='fav'?favs:wants;
@@ -462,7 +462,7 @@ function gcalUrl(r,v){const d=v.d.replace(/-/g,'');let dates;if(v.t){const [h,m]
 /* ================= opening hours ================= */
 const DAYS=['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'];
 const hm=s=>{const [h,m]=String(s||'').split(':').map(Number);return h*60+(m||0)};
-function openState(r){const H=r.hours;if(!H||!Object.keys(H).length)return null;const n=new Date(),d=n.getDay(),m=n.getHours()*60+n.getMinutes();
+function openState(r){if(r.permClosed)return {open:false,gone:true};const H=r.hours;if(!H||!Object.keys(H).length)return null;const n=new Date(),d=n.getDay(),m=n.getHours()*60+n.getMinutes();
   const y=H[(d+6)%7];if(y&&hm(y[1])<hm(y[0])&&m<hm(y[1]))return {open:true,until:y[1]};
   const t=H[d];if(t===undefined)return null;if(t===null)return {open:false};const o=hm(t[0]),c=hm(t[1]);
   if(c>o?(m>=o&&m<c):(m>=o||m<c))return {open:true,until:t[1]};return {open:false,from:m<o?t[0]:null}}
@@ -471,7 +471,7 @@ function hoursForm(r){const H=r.hours||{},hh=r.hh||{};return `<details class="ho
 <button type="button" class="btn sm" data-act="copyHours">העתקת יום א׳ לכל השבוע</button>
 <div class="hrow hhrow"><span class="hd">🍹 האפי אוור</span><input class="f" type="time" name="hhf" value="${esc(hh.f||'')}" aria-label="האפי אוור מ"><span>עד</span><input class="f" type="time" name="hht" value="${esc(hh.t||'')}" aria-label="האפי אוור עד"></div><div class="hhdays chips" role="group" aria-label="ימי האפי אוור">${DAYS.map((dn,i)=>`<label class="chip sm"><input type="checkbox" name="hhd" value="${i}" ${(hh.d||[]).includes(i)?'checked':''}><span>${dn}</span></label>`).join('')}</div><p class="note" style="margin:4px 0 0">בלי לסמן ימים = כל יום.</p><input class="f" name="hhn" maxlength="60" placeholder="מה המבצע? למשל 1+1 על קוקטיילים" value="${esc(hh.n||'')}" aria-label="מה המבצע"></div></details>`}
 function readHours(fd){const H={};for(let i=0;i<7;i++){if(fd.get('hx'+i)){H[i]=null;continue}const o=fd.get('ho'+i),c=fd.get('hc'+i);if(o&&c)H[i]=[String(o),String(c)]}const f=fd.get('hhf'),t=fd.get('hht'),hd=fd.getAll('hhd').map(Number).filter(n=>n>=0&&n<7),hn=String(fd.get('hhn')||'').trim().slice(0,60);return {hours:H,hh:f&&t?{f:String(f),t:String(t),...(hd.length&&hd.length<7?{d:hd}:{}),...(hn?{n:hn}:{})}:null}}
-function hoursView(r){const H=r.hours||{};if(!Object.keys(H).length&&!(r.hh&&r.hh.f))return '';const st=openState(r),d=new Date().getDay();
+function hoursView(r){if(r.permClosed)return `<div class="sec gone-sec"><h4>⛔ נראה שהמקום נסגר לצמיתות</h4><p class="note" style="margin:0">כך כתוב באתר של המקום. אם זו טעות, אפשר לסמן שהוא עדיין פתוח.</p><button class="btn sm" type="button" data-act="notGone">הוא עדיין פתוח</button></div>`;const H=r.hours||{};if(!Object.keys(H).length&&!(r.hh&&r.hh.f))return '';const st=openState(r),d=new Date().getDay();
   return `<div class="sec"><h4>שעות פתיחה ${st?`<span class="open ${st.open?'on':''}">${st.open?'פתוח עכשיו'+(st.until?' · עד '+esc(st.until):''):'סגור עכשיו'+(st.from?' · נפתח ב-'+esc(st.from):'')}</span>`:''}</h4><div class="htab">${DAYS.map((dn,i)=>H[i]===undefined?'':`<div class="${i===d?'today':''}"><span>${dn}</span><span${H[i]===null?'':' dir="ltr"'}>${H[i]===null?'סגור':esc(H[i][0])+'–'+esc(H[i][1])}</span></div>`).join('')}${r.hh&&r.hh.f?`<div class="hh ${hhNow(r)?'now':''}"><span>האפי אוור</span><span><bdi dir="ltr">${esc(r.hh.f)}–${esc(r.hh.t)}</bdi>${r.hh.d&&r.hh.d.length?' · '+r.hh.d.map(i=>DAYS[i]).join(' '):''}${hhNow(r)?' · עכשיו!':''}${r.hh.n?`<br><small>${esc(r.hh.n)}</small>`:''}</span></div>`:''}</div></div>`}
 
 /* ================= near me ================= */
@@ -636,10 +636,10 @@ function placeRes(res,note){const ul=$('#placeRes');if(!ul)return;placeSearch.re
   ul.innerHTML=res.map((x,i)=>`<li data-act="placePick" data-i="${i}"><b>${esc(x.name)}</b><small>${esc(x.full)}</small></li>`).join('')
   +(note?`<li class="nores"><small>${note}</small></li>`:'')
   +(res.some(x=>x.g)||!(window.APP_CONFIG||{}).googleKey?'':`<li class="gmore" data-act="gSearchNow"><small>לא מצאתם את המקום? <b>חיפוש מורחב</b></small></li>`)}
-async function placeSearch(){const qv=$('#placeQ').value.trim(),ul=$('#placeRes');if(!qv)return;const seq=placeSearch.seq=(placeSearch.seq||0)+1;ul.innerHTML=BUSY;
+async function placeSearch(){const qv=$('#placeQ').value.trim(),ul=$('#placeRes');if(!qv)return;const seq=placeSearch.seq=(placeSearch.seq||0)+1;ul.innerHTML=BUSY;track('search');placeSearch.last={q:qv,ai:null};
   let res=await catSearch(qv);const found=()=>res.some(x=>x.cat&&x.score>=.45);let q2=qv;
   if(!found()){const ai=await aiCall({action:'parse',q:qv});if(seq!==placeSearch.seq)return;
-    if(ai&&ai.name){q2=[ai.name,ai.city].filter(Boolean).join(' ');const tries=[q2,...(ai.alt||[]).map(a=>[a,ai.city].filter(Boolean).join(' '))].filter((x,i,A)=>x&&x!==qv&&A.indexOf(x)===i).slice(0,3);
+    if(ai&&ai.name){track('ai');placeSearch.last={q:qv,ai};q2=[ai.name,ai.city].filter(Boolean).join(' ');const tries=[q2,...(ai.alt||[]).map(a=>[a,ai.city].filter(Boolean).join(' '))].filter((x,i,A)=>x&&x!==qv&&A.indexOf(x)===i).slice(0,3);
       for(const t of tries){const more=await catSearch(t);for(const m of more)if(!res.some(x=>x.pid===m.pid))res.push(m);if(found())break}res.sort((a,b)=>b.score-a.score)}}
   if(seq!==placeSearch.seq)return;
   if(!found()){const o=await osmSearch(q2);if(seq!==placeSearch.seq)return;res=res.concat(o)}
@@ -674,7 +674,9 @@ async function placePick(i){let x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)
   if(x.hours){for(let d=0;d<7;d++){const h=x.hours[d];E['hx'+d].checked=h===null;E['ho'+d].value=h?h[0]:'';E['hc'+d].value=h?h[1]:''}const det=f.querySelector('details.hours');if(det)det.open=true}
   pendDel=typeof x.delivery==='boolean'?x.delivery:null;if(x.veg){const cb=f.querySelector('[name=tags][value="צמחוני-פרנדלי"]');if(cb)cb.checked=true}pendG=x.gphotos&&x.gphotos.length?x.gphotos:null;if(x.lat!=null)setPin(x.lat,x.lng,false,true);$('#placeRes').innerHTML='';
   $('#fillSt').textContent='✨ מילאנו את הפרטים'+(x.gphotos&&x.gphotos.length?', ותמונה של המקום תתווסף בשמירה':'')+'. בדקו שהכל נכון, ושהסיכה במפה במקום הנכון.';
-  if(!x.g&&x.site&&!x.hours)enrichFromSite(x.site)}
+  if(!x.g&&x.site&&!x.hours)enrichFromSite(x.site);
+  dupNote({name:x.name,city:x.city,lat:x.lat,lng:x.lng,placeId:x.pid});
+  {const L=placeSearch.last;if(x.cat&&x.pid&&L&&L.ai&&sb){const ns=[L.q,L.ai.name,...(L.ai.alt||[])].filter(Boolean).map(String).slice(0,6);sb.rpc('add_place_alias',{pid:x.pid,names:ns}).then(()=>{},()=>{})}}}
 async function geocode(address,city){const a=String(address||'').trim(),c=String(city||'').trim();if(!a&&!c)return null;const q=[a,c].filter(Boolean).join(', ');
   const tries=[];if(a&&c)tries.push(`street=${encodeURIComponent(a)}&city=${encodeURIComponent(c)}`);tries.push(`q=${encodeURIComponent(q)}`);
   if(a&&c&&/\d/.test(a))tries.push(`street=${encodeURIComponent(a.replace(/\s*\d+\S*/g,'').trim())}&city=${encodeURIComponent(c)}`);
@@ -1152,6 +1154,7 @@ S.addEventListener('submit',async e=>{
   if(pendDel!==null)d.delivery=pendDel;
   if(llm&&Math.abs(+llm[1])<=90&&Math.abs(+llm[2])<=180){d.lat=+llm[1];d.lng=+llm[2];d.llLevel=String(fd.get('llLevel')||'place')}else{d.lat=null;d.lng=null;d.llLevel=''}
   if(!d.name)return;
+  if(mode==='new'&&!fm.dataset.dupOk){const dp=findDup({...d,placeId:formSrc.pid});if(dp&&!(await askSure('המקום כבר ברשימה',`<b>${esc(dp.name)}</b>${dp.city?' ('+esc(dp.city)+')':''} כבר נמצא ברשימה. להוסיף אותו שוב?`,'להוסיף בכל זאת')))return}
   const btn=fm.querySelector('[type=submit]');btn.disabled=true;
   if(!Number.isFinite(d.lat)&&(d.address||d.city)){btn.textContent='מאתר את הכתובת…';const p=await geocode(d.address,d.city);if(p){d.lat=+p.lat.toFixed(6);d.lng=+p.lng.toFixed(6);d.llLevel='street'}}
   fitted=false;killFormMap();
@@ -1241,6 +1244,9 @@ S.addEventListener('click',async e=>{
   if(a==='placePick'){placePick(i);return}
   if(a==='fHere'){locateMe((la,ln,acc)=>{setPin(la,ln,true,true);if(acc>60)toast(`דיוק המיקום כ־${Math.round(acc)} מטר. אפשר לגרור את הסיכה.`)});return}
   if(a==='cancel'){killFormMap();if(mode==='new'){closeSheet();return}mode='view';renderDetail();return}
+  if(a==='dupOpen'){const id=b.dataset.id;killFormMap();formSrc={};openDetail(id);return}
+  if(a==='dupHide'){const f=$('#ef');if(f)f.dataset.dupOk='1';const el=$('#dupN');if(el)el.hidden=true;return}
+  if(a==='notGone'){const r=byId(openId);if(r){const ok=await save(r.id,{permClosed:false,updatedAt:Date.now()});if(ok){toast('עודכן, תודה!');renderDetail()}}return}
   if(a==='install'){if(installEvt){installEvt.prompt();installEvt=null;settingsSheet()}return}
   if(a==='shareInvite'){shareOrCopy('Fomo',`הצטרפו לרשימה "${cur?cur.name:''}" ב-Fomo! פותחים את הקישור, יוצרים חשבון עם מייל וסיסמה, וזהו:`,inviteUrl());return}
   if(a==='qrInvite'){showQR();return}
@@ -1341,7 +1347,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='40';
+const APPV='41';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1397,7 +1403,7 @@ async function fillAdminMore(){const el=$('#qAdm');if(!el||!sb)return;let U=null
     h+=`<h4 style="margin-top:18px">משתמשים</h4><div class="ustat"><div><b>${U.length}</b><small>רשומים</small></div><div><b>${act}</b><small>פעילים השבוע</small></div><div><b>${nw}</b><small>הצטרפו השבוע</small></div></div>
 <details class="ulist"><summary>כל המשתמשים (${U.length})</summary>${U.map(u=>`<div class="urow ${u.blocked?'blk':''}"><span><b>${esc(nm(u))}</b>${u.admin?' <small class="meta">· מנהל</small>':''}${u.blocked?' <small class="bad">· חסום</small>':''}<br><small class="meta" dir="ltr">${esc(u.email||'')}</small><br><small class="meta">הצטרפות ${esc(relT(u.joined))} · נראה ${u.seen?esc(relT(u.seen)):'אף פעם'} · ${u.places} מקומות · ${u.lists} רשימות</small></span>${u.admin?'':`<button class="btn sm" type="button" data-act="uBlock" data-u="${esc(u.id)}" data-on="${u.blocked?0:1}" data-n="${esc(nm(u))}">${u.blocked?'ביטול חסימה':'חסימה'}</button>`}</div>`).join('')}</details>`}
   if(E){const L=E.list||[];h+=`<h4 style="margin-top:18px">תקלות באפליקציה</h4><p class="note" style="margin:0 0 8px">${E.week?`${E.week} תקלות נרשמו בשבוע האחרון.`:'אין תקלות בשבוע האחרון 🎉'}</p>${L.length?`<details class="ulist"><summary>פירוט (${L.length} סוגים)</summary>${L.map(x=>`<div class="erow"><b dir="ltr">${esc(x.msg)}</b><small class="meta">${x.n} פעמים · ${x.users} משתמשים · אחרונה ${esc(relT(x.last))} אצל ${esc(x.who||'?')} · ${esc(uaName(x.ua))} · גרסה ${esc(x.ver||'?')}</small>${x.src?`<small class="meta" dir="ltr">${esc(x.src)}</small>`:''}</div>`).join('')}<button class="btn sm" type="button" data-act="errClear" style="margin-top:8px">ניקוי הרשימה</button></details>`:''}`}
-  h+=await usageHtml();if(!$('#qAdm'))return;let box=$('#admMore');if(!box){box=document.createElement('div');box.id='admMore';$('#qAdm').appendChild(box)}box.innerHTML=h}
+  h+=await usageHtml();h+=await featHtml();if(!$('#qAdm'))return;let box=$('#admMore');if(!box){box=document.createElement('div');box.id='admMore';$('#qAdm').appendChild(box)}box.innerHTML=h}
 
 /* ---- onboarding for new friends ---- */
 const ONB=[{e:'🍽️',t:'ברוכים הבאים ל־FOMO',p:'כל המקומות שאסור לפספס במקום אחד: מסעדות, ברים ובתי קפה, עם תמונות, דירוגים, מפה וזיכרונות מכל יציאה. הכל משותף עם מי שברשימה.'},
@@ -1445,7 +1451,7 @@ function outBadge(){try{if(!('setAppBadge' in navigator))return;const x=nextOuti
 /* ================= v33: interface ================= */
 const RM=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ---- live open/closed status ---- */
-function openInfo(r){const o=openState(r);if(!o)return null;const n=new Date(),m=n.getHours()*60+n.getMinutes(),H=r.hours||{};
+function openInfo(r){if(r.permClosed)return {c:'off gone',t:'⛔ נסגר לצמיתות'};const o=openState(r);if(!o)return null;const n=new Date(),m=n.getHours()*60+n.getMinutes(),H=r.hours||{};
   if(o.open){const left=(hm(o.until)-m+1440)%1440;return left<=60?{c:'soon',t:`נסגר בעוד ${left} דק'`}:{c:'on',t:`פתוח עד ${o.until}`}}
   if(o.from){const inn=hm(o.from)-m;return inn<=60?{c:'soon',t:`נפתח בעוד ${inn} דק'`}:{c:'off',t:`נפתח ב־${o.from}`}}
   const d=n.getDay();for(let k=1;k<=7;k++){const h=H[(d+k)%7];if(h)return {c:'off',t:k===1?`נפתח מחר ${h[0]}`:`נפתח ביום ${DAYS[(d+k)%7]} ${h[0]}`}}
@@ -1709,7 +1715,7 @@ function coach(name,steps){let i=0;const d=document.createElement('div');d.class
 function resetTips(){lsSet('rs-tips',{});lsSet('rs-tips-off',0)}
 
 /* ---- what's new after an update ---- */
-const WHATSNEW={'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
+const WHATSNEW={'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר ברשימה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
 function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNew,3000);return}const seen=lsGet('rs-seen-ver','');lsSet('rs-seen-ver',APPV);const L=WHATSNEW[APPV];if(!seen||seen===APPV||!L)return;
   const d=document.createElement('div');d.className='calp upd-new';d.setAttribute('role','dialog');d.setAttribute('aria-label','מה חדש');
   d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:30px">🎁</div><h3>מה חדש ב־FOMO</h3><ul class="wn">${L.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><button class="btn pri" type="button" data-wx>מעולה!</button></div>`;
@@ -1723,6 +1729,61 @@ window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvt=
 if('serviceWorker' in navigator){let hadCtl=!!navigator.serviceWorker.controller,reloaded=false;
   navigator.serviceWorker.addEventListener('controllerchange',()=>{if(hadCtl&&!reloaded){reloaded=true;location.reload()}});
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}))}
+
+/* ================= v41 ================= */
+/* 55: privacy-friendly feature usage (counts only; no user id leaves the device besides the login itself) */
+const TRK=new Set();
+function track(f){try{if(!sb||!myId||!f||!navigator.onLine)return;const k=String(f).replace(/[^a-zA-Z0-9:_-]/g,'').slice(0,40);if(!k||TRK.has(k))return;TRK.add(k);sb.rpc('track',{f:k}).then(()=>{},()=>{})}catch{}}
+document.addEventListener('click',e=>{try{const t=e.target.closest('[data-act],[data-qf],[data-me],.tabbar [data-v],.tabs [data-v],[data-fl],[data-vopen],[data-open-f],[data-tf],[data-gr],#pickBtn,#addBtn,#bellBtn,#listBtn,#setBtn');if(!t)return;const ds=t.dataset;
+  const f=ds.act?'act:'+ds.act:ds.qf?'qf:'+ds.qf:ds.me?'me:'+ds.me:ds.v?'tab:'+ds.v:ds.fl!==undefined?'friendsLoved':ds.vopen!==undefined?'voucher':ds.openF?'qf:open':ds.tf?'tag':ds.gr?'greet:'+ds.gr:t.id?'btn:'+t.id:'';if(f)track(f)}catch{}},true);
+const FL={'tab:list':'לשונית רשימה','tab:map':'לשונית מפה','tab:timeline':'לשונית יציאות','tab:stats':'נתונים','tab:me':'לשונית אני','btn:addBtn':'הוספת מקום','btn:pickBtn':'לאן הולכים הערב?','btn:bellBtn':'פעמון עדכונים','btn:listBtn':'הרשימות שלי','btn:setBtn':'הגדרות',
+  'qf:open':'פילטר פתוח עכשיו','qf:near':'קרוב אליי','qf:like':'בא לי','qf:new':'עוד לא ביקרנו','qf:hh':'האפי אוור עכשיו','qf:more':'פילטרים נוספים','tag':'פילטר תגיות','friendsLoved':'חברים אהבו','voucher':'שוברים','detail':'פתיחת מקום','search':'חיפוש מקום','ai':'זיהוי חכם בחיפוש',
+  'me:app':'שליחת האפליקציה','me:out':'יציאות (מסך אני)','me:vch':'ארנק שוברים','me:set':'הגדרות (מסך אני)','me:lists':'רשימות (מסך אני)','me:onb':'הדרכה מחדש','me:bell':'עדכונים (מסך אני)',
+  'act:moovit':'מוביט','act:wolt':'וולט','act:vote':'הצבעה בא לי','act:rate':'דירוג','act:fav':'מועדף','act:share':'שיתוף מקום','act:shareCard':'כרטיס שיתוף','act:qrInvite':'הזמנה ב־QR','act:shareInvite':'הזמנה לרשימה','act:shareApp':'שליחת האפליקציה',
+  'act:planNew':'תכנון יציאה','act:evNew':'ערב עם כמה תחנות','act:pollNew':'סקר','act:wheelSpin':'גלגל הגורל','act:diceRoll':'קוביה','act:gameNew':'משחקים','act:camNear':'צילום בקרבת מקום','act:voice':'הקלטה קולית','act:recap':'סיכום תקופה','act:pubOn':'דף ציבורי','act:import':'ייבוא',
+  'act:edit':'עריכת מקום','act:placeSearch':'חיפוש בטופס','act:gSearchNow':'חיפוש מורחב','act:theme':'ערכת צבעים','act:pushOn':'הפעלת התראות','act:install':'התקנה','install-banner':'באנר התקנה','act:dupOpen':'מניעת כפילות','greet:open':'ברכה: פתוחים עכשיו','greet:hh':'ברכה: האפי אוור'};
+async function featHtml(){let L=null;try{const {data}=await sb.rpc('admin_features',{days:30});L=data}catch{}
+  const head='<h4 style="margin-top:18px">מה הכי בשימוש (30 יום)</h4>';if(!L)return '';if(!L.length)return head+'<p class="note" style="margin:0">עוד אין נתונים. הם מתחילים להצטבר מעכשיו.</p>';
+  const lab=f=>FL[f]||f,top=L.slice(0,8),mx=Math.max(1,top[0].n);
+  const used=new Set(L.map(x=>x.f)),zero=Object.keys(FL).filter(k=>!used.has(k)&&!/^btn:|^tab:/.test(k)).slice(0,10),low=L.filter(x=>x.n<=2).slice(-6);
+  return head+top.map(x=>`<div class="ubar"><div class="ubar-t"><span>${esc(lab(x.f))}</span><b>${x.n} · עד ${x.u} אנשים ביום</b></div><div class="ubar-b"><i style="width:${Math.max(2,Math.round(x.n/mx*100))}%"></i></div></div>`).join('')
+   +`<h4 style="margin-top:14px">כמעט לא בשימוש</h4><p class="note" style="margin:0">${[...low.map(x=>esc(lab(x.f))+` (${x.n})`),...zero.map(k=>esc(FL[k])+' (0)')].join(' · ')||'הכל בשימוש 👌'}</p><p class="note" style="margin:6px 0 0">נספר רק כמה פעמים השתמשו בכל דבר, בלי לשמור מי.</p>`}
+
+/* 43: install banner (Safari/Android, not installed yet) */
+function instBanner(){try{if(isStandalone()||!(isIOS()||installEvt))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;
+  if(!myId||!loaded||!lsGet('rs-onb2',0)||document.querySelector('.onb,.coach,.calp,.upd')){setTimeout(instBanner,15000);return}
+  const safari=isIOS()&&!/crios|fxios|edgios|gsa\//i.test(navigator.userAgent);
+  const d=document.createElement('div');d.className='instb';d.setAttribute('role','region');d.setAttribute('aria-label','התקנת האפליקציה');
+  d.innerHTML=`<span class="instb-ic" aria-hidden="true">📲</span><div class="instb-t"><b>FOMO על מסך הבית</b><small>נפתחת כמו אפליקציה, עם התראות</small></div><button class="btn pri" type="button" data-ib="go">${installEvt?'התקנה':'איך?'}</button><button class="instb-x" type="button" data-ib="x" aria-label="לא עכשיו">×</button>`;
+  d.addEventListener('click',e=>{const b=e.target.closest('[data-ib]');if(!b)return;if(b.dataset.ib==='x'){lsSet('rs-inst-dis',Date.now()+14*864e5);d.classList.remove('in');setTimeout(()=>d.remove(),250);return}
+    track('install-banner');if(installEvt){const ev=installEvt;installEvt=null;ev.prompt();(ev.userChoice||Promise.resolve()).then(c=>{if(c&&c.outcome==='accepted')d.remove()}).catch(()=>{});return}instHow(safari)});
+  document.body.appendChild(d);requestAnimationFrame(()=>d.classList.add('in'))}catch{}}
+function instHow(safari){const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','איך מתקינים');
+  d.innerHTML=`<div class="calp-in"><h3>התקנה באייפון</h3>${safari?'':'<p class="meta">קודם פותחים את הקישור ב־<b>Safari</b>. באייפון רק הוא יודע להתקין.</p>'}<ol class="steps"><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה) בתחתית המסך.</li><li>גוללים ובוחרים <b>"הוספה למסך הבית"</b>.</li><li>לוחצים <b>"הוספה"</b>. זהו, FOMO על המסך, עם התראות.</li></ol><button class="btn pri" type="button" data-n>הבנתי</button></div>`;
+  d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-n]'))d.remove()});document.body.appendChild(d)}
+window.addEventListener('appinstalled',()=>{const b=document.querySelector('.instb');if(b)b.remove()});
+setTimeout(instBanner,25000);
+
+/* 45: personal greeting */
+function greetHtml(){if(!loaded)return '';const h=new Date().getHours();const [g,ic]=h>=5&&h<12?['בוקר טוב','☀️']:h>=12&&h<17?['צהריים טובים','🌤️']:h>=17&&h<22?['ערב טוב','🌆']:['לילה טוב','🌙'];
+  const op=rows.filter(r=>{if(r.permClosed)return false;const o=openState(r);return o&&o.open});const near=myLoc?op.filter(r=>{const k=distKm(r);return k!=null&&k<=3}).length:0;
+  const hh=rows.filter(r=>{if(r.permClosed)return false;const i=hhInfo(r);return i&&i.now}).length,bits=[];
+  if(op.length)bits.push(`<button type="button" class="gr-b" data-gr="open">${op.length===1?'מקום אחד פתוח':op.length+' מקומות פתוחים'} עכשיו${near?` · ${near} קרוב אליך`:''}</button>`);
+  if(hh)bits.push(`<button type="button" class="gr-b" data-gr="hh">🍹 ${hh===1?'אחד':hh} בהאפי אוור</button>`);
+  return `<span class="gr-h">${g}${myName?', '+esc(myName):''} ${ic}</span>${bits.join('')}`}
+function renderGreet(){const el=$('#greet');if(!el)return;const h=greetHtml();if(el.innerHTML!==h)el.innerHTML=h;el.hidden=!h}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-gr]');if(!b)return;const k=b.dataset.gr;const go=()=>{const c=k==='open'?$('#cuis [data-open-f]'):$('#cuis [data-qf="hh"]');if(c&&c.getAttribute('aria-pressed')!=='true')c.click();const s=$('#stickyBar');if(s)s.scrollIntoView({behavior:RM()?'auto':'smooth',block:'start'})};
+  if(page!=='list'){const t=$('.tabbar [data-v="list"]');if(t)t.click();setTimeout(go,150)}else go()});
+setInterval(()=>{if(document.visibilityState==='visible')renderGreet()},60000);
+
+/* 50: duplicate detection */
+document.addEventListener('change',e=>{const f=e.target.form;if(!f||f.getAttribute('id')!=='ef'||!['name','city'].includes(e.target.name))return;dupNote({name:f.elements.name.value.trim(),city:f.elements.city.value.trim(),placeId:formSrc.pid})});
+function findDup(x){if(!x||!x.name)return null;const n=fomoNorm(x.name),c=fomoNorm(x.city||'');
+  return rows.find(r=>{if(mode==='edit'&&r.id===openId)return false;if(x.placeId&&r.placeId===x.placeId)return true;if(fomoNorm(r.name)!==n)return false;
+    if(Number.isFinite(x.lat)&&hasLL(r)){const R=6371,t=v=>v*Math.PI/180,dl=t(r.lat-x.lat),dg=t(r.lng-x.lng);const a=Math.sin(dl/2)**2+Math.cos(t(x.lat))*Math.cos(t(r.lat))*Math.sin(dg/2)**2;if(2*R*Math.asin(Math.sqrt(a))<=.3)return true}
+    return !c||!r.city||fomoNorm(r.city)===c})||null}
+function dupNote(x){const el=$('#dupN');if(!el)return;const d=mode==='new'?findDup(x):null;el.hidden=!d;
+  el.innerHTML=d?`<span>👀 <b>${esc(d.name)}</b> כבר ברשימה${d.city?' ('+esc(d.city)+')':''}.</span><button class="btn" type="button" data-act="dupOpen" data-id="${esc(d.id)}">לפתוח אותו</button><button class="link-btn" type="button" data-act="dupHide">להוסיף בכל זאת</button>`:''}
 
 if(!CFG.supabaseUrl||!CFG.supabaseKey||!window.supabase){gate('<p>האפליקציה עוד לא מחוברת למסד הנתונים. צריך למלא את הקובץ config.js.</p>')}
 else{sb=window.supabase.createClient(CFG.supabaseUrl,CFG.supabaseKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,experimental:{passkey:true}}});const pubT=new URLSearchParams(location.search).get('pub');if(pubT)renderPublic(pubT);else start()}

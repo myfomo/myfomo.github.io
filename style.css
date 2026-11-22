@@ -844,3 +844,21 @@ html[data-hc] .meta,html[data-hc] .note{color:var(--ink)}
 @media(prefers-reduced-motion:reduce){.co-spot,.co-b{transition:none;animation:none}}
 .featrow[hidden]{display:none}
 .co-next{white-space:nowrap}
+/* v41: install banner, greeting, duplicate note, closed-for-good */
+.instb{position:fixed;left:12px;right:12px;bottom:calc(92px + env(safe-area-inset-bottom));z-index:55;display:flex;align-items:center;gap:12px;background:var(--card,#fff);color:var(--ink);border-radius:20px;padding:12px 12px 12px 14px;box-shadow:0 14px 36px light-dark(#2a163033,#000a);border:1px solid var(--line,#0001);max-width:520px;margin:0 auto;opacity:0;transform:translateY(16px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.instb.in{opacity:1;transform:none}
+.instb-ic{font-size:26px;line-height:1}
+.instb-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.instb-t b{font-family:Rubik;font-size:15px}.instb-t small{color:var(--mute);font-size:13px}
+.instb .btn{min-height:40px;padding:0 16px}
+.instb-x{background:none;border:0;font-size:22px;color:var(--mute);width:36px;height:36px;border-radius:50%;cursor:pointer}
+@media(min-width:1000px){.instb{bottom:24px}}
+.greet{margin-top:6px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;color:#fff;font-size:14px}
+.greet[hidden]{display:none}
+.gr-h{font-weight:800;font-family:Rubik}
+.gr-b{background:#ffffff26;color:#fff;border:1px solid #ffffff40;border-radius:999px;padding:3px 10px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.gr-b:active{transform:scale(.97)}
+@media(max-width:700px){.greet{font-size:13px;margin-top:4px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.greet::-webkit-scrollbar{display:none}.gr-h,.gr-b{white-space:nowrap;flex:none}}
+.dupn{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:10px 0 4px;padding:10px 12px;border-radius:14px;background:light-dark(#fff4d6,#3a2f12);color:var(--ink);font-size:14px}
+.dupn[hidden]{display:none}.dupn span{flex:1 1 100%}
+.open.gone{background:light-dark(#fde2e2,#4a1d1d);color:light-dark(#a11,#f9b4b4)}
+.gone-sec{background:light-dark(#fff1f1,#2e1717);border-radius:16px}
