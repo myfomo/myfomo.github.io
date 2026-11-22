@@ -369,7 +369,7 @@ ${pubSecHtml()}${backupSecHtml()}<div id="qAdm"></div>
 <div class="sec"><h4>ייבוא</h4><button class="btn" type="button" data-act="import">${ICON.pin}ייבוא מקומות שמורים מגוגל מפות</button></div>
 <div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':installEvt?'<button class="btn pri" type="button" data-act="install">התקנת האפליקציה</button>':isIOS()?'<ol class="steps"><li>פותחים את הקישור ב־Safari.</li><li>לוחצים על כפתור השיתוף (ריבוע עם חץ למעלה).</li><li>בוחרים "הוספה למסך הבית" ולוחצים "הוספה".</li></ol>':'<ol class="steps"><li>פותחים את הקישור ב־Chrome.</li><li>תפריט שלוש הנקודות, ואז "התקנת האפליקציה" או "הוספה למסך הבית".</li></ol>'}
 </div>
-${accountSecHtml()}<div class="sec"><div class="row"><button class="btn" type="button" data-act="onb">הדרכה קצרה על האפליקציה</button><button class="btn" type="button" data-act="signout">התנתקות</button></div></div>`}
+<div class="sec"><h4>שליחת האפליקציה לחברים</h4><p class="note" style="margin:0 0 10px">קישור קבוע לאפליקציה עצמה, בלי הצטרפות לרשימה שלכם. מי שנכנס נרשם ופותח רשימה משלו.</p><button class="btn" type="button" data-act="shareApp">📲 שליחת האפליקציה</button></div>${accountSecHtml()}<div class="sec"><div class="row"><button class="btn" type="button" data-act="onb">הדרכה קצרה על האפליקציה</button><button class="btn" type="button" data-act="signout">התנתקות</button></div></div>`}
 const codeFrom=v=>{v=String(v||'').trim();try{const u=new URL(v);return u.searchParams.get('join')||''}catch{}return /^[a-f0-9]{8,40}$/i.test(v)?v:''};
 async function doCreateList(name){const {data,error}=await sb.rpc('create_list',{list_name:name});if(error){toast(errMsg(error));return null}await loadLists();return data}
 async function doJoin(code){const {data,error}=await sb.rpc('join_list',{code});if(error){toast(errMsg(error));return null}if(!data){toast('קישור ההזמנה לא תקף. אולי אופס? בקשו קישור חדש.');return null}await loadLists();return data}
@@ -1256,7 +1256,7 @@ S.addEventListener('click',async e=>{
   if(a==='pickList'){await switchList(b.dataset.id);return}
   if(a==='leaveList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב ליציאה';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',myId);if(error){toast(errMsg(error));return}await afterListGone('יצאת מהרשימה');return}
   if(a==='delList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='למחוק את כל הרשימה לתמיד? לחצו שוב';return}const paths=rows.flatMap(r=>(r.photos||[]).map(p=>p.path).filter(Boolean));if(paths.length)await sb.storage.from('photos').remove(paths).catch(()=>{});const {error}=await sb.from('lists').delete().eq('id',cur.id);if(error){toast(errMsg(error));return}await afterListGone('הרשימה נמחקה');return}
-  if(a==='shareApp'){shareOrCopy('Fomo','Fomo – המקומות שאסור לפספס:',location.origin+location.pathname);return}
+  if(a==='shareApp'){appShareDlg();return}
   if(a==='signout'){await sb.auth.signOut();location.reload();return}
   if(a==='rmMember'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='הסר?';b.style.fontSize='14px';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',b.dataset.u);if(error)toast(errMsg(error));await loadMembers();settingsSheet();return}
   const r=byId(openId);if(!r)return;const now=Date.now();
@@ -1341,7 +1341,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='37';
+const APPV='38';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1526,9 +1526,9 @@ function renderMe(){const el=$('#me');if(!el)return;const nmMe=myName||String((m
   const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,vis=allVisits().length;
   el.innerHTML=`<div class="me-card"><div class="me-av" aria-hidden="true">${esc(nmMe.trim().charAt(0))}</div><div><h2>${esc(nmMe)}</h2><p class="meta">${esc(cur?cur.name:'')}</p></div></div>
 <div class="me-stats"><div><b>${been}</b><small>היינו</small></div><div><b>${want}</b><small>רוצים ללכת</small></div><div><b>${vis}</b><small>ביקורים</small></div></div>
-<div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">🍽️</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">📊</span>הנתונים שלנו</a><button type="button" data-me="lists"><span aria-hidden="true">📋</span>הרשימות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">🔔</span>מה חדש</button><button type="button" data-me="vch"><span aria-hidden="true">🎁</span>שוברים</button><button type="button" data-me="set"><span aria-hidden="true">⚙️</span>הגדרות</button><button type="button" data-me="onb"><span aria-hidden="true">💡</span>הדרכה</button></div>
+<div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">🍽️</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">📊</span>הנתונים שלנו</a><button type="button" data-me="lists"><span aria-hidden="true">📋</span>הרשימות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">🔔</span>מה חדש</button><button type="button" data-me="app"><span aria-hidden="true">📲</span>שליחת האפליקציה</button><button type="button" data-me="vch"><span aria-hidden="true">🎁</span>שוברים</button><button type="button" data-me="set"><span aria-hidden="true">⚙️</span>הגדרות</button><button type="button" data-me="onb"><span aria-hidden="true">💡</span>הדרכה</button></div>
 <div class="me-sec"><h4>תצוגה</h4>${dispHtml()}</div>`}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='vch')vouchersSheet();else if(k==='onb'){lsSet('rs-onb',0);onbSheet()}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='vch')vouchersSheet();else if(k==='app')appShareDlg();else if(k==='onb'){lsSet('rs-onb',0);onbSheet()}});
 
 /* ---- map: preview card ---- */
 let mkById={},mcSel=null;
@@ -1653,6 +1653,15 @@ async function deleteMe(){const solo=lists.filter(l=>l.role==='owner').map(l=>l.
   if(!await askSure('בטוח לגמרי?','זה הצעד האחרון. אחרי זה תצטרך/י להירשם מחדש כדי להשתמש ב־FOMO.','כן, למחוק את החשבון',true))return;
   toast('מוחק…');const {error}=await sb.rpc('delete_me');if(error){toast(/admin_account/.test(error.message||'')?'אי אפשר למחוק חשבון מנהל מתוך האפליקציה':'המחיקה נכשלה: '+errMsg(error));return}
   try{localStorage.clear()}catch{}try{await sb.auth.signOut()}catch{}gate('<p>החשבון נמחק. תודה שהיית איתנו 💛</p>')}
+
+/* ---- send the app itself (not a list invite) ---- */
+const APP_URL=location.origin+location.pathname.replace(/index\.html$/,'');
+const APP_TXT='FOMO 🍽️ אפליקציה לשמור ולתכנן מסעדות, ברים ובתי קפה עם חברים. חינם, נכנסים ונרשמים:';
+async function appShareDlg(){let svg='';try{const Q=await loadQR();const qr=Q(0,'M');qr.addData(APP_URL);qr.make();svg=qr.createSvgTag({cellSize:6,margin:2,scalable:true})}catch{}
+  const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','שליחת האפליקציה');
+  d.innerHTML=`<div class="calp-in qr-in"><h3>📲 שליחת FOMO לחבר</h3><p class="meta" style="margin:0">הקישור לאפליקציה עצמה, בלי הצטרפות לרשימה שלכם. החבר נרשם ופותח רשימה משלו.</p>${svg?`<div class="qr-box">${svg}</div>`:''}<p class="note" dir="ltr" style="margin:0;word-break:break-all">${esc(APP_URL)}</p>
+<button class="btn pri" type="button" data-as="share">${ICON.share}שליחה</button><button class="btn" type="button" data-as="copy">${ICON.copy}העתקת הקישור</button><button class="link-btn" type="button" data-wx>סגירה</button></div>`;
+  d.addEventListener('click',async e=>{const b=e.target.closest('[data-as]');if(b){if(b.dataset.as==='share'){await shareOrCopy('FOMO',APP_TXT,APP_URL)}else{try{await navigator.clipboard.writeText(APP_TXT+' '+APP_URL);toast('הקישור הועתק')}catch{toast(APP_URL)}}return}if(e.target===d||e.target.closest('[data-wx]'))d.remove()});document.body.appendChild(d)}
 
 /* intro splash on every launch */
 {const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
