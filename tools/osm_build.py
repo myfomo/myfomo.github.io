@@ -44,6 +44,7 @@ for e in E:
     if t.get("diet:vegan") in ("yes", "only") or "vegan" in (t.get("cuisine") or ""): r["vg"] = 1
     if t.get("diet:vegetarian") in ("yes", "only"): r["v"] = 1
     if t.get("diet:gluten_free") in ("yes", "only"): r["gf"] = 1
+    if t.get("wikidata"): r["wd"] = t["wikidata"]
     r["t"] = t.get("amenity")
     rows.append(r)
 os.makedirs(os.path.dirname(out), exist_ok=True)
