@@ -2,17 +2,16 @@ name: osm-check
 on:
   push:
     branches: [osm-check]
+    paths: [tools/**, .github/workflows/osm-check.yml]
 permissions:
-  contents: read
+  contents: write
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: python3 tools/osm_fetch.py Q33935
-      - uses: actions/upload-artifact@v4
-        with:
-          name: osm-tlv
-          path: |
-            osm_stats.json
-            osm_places.json
+      - run: python3 tools/osm_build.py osm_places.json data/places-tlv.json "תל אביב"
+      - run: |
+          git config user.name "fomo-bot"; git config user.email "fomo-bot@users.noreply.github.com"
+          git add data/places-tlv.json && git commit -m "OSM catalog: Tel Aviv" && git push
