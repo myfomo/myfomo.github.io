@@ -95,12 +95,21 @@ def site_job(p):
     if re.search(r"instagram\.com|facebook\.com|wolt\.com|tiktok\.com", url): return p, None, "social"
     try: htm = get(url)
     except Exception as e: return p, None, "fetch: " + str(e)[:60]
+    tels = {phone(urllib.parse.unquote(m)) for m in re.findall(r'href=["\']tel:([^"\']+)', htm, re.I)} - {""}
+    p["_tels"] = sorted(tels)
     return p, blocks(htm), ""
 with_site = [p for p in P if p.get("w")]
 with cf.ThreadPoolExecutor(8) as ex:
     for p, B, err in ex.map(site_job, with_site):
         if err == "social": continue
         rep["site_checked"] += 1
+        tels = p.pop("_tels", [])
+        if len(tels) == 1:  # one phone number on the venue's own site (linked from OpenStreetMap)
+            src = p.setdefault("src", {})
+            if not p.get("p"): p["p"] = tels[0]; src["p"] = "site-tel"; rep["phone_tel"] = rep.get("phone_tel", 0) + 1
+            elif phone(p["p"]) == tels[0]: src["p"] = "osm+site"; rep["phone_confirmed"] = rep.get("phone_confirmed", 0) + 1
+            else: rep["conflicts"].append({"id": p["id"], "n": p["n"], "field": "phone", "osm": p["p"], "site": tels[0]})
+        elif len(tels) > 1: rep["phone_multi_skipped"] = rep.get("phone_multi_skipped", 0) + 1
         if not B: continue
         rep["site_jsonld"] += 1
         best = None
