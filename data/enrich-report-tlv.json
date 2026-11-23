@@ -1,0 +1,139 @@
+{
+ "addr_osm": 35,
+ "addr_partial": 635,
+ "site_checked": 408,
+ "site_jsonld": 22,
+ "site_match": 7,
+ "site_reject": 15,
+ "phone_site": 2,
+ "hours_site": 0,
+ "addr_site": 0,
+ "cuisine_site": 2,
+ "names_site": 3,
+ "web_wd": 3,
+ "names_wd": 11,
+ "conflicts": [
+  {
+   "id": "n2108063236",
+   "n": "חיים נלו גריל האוס",
+   "field": "phone",
+   "osm": "+972579444068",
+   "site": "0539444068"
+  },
+  {
+   "id": "n6005282986",
+   "n": "Balinjera",
+   "field": "hours",
+   "osm": "Su-Th 12:00-23:00; Fr 11:00-17:00; Sa 09:15-23:30",
+   "site": "Su,Mo,Tu,We,Th 12:00-20:00; Fr 11:00-15:00"
+  },
+  {
+   "id": "n6041389431",
+   "n": "שניצל קומפני",
+   "field": "phone",
+   "osm": "+972 3 622 2291",
+   "site": "0506969222"
+  }
+ ],
+ "rejected_sites": [
+  {
+   "id": "n886140345",
+   "n": "אבו נסאר-חינאווי",
+   "w": "http://www.rest.co.il/sites/Default.asp?txtRestID=1295",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n1419068446",
+   "n": "ארקפה",
+   "w": "https://www.arcaffe.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n2079180765",
+   "n": "אניטה",
+   "w": "https://www.anita-gelato.com/our-locations/tel-aviv-neve-tsedek-40-shabazi-st/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n2301194107",
+   "n": "בייגלס טל",
+   "w": "https://www.tal-bagels.co.il",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n3930983766",
+   "n": "Night Kitchen",
+   "w": "https://nightkitchen.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n4263469840",
+   "n": "Breakfast at Riverside",
+   "w": "https://www.riverside.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n8765736218",
+   "n": "קפה שניאור",
+   "w": "https://shneor-cafe.com",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n9889139101",
+   "n": "Lily Rose",
+   "w": "https://www.lilyrosebar.com/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n10814448814",
+   "n": "מיקסי סלט בר",
+   "w": "https://mixi.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n11459880747",
+   "n": "Panetti",
+   "w": "https://www.panetti.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n11802320072",
+   "n": "Pizza Hut",
+   "w": "https://www.pizzahut.co.il/branch/tlv-ramat-hachayal/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n12131047251",
+   "n": "לה טיגרה",
+   "w": "https://www.latigre.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n12593361312",
+   "n": "Yan",
+   "w": "https://www.yansushi.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n13201707102",
+   "n": "אניצ'ה",
+   "w": "https://www.anicca.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n13339015829",
+   "n": "Bagel Cafe",
+   "w": "https://www.bagelcafe.co.il/he/",
+   "why": "branch/name not confirmed"
+  }
+ ],
+ "coverage_after": {
+  "address": "1308 (100%)",
+  "hours": "330 (25%)",
+  "phone": "314 (24%)",
+  "website": "442 (34%)",
+  "cuisine": "921 (70%)",
+  "extra_names": "743 (57%)"
+ },
+ "conflicts_n": 3
+}
