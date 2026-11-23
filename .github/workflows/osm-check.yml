@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 tools/osm_fetch.py Q33935
+      - run: python3 tools/osm_fetch.py 32.029,34.739,32.147,34.853
       - run: python3 tools/osm_build.py osm_places.json data/places-tlv.json "תל אביב"
       - run: |
           git config user.name "fomo-bot"; git config user.email "fomo-bot@users.noreply.github.com"
