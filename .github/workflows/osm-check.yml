@@ -11,8 +11,9 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-      - run: python3 tools/osm_fetch.py 32.029,34.739,32.147,34.853
-      - run: python3 tools/osm_build.py osm_places.json data/places-tlv.json "תל אביב"
+      - name: fetch from OpenStreetMap (only when there is no catalog yet, or when REFETCH is in the commit message)
+        if: ${{ hashFiles('data/places-tlv.json') == '' || contains(github.event.head_commit.message, 'REFETCH') }}
+        run: python3 tools/osm_fetch.py 32.029,34.739,32.147,34.853 && python3 tools/osm_build.py osm_places.json data/places-tlv.json "תל אביב"
       - run: python3 tools/osm_enrich.py data/places-tlv.json data/enrich-report-tlv.json
       - run: |
           git config user.name "fomo-bot"; git config user.email "fomo-bot@users.noreply.github.com"
