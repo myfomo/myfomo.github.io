@@ -1040,3 +1040,5 @@ details.sx-more .sx-in-grid>.full,details.sx-more .sx-in-grid>details{grid-colum
 .sec.set-flash,#sb .set-flash{animation:setFl 1.6s 1}
 @keyframes setFl{0%,100%{box-shadow:none}30%{box-shadow:0 0 0 4px #ffb547}}
 @media(min-width:900px){.set-tabs{top:12px}}
+/* v55: OpenStreetMap attribution under search results */
+.sx-attr{margin:6px 2px 0;font-size:12px;color:var(--mute)}.sx-attr a{color:inherit}

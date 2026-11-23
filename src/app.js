@@ -1370,7 +1370,7 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='54';
+const APPV='55';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1738,7 +1738,7 @@ function coach(name,steps){let i=0;const d=document.createElement('div');d.class
 function resetTips(){lsSet('rs-tips',{});lsSet('rs-tips-off',0)}
 
 /* ---- what's new after an update ---- */
-const WHATSNEW={'54':['⚙️ ההגדרות מסודרות ב־4 לשוניות: אני, קבוצה, התראות ועוד','🏠 הלשונית "רשימה" נקראת עכשיו "בית"','👥 "רשימה" הפכה ל"קבוצה" בכל האפליקציה','🌾 אפשר לערוך את "הטעם שלי" מתי שרוצים, בלשונית "אני"'],'53':['👥 "רשימה" נקראת עכשיו "קבוצה", בכל האפליקציה','👋 כניסה ראשונה חדשה: שם, מקומות ראשונים, הטעם שלי, ופתיחת קבוצה עם הזמנה','💌 מי שמוזמן רואה מי הזמין ואילו מקומות מחכים לו','🏠 סיור קצר במסך הבית למשתמשים חדשים','🌾 "הטעם שלי": סגנונות, תזונה, תקציב ועיר'],'46':['✨ חיפוש חכם בדף הקבוצה: מוצא גם מקומות שעוד לא בקבוצה, עם כפתור הוספה','💬 אפשר לתאר במילים, למשל "בר יין שקט בתל אביב"','＋ פותח את אותו חיפוש, עם הוספה ידנית למטה','📝 כרטיס ההוספה מסודר: מה שמולא לבד למעלה, השאר מקופל'],'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר בקבוצה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
+const WHATSNEW={'55':['⚡ חיפוש מהיר יותר: כ־1,300 מסעדות, ברים ובתי קפה בתל אביב כבר במאגר של FOMO, בלי לחכות ל־AI או לגוגל'],'54':['⚙️ ההגדרות מסודרות ב־4 לשוניות: אני, קבוצה, התראות ועוד','🏠 הלשונית "רשימה" נקראת עכשיו "בית"','👥 "רשימה" הפכה ל"קבוצה" בכל האפליקציה','🌾 אפשר לערוך את "הטעם שלי" מתי שרוצים, בלשונית "אני"'],'53':['👥 "רשימה" נקראת עכשיו "קבוצה", בכל האפליקציה','👋 כניסה ראשונה חדשה: שם, מקומות ראשונים, הטעם שלי, ופתיחת קבוצה עם הזמנה','💌 מי שמוזמן רואה מי הזמין ואילו מקומות מחכים לו','🏠 סיור קצר במסך הבית למשתמשים חדשים','🌾 "הטעם שלי": סגנונות, תזונה, תקציב ועיר'],'46':['✨ חיפוש חכם בדף הקבוצה: מוצא גם מקומות שעוד לא בקבוצה, עם כפתור הוספה','💬 אפשר לתאר במילים, למשל "בר יין שקט בתל אביב"','＋ פותח את אותו חיפוש, עם הוספה ידנית למטה','📝 כרטיס ההוספה מסודר: מה שמולא לבד למעלה, השאר מקופל'],'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר בקבוצה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
 function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNew,3000);return}const seen=lsGet('rs-seen-ver','');lsSet('rs-seen-ver',APPV);const L=WHATSNEW[APPV];if(!seen||seen===APPV||!L)return;
   const d=document.createElement('div');d.className='calp upd-new';d.setAttribute('role','dialog');d.setAttribute('aria-label','מה חדש');
   d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:30px">🎁</div><h3>מה חדש ב־FOMO</h3><ul class="wn">${L.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><button class="btn pri" type="button" data-wx>מעולה!</button></div>`;
@@ -1867,19 +1867,32 @@ function sxWhy(x,I){if(!I)return '';const w=[];if(I.cuisine&&x.cuisine===I.cuisi
   if(I.city&&x.city&&(fomoNorm(x.city).includes(fomoNorm(I.city))||fomoNorm(I.city).includes(fomoNorm(x.city))))w.push('ב'+x.city);if(I.cheap&&x.price&&x.price<=2)w.push('לא יקר');if(I.fancy&&x.price>=3)w.push('יוקרתי');
   if(I.open_now&&x.hours){const o=openState(x);if(o&&o.open)w.push('פתוח עכשיו')}return w.slice(0,3).join(' · ')}
 /* the search itself: names -> catalog, AI spelling fix, map, Google suggestions; descriptions -> AI intent, catalog by type/city, Google text search */
+/* v55: local catalog from OpenStreetMap (data/places-*.json): searched first, so names are found without AI or Google */
+const LOCAL_CATS=['tlv'];let locCat=null,locLoad=null;
+function locLoadAll(){if(locCat)return Promise.resolve(locCat);if(locLoad)return locLoad;
+  locLoad=Promise.all(LOCAL_CATS.map(c=>fetch(`data/places-${c}.json?v=${APPV}`).then(r=>r.ok?r.json():null).catch(()=>null))).then(A=>{locCat=[];for(const d of A)if(d&&Array.isArray(d.places))for(const p of d.places){p._k=[p.n,...(p.al||[])].map(x=>fomoNorm(x).replace(/\s+/g,''));locCat.push(p)}return locCat});return locLoad}
+function locToItem(p){const h=p.oh?parseOH(p.oh):null;return {loc:1,osm:p.id,name:p.n,full:[p.n,p.a,p.c].filter(Boolean).join(', '),address:p.a||'',city:/aviv|תל.?אביב/i.test(p.c||'')?'תל אביב':(p.c||''),lat:p.la,lng:p.lo,cuisine:p.cu||'',price:0,hours:h&&okHours(h)?h:null,site:safeUrl(p.w||''),phone:p.p||'',veg:!!(p.v||p.vg),kosher:!!p.k,vegan:!!p.vg,gf:!!p.gf}}
+async function locSearch(v,lim=6){const L=await locLoadAll();const q=fomoNorm(v).replace(/\s+/g,'');if(q.length<2||!L.length)return [];const out=[];
+  for(const p of L){let sc=0;for(const k of p._k){if(!k)continue;const d=k===q?1:(k.startsWith(q)&&q.length>=3)?.92:(q.length>=4&&k.includes(q))?.8:sxDice(k,q);if(d>sc)sc=d}if(sc>=.6)out.push([sc,p])}
+  out.sort((a,b)=>b[0]-a[0]);return out.slice(0,lim).map(([sc,p])=>Object.assign(locToItem(p),{score:sc}))}
+async function locBrowse(I,lim=8){const L=await locLoadAll();if(!L.length)return [];const cty=I.city?fomoNorm(I.city):'';
+  const R=L.filter(p=>(!I.cuisine||p.cu===I.cuisine)&&(!cty||fomoNorm(p.c||'').includes(cty)||cty.includes(fomoNorm(p.c||'')))&&(!I.vegan||p.vg)&&(!I.kosher||p.k));
+  const items=R.map(locToItem).filter(x=>!I.open_now||!x.hours||(openState(x)||{}).open);items.sort((a,b)=>(!!b.hours-!!a.hours)||(!!b.site-!!a.site));return items.slice(0,lim)}
+const sxAttr=L=>(L||[]).some(x=>x&&x.loc)?'<p class="sx-attr">חלק מהמקומות מ־<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a></p>':'';
 async function sxSearch(v,opt){v=v.trim();const key=v+'|'+(opt&&opt.desc?1:0);if(sxCache.has(key))return sxCache.get(key);let out=null;
   if(opt&&opt.desc){const I=await aiCall({action:'intent',q:v,cuisines:CUIS,tags:TAGS});
     if(I&&I.ok&&I.kind==='describe'){track('ai-search');if(I.city)I.city=String(I.city).replace(/^תל[\s-]?אביב\s*[-–]?\s*יפו$/,'תל אביב');const L=[];
       try{const {data}=await sb.rpc('browse_places',{c:I.cuisine,cty:I.city,lim:8});for(const p of data||[])L.push(catToItem(p))}catch(e){console.warn('browse',e)}
-      if(I.query&&(window.APP_CONFIG||{}).googleKey){const qq=await takeQuota('gsearch');if(qq.ok){try{const ps=await gSearch(I.query,SXF,8);for(const p of ps||[]){if(p.businessStatus==='CLOSED_PERMANENTLY'||!isFoodG([p.primaryType,...(p.types||[])]))continue;const it=gToItem(p);it.gpid=p.id||'';if(!L.some(y=>(y.gpid&&y.gpid===it.gpid)||(!y.g&&sameP(y,it))))L.push(it)}}catch(e){console.warn('g text',e)}}}
+      if(L.length<8)try{for(const it of await locBrowse(I,8))if(!L.some(y=>sameP(y,it)))L.push(it)}catch(e){console.warn('local',e)}
+      if(L.length<5&&I.query&&(window.APP_CONFIG||{}).googleKey){const qq=await takeQuota('gsearch');if(qq.ok){try{const ps=await gSearch(I.query,SXF,8);for(const p of ps||[]){if(p.businessStatus==='CLOSED_PERMANENTLY'||!isFoodG([p.primaryType,...(p.types||[])]))continue;const it=gToItem(p);it.gpid=p.id||'';if(!L.some(y=>(y.gpid&&y.gpid===it.gpid)||(!y.g&&sameP(y,it))))L.push(it)}}catch(e){console.warn('g text',e)}}}
       const ok=x=>(x.g||!I.cuisine||!x.cuisine||x.cuisine===I.cuisine)&&(!I.cheap||!x.price||x.price<=2)&&(!I.fancy||!x.price||x.price>=3)&&(!I.open_now||!x.hours||(openState(x)||{}).open);
       const items=L.filter(ok).slice(0,8);items.forEach(x=>x.why=sxWhy(x,I));out={mode:'ai',intent:I,items}}
     else if(I&&I.ok&&I.kind==='name'&&I.name)v=[I.name,I.city].filter(Boolean).join(' ')}
-  if(!out){let res=await catSearch(v);const found=()=>res.some(x=>x.cat&&x.score>=.45);let q2=v;
+  if(!out){let res=await catSearch(v);try{for(const it of await locSearch(v))if(!res.some(x=>sameP(x,it)))res.push(it)}catch(e){console.warn('local',e)}res.sort((a,b)=>(b.score||0)-(a.score||0));const found=()=>res.some(x=>(x.cat&&x.score>=.45)||(x.loc&&x.score>=.75));let q2=v;
     if(!found()&&!(opt&&opt.noAi)){const ai=await aiCall({action:'parse',q:v});if(ai&&ai.name){track('ai');placeSearch.last={q:v,ai};q2=[ai.name,ai.city].filter(Boolean).join(' ');
       for(const t of [q2,...(ai.alt||[]).map(a=>[a,ai.city].filter(Boolean).join(' '))].filter((x,i,A)=>x&&x!==v&&A.indexOf(x)===i).slice(0,3)){const more=await catSearch(t);for(const m of more)if(!res.some(x=>x.pid===m.pid))res.push(m);if(found())break}res.sort((a,b)=>b.score-a.score)}}
-    {const L=placeSearch.last&&placeSearch.last.q===v&&placeSearch.last.ai?placeSearch.last.ai:null;const names=[v,L&&L.name,...((L&&L.alt)||[])].filter(Boolean);res=res.filter(x=>!x.cat||names.some(n=>sxDice(x.name,n)>=.5))}
-    if(!res.some(x=>x.cat)){const o=await osmSearch(q2);res=res.concat(o.filter(y=>!res.some(x=>sameP(x,y))&&[v,q2].some(n=>sxDice(y.name,n.split(' ').slice(0,3).join(' '))>=.4)))}
+    {const L=placeSearch.last&&placeSearch.last.q===v&&placeSearch.last.ai?placeSearch.last.ai:null;const names=[v,L&&L.name,...((L&&L.alt)||[])].filter(Boolean);res=res.filter(x=>!(x.cat||x.loc)||names.some(n=>sxDice(x.name,n)>=.5))}
+    if(!res.some(x=>x.cat||x.loc)){const o=await osmSearch(q2);res=res.concat(o.filter(y=>!res.some(x=>sameP(x,y))&&[v,q2].some(n=>sxDice(y.name,n.split(' ').slice(0,3).join(' '))>=.4)))}
     if(!res.length){let g=null;try{g=await gSuggest(q2)}catch(e){console.warn('google suggest',e)}res=g||[]}
     out={mode:'name',items:res.slice(0,8)}}
   sxCache.set(key,out);if(sxCache.size>40)sxCache.delete(sxCache.keys().next().value);return out}
@@ -1911,7 +1924,7 @@ async function sxListRun(v,desc){if(q.trim()!==v)return;const m=$('#sxMore');if(
   const items=r.items.filter(x=>!sxInList(x));sxRes.list=items;
   const mm=$('#sxMore');if(!mm)return;mm.dataset.q=v;
   mm.innerHTML=`<div class="sx-h">מקומות נוספים ${r.mode==='name'?'<small><span class="sx-fast">⚡ מיידי</span></small>':''}</div>`+(r.mode==='ai'?sxIntentHtml(r.intent):'')
-    +`<div class="sx-list">${items.length?items.map((x,i)=>sxRow(x,i,'list')).join(''):`<p class="sx-note">${r.items.length?'כל מה שמצאנו כבר בקבוצה שלכם 👌':'לא מצאנו מקומות נוספים. נסו לנסח אחרת.'}</p>`}</div>`}
+    +`<div class="sx-list">${items.length?items.map((x,i)=>sxRow(x,i,'list')).join(''):`<p class="sx-note">${r.items.length?'כל מה שמצאנו כבר בקבוצה שלכם 👌':'לא מצאנו מקומות נוספים. נסו לנסח אחרת.'}</p>`}</div>${sxAttr(items)}`}
 /* ---- ＋ sheet ---- */
 function addSheet(){killFormMap();openId=null;mode='add';openSheet();track('plus');
   $('#sb').innerHTML=`<div class="sec dh"><h2 style="margin-bottom:12px">מקום חדש</h2><form class="sx-sheethead" id="sxPF"><span class="sx-qwrap"><span class="sx-spark" aria-hidden="true">✨</span><input class="f" id="sxPQ" autocomplete="off" enterkeyhint="search" placeholder="חיפוש חכם: איזה מקום להוסיף?" aria-label="חיפוש מקום להוספה"></span><button class="btn pri" type="submit">חיפוש</button></form>
@@ -1922,7 +1935,7 @@ var sxPT=null,sxPSeq=0;
 async function sxPlusRun(v,force){v=(v||'').trim();const B=$('#sxPB');if(!B)return;if(v.length<2){return}const desc=sxIsDesc(v);if(desc&&!force)return;const seq=++sxPSeq;const W=$('#sxPQ').closest('.sx-qwrap');
   B.innerHTML=desc?sxThink(['מבין את הבקשה','מחפש בקטלוג, במפה ובגוגל','משאיר רק אוכל ושתייה']):'<p class="sx-note">מחפש…</p>';if(desc&&W)W.classList.add('busy');const stop=desc?sxStep(B):()=>{};
   let r=null;try{r=await sxSearch(v,{desc})}finally{stop();if(W)W.classList.remove('busy')}if(seq!==sxPSeq||!$('#sxPB'))return;
-  sxRes.plus=r.items;$('#sxPB').innerHTML=(r.mode==='name'?'<p style="margin:0 2px 10px"><span class="sx-fast">⚡ מיידי</span></p>':sxIntentHtml(r.intent))+`<div class="sx-list">${r.items.length?r.items.map((x,i)=>sxRow(x,i,'plus')).join(''):'<p class="sx-note">לא מצאנו. אפשר להוסיף ידנית 👇</p>'}</div>`}
+  sxRes.plus=r.items;$('#sxPB').innerHTML=(r.mode==='name'?'<p style="margin:0 2px 10px"><span class="sx-fast">⚡ מיידי</span></p>':sxIntentHtml(r.intent))+`<div class="sx-list">${r.items.length?r.items.map((x,i)=>sxRow(x,i,'plus')).join(''):'<p class="sx-note">לא מצאנו. אפשר להוסיף ידנית 👇</p>'}</div>${sxAttr(r.items)}`}
 /* ---- picking a result opens the form, filled and arranged ---- */
 async function sxAdd(x){track('sx-add');try{await loadLeaflet()}catch{}
   if(x.g&&x.gpid&&!x.pred){const qq=await takeQuota('place');if(qq.ok){try{const g=await gmaps();const {Place}=await g.maps.importLibrary('places');const pl=new Place({id:x.gpid});await pl.fetchFields({fields:GF});const it=gToItem(pl);it.gpid=x.gpid;x=it}catch(e){console.warn('g details',e)}}}
@@ -2022,7 +2035,7 @@ async function fxSearch(v,force){if(!fx)return;if(v.length<2){fxSuggest();return
 function fxResRender(L,head,searched){const box=$('#fxRes');if(!box)return;
   box.innerHTML=(head?`<div class="sx-h">${esc(head)}</div>`:'')+(L.length?`<div class="fx-grid">${L.map((x,i)=>{const on=fx.sel.some(s=>fxSame(s,x)),ex=sxInList(x),meta=[x.cuisine,x.city].filter(Boolean).join(' · ');
     return `<button type="button" class="fx-pc ${on||ex?'on':''}" data-fx-pick="${i}" ${ex?'disabled':''}><span class="fx-pk">${on||ex?'✓':'+'}</span>${sxAv(x)}<b>${esc(x.name)}</b><small>${esc(ex?'כבר בקבוצה':meta||String(x.full||'').split(',').slice(0,2).join(','))}</small></button>`}).join('')}</div>`
-    :`<p class="sx-note">${searched?'לא מצאנו. נסו לכתוב אחרת, או דלגו ותוסיפו אחר כך.':'כתבו שם של מקום שבא לכם לנסות.'}</p>`)}
+    :`<p class="sx-note">${searched?'לא מצאנו. נסו לכתוב אחרת, או דלגו ותוסיפו אחר כך.':'כתבו שם של מקום שבא לכם לנסות.'}</p>`)+sxAttr(L)}
 const fxSame=(a,b)=>(a.gpid&&a.gpid===b.gpid)||(a.pid&&a.pid===b.pid)||(a.name===b.name&&(a.city||'')===(b.city||''));
 document.addEventListener('click',e=>{const b=e.target.closest('[data-fx-pick]');if(!b||!fx)return;const x=fx.sx[+b.dataset.fxPick];if(!x)return;const i=fx.sel.findIndex(s=>fxSame(s,x));
   if(i>=0){fx.sel.splice(i,1);b.classList.remove('on');b.querySelector('.fx-pk').textContent='+'}else{fx.sel.push(x);b.classList.add('on');b.querySelector('.fx-pk').textContent='✓';toast('✓ '+x.name)}fxProg()});
