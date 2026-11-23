@@ -78,7 +78,7 @@ async function upload(files,id){
 
 /* ---------- data ---------- */
 function applyPatch(r,p){const o={...r,...p};if(p.ratings)o.ratings={...(r.ratings||{}),...p.ratings};if(p.votes)o.votes={...(r.votes||{}),...p.votes};return o}
-async function loadAll(){if(!cur)return;const lid=cur.id;const {data,error}=await sb.from('restaurants').select('id,data').eq('list_id',lid).order('updated_at',{ascending:false});if(!cur||cur.id!==lid)return;if(error){const c=lsGet('rs-cache-'+lid,null);if(c&&isNetErr(error)){rows=c;loaded=true;render();setOffline();return}$('#status').textContent='הרשימה לא נטענה: '+errMsg(error);return}
+async function loadAll(){if(!cur)return;const lid=cur.id;const {data,error}=await sb.from('restaurants').select('id,data').eq('list_id',lid).order('updated_at',{ascending:false});if(!cur||cur.id!==lid)return;if(error){const c=lsGet('rs-cache-'+lid,null);if(c&&isNetErr(error)){rows=c;loaded=true;render();setOffline();return}$('#status').textContent='הקבוצה לא נטענה: '+errMsg(error);return}
   rows=(data||[]).map(x=>({...(x.data||{}),id:x.id})).filter(x=>!delQ.has(x.id));takeMeta(lid);const pend=lsGet('rs-outbox',[]).filter(o=>o.lid===lid);for(const o of pend){if(o.t==='del'){rows=rows.filter(r=>r.id!==o.id);continue}if(o.t)continue;if(o.isNew){if(!byId(o.id))rows.unshift({...o.patch,id:o.id})}else rows=rows.map(r=>r.id===o.id?applyPatch(r,o.patch):r)}
   loaded=true;$('#status').textContent='';setOffline();cacheRows();fixLegacy();render();if(openId&&mode==='view')renderDetail();checkAch();setTimeout(backfillGeo,1500);setTimeout(thumbBackfill,9000);setTimeout(loadFriendsLoved,1200)}
 function save(id,patch,isNew){
@@ -118,7 +118,7 @@ function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!ope
   const s={recent:(a,b)=>(b.updatedAt||0)-(a.updatedAt||0),rating:(a,b)=>avg(b)-avg(a),visit:(a,b)=>lastVisit(b).localeCompare(lastVisit(a)),name:(a,b)=>String(a.name).localeCompare(String(b.name),'he'),near:(a,b)=>(distKm(a)??1e9)-(distKm(b)??1e9)}[sort]||((a,b)=>0);return list.sort(s)}
 function renderHead(){const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,m=rows.filter(isMatch).length;
   $('#stats').innerHTML=loaded?`היינו ב־<b>${been}</b> · רוצים לנסות <b>${want}</b>${m?` · <b>${m}</b> ששנינו רוצים השבוע`:''}`:'טוען…';renderGreet()}
-function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove());
+function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove());setTimeout(fxChk,0);
   const cs=[...new Set(rows.map(r=>r.cuisine).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'he'));
   if(cuisF&&!cs.includes(cuisF))cuisF='';
   const hasHours=rows.some(r=>r.hours&&Object.keys(r.hours).length);
@@ -349,19 +349,19 @@ const CHROME_URL='intent://myfomo.github.io/#Intent;scheme=https;package=com.and
 const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 const isOwner=()=>cur&&cur.role==='owner';
 function listsSheet(){killFormMap();openId=null;mode='lists';openSheet();
-  $('#sb').innerHTML=`<div class="sec dh"><h2>הרשימות שלי</h2><p class="meta" style="margin-top:6px">כל רשימה היא עולם משלה: מקומות, תמונות, דירוגים ומשתתפים.</p>
+  $('#sb').innerHTML=`<div class="sec dh"><h2>הקבוצות שלי</h2><p class="meta" style="margin-top:6px">כל קבוצה היא עולם משלה: מקומות, תמונות, דירוגים וחברים.</p>
 <ul class="toplist" style="margin-top:12px">${lists.map(l=>`<li data-act="pickList" data-id="${esc(l.id)}" tabindex="0"><span>${esc(l.name)}${cur&&l.id===cur.id?' <small class="meta">· פתוחה עכשיו</small>':''}</span><span class="meta">${l.role==='owner'?'שלי':'הצטרפתי'}</span></li>`).join('')}</ul></div>
-<div class="sec"><h4>רשימה חדשה</h4><form class="addrow" id="newListF"><input class="f" name="n" maxlength="40" placeholder="למשל: דייטים, ארוחות עבודה, טיול באיטליה" aria-label="שם הרשימה" required><button class="btn pri" type="submit">יצירה</button></form></div>
-<div class="sec"><h4>הצטרפות לרשימה של מישהו אחר</h4><form class="addrow" id="joinF"><input class="f" name="c" dir="ltr" placeholder="הדביקו כאן קישור הזמנה" aria-label="קישור הזמנה" required><button class="btn" type="submit">הצטרפות</button></form></div>`}
+<div class="sec"><h4>קבוצה חדשה</h4><form class="addrow" id="newListF"><input class="f" name="n" maxlength="40" placeholder="למשל: דייטים, ארוחות עבודה, טיול באיטליה" aria-label="שם הקבוצה" required><button class="btn pri" type="submit">יצירה</button></form></div>
+<div class="sec"><h4>הצטרפות לקבוצה של מישהו אחר</h4><form class="addrow" id="joinF"><input class="f" name="c" dir="ltr" placeholder="הדביקו כאן קישור הזמנה" aria-label="קישור הזמנה" required><button class="btn" type="submit">הצטרפות</button></form></div>`}
 async function loadPk(){const el=$('#pkList');if(!el)return;try{const {data,error}=await sb.auth.passkey.list();if(error)throw error;const arr=Array.isArray(data)?data:(data&&(data.passkeys||data.items))||[];el.innerHTML=arr.length?arr.map(p=>`<div class="mem"><span><b>${esc(p.friendly_name||p.friendlyName||'מפתח גישה')}</b><br><small class="meta">נוסף ${esc(fmtD(String(p.created_at||p.createdAt||'').slice(0,10)))}</small></span><button class="del" type="button" data-act="pkDel" data-id="${esc(p.id)}" aria-label="הסרה">×</button></div>`).join(''):'עוד לא הופעל באף מכשיר.';return arr}catch{el.textContent='';return null}}
 function settingsSheet(){killFormMap();openId=null;mode='settings';openSheet();const own=isOwner();setTimeout(loadPk,0);setTimeout(fillPushSec,0);setTimeout(fillQuotaAdm,0);setTimeout(fillBackups,0);
   $('#sb').innerHTML=`<div class="sec dh"><h2>הגדרות</h2><p class="meta" style="margin-top:6px">מחובר/ת בתור <span dir="ltr">${esc(me.email)}</span></p>
 <form class="addrow" id="nameF"><input class="f" name="n" maxlength="30" value="${esc(myName)}" placeholder="השם שלי" aria-label="השם שלי"><button class="btn" type="submit">שמירת שם</button></form></div>
-<div class="sec"><h4>הרשימה "${esc(cur.name)}"</h4>${own?`<form class="addrow" id="renameF" style="margin-top:0"><input class="f" name="n" maxlength="40" value="${esc(cur.name)}" aria-label="שם הרשימה"><button class="btn" type="submit">שינוי שם</button></form>`:'<p class="note" style="margin:0">הצטרפת לרשימה הזו בהזמנה.</p>'}
-<div class="row" style="margin-top:10px"><button class="btn" type="button" data-act="lists">כל הרשימות שלי / רשימה חדשה</button></div></div>
-<div class="sec"><h4>הזמנת חברים לרשימה הזו</h4><p class="note" style="margin:0 0 10px">מי שפותח את הקישור יוצר חשבון עם המייל והסיסמה שלו ומצטרף לרשימה. הוא יוכל גם לפתוח רשימות משלו.</p><div class="row"><button class="btn pri" type="button" data-act="shareInvite">${ICON.share}שליחת קישור הזמנה</button><button class="btn" type="button" data-act="copyInvite">${ICON.copy}העתקה</button><button class="btn" type="button" data-act="qrInvite">📱 קוד QR</button></div><p class="note" dir="ltr" style="word-break:break-all">${esc(inviteUrl())}</p>${own?'<button class="link" type="button" data-act="resetInvite" style="background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;padding:6px 0">איפוס הקישור (הקישור הישן יפסיק לעבוד)</button>':''}</div>
-<div class="sec"><h4>מי ברשימה (${members.length})</h4>${members.map(m=>`<div class="mem"><span><b>${esc(m.name||m.email.split('@')[0])}</b>${m.user_id===myId?' <small class="meta">(אני)</small>':''}${m.role==='owner'?' <small class="meta">· מנהל/ת</small>':''}<br><small class="meta" dir="ltr">${esc(m.email)}</small> <small class="meta">· ${ago(m.last_seen)}</small></span>${own&&m.user_id!==myId?`<button class="del" type="button" data-act="rmMember" data-u="${esc(m.user_id)}" aria-label="הסרה מהרשימה">×</button>`:''}</div>`).join('')}
-<div class="row" style="margin-top:12px">${own?'<button class="btn" type="button" data-act="delList" style="color:var(--bad)">מחיקת הרשימה</button>':'<button class="btn" type="button" data-act="leaveList" style="color:var(--bad)">יציאה מהרשימה</button>'}</div></div>
+<div class="sec"><h4>הקבוצה "${esc(cur.name)}"</h4>${own?`<form class="addrow" id="renameF" style="margin-top:0"><input class="f" name="n" maxlength="40" value="${esc(cur.name)}" aria-label="שם הקבוצה"><button class="btn" type="submit">שינוי שם</button></form>`:'<p class="note" style="margin:0">הצטרפת לקבוצה הזו בהזמנה.</p>'}
+<div class="row" style="margin-top:10px"><button class="btn" type="button" data-act="lists">כל הקבוצות שלי / קבוצה חדשה</button></div></div>
+<div class="sec"><h4>הזמנת חברים לקבוצה הזו</h4><p class="note" style="margin:0 0 10px">מי שפותח את הקישור יוצר חשבון עם המייל והסיסמה שלו ומצטרף לקבוצה. הוא יוכל גם לפתוח קבוצות משלו.</p><div class="row"><button class="btn pri" type="button" data-act="shareInvite">${ICON.share}שליחת קישור הזמנה</button><button class="btn" type="button" data-act="copyInvite">${ICON.copy}העתקה</button><button class="btn" type="button" data-act="qrInvite">📱 קוד QR</button></div><p class="note" dir="ltr" style="word-break:break-all">${esc(inviteUrl())}</p>${own?'<button class="link" type="button" data-act="resetInvite" style="background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;padding:6px 0">איפוס הקישור (הקישור הישן יפסיק לעבוד)</button>':''}</div>
+<div class="sec"><h4>מי בקבוצה (${members.length})</h4>${members.map(m=>`<div class="mem"><span><b>${esc(m.name||m.email.split('@')[0])}</b>${m.user_id===myId?' <small class="meta">(אני)</small>':''}${m.role==='owner'?' <small class="meta">· מנהל/ת</small>':''}<br><small class="meta" dir="ltr">${esc(m.email)}</small> <small class="meta">· ${ago(m.last_seen)}</small></span>${own&&m.user_id!==myId?`<button class="del" type="button" data-act="rmMember" data-u="${esc(m.user_id)}" aria-label="הסרה מהקבוצה">×</button>`:''}</div>`).join('')}
+<div class="row" style="margin-top:12px">${own?'<button class="btn" type="button" data-act="delList" style="color:var(--bad)">מחיקת הקבוצה</button>':'<button class="btn" type="button" data-act="leaveList" style="color:var(--bad)">יציאה מהקבוצה</button>'}</div></div>
 ${pkOK()?`<div class="sec"><h4>כניסה עם ${bioName()}</h4><p class="note" style="margin:0 0 10px">מפעילים פעם אחת בכל מכשיר, ומשם נכנסים בלי סיסמה.</p><div id="pkList" class="note">טוען…</div><button class="btn pri" type="button" data-act="pkAdd" style="margin-top:10px">הפעלת ${bioName()} במכשיר הזה</button></div>`:''}
 ${dietSecHtml()}${specialSecHtml()}<div class="sec"><h4>התראות לטלפון</h4><div id="pushSec"><p class="note">בודק…</p></div></div>
 <div class="sec"><h4>צ׳ק־אין אוטומטי</h4><p class="note" style="margin:0 0 10px">כשאתם פותחים את האפליקציה ליד מקום מהרשימה, היא שואלת אם לרשום ביקור. צריך לאשר גישה למיקום.</p><div class="seg" role="group" aria-label="צ׳ק־אין אוטומטי"><button type="button" data-act="ciSet" data-v="on" aria-pressed="${lsGet('rs-checkin','on')!=='off'}">פעיל</button><button type="button" data-act="ciSet" data-v="off" aria-pressed="${lsGet('rs-checkin','on')==='off'}">כבוי</button></div></div>
@@ -371,7 +371,7 @@ ${pubSecHtml()}${backupSecHtml()}<div id="qAdm"></div>
 <div class="sec"><h4>ייבוא</h4><button class="btn" type="button" data-act="import">${ICON.pin}ייבוא מקומות שמורים מגוגל מפות</button></div>
 <div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה.</p>':isPhone()?instSteps(instPlat())+instBtn(instPlat()).replace('class="btn"','class="btn pri"').replace(BRASS,''):'<p class="note" style="margin:0">פותחים את הקישור בטלפון ומתקינים משם.</p>'}
 </div>
-<div class="sec"><h4>שליחת האפליקציה לחברים</h4><p class="note" style="margin:0 0 10px">קישור קבוע לאפליקציה עצמה, בלי הצטרפות לרשימה שלכם. מי שנכנס נרשם ופותח רשימה משלו.</p><button class="btn" type="button" data-act="shareApp">📲 שליחת האפליקציה</button></div>${accountSecHtml()}<div class="sec"><div class="row"><button class="btn" type="button" data-act="onb">הדרכה קצרה על האפליקציה</button><button class="btn" type="button" data-act="signout">התנתקות</button></div></div>`}
+<div class="sec"><h4>שליחת האפליקציה לחברים</h4><p class="note" style="margin:0 0 10px">קישור קבוע לאפליקציה עצמה, בלי הצטרפות לקבוצה שלכם. מי שנכנס נרשם ופותח קבוצה משלו.</p><button class="btn" type="button" data-act="shareApp">📲 שליחת האפליקציה</button></div>${accountSecHtml()}<div class="sec"><div class="row"><button class="btn" type="button" data-act="onb">הדרכה קצרה על האפליקציה</button><button class="btn" type="button" data-act="signout">התנתקות</button></div></div>`}
 const codeFrom=v=>{v=String(v||'').trim();try{const u=new URL(v);return u.searchParams.get('join')||''}catch{}return /^[a-f0-9]{8,40}$/i.test(v)?v:''};
 async function doCreateList(name){const {data,error}=await sb.rpc('create_list',{list_name:name});if(error){toast(errMsg(error));return null}await loadLists();return data}
 async function doJoin(code){const {data,error}=await sb.rpc('join_list',{code});if(error){toast(errMsg(error));return null}if(!data){toast('קישור ההזמנה לא תקף. אולי אופס? בקשו קישור חדש.');return null}await loadLists();return data}
@@ -412,7 +412,7 @@ function unread(){const s=lsGet(seenKey(),0);return acts.filter(a=>a.user_id!==m
 function renderBell(){const n=unread();document.querySelectorAll('.bell-n').forEach(b=>{b.textContent=n>9?'9+':String(n);b.hidden=!n})}
 const ACT_IC={add:'plus',photo:'cam',comment:'chat',visit:'pin',plan:'cal',match:'heart',poll:'vote'};
 function feedSheet(){killFormMap();openId=null;mode='feed';openSheet();lsSet(seenKey(),Date.now());renderBell();
-  $('#sb').innerHTML=`<div class="sec dh"><h2>מה חדש</h2><p class="meta" style="margin-top:6px">מה קורה ברשימה "${esc(cur.name)}"</p></div><div class="sec"><ul class="feed">${acts.length?acts.map(a=>`<li ${a.restaurant_id?`data-act="open" data-id="${esc(a.restaurant_id)}"`:''}><span class="av" style="--h:${hue(a.user_id)}">${esc((nm(a.user_id)||'?').charAt(0))}</span><span class="ft"><b>${esc(nm(a.user_id))}</b> ${esc(a.text)}<small>${relT(a.created_at)}</small></span></li>`).join(''):'<li class="note">עוד לא קרה כלום. ברגע שמישהו יוסיף מקום, תמונה או תגובה, זה יופיע כאן.</li>'}</ul></div>`}
+  $('#sb').innerHTML=`<div class="sec dh"><h2>מה חדש</h2><p class="meta" style="margin-top:6px">מה קורה בקבוצה "${esc(cur.name)}"</p></div><div class="sec"><ul class="feed">${acts.length?acts.map(a=>`<li ${a.restaurant_id?`data-act="open" data-id="${esc(a.restaurant_id)}"`:''}><span class="av" style="--h:${hue(a.user_id)}">${esc((nm(a.user_id)||'?').charAt(0))}</span><span class="ft"><b>${esc(nm(a.user_id))}</b> ${esc(a.text)}<small>${relT(a.created_at)}</small></span></li>`).join(''):'<li class="note">עוד לא קרה כלום. ברגע שמישהו יוסיף מקום, תמונה או תגובה, זה יופיע כאן.</li>'}</ul></div>`}
 
 /* ================= comments ================= */
 const cmts={};
@@ -441,9 +441,9 @@ function renderPoll(){const p=polls.find(x=>x.id===openPoll);if(!p||mode!=='poll
   const voters=o=>Object.entries(p.votes||{}).filter(([,v])=>v===o).map(([u])=>nm(u));
   if(p.closed){const w=byId(pollWinner(p));$('#sb').innerHTML=`<div class="pick"><p class="meta">${esc(p.title)} · ${tot} הצביעו</p><h2 style="margin-top:8px">והמנצח הוא…</h2><div class="nm">${esc(w?w.name:'—')}</div>${w?`<p class="meta">${esc([w.cuisine,w.city].filter(Boolean).join(' · '))}</p><div class="row"><a class="btn pri" href="${esc(wazeUrl(w))}" target="_blank" rel="noopener">${ICON.nav}יוצאים! Waze</a><button class="btn" type="button" data-act="planNew" data-id="${esc(w.id)}">${ICON.cal}קביעה + יומן</button><button class="btn" type="button" data-act="open" data-id="${esc(w.id)}">פרטים</button></div>`:''}${canEnd?'<button class="link-btn" type="button" data-act="pollDel">מחיקת ההצבעה</button>':''}</div>`;return}
   $('#sb').innerHTML=`<div class="sec dh"><h2>${esc(p.title)}</h2><p class="meta" style="margin-top:6px">${tot} הצביעו · ${mine?'אפשר לשנות את ההצבעה':'בחרו את המקום שהכי בא לכם'}</p></div><div class="sec"><div class="popts">${(p.options||[]).map(o=>{const r=byId(o),n=c[o]||0,pc=tot?Math.round(n/tot*100):0;return `<button type="button" class="popt ${mine===o?'sel':''}" data-act="pollVote" data-o="${esc(o)}"><span class="pb" style="width:${pc}%"></span><span class="pt"><b>${esc(r?r.name:'מקום שנמחק')}</b><small>${esc(r?[r.cuisine,r.city].filter(Boolean).join(' · '):'')}${voters(o).length?' · '+esc(voters(o).join(', ')):''}</small></span><span class="pn">${n}</span></button>`}).join('')}</div>
-<div class="row" style="margin-top:16px">${canEnd?'<button class="btn pri" type="button" data-act="pollClose">סיום והכרזה על המנצח</button><button class="btn" type="button" data-act="pollDel" style="color:var(--bad)">מחיקה</button>':''}<button class="btn" type="button" data-act="shareInvite">${ICON.share}הזמנת חברים להצביע</button></div><p class="note">חברים צריכים להיות ברשימה כדי להצביע. אפשר לשלוח להם את קישור ההזמנה.</p></div>`}
+<div class="row" style="margin-top:16px">${canEnd?'<button class="btn pri" type="button" data-act="pollClose">סיום והכרזה על המנצח</button><button class="btn" type="button" data-act="pollDel" style="color:var(--bad)">מחיקה</button>':''}<button class="btn" type="button" data-act="shareInvite">${ICON.share}הזמנת חברים להצביע</button></div><p class="note">חברים צריכים להיות בקבוצה כדי להצביע. אפשר לשלוח להם את קישור ההזמנה.</p></div>`}
 function pollNewSheet(){killFormMap();openId=null;mode='pollnew';openSheet();const cands=rows.filter(r=>r.status!=='been'||r.fav||avg(r)>=4);
-  $('#sb').innerHTML=`<form id="pollF" class="sec dh"><h2>הצבעה עם חברים</h2><p class="meta" style="margin-top:6px">בחרו 2 עד 4 מקומות, וכל מי שברשימה יצביע.</p><label class="l" style="margin-top:14px">כותרת<input class="f" name="t" maxlength="60" value="לאן יוצאים הערב?"></label><div class="chips" style="margin-top:14px">${cands.map(r=>`<label class="chip"><input type="checkbox" name="o" value="${esc(r.id)}"><span>${esc(r.name)}</span></label>`).join('')||'<p class="note">אין עדיין מקומות ברשימה.</p>'}</div><p class="note" id="pollErr"></p><div class="row" style="margin-top:12px"><button class="btn pri" type="submit">פתיחת הצבעה</button></div></form>`}
+  $('#sb').innerHTML=`<form id="pollF" class="sec dh"><h2>הצבעה עם חברים</h2><p class="meta" style="margin-top:6px">בחרו 2 עד 4 מקומות, וכל מי שבקבוצה יצביע.</p><label class="l" style="margin-top:14px">כותרת<input class="f" name="t" maxlength="60" value="לאן יוצאים הערב?"></label><div class="chips" style="margin-top:14px">${cands.map(r=>`<label class="chip"><input type="checkbox" name="o" value="${esc(r.id)}"><span>${esc(r.name)}</span></label>`).join('')||'<p class="note">אין עדיין מקומות ברשימה.</p>'}</div><p class="note" id="pollErr"></p><div class="row" style="margin-top:12px"><button class="btn pri" type="submit">פתיחת הצבעה</button></div></form>`}
 async function createPoll(fm){const opts=[...fm.querySelectorAll('input[name=o]:checked')].map(i=>i.value);if(opts.length<2||opts.length>4){$('#pollErr').textContent='בחרו בין 2 ל-4 מקומות';return}
   const title=fm.elements.t.value.trim()||'לאן יוצאים הערב?';const {data,error}=await sb.from('polls').insert({list_id:cur.id,title,options:opts}).select().single();if(error){toast(errMsg(error));return}
   polls.unshift(data);renderNotices();logAct('poll',null,`פתח/ה הצבעה: ${title}`);pollSheet(data.id)}
@@ -557,7 +557,7 @@ function fromGeo(j){return (j.features||[]).map(f=>{const p=f.properties||{},loc
   return {name:p.Title||p.name||loc.name||loc['Business Name']||'',address:loc.address||loc.Address||p.address||'',mapsUrl:p.google_maps_url||p['Google Maps URL']||'',note:p.Comment||p.comment||'',lat:lat&&lng?lat:null,lng:lat&&lng?lng:null}})}
 function fromCSV(t){const r=parseCSV(t);if(!r.length)return[];const h=r[0].map(x=>x.trim().toLowerCase());const ix=k=>h.indexOf(k);return r.slice(1).map(c=>{const url=c[ix('url')]||'',pm=parseMaps(url);return {name:c[ix('title')]||pm.name||'',address:'',mapsUrl:url,note:c[ix('note')]||c[ix('comment')]||'',lat:Number.isFinite(pm.lat)?pm.lat:null,lng:Number.isFinite(pm.lng)?pm.lng:null}})}
 function importSheet(){killFormMap();openId=null;mode='import';openSheet();impItems=[];
-  $('#sb').innerHTML=`<div class="sec dh"><h2>ייבוא מגוגל מפות</h2><p class="meta" style="margin-top:6px">מעבירים את המקומות השמורים שלכם מגוגל מפות לרשימה "${esc(cur.name)}".</p></div><div class="sec"><h4>איך מוציאים את הקובץ מגוגל</h4><ol class="steps"><li>נכנסים ל-<a href="https://takeout.google.com" target="_blank" rel="noopener">takeout.google.com</a> עם חשבון הגוגל שלכם.</li><li>לוחצים "ביטול הבחירה" ומסמנים רק את <b>Saved</b> (הרשימות השמורות) ואת <b>Maps (your places)</b>.</li><li>לוחצים "השלב הבא" ← "יצירת ייצוא". גוגל ישלח קישור להורדה במייל.</li><li>מורידים ופותחים את קובץ ה-ZIP, ובוחרים כאן את <b>Saved Places.json</b> או את קבצי ה-CSV של הרשימות.</li></ol>
+  $('#sb').innerHTML=`<div class="sec dh"><h2>ייבוא מגוגל מפות</h2><p class="meta" style="margin-top:6px">מעבירים את המקומות השמורים שלכם מגוגל מפות לקבוצה "${esc(cur.name)}".</p></div><div class="sec"><h4>איך מוציאים את הקובץ מגוגל</h4><ol class="steps"><li>נכנסים ל-<a href="https://takeout.google.com" target="_blank" rel="noopener">takeout.google.com</a> עם חשבון הגוגל שלכם.</li><li>לוחצים "ביטול הבחירה" ומסמנים רק את <b>Saved</b> (הרשימות השמורות) ואת <b>Maps (your places)</b>.</li><li>לוחצים "השלב הבא" ← "יצירת ייצוא". גוגל ישלח קישור להורדה במייל.</li><li>מורידים ופותחים את קובץ ה-ZIP, ובוחרים כאן את <b>Saved Places.json</b> או את קבצי ה-CSV של הרשימות.</li></ol>
 <label class="btn pri" style="margin-top:12px">בחירת קבצים<input type="file" accept=".json,.geojson,.csv,application/json,text/csv" multiple hidden id="impFile"></label><div id="impList"></div></div>`}
 async function readImport(files){let items=[];for(const f of files){try{const t=await f.text();if(/\.csv$/i.test(f.name))items.push(...fromCSV(t));else items.push(...fromGeo(JSON.parse(t)))}catch{toast('לא הצלחנו לקרוא את '+f.name)}}
   const have=new Set(rows.map(r=>String(r.name).trim().toLowerCase()));const seen=new Set();impItems=items.filter(x=>x.name&&!seen.has(x.name.toLowerCase())&&seen.add(x.name.toLowerCase())).map(x=>({...x,dup:have.has(x.name.trim().toLowerCase())}));
@@ -710,7 +710,7 @@ function calPrompt(r,v){const old=$('#calp');if(old)old.remove();const d=documen
   d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-calx]'))setTimeout(()=>d.remove(),150)});document.body.appendChild(d)}
 function planSheet(id){const r=byId(id);if(!r)return;killFormMap();openId=null;mode='plan';openSheet();const ds=k=>{const x=new Date();x.setDate(x.getDate()+k);return x.toLocaleDateString('en-CA')};const th=(4-new Date().getDay()+7)%7;
   $('#sb').innerHTML=`<form id="planF" class="sec dh" data-id="${esc(id)}"><h2>קביעת יציאה</h2><p class="meta" style="margin-top:6px">${esc(r.name)}${r.city?' · '+esc(r.city):''}</p><div class="chips" style="margin-top:14px"><button type="button" class="chip" data-act="planD" data-d="${ds(0)}">הערב</button><button type="button" class="chip" data-act="planD" data-d="${ds(1)}">מחר</button>${th>1?`<button type="button" class="chip" data-act="planD" data-d="${ds(th)}">ביום חמישי</button>`:''}</div><div class="grid2" style="margin-top:12px"><label class="l">תאריך<input class="f" type="date" name="d" required min="${today()}" value="${today()}"></label><label class="l">שעה<input class="f" type="time" name="t" value="20:00"></label><label class="l full">סוג היציאה<select class="f" name="occ">${Object.entries(OCC).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select></label></div>
-<label class="surtog"><input type="checkbox" name="sur"><span><b>🤫 יציאת הפתעה</b><small>האחרים ברשימה יראו רק תאריך, שעה ורמז. שם המקום ייחשף להם ביום עצמו.</small></span></label>
+<label class="surtog"><input type="checkbox" name="sur"><span><b>🤫 יציאת הפתעה</b><small>האחרים בקבוצה יראו רק תאריך, שעה ורמז. שם המקום ייחשף להם ביום עצמו.</small></span></label>
 <div class="grid2 surf" hidden><label class="l">איך להתלבש<select class="f" name="dress">${DRESS.map(x=>`<option value="${esc(x)}">${x||'בלי הנחיה'}</option>`).join('')}</select></label><label class="l">רמז (לא חובה)<input class="f" name="hint" maxlength="60" placeholder="למשל: תביאו תיאבון לים 🌊"></label></div>
 <div class="row" style="margin-top:16px"><button class="btn pri" type="submit">${ICON.cal}קובעים!</button><button class="btn" type="button" data-act="open" data-id="${esc(id)}">ביטול</button></div></form>`}
 async function savePlan(fm){const id=fm.dataset.id,r=byId(id);if(!r)return;const d=fm.elements.d.value;if(!/^\d{4}-\d{2}-\d{2}$/.test(d)||d<today()){toast('בחרו תאריך מהיום והלאה');return}
@@ -836,7 +836,7 @@ function renderEvent(){const e=events.find(x=>x.id===openEv);if(mode!=='event')r
 <div class="sec"><h4>${S.length>1?'המסלול':'המקום'}</h4><ol class="evs">${S.map((r,i)=>{const nx=S[i+1];const leg=nx&&hasLL(r)&&hasLL(nx)?mHav(r.lat,r.lng,nx.lat,nx.lng):null;return `<li data-open-r="${esc(r.id)}" tabindex="0"><span class="evn">${i+1}</span><span class="evt"><b>${esc(r.name)}</b><small>${esc([r.cuisine,r.address,r.city].filter(Boolean).join(' · '))}</small>${(()=>{const yes=Object.entries(rs).filter(([,v])=>v==='yes').map(([u])=>u),m=missFor(r,yes);return m.length?`<small class="dwarn">⚠️ לא מסומן כמתאים ל${esc(m.map(nm).join(', '))}</small>`:''})()}</span><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener" aria-label="ניווט ל${esc(r.name)}">${ICON.nav}</a>${leg!=null?`<span class="evleg">${leg*1.3<4000?'🚶':'🚕'} ${legTxt(leg)}</span>`:''}</li>`}).join('')}</ol>
 ${S.some(hasLL)?'<div class="mini" id="evmap"></div>':''}
 <div class="row" style="margin-top:12px">${S.length>1?`<a class="btn pri" href="${esc(routeUrl(S))}" target="_blank" rel="noopener">${ICON.pin}המסלול בגוגל מפות</a>`:''}<button class="btn ${S.length>1?'':'pri'}" type="button" data-act="evShare">${ICON.share}הזמנת חברים</button><a class="btn" href="${esc(gcalUrl(R,v))}" target="_blank" rel="noopener">${ICON.cal}יומן Google</a><a class="btn" href="${icsData(R,v)}" download="fomo.ics">יומן אחר</a></div>
-<p class="note">חברים שעוד לא ברשימה מצטרפים אליה דרך הקישור, ואז יכולים לענות.</p>${canDel?'<button class="link-btn" type="button" data-act="evDel" style="color:var(--bad)">מחיקת הערב</button>':''}</div>`;
+<p class="note">חברים שעוד לא בקבוצה מצטרפים אליה דרך הקישור, ואז יכולים לענות.</p>${canDel?'<button class="link-btn" type="button" data-act="evDel" style="color:var(--bad)">מחיקת הערב</button>':''}</div>`;
   const pts=S.filter(hasLL);if(pts.length&&!window.L)loadLeaflet().then(()=>{if(mode==='event')renderEvent()}).catch(()=>{});if(pts.length&&window.L){setTimeout(()=>{if(!$('#evmap'))return;evMap=L.map('evmap',{zoomControl:false});L.tileLayer(TILE,{maxZoom:19,attribution:ATTR}).addTo(evMap);
     const ll=pts.map(r=>[r.lat,r.lng]);pts.forEach(r=>L.marker([r.lat,r.lng],{icon:L.divIcon({className:'pin-wrap',html:`<div class="evpin">${S.indexOf(r)+1}</div>`,iconSize:[28,28],iconAnchor:[14,14]})}).addTo(evMap));
     if(ll.length>1){L.polyline(ll,{color:'#FF5E4D',weight:4,dashArray:'6 8'}).addTo(evMap);evMap.fitBounds(ll,{padding:[30,30]})}else evMap.setView(ll[0],16)},60)}}
@@ -908,9 +908,9 @@ ${P.some(hasLL)?'<div class="pub-map" id="pubmap"></div>':''}<div class="pub-gri
 
 /* ================= list meta (special days, diets) — stored as a hidden row ================= */
 let meta={id:null,special:[],diets:{},vouchers:[]};
-function takeMeta(lid){const ms=rows.filter(r=>r._meta);if(ms.length){rows=rows.filter(r=>!r._meta);ms.sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));const m=ms[0];meta={id:m.id,special:Array.isArray(m.special)?m.special:[],diets:m.diets&&typeof m.diets==='object'?m.diets:{},vouchers:Array.isArray(m.vouchers)?m.vouchers:[]};lsSet('rs-meta-'+lid,meta)}else if(!meta.id){meta={id:null,special:[],diets:{},...lsGet('rs-meta-'+lid,{})}}}
+function takeMeta(lid){const ms=rows.filter(r=>r._meta);if(ms.length){rows=rows.filter(r=>!r._meta);ms.sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));const m=ms[0];meta={id:m.id,special:Array.isArray(m.special)?m.special:[],diets:m.diets&&typeof m.diets==='object'?m.diets:{},vouchers:Array.isArray(m.vouchers)?m.vouchers:[],tastes:m.tastes&&typeof m.tastes==='object'?m.tastes:{}};lsSet('rs-meta-'+lid,meta)}else if(!meta.id){meta={id:null,special:[],diets:{},...lsGet('rs-meta-'+lid,{})}}}
 async function metaSave(patch){if(!cur)return false;const lid=cur.id;Object.assign(meta,patch);lsSet('rs-meta-'+lid,meta);
-  try{if(!meta.id){const id=uuid();const {error}=await sb.from('restaurants').insert({id,list_id:lid,data:{_meta:true,createdAt:Date.now(),special:meta.special||[],diets:meta.diets||{},vouchers:meta.vouchers||[]}});if(error)throw error;meta.id=id}
+  try{if(!meta.id){const id=uuid();const {error}=await sb.from('restaurants').insert({id,list_id:lid,data:{_meta:true,createdAt:Date.now(),special:meta.special||[],diets:meta.diets||{},vouchers:meta.vouchers||[],tastes:meta.tastes||{}}});if(error)throw error;meta.id=id}
     else{const {error}=await sb.rpc('patch_restaurant',{rid:meta.id,patch});if(error)throw error}return true}catch(e){toast(errMsg(e));return false}}
 /* ================= dietary preferences ================= */
 const DIET=[['kosher','כשר','✡️'],['veg','צמחוני','🥦'],['vegan','טבעוני','🌱'],['gf','ללא גלוטן','🌾']];
@@ -939,7 +939,7 @@ function nextOcc(md){const y=new Date().getFullYear();let d=`${y}-${md}`;if(d<to
 function upcomingSpecial(){return special().map(x=>({...x,next:nextOcc(x.md)})).filter(x=>daysTo(x.next)<=14).sort((a,b)=>a.next.localeCompare(b.next))}
 function specialPick(x,skip){const pool=rows.filter(r=>!skip||!skip.includes(r.id));const score=r=>(avg(r)||3)+(r.fav?1.5:0)+((r.tags||[]).some(t=>['דייט','אירוע מיוחד','מקום שקט'].includes(t))?1.2:0)+(visitsOf(r).some(v=>v.occ==='anniv'||v.occ==='bday')?.8:0)+(r.status!=='been'?.4:0)+(x.kind==='bday'&&(r.tags||[]).includes('מתאים לחברים')?.6:0)+Math.random()*.6;return pool.sort((a,b)=>score(b)-score(a))[0]||null}
 let spSkip={};
-function specialSecHtml(){const L=special();return `<div class="sec"><h4>ימים מיוחדים</h4><p class="note" style="margin:0 0 10px">שבועיים לפני, האפליקציה תציע מקום מיוחד מהרשימה. משותף לכל מי שברשימה.</p>${L.length?`<ul class="splist">${L.map((x,i)=>`<li><span>${(SPK[x.kind]||SPK.other)[1]}</span><b>${esc(x.name)}</b><small>${esc(fmtMD(x.md))}</small><button type="button" class="del" data-act="spRm" data-i="${i}" aria-label="הסרה">×</button></li>`).join('')}</ul>`:''}
+function specialSecHtml(){const L=special();return `<div class="sec"><h4>ימים מיוחדים</h4><p class="note" style="margin:0 0 10px">שבועיים לפני, האפליקציה תציע מקום מיוחד מהרשימה. משותף לכל מי שבקבוצה.</p>${L.length?`<ul class="splist">${L.map((x,i)=>`<li><span>${(SPK[x.kind]||SPK.other)[1]}</span><b>${esc(x.name)}</b><small>${esc(fmtMD(x.md))}</small><button type="button" class="del" data-act="spRm" data-i="${i}" aria-label="הסרה">×</button></li>`).join('')}</ul>`:''}
 <form id="spF" class="grid2" style="margin-top:8px"><label class="l">מה החגיגה<select class="f" name="kind">${Object.entries(SPK).map(([k,[t,e]])=>`<option value="${k}">${e} ${t}</option>`).join('')}</select></label><label class="l">תאריך<input class="f" type="date" name="d" required></label><label class="l full">שם (לא חובה)<input class="f" name="name" maxlength="40" placeholder="למשל: יום הולדת ליובל"></label><div class="full"><button class="btn" type="submit">+ הוספה</button></div></form></div>`}
 const fmtMD=md=>{const [m,d]=md.split('-').map(Number);return `${d} ב${['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'][m-1]}`};
 async function setSpecial(arr){const ok=await metaSave({special:arr});renderNotices();return ok}
@@ -1147,8 +1147,8 @@ S.addEventListener('submit',async e=>{
   if(fm.id==='spF'){const d=fm.elements.d.value;if(!/^\d{4}-\d{2}-\d{2}$/.test(d))return;const kind=fm.elements.kind.value;const x={md:d.slice(5),kind,name:fm.elements.name.value.trim().slice(0,40)||(SPK[kind]||SPK.other)[0],y:d.slice(0,4)};if(special().length>=30){toast('עד 30 ימים מיוחדים');return}if(await setSpecial([...special(),x])){toast('נשמר. נזכיר שבועיים לפני');settingsSheet()}return}
   if(fm.id==='nameF'){const n=fm.elements.n.value.trim().slice(0,30);const {error}=await sb.from('profiles').upsert({user_id:myId,name:n});if(error)toast(errMsg(error));else{myName=n;toast('השם נשמר');await loadMembers();render()}return}
   if(fm.id==='renameF'){const n=fm.elements.n.value.trim().slice(0,40);if(!n)return;const {error}=await sb.from('lists').update({name:n}).eq('id',cur.id);if(error)toast(errMsg(error));else{cur.name=n;await loadLists();cur=lists.find(l=>l.id===cur.id)||cur;setTitle();toast('השם עודכן');settingsSheet()}return}
-  if(fm.id==='newListF'){const n=fm.elements.n.value.trim();if(!n)return;const id=await doCreateList(n);if(id){await switchList(id);toast('הרשימה נוצרה! אפשר להוסיף מקומות ולהזמין חברים.')}return}
-  if(fm.id==='joinF'){const c=codeFrom(fm.elements.c.value);if(!c){toast('זה לא נראה כמו קישור הזמנה');return}const id=await doJoin(c);if(id){await switchList(id);toast('הצטרפת לרשימה!')}return}
+  if(fm.id==='newListF'){const n=fm.elements.n.value.trim();if(!n)return;const id=await doCreateList(n);if(id){await switchList(id);toast('הקבוצה נוצרה! אפשר להוסיף מקומות ולהזמין חברים.')}return}
+  if(fm.id==='joinF'){const c=codeFrom(fm.elements.c.value);if(!c){toast('זה לא נראה כמו קישור הזמנה');return}const id=await doJoin(c);if(id){await switchList(id);toast('הצטרפת לקבוצה!')}return}
   if(false&&fm.id==='memF'){const em=fm.elements.e.value.trim().toLowerCase();if(!/^\S+@\S+\.\S+$/.test(em))return;const {error}=await sb.from('members').insert({email:em});if(error&&!/duplicate/i.test(error.message))toast(errMsg(error));else{toast('נוסף. שלחו לה/לו את הקישור.');await loadMembers();settingsSheet()}return}
   if(fm.id!=='ef')return;
   const fd=new FormData(fm),llm=String(fd.get('ll')).match(/(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)/);
@@ -1250,7 +1250,7 @@ S.addEventListener('click',async e=>{
   if(a==='dupHide'){const f=$('#ef');if(f)f.dataset.dupOk='1';const el=$('#dupN');if(el)el.hidden=true;return}
   if(a==='notGone'){const r=byId(openId);if(r){const ok=await save(r.id,{permClosed:false,updatedAt:Date.now()});if(ok){toast('עודכן, תודה!');renderDetail()}}return}
   if(a==='install'){if(installEvt){installEvt.prompt();installEvt=null;settingsSheet()}return}
-  if(a==='shareInvite'){shareOrCopy('Fomo',`הצטרפו לרשימה "${cur?cur.name:''}" ב-Fomo! פותחים את הקישור, יוצרים חשבון עם מייל וסיסמה, וזהו:`,inviteUrl());return}
+  if(a==='shareInvite'){shareOrCopy('Fomo',`הצטרפו לקבוצה "${cur?cur.name:''}" ב-Fomo! פותחים את הקישור, יוצרים חשבון עם מייל וסיסמה, וזהו:`,inviteUrl());return}
   if(a==='qrInvite'){showQR();return}
   if(a==='myData'){b.disabled=true;await myDataDl();b.disabled=false;return}
   if(a==='delMe'){deleteMe();return}
@@ -1262,8 +1262,8 @@ S.addEventListener('click',async e=>{
   if(a==='pkOffer'){b.disabled=true;await registerBio();closeSheet();return}
   if(a==='pkLater'){closeSheet();return}
   if(a==='pickList'){await switchList(b.dataset.id);return}
-  if(a==='leaveList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב ליציאה';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',myId);if(error){toast(errMsg(error));return}await afterListGone('יצאת מהרשימה');return}
-  if(a==='delList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='למחוק את כל הרשימה לתמיד? לחצו שוב';return}const paths=rows.flatMap(r=>(r.photos||[]).map(p=>p.path).filter(Boolean));if(paths.length)await sb.storage.from('photos').remove(paths).catch(()=>{});const {error}=await sb.from('lists').delete().eq('id',cur.id);if(error){toast(errMsg(error));return}await afterListGone('הרשימה נמחקה');return}
+  if(a==='leaveList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב ליציאה';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',myId);if(error){toast(errMsg(error));return}await afterListGone('יצאת מהקבוצה');return}
+  if(a==='delList'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='למחוק את כל הקבוצה לתמיד? לחצו שוב';return}const paths=rows.flatMap(r=>(r.photos||[]).map(p=>p.path).filter(Boolean));if(paths.length)await sb.storage.from('photos').remove(paths).catch(()=>{});const {error}=await sb.from('lists').delete().eq('id',cur.id);if(error){toast(errMsg(error));return}await afterListGone('הקבוצה נמחקה');return}
   if(a==='shareApp'){appShareDlg();return}
   if(a==='signout'){await sb.auth.signOut();location.reload();return}
   if(a==='rmMember'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='הסר?';b.style.fontSize='14px';return}const {error}=await sb.from('list_members').delete().eq('list_id',cur.id).eq('user_id',b.dataset.u);if(error)toast(errMsg(error));await loadMembers();settingsSheet();return}
@@ -1299,17 +1299,17 @@ const BRASS='style="background:#fff;border-color:#fff;color:#FF4E50;box-shadow:0
 function blockedGate(){gate('<p>החשבון הזה הושהה על ידי מנהל האפליקציה.</p><p class="note">אם זו טעות, פנו למי ששלח לכם את הקישור.</p><button class="btn" type="button" id="so2">התנתקות</button>');const b=$('#so2');if(b)b.onclick=async()=>{await sb.auth.signOut();location.reload()}}
 function gate(html){const g=$('#gate');g.innerHTML=`<div class="box"><div class="logo">Fomo</div><p class="tag">המקומות שאסור לפספס</p>${html}</div>`;g.hidden=false;$('#app').hidden=true}
 function showLogin(email,signup){
-  gate(`${joinCode?'<p><b>הוזמנתם לרשימת המסעדות!</b></p>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':(pkOK()?'טוב לראות אותך שוב!':'כניסה עם המייל והסיסמה שלכם.')}</p>${!signup&&pkOK()?`<button class="pk-btn" type="button" id="pkIn"><span class="pk-ic">${bioIcon()}<i class="pk-scan"></i></span><span class="pk-tx"><b>כניסה עם ${bioName()}</b><small>מהיר ובטוח, בלי להקליד סיסמה</small></span><svg class="pk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><div class="or"><span>או עם מייל וסיסמה</span></div>`:''}<form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
-  $('#sw').onclick=()=>showLogin($('#le').value,!signup);
+  gate(`${joinCode?'<div id="invPv"><p><b>הוזמנתם לקבוצה ב־FOMO! 🎉</b></p></div>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':(pkOK()?'טוב לראות אותך שוב!':'כניסה עם המייל והסיסמה שלכם.')}</p>${!signup&&pkOK()?`<button class="pk-btn" type="button" id="pkIn"><span class="pk-ic">${bioIcon()}<i class="pk-scan"></i></span><span class="pk-tx"><b>כניסה עם ${bioName()}</b><small>מהיר ובטוח, בלי להקליד סיסמה</small></span><svg class="pk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><div class="or"><span>או עם מייל וסיסמה</span></div>`:''}<form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
+  $('#sw').onclick=()=>showLogin($('#le').value,!signup);if(joinCode)fxInvPreview(joinCode);
   const pk=$('#pkIn');if(pk)pk.onclick=async()=>{pk.disabled=true;pk.classList.add('busy');$('#lerr').textContent='';try{const {error}=await sb.auth.signInWithPasskey();if(error)throw error;start()}catch(e){pk.disabled=false;pk.classList.remove('busy');if(!pkCancelled(e))$('#lerr').textContent='לא מצאנו '+bioName()+' שמחובר לחשבון במכשיר הזה. היכנסו עם מייל וסיסמה, ואז הפעילו '+bioName()+' בהגדרות.'}};
   $('#lf').addEventListener('submit',async e=>{e.preventDefault();const em=$('#le').value.trim().toLowerCase(),pw=$('#lp').value;const b=e.target.querySelector('button');b.disabled=true;$('#lerr').textContent='';
     const {data,error}=signup?await sb.auth.signUp({email:em,password:pw}):await sb.auth.signInWithPassword({email:em,password:pw});b.disabled=false;
     if(error){const m=error.message||'';$('#lerr').textContent=/invalid login/i.test(m)?'המייל או הסיסמה לא נכונים. אם זו הפעם הראשונה, לחצו "יצירת חשבון".':/already registered|already exists/i.test(m)?'למייל הזה כבר יש חשבון. לחצו "כבר יש לי חשבון".':/not confirmed/i.test(m)?'החשבון ממתין לאישור מייל. בקשו ממי שהקים את האפליקציה לכבות את "Confirm email" ב-Supabase.':/password/i.test(m)?'הסיסמה צריכה להיות לפחות 6 תווים.':'הכניסה נכשלה: '+m;return}
     if(signup&&!data.session){$('#lerr').textContent='החשבון נוצר, אבל ממתין לאישור מייל. בקשו ממי שהקים את האפליקציה לכבות את "Confirm email" ב-Supabase.';return}
     start()})}
-function welcome(){gate(`<p><b>ברוכים הבאים${myName?', '+esc(myName):''}!</b></p><p>פתחו רשימה משלכם, או הצטרפו לרשימה של מישהו עם קישור ההזמנה שלו.</p>
-<form id="wl"><input id="wn" maxlength="40" placeholder="שם הרשימה, למשל: המסעדות שלנו" required><button class="btn" type="submit" ${BRASS}>יצירת רשימה חדשה</button></form>
-<form id="wj" style="margin-top:18px"><input id="wc" dir="ltr" placeholder="או הדביקו קישור הזמנה" required><button class="btn" type="submit" style="background:#ffffff26;border-color:#ffffffaa;color:#fff">הצטרפות לרשימה</button></form>
+function welcome(){gate(`<p><b>ברוכים הבאים${myName?', '+esc(myName):''}!</b></p><p>פתחו קבוצה משלכם, או הצטרפו לקבוצה של מישהו עם קישור ההזמנה שלו.</p>
+<form id="wl"><input id="wn" maxlength="40" placeholder="שם הקבוצה, למשל: המסעדות שלנו" required><button class="btn" type="submit" ${BRASS}>יצירת קבוצה חדשה</button></form>
+<form id="wj" style="margin-top:18px"><input id="wc" dir="ltr" placeholder="או הדביקו קישור הזמנה" required><button class="btn" type="submit" style="background:#ffffff26;border-color:#ffffffaa;color:#fff">הצטרפות לקבוצה</button></form>
 <div class="err" id="lerr"></div><button class="link" type="button" id="so">התנתקות</button>`);
   $('#so').onclick=async()=>{await sb.auth.signOut();location.reload()};
   $('#wl').addEventListener('submit',async e=>{e.preventDefault();e.target.querySelector('button').disabled=true;const id=await doCreateList($('#wn').value.trim());if(id){try{localStorage.setItem('rs-list',id)}catch{}start()}else e.target.querySelector('button').disabled=false});
@@ -1330,8 +1330,9 @@ async function start(){
     const {data:pr,error:pe}=await sb.from('profiles').select('name').eq('user_id',myId).maybeSingle();if(pe&&isNetErr(pe))throw pe;
     if(!pr)await sb.from('profiles').insert({user_id:myId,name:''});myName=(pr&&pr.name)||'';
     let target=null;
-    if(joinCode){const c=joinCode;joinCode='';try{localStorage.removeItem('rs-join')}catch{}const {data:lid}=await sb.rpc('join_list',{code:c});if(lid){target=lid;setTimeout(()=>toast('הצטרפת לרשימה!'),600)}else setTimeout(()=>toast('קישור ההזמנה לא תקף. בקשו קישור חדש.'),600)}
+    if(joinCode){const c=joinCode;joinCode='';try{localStorage.removeItem('rs-join')}catch{}const {data:lid}=await sb.rpc('join_list',{code:c});if(lid){target=lid;setTimeout(()=>toast('הצטרפת לקבוצה!'),600)}else setTimeout(()=>toast('קישור ההזמנה לא תקף. בקשו קישור חדש.'),600)}
     await loadLists();
+    if(!myName&&!lsGet('rs-fx-done',0)){if(lists.length)cur=lists.find(l=>l.id===target)||lists[0];else cur=null;fxRun(target?'Y':'I');return}
     if(!lists.length){welcome();return}
     let saved='';try{saved=localStorage.getItem('rs-list')||''}catch{}
     cur=lists.find(l=>l.id===(target||saved))||lists.find(l=>l.role==='owner')||lists[0];
@@ -1341,15 +1342,16 @@ async function start(){
   try{const so=localStorage.getItem('rs-sort');if(so){sort=so;$('#sort').value=so}}catch{}
   route();await switchList(cur.id);subscribe();flushOutbox();
   {const sp=new URLSearchParams(location.search),op=sp.get('open'),ev=sp.get('ev');if(sp.get('next')){history.replaceState(null,'',location.pathname+location.hash);setTimeout(outSheet,500)}if(sp.get('vouchers')){history.replaceState(null,'',location.pathname+location.hash);setTimeout(()=>vouchersSheet(),500)}if(op||ev){history.replaceState(null,'',location.pathname+location.hash);if(ev)setTimeout(()=>{if(events.some(x=>x.id===ev))evSheet(ev);else loadEvents().then(()=>{if(events.some(x=>x.id===ev))evSheet(ev)})},700);else if(op&&byId(op))setTimeout(()=>openDetail(op),300)}}
-  pushSync();setTimeout(pushMaybeAsk,4000);setTimeout(autoCheckin,2500);setTimeout(loadWeather,3000);
-  setTimeout(async()=>{if(lsGet('rs-onb2',0)){whatsNew();return}if(await amAdmin()){lsSet('rs-onb2',1);whatsNew();return}lsSet('rs-seen-ver',APPV);onbSheet()},2800);
+  const fxT=lsGet('rs-fx-tour','');if(fxGph.length){const G=fxGph;fxGph=[];setTimeout(()=>G.forEach(([id,l])=>importGPhotos(id,l)),3500)}
+  pushSync();if(!fxT)setTimeout(pushMaybeAsk,4000);setTimeout(autoCheckin,2500);setTimeout(loadWeather,3000);
+  setTimeout(async()=>{if(fxT){fxTour();return}if(lsGet('rs-onb2',0)){whatsNew();return}if(await amAdmin()){lsSet('rs-onb2',1);whatsNew();return}lsSet('rs-seen-ver',APPV);onbSheet()},2800);
   if(!myName)setTimeout(()=>{settingsSheet();toast('איך לקרוא לך? כתבו שם ושמרו.')},500);
-  else offerBio();
+  else if(!fxT)offerBio();
   if(!visBound){visBound=true;document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&loaded){loadAll();setTimeout(autoCheckin,1500);setTimeout(loadWeather,2500)}})}
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='52';
+const APPV='53';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1367,7 +1369,7 @@ function askSure(title,body,ok,danger){return new Promise(res=>{const d=document
 
 /* ---- backups ---- */
 const KINDN={auto:'שבועי אוטומטי',manual:'ידני','before-restore':'לפני שחזור'};
-function backupSecHtml(){const own=isOwner();return `<div class="sec"><h4>גיבוי ושחזור</h4><p class="note" style="margin:0 0 10px">כל יום ראשון בלילה נשמר גיבוי אוטומטי של הרשימה בשרת (6 האחרונים נשמרים). אפשר גם להוריד עותק לטלפון.</p>
+function backupSecHtml(){const own=isOwner();return `<div class="sec"><h4>גיבוי ושחזור</h4><p class="note" style="margin:0 0 10px">כל יום ראשון בלילה נשמר גיבוי אוטומטי של הקבוצה בשרת (6 האחרונים נשמרים). אפשר גם להוריד עותק לטלפון.</p>
 <div class="row"><button class="btn" type="button" data-act="bkFile">${ICON.share}הורדת גיבוי לקובץ</button>${own?`<button class="btn" type="button" data-act="bkNow">גיבוי עכשיו</button><label class="btn">שחזור מקובץ<input type="file" id="bkIn" accept=".json,application/json" hidden></label>`:''}</div>
 <div id="bkList" style="margin-top:10px"><p class="note" style="margin:0">טוען גיבויים…</p></div></div>`}
 async function fillBackups(){const el=$('#bkList');if(!el||!cur||!sb)return;let L=null;try{const {data,error}=await sb.rpc('my_backups',{lid:cur.id});if(!error)L=data||[]}catch{}if(!$('#bkList'))return;const own=isOwner();
@@ -1403,12 +1405,12 @@ async function fillAdminMore(){const el=$('#qAdm');if(!el||!sb)return;let U=null
   const wk=Date.now()-7*864e5;let h='';const nm=u=>u.name||String(u.email||'').split('@')[0];
   if(U){const act=U.filter(u=>u.seen&&new Date(u.seen)>wk).length,nw=U.filter(u=>new Date(u.joined)>wk).length;
     h+=`<h4 style="margin-top:18px">משתמשים</h4><div class="ustat"><div><b>${U.length}</b><small>רשומים</small></div><div><b>${act}</b><small>פעילים השבוע</small></div><div><b>${nw}</b><small>הצטרפו השבוע</small></div></div>
-<details class="ulist"><summary>כל המשתמשים (${U.length})</summary>${U.map(u=>`<div class="urow ${u.blocked?'blk':''}"><span><b>${esc(nm(u))}</b>${u.admin?' <small class="meta">· מנהל</small>':''}${u.blocked?' <small class="bad">· חסום</small>':''}<br><small class="meta" dir="ltr">${esc(u.email||'')}</small><br><small class="meta">הצטרפות ${esc(relT(u.joined))} · נראה ${u.seen?esc(relT(u.seen)):'אף פעם'} · ${u.places} מקומות · ${u.lists} רשימות</small></span>${u.admin?'':`<button class="btn sm" type="button" data-act="uBlock" data-u="${esc(u.id)}" data-on="${u.blocked?0:1}" data-n="${esc(nm(u))}">${u.blocked?'ביטול חסימה':'חסימה'}</button>`}</div>`).join('')}</details>`}
+<details class="ulist"><summary>כל המשתמשים (${U.length})</summary>${U.map(u=>`<div class="urow ${u.blocked?'blk':''}"><span><b>${esc(nm(u))}</b>${u.admin?' <small class="meta">· מנהל</small>':''}${u.blocked?' <small class="bad">· חסום</small>':''}<br><small class="meta" dir="ltr">${esc(u.email||'')}</small><br><small class="meta">הצטרפות ${esc(relT(u.joined))} · נראה ${u.seen?esc(relT(u.seen)):'אף פעם'} · ${u.places} מקומות · ${u.lists} קבוצות</small></span>${u.admin?'':`<button class="btn sm" type="button" data-act="uBlock" data-u="${esc(u.id)}" data-on="${u.blocked?0:1}" data-n="${esc(nm(u))}">${u.blocked?'ביטול חסימה':'חסימה'}</button>`}</div>`).join('')}</details>`}
   if(E){const L=E.list||[];h+=`<h4 style="margin-top:18px">תקלות באפליקציה</h4><p class="note" style="margin:0 0 8px">${E.week?`${E.week} תקלות נרשמו בשבוע האחרון.`:'אין תקלות בשבוע האחרון 🎉'}</p>${L.length?`<details class="ulist"><summary>פירוט (${L.length} סוגים)</summary>${L.map(x=>`<div class="erow"><b dir="ltr">${esc(x.msg)}</b><small class="meta">${x.n} פעמים · ${x.users} משתמשים · אחרונה ${esc(relT(x.last))} אצל ${esc(x.who||'?')} · ${esc(uaName(x.ua))} · גרסה ${esc(x.ver||'?')}</small>${x.src?`<small class="meta" dir="ltr">${esc(x.src)}</small>`:''}</div>`).join('')}<button class="btn sm" type="button" data-act="errClear" style="margin-top:8px">ניקוי הרשימה</button></details>`:''}`}
   h+=await usageHtml();h+=await featHtml();if(!$('#qAdm'))return;let box=$('#admMore');if(!box){box=document.createElement('div');box.id='admMore';$('#qAdm').appendChild(box)}box.innerHTML=h}
 
 /* ---- onboarding for new friends ---- */
-const ONB=[{e:'🍽️',t:'ברוכים הבאים ל־FOMO',p:'כל המקומות שאסור לפספס במקום אחד: מסעדות, ברים ובתי קפה, עם תמונות, דירוגים, מפה וזיכרונות מכל יציאה. הכל משותף עם מי שברשימה.'},
+const ONB=[{e:'🍽️',t:'ברוכים הבאים ל־FOMO',p:'כל המקומות שאסור לפספס במקום אחד: מסעדות, ברים ובתי קפה, עם תמונות, דירוגים, מפה וזיכרונות מכל יציאה. הכל משותף עם מי שבקבוצה.'},
   {e:'🔎',t:'מוסיפים מקום בשניות',p:'לוחצים על ＋ וכותבים שם, גם עם שגיאות כתיב, או מדביקים קישור. ה־AI מבין, והשם, הכתובת, הסוג ושעות הפתיחה מתמלאים לבד.'},
   {e:'🥂',t:'מתכננים ויוצאים',p:'"בא לי" על מקומות, התאמה כששניכם רוצים, קביעת יציאה עם ספירה לאחור, Waze ומוביט בלחיצה, וסריקת קבלה שממלאת את המנות.'},
   {e:'🎁',t:'ועוד כמה הפתעות',p:'ארנק שוברים עם תזכורות, האפי אוור, סינון "פתוח עכשיו" ו"קרוב אליי", והתראה כל חמישי לתכנן את הסופ"ש.'},
@@ -1536,7 +1538,7 @@ function renderMe(){const el=$('#me');if(!el)return;const nmMe=myName||String((m
   const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,vis=allVisits().length;
   el.innerHTML=`<div class="me-card"><div class="me-av" aria-hidden="true">${esc(nmMe.trim().charAt(0))}</div><div><h2>${esc(nmMe)}</h2><p class="meta">${esc(cur?cur.name:'')}</p></div></div>
 <div class="me-stats"><div><b>${been}</b><small>היינו</small></div><div><b>${want}</b><small>רוצים ללכת</small></div><div><b>${vis}</b><small>ביקורים</small></div></div>
-<div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">🍽️</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">📊</span>הנתונים שלנו</a><button type="button" data-me="lists"><span aria-hidden="true">📋</span>הרשימות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">🔔</span>מה חדש</button><button type="button" data-me="app"><span aria-hidden="true">📲</span>שליחת האפליקציה</button><button type="button" data-me="vch"><span aria-hidden="true">🎁</span>שוברים</button><button type="button" data-me="set"><span aria-hidden="true">⚙️</span>הגדרות</button><button type="button" data-me="onb"><span aria-hidden="true">💡</span>הדרכה</button><button type="button" data-me="adm" id="meAdm" hidden><span aria-hidden="true">🛠️</span>ניהול המערכת</button></div>
+<div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">🍽️</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">📊</span>הנתונים שלנו</a><button type="button" data-me="lists"><span aria-hidden="true">📋</span>הקבוצות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">🔔</span>מה חדש</button><button type="button" data-me="app"><span aria-hidden="true">📲</span>שליחת האפליקציה</button><button type="button" data-me="vch"><span aria-hidden="true">🎁</span>שוברים</button><button type="button" data-me="set"><span aria-hidden="true">⚙️</span>הגדרות</button><button type="button" data-me="onb"><span aria-hidden="true">💡</span>הדרכה</button><button type="button" data-me="adm" id="meAdm" hidden><span aria-hidden="true">🛠️</span>ניהול המערכת</button></div>
 <div class="me-sec"><h4>תצוגה</h4>${dispHtml()}</div>`;amAdmin().then(v=>{const b=$('#meAdm');if(b)b.hidden=!v})}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='vch')vouchersSheet();else if(k==='app')appShareDlg();else if(k==='onb'){resetTips();onbSheet()}else if(k==='adm')adminSheet()});
 
@@ -1581,7 +1583,7 @@ function vouchersSheet(editId){killFormMap();openId=null;mode='vouchers';openShe
   const ed=editId?L.find(v=>v.id===editId):null;
   const row=v=>{const r=v.rid?byId(v.rid):null,d=vDays(v),warn=vActive(v)&&d!=null&&d<=14;return `<div class="vch ${vActive(v)?'':'old'}"><div class="vch-ic" aria-hidden="true">🎁</div><div class="vch-b"><b>${esc(v.title)}${v.amount?` · ₪${esc(String(v.amount))}`:''}</b><small class="${warn?'warn':''}">${esc(v.used?'נוצל':vExpTxt(v))}${r?' · '+esc(r.name):''}</small>${v.code?`<small dir="ltr" class="vch-code">${esc(v.code)}</small>`:''}${v.note?`<small>${esc(v.note)}</small>`:''}</div><div class="vch-a">${vActive(v)?`<button class="btn sm" type="button" data-vact="used" data-v="${esc(v.id)}">נוצל ✓</button>`:''}<button class="btn sm" type="button" data-vact="edit" data-v="${esc(v.id)}">עריכה</button><button class="btn sm" type="button" data-vact="del" data-v="${esc(v.id)}" aria-label="מחיקה">🗑</button></div></div>`};
   const opts=rows.slice().sort((a,b)=>a.name.localeCompare(b.name,'he')).map(r=>`<option value="${esc(r.id)}" ${ed&&ed.rid===r.id?'selected':''}>${esc(r.name)}</option>`).join('');
-  $('#sb').innerHTML=`<div class="sec dh"><h2>🎁 ארנק השוברים</h2><p class="meta" style="margin-top:6px">שוברים, תווי מתנה וזיכויים של הרשימה. נקבל תזכורת שבוע ויום לפני שפג התוקף.</p></div>
+  $('#sb').innerHTML=`<div class="sec dh"><h2>🎁 ארנק השוברים</h2><p class="meta" style="margin-top:6px">שוברים, תווי מתנה וזיכויים של הקבוצה. נקבל תזכורת שבוע ויום לפני שפג התוקף.</p></div>
 <div class="sec">${act.length?act.map(row).join(''):'<p class="note" style="margin:0">עוד אין שוברים. הוסיפו את הראשון למטה 👇</p>'}${old.length?`<details class="ulist" style="margin-top:10px"><summary>נוצלו או פגו (${old.length})</summary>${old.map(row).join('')}</details>`:''}</div>
 <form class="sec" id="vf"><h4>${ed?'עריכת שובר':'שובר חדש'}</h4><input type="hidden" name="vid" value="${esc(ed?ed.id:'')}">
 <div class="fgrid"><label class="full"><span class="l">שם השובר</span><input class="f" name="title" required maxlength="60" placeholder="BuyMe, תו הזהב, שובר ארוחה…" value="${esc(ed?ed.title:'')}"></label>
@@ -1609,7 +1611,7 @@ let friendsLoved=null;
 async function loadFriendsLoved(){if(!sb||!cur||!navigator.onLine)return;try{const {data,error}=await sb.rpc('friends_loved',{lid:cur.id});if(error)throw error;friendsLoved=(data||[]).filter(x=>!rows.some(r=>fomoNorm(r.name)===fomoNorm(x.name)));renderFriendsLoved()}catch(e){console.warn('friends',e)}}
 const fomoNorm=t=>String(t||'').toLowerCase().replace(/[׳״'"`\-–—_.,!?()[\]\/\\|:;&+]/g,' ').replace(/\s+/g,' ').trim();
 function renderFriendsLoved(){const el=$('#friendsLoved');if(!el)return;const L=friendsLoved||[];if(!L.length||view!=='all'||q||cuisF||openF||nearF||likeF||tagF.size||hhF){el.innerHTML='';return}
-  el.innerHTML=`<div class="fl-h"><b>💡 חברים אהבו</b><small>מקומות שדורגו גבוה ברשימות אחרות ועוד לא אצלכם</small></div><div class="fl-row">${L.map((x,i)=>`<button type="button" class="fl-card" data-fl="${i}"><span class="fl-pl" aria-hidden="true">${plate(x.name)}</span><b>${esc(x.name)}</b><small>${esc([x.cuisine,x.city].filter(Boolean).join(' · '))}</small><span class="fl-r"><i>★</i> ${(+x.avg).toFixed(1)}${x.lists>1?` · ${x.lists} רשימות`:''}</span><span class="fl-add">＋ הוספה</span></button>`).join('')}</div>`}
+  el.innerHTML=`<div class="fl-h"><b>💡 חברים אהבו</b><small>מקומות שדורגו גבוה בקבוצות אחרות ועוד לא אצלכם</small></div><div class="fl-row">${L.map((x,i)=>`<button type="button" class="fl-card" data-fl="${i}"><span class="fl-pl" aria-hidden="true">${plate(x.name)}</span><b>${esc(x.name)}</b><small>${esc([x.cuisine,x.city].filter(Boolean).join(' · '))}</small><span class="fl-r"><i>★</i> ${(+x.avg).toFixed(1)}${x.lists>1?` · ${x.lists} קבוצות`:''}</span><span class="fl-add">＋ הוספה</span></button>`).join('')}</div>`}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-fl]');if(!b)return;const x=(friendsLoved||[])[+b.dataset.fl];if(!x)return;newForm();setTimeout(()=>{const qi=$('#placeQ');if(!qi)return;qi.value=[x.name,x.city].filter(Boolean).join(' ');placeSearch()},120)});
 
 /* ---- practical tags filter ---- */
@@ -1625,7 +1627,7 @@ function hhInfo(r){const h=r.hh;if(!h||!h.f||!h.t)return null;const n=new Date()
 
 /* ---- QR invite ---- */
 function loadQR(){return window.qrcode?Promise.resolve(window.qrcode):new Promise((res,rej)=>{const s=document.createElement('script');s.src='vendor/qrcode.js?v='+APPV;s.onload=()=>res(window.qrcode);s.onerror=rej;document.head.appendChild(s)})}
-async function showQR(){const url=inviteUrl();if(!url||!cur||!cur.join_code){toast('אין קישור הזמנה לרשימה הזו');return}let svg='';try{const Q=await loadQR();const qr=Q(0,'M');qr.addData(url);qr.make();svg=qr.createSvgTag({cellSize:6,margin:2,scalable:true})}catch{toast('לא הצלחנו ליצור קוד');return}
+async function showQR(){const url=inviteUrl();if(!url||!cur||!cur.join_code){toast('אין קישור הזמנה לקבוצה הזו');return}let svg='';try{const Q=await loadQR();const qr=Q(0,'M');qr.addData(url);qr.make();svg=qr.createSvgTag({cellSize:6,margin:2,scalable:true})}catch{toast('לא הצלחנו ליצור קוד');return}
   const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','קוד הצטרפות');
   d.innerHTML=`<div class="calp-in qr-in"><h3>הצטרפות ל"${esc(cur.name)}"</h3><div class="qr-box">${svg}</div><p class="meta">החבר פותח את המצלמה בטלפון שלו, מכוון לקוד ולוחץ על הקישור שמופיע. משם יוצרים חשבון ומצטרפים.</p><button class="btn pri" type="button" data-wx>סגירה</button></div>`;
   d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-wx]'))d.remove()});document.body.appendChild(d)}
@@ -1660,7 +1662,7 @@ async function myDataDl(){const {data,error}=await sb.rpc('my_data');if(error||!
   if(isIOS()&&navigator.canShare){const file=new File([blob],name,{type:'application/json'});if(navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:'המידע שלי ב־Fomo'});return}catch(e){if(e&&e.name==='AbortError')return}}}
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000);toast('הקובץ ירד')}
 async function deleteMe(){const solo=lists.filter(l=>l.role==='owner').map(l=>l.name);
-  if(!await askSure('למחוק את החשבון שלך?','החשבון, השם, התגובות והדירוגים שלך יימחקו. מרשימות משותפות תצא/י, והן ימשיכו להתקיים אצל השאר. רשימות שרק את/ה בהן יימחקו עם כל התוכן. <b>אי אפשר לבטל את זה.</b>','המשך',true))return;
+  if(!await askSure('למחוק את החשבון שלך?','החשבון, השם, התגובות והדירוגים שלך יימחקו. מקבוצות משותפות תצא/י, והן ימשיכו להתקיים אצל השאר. קבוצות שרק את/ה בהן יימחקו עם כל התוכן. <b>אי אפשר לבטל את זה.</b>','המשך',true))return;
   if(!await askSure('בטוח לגמרי?','זה הצעד האחרון. אחרי זה תצטרך/י להירשם מחדש כדי להשתמש ב־FOMO.','כן, למחוק את החשבון',true))return;
   toast('מוחק…');const {error}=await sb.rpc('delete_me');if(error){toast(/admin_account/.test(error.message||'')?'אי אפשר למחוק חשבון מנהל מתוך האפליקציה':'המחיקה נכשלה: '+errMsg(error));return}
   try{localStorage.clear()}catch{}try{await sb.auth.signOut()}catch{}gate('<p>החשבון נמחק. תודה שהיית איתנו 💛</p>')}
@@ -1670,7 +1672,7 @@ const APP_URL=location.origin+location.pathname.replace(/index\.html$/,'');
 const APP_TXT='היי! 🍽️ גיליתי אפליקציה שאני ממש אוהב: FOMO 💛\nשומרים בה את כל המסעדות, הברים ובתי הקפה שבא לנו לנסות או שכבר היינו בהם, מדרגים, מתכננים יציאות עם חברים, ואף מקום טוב לא נשכח יותר.\nזה חינם, ונכנסים בלחיצה 👇';
 async function appShareDlg(){let svg='';try{const Q=await loadQR();const qr=Q(0,'M');qr.addData(APP_URL);qr.make();svg=qr.createSvgTag({cellSize:6,margin:2,scalable:true})}catch{}
   const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','שליחת האפליקציה');
-  d.innerHTML=`<div class="calp-in qr-in"><h3>📲 שליחת FOMO לחבר</h3><p class="meta" style="margin:0">הקישור לאפליקציה עצמה, בלי הצטרפות לרשימה שלכם. החבר נרשם ופותח רשימה משלו.</p>${svg?`<div class="qr-box">${svg}</div>`:''}<p class="note" dir="ltr" style="margin:0;word-break:break-all">${esc(APP_URL)}</p>
+  d.innerHTML=`<div class="calp-in qr-in"><h3>📲 שליחת FOMO לחבר</h3><p class="meta" style="margin:0">הקישור לאפליקציה עצמה, בלי הצטרפות לקבוצה שלכם. החבר נרשם ופותח קבוצה משלו.</p>${svg?`<div class="qr-box">${svg}</div>`:''}<p class="note" dir="ltr" style="margin:0;word-break:break-all">${esc(APP_URL)}</p>
 <button class="btn pri" type="button" data-as="share">${ICON.share}שליחה</button><button class="btn" type="button" data-as="copy">${ICON.copy}העתקת ההודעה והקישור</button><button class="link-btn" type="button" data-wx>סגירה</button></div>`;
   d.addEventListener('click',async e=>{const b=e.target.closest('[data-as]');if(b){if(b.dataset.as==='share'){await shareOrCopy('FOMO',APP_TXT,APP_URL)}else{try{await navigator.clipboard.writeText(APP_TXT+'\n'+APP_URL);toast('ההודעה והקישור הועתקו')}catch{toast(APP_URL)}}return}if(e.target===d||e.target.closest('[data-wx]'))d.remove()});document.body.appendChild(d)}
 
@@ -1693,13 +1695,13 @@ const TIPS={
   timeline:[{s:'#soon .soon-hero,#soon',t:'היציאה הבאה',d:'ספירה לאחור, ובלחיצה: ניווט, מוביט, מזג אוויר ומה חובה להזמין.'},
     {s:'#memory,#tl',t:'איפה היינו',d:'כל הביקורים שלכם לפי תאריך, כולל ימים מיוחדים.'}],
   me:[{s:'[data-me=vch]',t:'ארנק שוברים',d:'שומרים שוברים ותווי מתנה, ומקבלים תזכורת לפני שפג התוקף.'},
-    {s:'[data-me=app]',t:'שליחת האפליקציה',d:'שולחים את FOMO לחברים, בלי לצרף אותם לרשימה שלכם.'},
+    {s:'[data-me=app]',t:'שליחת האפליקציה',d:'שולחים את FOMO לחברים, בלי לצרף אותם לקבוצה שלכם.'},
     {s:'#me .seg',t:'נוח לקרוא',d:'אפשר להגדיל את הטקסט או להפעיל ניגודיות גבוהה.'}],
   vouchers:[{s:'#vf',t:'שובר חדש',d:'שם, סכום ותאריך תפוגה. שובר למקום מסוים יופיע גם בדף של המקום.'}]};
 const tipsDone=()=>lsGet('rs-tips',{});
 function visEl(sel){for(const el of document.querySelectorAll(sel)){const r=el.getBoundingClientRect();if(r.width>4&&r.height>4&&getComputedStyle(el).visibility!=='hidden')return el}return null}
 async function maybeTour(name,delay){if(lsGet('rs-tips-off',0)||tipsDone()[name]||!TIPS[name])return;if(await amAdmin())return;if(!lsGet('rs-onb2',0)){maybeTour.q=name;return}if(!loaded){setTimeout(()=>maybeTour(name,delay),1000);return}
-  setTimeout(()=>{if(tipsDone()[name]||document.querySelector('.coach'))return;if(document.querySelector('.onb,.calp,.upd-new')){maybeTour.q=name;return}
+  setTimeout(()=>{if(tipsDone()[name]||document.querySelector('.coach'))return;if(document.querySelector('.onb,.calp,.upd-new,.fx-co')){maybeTour.q=name;return}
     const want=name==='list'||name==='map'||name==='timeline'||name==='me'?page===name&&$('#ov').hidden:!$('#ov').hidden;if(!want)return;
     const steps=TIPS[name].filter(x=>!x.s||visEl(x.s));if(steps.length)coach(name,steps)},delay||900)}
 function coach(name,steps){let i=0;const d=document.createElement('div');d.className='coach';d.setAttribute('role','dialog');d.setAttribute('aria-label','טיפ');d.dir='rtl';
@@ -1718,7 +1720,7 @@ function coach(name,steps){let i=0;const d=document.createElement('div');d.class
 function resetTips(){lsSet('rs-tips',{});lsSet('rs-tips-off',0)}
 
 /* ---- what's new after an update ---- */
-const WHATSNEW={'46':['✨ חיפוש חכם בדף הרשימה: מוצא גם מקומות שעוד לא ברשימה, עם כפתור הוספה','💬 אפשר לתאר במילים, למשל "בר יין שקט בתל אביב"','＋ פותח את אותו חיפוש, עם הוספה ידנית למטה','📝 כרטיס ההוספה מסודר: מה שמולא לבד למעלה, השאר מקופל'],'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר ברשימה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
+const WHATSNEW={'53':['👋 כניסה ראשונה חדשה: שם, מקומות ראשונים, הטעם שלי, ופתיחת קבוצה עם הזמנה','💌 מי שמוזמן רואה מי הזמין ואילו מקומות מחכים לו','🏠 סיור קצר במסך הבית למשתמשים חדשים','🌾 "הטעם שלי": סגנונות, תזונה, תקציב ועיר'],'46':['✨ חיפוש חכם בדף הרשימה: מוצא גם מקומות שעוד לא ברשימה, עם כפתור הוספה','💬 אפשר לתאר במילים, למשל "בר יין שקט בתל אביב"','＋ פותח את אותו חיפוש, עם הוספה ידנית למטה','📝 כרטיס ההוספה מסודר: מה שמולא לבד למעלה, השאר מקופל'],'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר ברשימה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
 function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNew,3000);return}const seen=lsGet('rs-seen-ver','');lsSet('rs-seen-ver',APPV);const L=WHATSNEW[APPV];if(!seen||seen===APPV||!L)return;
   const d=document.createElement('div');d.className='calp upd-new';d.setAttribute('role','dialog');d.setAttribute('aria-label','מה חדש');
   d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:30px">🎁</div><h3>מה חדש ב־FOMO</h3><ul class="wn">${L.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><button class="btn pri" type="button" data-wx>מעולה!</button></div>`;
@@ -1739,10 +1741,10 @@ const TRK=new Set();
 function track(f){try{if(!sb||!myId||!f||!navigator.onLine)return;const k=String(f).replace(/[^a-zA-Z0-9:_-]/g,'').slice(0,40);if(!k||TRK.has(k))return;TRK.add(k);sb.rpc('track',{f:k}).then(()=>{},()=>{})}catch{}}
 document.addEventListener('click',e=>{try{const t=e.target.closest('[data-act],[data-qf],[data-me],.tabbar [data-v],.tabs [data-v],[data-fl],[data-vopen],[data-open-f],[data-tf],[data-gr],#pickBtn,#addBtn,#bellBtn,#listBtn,#setBtn');if(!t)return;const ds=t.dataset;
   const f=ds.act?'act:'+ds.act:ds.qf?'qf:'+ds.qf:ds.me?'me:'+ds.me:ds.v?'tab:'+ds.v:ds.fl!==undefined?'friendsLoved':ds.vopen!==undefined?'voucher':ds.openF?'qf:open':ds.tf?'tag':ds.gr?'greet:'+ds.gr:t.id?'btn:'+t.id:'';if(f)track(f)}catch{}},true);
-const FL={'tab:list':'לשונית רשימה','tab:map':'לשונית מפה','tab:timeline':'לשונית יציאות','tab:stats':'נתונים','tab:me':'לשונית אני','btn:addBtn':'הוספת מקום','btn:pickBtn':'לאן הולכים הערב?','btn:bellBtn':'פעמון עדכונים','btn:listBtn':'הרשימות שלי','btn:setBtn':'הגדרות',
+const FL={'tab:list':'לשונית רשימה','tab:map':'לשונית מפה','tab:timeline':'לשונית יציאות','tab:stats':'נתונים','tab:me':'לשונית אני','btn:addBtn':'הוספת מקום','btn:pickBtn':'לאן הולכים הערב?','btn:bellBtn':'פעמון עדכונים','btn:listBtn':'הקבוצות שלי','btn:setBtn':'הגדרות',
   'qf:open':'פילטר פתוח עכשיו','qf:near':'קרוב אליי','qf:like':'בא לי','qf:new':'עוד לא ביקרנו','qf:hh':'האפי אוור עכשיו','qf:more':'פילטרים נוספים','tag':'פילטר תגיות','friendsLoved':'חברים אהבו','voucher':'שוברים','detail':'פתיחת מקום','search':'חיפוש מקום','ai':'זיהוי חכם בחיפוש',
-  'me:app':'שליחת האפליקציה','me:out':'יציאות (מסך אני)','me:vch':'ארנק שוברים','me:set':'הגדרות (מסך אני)','me:lists':'רשימות (מסך אני)','me:onb':'הדרכה מחדש','me:bell':'עדכונים (מסך אני)','me:adm':'מסך ניהול',
-  'act:moovit':'מוביט','act:wolt':'וולט','act:vote':'הצבעה בא לי','act:rate':'דירוג','act:fav':'מועדף','act:share':'שיתוף מקום','act:shareCard':'כרטיס שיתוף','act:qrInvite':'הזמנה ב־QR','act:shareInvite':'הזמנה לרשימה','act:shareApp':'שליחת האפליקציה',
+  'me:app':'שליחת האפליקציה','me:out':'יציאות (מסך אני)','me:vch':'ארנק שוברים','me:set':'הגדרות (מסך אני)','me:lists':'קבוצות (מסך אני)','me:onb':'הדרכה מחדש','me:bell':'עדכונים (מסך אני)','me:adm':'מסך ניהול',
+  'act:moovit':'מוביט','act:wolt':'וולט','act:vote':'הצבעה בא לי','act:rate':'דירוג','act:fav':'מועדף','act:share':'שיתוף מקום','act:shareCard':'כרטיס שיתוף','act:qrInvite':'הזמנה ב־QR','act:shareInvite':'הזמנה לקבוצה','act:shareApp':'שליחת האפליקציה',
   'act:planNew':'תכנון יציאה','act:evNew':'ערב עם כמה תחנות','act:pollNew':'סקר','act:wheelSpin':'גלגל הגורל','act:diceRoll':'קוביה','act:gameNew':'משחקים','act:camNear':'צילום בקרבת מקום','act:voice':'הקלטה קולית','act:recap':'סיכום תקופה','act:pubOn':'דף ציבורי','act:import':'ייבוא',
   'act:edit':'עריכת מקום','act:placeSearch':'חיפוש בטופס','act:gSearchNow':'חיפוש מורחב','act:theme':'ערכת צבעים','act:pushOn':'הפעלת התראות','act:install':'התקנה','install-banner':'באנר התקנה','act:dupOpen':'מניעת כפילות','greet:open':'ברכה: פתוחים עכשיו','greet:hh':'ברכה: האפי אוור'};
 async function featHtml(){let L=null;try{const {data}=await sb.rpc('admin_features',{days:30});L=data}catch{}
@@ -1935,7 +1937,7 @@ $('#ov').addEventListener('scroll',()=>{const b=document.querySelector('#ov .sx-
 
 /* 43: install banner (Safari/Android, not installed yet) */
 function instBanner(){try{if(isStandalone()||!isPhone()||lsGet('rs-inst-done',0))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;
-  if(!myId||!loaded||!lsGet('rs-onb2',0)||document.querySelector('.onb,.coach,.calp,.upd')){setTimeout(instBanner,15000);return}
+  if(!myId||!loaded||!lsGet('rs-onb2',0)||document.querySelector('.onb,.coach,.calp,.upd,.fx-co')){setTimeout(instBanner,15000);return}
   const safari=isIOS()&&!/crios|fxios|edgios|gsa\//i.test(navigator.userAgent);
   const d=document.createElement('div');d.className='instb';d.setAttribute('role','region');d.setAttribute('aria-label','התקנת האפליקציה');
   d.innerHTML=`<span class="instb-ic" aria-hidden="true">📲</span><div class="instb-t"><b>FOMO על מסך הבית</b><small>${/^and-(samsung|inapp|other)$/.test(instPlat())?'מתקינים דרך Chrome, בלחיצה':'נפתחת כמו אפליקציה, עם התראות'}</small></div>${/^and-(samsung|inapp|other)$/.test(instPlat())?`<a class="btn pri" href="${CHROME_URL}" data-ib="chrome">פתיחה ב־Chrome</a>`:`<button class="btn pri" type="button" data-ib="go">${installEvt?'התקנה':'איך?'}</button>`}<button class="instb-x" type="button" data-ib="x" aria-label="לא עכשיו">×</button>`;
@@ -1968,6 +1970,150 @@ function findDup(x){if(!x||!x.name)return null;const n=fomoNorm(x.name),c=fomoNo
     return !c||!r.city||fomoNorm(r.city)===c})||null}
 function dupNote(x){const el=$('#dupN');if(!el)return;const d=mode==='new'?findDup(x):null;el.hidden=!d;
   el.innerHTML=d?`<span>👀 <b>${esc(d.name)}</b> כבר ברשימה${d.city?' ('+esc(d.city)+')':''}.</span><button class="btn" type="button" data-act="dupOpen" data-id="${esc(d.id)}">לפתוח אותו</button><button class="link-btn" type="button" data-act="dupHide">להוסיף בכל זאת</button>`:''}
+
+/* ================= v53: first-run flow (name + places, taste, who, group, invite, home tour) ================= */
+const FX_VIBES=['איטלקי','אסייתי','יפני / סושי','בשרים','דגים ופירות ים','המבורגר','פיצה','בר קוקטיילים','בר יין','קפה ובראנץ\'','חומוס ומזרחי','מסעדת שף'];
+const FX_WHO=[['partner','💑','בן או בת זוג','דייטים, ערבים לשניים'],['friends','👯','חברים','חבורה, ימי הולדת, סופ״שים'],['family','👨‍👩‍👧','משפחה','ארוחות שישי, מקומות לילדים'],['solo','🙋','בינתיים רק אני','אפשר להזמין אחר כך']];
+const FX_EMO=['💛','🍝','🥂','🍣','🔥','✨','🌾','🍷'];
+let fx=null;
+function fxShell(html,step){const g=$('#gate');g.className='gate fxg';g.innerHTML=`<div class="fx" dir="rtl"><div class="fx-top">${step?`<span class="fx-n">${step}</span>`:''}<span class="fx-logo">Fomo</span></div>${html}</div>`;g.hidden=false;$('#app').hidden=true;g.scrollTop=0;window.scrollTo(0,0)}
+async function fxRun(tr){fx={tr,step:3,sel:[],sx:[],who:'',partner:'',emo:'💛',gname:''};track('fx-start-'+tr);if(cur)try{localStorage.setItem('rs-list',cur.id)}catch{}
+  if(cur){try{const {data}=await sb.from('restaurants').select('id,data').eq('list_id',cur.id);rows=(data||[]).map(x=>({...(x.data||{}),id:x.id}));takeMeta(cur.id)}catch{}}
+  fxStep3()}
+const fxTotal=()=>fx.tr==='Y'?2:5;
+const fxLbl=n=>`שלב ${n} מתוך ${fxTotal()}`;
+/* step 3: name + 3 places */
+function fxStep3(){const inv=fx.tr==='Y'&&cur,have=rows.filter(r=>!r._meta&&!(r.visits||[]).some(v=>v&&v.surprise));fxShell(`<h2 class="fx-h">נעים להכיר! איך לקרוא לך?</h2>
+  <input class="fx-in" id="fxName" maxlength="30" autocomplete="given-name" value="${esc(myName||fx.name||'')}" placeholder="השם שלך" aria-label="השם שלך">
+  <h3 class="fx-h2">${inv?`מה עוד בא לך? אלה כבר ב"${esc(cur.name)}"`:'3 מקומות שיש לך בראש? ✨'}</h3>
+  ${inv&&have.length?`<div class="fx-have">${have.slice(0,4).map(r=>`<span>${esc(r.name)}</span>`).join('')}</div>`:''}
+  <p class="fx-sub">כותבים שם, או בוחרים מההצעות. כל מקום נוסף עם הכתובת והשעות. אפשר גם לדלג.</p>
+  <div class="fx-prog"><span id="fxPc"></span><div class="fx-bar"><i id="fxPb"></i></div></div>
+  <span class="sx-qwrap fx-q"><span class="sx-spark" aria-hidden="true">✨</span><input class="search" id="fxQ" type="search" enterkeyhint="search" autocomplete="off" placeholder="חיפוש חכם: שם, או ״בר יין שקט״" aria-label="חיפוש מקום"></span>
+  <div id="fxRes" class="fx-res"><p class="fx-sub">טוען הצעות…</p></div>
+  <div class="fx-foot"><button class="btn pri" type="button" id="fxNext3">המשך</button><button class="fx-skip" type="button" id="fxSkip3">דלג לשלב הבא</button><div class="err" id="fxErr"></div></div>`,fxLbl(1));
+  fxProg();fxSuggest();
+  $('#fxQ').addEventListener('input',e=>{clearTimeout(fxStep3.t);const v=e.target.value.trim();fxStep3.t=setTimeout(()=>fxSearch(v),v.length<2?0:(sxIsDesc(v)?1000:450))});
+  $('#fxQ').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();clearTimeout(fxStep3.t);fxSearch(e.target.value.trim(),true)}});
+  $('#fxNext3').onclick=()=>fxSave3(false);$('#fxSkip3').onclick=()=>fxSave3(true)}
+function fxProg(){const n=fx.sel.length,a=$('#fxPc'),b=$('#fxPb');if(a)a.textContent=Math.min(3,n)+'/3';if(b)b.style.width=Math.min(100,n/3*100)+'%';const nb=$('#fxNext3');if(nb)nb.classList.toggle('fx-pulse',n>=3)}
+async function fxSuggest(){let L=[];try{const {data}=await sb.rpc('browse_places',{c:null,cty:null,lim:8});L=(data||[]).map(catToItem)}catch{}if(!fx||fx.step!==3)return;fx.sx=L.filter(x=>!sxInList(x));fxResRender(fx.sx,'הצעות פופולריות ב־FOMO')}
+async function fxSearch(v,force){if(!fx)return;if(v.length<2){fxSuggest();return}const desc=sxIsDesc(v);const box=$('#fxRes');if(!box)return;
+  box.innerHTML=desc?sxThink(['מבין את הבקשה','מחפש בקטלוג, במפה ובגוגל','משאיר רק אוכל ושתייה']):'<p class="sx-note">מחפש…</p>';const stop=desc?sxStep(box):()=>{};
+  let r=null;try{r=await sxSearch(v,{desc})}catch{}finally{stop()}if(!fx||($('#fxQ')||{}).value.trim()!==v)return;fx.sx=(r&&r.items)||[];fxResRender(fx.sx,'',true)}
+function fxResRender(L,head,searched){const box=$('#fxRes');if(!box)return;
+  box.innerHTML=(head?`<div class="sx-h">${esc(head)}</div>`:'')+(L.length?`<div class="fx-grid">${L.map((x,i)=>{const on=fx.sel.some(s=>fxSame(s,x)),ex=sxInList(x),meta=[x.cuisine,x.city].filter(Boolean).join(' · ');
+    return `<button type="button" class="fx-pc ${on||ex?'on':''}" data-fx-pick="${i}" ${ex?'disabled':''}><span class="fx-pk">${on||ex?'✓':'+'}</span>${sxAv(x)}<b>${esc(x.name)}</b><small>${esc(ex?'כבר בקבוצה':meta||String(x.full||'').split(',').slice(0,2).join(','))}</small></button>`}).join('')}</div>`
+    :`<p class="sx-note">${searched?'לא מצאנו. נסו לכתוב אחרת, או דלגו ותוסיפו אחר כך.':'כתבו שם של מקום שבא לכם לנסות.'}</p>`)}
+const fxSame=(a,b)=>(a.gpid&&a.gpid===b.gpid)||(a.pid&&a.pid===b.pid)||(a.name===b.name&&(a.city||'')===(b.city||''));
+document.addEventListener('click',e=>{const b=e.target.closest('[data-fx-pick]');if(!b||!fx)return;const x=fx.sx[+b.dataset.fxPick];if(!x)return;const i=fx.sel.findIndex(s=>fxSame(s,x));
+  if(i>=0){fx.sel.splice(i,1);b.classList.remove('on');b.querySelector('.fx-pk').textContent='+'}else{fx.sel.push(x);b.classList.add('on');b.querySelector('.fx-pk').textContent='✓';toast('✓ '+x.name)}fxProg()});
+function fxRowOf(x){const now=Date.now();const d={name:String(x.name||'').slice(0,80),cuisine:x.cuisine||'',city:x.city||'',address:x.address||'',status:'want',price:+x.price||0,recBy:'',mapsUrl:safeUrl(x.mapsUrl||''),site:safeUrl(x.site||''),woltUrl:'',tags:x.veg?['צמחוני-פרנדלי']:[],notes:'',hours:x.hours||{},hh:null,updatedAt:now,fav:false,ratings:{},votes:{},dishes:[],photos:[],visits:[],addedBy:myId,createdAt:now};
+  if(Number.isFinite(x.lat)&&Number.isFinite(x.lng)){d.lat=+(+x.lat).toFixed(6);d.lng=+(+x.lng).toFixed(6);d.llLevel='place'}else{d.lat=null;d.lng=null;d.llLevel=''}
+  if(typeof x.delivery==='boolean')d.delivery=x.delivery;if(x.pid)d.placeId=x.pid;return d}
+let fxGph=[];
+async function fxAddPlaces(){const out=[];for(let x of fx.sel){if(sxInList(x))continue;
+    if(x.g&&x.gpid&&!x.pred){const qq=await takeQuota('place');if(qq.ok){try{const g=await gmaps();const {Place}=await g.maps.importLibrary('places');const pl=new Place({id:x.gpid});await pl.fetchFields({fields:GF});const it=gToItem(pl);it.gpid=x.gpid;x=it}catch(e){console.warn('g details',e)}}}
+    else if(x.pred){try{const pl=await gDetails(x.pred);if(pl){const it=gToItem(pl);it.gpid=pl.id||'';x=it}}catch{}}
+    const d=fxRowOf(x),id=uuid();formSrc=x.cat?{pid:x.pid,hoursSrc:x.hours?'user':'',phone:x.phone}:x.osm?{osm:x.osm,phone:x.phone,hoursSrc:x.hours?'osm':''}:x.g?{gpid:x.gpid||'',hoursSrc:'google'}:{};
+    try{contribute(d)}catch{}formSrc={};
+    const {error}=await sb.from('restaurants').insert({id,list_id:cur.id,data:d});if(error){console.warn('fx add',error);continue}
+    rows.unshift({...d,id});out.push(d.name);if(x.gphotos&&x.gphotos.length)fxGph.push([id,x.gphotos])}
+  if(out.length)try{logAct('add',null,out.length===1?`הוסיף/ה את ${out[0]}`:`הוסיף/ה ${out.length} מקומות: ${out.join(', ')}`)}catch{}
+  return out.length}
+async function fxSave3(skip){const n=($('#fxName').value||'').trim().slice(0,30),er=$('#fxErr');if(!n){er.textContent='איך לקרוא לך? כתבו שם, ואז ממשיכים.';$('#fxName').focus();return}
+  const bs=[$('#fxNext3'),$('#fxSkip3')];bs.forEach(b=>b.disabled=true);er.textContent='';
+  try{const {error}=await sb.from('profiles').upsert({user_id:myId,name:n});if(error)throw error;myName=n;fx.name=n;
+    if(!cur){const id=await doCreateList('המקומות של '+n);if(!id)throw new Error('לא הצלחנו לפתוח קבוצה');cur=lists.find(l=>l.id===id)||{id,name:'המקומות של '+n,role:'owner'};try{localStorage.setItem('rs-list',id)}catch{}meta={id:null,special:[],diets:{},vouchers:[],tastes:{}}}
+    if(!skip&&fx.sel.length){bs[0].textContent='מוסיף…';const k=await fxAddPlaces();if(k)toast(`✓ ${k===1?'מקום אחד נוסף':k+' מקומות נוספו'}, עם השעות`)}
+    track(skip?'fx-skip3':'fx-places-'+fx.sel.length);fxStep4()}catch(e){bs.forEach(b=>b.disabled=false);bs[0].textContent='המשך';er.textContent=errMsg(e)}}
+/* step 4: taste */
+function fxStep4(){fx.step=4;const d=dietOf(myId),t=((meta.tastes||{})[myId])||{};fx.c=new Set(t.c||[]);fx.k=new Set(d.k||[]);fx.b=t.b||0;
+  fxShell(`<h2 class="fx-h">${esc(myName)}, מה הטעם שלך? 😋</h2><p class="fx-sub">ככה נציע מקומות שמתאימים לך. בחרו כמה שבא לכם.</p>
+  <div class="fx-chips">${FX_VIBES.map(v=>`<button type="button" class="fx-chip" data-fx-c="${esc(v)}" aria-pressed="${fx.c.has(v)}">${esc(v)}</button>`).join('')}</div>
+  <h3 class="fx-h2">משהו שחשוב לדעת?</h3><div class="fx-chips">${DIET.map(([k,tt,e])=>`<button type="button" class="fx-chip" data-fx-k="${k}" aria-pressed="${fx.k.has(k)}">${e} ${tt}</button>`).join('')}</div>
+  <h3 class="fx-h2">תקציב בדרך כלל</h3><div class="fx-seg">${[1,2,3,4].map(i=>`<button type="button" data-fx-b="${i}" aria-pressed="${fx.b===i}">${'₪'.repeat(i)}</button>`).join('')}</div>
+  <h3 class="fx-h2">איפה בדרך כלל?</h3><input class="fx-in" id="fxCity" maxlength="40" value="${esc(t.city||'')}" placeholder="למשל: תל אביב" aria-label="עיר">
+  <div class="fx-foot"><button class="btn pri" type="button" id="fxNext4">שמירה והמשך</button><button class="fx-skip" type="button" id="fxSkip4">דלג</button><div class="err" id="fxErr"></div></div>`,fxLbl(2));
+  $('#fxNext4').onclick=()=>fxSave4(false);$('#fxSkip4').onclick=()=>fxSave4(true)}
+document.addEventListener('click',e=>{if(!fx)return;const c=e.target.closest('[data-fx-c],[data-fx-k]');if(c){const S=c.dataset.fxC!==undefined?fx.c:fx.k,v=c.dataset.fxC!==undefined?c.dataset.fxC:c.dataset.fxK;S.has(v)?S.delete(v):S.add(v);c.setAttribute('aria-pressed',S.has(v));return}
+  const b=e.target.closest('[data-fx-b]');if(b){fx.b=+b.dataset.fxB===fx.b?0:+b.dataset.fxB;document.querySelectorAll('[data-fx-b]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.fxB===fx.b));return}});
+async function fxSave4(skip){const btn=$('#fxNext4');if(!skip){btn.disabled=true;const city=($('#fxCity').value||'').trim().slice(0,40);
+    const ok=await metaSave({diets:{...(meta.diets||{}),[myId]:{k:[...fx.k],al:dietOf(myId).al||''}},tastes:{...(meta.tastes||{}),[myId]:{c:[...fx.c],b:fx.b,city}}});btn.disabled=false;if(!ok)return;track('fx-taste')}else track('fx-skip4');
+  if(fx.tr==='Y')fxDone();else fxStep5()}
+/* step 5: who */
+function fxStep5(){fx.step=5;fxShell(`<h2 class="fx-h">${esc(myName)}, עם מי יוצאים? 🍽️</h2><p class="fx-sub">ככה נכין לכם קבוצה מתאימה.</p>
+  <div class="fx-who">${FX_WHO.map(([k,ic,t,s])=>`<button type="button" data-fx-who="${k}"><span>${ic}</span><div><b>${t}</b><small>${s}</small></div></button>`).join('')}</div>`,fxLbl(3));
+  document.querySelectorAll('[data-fx-who]').forEach(b=>b.onclick=()=>{fx.who=b.dataset.fxWho;track('fx-who-'+fx.who);if(fx.who==='solo')fxDone();else fxStep6()})}
+/* step 6: group name */
+function fxGDefault(){const p=fx.partner.trim();return fx.who==='partner'?(p?`${myName} ו${p}`:`${myName} ובן/בת הזוג`):fx.who==='family'?'ארוחות משפחתיות':'החבר׳ה יוצאים'}
+function fxStep6(){fx.step=6;const pt=fx.who==='partner';fx.gname='';
+  fxShell(`<h2 class="fx-h">${pt?'איך קוראים לבן או לבת הזוג?':'איך נקרא לקבוצה?'}</h2><p class="fx-sub">${pt?'נשתמש בזה לשם הקבוצה ולהזמנה.':'אפשר לשנות אחר כך בהגדרות.'}</p>
+  ${pt?`<input class="fx-in" id="fxPartner" maxlength="30" value="${esc(fx.partner)}" placeholder="השם שלו או שלה" aria-label="שם בן או בת הזוג">`:''}
+  <h3 class="fx-h2">שם הקבוצה</h3><input class="fx-in" id="fxGName" maxlength="34" value="${esc(fxGDefault())}" aria-label="שם הקבוצה">
+  <h3 class="fx-h2">אימוג׳י לקבוצה</h3><div class="fx-emo">${FX_EMO.map(e=>`<button type="button" data-fx-e="${e}" aria-pressed="${fx.emo===e}">${e}</button>`).join('')}</div>
+  <div class="fx-foot"><button class="btn pri" type="button" id="fxNext6">המשך</button><div class="err" id="fxErr"></div></div>`,fxLbl(4));
+  const P=$('#fxPartner'),G=$('#fxGName');let touched=false;G.addEventListener('input',()=>touched=true);if(P)P.addEventListener('input',()=>{fx.partner=P.value;if(!touched)G.value=fxGDefault()});
+  document.querySelectorAll('[data-fx-e]').forEach(b=>b.onclick=()=>{fx.emo=b.dataset.fxE;document.querySelectorAll('[data-fx-e]').forEach(x=>x.setAttribute('aria-pressed',x===b))});
+  $('#fxNext6').onclick=async()=>{const n=(G.value.trim()||fxGDefault()).slice(0,34)+' '+fx.emo;const b=$('#fxNext6');b.disabled=true;
+    const {error}=await sb.from('lists').update({name:n.slice(0,40)}).eq('id',cur.id);b.disabled=false;if(error){$('#fxErr').textContent=errMsg(error);return}cur.name=n.slice(0,40);const l=lists.find(x=>x.id===cur.id);if(l)l.name=cur.name;track('fx-group');fxStep7()}}
+/* step 7: invite */
+function fxInvText(){const p=fx.partner.trim();return fx.who==='partner'?`היי${p?' '+p:''} ${fx.emo} פתחתי לנו קבוצה ב־FOMO לכל המקומות שבא לנו לנסות ביחד. מצטרפים בלחיצה 👇`:fx.who==='family'?`היי ${fx.emo} פתחתי לנו קבוצה משפחתית ב־FOMO, לכל המקומות שבא לנו לנסות. מצטרפים בלחיצה 👇`:`היי ${fx.emo} פתחתי לנו קבוצה ב־FOMO לכל המקומות שבא לנו לנסות ביחד. מצטרפים בלחיצה, ותוסיפו גם אתם 👇`}
+async function fxStep7(){fx.step=7;if(!cur.join_code){try{await loadLists();const l=lists.find(x=>x.id===cur.id);if(l)cur=l}catch{}}const p=fx.partner.trim(),url=inviteUrl();
+  fxShell(`<h2 class="fx-h">שולחים ${fx.who==='partner'&&p?'ל'+esc(p):'לחבורה'} 💌</h2><p class="fx-sub">ההודעה כבר מוכנה. מי שלוחץ מצטרף לקבוצה ורואה את המקומות מיד.</p>
+  <div class="fx-wa"><div class="fx-bub">${esc(fxInvText())}<div class="fx-lp"><i>F</i><div><b>${esc(cur.name)}</b><small dir="ltr">${esc(url.replace(/^https?:\/\//,'').slice(0,34))}…</small></div></div></div></div>
+  <div class="fx-foot"><button class="btn fx-wabtn" type="button" id="fxSend">💬 שליחה בוואטסאפ</button><button class="btn" type="button" id="fxCopy">${ICON.copy}העתקת הקישור</button><button class="fx-skip" type="button" id="fxLater">אחר כך</button></div>`,fxLbl(5));
+  $('#fxSend').onclick=async()=>{track('fx-invite');const t=fxInvText()+'\n'+url;if(navigator.share&&isPhone()){try{await navigator.share({title:'Fomo',text:fxInvText(),url});fxAfterInv();return}catch(e){if(e&&e.name==='AbortError')return}}window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener');fxAfterInv()};
+  $('#fxCopy').onclick=async()=>{try{await navigator.clipboard.writeText(fxInvText()+'\n'+url);toast('הקישור הועתק 📋');track('fx-invite-copy');fxAfterInv()}catch{toast(url)}};
+  $('#fxLater').onclick=()=>{track('fx-invite-later');fxDone()}}
+function fxAfterInv(){lsSet('rs-fx-inv',1);const b=$('#fxLater');if(b){b.textContent='המשך ←';b.classList.add('fx-pulse')}}
+/* finish: into the app, then the tour */
+function fxDone(){lsSet('rs-fx-done',1);lsSet('rs-onb2',1);lsSet('rs-tips',{...tipsDone(),list:1});lsSet('rs-seen-ver',APPV);lsSet('rs-fx-tour',fx.tr==='Y'?'Y':'I');lsSet('rs-fx-at',Date.now());track('fx-done-'+fx.tr);fx=null;const g=$('#gate');g.className='gate';start()}
+/* ---- coach-mark tour on the real screen ---- */
+function fxVis(el){if(!el)return false;const r=el.getBoundingClientRect(),cs=getComputedStyle(el);return r.width>0&&r.height>0&&cs.visibility!=='hidden'&&cs.display!=='none'}
+function fxTour(){const kind=lsGet('rs-fx-tour','');if(!kind||page!=='list'||document.querySelector('.fx-co,.onb,.calp'))return;lsSet('rs-fx-tour','');lsSet('rs-tips',{...tipsDone(),list:1});
+  const grp=members.length>1||kind==='Y',has=rows.length>0,taste=dietOf(myId).k.length||(((meta.tastes||{})[myId]||{}).c||[]).length;
+  const S=[{s:'header.band .top',t:'זה הבית שלך 🏠',d:grp?`כל המקומות של "${esc(cur.name)}" במקום אחד. מה שמישהו בקבוצה מוסיף, כולם רואים מיד.`:'כל המקומות שלך במקום אחד. למעלה: כמה מקומות יש, ומה פתוח עכשיו.'},
+    {s:'#v-list .seg',t:'רוצים ללכת / היינו',d:'"רוצים ללכת" זה מה שעוד לא ניסיתם. אחרי ביקור מסמנים "היינו", מדרגים, והמקום עובר לשם.'+(grp?' ב"שנינו רוצים השבוע" רואים רק מה ששניכם סימנתם "בא לי".':'')},
+    {s:'#v-list .sx-qwrap',t:'✨ חיפוש חכם',d:'כותבים שם או תיאור, כמו "בר יין שקט". מחפש ברשימה שלכם, וגם מוצא מקומות חדשים להוסיף.'},
+    ...(taste?[{s:'#cuis',t:'סינון מהיר',d:'מסננים לפי סוג, פתוח עכשיו, מה שמתאים לך ועוד. ההעדפות שבחרת נשמרות ב"אני".'}]:[]),
+    ...(has?[{s:'#grid .card',t:'כרטיס מקום',d:'נגיעה בכרטיס פותחת שעות, כתובת, ניווט והערות. השעות מתמלאות לבד.'}]:[]),
+    {s:'.tabbar',t:'הניווט למטה',d:'מפה: איפה כל המקומות. ＋: הוספת מקום. יציאות: מה עשיתם ומה מתוכנן. אני: הפרופיל, ההעדפות וההגדרות.'},
+    {s:'#fab',t:'📷 צילום במסעדה',d:'במסעדה? מצלמים קבלה או מנה, וה־AI ממלא את הביקור בשבילכם.'}].filter(x=>fxVis(document.querySelector(x.s)));
+  if(!S.length){fxArmPush();return}track('fx-tour');let k=0;const co=document.createElement('div');co.className='fx-co';co.setAttribute('role','dialog');co.setAttribute('aria-label','סיור קצר');co.innerHTML='<div class="fx-spot"></div><div class="fx-cb"></div>';document.body.appendChild(co);
+  const end=()=>{co.remove();window.removeEventListener('resize',show);lsSet('rs-fx-toured',1);fxChk();const c=document.querySelector('#grid .card');if(c){c.classList.add('fx-hl');setTimeout(()=>c.classList.remove('fx-hl'),6000);toast('👆 נסו עכשיו: פתחו את אחד המקומות')}fxArmPush()};
+  function show(){const s=S[k],el=document.querySelector(s.s);if(!el){k++;k<S.length?show():end();return}
+    const fixed=getComputedStyle(el).position==='fixed'||!!el.closest('.tabbar');if(!fixed){const r0=el.getBoundingClientRect();if(r0.top<70||r0.bottom>innerHeight-200)window.scrollTo({top:Math.max(0,scrollY+r0.top-110),behavior:'auto'})}
+    requestAnimationFrame(()=>{const r=el.getBoundingClientRect(),sp=co.querySelector('.fx-spot'),cb=co.querySelector('.fx-cb');const pad=6;sp.style.top=(r.top-pad)+'px';sp.style.left=(r.left-pad)+'px';sp.style.width=(r.width+pad*2)+'px';sp.style.height=Math.min(r.height+pad*2,innerHeight*.5)+'px';
+      cb.innerHTML=`<b>${s.t}</b><p>${s.d}</p><div class="fx-cbr"><span class="fx-dots">${S.map((_,j)=>`<i class="${j===k?'on':''}"></i>`).join('')}</span><span><button type="button" class="fx-cskip" data-co="skip">דלג</button><button type="button" class="btn pri sm" data-co="next">${k===S.length-1?'הבנתי ✓':'הבא'}</button></span></div>`;
+      const below=r.top+Math.min(r.height,innerHeight*.5)<innerHeight*.55;cb.style.top=below?Math.min(innerHeight-220,r.top+Math.min(r.height,innerHeight*.5)+16)+'px':'auto';cb.style.bottom=below?'auto':Math.max(16,innerHeight-r.top+16)+'px';const nb=cb.querySelector('[data-co=next]');if(nb)nb.focus()})}
+  co.addEventListener('click',e=>{const b=e.target.closest('[data-co]');if(!b)return;if(b.dataset.co==='skip'){track('fx-tour-skip');end();return}k++;if(k>=S.length)end();else show()});
+  window.addEventListener('resize',show);show()}
+/* ---- notifications: asked after the user has looked around ---- */
+let fxPush=null;
+function fxArmPush(){if(lsGet('rs-push-asked',0)||fxPush)return;let n=0;const on=e=>{if(e.target.closest('.tabbar a,.tabbar button,#grid .card,#v-list .seg button,#cuis .chip,[data-v]')&&++n>=4)fire()};
+  const fire=async()=>{document.removeEventListener('click',on,true);clearTimeout(fxPush);if(lsGet('rs-push-asked',0))return;const st=await pushState();if(st!=='off')return;
+    setTimeout(()=>{if(!$('#ov').hidden||document.querySelector('.calp,.fx-co')){setTimeout(fire,8000);return}lsSet('rs-push-asked',1);pushAsk=false;renderNotices();track('fx-push-ask');
+      const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','התראות');
+      d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:28px">🔔</div><h3>רוצה שנעדכן אותך?</h3><p class="meta">כשמקום מהרשימה פתוח וקרוב אליך, כשמישהו בקבוצה מוסיף מקום, ולפני יציאה שתכננתם. לא יותר מהתראה ביום.</p><button class="btn pri" type="button" data-y>כן, לעדכן אותי</button><button class="link-btn" type="button" data-n>לא עכשיו</button></div>`;
+      d.addEventListener('click',async e=>{if(e.target.closest('[data-y]')){d.remove();track('fx-push-yes');await pushOn();fxChk()}else if(e.target===d||e.target.closest('[data-n]')){d.remove();track('fx-push-no')}});document.body.appendChild(d)},900)};
+  document.addEventListener('click',on,true);fxPush=setTimeout(fire,15000)}
+/* ---- "first steps" card on the list, for the first two weeks ---- */
+let fxPushOn=null;
+function fxChk(){const at=lsGet('rs-fx-at',0);let el=$('#fxChk');if(!at||Date.now()-at>14*864e5||lsGet('rs-fx-chk-x',0)||page!=='list'||!loaded||(q||'').trim()){if(el)el.remove();return}
+  if(fxPushOn===null){fxPushOn=false;pushState().then(s=>{fxPushOn=s==='on';fxChk()})}
+  const taste=dietOf(myId).k.length||(((meta.tastes||{})[myId]||{}).c||[]).length;
+  const C=[['מקומות ראשונים',rows.length>0,'add'],['הטעם שלי',!!taste,'taste'],['סיור במסך הבית',!!lsGet('rs-fx-toured',0),'tour'],['התראות',fxPushOn,'push'],[members.length>1?'הקבוצה ('+members.length+')':'הזמנה לקבוצה',members.length>1,'inv']];
+  const done=C.filter(c=>c[1]).length;if(done===C.length){if(el)el.remove();return}
+  if(!el){el=document.createElement('div');el.id='fxChk';const fl=$('#friendsLoved');if(!fl)return;fl.before(el)}
+  const h=`<div class="fx-chk"><div class="fx-chkh"><b>צעדים ראשונים</b><span class="fx-ring" style="--p:${done/C.length*360}deg"><span>${done}/${C.length}</span></span><button type="button" class="fx-x" data-fxc="x" aria-label="הסתרה">×</button></div>${C.map(([t,d,k])=>`<button type="button" class="fx-ck ${d?'d':''}" data-fxc="${k}" ${d?'disabled':''}><i>${d?'✓':''}</i>${esc(t)}${d?'':'<span>←</span>'}</button>`).join('')}</div>`;if(el.innerHTML!==h)el.innerHTML=h}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-fxc]');if(!b)return;const k=b.dataset.fxc;track('fx-chk-'+k);
+  if(k==='x'){lsSet('rs-fx-chk-x',1);fxChk();return}if(k==='add'){addSheet();return}if(k==='taste'){settingsSheet();setTimeout(()=>{const f=$('#dietF');if(f)f.scrollIntoView({block:'start'})},350);return}
+  if(k==='tour'){lsSet('rs-fx-tour','I');window.scrollTo(0,0);setTimeout(fxTour,250);return}if(k==='push'){pushOn().then(()=>{fxPushOn=null;fxChk()});return}
+  if(k==='inv'){shareOrCopy('Fomo',`הצטרפו לקבוצה "${cur?cur.name:''}" ב־FOMO! פותחים את הקישור, נרשמים, וזהו:`,inviteUrl());return}});
+/* ---- invite preview on the sign-up screen ---- */
+async function fxInvPreview(code){try{const {data,error}=await sb.rpc('invite_preview',{code});if(error||!data||!data.name)return;const el=$('#invPv');if(!el)return;const P=(data.places||[]).filter(Boolean);
+  el.innerHTML=`<h2 class="fx-ih">${data.by?esc(data.by)+' הזמין/ה אותך ל':'הוזמנת ל'}"${esc(data.name)}"</h2>${P.length?`<div class="fx-pv"><small>כבר מחכים לך ${data.n>P.length?data.n+' מקומות, ביניהם':''}:</small>${P.map(n=>`<div>📍 <b>${esc(n)}</b></div>`).join('')}</div>`:''}`}catch{}}
 
 if(!CFG.supabaseUrl||!CFG.supabaseKey||!window.supabase){gate('<p>האפליקציה עוד לא מחוברת למסד הנתונים. צריך למלא את הקובץ config.js.</p>')}
 else{sb=window.supabase.createClient(CFG.supabaseUrl,CFG.supabaseKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,experimental:{passkey:true}}});const pubT=new URLSearchParams(location.search).get('pub');if(pubT)renderPublic(pubT);else start()}
