@@ -3,12 +3,19 @@ Data: © OpenStreetMap contributors, ODbL."""
 import json, sys, urllib.request, urllib.parse, collections
 AREA = sys.argv[1] if len(sys.argv) > 1 else "Q33935"  # Tel Aviv-Yafo (Wikidata id)
 Q = f'[out:json][timeout:120];area["wikidata"="{AREA}"]->.a;nwr(area.a)["amenity"~"^(restaurant|cafe|bar|pub|fast_food|ice_cream|biergarten)$"]["name"];out tags center;'
-for url in ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]:
-    try:
-        req = urllib.request.Request(url, data=urllib.parse.urlencode({"data": Q}).encode(), headers={"User-Agent": "fomo-catalog-check/1.0 (myfomo.github.io)"})
-        E = json.load(urllib.request.urlopen(req, timeout=180))["elements"]; break
-    except Exception as e:
-        print("fail", url, e)
+import time
+E = None
+MIRRORS = ["https://overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter", "https://maps.mail.ru/osm/tools/overpass/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]
+for attempt in range(4):
+    for url in MIRRORS:
+        try:
+            req = urllib.request.Request(url, data=urllib.parse.urlencode({"data": Q}).encode(), headers={"User-Agent": "fomo-catalog-check/1.0 (myfomo.github.io)"})
+            E = json.load(urllib.request.urlopen(req, timeout=200))["elements"]; print("ok", url); break
+        except Exception as e:
+            print("fail", url, e)
+    if E is not None: break
+    time.sleep(30)
+if E is None: sys.exit("no Overpass mirror answered")
 T = [e.get("tags", {}) for e in E]
 n = len(T)
 pct = lambda k: f"{k} ({round(100*k/max(n,1))}%)"
