@@ -118,7 +118,7 @@ function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!ope
   const s={recent:(a,b)=>(b.updatedAt||0)-(a.updatedAt||0),rating:(a,b)=>avg(b)-avg(a),visit:(a,b)=>lastVisit(b).localeCompare(lastVisit(a)),name:(a,b)=>String(a.name).localeCompare(String(b.name),'he'),near:(a,b)=>(distKm(a)??1e9)-(distKm(b)??1e9)}[sort]||((a,b)=>0);return list.sort(s)}
 function renderHead(){const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,m=rows.filter(isMatch).length;
   $('#stats').innerHTML=loaded?`היינו ב־<b>${been}</b> · רוצים לנסות <b>${want}</b>${m?` · <b>${m}</b> ששנינו רוצים השבוע`:''}`:'טוען…';renderGreet()}
-function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove());
+function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove());setTimeout(fxChk,0);
   const cs=[...new Set(rows.map(r=>r.cuisine).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'he'));
   if(cuisF&&!cs.includes(cuisF))cuisF='';
   const hasHours=rows.some(r=>r.hours&&Object.keys(r.hours).length);
@@ -908,9 +908,9 @@ ${P.some(hasLL)?'<div class="pub-map" id="pubmap"></div>':''}<div class="pub-gri
 
 /* ================= list meta (special days, diets) — stored as a hidden row ================= */
 let meta={id:null,special:[],diets:{},vouchers:[]};
-function takeMeta(lid){const ms=rows.filter(r=>r._meta);if(ms.length){rows=rows.filter(r=>!r._meta);ms.sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));const m=ms[0];meta={id:m.id,special:Array.isArray(m.special)?m.special:[],diets:m.diets&&typeof m.diets==='object'?m.diets:{},vouchers:Array.isArray(m.vouchers)?m.vouchers:[]};lsSet('rs-meta-'+lid,meta)}else if(!meta.id){meta={id:null,special:[],diets:{},...lsGet('rs-meta-'+lid,{})}}}
+function takeMeta(lid){const ms=rows.filter(r=>r._meta);if(ms.length){rows=rows.filter(r=>!r._meta);ms.sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));const m=ms[0];meta={id:m.id,special:Array.isArray(m.special)?m.special:[],diets:m.diets&&typeof m.diets==='object'?m.diets:{},vouchers:Array.isArray(m.vouchers)?m.vouchers:[],tastes:m.tastes&&typeof m.tastes==='object'?m.tastes:{}};lsSet('rs-meta-'+lid,meta)}else if(!meta.id){meta={id:null,special:[],diets:{},...lsGet('rs-meta-'+lid,{})}}}
 async function metaSave(patch){if(!cur)return false;const lid=cur.id;Object.assign(meta,patch);lsSet('rs-meta-'+lid,meta);
-  try{if(!meta.id){const id=uuid();const {error}=await sb.from('restaurants').insert({id,list_id:lid,data:{_meta:true,createdAt:Date.now(),special:meta.special||[],diets:meta.diets||{},vouchers:meta.vouchers||[]}});if(error)throw error;meta.id=id}
+  try{if(!meta.id){const id=uuid();const {error}=await sb.from('restaurants').insert({id,list_id:lid,data:{_meta:true,createdAt:Date.now(),special:meta.special||[],diets:meta.diets||{},vouchers:meta.vouchers||[],tastes:meta.tastes||{}}});if(error)throw error;meta.id=id}
     else{const {error}=await sb.rpc('patch_restaurant',{rid:meta.id,patch});if(error)throw error}return true}catch(e){toast(errMsg(e));return false}}
 /* ================= dietary preferences ================= */
 const DIET=[['kosher','כשר','✡️'],['veg','צמחוני','🥦'],['vegan','טבעוני','🌱'],['gf','ללא גלוטן','🌾']];
@@ -1299,8 +1299,8 @@ const BRASS='style="background:#fff;border-color:#fff;color:#FF4E50;box-shadow:0
 function blockedGate(){gate('<p>החשבון הזה הושהה על ידי מנהל האפליקציה.</p><p class="note">אם זו טעות, פנו למי ששלח לכם את הקישור.</p><button class="btn" type="button" id="so2">התנתקות</button>');const b=$('#so2');if(b)b.onclick=async()=>{await sb.auth.signOut();location.reload()}}
 function gate(html){const g=$('#gate');g.innerHTML=`<div class="box"><div class="logo">Fomo</div><p class="tag">המקומות שאסור לפספס</p>${html}</div>`;g.hidden=false;$('#app').hidden=true}
 function showLogin(email,signup){
-  gate(`${joinCode?'<p><b>הוזמנתם לקבוצה ב־FOMO! 🎉</b></p>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':(pkOK()?'טוב לראות אותך שוב!':'כניסה עם המייל והסיסמה שלכם.')}</p>${!signup&&pkOK()?`<button class="pk-btn" type="button" id="pkIn"><span class="pk-ic">${bioIcon()}<i class="pk-scan"></i></span><span class="pk-tx"><b>כניסה עם ${bioName()}</b><small>מהיר ובטוח, בלי להקליד סיסמה</small></span><svg class="pk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><div class="or"><span>או עם מייל וסיסמה</span></div>`:''}<form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
-  $('#sw').onclick=()=>showLogin($('#le').value,!signup);
+  gate(`${joinCode?'<div id="invPv"><p><b>הוזמנתם לקבוצה ב־FOMO! 🎉</b></p></div>':''}<p>${signup?'צרו חשבון עם המייל שלכם ובחרו סיסמה (לפחות 6 תווים).':(pkOK()?'טוב לראות אותך שוב!':'כניסה עם המייל והסיסמה שלכם.')}</p>${!signup&&pkOK()?`<button class="pk-btn" type="button" id="pkIn"><span class="pk-ic">${bioIcon()}<i class="pk-scan"></i></span><span class="pk-tx"><b>כניסה עם ${bioName()}</b><small>מהיר ובטוח, בלי להקליד סיסמה</small></span><svg class="pk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><div class="or"><span>או עם מייל וסיסמה</span></div>`:''}<form id="lf"><input type="email" id="le" dir="ltr" placeholder="המייל שלך" autocomplete="email" required value="${esc(email||'')}"><input type="password" id="lp" dir="ltr" placeholder="${signup?'סיסמה חדשה':'סיסמה'}" autocomplete="${signup?'new-password':'current-password'}" minlength="6" required><button class="btn" type="submit" ${BRASS}>${signup?'יצירת חשבון וכניסה':'כניסה'}</button></form><div class="err" id="lerr"></div><button class="link" type="button" id="sw">${signup?'כבר יש לי חשבון':'פעם ראשונה כאן? יצירת חשבון'}</button>`);
+  $('#sw').onclick=()=>showLogin($('#le').value,!signup);if(joinCode)fxInvPreview(joinCode);
   const pk=$('#pkIn');if(pk)pk.onclick=async()=>{pk.disabled=true;pk.classList.add('busy');$('#lerr').textContent='';try{const {error}=await sb.auth.signInWithPasskey();if(error)throw error;start()}catch(e){pk.disabled=false;pk.classList.remove('busy');if(!pkCancelled(e))$('#lerr').textContent='לא מצאנו '+bioName()+' שמחובר לחשבון במכשיר הזה. היכנסו עם מייל וסיסמה, ואז הפעילו '+bioName()+' בהגדרות.'}};
   $('#lf').addEventListener('submit',async e=>{e.preventDefault();const em=$('#le').value.trim().toLowerCase(),pw=$('#lp').value;const b=e.target.querySelector('button');b.disabled=true;$('#lerr').textContent='';
     const {data,error}=signup?await sb.auth.signUp({email:em,password:pw}):await sb.auth.signInWithPassword({email:em,password:pw});b.disabled=false;
@@ -1332,6 +1332,7 @@ async function start(){
     let target=null;
     if(joinCode){const c=joinCode;joinCode='';try{localStorage.removeItem('rs-join')}catch{}const {data:lid}=await sb.rpc('join_list',{code:c});if(lid){target=lid;setTimeout(()=>toast('הצטרפת לקבוצה!'),600)}else setTimeout(()=>toast('קישור ההזמנה לא תקף. בקשו קישור חדש.'),600)}
     await loadLists();
+    if(!myName&&!lsGet('rs-fx-done',0)){if(lists.length)cur=lists.find(l=>l.id===target)||lists[0];else cur=null;fxRun(target?'Y':'I');return}
     if(!lists.length){welcome();return}
     let saved='';try{saved=localStorage.getItem('rs-list')||''}catch{}
     cur=lists.find(l=>l.id===(target||saved))||lists.find(l=>l.role==='owner')||lists[0];
@@ -1341,15 +1342,16 @@ async function start(){
   try{const so=localStorage.getItem('rs-sort');if(so){sort=so;$('#sort').value=so}}catch{}
   route();await switchList(cur.id);subscribe();flushOutbox();
   {const sp=new URLSearchParams(location.search),op=sp.get('open'),ev=sp.get('ev');if(sp.get('next')){history.replaceState(null,'',location.pathname+location.hash);setTimeout(outSheet,500)}if(sp.get('vouchers')){history.replaceState(null,'',location.pathname+location.hash);setTimeout(()=>vouchersSheet(),500)}if(op||ev){history.replaceState(null,'',location.pathname+location.hash);if(ev)setTimeout(()=>{if(events.some(x=>x.id===ev))evSheet(ev);else loadEvents().then(()=>{if(events.some(x=>x.id===ev))evSheet(ev)})},700);else if(op&&byId(op))setTimeout(()=>openDetail(op),300)}}
-  pushSync();setTimeout(pushMaybeAsk,4000);setTimeout(autoCheckin,2500);setTimeout(loadWeather,3000);
-  setTimeout(async()=>{if(lsGet('rs-onb2',0)){whatsNew();return}if(await amAdmin()){lsSet('rs-onb2',1);whatsNew();return}lsSet('rs-seen-ver',APPV);onbSheet()},2800);
+  const fxT=lsGet('rs-fx-tour','');if(fxGph.length){const G=fxGph;fxGph=[];setTimeout(()=>G.forEach(([id,l])=>importGPhotos(id,l)),3500)}
+  pushSync();if(!fxT)setTimeout(pushMaybeAsk,4000);setTimeout(autoCheckin,2500);setTimeout(loadWeather,3000);
+  setTimeout(async()=>{if(fxT){fxTour();return}if(lsGet('rs-onb2',0)){whatsNew();return}if(await amAdmin()){lsSet('rs-onb2',1);whatsNew();return}lsSet('rs-seen-ver',APPV);onbSheet()},2800);
   if(!myName)setTimeout(()=>{settingsSheet();toast('איך לקרוא לך? כתבו שם ושמרו.')},500);
-  else offerBio();
+  else if(!fxT)offerBio();
   if(!visBound){visBound=true;document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&loaded){loadAll();setTimeout(autoCheckin,1500);setTimeout(loadWeather,2500)}})}
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='52';
+const APPV='53';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1699,7 +1701,7 @@ const TIPS={
 const tipsDone=()=>lsGet('rs-tips',{});
 function visEl(sel){for(const el of document.querySelectorAll(sel)){const r=el.getBoundingClientRect();if(r.width>4&&r.height>4&&getComputedStyle(el).visibility!=='hidden')return el}return null}
 async function maybeTour(name,delay){if(lsGet('rs-tips-off',0)||tipsDone()[name]||!TIPS[name])return;if(await amAdmin())return;if(!lsGet('rs-onb2',0)){maybeTour.q=name;return}if(!loaded){setTimeout(()=>maybeTour(name,delay),1000);return}
-  setTimeout(()=>{if(tipsDone()[name]||document.querySelector('.coach'))return;if(document.querySelector('.onb,.calp,.upd-new')){maybeTour.q=name;return}
+  setTimeout(()=>{if(tipsDone()[name]||document.querySelector('.coach'))return;if(document.querySelector('.onb,.calp,.upd-new,.fx-co')){maybeTour.q=name;return}
     const want=name==='list'||name==='map'||name==='timeline'||name==='me'?page===name&&$('#ov').hidden:!$('#ov').hidden;if(!want)return;
     const steps=TIPS[name].filter(x=>!x.s||visEl(x.s));if(steps.length)coach(name,steps)},delay||900)}
 function coach(name,steps){let i=0;const d=document.createElement('div');d.className='coach';d.setAttribute('role','dialog');d.setAttribute('aria-label','טיפ');d.dir='rtl';
@@ -1718,7 +1720,7 @@ function coach(name,steps){let i=0;const d=document.createElement('div');d.class
 function resetTips(){lsSet('rs-tips',{});lsSet('rs-tips-off',0)}
 
 /* ---- what's new after an update ---- */
-const WHATSNEW={'46':['✨ חיפוש חכם בדף הרשימה: מוצא גם מקומות שעוד לא ברשימה, עם כפתור הוספה','💬 אפשר לתאר במילים, למשל "בר יין שקט בתל אביב"','＋ פותח את אותו חיפוש, עם הוספה ידנית למטה','📝 כרטיס ההוספה מסודר: מה שמולא לבד למעלה, השאר מקופל'],'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר ברשימה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
+const WHATSNEW={'53':['👋 כניסה ראשונה חדשה: שם, מקומות ראשונים, הטעם שלי, ופתיחת קבוצה עם הזמנה','💌 מי שמוזמן רואה מי הזמין ואילו מקומות מחכים לו','🏠 סיור קצר במסך הבית למשתמשים חדשים','🌾 "הטעם שלי": סגנונות, תזונה, תקציב ועיר'],'46':['✨ חיפוש חכם בדף הרשימה: מוצא גם מקומות שעוד לא ברשימה, עם כפתור הוספה','💬 אפשר לתאר במילים, למשל "בר יין שקט בתל אביב"','＋ פותח את אותו חיפוש, עם הוספה ידנית למטה','📝 כרטיס ההוספה מסודר: מה שמולא לבד למעלה, השאר מקופל'],'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר ברשימה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
 function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNew,3000);return}const seen=lsGet('rs-seen-ver','');lsSet('rs-seen-ver',APPV);const L=WHATSNEW[APPV];if(!seen||seen===APPV||!L)return;
   const d=document.createElement('div');d.className='calp upd-new';d.setAttribute('role','dialog');d.setAttribute('aria-label','מה חדש');
   d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:30px">🎁</div><h3>מה חדש ב־FOMO</h3><ul class="wn">${L.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><button class="btn pri" type="button" data-wx>מעולה!</button></div>`;
@@ -1935,7 +1937,7 @@ $('#ov').addEventListener('scroll',()=>{const b=document.querySelector('#ov .sx-
 
 /* 43: install banner (Safari/Android, not installed yet) */
 function instBanner(){try{if(isStandalone()||!isPhone()||lsGet('rs-inst-done',0))return;if(Date.now()<lsGet('rs-inst-dis',0)||document.querySelector('.instb'))return;
-  if(!myId||!loaded||!lsGet('rs-onb2',0)||document.querySelector('.onb,.coach,.calp,.upd')){setTimeout(instBanner,15000);return}
+  if(!myId||!loaded||!lsGet('rs-onb2',0)||document.querySelector('.onb,.coach,.calp,.upd,.fx-co')){setTimeout(instBanner,15000);return}
   const safari=isIOS()&&!/crios|fxios|edgios|gsa\//i.test(navigator.userAgent);
   const d=document.createElement('div');d.className='instb';d.setAttribute('role','region');d.setAttribute('aria-label','התקנת האפליקציה');
   d.innerHTML=`<span class="instb-ic" aria-hidden="true">📲</span><div class="instb-t"><b>FOMO על מסך הבית</b><small>${/^and-(samsung|inapp|other)$/.test(instPlat())?'מתקינים דרך Chrome, בלחיצה':'נפתחת כמו אפליקציה, עם התראות'}</small></div>${/^and-(samsung|inapp|other)$/.test(instPlat())?`<a class="btn pri" href="${CHROME_URL}" data-ib="chrome">פתיחה ב־Chrome</a>`:`<button class="btn pri" type="button" data-ib="go">${installEvt?'התקנה':'איך?'}</button>`}<button class="instb-x" type="button" data-ib="x" aria-label="לא עכשיו">×</button>`;
@@ -1968,6 +1970,150 @@ function findDup(x){if(!x||!x.name)return null;const n=fomoNorm(x.name),c=fomoNo
     return !c||!r.city||fomoNorm(r.city)===c})||null}
 function dupNote(x){const el=$('#dupN');if(!el)return;const d=mode==='new'?findDup(x):null;el.hidden=!d;
   el.innerHTML=d?`<span>👀 <b>${esc(d.name)}</b> כבר ברשימה${d.city?' ('+esc(d.city)+')':''}.</span><button class="btn" type="button" data-act="dupOpen" data-id="${esc(d.id)}">לפתוח אותו</button><button class="link-btn" type="button" data-act="dupHide">להוסיף בכל זאת</button>`:''}
+
+/* ================= v53: first-run flow (name + places, taste, who, group, invite, home tour) ================= */
+const FX_VIBES=['איטלקי','אסייתי','יפני / סושי','בשרים','דגים ופירות ים','המבורגר','פיצה','בר קוקטיילים','בר יין','קפה ובראנץ\'','חומוס ומזרחי','מסעדת שף'];
+const FX_WHO=[['partner','💑','בן או בת זוג','דייטים, ערבים לשניים'],['friends','👯','חברים','חבורה, ימי הולדת, סופ״שים'],['family','👨‍👩‍👧','משפחה','ארוחות שישי, מקומות לילדים'],['solo','🙋','בינתיים רק אני','אפשר להזמין אחר כך']];
+const FX_EMO=['💛','🍝','🥂','🍣','🔥','✨','🌾','🍷'];
+let fx=null;
+function fxShell(html,step){const g=$('#gate');g.className='gate fxg';g.innerHTML=`<div class="fx" dir="rtl"><div class="fx-top">${step?`<span class="fx-n">${step}</span>`:''}<span class="fx-logo">Fomo</span></div>${html}</div>`;g.hidden=false;$('#app').hidden=true;g.scrollTop=0;window.scrollTo(0,0)}
+async function fxRun(tr){fx={tr,step:3,sel:[],sx:[],who:'',partner:'',emo:'💛',gname:''};track('fx-start-'+tr);if(cur)try{localStorage.setItem('rs-list',cur.id)}catch{}
+  if(cur){try{const {data}=await sb.from('restaurants').select('id,data').eq('list_id',cur.id);rows=(data||[]).map(x=>({...(x.data||{}),id:x.id}));takeMeta(cur.id)}catch{}}
+  fxStep3()}
+const fxTotal=()=>fx.tr==='Y'?2:5;
+const fxLbl=n=>`שלב ${n} מתוך ${fxTotal()}`;
+/* step 3: name + 3 places */
+function fxStep3(){const inv=fx.tr==='Y'&&cur,have=rows.filter(r=>!r._meta&&!(r.visits||[]).some(v=>v&&v.surprise));fxShell(`<h2 class="fx-h">נעים להכיר! איך לקרוא לך?</h2>
+  <input class="fx-in" id="fxName" maxlength="30" autocomplete="given-name" value="${esc(myName||fx.name||'')}" placeholder="השם שלך" aria-label="השם שלך">
+  <h3 class="fx-h2">${inv?`מה עוד בא לך? אלה כבר ב"${esc(cur.name)}"`:'3 מקומות שיש לך בראש? ✨'}</h3>
+  ${inv&&have.length?`<div class="fx-have">${have.slice(0,4).map(r=>`<span>${esc(r.name)}</span>`).join('')}</div>`:''}
+  <p class="fx-sub">כותבים שם, או בוחרים מההצעות. כל מקום נוסף עם הכתובת והשעות. אפשר גם לדלג.</p>
+  <div class="fx-prog"><span id="fxPc"></span><div class="fx-bar"><i id="fxPb"></i></div></div>
+  <span class="sx-qwrap fx-q"><span class="sx-spark" aria-hidden="true">✨</span><input class="search" id="fxQ" type="search" enterkeyhint="search" autocomplete="off" placeholder="חיפוש חכם: שם, או ״בר יין שקט״" aria-label="חיפוש מקום"></span>
+  <div id="fxRes" class="fx-res"><p class="fx-sub">טוען הצעות…</p></div>
+  <div class="fx-foot"><button class="btn pri" type="button" id="fxNext3">המשך</button><button class="fx-skip" type="button" id="fxSkip3">דלג לשלב הבא</button><div class="err" id="fxErr"></div></div>`,fxLbl(1));
+  fxProg();fxSuggest();
+  $('#fxQ').addEventListener('input',e=>{clearTimeout(fxStep3.t);const v=e.target.value.trim();fxStep3.t=setTimeout(()=>fxSearch(v),v.length<2?0:(sxIsDesc(v)?1000:450))});
+  $('#fxQ').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();clearTimeout(fxStep3.t);fxSearch(e.target.value.trim(),true)}});
+  $('#fxNext3').onclick=()=>fxSave3(false);$('#fxSkip3').onclick=()=>fxSave3(true)}
+function fxProg(){const n=fx.sel.length,a=$('#fxPc'),b=$('#fxPb');if(a)a.textContent=Math.min(3,n)+'/3';if(b)b.style.width=Math.min(100,n/3*100)+'%';const nb=$('#fxNext3');if(nb)nb.classList.toggle('fx-pulse',n>=3)}
+async function fxSuggest(){let L=[];try{const {data}=await sb.rpc('browse_places',{c:null,cty:null,lim:8});L=(data||[]).map(catToItem)}catch{}if(!fx||fx.step!==3)return;fx.sx=L.filter(x=>!sxInList(x));fxResRender(fx.sx,'הצעות פופולריות ב־FOMO')}
+async function fxSearch(v,force){if(!fx)return;if(v.length<2){fxSuggest();return}const desc=sxIsDesc(v);const box=$('#fxRes');if(!box)return;
+  box.innerHTML=desc?sxThink(['מבין את הבקשה','מחפש בקטלוג, במפה ובגוגל','משאיר רק אוכל ושתייה']):'<p class="sx-note">מחפש…</p>';const stop=desc?sxStep(box):()=>{};
+  let r=null;try{r=await sxSearch(v,{desc})}catch{}finally{stop()}if(!fx||($('#fxQ')||{}).value.trim()!==v)return;fx.sx=(r&&r.items)||[];fxResRender(fx.sx,'',true)}
+function fxResRender(L,head,searched){const box=$('#fxRes');if(!box)return;
+  box.innerHTML=(head?`<div class="sx-h">${esc(head)}</div>`:'')+(L.length?`<div class="fx-grid">${L.map((x,i)=>{const on=fx.sel.some(s=>fxSame(s,x)),ex=sxInList(x),meta=[x.cuisine,x.city].filter(Boolean).join(' · ');
+    return `<button type="button" class="fx-pc ${on||ex?'on':''}" data-fx-pick="${i}" ${ex?'disabled':''}><span class="fx-pk">${on||ex?'✓':'+'}</span>${sxAv(x)}<b>${esc(x.name)}</b><small>${esc(ex?'כבר בקבוצה':meta||String(x.full||'').split(',').slice(0,2).join(','))}</small></button>`}).join('')}</div>`
+    :`<p class="sx-note">${searched?'לא מצאנו. נסו לכתוב אחרת, או דלגו ותוסיפו אחר כך.':'כתבו שם של מקום שבא לכם לנסות.'}</p>`)}
+const fxSame=(a,b)=>(a.gpid&&a.gpid===b.gpid)||(a.pid&&a.pid===b.pid)||(a.name===b.name&&(a.city||'')===(b.city||''));
+document.addEventListener('click',e=>{const b=e.target.closest('[data-fx-pick]');if(!b||!fx)return;const x=fx.sx[+b.dataset.fxPick];if(!x)return;const i=fx.sel.findIndex(s=>fxSame(s,x));
+  if(i>=0){fx.sel.splice(i,1);b.classList.remove('on');b.querySelector('.fx-pk').textContent='+'}else{fx.sel.push(x);b.classList.add('on');b.querySelector('.fx-pk').textContent='✓';toast('✓ '+x.name)}fxProg()});
+function fxRowOf(x){const now=Date.now();const d={name:String(x.name||'').slice(0,80),cuisine:x.cuisine||'',city:x.city||'',address:x.address||'',status:'want',price:+x.price||0,recBy:'',mapsUrl:safeUrl(x.mapsUrl||''),site:safeUrl(x.site||''),woltUrl:'',tags:x.veg?['צמחוני-פרנדלי']:[],notes:'',hours:x.hours||{},hh:null,updatedAt:now,fav:false,ratings:{},votes:{},dishes:[],photos:[],visits:[],addedBy:myId,createdAt:now};
+  if(Number.isFinite(x.lat)&&Number.isFinite(x.lng)){d.lat=+(+x.lat).toFixed(6);d.lng=+(+x.lng).toFixed(6);d.llLevel='place'}else{d.lat=null;d.lng=null;d.llLevel=''}
+  if(typeof x.delivery==='boolean')d.delivery=x.delivery;if(x.pid)d.placeId=x.pid;return d}
+let fxGph=[];
+async function fxAddPlaces(){const out=[];for(let x of fx.sel){if(sxInList(x))continue;
+    if(x.g&&x.gpid&&!x.pred){const qq=await takeQuota('place');if(qq.ok){try{const g=await gmaps();const {Place}=await g.maps.importLibrary('places');const pl=new Place({id:x.gpid});await pl.fetchFields({fields:GF});const it=gToItem(pl);it.gpid=x.gpid;x=it}catch(e){console.warn('g details',e)}}}
+    else if(x.pred){try{const pl=await gDetails(x.pred);if(pl){const it=gToItem(pl);it.gpid=pl.id||'';x=it}}catch{}}
+    const d=fxRowOf(x),id=uuid();formSrc=x.cat?{pid:x.pid,hoursSrc:x.hours?'user':'',phone:x.phone}:x.osm?{osm:x.osm,phone:x.phone,hoursSrc:x.hours?'osm':''}:x.g?{gpid:x.gpid||'',hoursSrc:'google'}:{};
+    try{contribute(d)}catch{}formSrc={};
+    const {error}=await sb.from('restaurants').insert({id,list_id:cur.id,data:d});if(error){console.warn('fx add',error);continue}
+    rows.unshift({...d,id});out.push(d.name);if(x.gphotos&&x.gphotos.length)fxGph.push([id,x.gphotos])}
+  if(out.length)try{logAct('add',null,out.length===1?`הוסיף/ה את ${out[0]}`:`הוסיף/ה ${out.length} מקומות: ${out.join(', ')}`)}catch{}
+  return out.length}
+async function fxSave3(skip){const n=($('#fxName').value||'').trim().slice(0,30),er=$('#fxErr');if(!n){er.textContent='איך לקרוא לך? כתבו שם, ואז ממשיכים.';$('#fxName').focus();return}
+  const bs=[$('#fxNext3'),$('#fxSkip3')];bs.forEach(b=>b.disabled=true);er.textContent='';
+  try{const {error}=await sb.from('profiles').upsert({user_id:myId,name:n});if(error)throw error;myName=n;fx.name=n;
+    if(!cur){const id=await doCreateList('המקומות של '+n);if(!id)throw new Error('לא הצלחנו לפתוח קבוצה');cur=lists.find(l=>l.id===id)||{id,name:'המקומות של '+n,role:'owner'};try{localStorage.setItem('rs-list',id)}catch{}meta={id:null,special:[],diets:{},vouchers:[],tastes:{}}}
+    if(!skip&&fx.sel.length){bs[0].textContent='מוסיף…';const k=await fxAddPlaces();if(k)toast(`✓ ${k===1?'מקום אחד נוסף':k+' מקומות נוספו'}, עם השעות`)}
+    track(skip?'fx-skip3':'fx-places-'+fx.sel.length);fxStep4()}catch(e){bs.forEach(b=>b.disabled=false);bs[0].textContent='המשך';er.textContent=errMsg(e)}}
+/* step 4: taste */
+function fxStep4(){fx.step=4;const d=dietOf(myId),t=((meta.tastes||{})[myId])||{};fx.c=new Set(t.c||[]);fx.k=new Set(d.k||[]);fx.b=t.b||0;
+  fxShell(`<h2 class="fx-h">${esc(myName)}, מה הטעם שלך? 😋</h2><p class="fx-sub">ככה נציע מקומות שמתאימים לך. בחרו כמה שבא לכם.</p>
+  <div class="fx-chips">${FX_VIBES.map(v=>`<button type="button" class="fx-chip" data-fx-c="${esc(v)}" aria-pressed="${fx.c.has(v)}">${esc(v)}</button>`).join('')}</div>
+  <h3 class="fx-h2">משהו שחשוב לדעת?</h3><div class="fx-chips">${DIET.map(([k,tt,e])=>`<button type="button" class="fx-chip" data-fx-k="${k}" aria-pressed="${fx.k.has(k)}">${e} ${tt}</button>`).join('')}</div>
+  <h3 class="fx-h2">תקציב בדרך כלל</h3><div class="fx-seg">${[1,2,3,4].map(i=>`<button type="button" data-fx-b="${i}" aria-pressed="${fx.b===i}">${'₪'.repeat(i)}</button>`).join('')}</div>
+  <h3 class="fx-h2">איפה בדרך כלל?</h3><input class="fx-in" id="fxCity" maxlength="40" value="${esc(t.city||'')}" placeholder="למשל: תל אביב" aria-label="עיר">
+  <div class="fx-foot"><button class="btn pri" type="button" id="fxNext4">שמירה והמשך</button><button class="fx-skip" type="button" id="fxSkip4">דלג</button><div class="err" id="fxErr"></div></div>`,fxLbl(2));
+  $('#fxNext4').onclick=()=>fxSave4(false);$('#fxSkip4').onclick=()=>fxSave4(true)}
+document.addEventListener('click',e=>{if(!fx)return;const c=e.target.closest('[data-fx-c],[data-fx-k]');if(c){const S=c.dataset.fxC!==undefined?fx.c:fx.k,v=c.dataset.fxC!==undefined?c.dataset.fxC:c.dataset.fxK;S.has(v)?S.delete(v):S.add(v);c.setAttribute('aria-pressed',S.has(v));return}
+  const b=e.target.closest('[data-fx-b]');if(b){fx.b=+b.dataset.fxB===fx.b?0:+b.dataset.fxB;document.querySelectorAll('[data-fx-b]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.fxB===fx.b));return}});
+async function fxSave4(skip){const btn=$('#fxNext4');if(!skip){btn.disabled=true;const city=($('#fxCity').value||'').trim().slice(0,40);
+    const ok=await metaSave({diets:{...(meta.diets||{}),[myId]:{k:[...fx.k],al:dietOf(myId).al||''}},tastes:{...(meta.tastes||{}),[myId]:{c:[...fx.c],b:fx.b,city}}});btn.disabled=false;if(!ok)return;track('fx-taste')}else track('fx-skip4');
+  if(fx.tr==='Y')fxDone();else fxStep5()}
+/* step 5: who */
+function fxStep5(){fx.step=5;fxShell(`<h2 class="fx-h">${esc(myName)}, עם מי יוצאים? 🍽️</h2><p class="fx-sub">ככה נכין לכם קבוצה מתאימה.</p>
+  <div class="fx-who">${FX_WHO.map(([k,ic,t,s])=>`<button type="button" data-fx-who="${k}"><span>${ic}</span><div><b>${t}</b><small>${s}</small></div></button>`).join('')}</div>`,fxLbl(3));
+  document.querySelectorAll('[data-fx-who]').forEach(b=>b.onclick=()=>{fx.who=b.dataset.fxWho;track('fx-who-'+fx.who);if(fx.who==='solo')fxDone();else fxStep6()})}
+/* step 6: group name */
+function fxGDefault(){const p=fx.partner.trim();return fx.who==='partner'?(p?`${myName} ו${p}`:`${myName} ובן/בת הזוג`):fx.who==='family'?'ארוחות משפחתיות':'החבר׳ה יוצאים'}
+function fxStep6(){fx.step=6;const pt=fx.who==='partner';fx.gname='';
+  fxShell(`<h2 class="fx-h">${pt?'איך קוראים לבן או לבת הזוג?':'איך נקרא לקבוצה?'}</h2><p class="fx-sub">${pt?'נשתמש בזה לשם הקבוצה ולהזמנה.':'אפשר לשנות אחר כך בהגדרות.'}</p>
+  ${pt?`<input class="fx-in" id="fxPartner" maxlength="30" value="${esc(fx.partner)}" placeholder="השם שלו או שלה" aria-label="שם בן או בת הזוג">`:''}
+  <h3 class="fx-h2">שם הקבוצה</h3><input class="fx-in" id="fxGName" maxlength="34" value="${esc(fxGDefault())}" aria-label="שם הקבוצה">
+  <h3 class="fx-h2">אימוג׳י לקבוצה</h3><div class="fx-emo">${FX_EMO.map(e=>`<button type="button" data-fx-e="${e}" aria-pressed="${fx.emo===e}">${e}</button>`).join('')}</div>
+  <div class="fx-foot"><button class="btn pri" type="button" id="fxNext6">המשך</button><div class="err" id="fxErr"></div></div>`,fxLbl(4));
+  const P=$('#fxPartner'),G=$('#fxGName');let touched=false;G.addEventListener('input',()=>touched=true);if(P)P.addEventListener('input',()=>{fx.partner=P.value;if(!touched)G.value=fxGDefault()});
+  document.querySelectorAll('[data-fx-e]').forEach(b=>b.onclick=()=>{fx.emo=b.dataset.fxE;document.querySelectorAll('[data-fx-e]').forEach(x=>x.setAttribute('aria-pressed',x===b))});
+  $('#fxNext6').onclick=async()=>{const n=(G.value.trim()||fxGDefault()).slice(0,34)+' '+fx.emo;const b=$('#fxNext6');b.disabled=true;
+    const {error}=await sb.from('lists').update({name:n.slice(0,40)}).eq('id',cur.id);b.disabled=false;if(error){$('#fxErr').textContent=errMsg(error);return}cur.name=n.slice(0,40);const l=lists.find(x=>x.id===cur.id);if(l)l.name=cur.name;track('fx-group');fxStep7()}}
+/* step 7: invite */
+function fxInvText(){const p=fx.partner.trim();return fx.who==='partner'?`היי${p?' '+p:''} ${fx.emo} פתחתי לנו קבוצה ב־FOMO לכל המקומות שבא לנו לנסות ביחד. מצטרפים בלחיצה 👇`:fx.who==='family'?`היי ${fx.emo} פתחתי לנו קבוצה משפחתית ב־FOMO, לכל המקומות שבא לנו לנסות. מצטרפים בלחיצה 👇`:`היי ${fx.emo} פתחתי לנו קבוצה ב־FOMO לכל המקומות שבא לנו לנסות ביחד. מצטרפים בלחיצה, ותוסיפו גם אתם 👇`}
+async function fxStep7(){fx.step=7;if(!cur.join_code){try{await loadLists();const l=lists.find(x=>x.id===cur.id);if(l)cur=l}catch{}}const p=fx.partner.trim(),url=inviteUrl();
+  fxShell(`<h2 class="fx-h">שולחים ${fx.who==='partner'&&p?'ל'+esc(p):'לחבורה'} 💌</h2><p class="fx-sub">ההודעה כבר מוכנה. מי שלוחץ מצטרף לקבוצה ורואה את המקומות מיד.</p>
+  <div class="fx-wa"><div class="fx-bub">${esc(fxInvText())}<div class="fx-lp"><i>F</i><div><b>${esc(cur.name)}</b><small dir="ltr">${esc(url.replace(/^https?:\/\//,'').slice(0,34))}…</small></div></div></div></div>
+  <div class="fx-foot"><button class="btn fx-wabtn" type="button" id="fxSend">💬 שליחה בוואטסאפ</button><button class="btn" type="button" id="fxCopy">${ICON.copy}העתקת הקישור</button><button class="fx-skip" type="button" id="fxLater">אחר כך</button></div>`,fxLbl(5));
+  $('#fxSend').onclick=async()=>{track('fx-invite');const t=fxInvText()+'\n'+url;if(navigator.share&&isPhone()){try{await navigator.share({title:'Fomo',text:fxInvText(),url});fxAfterInv();return}catch(e){if(e&&e.name==='AbortError')return}}window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener');fxAfterInv()};
+  $('#fxCopy').onclick=async()=>{try{await navigator.clipboard.writeText(fxInvText()+'\n'+url);toast('הקישור הועתק 📋');track('fx-invite-copy');fxAfterInv()}catch{toast(url)}};
+  $('#fxLater').onclick=()=>{track('fx-invite-later');fxDone()}}
+function fxAfterInv(){lsSet('rs-fx-inv',1);const b=$('#fxLater');if(b){b.textContent='המשך ←';b.classList.add('fx-pulse')}}
+/* finish: into the app, then the tour */
+function fxDone(){lsSet('rs-fx-done',1);lsSet('rs-onb2',1);lsSet('rs-tips',{...tipsDone(),list:1});lsSet('rs-seen-ver',APPV);lsSet('rs-fx-tour',fx.tr==='Y'?'Y':'I');lsSet('rs-fx-at',Date.now());track('fx-done-'+fx.tr);fx=null;const g=$('#gate');g.className='gate';start()}
+/* ---- coach-mark tour on the real screen ---- */
+function fxVis(el){if(!el)return false;const r=el.getBoundingClientRect(),cs=getComputedStyle(el);return r.width>0&&r.height>0&&cs.visibility!=='hidden'&&cs.display!=='none'}
+function fxTour(){const kind=lsGet('rs-fx-tour','');if(!kind||page!=='list'||document.querySelector('.fx-co,.onb,.calp'))return;lsSet('rs-fx-tour','');lsSet('rs-tips',{...tipsDone(),list:1});
+  const grp=members.length>1||kind==='Y',has=rows.length>0,taste=dietOf(myId).k.length||(((meta.tastes||{})[myId]||{}).c||[]).length;
+  const S=[{s:'header.band .top',t:'זה הבית שלך 🏠',d:grp?`כל המקומות של "${esc(cur.name)}" במקום אחד. מה שמישהו בקבוצה מוסיף, כולם רואים מיד.`:'כל המקומות שלך במקום אחד. למעלה: כמה מקומות יש, ומה פתוח עכשיו.'},
+    {s:'#v-list .seg',t:'רוצים ללכת / היינו',d:'"רוצים ללכת" זה מה שעוד לא ניסיתם. אחרי ביקור מסמנים "היינו", מדרגים, והמקום עובר לשם.'+(grp?' ב"שנינו רוצים השבוע" רואים רק מה ששניכם סימנתם "בא לי".':'')},
+    {s:'#v-list .sx-qwrap',t:'✨ חיפוש חכם',d:'כותבים שם או תיאור, כמו "בר יין שקט". מחפש ברשימה שלכם, וגם מוצא מקומות חדשים להוסיף.'},
+    ...(taste?[{s:'#cuis',t:'סינון מהיר',d:'מסננים לפי סוג, פתוח עכשיו, מה שמתאים לך ועוד. ההעדפות שבחרת נשמרות ב"אני".'}]:[]),
+    ...(has?[{s:'#grid .card',t:'כרטיס מקום',d:'נגיעה בכרטיס פותחת שעות, כתובת, ניווט והערות. השעות מתמלאות לבד.'}]:[]),
+    {s:'.tabbar',t:'הניווט למטה',d:'מפה: איפה כל המקומות. ＋: הוספת מקום. יציאות: מה עשיתם ומה מתוכנן. אני: הפרופיל, ההעדפות וההגדרות.'},
+    {s:'#fab',t:'📷 צילום במסעדה',d:'במסעדה? מצלמים קבלה או מנה, וה־AI ממלא את הביקור בשבילכם.'}].filter(x=>fxVis(document.querySelector(x.s)));
+  if(!S.length){fxArmPush();return}track('fx-tour');let k=0;const co=document.createElement('div');co.className='fx-co';co.setAttribute('role','dialog');co.setAttribute('aria-label','סיור קצר');co.innerHTML='<div class="fx-spot"></div><div class="fx-cb"></div>';document.body.appendChild(co);
+  const end=()=>{co.remove();window.removeEventListener('resize',show);lsSet('rs-fx-toured',1);fxChk();const c=document.querySelector('#grid .card');if(c){c.classList.add('fx-hl');setTimeout(()=>c.classList.remove('fx-hl'),6000);toast('👆 נסו עכשיו: פתחו את אחד המקומות')}fxArmPush()};
+  function show(){const s=S[k],el=document.querySelector(s.s);if(!el){k++;k<S.length?show():end();return}
+    const fixed=getComputedStyle(el).position==='fixed'||!!el.closest('.tabbar');if(!fixed){const r0=el.getBoundingClientRect();if(r0.top<70||r0.bottom>innerHeight-200)window.scrollTo({top:Math.max(0,scrollY+r0.top-110),behavior:'auto'})}
+    requestAnimationFrame(()=>{const r=el.getBoundingClientRect(),sp=co.querySelector('.fx-spot'),cb=co.querySelector('.fx-cb');const pad=6;sp.style.top=(r.top-pad)+'px';sp.style.left=(r.left-pad)+'px';sp.style.width=(r.width+pad*2)+'px';sp.style.height=Math.min(r.height+pad*2,innerHeight*.5)+'px';
+      cb.innerHTML=`<b>${s.t}</b><p>${s.d}</p><div class="fx-cbr"><span class="fx-dots">${S.map((_,j)=>`<i class="${j===k?'on':''}"></i>`).join('')}</span><span><button type="button" class="fx-cskip" data-co="skip">דלג</button><button type="button" class="btn pri sm" data-co="next">${k===S.length-1?'הבנתי ✓':'הבא'}</button></span></div>`;
+      const below=r.top+Math.min(r.height,innerHeight*.5)<innerHeight*.55;cb.style.top=below?Math.min(innerHeight-220,r.top+Math.min(r.height,innerHeight*.5)+16)+'px':'auto';cb.style.bottom=below?'auto':Math.max(16,innerHeight-r.top+16)+'px';const nb=cb.querySelector('[data-co=next]');if(nb)nb.focus()})}
+  co.addEventListener('click',e=>{const b=e.target.closest('[data-co]');if(!b)return;if(b.dataset.co==='skip'){track('fx-tour-skip');end();return}k++;if(k>=S.length)end();else show()});
+  window.addEventListener('resize',show);show()}
+/* ---- notifications: asked after the user has looked around ---- */
+let fxPush=null;
+function fxArmPush(){if(lsGet('rs-push-asked',0)||fxPush)return;let n=0;const on=e=>{if(e.target.closest('.tabbar a,.tabbar button,#grid .card,#v-list .seg button,#cuis .chip,[data-v]')&&++n>=4)fire()};
+  const fire=async()=>{document.removeEventListener('click',on,true);clearTimeout(fxPush);if(lsGet('rs-push-asked',0))return;const st=await pushState();if(st!=='off')return;
+    setTimeout(()=>{if(!$('#ov').hidden||document.querySelector('.calp,.fx-co')){setTimeout(fire,8000);return}lsSet('rs-push-asked',1);pushAsk=false;renderNotices();track('fx-push-ask');
+      const d=document.createElement('div');d.className='calp';d.setAttribute('role','dialog');d.setAttribute('aria-label','התראות');
+      d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:28px">🔔</div><h3>רוצה שנעדכן אותך?</h3><p class="meta">כשמקום מהרשימה פתוח וקרוב אליך, כשמישהו בקבוצה מוסיף מקום, ולפני יציאה שתכננתם. לא יותר מהתראה ביום.</p><button class="btn pri" type="button" data-y>כן, לעדכן אותי</button><button class="link-btn" type="button" data-n>לא עכשיו</button></div>`;
+      d.addEventListener('click',async e=>{if(e.target.closest('[data-y]')){d.remove();track('fx-push-yes');await pushOn();fxChk()}else if(e.target===d||e.target.closest('[data-n]')){d.remove();track('fx-push-no')}});document.body.appendChild(d)},900)};
+  document.addEventListener('click',on,true);fxPush=setTimeout(fire,15000)}
+/* ---- "first steps" card on the list, for the first two weeks ---- */
+let fxPushOn=null;
+function fxChk(){const at=lsGet('rs-fx-at',0);let el=$('#fxChk');if(!at||Date.now()-at>14*864e5||lsGet('rs-fx-chk-x',0)||page!=='list'||!loaded||(q||'').trim()){if(el)el.remove();return}
+  if(fxPushOn===null){fxPushOn=false;pushState().then(s=>{fxPushOn=s==='on';fxChk()})}
+  const taste=dietOf(myId).k.length||(((meta.tastes||{})[myId]||{}).c||[]).length;
+  const C=[['מקומות ראשונים',rows.length>0,'add'],['הטעם שלי',!!taste,'taste'],['סיור במסך הבית',!!lsGet('rs-fx-toured',0),'tour'],['התראות',fxPushOn,'push'],[members.length>1?'הקבוצה ('+members.length+')':'הזמנה לקבוצה',members.length>1,'inv']];
+  const done=C.filter(c=>c[1]).length;if(done===C.length){if(el)el.remove();return}
+  if(!el){el=document.createElement('div');el.id='fxChk';const fl=$('#friendsLoved');if(!fl)return;fl.before(el)}
+  const h=`<div class="fx-chk"><div class="fx-chkh"><b>צעדים ראשונים</b><span class="fx-ring" style="--p:${done/C.length*360}deg"><span>${done}/${C.length}</span></span><button type="button" class="fx-x" data-fxc="x" aria-label="הסתרה">×</button></div>${C.map(([t,d,k])=>`<button type="button" class="fx-ck ${d?'d':''}" data-fxc="${k}" ${d?'disabled':''}><i>${d?'✓':''}</i>${esc(t)}${d?'':'<span>←</span>'}</button>`).join('')}</div>`;if(el.innerHTML!==h)el.innerHTML=h}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-fxc]');if(!b)return;const k=b.dataset.fxc;track('fx-chk-'+k);
+  if(k==='x'){lsSet('rs-fx-chk-x',1);fxChk();return}if(k==='add'){addSheet();return}if(k==='taste'){settingsSheet();setTimeout(()=>{const f=$('#dietF');if(f)f.scrollIntoView({block:'start'})},350);return}
+  if(k==='tour'){lsSet('rs-fx-tour','I');window.scrollTo(0,0);setTimeout(fxTour,250);return}if(k==='push'){pushOn().then(()=>{fxPushOn=null;fxChk()});return}
+  if(k==='inv'){shareOrCopy('Fomo',`הצטרפו לקבוצה "${cur?cur.name:''}" ב־FOMO! פותחים את הקישור, נרשמים, וזהו:`,inviteUrl());return}});
+/* ---- invite preview on the sign-up screen ---- */
+async function fxInvPreview(code){try{const {data,error}=await sb.rpc('invite_preview',{code});if(error||!data||!data.name)return;const el=$('#invPv');if(!el)return;const P=(data.places||[]).filter(Boolean);
+  el.innerHTML=`<h2 class="fx-ih">${data.by?esc(data.by)+' הזמין/ה אותך ל':'הוזמנת ל'}"${esc(data.name)}"</h2>${P.length?`<div class="fx-pv"><small>כבר מחכים לך ${data.n>P.length?data.n+' מקומות, ביניהם':''}:</small>${P.map(n=>`<div>📍 <b>${esc(n)}</b></div>`).join('')}</div>`:''}`}catch{}}
 
 if(!CFG.supabaseUrl||!CFG.supabaseKey||!window.supabase){gate('<p>האפליקציה עוד לא מחוברת למסד הנתונים. צריך למלא את הקובץ config.js.</p>')}
 else{sb=window.supabase.createClient(CFG.supabaseUrl,CFG.supabaseKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,experimental:{passkey:true}}});const pubT=new URLSearchParams(location.search).get('pub');if(pubT)renderPublic(pubT);else start()}
