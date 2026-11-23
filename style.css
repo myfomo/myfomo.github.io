@@ -1026,3 +1026,17 @@ details.sx-more .sx-in-grid>.full,details.sx-more .sx-in-grid>details{grid-colum
 .fx-ck i{font-style:normal;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:11px;color:#fff;flex:none}
 .fx-ck span{margin-inline-start:auto;color:var(--red);font-weight:800}
 .fx-ck.d{color:var(--mute);text-decoration:line-through;cursor:default}.fx-ck.d i{background:var(--mint);border-color:var(--mint)}
+/* v54: settings tabs */
+.set-h{padding-bottom:4px}
+.set-tabs{position:sticky;top:calc(env(safe-area-inset-top) + 64px);z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:0 16px 12px;background:var(--soft);border-radius:16px;padding:4px;box-shadow:0 6px 14px #2a16300f}
+.set-tabs button{position:relative;border:0;background:none;border-radius:12px;padding:7px 2px 6px;cursor:pointer;color:var(--mute);font:800 13px Rubik,sans-serif;display:flex;flex-direction:column;align-items:center;gap:1px}
+.set-tabs button i{font-style:normal;font-size:19px;line-height:1.1}
+.set-tabs button[aria-selected=true]{background:var(--card);color:var(--ink);box-shadow:0 2px 8px #2a163018}
+.set-dot{position:absolute;top:5px;left:calc(50% + 10px);width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 2px var(--soft)}
+.set-tabs button[aria-selected=true] .set-dot{box-shadow:0 0 0 2px var(--card)}
+.set-pane{animation:fadeIn .2s}
+.set-danger{display:grid;gap:4px;margin:6px 16px 20px;padding-top:12px;border-top:1px dashed #f2c7c7}
+.set-danger button{border:0;background:none;color:var(--bad);font-weight:800;font-size:15px;text-align:right;padding:8px 4px;cursor:pointer}
+.sec.set-flash,#sb .set-flash{animation:setFl 1.6s 1}
+@keyframes setFl{0%,100%{box-shadow:none}30%{box-shadow:0 0 0 4px #ffb547}}
+@media(min-width:900px){.set-tabs{top:12px}}
