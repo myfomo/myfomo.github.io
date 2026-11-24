@@ -917,6 +917,117 @@
    "src": [
     "https://ontopo.com/he/il/page/19084594"
    ]
+  },
+  "n12078593856": {
+   "n": "נייט שיפט",
+   "ok": "2026-11",
+   "cu": "בר",
+   "p": "+972 54 223 0223",
+   "w": "https://nightshift.rest.co.il/",
+   "src": [
+    "https://nightshift.rest.co.il/"
+   ]
+  },
+  "n12102019850": {
+   "n": "צ'ירס פלורנטין",
+   "ok": "2026-11",
+   "cu": "בר",
+   "pr": 2,
+   "p": "+972 54 757 3138",
+   "w": "https://www.cheerstlv.com/",
+   "src": [
+    "https://www.cheerstlv.com/",
+    "https://www.cheerstlv.com/florencheersmenu"
+   ]
+  },
+  "n13532671475": {
+   "n": "Buti",
+   "ok": "2026-11",
+   "nm": "Buti & Co",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 07:30-20:00; Fr 07:30-17:00; Sa 08:00-20:00",
+   "w": "https://www.butiandco.com/",
+   "src": [
+    "https://www.butiandco.com/"
+   ]
+  },
+  "n777401069": {
+   "n": "לואי",
+   "ok": "2026-11",
+   "cu": "בר",
+   "bk": "http://ontopo.com/he/il/page/90533401",
+   "src": [
+    "http://ontopo.com/he/il/page/90533401"
+   ]
+  },
+  "n12501003802": {
+   "n": "שולי לוצי",
+   "ok": "2026-11",
+   "cu": "בר",
+   "p": "+972507827231",
+   "w": "https://hopa.tech/shuli-lutsi/",
+   "bk": "http://ontopo.com/he/il/page/19603454",
+   "src": [
+    "http://ontopo.com/he/il/page/19603454",
+    "https://hopa.tech/shuli-lutsi/"
+   ]
+  },
+  "n12087594921": {
+   "n": "לה בודגה",
+   "ok": "2026-11",
+   "cu": "בר יין",
+   "pr": 2,
+   "p": "+972 52 577 5112",
+   "bk": "https://ontopo.com/he/il/page/39197454",
+   "src": [
+    "https://ontopo.com/he/il/page/39197454",
+    "https://timeout.co.il/לה-בודגה/"
+   ]
+  },
+  "n3398878837": {
+   "n": "פורט סעיד",
+   "ok": "2026-09",
+   "cu": "ים-תיכוני",
+   "pr": 2,
+   "src": [
+    "https://spottedbylocals.com/telaviv/port-said",
+    "https://www.enprimeurclub.com/restaurants/port-said-tel-aviv-restaurant"
+   ]
+  },
+  "n606978719": {
+   "n": "רוזה פארקס",
+   "ok": "2026-11",
+   "cu": "פאב",
+   "pr": 2,
+   "p": "+972 77 980 0456",
+   "w": "https://rosaparksbar.co.il",
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ae849ab44be5d1200a17abe&locale=en-US&source=website",
+   "src": [
+    "https://rosaparksbar.co.il/en"
+   ]
+  },
+  "n11534655277": {
+   "n": "Amita Pastry House at Bialik",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 1,
+   "oh": "Su-Th 08:00-18:00; Fr 08:00-16:00; Sa 09:00-16:00",
+   "p": "+972 3 621 8586",
+   "w": "https://www.amitabakery.co.il",
+   "src": [
+    "https://www.amitabakery.co.il",
+    "https://timeout.co.il/עמיתה-ביאליק-2/"
+   ]
+  },
+  "n2288503759": {
+   "n": "Beta Caffe",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "w": "https://www.betacaffe.co.il/",
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=6207f44fa653ada2cdfccf5a",
+   "src": [
+    "https://www.betacaffe.co.il/"
+   ]
   }
  }
 }
