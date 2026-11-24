@@ -59,6 +59,116 @@
    "src": [
     "https://littleprague.co.il/en/tel-aviv-branch/"
    ]
+  },
+  "n6312684887": {
+   "n": "Ramesses",
+   "ok": "2026-11",
+   "w": "https://ramessesjaffa.com",
+   "src": [
+    "https://ramessesjaffa.com",
+    "https://timeout.co.il/the-most-recommended-restaurants-bars-and-cafes-in-the-flea-market/"
+   ]
+  },
+  "n13530068022": {
+   "n": "Sachi Ramen & Sushi",
+   "ok": "2026-11",
+   "p": "+972 54-537-0076",
+   "bk": "https://ontopo.com/en/il/page/15658141",
+   "src": [
+    "https://ontopo.com/en/il/page/15658141"
+   ]
+  },
+  "n5765067454": {
+   "n": "Saint George",
+   "ok": "2026-11",
+   "oh": "Mo-Su 11:30-23:30",
+   "p": "+972 3-649-1293",
+   "w": "http://www.saint-george.co.il/",
+   "bk": "https://ontopo.co.il/saintgeorgejaffa/",
+   "src": [
+    "http://www.saint-george.co.il/"
+   ]
+  },
+  "n2079027451": {
+   "n": "Tenat",
+   "ok": "2025-11",
+   "src": [
+    "https://www.spottedbylocals.com/tel-aviv/tenat",
+    "https://timeout.co.il/5-%d7%9e%d7%a1%d7%a2%d7%93%d7%95%d7%aa-%d7%90%d7%aa%d7%99%d7%95%d7%a4%d7%99%d7%95%d7%aa/"
+   ]
+  },
+  "n2078991188": {
+   "n": "Thai 148",
+   "ok": "2026-10",
+   "src": [
+    "https://www.jpost.com/consumerism/article-856472",
+    "https://www.secrettelaviv.com/magazine/blog/toptens/best-thai-restaurants-in-tel-aviv"
+   ]
+  },
+  "n4486515206": {
+   "n": "The Streets",
+   "ok": "2026-11",
+   "w": "http://thestreets.co.il/streets-ibn-gbirol/",
+   "src": [
+    "http://thestreets.co.il/streets-ibn-gbirol/"
+   ]
+  },
+  "n12946465879": {
+   "n": "Wat Sang",
+   "ok": "2025-11",
+   "src": [
+    "https://timeout.co.il/japan-a-love-story-19-recommended-places-to-eat-sushi-in-tel-aviv",
+    "https://asiansinisrael.pages.dev/2025/06/watsang-sushi/"
+   ]
+  },
+  "n904521171": {
+   "n": "Yulia",
+   "ok": "2026-11",
+   "oh": "Su-Fr 08:30-22:00; Sa 08:00-22:00",
+   "p": "03-5469777",
+   "w": "https://yuliatlv.co.il",
+   "src": [
+    "https://yuliatlv.co.il",
+    "https://www.maariv.co.il/food/article-1155565"
+   ]
+  },
+  "n8638095777": {
+   "n": "Ze Sushi Basel",
+   "ok": "2026-11",
+   "p": "1-700-70-89-89",
+   "w": "https://www.zesushi.co.il/basel/",
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5dba9ac8382c931737dafd76&locale=he-IL&source=website",
+   "src": [
+    "https://www.zesushi.co.il/basel/"
+   ]
+  },
+  "n11428462557": {
+   "n": "אושי אושי",
+   "ok": "2026-11",
+   "oh": "Su-Th 09:45-23:00; Fr 09:45-15:00",
+   "p": "+97237522752",
+   "w": "https://oshioshi.co.il/%d7%a8%d7%9e%d7%aa-%d7%92%d7%9f/",
+   "src": [
+    "https://oshioshi.co.il/%d7%a8%d7%9e%d7%aa-%d7%92%d7%9f/"
+   ]
+  },
+  "n12635329114": {
+   "n": "אושי אושי",
+   "ok": "2026-11",
+   "oh": "Su-Th 10:00-22:00; Fr 11:00-15:00",
+   "w": "https://oshioshi.co.il/%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91-%d7%a2%d7%96%d7%a8%d7%99%d7%90%d7%9c%d7%99/",
+   "src": [
+    "https://oshioshi.co.il/%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91-%d7%a2%d7%96%d7%a8%d7%99%d7%90%d7%9c%d7%99/"
+   ]
+  },
+  "n5604815956": {
+   "n": "עזורה",
+   "ok": "2026-11",
+   "oh": "Su-Th 09:00-17:00; Fr 11:00-16:00",
+   "w": "http://www.azuratlv.co.il/",
+   "src": [
+    "http://www.azuratlv.co.il/"
+   ]
   }
  }
 }
