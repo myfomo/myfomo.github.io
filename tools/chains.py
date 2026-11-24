@@ -84,23 +84,39 @@ def sitemap_urls(domain, pat):
             if loc.endswith(".xml") and re.search(r"branch|store|סניפ|%d7%a1%d7%a0%d7%99%d7%a4|page|post|sitemap", loc, re.I): todo.append(loc)
             elif re.search(pat, urllib.parse.unquote(loc), re.I): urls.add(loc)
     return sorted(urls)
-def chain_reader(domain, pat):
+def seed_urls(domain, pat, seeds):
+    urls = set()
+    for sd in seeds:
+        try: t = get(urllib.parse.quote(f"https://{domain}{sd}", safe=":/?=&"))
+        except Exception as e: print("seed", sd, e); continue
+        for h in re.findall(r'href="([^"#]+)"', t):
+            h = urllib.parse.unquote(H.unescape(h))
+            if h.startswith("/"): h = f"https://{domain}{h}"
+            if domain in h and re.search(pat, h, re.I): urls.add(urllib.parse.quote(h, safe=":/?=&"))
+    return urls
+def chain_reader(domain, pat, seeds=()):
     def run():
-        out, U = [], sitemap_urls(domain, pat)
+        out, U, miss = [], sorted(set(sitemap_urls(domain, pat)) | seed_urls(domain, pat, seeds)), 0
         print(domain, "branch pages:", len(U))
         for u in U:
             try: b = branch_page(u, get(u))
             except Exception as e: print("page", u, e); continue
             if b: out.append(b)
+            elif miss < 2: miss += 1; print("  no TLV branch parsed:", urllib.parse.unquote(u))
             time.sleep(0.3)
         return out
     return run
 CHAINS = {
   "ארומה": (chain_reader("www.aroma.co.il", r"/store/"), re.compile(r"ארומה|aroma", re.I), "cafe", "קפה ובראנץ'"),
   "ארקפה": (chain_reader("arcaffe.co.il", r"/branches/."), re.compile(r"ארקפה|arcaffe", re.I), "cafe", "קפה ובראנץ'"),
-  "לנדוור": (chain_reader("www.landwercafe.co.il", r"/branch/."), re.compile(r"לנדוור|landwer", re.I), "cafe", "קפה ובראנץ'"),
+  "לנדוור": (chain_reader("www.landwercafe.co.il", r"/branch/.", ["/"]), re.compile(r"לנדוור|landwer", re.I), "cafe", "קפה ובראנץ'"),
   "רולדין": (chain_reader("www.roladin.co.il", r"/branch/.|/סניפים/."), re.compile(r"רולדין|roladin", re.I), "cafe", "קינוחים"),
 }
+CHAINS.update({
+  "ג'פניקה": (chain_reader("japanika.net", r"/branch/."), re.compile(r"ג'?[פף]אניקה|ג'פניקה|japanika", re.I), "restaurant", "יפני / סושי"),
+  "בנדיקט": (chain_reader("www.benedict.co.il", r"/pages/בנדיקט-"), re.compile(r"בנדיקט|benedict", re.I), "restaurant", "קפה ובראנץ'"),
+  "פיצה האט": (chain_reader("www.pizzahut.co.il", r"/branch/[a-z]", ["/all-branches/מרכז/סניפי-תל-אביב/תל-אביב-יפו/"]), re.compile(r"פיצה האט|pizza ?hut", re.I), "fast_food", "פיצה"),
+})
 # ---------- apply ----------
 D = json.load(open(CAT)); P = D["places"]; rep = {}
 def geocode(addr):
