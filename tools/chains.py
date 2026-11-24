@@ -6,9 +6,14 @@ Our branches missing from the official list -> reported only (not hidden)."""
 import json, sys, re, time, math, urllib.request, urllib.parse, html as H
 CAT, REPORT = sys.argv[1], sys.argv[2]
 UA = {"User-Agent": "Mozilla/5.0 (compatible; fomo-catalog/1.0; +https://myfomo.github.io)", "Accept-Language": "he"}
-def get(u, t=25):
-    with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t) as r:
-        return r.read(2_000_000).decode(r.headers.get_content_charset() or "utf-8", "replace")
+def get(u, t=25, tries=3):
+    for i in range(tries):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t) as r:
+                return r.read(2_000_000).decode(r.headers.get_content_charset() or "utf-8", "replace")
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 500, 502, 503, 520, 522) and i < tries - 1: time.sleep(4 * (i + 1)); continue
+            raise
 def text(h):
     h = re.sub(r"<(script|style|noscript)[^>]*>.*?</\1>", " ", h, flags=re.S | re.I)
     t = H.unescape(re.sub(r"<(?:br|/p|/div|/li|/h\d|/tr|p|div|li|h\d|tr)\b[^>]*>", "\n", h, flags=re.I))
@@ -81,7 +86,7 @@ def sitemap_urls(domain, pat):
         except Exception: continue
         for loc in re.findall(r"<loc>([^<]+)</loc>", x):
             loc = H.unescape(loc.strip())
-            if loc.endswith(".xml") and re.search(r"branch|store|סניפ|%d7%a1%d7%a0%d7%99%d7%a4|page|post|sitemap", loc, re.I): todo.append(loc)
+            if re.search(r"\.xml(\?|$)", loc) and re.search(r"branch|store|סניפ|%d7%a1%d7%a0%d7%99%d7%a4|page|post|sitemap", loc, re.I): todo.append(loc)
             elif re.search(pat, urllib.parse.unquote(loc), re.I): urls.add(loc)
     return sorted(urls)
 def seed_urls(domain, pat, seeds):
@@ -99,11 +104,13 @@ def chain_reader(domain, pat, seeds=()):
         out, U, miss = [], sorted(set(sitemap_urls(domain, pat)) | seed_urls(domain, pat, seeds)), 0
         print(domain, "branch pages:", len(U))
         for u in U:
-            try: b = branch_page(u, get(u))
-            except Exception as e: print("page", u, e); continue
+            try: h = get(u); b = branch_page(u, h)
+            except Exception as e: print("page", urllib.parse.unquote(u), e); continue
             if b: out.append(b)
-            elif miss < 2: miss += 1; print("  no TLV branch parsed:", urllib.parse.unquote(u))
-            time.sleep(0.3)
+            elif miss < 2 and re.search(r"תל.?אביב|ת\"א|רמת.?אביב|אוניברסיטה|שרונה|מרקט", urllib.parse.unquote(u) + text(h)[:3000]):
+                miss += 1; tx = text(h); i = max(0, tx.find("שעות") - 700)
+                print("  no TLV branch parsed:", urllib.parse.unquote(u), "|", tx[i:i + 1400].replace("\n", " ⏎ "))
+            time.sleep(1.5)
         return out
     return run
 CHAINS = {
