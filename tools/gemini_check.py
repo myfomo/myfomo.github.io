@@ -24,7 +24,7 @@ def pick_model():
 def body_of(e):
     try:
         t = e.read().decode(); q = re.findall(r'"quotaId":\s*"([^"]+)"|"quotaValue":\s*"([^"]+)"', t)
-        return t[:160].replace("\n", " ") + " | quotas: " + str(q)
+        return re.sub(r"\s+", " ", t)[:1500]
     except Exception: return ""
 # use the newest flash model that the free tier actually serves with web search
 CANDS = pick_model(); CANDS = [CANDS] if isinstance(CANDS, str) else CANDS; MODEL = None
@@ -36,6 +36,8 @@ for m in CANDS:
         print("model", m, "with search:", e.code, body_of(e), flush=True)
         try: call(f"{API}/{m}:generateContent", {"contents": [{"parts": [{"text": "Reply with the word ok"}]}]}); print("  without search: works", flush=True)
         except urllib.error.HTTPError as e2: print("  without search:", e2.code, body_of(e2), flush=True)
+        except Exception as e2: print("  without search:", str(e2)[:100], flush=True)
+        break
 if not MODEL: sys.exit("no Gemini model is available for this key right now")
 print("model", MODEL, flush=True)
 P = json.load(open(CAT))["places"]
