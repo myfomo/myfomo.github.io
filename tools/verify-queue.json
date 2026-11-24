@@ -3919,6 +3919,206 @@
   "n12722235801": {
    "r": "none",
    "note": "Only aggregator listings (PlantsPack imported from OSM, atly, spinach.guide) - not reliable; no own site, Tabit/Ontopo, news or closure report found."
+  },
+  "n12122788325": {
+   "r": "closed",
+   "note": "Time Out 2024-02 opening article (Levinsky 45); Time Out 2024-12 article on 45/11 cafe says Elchanan already closed and 45/11 opened in the same space. No Tabit/Ontopo."
+  },
+  "n13355845440": {
+   "r": "single",
+   "note": "Only source: Time Out 2025-04 opening article, Levontin 2 (replaced Batha VeGriga), Su-Fr 8:30-17:00 https://timeout.co.il/קפה-אלנבי/ ; no own site, no Tabit/Ontopo, no closure news."
+  },
+  "n1386293498": {
+   "r": "none",
+   "note": "No reliable source found for a cafe named Anna on Anne Frank St (only unrelated Kana, Frenkel 56); no Tabit/Ontopo; no closure news."
+  },
+  "n2142642602": {
+   "r": "none",
+   "note": "No reliable source found for Cafe Ascot on Rothschild; no Tabit/Ontopo; no closure news."
+  },
+  "n669838665": {
+   "r": "none",
+   "note": "Aroma official site unreachable (blocked); no source matching a branch on Oranim St; no Tabit/Ontopo; no closure news."
+  },
+  "n4821964801": {
+   "r": "single",
+   "note": "Only source: Time Out Florentin cafes list 2024-03 (Abarbanel 29, Su-Th 7-19, Fr 7-16) https://timeout.co.il/%D7%91%D7%AA%D7%99-%D7%A7%D7%A4%D7%94-%D7%A4%D7%9C%D7%95%D7%A8%D7%A0%D7%98%D7%99%D7%9F/ ; nothing from 2025-26; Instagram not readable; no Tabit/Ontopo; no closure news."
+  },
+  "n12723653023": {
+   "r": "single",
+   "note": "Latest source: Time Out Florentin cafes list 2024-03 (Frenkel 43) https://timeout.co.il/%D7%91%D7%AA%D7%99-%D7%A7%D7%A4%D7%94-%D7%A4%D7%9C%D7%95%D7%A8%D7%A0%D7%98%D7%99%D7%9F/ ; older Time Out 2022 pieces; nothing 2025-26; no Tabit/Ontopo; no closure news."
+  },
+  "n12509055172": {
+   "r": "single",
+   "note": "Time Out Jaffa cafes list (updated 2025-04) lists Blue at Jaffa Port 3 https://timeout.co.il/בתי-קפה-מומלצים-יפו/ ; also Time Out 2024-05 opening article (same publisher); no Tabit/Ontopo; no closure news."
+  },
+  "n2142643229": {
+   "r": "none",
+   "note": "No recent reliable source for Cafe Bar HaBima (Time Out topic page only old items); no Tabit/Ontopo; no closure news."
+  },
+  "n525733699": {
+   "r": "none",
+   "note": "Official joe.co.il branch list unreachable (blocked); no source found for a HaHagana branch; no Tabit/Ontopo; no closure news."
+  },
+  "n1102324016": {
+   "r": "none",
+   "note": "Official joe.co.il (incl. /branches) unreachable (blocked); no Tabit/Ontopo page; no news for an Alterman branch; no closure news found. Undated directory branch list (snifi) has no Alterman branch - not proof of closure."
+  },
+  "n5893185447": {
+   "r": "none",
+   "note": "Official joe.co.il branch list unreachable (blocked); no Tabit/Ontopo page; no source for a Levi Eshkol Blvd branch; no closure news. Missing from undated directory list - not proof of closure."
+  },
+  "n11428462556": {
+   "r": "none",
+   "note": "Matches Cafe Joe Merom Center, Chaim Landau 7, Ramat Gan (Merom Neve) per directories (d.co.il/62498090, snifi) - undated, not reliable; official site blocked; no Tabit/Ontopo; no closure news."
+  },
+  "n11987402410": {
+   "r": "none",
+   "note": "Official joe.co.il branch list unreachable (blocked); no Tabit/Ontopo page; no source for a HaYarkon branch; no closure news. Missing from undated directory list - not proof of closure."
+  },
+  "n3688239225": {
+   "r": "conflict",
+   "note": "Time Out 2025-09 (https://timeout.co.il/אוטוטו/) says the old kiosk at Groniman 8 garden (Ramat Aviv) reopened as new cafe 'Ottoto' (אוטוטו) by tender winners; catalog name Groniman 8/Zoharit likely outdated - name/operator change, needs user decision. No Tabit/Ontopo, no own site."
+  },
+  "n10103385534": {
+   "r": "none",
+   "note": "Cafe Hadas is at Lehi 2, Bnei Brak (Dan Design Center, outside TLV). Only old/undated sources: mall store page (2019), Rest listing (latest 2022), d.co.il directory. No Tabit/Ontopo/Wolt, no closure news; Instagram unreadable."
+  },
+  "n5366762821": {
+   "r": "single",
+   "note": "Only source: Wolt venue page https://wolt.com/uk/Israel/Tel Aviv/restaurant/coffee-haroeh (HaRa'ah 12, Ramat Gan, +972 3-600-6969, Su-Th 07:30-21:00 Fr 08:00-15:00 Sa off; live status not confirmable). Facebook blocked; no Tabit/Ontopo; no closure news."
+  },
+  "n8518709288": {
+   "r": "none",
+   "note": "Cafe Haruzim is a coffee cart at Yoav 12, Ramat Gan; only directory/Google-derived pages (easy.co.il, happytlv) - not usable; Facebook blocked; no Tabit/Ontopo; no closure news."
+  },
+  "n13708430165": {
+   "r": "single",
+   "note": "Time Out 2025-09 https://timeout.co.il/אוטוטו/ says Ottoto's operators also run Topol at the Cinematheque (opened per Time Out 2024-05, ynet 2024-08). Cinematheque itself temporarily closed 'until further notice' per Time Out 2026-04 (https://timeout.co.il/סינמטק-סגור/). No Tabit/Ontopo; Instagram unreadable."
+  },
+  "n1717768356": {
+   "r": "single",
+   "note": "Time Out specialty-coffee list 2025-09 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/ lists Timothy at Ibn Gabirol 187. Facebook blocked; no Tabit/Ontopo/Wolt page; no closure news (Time Out 2022 Levinsky branch article is about a second branch)."
+  },
+  "n1201454406": {
+   "r": "none",
+   "note": "No web/Time Out/Tabit/Ontopo source found for Yoto Caffe; bridge address not traceable; no closure news found"
+  },
+  "n5975671085": {
+   "r": "ok",
+   "note": "Ontopo active booking page (Yom Tov 30, Kerem HaTeimanim); Time Out EN listing 2023; Time Out review 2022 with prices; no closure news. Hours differ between Ontopo and Time Out, so oh not set"
+  },
+  "n4118545634": {
+   "r": "none",
+   "note": "No source found for Lorren cafe on Sokolov (any city); not on Tabit/Ontopo; no closure news"
+  },
+  "n11802322493": {
+   "r": "none",
+   "note": "Landwer Cafe official branch list (landwercafe.co.il/מסעדות) has no Ramat HaHayal/HaNechoshet branch; a delivery.landwercafe.co.il 'Tel Aviv - Ramat HaHayal (kosher)' URL appears in search but page unreachable; no Ontopo/Tabit page; no closure news. Not proof of closure"
+  },
+  "n1643304646": {
+   "r": "none",
+   "note": "Cafe Masaryk (Masaryk 12): only old Time Out items (2017, 2021); rest.co.il directory listing updated 2026-09 (not an accepted source); not on Tabit/Ontopo; no closure news"
+  },
+  "n9756805618": {
+   "r": "none",
+   "note": "Nina cafe (Nina Cafe Suites hotel, Neve Tzedek): only Time Out 2017 list and hotel booking sites; no own site found; not on Tabit/Ontopo; no closure news"
+  },
+  "n12139988888": {
+   "r": "none",
+   "note": "Cafe Otef: Time Out/ice 2024 show Netiv HaAsara branch in Sarona (Kaplan 30, opened 2024-05, planned ~6 months) and Re'im branch at Wolfson 54; no 2025-26 source and cannot match 'Kikar HaMoshava'; no closure news; not on Tabit/Ontopo"
+  },
+  "n3990565224": {
+   "r": "none",
+   "note": "Elite Coffee kiosks: only enjoyingisrael directory listings (train stations); no official branch list or reliable source for an 'Ayalon North' kiosk; no closure news"
+  },
+  "n3799486467": {
+   "r": "single",
+   "note": "Time Out guide to Jaffa cafes 2024-08 (modified 2025-04) lists Cafe Alma at Shivtei Israel 14: https://timeout.co.il/בתי-קפה-מומלצים-יפו/ ; catalog site pieceofcake.co.il down; Ontopo only has Gan Meir/Rishon branches; no closure news"
+  },
+  "n10279175910": {
+   "r": "single",
+   "note": "Israel Hayom review 2024-03 of Coffee Point, Basel 1: https://www.israelhayom.co.il/food/food-news/article/15409357 ; Tabit page tabitisrael.co.il/site/coffee-point exists in search but did not load (branch unconfirmed); no Ontopo; no closure news"
+  },
+  "n965950120": {
+   "r": "conflict",
+   "note": "Only official Cafe Cafe Ben Gurion branch is Bat Yam promenade 81, but catalog coords (32.096,34.821) are Bnei Brak/Ramat Gan; no match"
+  },
+  "n1626824915": {
+   "r": "none",
+   "note": "No Ben Yehuda branch in official Cafe Cafe branch list (not proof of closure); no news, Tabit/Ontopo or closure source found"
+  },
+  "n12346297844": {
+   "r": "single",
+   "note": "Only source: Time Out 2024-11 (Keshet, day cafe of Anan bar, Raanan 36, Florentin; Su-Th 08-16, Fr 08-14) https://timeout.co.il/%D7%A7%D7%A9%D7%AA-%D7%A2%D7%A0%D7%9F/ ; Instagram not readable; no Tabit/Ontopo; no closure news"
+  },
+  "n553022802": {
+   "r": "single",
+   "note": "Only recent source: public Wolt page (Cafe Shraga, Yosef Karo 10, phone matches) https://wolt.com/he/Israel/Tel Aviv/restaurant/cafe-shraga ; Time Out 2017 old; no Tabit/Ontopo; no closure news"
+  },
+  "n12601370080": {
+   "r": "single",
+   "note": "Only source: Time Out 2024-09 opening article (Thomas Cafe, Florentin 33, sandwiches 15-36 NIS) https://timeout.co.il/תומאס-קפה/ ; Instagram not readable; no Tabit/Ontopo; no closure news"
+  },
+  "n2288503813": {
+   "r": "none",
+   "note": "Generic name; no reliable source for a cafe called Cafeteria on Salvador St; no Tabit/Ontopo; no closure news"
+  },
+  "n683387957": {
+   "r": "conflict",
+   "note": "No current source for Cacao; Time Out Rothschild mapping 2025-04 lists Umai and Lulu & Co at Rothschild 37, not Cacao (https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/); no closure article found; possibly closed/replaced"
+  },
+  "n8537109447": {
+   "r": "none",
+   "note": "No reliable source found for Roger's Park cafe on Abba & Sara Neeman St; no Tabit/Ontopo; no closure news"
+  },
+  "n1438109990": {
+   "r": "none",
+   "note": "Official roladin.co.il branch pages show no branch on Daniel Frisch St (nearest: Ibn Gabirol 24, Ichilov Weizmann 14 - cannot confirm same place); no closure news"
+  },
+  "n1458198588": {
+   "r": "ok",
+   "note": "Official roladin.co.il branch page 'Givatayim Sheinkin', Shenkin 49 Givatayim (matched as Givatayim, not TA Sheinkin); hours from own site; page says no kosher certificate"
+  },
+  "n1546447298": {
+   "r": "ok",
+   "note": "Official branch page 'Azorei Chen' at Uri Zvi Greenberg 25, Tel Aviv (site updated 2026-11); no kosher certificate; Saturday hours contradictory on page so omitted; no Tabit/Ontopo; no closure news."
+  },
+  "n2204238425": {
+   "r": "none",
+   "note": "No Roladin branch on Yael Man street in the official branch list (118 branches) or any other source; no Tabit/Ontopo; no closure news. Possibly the Shchunat Lamed branch (official page gives no street), unconfirmed."
+  },
+  "n3081263901": {
+   "r": "conflict",
+   "note": "Street only; official list has two Sokolov branches: Ramat HaSharon Sokolov 37 (https://www.roladin.co.il/branch/רמת-השרון-סוקולוב/) and Hod HaSharon Sokolov 10 (https://www.roladin.co.il/branch/הוד-השרון-סוקולוב/); none on Sokolov in Tel Aviv/Holon/Herzliya list. Cannot tell which without coordinates.; catalog coords 32.142,34.837 fit Ramat HaSharon (Sokolov 37 branch) - needs confirm"
+  },
+  "n3465156312": {
+   "r": "none",
+   "note": "No Roladin branch on Aluf Kalman Magen in the official branch list or other sources (nearest official: Azrieli Mall 'HaShalom' branch, Brodetsky 43 'Amot' not related); no Tabit/Ontopo; no closure news."
+  },
+  "n4706508217": {
+   "r": "ok",
+   "note": "Official branch page 'Ramat HaHayal' at HaBarzel 28, Tel Aviv, with phone and hours; marked kosher but no certifying body named; no Tabit/Ontopo; no closure news."
+  },
+  "n6507157017": {
+   "r": "none",
+   "note": "No Roladin branch on Ben Yehuda in the official branch list or other sources; no Tabit/Ontopo; no closure news. Missing from list is not proof of closure."
+  },
+  "n8227888709": {
+   "r": "ok",
+   "note": "Official branch page 'Ramat Gan Bialik' at Bialik 37, Ramat Gan (outside Tel Aviv); new URL slug; no branch phone on page; marked kosher, no certifying body named; no Tabit/Ontopo; no closure news."
+  },
+  "n10103704022": {
+   "r": "conflict",
+   "note": "Street only; the only official branch on a Ben Gurion street is Bnei Brak, Ben Gurion 9 (https://www.roladin.co.il/branch/בני-ברק/), but catalog city/number unknown so match unconfirmed. No Tabit/Ontopo; no closure news.; catalog coords 32.095,34.822 fit Bnei Brak (Ben Gurion 9 branch) - needs confirm"
+  },
+  "n11169880831": {
+   "r": "ok",
+   "note": "Catalog website and phone match official branch 'Tel Aviv Ichilov Weizmann City', which the site gives as Weizmann 14 (Ichilov); catalog address 'Rehavat Hi\"a' not confirmed by source. Hours changed (opens 07:00; Fri until 1h before Shabbat, not set). Kosher, no body named."
+  },
+  "n11197441049": {
+   "r": "conflict",
+   "note": "Street only; official list has two Dizengoff branches: Dizengoff Center, Dizengoff 50 (https://www.roladin.co.il/branch/דיזינגוף/) and Jabotinsky 24 corner Dizengoff (https://www.roladin.co.il/branch/תל-אביב-זבוטינסקי/); both active. Cannot tell which without coordinates.; catalog coords 32.0750,34.7754 fit Dizengoff Center - needs confirm"
   }
  }
 }

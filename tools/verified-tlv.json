@@ -1428,6 +1428,75 @@
     "https://www.gokosher.com/en/f92768",
     "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=60fd19c222239199c5c9217d"
    ]
+  },
+  "n5975671085": {
+   "n": "קפה יום טוב",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 2,
+   "bk": "https://ontopo.com/en/il/page/89127410",
+   "src": [
+    "https://ontopo.com/en/il/page/89127410",
+    "https://www.timeout.com/israel/restaurants/cafe-yom-tov",
+    "https://timeout.co.il/%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%95%D7%9D-%D7%98%D7%95%D7%91/"
+   ]
+  },
+  "n1458198588": {
+   "n": "רולדין",
+   "ok": "2026-11",
+   "nm": "רולדין גבעתיים שינקין",
+   "oh": "Su-Fr 06:30-21:00; Sa 07:30-21:00",
+   "w": "https://www.roladin.co.il/branch/%D7%A9%D7%A0%D7%A7%D7%99%D7%9F-%D7%92%D7%91%D7%A2%D7%AA%D7%99%D7%99%D7%9D/",
+   "src": [
+    "https://www.roladin.co.il/branch/%D7%A9%D7%A0%D7%A7%D7%99%D7%9F-%D7%92%D7%91%D7%A2%D7%AA%D7%99%D7%99%D7%9D/"
+   ]
+  },
+  "n1546447298": {
+   "n": "רולדין",
+   "ok": "2026-11",
+   "nm": "רולדין אזורי חן",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 07:15-20:00; Fr 07:15-15:00",
+   "w": "https://www.roladin.co.il/branch/אזורי-חן/",
+   "src": [
+    "https://www.roladin.co.il/branch/אזורי-חן/",
+    "https://www.d.co.il/80071833/43740/"
+   ]
+  },
+  "n4706508217": {
+   "n": "רולדין",
+   "ok": "2026-11",
+   "nm": "רולדין רמת החייל",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 07:00-21:00; Fr 07:00-13:00; Sa off",
+   "p": "+972-52-707-1384",
+   "w": "https://www.roladin.co.il/branch/תל-אביב-רמת-החייל/",
+   "src": [
+    "https://www.roladin.co.il/branch/תל-אביב-רמת-החייל/"
+   ]
+  },
+  "n8227888709": {
+   "n": "רולדין",
+   "ok": "2026-11",
+   "nm": "רולדין רמת גן ביאליק",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 06:30-21:00; Fr 06:30-16:00; Sa off",
+   "w": "https://www.roladin.co.il/branch/רמת-גן-ביאליק-37/",
+   "src": [
+    "https://www.roladin.co.il/branch/רמת-גן-ביאליק-37/"
+   ]
+  },
+  "n11169880831": {
+   "n": "רולדין",
+   "ok": "2026-11",
+   "nm": "רולדין איכילוב וייצמן סיטי",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 07:00-21:00; Sa off",
+   "p": "+972-3-647-4692",
+   "w": "https://www.roladin.co.il/branch/תל-אביב-איכילוב/",
+   "src": [
+    "https://www.roladin.co.il/branch/תל-אביב-איכילוב/"
+   ]
   }
  }
 }
