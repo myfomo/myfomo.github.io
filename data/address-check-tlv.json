@@ -104,6 +104,34 @@
    "new": "דיזנגוף 141",
    "status": "applied",
    "moved_m": 0
+  },
+  "n13227246101": {
+   "name": "Stephan",
+   "old": "טשרניחובסקי",
+   "new": "טשרניחובסקי 21",
+   "status": "applied",
+   "moved_m": 6
+  },
+  "n12032015683": {
+   "name": "mae",
+   "old": "רב אלוף דוד אלעזר",
+   "new": "רב אלוף דוד אלעזר 17",
+   "status": "applied",
+   "moved_m": 10
+  },
+  "n4922283576": {
+   "name": "Xo Ho",
+   "old": "גורדון",
+   "new": "בן יהודה 73",
+   "status": "applied",
+   "moved_m": 205
+  },
+  "n13516609157": {
+   "name": "Plaza Café",
+   "old": "פינסקר",
+   "new": "כיכר צינה דיזנגוף 3",
+   "status": "applied",
+   "moved_m": 62
   }
  },
  "dup": {
