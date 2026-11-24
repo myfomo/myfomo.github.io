@@ -59,7 +59,7 @@ def branch_page(u, h):
     for i, x in enumerate(lines):
         if re.fullmatch(r"כתובת:?", x) and i + 1 < len(lines): x = lines[i + 1]
         x = re.sub(r"^כתובת:?\s*", "", x)
-        m = re.match(r"^((?:[^\d\n,]{2,30},\s*)?[^\d\n,]{2,30}?\s\d{1,3}[א-ת]?)\s*,?\s*" + TLV, x)
+        m = re.match(r"^((?:[^\d\n,]{2,30},\s*)?[^\d\n,]{2,30}?\s\d{1,3}[א-ת]?)(?:\s+(?:פינת|פ'|\()[^,\n]{0,30})?\s*,?\s*" + TLV, x)
         if m: addr = m.group(1).strip(); break
     if not addr: return None
     ph = ""
