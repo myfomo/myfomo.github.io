@@ -435,9 +435,8 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 83,
+ "phone_confirmed": 81,
  "phone_multi_skipped": 21,
- "phone_tel": 1,
  "coverage_after": {
   "address": "1323 (100%)",
   "hours": "371 (28%)",
