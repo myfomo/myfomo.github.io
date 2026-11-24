@@ -377,6 +377,86 @@
    "src": [
     "https://ontopo.com/he/il/page/lemalatlv"
    ]
+  },
+  "n4958503425": {
+   "n": "מינה טומיי",
+   "ok": "2026-11",
+   "w": "http://www.minna-tomei.co.il/",
+   "src": [
+    "http://www.minna-tomei.co.il/",
+    "https://wolt.com/he/isr/tel-aviv/restaurant/minna-tomei-tel-aviv"
+   ]
+  },
+  "n705556743": {
+   "n": "מציצים",
+   "ok": "2026-11",
+   "p": "+972 3-711-8181",
+   "w": "https://bayz.co.il/en/mezizim-beach",
+   "bk": "https://ontopo.com/en/il/page/82708640",
+   "src": [
+    "https://ontopo.com/en/il/page/82708640",
+    "https://timeout.co.il/חוף-מציצים-חדש/"
+   ]
+  },
+  "n2079202591": {
+   "n": "מקום של בשר",
+   "ok": "2026-11",
+   "p": "+972 3-510-4020",
+   "w": "https://www.makomshelbasar.co.il",
+   "bk": "https://ontopo.com/he/il/page/makomshelbasar",
+   "src": [
+    "https://www.makomshelbasar.co.il",
+    "https://ontopo.com/en/il/page/48470741"
+   ]
+  },
+  "n2079214805": {
+   "n": "משק ברזילי",
+   "ok": "2026-11",
+   "p": "+972 3 516 6329",
+   "w": "https://www.meshekbarzilay.co.il/",
+   "bk": "https://ontopo.co.il/meshekbarzilay",
+   "src": [
+    "https://www.meshekbarzilay.co.il/המסעדה/"
+   ]
+  },
+  "n8868656017": {
+   "n": "סטודיו",
+   "ok": "2026-11",
+   "p": "+97235444024",
+   "bk": "https://ontopo.com/en/il/page/96411086",
+   "src": [
+    "https://ontopo.com/en/il/page/96411086"
+   ]
+  },
+  "n5547241521": {
+   "n": "פו סושי",
+   "ok": "2026-11",
+   "oh": "Mo-Su 12:00-23:30",
+   "p": "+972 3 605 1000",
+   "w": "http://www.fusushi.co.il",
+   "src": [
+    "http://www.fusushi.co.il"
+   ]
+  },
+  "n12588084718": {
+   "n": "פוקישופ",
+   "ok": "2026-11",
+   "w": "https://pokeshop.co.il/",
+   "src": [
+    "https://pokeshop.co.il/",
+    "https://wolt.com/en/isr/tel-aviv/restaurant/pokeshop-rothschild"
+   ]
+  },
+  "n1308752064": {
+   "n": "פילדלפיה",
+   "ok": "2026-11",
+   "oh": "Su-We 11:00-01:00; Th 11:00-03:00; Fr 13:00-02:00; Sa 13:00-01:00",
+   "p": "+972 3 693 0606",
+   "w": "https://www.philadelphia.co.il",
+   "bk": "https://tabitisrael.co.il/tabit-order?siteName=phili_tlv&step=enter",
+   "src": [
+    "https://www.philadelphia.co.il/branches"
+   ]
   }
  }
 }
