@@ -572,6 +572,93 @@
     "https://www.beerbazaar.co.il/pages/סניפים",
     "https://ontopo.com/he/il/page/76503731"
    ]
+  },
+  "n10814392959": {
+   "n": "Beer Garden",
+   "ok": "2026-11",
+   "oh": "Su-We 16:00-01:00; Th 16:00-02:00; Fr 16:00-01:00; Sa 18:00-01:00",
+   "p": "+972 3 654 4334",
+   "w": "https://www.beergarden.co.il",
+   "bk": "https://ontopo.co.il/beergardensarona",
+   "src": [
+    "https://www.beergarden.co.il"
+   ]
+  },
+  "n12102940425": {
+   "n": "Bellboy",
+   "ok": "2026-11",
+   "oh": "Mo-Su 18:00+",
+   "w": "https://bellboygroup.com/bellboy-tlv/",
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ec15cb3356df600bd22b6f2&locale=he-IL&source=website",
+   "src": [
+    "https://bellboygroup.com/bellboy-tlv/"
+   ]
+  },
+  "n12115124837": {
+   "n": "Brava Gente",
+   "ok": "2026-11",
+   "p": "+972 54 901 2345",
+   "bk": "https://ontopo.com/he/il/page/96588689",
+   "src": [
+    "https://ontopo.com/he/il/page/96588689",
+    "https://timeout.co.il/brava-gente/"
+   ]
+  },
+  "n2079194771": {
+   "n": "Cheers Rock Bar",
+   "ok": "2026-11",
+   "p": "+972548794860",
+   "w": "https://www.cheerstlv.com",
+   "src": [
+    "https://www.cheerstlv.com"
+   ]
+  },
+  "n4430683196": {
+   "n": "Mayer House",
+   "ok": "2026-11",
+   "src": [
+    "https://www.maariv.co.il/lifestyle/travel/article-1198452",
+    "https://timeout.co.il/רופטופ-תל-אביב/"
+   ]
+  },
+  "n347264446": {
+   "n": "Molly Bloom's",
+   "ok": "2026-11",
+   "p": "055-8860188",
+   "w": "https://molly-blooms.com",
+   "bk": "https://ontopo.co.il/bloomsfamily",
+   "src": [
+    "https://molly-blooms.com",
+    "https://www.jpost.com/must/article-874931"
+   ]
+  },
+  "n10175901222": {
+   "n": "Opa",
+   "ok": "2026-11",
+   "p": "052-5838245",
+   "w": "https://www.opatlv.co.il/",
+   "src": [
+    "https://www.opatlv.co.il/"
+   ]
+  },
+  "n8977950106": {
+   "n": "Stolero",
+   "ok": "2026-11",
+   "oh": "Mo-Sa 09:00-23:30; Su 12:00-23:00",
+   "p": "+972533466059",
+   "w": "https://stolero.co.il/",
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=60f0229368816265f1d41ba5&source=website",
+   "src": [
+    "https://stolero.co.il/"
+   ]
+  },
+  "n13506937918": {
+   "n": "Suramare",
+   "ok": "2026-11",
+   "w": "https://suramare.co.il/",
+   "src": [
+    "https://suramare.co.il/home"
+   ]
   }
  }
 }
