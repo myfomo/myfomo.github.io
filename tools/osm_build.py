@@ -45,6 +45,9 @@ for e in E:
     if t.get("diet:vegetarian") in ("yes", "only"): r["v"] = 1
     if t.get("diet:gluten_free") in ("yes", "only"): r["gf"] = 1
     if t.get("wikidata"): r["wd"] = t["wikidata"]
+    cd = t.get("check_date") or t.get("survey:date") or t.get("check_date:opening_hours")
+    if cd: r["cd"] = cd[:10]
+    if e.get("timestamp"): r["ts"] = e["timestamp"][:10]
     r["t"] = t.get("amenity")
     rows.append(r)
 os.makedirs(os.path.dirname(out), exist_ok=True)

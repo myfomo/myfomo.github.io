@@ -2,7 +2,7 @@
 Data: © OpenStreetMap contributors, ODbL."""
 import json, sys, urllib.request, urllib.parse, collections
 BBOX = sys.argv[1] if len(sys.argv) > 1 else "32.029,34.739,32.147,34.853"  # Tel Aviv-Yafo: south,west,north,east
-Q = f'[out:json][timeout:120];nwr({BBOX})["amenity"~"^(restaurant|cafe|bar|pub|fast_food|ice_cream|biergarten)$"]["name"];out tags center;'
+Q = f'[out:json][timeout:120];nwr({BBOX})["amenity"~"^(restaurant|cafe|bar|pub|fast_food|ice_cream|biergarten)$"]["name"];out tags center meta;'
 import time
 E = None
 MIRRORS = ["https://overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter", "https://maps.mail.ru/osm/tools/overpass/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]
