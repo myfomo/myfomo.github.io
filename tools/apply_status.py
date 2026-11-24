@@ -13,9 +13,11 @@ for p in D["places"]:
     if not p.get("x") and p.get("cd") and p["cd"] >= time.strftime("%Y-%m-%d", time.gmtime(time.time() - 548*86400)): p["ok"] = p["cd"]; p.setdefault("src", {})["ok"] = "osm-survey"; nv += 1
     V = VER.get(p["id"])
     if V and not p.get("x"):
-        for k in ("oh", "p", "a", "w", "cu"):
-            if V.get(k) and not p.get(k): p[k] = V[k]; p.setdefault("src", {})[k] = "web"
-        if V.get("ok"): p["ok"] = V["ok"]; p.setdefault("src", {})["ok"] = "web"; nv += 1
+        # values checked against the venue's own site / booking page replace older ones; address and cuisine only fill gaps
+        for k in ("oh", "p", "w", "bk", "a", "cu"):
+            if V.get(k) and (k in ("oh", "p", "w", "bk") or not p.get(k)):
+                p[k] = V[k]; p.setdefault("src", {})[k] = (V.get("src") or ["web"])[0]
+        if V.get("ok"): p["ok"] = V["ok"]; p.setdefault("src", {})["ok"] = (V.get("src") or ["web"])[0]; nv += 1
     s = S.get(p["id"])
     if s and s.get("st") == 200 and s.get("name") and not s.get("closed_txt") and not p.get("x"): p["ok"] = today; nv += 1
 json.dump(D, open(cat, "w"), ensure_ascii=False, separators=(",", ":"))
