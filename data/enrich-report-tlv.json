@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 411,
- "site_jsonld": 22,
+ "site_checked": 424,
+ "site_jsonld": 35,
  "site_match": 7,
- "site_reject": 15,
+ "site_reject": 28,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -152,13 +152,6 @@
    "field": "phone",
    "osm": "+972 035225005",
    "site": "035225005"
-  },
-  {
-   "id": "n10969247136",
-   "n": "הלבנטיני",
-   "field": "phone",
-   "osm": "+972 36324444",
-   "site": "0778048601"
   }
  ],
  "rejected_sites": [
@@ -251,18 +244,95 @@
    "n": "Bagel Cafe",
    "w": "https://www.bagelcafe.co.il/he/",
    "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-יגאלאלון94",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/alon-towers/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-הצפירה23",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/arcaffe-roastary/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-וייצמן4",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/asia-house/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-הברזל20",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/assuta/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-דרךמנחםבגין132",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/azrieli-mall-small-bakery/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-דרךמנחםבגין144",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/midtown/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-אהרוןבקר8",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/mikado-center/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-רבאשי14",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/neve-avivim/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-אבןגבירול72",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/rabin-square/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-איינשטיין40",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/ramat-aviv-mall-bakery/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-שדרותרוטשילד31",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/rothschild/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-אלוףקלמןמגן3",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/sarona-market/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-הרוגימלכות11",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/yisgav/",
+   "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 56,
- "phone_tel": 1,
- "phone_multi_skipped": 16,
+ "phone_confirmed": 66,
+ "phone_multi_skipped": 13,
  "coverage_after": {
-  "address": "1308 (100%)",
-  "hours": "330 (25%)",
-  "phone": "332 (25%)",
-  "website": "442 (34%)",
-  "cuisine": "921 (70%)",
-  "extra_names": "743 (57%)"
+  "address": "1321 (100%)",
+  "hours": "346 (26%)",
+  "phone": "348 (26%)",
+  "website": "455 (34%)",
+  "cuisine": "934 (71%)",
+  "extra_names": "743 (56%)"
  },
- "conflicts_n": 21
+ "conflicts_n": 20
 }
