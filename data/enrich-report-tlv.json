@@ -1,7 +1,7 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 429,
+ "site_checked": 435,
  "site_jsonld": 39,
  "site_match": 7,
  "site_reject": 32,
@@ -13,6 +13,13 @@
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
+  {
+   "id": "n902619087",
+   "n": "באבא יאגה",
+   "field": "phone",
+   "osm": "035175379",
+   "site": "035175179"
+  },
   {
    "id": "n1950416514",
    "n": "איטלקיה בתחנה",
@@ -348,15 +355,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 72,
+ "phone_confirmed": 71,
  "phone_multi_skipped": 16,
  "coverage_after": {
   "address": "1327 (100%)",
-  "hours": "350 (26%)",
-  "phone": "354 (27%)",
-  "website": "460 (35%)",
+  "hours": "354 (27%)",
+  "phone": "358 (27%)",
+  "website": "466 (35%)",
   "cuisine": "940 (71%)",
   "extra_names": "744 (56%)"
  },
- "conflicts_n": 20
+ "conflicts_n": 21
 }
