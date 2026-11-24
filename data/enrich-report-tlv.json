@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 447,
- "site_jsonld": 43,
- "site_match": 9,
- "site_reject": 34,
+ "site_checked": 452,
+ "site_jsonld": 45,
+ "site_match": 10,
+ "site_reject": 35,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -154,13 +154,6 @@
    "site": "036868657"
   },
   {
-   "id": "n7769735969",
-   "n": "Taizu",
-   "field": "phone",
-   "osm": "+972 035225005",
-   "site": "035225005"
-  },
-  {
    "id": "n10969247136",
    "n": "הלבנטיני",
    "field": "phone",
@@ -227,6 +220,12 @@
    "id": "n9889139101",
    "n": "Lily Rose",
    "w": "https://www.lilyrosebar.com/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n10175901222",
+   "n": "Opa",
+   "w": "https://www.opatlv.co.il/",
    "why": "branch/name not confirmed"
   },
   {
@@ -374,15 +373,16 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 79,
+ "phone_confirmed": 80,
  "phone_multi_skipped": 18,
+ "phone_tel": 1,
  "coverage_after": {
   "address": "1327 (100%)",
-  "hours": "360 (27%)",
-  "phone": "377 (28%)",
-  "website": "477 (36%)",
+  "hours": "362 (27%)",
+  "phone": "383 (29%)",
+  "website": "482 (36%)",
   "cuisine": "940 (71%)",
   "extra_names": "744 (56%)"
  },
- "conflicts_n": 22
+ "conflicts_n": 21
 }
