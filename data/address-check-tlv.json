@@ -65,45 +65,45 @@
   },
   "n3146954531": {
    "name": "Doublespresso",
-   "old": "יהודה הימית",
+   "old": "שדרות ירושלים 77",
    "new": "שדרות ירושלים 77",
    "status": "applied",
-   "moved_m": 80
+   "moved_m": 0
   },
   "n4161854778": {
    "name": "Cafe Henrietta",
-   "old": "ארלוזורוב",
+   "old": "ארלוזורוב 186",
    "new": "ארלוזורוב 186",
    "status": "applied",
-   "moved_m": 9
+   "moved_m": 0
   },
   "n9996994153": {
    "name": "House of Coffee",
-   "old": "התבור",
+   "old": "התבור 2",
    "new": "התבור 2",
    "status": "applied",
-   "moved_m": 171
+   "moved_m": 0
   },
   "n13541827938": {
    "name": "Chacoli",
-   "old": "הרברט סמואל",
+   "old": "הרברט סמואל 3",
    "new": "הרברט סמואל 3",
    "status": "applied",
-   "moved_m": 99
+   "moved_m": 0
   },
   "n13532692938": {
    "name": "Goodboy",
-   "old": "ביילינסון",
+   "old": "בילינסון 3",
    "new": "בילינסון 3",
    "status": "applied",
-   "moved_m": 2
+   "moved_m": 0
   },
   "n13530063787": {
    "name": "May 6",
-   "old": "Ben Ami Street 13",
+   "old": "דיזנגוף 141",
    "new": "דיזנגוף 141",
    "status": "applied",
-   "moved_m": 483
+   "moved_m": 0
   }
  },
  "dup": {

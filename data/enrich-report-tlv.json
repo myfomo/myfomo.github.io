@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 458,
- "site_jsonld": 48,
+ "site_checked": 462,
+ "site_jsonld": 49,
  "site_match": 13,
- "site_reject": 35,
+ "site_reject": 36,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -255,6 +255,12 @@
    "why": "branch/name not confirmed"
   },
   {
+   "id": "n3346575491",
+   "n": "Grand Cafe Turkiz",
+   "w": "https://www.grandcafe.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n3930983766",
    "n": "Night Kitchen",
    "w": "https://nightkitchen.co.il/",
@@ -429,15 +435,16 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 82,
- "phone_multi_skipped": 20,
+ "phone_confirmed": 83,
+ "phone_multi_skipped": 21,
+ "phone_tel": 1,
  "coverage_after": {
   "address": "1323 (100%)",
-  "hours": "369 (28%)",
-  "phone": "391 (30%)",
-  "website": "490 (37%)",
+  "hours": "371 (28%)",
+  "phone": "395 (30%)",
+  "website": "494 (37%)",
   "cuisine": "966 (73%)",
-  "extra_names": "748 (57%)"
+  "extra_names": "749 (57%)"
  },
  "conflicts_n": 29
 }
