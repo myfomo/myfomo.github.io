@@ -55,7 +55,7 @@ def phone(s):
     d = re.sub(r"\D", "", s or "")
     if d.startswith("972"): d = "0" + d[3:]
     return d if re.fullmatch(r"0\d{8,9}", d) else ""
-TLV = r"(?:תל[\s\-]?אביב(?:[\s\-]?יפו)?|ת\"א|ת״א)"
+TLV = r"(?:תל[\s\-]?אביב(?:[\s\-]?יפו)?|ת\"א|ת״א|רמת[\s\-]?אביב|יפו)"
 def branch_page(u, h):
     md = re.search(r'<meta[^>]+(?:name="description"|property="og:description")[^>]*content="([^"]+)"', h)
     T = text(h); lines = [x.strip() for x in T.split("\n") if x.strip()]
@@ -116,11 +116,9 @@ def chain_reader(domain, pat, seeds=()):
 CHAINS = {
   "ארומה": (chain_reader("www.aroma.co.il", r"/store/"), re.compile(r"ארומה|aroma", re.I), "cafe", "קפה ובראנץ'"),
   "ארקפה": (chain_reader("arcaffe.co.il", r"/branches/."), re.compile(r"ארקפה|arcaffe", re.I), "cafe", "קפה ובראנץ'"),
-  "לנדוור": (chain_reader("www.landwercafe.co.il", r"/branch/.", ["/"]), re.compile(r"לנדוור|landwer", re.I), "cafe", "קפה ובראנץ'"),
   "רולדין": (chain_reader("www.roladin.co.il", r"/branch/.|/סניפים/."), re.compile(r"רולדין|roladin", re.I), "cafe", "קינוחים"),
 }
 CHAINS.update({
-  "ג'פניקה": (chain_reader("japanika.net", r"/branch/."), re.compile(r"ג'?[פף]אניקה|ג'פניקה|japanika", re.I), "restaurant", "יפני / סושי"),
   "בנדיקט": (chain_reader("www.benedict.co.il", r"/pages/בנדיקט-"), re.compile(r"בנדיקט|benedict", re.I), "restaurant", "קפה ובראנץ'"),
   "פיצה האט": (chain_reader("www.pizzahut.co.il", r"/branch/[a-z]", ["/all-branches/מרכז/סניפי-תל-אביב/תל-אביב-יפו/"]), re.compile(r"פיצה האט|pizza ?hut", re.I), "fast_food", "פיצה"),
 })

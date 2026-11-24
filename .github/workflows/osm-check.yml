@@ -16,7 +16,6 @@ jobs:
         run: python3 tools/osm_fetch.py 32.029,34.739,32.147,34.853 && python3 tools/osm_build.py osm_places.json data/places-tlv.json "תל אביב"
       - run: python3 tools/osm_enrich.py data/places-tlv.json data/enrich-report-tlv.json
       - run: python3 tools/site_check.py data/places-tlv.json data/site-check-tlv.json
-      - run: python3 tools/probe.py || true
       - run: python3 tools/chains.py data/places-tlv.json data/chains-report-tlv.json
       - run: python3 tools/apply_status.py data/places-tlv.json tools/closed-tlv.json data/site-check-tlv.json
       - run: |
