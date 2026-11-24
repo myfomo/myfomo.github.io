@@ -1,15 +1,15 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 435,
- "site_jsonld": 39,
- "site_match": 7,
- "site_reject": 32,
+ "site_checked": 438,
+ "site_jsonld": 41,
+ "site_match": 8,
+ "site_reject": 33,
  "phone_site": 0,
- "hours_site": 0,
- "addr_site": 0,
- "cuisine_site": 2,
- "names_site": 0,
+ "hours_site": 1,
+ "addr_site": 1,
+ "cuisine_site": 3,
+ "names_site": 1,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -162,6 +162,12 @@
   }
  ],
  "rejected_sites": [
+  {
+   "id": "n777400975",
+   "n": "גוסטו",
+   "w": "https://www.gusto.co.il",
+   "why": "branch/name not confirmed"
+  },
   {
    "id": "n886140345",
    "n": "אבו נסאר-חינאווי",
@@ -355,13 +361,13 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 71,
- "phone_multi_skipped": 16,
+ "phone_confirmed": 74,
+ "phone_multi_skipped": 17,
  "coverage_after": {
   "address": "1327 (100%)",
-  "hours": "354 (27%)",
-  "phone": "358 (27%)",
-  "website": "466 (35%)",
+  "hours": "356 (27%)",
+  "phone": "363 (27%)",
+  "website": "469 (35%)",
   "cuisine": "940 (71%)",
   "extra_names": "744 (56%)"
  },
