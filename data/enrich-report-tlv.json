@@ -5,11 +5,11 @@
  "site_jsonld": 48,
  "site_match": 13,
  "site_reject": 35,
- "phone_site": 1,
+ "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
  "cuisine_site": 2,
- "names_site": 1,
+ "names_site": 0,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -432,12 +432,12 @@
  "phone_confirmed": 82,
  "phone_multi_skipped": 20,
  "coverage_after": {
-  "address": "1324 (100%)",
+  "address": "1323 (100%)",
   "hours": "369 (28%)",
   "phone": "391 (30%)",
   "website": "490 (37%)",
-  "cuisine": "967 (73%)",
-  "extra_names": "747 (56%)"
+  "cuisine": "966 (73%)",
+  "extra_names": "748 (57%)"
  },
  "conflicts_n": 29
 }

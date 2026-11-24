@@ -62,6 +62,48 @@
    "new": "כיכר דיזנגוף 4",
    "status": "applied",
    "moved_m": 0
+  },
+  "n3146954531": {
+   "name": "Doublespresso",
+   "old": "יהודה הימית",
+   "new": "שדרות ירושלים 77",
+   "status": "applied",
+   "moved_m": 80
+  },
+  "n4161854778": {
+   "name": "Cafe Henrietta",
+   "old": "ארלוזורוב",
+   "new": "ארלוזורוב 186",
+   "status": "applied",
+   "moved_m": 9
+  },
+  "n9996994153": {
+   "name": "House of Coffee",
+   "old": "התבור",
+   "new": "התבור 2",
+   "status": "applied",
+   "moved_m": 171
+  },
+  "n13541827938": {
+   "name": "Chacoli",
+   "old": "הרברט סמואל",
+   "new": "הרברט סמואל 3",
+   "status": "applied",
+   "moved_m": 99
+  },
+  "n13532692938": {
+   "name": "Goodboy",
+   "old": "ביילינסון",
+   "new": "בילינסון 3",
+   "status": "applied",
+   "moved_m": 2
+  },
+  "n13530063787": {
+   "name": "May 6",
+   "old": "Ben Ami Street 13",
+   "new": "דיזנגוף 141",
+   "status": "applied",
+   "moved_m": 483
   }
  },
  "dup": {
@@ -78,9 +120,8 @@
    "why": "id not in catalog"
   },
   "n7677654261": {
-   "status": "merged",
-   "into": "n2079008750",
-   "name": "Ada Hanina"
+   "status": "skipped",
+   "why": "id not in catalog"
   }
  }
 }
