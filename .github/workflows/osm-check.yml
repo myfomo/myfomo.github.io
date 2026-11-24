@@ -15,6 +15,7 @@ jobs:
         if: ${{ hashFiles('data/places-tlv.json') == '' || contains(github.event.head_commit.message, 'REFETCH') }}
         run: python3 tools/osm_fetch.py 32.029,34.739,32.147,34.853 && python3 tools/osm_build.py osm_places.json data/places-tlv.json "תל אביב"
       - run: python3 tools/osm_enrich.py data/places-tlv.json data/enrich-report-tlv.json
+      - run: python3 tools/site_check.py data/places-tlv.json data/site-check-tlv.json
       - run: |
           git config user.name "fomo-bot"; git config user.email "fomo-bot@users.noreply.github.com"
           git add data/ && git commit -m "OSM catalog: Tel Aviv (enriched)" && git pull --rebase && git push
