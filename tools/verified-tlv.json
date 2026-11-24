@@ -829,6 +829,61 @@
     "https://suramare.co.il/home"
    ],
    "cu": "בר קוקטיילים"
+  },
+  "n2821426609": {
+   "n": "אברקסס",
+   "ok": "2026-11",
+   "cu": "בר",
+   "p": "+972-54-674-5149",
+   "bk": "https://ontopo.com/he/il/page/78945231",
+   "src": [
+    "https://ontopo.com/he/il/page/78945231",
+    "https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars"
+   ]
+  },
+  "n12190005452": {
+   "n": "ג'ניה",
+   "ok": "2026-11",
+   "cu": "בר",
+   "p": "+972-52-886-9969",
+   "w": "https://www.instagram.com/jeniatlv/",
+   "bk": "https://ontopo.com/he/il/page/88539525",
+   "src": [
+    "https://ontopo.com/he/il/page/88539525"
+   ]
+  },
+  "n1731091553": {
+   "n": "דנסינג קאמל פאב",
+   "ok": "2026-11",
+   "cu": "פאב",
+   "src": [
+    "https://www.dancingcamel.com"
+   ]
+  },
+  "n9514696317": {
+   "n": "הולי בר",
+   "ok": "2025-11",
+   "cu": "בר קוקטיילים",
+   "pr": 2,
+   "p": "+972549160985",
+   "w": "https://www.instagram.com/holybar/",
+   "bk": "https://ontopo.com/he/il/page/holy",
+   "src": [
+    "https://ontopo.com/he/il/page/holy",
+    "https://www.jpost.com/food-recipes/article-874651"
+   ]
+  },
+  "n6340271885": {
+   "n": "Polly",
+   "ok": "2025-12",
+   "cu": "בר",
+   "oh": "Su-Th 18:00+; Fr off; Sa 18:30+",
+   "p": "+972 54 559 8975",
+   "w": "http://www.polybar.co.il/",
+   "bk": "https://ontopo.co.il/pollytlv",
+   "src": [
+    "http://www.polybar.co.il/"
+   ]
   }
  }
 }

@@ -1115,11 +1115,15 @@
   },
   "n2079041793": {
    "r": "conflict",
-   "note": "Time Out Hebrew and English list different hours"
+   "note": "Time Out Hebrew and English list different hours",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n5801482129": {
    "r": "conflict",
-   "note": "sources place Beccafico at Shabazi 49; this point is Mikve Israel"
+   "note": "sources place Beccafico at Shabazi 49; this point is Mikve Israel",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n12981671701": {
    "r": "none"
@@ -1366,14 +1370,18 @@
   },
   "n2078969784": {
    "r": "conflict",
-   "note": "Time Out marks Meat Kitchen closed but at Yigal Alon 65, not HaTaasia 10"
+   "note": "Time Out marks Meat Kitchen closed but at Yigal Alon 65, not HaTaasia 10",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n10795083145": {
    "r": "none"
   },
   "n7167094871": {
    "r": "conflict",
-   "note": "sources give Ahad Ha'am 6, not Rabbi Yehuda Hasid"
+   "note": "sources give Ahad Ha'am 6, not Rabbi Yehuda Hasid",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n6507147923": {
    "r": "none"
@@ -1445,7 +1453,10 @@
   },
   "n6340271885": {
    "r": "conflict",
-   "note": "Time Out 2025-04 names Babika at Rothschild 60; no explicit Polly closure"
+   "note": "Time Out 2025-04 names Babika at Rothschild 60; no explicit Polly closure",
+   "r2": "ok",
+   "d2": "2026-11",
+   "note2": "Own site polybar.co.il live (2025-12) names Rothschild 60, Ontopo link"
   },
   "n12840680501": {
    "r": "none"
@@ -1565,7 +1576,9 @@
   },
   "n886140345": {
    "r": "conflict",
-   "note": "rest.co.il lists Kedron 34, not Kedem 130"
+   "note": "rest.co.il lists Kedron 34, not Kedem 130",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n2821415024": {
    "r": "none"
@@ -1650,7 +1663,9 @@
   },
   "n5254086921": {
    "r": "single",
-   "note": "Time Out 2025-12 burgers list: America Burgers at Allenby 112 (corner unconfirmed) https://timeout.co.il/theres-nothing-better-than-this-the-15-best-burgers-in-all-of-tel-aviv/"
+   "note": "Time Out 2025-12 burgers list: America Burgers at Allenby 112 (corner unconfirmed) https://timeout.co.il/theres-nothing-better-than-this-the-15-best-burgers-in-all-of-tel-aviv/",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n11361520669": {
    "r": "none",
@@ -1662,7 +1677,9 @@
   },
   "n3465185951": {
    "r": "single",
-   "note": "Own site akiko.co.il lists Sarona branch (David Elazar 6), location match unconfirmed https://akiko.co.il/en/home/a/main"
+   "note": "Own site akiko.co.il lists Sarona branch (David Elazar 6), location match unconfirmed https://akiko.co.il/en/home/a/main",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n4891582060": {
    "r": "none",
@@ -1682,11 +1699,16 @@
   },
   "n12140324986": {
    "r": "single",
-   "note": "Wolt listing active at Derech Shlomo 43 https://wolt.com/he/isr/tel-aviv/restaurant/baba-jim ; Tabit page did not load"
+   "note": "Wolt listing active at Derech Shlomo 43 https://wolt.com/he/isr/tel-aviv/restaurant/baba-jim ; Tabit page did not load",
+   "r2": "conflict",
+   "d2": "2026-11",
+   "note2": "Time Out 2022: moved across road to Derech Shlomo 43; Wolt active there; catalog 44"
   },
   "n12943579300": {
    "r": "single",
-   "note": "Time Out 2025-03 review at Rothschild 60 https://timeout.co.il/%d7%91%d7%91%d7%99%d7%a7%d7%94-%d7%a8%d7%95%d7%98%d7%a9%d7%99%d7%9c%d7%93/ ; Tabit page did not load"
+   "note": "Time Out 2025-03 review at Rothschild 60 https://timeout.co.il/%d7%91%d7%91%d7%99%d7%a7%d7%94-%d7%a8%d7%95%d7%98%d7%a9%d7%99%d7%9c%d7%93/ ; Tabit page did not load",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n8558425246": {
    "r": "none",
@@ -1694,7 +1716,9 @@
   },
   "n13482140275": {
    "r": "conflict",
-   "note": "Time Out/Mako 2022 + 2026 blog: Nahalat Binyamin 107; atly: Ben Yehuda 188 (possible move)"
+   "note": "Time Out/Mako 2022 + 2026 blog: Nahalat Binyamin 107; atly: Ben Yehuda 188 (possible move)",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n1308842241": {
    "r": "none",
@@ -1738,11 +1762,15 @@
   },
   "n904508667": {
    "r": "conflict",
-   "note": "Own site/Ontopo active but only branch is TLV Port Yordei HaSira 1, catalog street Lipkin-Shahak; address mismatch"
+   "note": "Own site/Ontopo active but only branch is TLV Port Yordei HaSira 1, catalog street Lipkin-Shahak; address mismatch",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "w1103789884": {
    "r": "single",
-   "note": "Time Out 2026-02 column mentions Banana Beach as active https://timeout.co.il/העיר-שלי-ליאת-פלדמן/ ; own site dated 2022"
+   "note": "Time Out 2026-02 column mentions Banana Beach as active https://timeout.co.il/העיר-שלי-ליאת-פלדמן/ ; own site dated 2022",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n2540433561": {
    "r": "none",
@@ -1750,11 +1778,15 @@
   },
   "n4033655490": {
    "r": "single",
-   "note": "Ontopo page (not bookable) Ibn Gabirol https://ontopo.com/en/il/page/19514958 ; Wolt live; undated"
+   "note": "Ontopo page (not bookable) Ibn Gabirol https://ontopo.com/en/il/page/19514958 ; Wolt live; undated",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n11684986013": {
    "r": "single",
-   "note": "Time Out 2026-11 casual list: Hillel HaZaken 12 https://timeout.co.il/מסעדות-קזואל-תל-אביב/ ; own site/Tabit did not load"
+   "note": "Time Out 2026-11 casual list: Hillel HaZaken 12 https://timeout.co.il/מסעדות-קזואל-תל-אביב/ ; own site/Tabit did not load",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n2079208883": {
    "r": "ok",
@@ -1770,7 +1802,9 @@
   },
   "n4706508223": {
    "r": "single",
-   "note": "Ontopo Giraffe Ramat HaHayal HaBarzel 19 (not bookable) https://ontopo.com/en/il/page/girafferamathachayal"
+   "note": "Ontopo Giraffe Ramat HaHayal HaBarzel 19 (not bookable) https://ontopo.com/en/il/page/girafferamathachayal",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n12593349659": {
    "r": "ok",
@@ -1814,7 +1848,9 @@
   },
   "n4112079600": {
    "r": "single",
-   "note": "Time Out fine-dining guide 2025-11/2026-01 lists DOK at Ibn Gabirol 27 https://timeout.co.il/26-most-recommended-fine-dining-restaurants-in-tel-aviv/"
+   "note": "Time Out fine-dining guide 2025-11/2026-01 lists DOK at Ibn Gabirol 27 https://timeout.co.il/26-most-recommended-fine-dining-restaurants-in-tel-aviv/",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n5229027068": {
    "r": "ok",
@@ -1854,7 +1890,10 @@
   },
   "n2264923580": {
    "r": "conflict",
-   "note": "Own site live (Kedem 85) + 2025-26 sources, but OSM street Agur; address match unverified"
+   "note": "Own site live (Kedem 85) + 2025-26 sources, but OSM street Agur; address match unverified",
+   "r2": "conflict",
+   "d2": "2026-11",
+   "note2": "ice 2026-10: 30-day administrative closure at Jaffa Port (temporary); address Agur still unmatched"
   },
   "n5876238032": {
    "r": "none",
@@ -1878,7 +1917,9 @@
   },
   "n10812430078": {
    "r": "single",
-   "note": "Live Wolt listing Hakosem Sarona, Aluf Kalman Magen 3 https://wolt.com/fi/Israel/Tel Aviv/restaurant/hakosem-sarona"
+   "note": "Live Wolt listing Hakosem Sarona, Aluf Kalman Magen 3 https://wolt.com/fi/Israel/Tel Aviv/restaurant/hakosem-sarona",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n10971402605": {
    "r": "ok",
@@ -1898,7 +1939,9 @@
   },
   "n1989338568": {
    "r": "single",
-   "note": "Wolt brand page lists Vitrina Lilienblum branch https://wolt.com/ar/isr/tel-aviv/brand/vitrina ; Time Out 2023"
+   "note": "Wolt brand page lists Vitrina Lilienblum branch https://wolt.com/ar/isr/tel-aviv/brand/vitrina ; Time Out 2023",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n12588072063": {
    "r": "none",
@@ -1938,7 +1981,9 @@
   },
   "n8537137962": {
    "r": "single",
-   "note": "Spotted by Locals 2025-08 Washington Blvd 26 https://www.spottedbylocals.com/telaviv/tometomato"
+   "note": "Spotted by Locals 2025-08 Washington Blvd 26 https://www.spottedbylocals.com/telaviv/tometomato",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n6653156709": {
    "r": "ok",
@@ -1990,7 +2035,10 @@
   },
   "n12434574007": {
    "r": "single",
-   "note": "Time Out 2026-01 Italian list: Tometomato/Lava, Beit HaBad 7 https://timeout.co.il/the-most-recommended-italian-restaurants-in-tel-aviv/"
+   "note": "Time Out 2026-01 Italian list: Tometomato/Lava, Beit HaBad 7 https://timeout.co.il/the-most-recommended-italian-restaurants-in-tel-aviv/",
+   "r2": "single",
+   "d2": "2026-11",
+   "note2": "Two Time Out articles 2026 Beit HaBad 7, same outlet only"
   },
   "n2322594230": {
    "r": "ok",
@@ -2070,7 +2118,9 @@
   },
   "n6759353882": {
    "r": "single",
-   "note": "Likely duplicate of Long Sang Allenby 44; hungru 2026-03 https://gql.hungru.co/restaurants/lvng-sng-tel-aviv-yafo-2"
+   "note": "Likely duplicate of Long Sang Allenby 44; hungru 2026-03 https://gql.hungru.co/restaurants/lvng-sng-tel-aviv-yafo-2",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n2264923661": {
    "r": "none",
@@ -2078,7 +2128,10 @@
   },
   "n1185083191": {
    "r": "single",
-   "note": "Long Sang Allenby 44; hungru 2026-03 https://gql.hungru.co/restaurants/lvng-sng-tel-aviv-yafo-2"
+   "note": "Long Sang Allenby 44; hungru 2026-03 https://gql.hungru.co/restaurants/lvng-sng-tel-aviv-yafo-2",
+   "r2": "conflict",
+   "d2": "2026-11",
+   "note2": "All sources Allenby 44; catalog address '13'"
   },
   "n4845766323": {
    "r": "none",
@@ -2246,7 +2299,9 @@
   },
   "n2142604529": {
    "r": "single",
-   "note": "Wolt listing Ibn Gabirol 185 https://wolt.com/en/Israel/Tel Aviv/restaurant/pizza-panama ; own site blocked"
+   "note": "Wolt listing Ibn Gabirol 185 https://wolt.com/en/Israel/Tel Aviv/restaurant/pizza-panama ; own site blocked",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n11678978180": {
    "r": "none",
@@ -2286,7 +2341,9 @@
   },
   "n12768157195": {
    "r": "conflict",
-   "note": "Moved: Time Out 2026-06 reopened at Ben Zion 1 (Ontopo active); catalog King George 29 outdated"
+   "note": "Moved: Time Out 2026-06 reopened at Ben Zion 1 (Ontopo active); catalog King George 29 outdated",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n12244120937": {
    "r": "ok",
@@ -2334,7 +2391,9 @@
   },
   "n3719261438": {
    "r": "single",
-   "note": "Wolt Rak Basar Express Salame 19 https://wolt.com/de/Israel/Tel Aviv/restaurant/rak-basar-salame"
+   "note": "Wolt Rak Basar Express Salame 19 https://wolt.com/de/Israel/Tel Aviv/restaurant/rak-basar-salame",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n4706508229": {
    "r": "none",
@@ -2342,7 +2401,9 @@
   },
   "n4421914369": {
    "r": "single",
-   "note": "Wolt listing Salomon 2 https://wolt.com/lt/Israel/Tel Aviv/restaurant/shawarma-rosh-haeer"
+   "note": "Wolt listing Salomon 2 https://wolt.com/lt/Israel/Tel Aviv/restaurant/shawarma-rosh-haeer",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n4625883209": {
    "r": "none",
@@ -2354,7 +2415,9 @@
   },
   "n2264923690": {
    "r": "conflict",
-   "note": "Haj Kahil site live (Raziel 18/Yefet 93); atly Shivtei Israel 93; branch unconfirmed"
+   "note": "Haj Kahil site live (Raziel 18/Yefet 93); atly Shivtei Israel 93; branch unconfirmed",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n12104156451": {
    "r": "none",
@@ -2406,7 +2469,10 @@
   },
   "n12162301524": {
    "r": "single",
-   "note": "Time Out 2026-10 interview, Anan bar Raanan 36 active https://timeout.co.il/העיר-שלי-תומי-פרל/"
+   "note": "Time Out 2026-10 interview, Anan bar Raanan 36 active https://timeout.co.il/העיר-שלי-תומי-פרל/",
+   "r2": "single",
+   "d2": "2026-11",
+   "note2": "Three Time Out articles (2024-2026) Raanan 36, same outlet only"
   },
   "n12112970845": {
    "r": "none",
@@ -2434,7 +2500,9 @@
   },
   "n10766988105": {
    "r": "single",
-   "note": "Untappd check-ins 2026 Yehuda HaLevi 21 https://untappd.com/v/beera-bar-tel-aviv/12568905"
+   "note": "Untappd check-ins 2026 Yehuda HaLevi 21 https://untappd.com/v/beera-bar-tel-aviv/12568905",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n6345786744": {
    "r": "none",
@@ -2482,7 +2550,9 @@
   },
   "n609718254": {
    "r": "single",
-   "note": "Spotted by Locals 2025-04 Dizengoff 121 https://spottedbylocals.com/tel-aviv/dizzy-frisdhon"
+   "note": "Spotted by Locals 2025-04 Dizengoff 121 https://spottedbylocals.com/tel-aviv/dizzy-frisdhon",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n2862959840": {
    "r": "none",
@@ -2502,7 +2572,9 @@
   },
   "n5859517185": {
    "r": "single",
-   "note": "Time Out bars list 2025-11 Mikveh Israel 26 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars"
+   "note": "Time Out bars list 2025-11 Mikveh Israel 26 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n6538359142": {
    "r": "none",
@@ -2522,11 +2594,15 @@
   },
   "n13484994517": {
    "r": "single",
-   "note": "Time Out best bars 2025-11 Herzl 4 https://timeout.co.il/%D7%91%D7%A8%D7%99%D7%9D-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/"
+   "note": "Time Out best bars 2025-11 Herzl 4 https://timeout.co.il/%D7%91%D7%A8%D7%99%D7%9D-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n2454668183": {
    "r": "single",
-   "note": "Gilles Pudlowski 2026-08 Gordon Beach https://www.gillespudlowski.com/433058/restaurants/tel-aviv-lala-land-les-pieds-dans-le-sable"
+   "note": "Gilles Pudlowski 2026-08 Gordon Beach https://www.gillespudlowski.com/433058/restaurants/tel-aviv-lala-land-les-pieds-dans-le-sable",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n13516614991": {
    "r": "none",
@@ -2550,7 +2626,10 @@
   },
   "n2443368753": {
    "r": "single",
-   "note": "Time Out 2025-06 Ahad Ha'am 60 https://timeout.co.il/3-ברים-אולדסקול/"
+   "note": "Time Out 2025-06 Ahad Ha'am 60 https://timeout.co.il/3-ברים-אולדסקול/",
+   "r2": "single",
+   "d2": "2026-11",
+   "note2": "Two Time Out articles 2025 Ahad Ha'am 60, same outlet only"
   },
   "n5796680566": {
    "r": "none",
@@ -2594,7 +2673,9 @@
   },
   "n13760565674": {
    "r": "conflict",
-   "note": "Own site lists only Givatayim Katznelson 113; catalog Sirkin TLV"
+   "note": "Own site lists only Givatayim Katznelson 113; catalog Sirkin TLV",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n4118545638": {
    "r": "none",
@@ -2614,15 +2695,219 @@
   },
   "n12505208002": {
    "r": "single",
-   "note": "Time Out 2026-01: reopened as Prince 2.0 Nahalat Binyamin 18 https://timeout.co.il/%d7%94%d7%a0%d7%a1%d7%99%d7%9a-2026/"
+   "note": "Time Out 2026-01: reopened as Prince 2.0 Nahalat Binyamin 18 https://timeout.co.il/%d7%94%d7%a0%d7%a1%d7%99%d7%9a-2026/",
+   "r2": "single",
+   "d2": "2026-11"
   },
   "n2078978143": {
    "r": "conflict",
-   "note": "Time Out 2025-11: Spicehaus reopened at Dizengoff 116 (same address); Tzina likely replaced"
+   "note": "Time Out 2025-11: Spicehaus reopened at Dizengoff 116 (same address); Tzina likely replaced",
+   "r2": "conflict",
+   "d2": "2026-11"
   },
   "n8640203134": {
    "r": "none",
    "note": "Time Out 2016/2018 only"
+  },
+  "n725462337": {
+   "r": "conflict",
+   "note": "Zappa moved to Midtown, Begin 144 (Tickchak 2026); catalog Wallenberg 24"
+  },
+  "n6507652672": {
+   "r": "single",
+   "note": "Time Out 2025-07 mention https://timeout.co.il/%d7%9e%d7%a2%d7%a6%d7%91%d7%9f-%d7%91%d7%a8%d7%99%d7%9d/"
+  },
+  "n4944915822": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12129104729": {
+   "r": "none",
+   "note": "Time Out 2024-07 only (Zevulun 7)"
+  },
+  "n711677517": {
+   "r": "none",
+   "note": "Time Out 2016 only"
+  },
+  "n721910276": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12857340068": {
+   "r": "single",
+   "note": "Time Out 2025-01 Abarbanel 52 https://timeout.co.il/הוטל-ססיל/"
+  },
+  "n720987299": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12104186199": {
+   "r": "none",
+   "note": "Time Out 2024-08 only (Florentin 7)"
+  },
+  "n1717768352": {
+   "r": "none",
+   "note": "Time Out 2020 only"
+  },
+  "n1697433601": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n2821426609": {
+   "r": "ok",
+   "note": "Ontopo booking active Lilienblum 40; Time Out 2025-11 bars list"
+  },
+  "n1626825014": {
+   "r": "conflict",
+   "note": "atly: Alcohome is a liquor store at Pinsker 68, not a pub at Ben Yehuda 188"
+  },
+  "n3404727448": {
+   "r": "none",
+   "note": "Time Out 2016/2017 only"
+  },
+  "n2821371240": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12190005452": {
+   "r": "ok",
+   "note": "Ontopo booking active Ben Ami 11"
+  },
+  "n608522161": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n721926492": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n2079001406": {
+   "r": "single",
+   "note": "Time Out 2026-01 Prince 2.0 Nahalat Binyamin 18 (likely duplicate of n12505208002) https://timeout.co.il/הנסיך-2026/"
+  },
+  "n10549077961": {
+   "r": "conflict",
+   "note": "Zoot Allures is in Givatayim (Katznelson), not Weizmann TLV"
+  },
+  "n454388591": {
+   "r": "none",
+   "note": "Only Foursquare 'closed' (unreliable)"
+  },
+  "n7222453497": {
+   "r": "conflict",
+   "note": "Own site agnespub.com lists only Hod Hasharon; Ibn Gabirol 129 unconfirmed"
+  },
+  "n12731352352": {
+   "r": "none",
+   "note": "Time Out 2023 only"
+  },
+  "n12122780382": {
+   "r": "single",
+   "note": "Time Out bars list 2025-11 Zvulun 5 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars"
+  },
+  "n723198061": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n720962976": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n5030836322": {
+   "r": "none",
+   "note": "Time Out 2017/2024 only"
+  },
+  "n12952231237": {
+   "r": "single",
+   "note": "Time Out wine bars 2026 Tarsat 6 https://timeout.co.il/%d7%91%d7%a8%d7%99-%d7%99%d7%99%d7%9f-%d7%9e%d7%95%d7%9e%d7%9c%d7%a6%d7%99%d7%9d/"
+  },
+  "n746730905": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12695211352": {
+   "r": "none",
+   "note": "Own site unreachable; undated atly only"
+  },
+  "n12088977870": {
+   "r": "single",
+   "note": "Spotted by Locals 2025-04 HaAmal 21 https://spottedbylocals.com/tel-aviv/ala-rampa"
+  },
+  "n723211613": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n4706508228": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n5678912821": {
+   "r": "none",
+   "note": "Own site unreachable; nothing else"
+  },
+  "n11063318698": {
+   "r": "none",
+   "note": "Time Out 2017 at Frishman 39, not Gordon"
+  },
+  "n1731091553": {
+   "r": "ok",
+   "note": "Own site dancingcamel.com live (brewery pub TLV); Time Out address HaTaasiya 12"
+  },
+  "n11607497249": {
+   "r": "none",
+   "note": "Time Out 2015 only"
+  },
+  "n947440457": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n728733994": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12114473902": {
+   "r": "none",
+   "note": "Time Out 2023 only"
+  },
+  "w149270699": {
+   "r": "none",
+   "note": "Time Out 2017 only"
+  },
+  "n11345119701": {
+   "r": "conflict",
+   "note": "Ontopo active Albert 1943 at Allenby 42; catalog Malan St"
+  },
+  "n450524208": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n603032087": {
+   "r": "closed",
+   "note": "Time Out 2020-01: HaBaki at Ibn Gabirol 13 renamed Kevin"
+  },
+  "n12116648772": {
+   "r": "conflict",
+   "note": "Mirage Jazz Kissa Derech Yafo 9 (Time Out 2022); catalog address unusable"
+  },
+  "n4964231828": {
+   "r": "none",
+   "note": "Time Out 2016/2023 only"
+  },
+  "n9514696317": {
+   "r": "ok",
+   "note": "Ontopo booking active Har Sinai 1; JPost 2025-11 cocktails 56, dishes 29-68"
+  },
+  "n12090740822": {
+   "r": "single",
+   "note": "Time Out 2026-01 HaMashbir operating https://timeout.co.il/דדה-במשביר/"
+  },
+  "n6635157385": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12114440012": {
+   "r": "none",
+   "note": "Time Out 2021 only"
   }
  }
 }
