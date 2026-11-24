@@ -1823,6 +1823,206 @@
   "n8544693910": {
    "r": "none",
    "note": "Only 2016 JPost review, no address"
+  },
+  "n528946268": {
+   "r": "none",
+   "note": "Only Don Vito in Or Yehuda found; no Derech Lod source"
+  },
+  "n3315453277": {
+   "r": "none",
+   "note": "Only Time Out 2015/2019 (eviction threat); no 2025-26 source; recheck for closure"
+  },
+  "w126469106": {
+   "r": "none",
+   "note": "Nothing found for D-Mall Jabotinsky 1"
+  },
+  "n636947192": {
+   "r": "none",
+   "note": "Nothing found for Ashtori HaParchi 14"
+  },
+  "n3928116060": {
+   "r": "ok",
+   "note": "Own site live lists Bograshov 8; Ontopo booking active"
+  },
+  "n704446925": {
+   "r": "none",
+   "note": "Nothing found on Sderot HaYeled"
+  },
+  "n1718632812": {
+   "r": "none",
+   "note": "Jaffa Port branch: only 2018 sources; own site lists only Kedem 85; possibly closed/moved, no closure source"
+  },
+  "n2264923580": {
+   "r": "conflict",
+   "note": "Own site live (Kedem 85) + 2025-26 sources, but OSM street Agur; address match unverified"
+  },
+  "n5876238032": {
+   "r": "none",
+   "note": "Nothing found on HaRav Goren"
+  },
+  "n10549077959": {
+   "r": "none",
+   "note": "Chain active but no source for Katznelson branch"
+  },
+  "n904510030": {
+   "r": "none",
+   "note": "d.co.il shows White Sukka at TLV Port Hangar 4, not Lipkin-Shahak; branch mismatch"
+  },
+  "n1975875693": {
+   "r": "closed",
+   "note": "Time Out 2025-03: closed 2017 (court decision, TAMA 38)"
+  },
+  "n6507097213": {
+   "r": "none",
+   "note": "Only unrelated 'Professor' burger truck/dish; no Tchernichovsky source"
+  },
+  "n10812430078": {
+   "r": "single",
+   "note": "Live Wolt listing Hakosem Sarona, Aluf Kalman Magen 3 https://wolt.com/fi/Israel/Tel Aviv/restaurant/hakosem-sarona"
+  },
+  "n10971402605": {
+   "r": "ok",
+   "note": "Ontopo booking active Levinski 46; Ontopo magazine article"
+  },
+  "n5872689085": {
+   "r": "ok",
+   "note": "Ontopo booking active Dam HaMaccabim 26; Time Out 2022 same address"
+  },
+  "n972616162": {
+   "r": "closed",
+   "note": "Time Out 2016-04: Omer Miller closed Shulchan (Rothschild 73)"
+  },
+  "n4683691389": {
+   "r": "ok",
+   "note": "Ontopo booking active Har Sinai 1; Tabit listing exists"
+  },
+  "n1989338568": {
+   "r": "single",
+   "note": "Wolt brand page lists Vitrina Lilienblum branch https://wolt.com/ar/isr/tel-aviv/brand/vitrina ; Time Out 2023"
+  },
+  "n12588072063": {
+   "r": "none",
+   "note": "Nothing found for Zoko Yigal Alon 94b"
+  },
+  "w539690342": {
+   "r": "none",
+   "note": "No source for this name on Meir Shamgar; Tabit 'Hadar HaOchel' different name, did not load"
+  },
+  "n12270410088": {
+   "r": "none",
+   "note": "Chain branches elsewhere; nothing for HaMetsuda"
+  },
+  "n10171136188": {
+   "r": "none",
+   "note": "Nothing found for Tsvi 2"
+  },
+  "n6316049188": {
+   "r": "none",
+   "note": "Nothing found on Wolfson"
+  },
+  "n6247147868": {
+   "r": "none",
+   "note": "Wolt listing at Kiryat Shaul 7, not HaBreicha; address unconfirmed"
+  },
+  "n11405083079": {
+   "r": "none",
+   "note": "Only Time Out 2017 (Hinawi deli Carlebach 25); no recent source"
+  },
+  "n12944761385": {
+   "r": "ok",
+   "note": "Ontopo booking active Eliezer Kaplan 8; no closure news"
+  },
+  "n13339000845": {
+   "r": "none",
+   "note": "Time Out 2024-04 and Mako 2023 only (Yehuda HaLevi 52); no 2025-26 source"
+  },
+  "n8537137962": {
+   "r": "single",
+   "note": "Spotted by Locals 2025-08 Washington Blvd 26 https://www.spottedbylocals.com/telaviv/tometomato"
+  },
+  "n6653156709": {
+   "r": "ok",
+   "note": "Ontopo booking active (Levinski 39, Levinsky market); Time Out 2025: back to cafe-only format at same spot"
+  },
+  "n10549077965": {
+   "r": "none",
+   "note": "No source for a Feinberg branch of Tony Vespa"
+  },
+  "n672150097": {
+   "r": "none",
+   "note": "Only Time Out 2016 (Topsi, Hilton beach)"
+  },
+  "n6578423186": {
+   "r": "ok",
+   "note": "Own site live for Torii Givatayim, Katznelson 62"
+  },
+  "n12114473827": {
+   "r": "ok",
+   "note": "Own site lists Montefiore 21 with Tabit booking"
+  },
+  "n2079039190": {
+   "r": "none",
+   "note": "Only Yavne resto-bar Yavne 31 (2017); no match"
+  },
+  "n5754868832": {
+   "r": "none",
+   "note": "Time Out 2024-08 Yom Tov Deli Nahalat Yitzhak; no 2025-26 source"
+  },
+  "n735841918": {
+   "r": "none",
+   "note": "Only Time Out 2012"
+  },
+  "n13619434567": {
+   "r": "none",
+   "note": "Nothing found for Arlozorov 81"
+  },
+  "n6644460539": {
+   "r": "none",
+   "note": "No Kaspi source at Kikar HaAtzmaut"
+  },
+  "n9879110650": {
+   "r": "none",
+   "note": "Kaspi Ben Yehuda/Arlozorov: Time Out 2015 only"
+  },
+  "n11091229844": {
+   "r": "none",
+   "note": "Generic name; place not identifiable on Allenby"
+  },
+  "n12434574007": {
+   "r": "single",
+   "note": "Time Out 2026-01 Italian list: Tometomato/Lava, Beit HaBad 7 https://timeout.co.il/the-most-recommended-italian-restaurants-in-tel-aviv/"
+  },
+  "n2322594230": {
+   "r": "ok",
+   "note": "Own site branches page lists Rothschild; Time Out 2025-04 Rothschild 45"
+  },
+  "n5876238030": {
+   "r": "none",
+   "note": "Only La Pizzelia Rishon LeZion found"
+  },
+  "n11849335669": {
+   "r": "ok",
+   "note": "Own site live Abarbanel 72; Ontopo booking active; Ontopo mag 2026-08"
+  },
+  "n14378638891": {
+   "r": "ok",
+   "note": "Opened 2026-03 Levontin 13; Time Out + Mako 2026-04 agree operating"
+  },
+  "n454907312": {
+   "r": "none",
+   "note": "Only Time Out 2016"
+  },
+  "n12516314407": {
+   "r": "ok",
+   "note": "Ontopo active, phone matches catalog; Ontopo address HaMerets 5 same Kiryat HaMelacha complex"
+  },
+  "n720940493": {
+   "r": "closed",
+   "note": "Time Out 2023-03: Messa closing after 18 years"
+  },
+  "n8558425247": {
+   "r": "none",
+   "note": "Mabali only in Ramat Gan; own site did not load"
   }
  }
 }
