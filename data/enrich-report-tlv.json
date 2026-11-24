@@ -1,14 +1,14 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 452,
- "site_jsonld": 45,
- "site_match": 10,
+ "site_checked": 455,
+ "site_jsonld": 47,
+ "site_match": 12,
  "site_reject": 35,
  "phone_site": 0,
  "hours_site": 0,
- "addr_site": 0,
- "cuisine_site": 3,
+ "addr_site": 1,
+ "cuisine_site": 2,
  "names_site": 0,
  "web_wd": 0,
  "names_wd": 0,
@@ -19,6 +19,13 @@
    "field": "phone",
    "osm": "035175379",
    "site": "035175179"
+  },
+  {
+   "id": "n950284108",
+   "n": "שצ'ופק",
+   "field": "hours",
+   "osm": "Mo-We 12:00-22:30; Th-Fr 12:00-23:00; Sa 12:00-22:00; Su off",
+   "site": "Mo,Tu,We 12:00-22:30; Th,Fr 12:00-23:00; Sa 12:00-22:00"
   },
   {
    "id": "n1950416514",
@@ -33,6 +40,20 @@
    "field": "phone",
    "osm": "+972 3 624 6383",
    "site": "039585573"
+  },
+  {
+   "id": "n2079208883",
+   "n": "ג'אסיה",
+   "field": "phone",
+   "osm": "*2417",
+   "site": "039323222"
+  },
+  {
+   "id": "n2079208883",
+   "n": "ג'אסיה",
+   "field": "hours",
+   "osm": "Mo-Sa 11:30-23:30; Su off",
+   "site": "Tu 11:30-23:00; We 11:30-23:00; Th 11:30-23:00; Fr 11:30-23:00; Sa 11:30-23:00"
   },
   {
    "id": "n2108063236",
@@ -70,13 +91,6 @@
    "site": "0536114525"
   },
   {
-   "id": "n4263147702",
-   "n": "איציק הגדול",
-   "field": "phone",
-   "osm": "+972 3 6830033",
-   "site": "037773337"
-  },
-  {
    "id": "n4798363423",
    "n": "בצ'יקלטה",
    "field": "phone",
@@ -110,6 +124,13 @@
    "field": "hours",
    "osm": "Su-Th 12:00-23:00; Fr 11:00-17:00; Sa 09:15-23:30",
    "site": "Su,Mo,Tu,We,Th 12:00-20:00; Fr 11:00-15:00"
+  },
+  {
+   "id": "n6041389430",
+   "n": "גומבה",
+   "field": "phone",
+   "osm": "+972 3 973 9954‬",
+   "site": "037743330"
   },
   {
    "id": "n6041389431",
@@ -154,11 +175,32 @@
    "site": "036868657"
   },
   {
+   "id": "n7769735969",
+   "n": "Taizu",
+   "field": "phone",
+   "osm": "+972 035225005",
+   "site": "035225005"
+  },
+  {
+   "id": "n9429290715",
+   "n": "המוסד לסנדוויצ'ים מיוחדים",
+   "field": "phone",
+   "osm": "+97235629896",
+   "site": "036038025"
+  },
+  {
    "id": "n10969247136",
    "n": "הלבנטיני",
    "field": "phone",
    "osm": "+972 36324444",
    "site": "0778048601"
+  },
+  {
+   "id": "n12588113205",
+   "n": "קנסאי",
+   "field": "hours",
+   "osm": "Su-Th 11:00-23:00; Sa (sunset+01:00)-23:00",
+   "site": "Su,Mo,Tu,We,Th 11:00-23:00"
   }
  ],
  "rejected_sites": [
@@ -373,16 +415,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 80,
- "phone_multi_skipped": 18,
- "phone_tel": 1,
+ "phone_confirmed": 83,
+ "phone_multi_skipped": 20,
  "coverage_after": {
   "address": "1327 (100%)",
-  "hours": "362 (27%)",
-  "phone": "383 (29%)",
-  "website": "482 (36%)",
-  "cuisine": "940 (71%)",
-  "extra_names": "744 (56%)"
+  "hours": "366 (28%)",
+  "phone": "386 (29%)",
+  "website": "485 (37%)",
+  "cuisine": "969 (73%)",
+  "extra_names": "746 (56%)"
  },
- "conflicts_n": 21
+ "conflicts_n": 27
 }
