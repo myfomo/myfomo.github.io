@@ -4119,6 +4119,206 @@
   "n11197441049": {
    "r": "conflict",
    "note": "Street only; official list has two Dizengoff branches: Dizengoff Center, Dizengoff 50 (https://www.roladin.co.il/branch/דיזינגוף/) and Jabotinsky 24 corner Dizengoff (https://www.roladin.co.il/branch/תל-אביב-זבוטינסקי/); both active. Cannot tell which without coordinates.; catalog coords 32.0750,34.7754 fit Dizengoff Center - needs confirm"
+  },
+  "n11949591511": {
+   "r": "none",
+   "note": "No branch on Ahad Ha'am in official Roladin branch list (roladin.co.il/branch, searched); no news, Tabit/Ontopo or other source found for this location; coords appear to be Ramat Gan area. Not proof of closure."
+  },
+  "n12635329119": {
+   "r": "ok",
+   "note": "Official Roladin branch page 'Azrieli Mall Tel Aviv' (Waze 32.0746,34.7919 matches coords; catalog address 'Ayalon Darom' is the Azrieli/Ayalon area); hours+phone from branch page; listed kosher but no certifying body named."
+  },
+  "n639265226": {
+   "r": "closed",
+   "note": "Time Out 2022-07: Cafe Shine closing 15.8.2022 for good; Time Out 2023-07: replaced by Cafe 38 at same address."
+  },
+  "n2567910213": {
+   "r": "single",
+   "note": "https://timeout.co.il/מיפוי-שינקין-2025/ (Time Out 2025-03: unnamed eatery at Shenkin 17 run by Rivka, open daily 7-22). Only a d.co.il directory listing otherwise (undated, different hours); no Tabit/Ontopo; no closure news."
+  },
+  "n984578657": {
+   "r": "none",
+   "note": "No source found for cafe Shaked on Aluf David (web search, Tabit/Ontopo, closure search all empty)."
+  },
+  "n13760624550": {
+   "r": "none",
+   "note": "Shroitman bakery Nachalat Yitzhak only in Time Out 2017 (opening) and 2020 (as existing); no 2025-2026 source for the Chayei Adam location; site URL in catalog invalid; no Tabit/Ontopo; no closure news."
+  },
+  "n777401729": {
+   "r": "single",
+   "note": "https://timeout.co.il/העיר-שלנו-בתי-קפה-1811/ (Time Out 2024-11, mod 2025-03: legendary cafe run by Michel Garcia, listed at Kikar Masaryk 12 - next to catalog coords on Mane St). No second recent source, no Tabit/Ontopo, no closure news."
+  },
+  "n5325561830": {
+   "r": "none",
+   "note": "No source found for cafe 'Tel HaShomer' on Gabriela St (coords near Sheba hospital); phone search and Tabit/Ontopo/closure searches empty."
+  },
+  "n7637925185": {
+   "r": "ok",
+   "note": "Own site finjan.rol.co.il live: Finjan restaurant, Yehuda Margoza 28 cnr Hanina 25, Jaffa; hours Sun-Sat 8-23 (differs from catalog 8-17); phone 073-7828171. No Tabit/Ontopo; no closure news (Margoza bakery closure 2026 is a different place). No menu prices."
+  },
+  "n12731352019": {
+   "r": "ok",
+   "note": "Time Out 2025-02 opening review (Yafet 9, burgers 58-68 NIS), Time Out Jaffa restaurants guide 2025-09/10 lists it, Wolt venue page live. Hours only from one source (Time Out) so not set."
+  },
+  "n2079221945": {
+   "r": "none",
+   "note": "Abu Ghosh at Dizengoff 85 (coords nearer Ibn Gabirol): no own site, no Tabit/Ontopo page, no news or closure report found"
+  },
+  "n11109493715": {
+   "r": "none",
+   "note": "Amsterdam Fries at Kalman Magen 3 (Sarona): only old Time Out Florentin review and an aggregator (spinach.guide) marking a King George branch closed; nothing reliable for this branch; no Tabit/Ontopo"
+  },
+  "n13541744684": {
+   "r": "none",
+   "note": "Arale (address '123'): only PlantsPack OSM import with no details; no site, Tabit/Ontopo or news found"
+  },
+  "n6579652086": {
+   "r": "none",
+   "note": "Arepita's, HaCarmel: only Time Out 2017 listing 'Arepas' at HaCarmel 38; no recent source, no Tabit/Ontopo, no closure news"
+  },
+  "n9786819303": {
+   "r": "single",
+   "note": "Wolt Azrieli page live; second source only malls.com aggregator -> single"
+  },
+  "n11330876275": {
+   "r": "none",
+   "note": "B-Fresh at Derech Sheshet HaYamim (Bnei Brak/Ramat Gan border coords): no matching branch on Wolt TLV brand list (Azrieli, Sarona, Bialik RG, Givatayim, Ayalon Mall) or elsewhere; absence not proof of closure"
+  },
+  "n345345165": {
+   "r": "none",
+   "note": "Burger Bar 39, Bograshov: Burgers Bar official branch list has no Tel Aviv branch; no other source; likely same spot as n6150226043 (coords ~60 m apart)"
+  },
+  "n6150226043": {
+   "r": "none",
+   "note": "Burgerbar Ben Yehuda 43: not on burgersbar.co.il branch list (no TA branches), catalog phone not found anywhere, no Tabit/Ontopo or news; possible duplicate of n345345165"
+  },
+  "n8824038912": {
+   "r": "ok",
+   "note": "Own site chickenstation.co.il lists branch Bar Kochva 16, Bnei Brak, phone 03-7614790; chain hours Sun-Thu 11:00-17:00 (Fri/Sat not stated); kosher but no certifier named"
+  },
+  "n14400029008": {
+   "r": "conflict",
+   "note": "DIDU pasta: Wolt venue page live but gives address HaMasger 35 (same address as a Chicken Station branch, likely delivery kitchen); atly lists Yitzhak Sadeh 8; catalog street Yitzhak Sadeh - address unclear, no own site/Tabit/Ontopo. https://wolt.com/en/isr/tel-aviv/restaurant/didu"
+  },
+  "n5700200352": {
+   "r": "none",
+   "note": "Official dominos.co.il branch pages are JS-only (no addresses readable); only a directory listing (enjoyingisrael, undated) shows Carlebach 29; no Tabit/Ontopo; no closure news. Not verified."
+  },
+  "n11295755741": {
+   "r": "single",
+   "note": "https://timeout.co.il/%d7%90%d7%9c-%d7%91%d7%a8%d7%99%d7%95-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/ (Time Out 2026-09, new TA branch of El Barrio; says original is at Jabotinsky-Bialik, Ramat Gan, implied still open). Catalog website elbarrio.rg invalid; no Tabit/Ontopo; no closure news."
+  },
+  "n10840287010": {
+   "r": "none",
+   "note": "Only user directories (atly) mention Falafel 8; no news/guide, own site, Tabit/Ontopo or closure news found."
+  },
+  "n2078982908": {
+   "r": "none",
+   "note": "Time Out 2023-04 mentions Falafel Gina at Shocken 22 (not Begin 126); nothing recent for this location; no Tabit/Ontopo; no closure news."
+  },
+  "n4362814196": {
+   "r": "none",
+   "note": "Coordinates are Sokolov St, Herzliya; no reliable source naming 'Falafel Square' there (Time Out 2020 lists Falafel Haim, Sokolov 66 - different name); no Tabit/Ontopo; no closure news."
+  },
+  "n4431080389": {
+   "r": "none",
+   "note": "Time Out EN page (2023-03) lists Frishman Falafel, Frishman 42; ynet 2020; Time Out 2024-12 recommends Sabich Frishman chain without address. No 2025-26 source for this location; no Tabit/Ontopo; no closure news."
+  },
+  "n11390084018": {
+   "r": "ok",
+   "note": "JPost 2026-06 best burgers list (GDB, Ibn Gabirol 22); Time Out 2025-12 best burgers (Ibn Gvirol 22); Wolt venue page active, burgers 50-67 NIS. No own site, no Tabit/Ontopo, no closure news."
+  },
+  "n9967204622": {
+   "r": "none",
+   "note": "Only atly directory (salad shop, HaMasger 48); no news, own site, Tabit/Ontopo or closure news."
+  },
+  "n9967204623": {
+   "r": "none",
+   "note": "No source found for HaBukhari on HaMelacha (Time Out Bukharian lists 2022/2025 don't include it); no Tabit/Ontopo; no closure news."
+  },
+  "n4964231827": {
+   "r": "none",
+   "note": "Only trip.com/airbnb listings for 'The House of Hummus'; no news/guide, own site, Tabit/Ontopo or closure news; address is just Allenby."
+  },
+  "n5273498721": {
+   "r": "none",
+   "note": "Could not tie to a source: 'House of Hummus' may be Humus Habait (Paste 2016 places it at Allenby/King George, not Nahalat Binyamin); no own site, Tabit/Ontopo or recent news; no closure news"
+  },
+  "n11330876276": {
+   "r": "none",
+   "note": "Generic name 'Humus' on Derech Sheshet HaYamim (coords suggest Bnei Brak/Ramat Gan edge); no identifiable source, no Tabit/Ontopo, no closure news"
+  },
+  "n10736851498": {
+   "r": "none",
+   "note": "No source found for 'Igor Meat' on HaRoeh (Ramat Gan) in Hebrew/English searches; no site, Tabit/Ontopo or news"
+  },
+  "n1989338530": {
+   "r": "none",
+   "note": "Japanika Rothschild 32 (corner Allenby) appears only in undated directories (d.co.il, enjoyingisrael); japanika.net branch list loads dynamically and could not be read; no Tabit/Ontopo page reachable; no closure news found"
+  },
+  "n12956754012": {
+   "r": "single",
+   "note": "Only the public Wolt venue page names Joe's Pizza at Allenby 118 (phone +97235554989): https://wolt.com/en/isr/tel-aviv/restaurant/hapizzeria ; Time Out 2022 opening article for the same address; catalog site 'joespizzatlv' not found; no Tabit/Ontopo; no closure news"
+  },
+  "n11469869089": {
+   "r": "ok",
+   "note": "Own site kfc.co.il lists 'KFC Allenby', Magen David Sq, Allenby 1 with hours; Walla 2026-10 says Tel Aviv branch still operating, but the franchisee is in insolvency and Calcalist 2026-11 says the trustees keep all 12 branches open until 2026-11-30. Re-check soon.; KFC Israel franchisee insolvent, trustees keep open until 2026-11-30 - RECHECK after"
+  },
+  "n12553667469": {
+   "r": "ok",
+   "note": "This is KFC Givatayim Mall, Derech Yitzhak Rabin, Givatayim (not Tel Aviv). The own site kfc.co.il lists it with hours of daily 11:00-22:00, which differs from the catalog's 23:00. Israel Hayom 2025-03 lists it as open. The franchisee is in insolvency, and the trustees keep the branches open until 2026-11-30 (Calcalist). Re-check soon.; KFC Israel franchisee insolvent, trustees keep open until 2026-11-30 - RECHECK after"
+  },
+  "n6508607296": {
+   "r": "none",
+   "note": "Kaimak (Levinsky) is mentioned in a Time Out Levinsky guide (2021, updated 2022), and Time Out 2014 covers the group; no own site, Tabit/Ontopo or 2025-2026 source; no closure news"
+  },
+  "n1643304615": {
+   "r": "none",
+   "note": "La Gaterie (King George 97, croissant cafe) has only a 2022 blog (gillespudlowski) and an undated Gayot listing; no own site, Tabit/Ontopo or recent news; no closure news"
+  },
+  "n11725313138": {
+   "r": "single",
+   "note": "Time Out only (same outlet twice): 24 best burgers 2026-05 lists Lokal Burger at Ahad HaAm 30 + Einstein 69 https://timeout.co.il/ההמבורגרים-הטובים-בתל-אביב/ ; also Time Out EN 2025-12; no own site/Tabit/Ontopo/Wolt found; no closure news"
+  },
+  "n14339025501": {
+   "r": "none",
+   "note": "Searched web (Heb/Eng), Wolt, Tabit/Ontopo, closure news: no source found for a 'Love Story' eatery in Florentin; no own site."
+  },
+  "n3346678359": {
+   "r": "none",
+   "note": "Only Time Out 2014-2016 articles on Lunch Box (Lilienblum); no recent source, no own site, nothing on Tabit/Ontopo, no closure news found."
+  },
+  "n6644530328": {
+   "r": "none",
+   "note": "Coordinates are in Ramat HaSharon (Ussishkin), not Tel Aviv. No source found for 'Maison' there; nothing on Tabit/Ontopo/Wolt, no closure news."
+  },
+  "n11725169157": {
+   "r": "ok",
+   "note": "Official McDonald's Israel store page 'HaPark HaLeumi Ramat Gan', Ahad HaAm parking lot, Ramat Gan (catalog city says Tel Aviv but street/coords match Ramat Gan national park); open, hours listed; not kosher."
+  },
+  "n6755794786": {
+   "r": "single",
+   "note": "Public Wolt page active (Derech Shlomo/Salame 110, Turkish) https://wolt.com/en/isr/tel-aviv/restaurant/mutfak ; Time Out review 2024-03 (older); own site (business.site) defunct; not on Tabit/Ontopo; no closure news."
+  },
+  "n13724728329": {
+   "r": "none",
+   "note": "No source found for 'Neve Midbar' food outlet at Gesher HaKirya/Begin; nothing on Wolt/Tabit/Ontopo, no closure news."
+  },
+  "n6469411085": {
+   "r": "none",
+   "note": "New Deli official site new-deli.co.il now redirects to an unrelated page; Wolt brand lists only Jerusalem branches; no source for a Gesher HaKirya branch and no closure news (absence not proof of closure)."
+  },
+  "n11711437812": {
+   "r": "none",
+   "note": "Catalog Bialik 76 = Bialik Mall, Ramat Gan (not Tel Aviv). New Deli official site defunct, Wolt lists only Jerusalem branches; no source for this branch, no closure news."
+  },
+  "n12017147884": {
+   "r": "single",
+   "note": "OSU (Japanese-style smash burger stall, Hillel HaZaken 18, Carmel Market): Time Out best-burgers list 2025-12 https://timeout.co.il/theres-nothing-better-than-this-the-15-best-burgers-in-all-of-tel-aviv/ ; opening article Time Out 2024-01; not on Tabit/Ontopo/Wolt; no closure news."
+  },
+  "n11868727704": {
+   "r": "none",
+   "note": "No source for a 'Panino' at Carmel Market (HaCarmel). Time Out 2023 covers a different Panino at Ahad Ha'am 15 (doesn't match coords). Nothing on Tabit/Ontopo, no closure news."
   }
  }
 }
