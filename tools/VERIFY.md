@@ -37,8 +37,14 @@ If exactly one recent source supports it, use result `single` (not `none`) and g
 - **price level `pr`** (1–4): from menu prices on the own site / booking page, or a guide article giving prices.
   Typical main dish (bars: typical cocktail/beer + bite): 1 = up to ₪50, 2 = ₪50–90, 3 = ₪90–150, 4 = over ₪150.
 - **kosher `k` / vegan `vg`** (value 1): only when the own site, booking page or a kosher listing says so (kosher: certificate named).
-- **address `a`: never change it** — navigation in the app depends on the catalog address and coordinates.
+- **address `a`: never change it in the verification files** — navigation in the app depends on the catalog address and coordinates.
   If the address looks wrong or the place moved, use `conflict` and say so in `note`.
+- **Address fixes (user-approved, 2026-11)**: when a reliable source states the exact new address (moved place, wrong/partial catalog address)
+  or two catalog entries are the same place, add it to `tools/address-fixes-tlv.json` (`fix` / `dup`, see `tools/address_fix.py`),
+  then list it in the report for the user. The workflow applies it only if the **collision check** passes: no other active place
+  has the same street + number, nothing else within 12 m, the new point is in Tel Aviv and within 3 km of the old one.
+  Blocked fixes are listed in `data/address-check-tlv.json` — report them to the user; a shared address (mall, market, hotel)
+  is applied only after the user approves it (`shared_ok`). Places outside Tel Aviv are real places: leave them as they are.
 - Make sure it is the **same branch** (address matches). If sources disagree → `conflict`, change nothing.
 - Nothing reliable found → `none`, change nothing.
 

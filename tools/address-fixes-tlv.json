@@ -1,0 +1,65 @@
+{
+ "note": "Address fixes and duplicate merges approved by the user (2026-11). Applied by tools/address_fix.py with a collision check; a fix that clashes with another place's address is not applied and is listed in data/address-check-tlv.json.",
+ "fix": {
+  "n12768157195": {
+   "a": "שדרות בן ציון 1",
+   "src": [
+    "https://timeout.co.il/קלבריה-בן-ציון/",
+    "https://ontopo.com/en/il/page/67927743"
+   ],
+   "note": "Calabria moved from King George 29 (Time Out 2026-06)"
+  },
+  "n12140324986": {
+   "a": "דרך שלמה 43",
+   "src": [
+    "https://timeout.co.il/%D7%91%D7%90%D7%91%D7%90%D7%92%D7%99%D7%9D-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA/"
+   ],
+   "note": "Babagim moved across the road (Time Out 2022-11; Wolt)"
+  },
+  "n725462337": {
+   "a": "דרך מנחם בגין 144",
+   "src": [
+    "https://live.tickchak.co.il/zappaclub"
+   ],
+   "note": "Zappa moved to Midtown (Tickchak 2026)"
+  },
+  "n11345119701": {
+   "a": "אלנבי 42",
+   "src": [
+    "https://ontopo.com/he/il/page/19084594"
+   ],
+   "note": "Albert 1943 per its Ontopo page"
+  },
+  "n6312684887": {
+   "a": "הגימנסיה העברית 7",
+   "src": [
+    "https://ramessesjaffa.com",
+    "https://timeout.co.il/ramesses-by-the-box/"
+   ],
+   "note": "Ramesses by the Box per own site and Time Out"
+  },
+  "n2079214805": {
+   "a": "אחד העם 6",
+   "keep_coords": true,
+   "src": [
+    "https://www.meshekbarzilay.co.il/המסעדה/"
+   ],
+   "note": "Own site gives Ahad Ha'am 6; the point is already on the building"
+  }
+ },
+ "dup": {
+  "n1185083191": {
+   "keep": "n6759353882",
+   "n": "מסעדת לונג סנג",
+   "note": "Long Sang is at Allenby 44, where the other entry already stands; this point (address '13') is off by about 240 m"
+  },
+  "n7167094871": {
+   "keep": "n2079214805",
+   "note": "Second point for Meshek Barzilay, 20 m away"
+  },
+  "n12505208002": {
+   "keep": "n2079001406",
+   "note": "The Prince and הנסיך at Nahalat Binyamin 18 are the same bar"
+  }
+ }
+}

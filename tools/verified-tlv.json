@@ -884,6 +884,39 @@
    "src": [
     "http://www.polybar.co.il/"
    ]
+  },
+  "n904508667": {
+   "n": "בני הדייג",
+   "ok": "2026-11",
+   "cu": "דגים ופירות ים",
+   "oh": "Mo-Su 09:00-24:00",
+   "p": "03-5440518",
+   "w": "https://www.bennihadayag.co.il/",
+   "bk": "https://ontopo.com/he/il/page/tlvbennihadayag",
+   "src": [
+    "https://www.bennihadayag.co.il/",
+    "https://ontopo.com/he/il/page/tlvbennihadayag"
+   ]
+  },
+  "n12768157195": {
+   "n": "קלבריה",
+   "ok": "2026-06",
+   "cu": "איטלקי",
+   "bk": "https://ontopo.com/en/il/page/67927743",
+   "src": [
+    "https://timeout.co.il/קלבריה-בן-ציון/",
+    "https://ontopo.com/en/il/page/67927743"
+   ]
+  },
+  "n11345119701": {
+   "n": "אלברט 1943",
+   "ok": "2026-11",
+   "cu": "פיצה",
+   "p": "050-7620381",
+   "bk": "https://ontopo.com/he/il/page/19084594",
+   "src": [
+    "https://ontopo.com/he/il/page/19084594"
+   ]
   }
  }
 }

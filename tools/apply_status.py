@@ -6,12 +6,15 @@ D = json.load(open(cat)); C = json.load(open(closed))["closed"]
 S = json.load(open(sitecheck)) if sitecheck and os.path.exists(sitecheck) else {}
 VF = closed.replace("closed-", "verified-")
 VER = json.load(open(VF))["places"] if os.path.exists(VF) else {}
+# a place whose approved address fix was blocked by the collision check keeps its old address, so it is not marked verified
+AC = cat.replace("places-", "address-check-")
+BLOCKED = {i for i, v in (json.load(open(AC))["fix"].items() if os.path.exists(AC) else []) if v.get("status") == "blocked"}
 today = time.strftime("%Y-%m-%d"); nx = nv = 0
 for p in D["places"]:
     if p["id"] in C: p["x"] = C[p["id"]]["d"]; nx += 1
     # a mapper confirmed the place on the ground in the last 18 months (OpenStreetMap check_date / survey:date)
     if not p.get("x") and p.get("cd") and p["cd"] >= time.strftime("%Y-%m-%d", time.gmtime(time.time() - 548*86400)): p["ok"] = p["cd"]; p.setdefault("src", {})["ok"] = "osm-survey"; nv += 1
-    V = VER.get(p["id"])
+    V = VER.get(p["id"]) if p["id"] not in BLOCKED else None
     if V and not p.get("x"):
         # values checked against the venue's own site / booking page / guides replace older ones.
         # The address is never changed here (navigation depends on the OpenStreetMap address and coordinates).

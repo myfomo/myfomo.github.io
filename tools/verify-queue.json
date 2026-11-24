@@ -1763,8 +1763,9 @@
   "n904508667": {
    "r": "conflict",
    "note": "Own site/Ontopo active but only branch is TLV Port Yordei HaSira 1, catalog street Lipkin-Shahak; address mismatch",
-   "r2": "conflict",
-   "d2": "2026-11"
+   "r2": "ok",
+   "d2": "2026-11",
+   "note2": "Coordinates already at Tel Aviv Port = own site branch; resolved"
   },
   "w1103789884": {
    "r": "single",
@@ -2342,8 +2343,9 @@
   "n12768157195": {
    "r": "conflict",
    "note": "Moved: Time Out 2026-06 reopened at Ben Zion 1 (Ontopo active); catalog King George 29 outdated",
-   "r2": "conflict",
-   "d2": "2026-11"
+   "r2": "ok",
+   "d2": "2026-11",
+   "note2": "Moved to Ben Zion 1 (address fix approved); Ontopo active"
   },
   "n12244120937": {
    "r": "ok",
@@ -2875,7 +2877,10 @@
   },
   "n11345119701": {
    "r": "conflict",
-   "note": "Ontopo active Albert 1943 at Allenby 42; catalog Malan St"
+   "note": "Ontopo active Albert 1943 at Allenby 42; catalog Malan St",
+   "r2": "ok",
+   "d2": "2026-11",
+   "note2": "Address fix to Allenby 42 approved; Ontopo active"
   },
   "n450524208": {
    "r": "none",
