@@ -1347,6 +1347,87 @@
    "src": [
     "https://arcaffe.co.il/branches/alon-towers/"
    ]
+  },
+  "n9245806417": {
+   "n": "לנדוור",
+   "ok": "2026-11",
+   "nm": "לנדוור שרונה",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 08:00-22:00; Fr 08:00-14:00; Sa off",
+   "p": "+972 52-536-2834",
+   "w": "https://www.landwercafe.co.il/branch/%d7%a9%d7%a8%d7%95%d7%a0%d7%94/",
+   "bk": "https://ontopo.com/en/il/page/12499467",
+   "src": [
+    "https://www.landwercafe.co.il/branch/%d7%a9%d7%a8%d7%95%d7%a0%d7%94/",
+    "https://ontopo.com/en/il/page/12499467",
+    "https://wolt.com/en/isr/tel-aviv/restaurant/landwer-cafe-sarona"
+   ]
+  },
+  "n10279238209": {
+   "n": "מאפיית לחמים",
+   "ok": "2026-11",
+   "nm": "לחמים - חנות החשמונאים",
+   "oh": "Su-Th 06:00-21:00; Fr 06:00-15:00",
+   "w": "https://www.lehamim.co.il/branch/%d7%97%d7%a0%d7%95%d7%aa-%d7%94%d7%97%d7%a9%d7%9e%d7%95%d7%a0%d7%90%d7%99%d7%9d/",
+   "src": [
+    "https://www.lehamim.co.il/branch/%d7%97%d7%a0%d7%95%d7%aa-%d7%94%d7%97%d7%a9%d7%9e%d7%95%d7%a0%d7%90%d7%99%d7%9d/",
+    "https://www.lehamim.co.il/%d7%aa%d7%a2%d7%95%d7%93%d7%aa-%d7%9b%d7%a9%d7%a8%d7%95%d7%aa/",
+    "https://www.israelhayom.co.il/food/food-news/article/19419629"
+   ]
+  },
+  "n9350046743": {
+   "n": "מתוקה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "p": "+972 3-503-2603",
+   "w": "https://www.metuka.co.il/branches/",
+   "src": [
+    "https://www.metuka.co.il/branches/",
+    "https://www.metuka.co.il/"
+   ]
+  },
+  "n1310732009": {
+   "n": "נלסון 33",
+   "ok": "2026-11",
+   "nm": "נלסון החדש",
+   "cu": "בר",
+   "p": "+972 52-381-9297",
+   "bk": "https://ontopo.com/he/il/page/53184509",
+   "src": [
+    "https://ontopo.com/he/il/page/53184509"
+   ]
+  },
+  "n1319999667": {
+   "n": "סוזנה",
+   "ok": "2026-11",
+   "nm": "סוזאנה",
+   "cu": "ים-תיכוני",
+   "oh": "Mo-Su 11:00-23:00",
+   "p": "+972 3-517-7580",
+   "w": "https://suzanatlv.co.il",
+   "bk": "https://ontopo.com/he/il/page/33040423",
+   "src": [
+    "https://suzanatlv.co.il",
+    "https://ontopo.com/he/il/page/33040423",
+    "https://www.mako.co.il/travel-israel/family_trip/Article-5f869baec9760a1027.htm"
+   ]
+  },
+  "n12809538406": {
+   "n": "קירש קפה",
+   "ok": "2025-04",
+   "cu": "קפה ובראנץ'",
+   "pr": 2,
+   "oh": "Su-Th 07:00-22:00; Fr 07:00-14:00",
+   "p": "+972 55-896-0003",
+   "w": "https://kirshcafe239.wixsite.com/kirshcafe",
+   "k": 1,
+   "src": [
+    "https://kirshcafe239.wixsite.com/kirshcafe",
+    "https://kirshcafe239.wixsite.com/kirshcafe/menu",
+    "https://www.ice.co.il/food/news/article/1060185",
+    "https://www.gokosher.com/en/f92768",
+    "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=60fd19c222239199c5c9217d"
+   ]
   }
  }
 }
