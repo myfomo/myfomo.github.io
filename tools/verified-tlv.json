@@ -457,6 +457,121 @@
    "src": [
     "https://www.philadelphia.co.il/branches"
    ]
+  },
+  "n11681523242": {
+   "n": "פריז טקסס גבעתיים",
+   "ok": "2026-11",
+   "src": [
+    "https://timeout.co.il/מנות-חריפות-תל-אביב/",
+    "https://www.maariv.co.il/food/foodnews/article-1336510"
+   ]
+  },
+  "n12244120937": {
+   "n": "קפה אירופה",
+   "ok": "2026-11",
+   "p": "+972 3 525 9987",
+   "bk": "https://ontopo.com/en/il/page/cafeeuropa",
+   "src": [
+    "https://ontopo.com/en/il/page/cafeeuropa",
+    "https://timeout.co.il/topic/קפה-אירופה/"
+   ]
+  },
+  "n5195799584": {
+   "n": "קפה ז'ולי",
+   "ok": "2026-11",
+   "oh": "Su-Fr 09:00-23:00; Sa 11:00-23:00",
+   "p": "+972 50 882 6723",
+   "w": "https://cafejolie-tlv.co.il/",
+   "src": [
+    "https://cafejolie-tlv.co.il/"
+   ]
+  },
+  "n2145835145": {
+   "n": "קפה נואר",
+   "ok": "2026-11",
+   "p": "+972 3-566-3018",
+   "bk": "https://ontopo.com/en/il/page/20527837",
+   "src": [
+    "https://ontopo.com/en/il/page/20527837",
+    "https://timeout.co.il/topic/קפה-נואר/"
+   ]
+  },
+  "n12952209648": {
+   "n": "רוטשילד 48",
+   "ok": "2026-11",
+   "oh": "Su-Fr 12:00-23:00; Sa off",
+   "p": "+972 3-556-0011",
+   "w": "https://r48.co.il/he/רוטשילד-48-בראסרי/",
+   "bk": "https://tabitisrael.co.il/site/r48-brasserie",
+   "src": [
+    "https://r48.co.il/he/רוטשילד-48-בראסרי/"
+   ]
+  },
+  "n2079181976": {
+   "n": "רוסטיקו",
+   "ok": "2026-11",
+   "p": "+972 3-602-6969",
+   "bk": "https://ontopo.com/en/il/page/37905695",
+   "src": [
+    "https://ontopo.com/en/il/page/37905695"
+   ]
+  },
+  "n6473212377": {
+   "n": "שניצל קומפני",
+   "ok": "2026-11",
+   "p": "03-5392777",
+   "w": "https://www.scompany.co.il/",
+   "src": [
+    "https://www.scompany.co.il/branches"
+   ]
+  },
+  "n950284108": {
+   "n": "שצ'ופק",
+   "ok": "2026-11",
+   "src": [
+    "https://timeout.co.il/מסעדות-דגים-תל-אביב/",
+    "https://www.mako.co.il/food-restaurants/restaurant-news/Article-58a15f6d5bcaf91027.htm"
+   ]
+  },
+  "w149270614": {
+   "n": "223 Bar",
+   "ok": "2026-11",
+   "p": "+972-3-544-6537",
+   "w": "https://www.223.co.il",
+   "src": [
+    "https://www.223.co.il"
+   ]
+  },
+  "n6317085385": {
+   "n": "Akbar",
+   "ok": "2026-11",
+   "src": [
+    "https://www.spottedbylocals.com/tel-aviv/akbar-bar/",
+    "https://timeout.co.il/the-most-recommended-restaurants-bars-and-cafes-in-the-flea-market/"
+   ]
+  },
+  "n2659433568": {
+   "n": "Beer Bazaar",
+   "ok": "2026-11",
+   "p": "+972-2-372-4471",
+   "w": "https://www.beerbazaar.co.il",
+   "bk": "https://ontopo.com/he/il/page/16680506",
+   "src": [
+    "https://www.beerbazaar.co.il/pages/סניפים",
+    "https://ontopo.com/he/il/page/16680506"
+   ]
+  },
+  "n10693747873": {
+   "n": "Beer Bazaar Habima",
+   "ok": "2026-11",
+   "oh": "Su-Th 18:30-01:00; Fr 20:30-02:00; Sa 18:30-01:00",
+   "p": "+972-2-372-4471",
+   "w": "https://www.beerbazaar.co.il",
+   "bk": "https://ontopo.com/he/il/page/76503731",
+   "src": [
+    "https://www.beerbazaar.co.il/pages/סניפים",
+    "https://ontopo.com/he/il/page/76503731"
+   ]
   }
  }
 }
