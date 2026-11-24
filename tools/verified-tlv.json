@@ -6,23 +6,33 @@
    "ok": "2025-09",
    "src": [
     "https://timeout.co.il/בר-ורמיני-bar-vermini/"
-   ]
+   ],
+   "cu": "בר",
+   "pr": 2
   },
   "n13527219782": {
    "n": "Benjamin 31",
    "ok": "2026-07",
    "src": [
     "https://timeout.co.il/benjamin-31/",
-    "https://www.maariv.co.il/food/foodnews/article-1339657"
-   ]
+    "https://www.maariv.co.il/food/foodnews/article-1339657",
+    "https://ontopo.com/he/il/page/60460686"
+   ],
+   "cu": "בר יין",
+   "pr": 2,
+   "p": "+972-3-375-2996",
+   "bk": "https://ontopo.com/he/il/page/60460686"
   },
   "n13541796405": {
    "n": "Chacoli",
    "ok": "2025-12",
    "src": [
     "https://www.calcalist.co.il/style/article/s1jgfrrqlx",
-    "https://timeout.co.il/a-tingle-on-our-tongue-the-18-most-recommended-fish-restaurants-in-tel-aviv"
-   ]
+    "https://timeout.co.il/a-tingle-on-our-tongue-the-18-most-recommended-fish-restaurants-in-tel-aviv",
+    "https://timeout.co.il/%D7%A6%D7%90%D7%A7%D7%95%D7%9C%D7%99/"
+   ],
+   "cu": "דגים ופירות ים",
+   "pr": 3
   },
   "n10949049896": {
    "n": "El Mano",
@@ -30,7 +40,8 @@
    "src": [
     "https://www.ynetnews.com/food/article/bj5c11syxbg",
     "https://www.secrettelaviv.com/magazine/blog/toptens/best-thai-restaurants-in-tel-aviv"
-   ]
+   ],
+   "cu": "אסייתי"
   },
   "n2079186417": {
    "n": "Kaymak",
@@ -38,7 +49,9 @@
    "src": [
     "https://www.gillespudlowski.com/?p=426965",
     "https://spottedbylocals.com/tel-aviv/cafe-kaymak"
-   ]
+   ],
+   "cu": "טבעוני",
+   "pr": 1
   },
   "n12524361966": {
    "n": "Koko Neko",
@@ -47,7 +60,9 @@
    "src": [
     "https://timeout.co.il/קוקו-נקו/",
     "https://asianinisrael.netlify.app/2025/06/koko-neko"
-   ]
+   ],
+   "cu": "יפני / סושי",
+   "pr": 2
   },
   "n2078991187": {
    "n": "Little Prague",
@@ -58,7 +73,8 @@
    "bk": "https://littleprague.co.il/en/book-a-table-tel-aviv/",
    "src": [
     "https://littleprague.co.il/en/tel-aviv-branch/"
-   ]
+   ],
+   "cu": "אחר"
   },
   "n6312684887": {
    "n": "Ramesses",
@@ -67,7 +83,9 @@
    "src": [
     "https://ramessesjaffa.com",
     "https://timeout.co.il/the-most-recommended-restaurants-bars-and-cafes-in-the-flea-market/"
-   ]
+   ],
+   "cu": "מסעדת שף",
+   "p": "+972 53-487-0861"
   },
   "n13530068022": {
    "n": "Sachi Ramen & Sushi",
@@ -75,8 +93,11 @@
    "p": "+972 54-537-0076",
    "bk": "https://ontopo.com/en/il/page/15658141",
    "src": [
-    "https://ontopo.com/en/il/page/15658141"
-   ]
+    "https://ontopo.com/en/il/page/15658141",
+    "https://timeout.co.il/סאצי-סושי/"
+   ],
+   "cu": "יפני / סושי",
+   "pr": 2
   },
   "n5765067454": {
    "n": "Saint George",
@@ -87,7 +108,9 @@
    "bk": "https://ontopo.co.il/saintgeorgejaffa/",
    "src": [
     "http://www.saint-george.co.il/"
-   ]
+   ],
+   "cu": "בשרים",
+   "nm": "סנט ג'ורג'"
   },
   "n2079027451": {
    "n": "Tenat",
@@ -95,15 +118,20 @@
    "src": [
     "https://www.spottedbylocals.com/tel-aviv/tenat",
     "https://timeout.co.il/5-%d7%9e%d7%a1%d7%a2%d7%93%d7%95%d7%aa-%d7%90%d7%aa%d7%99%d7%95%d7%a4%d7%99%d7%95%d7%aa/"
-   ]
+   ],
+   "cu": "טבעוני",
+   "pr": 1
   },
   "n2078991188": {
    "n": "Thai 148",
    "ok": "2026-10",
    "src": [
     "https://www.jpost.com/consumerism/article-856472",
-    "https://www.secrettelaviv.com/magazine/blog/toptens/best-thai-restaurants-in-tel-aviv"
-   ]
+    "https://www.secrettelaviv.com/magazine/blog/toptens/best-thai-restaurants-in-tel-aviv",
+    "https://timeout.co.il/%d7%aa%d7%90%d7%99-148/"
+   ],
+   "cu": "אסייתי",
+   "pr": 2
   },
   "n4486515206": {
    "n": "The Streets",
@@ -111,7 +139,8 @@
    "w": "http://thestreets.co.il/streets-ibn-gbirol/",
    "src": [
     "http://thestreets.co.il/streets-ibn-gbirol/"
-   ]
+   ],
+   "cu": "קפה ובראנץ'"
   },
   "n12946465879": {
    "n": "Wat Sang",
@@ -119,7 +148,9 @@
    "src": [
     "https://timeout.co.il/japan-a-love-story-19-recommended-places-to-eat-sushi-in-tel-aviv",
     "https://asiansinisrael.pages.dev/2025/06/watsang-sushi/"
-   ]
+   ],
+   "cu": "יפני / סושי",
+   "pr": 2
   },
   "n904521171": {
    "n": "Yulia",
@@ -130,7 +161,10 @@
    "src": [
     "https://yuliatlv.co.il",
     "https://www.maariv.co.il/food/article-1155565"
-   ]
+   ],
+   "cu": "דגים ופירות ים",
+   "pr": 3,
+   "bk": "https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=5bd5864bd5d8560100b1a25e&source=tabit&type=future_reservation"
   },
   "n8638095777": {
    "n": "Ze Sushi Basel",
@@ -140,7 +174,8 @@
    "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5dba9ac8382c931737dafd76&locale=he-IL&source=website",
    "src": [
     "https://www.zesushi.co.il/basel/"
-   ]
+   ],
+   "cu": "יפני / סושי"
   },
   "n11428462557": {
    "n": "אושי אושי",
@@ -150,7 +185,9 @@
    "w": "https://oshioshi.co.il/%d7%a8%d7%9e%d7%aa-%d7%92%d7%9f/",
    "src": [
     "https://oshioshi.co.il/%d7%a8%d7%9e%d7%aa-%d7%92%d7%9f/"
-   ]
+   ],
+   "cu": "יפני / סושי",
+   "k": 1
   },
   "n12635329114": {
    "n": "אושי אושי",
@@ -168,7 +205,9 @@
    "w": "http://www.azuratlv.co.il/",
    "src": [
     "http://www.azuratlv.co.il/"
-   ]
+   ],
+   "cu": "חומוס ומזרחי",
+   "pr": 2
   },
   "n12140544814": {
    "n": "אלמז מנדל",
@@ -176,8 +215,13 @@
    "p": "+972 72-393-6452",
    "w": "https://almazrestaurant.co.il/",
    "src": [
-    "https://almazrestaurant.co.il/"
-   ]
+    "https://almazrestaurant.co.il/",
+    "https://almazrestaurant.co.il/%d7%aa%d7%a4%d7%a8%d7%99%d7%98/"
+   ],
+   "cu": "אחר",
+   "pr": 2,
+   "oh": "Su-Th 12:30-24:00; Fr 12:00+; Sa off",
+   "k": 1
   },
   "w149384937": {
    "n": "אמורה מיו",
@@ -187,8 +231,11 @@
    "w": "https://amoremio.co.il",
    "src": [
     "https://amoremio.co.il",
-    "https://ontopo.com/en/il/page/33995400"
-   ]
+    "https://ontopo.com/en/il/page/33995400",
+    "https://amoremio.co.il/wp-content/uploads/2026/11/Menu_HB_8_2026-FINAL.pdf"
+   ],
+   "cu": "איטלקי",
+   "pr": 2
   },
   "n12531978155": {
    "n": "ביינה",
@@ -197,8 +244,12 @@
    "bk": "https://ontopo.com/en/il/page/72067495",
    "src": [
     "https://ontopo.com/en/il/page/72067495",
-    "https://tabitisrael.co.il/site/%D7%91%D7%99%D7%99%D7%A0%D7%94"
-   ]
+    "https://tabitisrael.co.il/site/%D7%91%D7%99%D7%99%D7%A0%D7%94",
+    "https://timeout.co.il/%d7%91%d7%99%d7%99%d7%a0%d7%94-%d7%91%d7%99%d7%a7%d7%95%d7%a8%d7%aa/"
+   ],
+   "cu": "מסעדת שף",
+   "pr": 2,
+   "oh": "Su-Fr 18:00-23:00; Sa off"
   },
   "n12943589029": {
    "n": "בית גולדברג",
@@ -208,7 +259,9 @@
    "src": [
     "https://ontopo.com/he/il/page/40690308",
     "https://timeout.co.il/בית-גולדברג/"
-   ]
+   ],
+   "cu": "בר",
+   "pr": 2
   },
   "n2079208883": {
    "n": "ג'אסיה",
@@ -218,8 +271,11 @@
    "bk": "https://ontopo.com/en/il/page/jasia",
    "src": [
     "https://ontopo.com/en/il/page/jasia",
-    "https://wolt.com/fr/Israel/Tel Aviv/restaurant/jasia"
-   ]
+    "https://wolt.com/fr/Israel/Tel Aviv/restaurant/jasia",
+    "https://www.jasia.co.il"
+   ],
+   "cu": "אסייתי",
+   "w": "https://www.jasia.co.il"
   },
   "n12593349659": {
    "n": "גווידו",
@@ -228,8 +284,11 @@
    "bk": "https://tabitisrael.co.il/site/guido",
    "src": [
     "https://tabitisrael.co.il/site/guido",
-    "https://timeout.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%94%D7%90%D7%95%D7%9B%D7%9C-107/"
-   ]
+    "https://timeout.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%94%D7%90%D7%95%D7%9B%D7%9C-107/",
+    "https://timeout.co.il/%D7%92%D7%95%D7%95%D7%99%D7%93%D7%95/"
+   ],
+   "cu": "איטלקי",
+   "pr": 2
   },
   "n777400975": {
    "n": "גוסטו",
@@ -240,7 +299,10 @@
    "src": [
     "https://www.gusto.co.il",
     "https://ontopo.com/en/il/page/64592643"
-   ]
+   ],
+   "cu": "איטלקי",
+   "pr": 2,
+   "oh": "Mo-Su 12:00-23:00"
   },
   "n10931741105": {
    "n": "גרין רול סושי בק",
@@ -249,7 +311,9 @@
    "bk": "https://ontopo.com/en/il/page/thegreenroll",
    "src": [
     "https://ontopo.com/en/il/page/thegreenroll"
-   ]
+   ],
+   "cu": "יפני / סושי",
+   "vg": 1
   },
   "n5229027068": {
    "n": "דובנוב",
@@ -259,8 +323,12 @@
    "bk": "https://ontopo.com/en/il/page/dubnov",
    "src": [
     "https://www.dubnov8.com",
-    "https://ontopo.com/en/il/page/dubnov"
-   ]
+    "https://ontopo.com/en/il/page/dubnov",
+    "https://dubnov8.com/menu.html"
+   ],
+   "nm": "דובנוב 8",
+   "cu": "אחר",
+   "pr": 2
   },
   "n3928116060": {
    "n": "הבית התאילנדי",
@@ -271,8 +339,11 @@
    "bk": "https://ontopo.com/he/il/page/63465729",
    "src": [
     "https://www.thai-house.co.il/",
-    "https://ontopo.com/he/il/page/63465729"
-   ]
+    "https://ontopo.com/he/il/page/63465729",
+    "https://www.thai-house.co.il/menus/%d7%aa%d7%a4%d7%a8%d7%99%d7%98-%d7%a2%d7%a8%d7%91/"
+   ],
+   "cu": "אסייתי",
+   "pr": 3
   },
   "n10971402605": {
    "n": "הקטן",
@@ -281,8 +352,11 @@
    "bk": "https://ontopo.com/en/il/page/34194188",
    "src": [
     "https://ontopo.com/en/il/page/34194188",
-    "https://ontopo.com/magazine/news/hakatan-wine-month-tel-aviv"
-   ]
+    "https://ontopo.com/magazine/news/hakatan-wine-month-tel-aviv",
+    "https://www.mako.co.il/food-weekend/restaurant-reviews/Article-cf45d1ca1f10391027.htm"
+   ],
+   "cu": "מסעדת שף",
+   "pr": 2
   },
   "n5872689085": {
    "n": "השובך",
@@ -291,7 +365,8 @@
    "bk": "https://ontopo.com/en/il/page/23145484",
    "src": [
     "https://ontopo.com/en/il/page/23145484"
-   ]
+   ],
+   "cu": "קפה ובראנץ'"
   },
   "n4683691389": {
    "n": "התאילנדית בסמטת הר סיני",
@@ -299,8 +374,11 @@
    "p": "+97235666975",
    "bk": "https://ontopo.com/en/il/page/73730821",
    "src": [
-    "https://ontopo.com/en/il/page/73730821"
-   ]
+    "https://ontopo.com/en/il/page/73730821",
+    "https://timeout.co.il/התאילנדית-בהר-סיני-ביקורת/"
+   ],
+   "cu": "אסייתי",
+   "pr": 2
   },
   "n12944761385": {
    "n": "טברנה רומנה",
@@ -308,8 +386,11 @@
    "p": "0515145304",
    "bk": "https://ontopo.com/en/il/page/34745216",
    "src": [
-    "https://ontopo.com/en/il/page/34745216"
-   ]
+    "https://ontopo.com/en/il/page/34745216",
+    "https://www.mako.co.il/food-restaurants/restaurant-news/Article-4801ef8f3844091027.htm"
+   ],
+   "cu": "איטלקי",
+   "pr": 2
   },
   "n6653156709": {
    "n": "טוני ואסתר",
@@ -318,7 +399,8 @@
    "src": [
     "https://ontopo.com/en/il/page/45568743",
     "https://timeout.co.il/%D7%98%D7%95%D7%A0%D7%99-%D7%95%D7%90%D7%A1%D7%AA%D7%A8-%D7%A7%D7%A4%D7%94/"
-   ]
+   ],
+   "cu": "קפה ובראנץ'"
   },
   "n6578423186": {
    "n": "טורי סושי בר",
@@ -327,8 +409,11 @@
    "p": "+97236204777",
    "w": "https://torii.co.il/טורי-גבעתיים/",
    "src": [
-    "https://torii.co.il/טורי-גבעתיים/"
-   ]
+    "https://torii.co.il/טורי-גבעתיים/",
+    "https://torii.co.il/%d7%aa%d7%a4%d7%a8%d7%99%d7%98-%d7%92%d7%91%d7%a2%d7%aa%d7%99%d7%99%d7%9d/"
+   ],
+   "pr": 2,
+   "bk": "https://ontopo.com/85489721"
   },
   "n12114473827": {
    "n": "טריגר בשר ויין",
@@ -337,8 +422,12 @@
    "p": "+97239151144",
    "w": "https://triger.co.il/restaurant/triger/",
    "src": [
-    "https://triger.co.il/restaurant/triger/"
-   ]
+    "https://triger.co.il/restaurant/triger/",
+    "https://triger.co.il/wp-content/uploads/2025/12/TRIGER_FOOD_MENU_05-1.pdf"
+   ],
+   "cu": "בשרים",
+   "pr": 3,
+   "bk": "https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=5e984adcf54c9651ad10c52b&locale=he-IL&source=instagram"
   },
   "n2322594230": {
    "n": "לג'נדה",
@@ -347,7 +436,8 @@
    "src": [
     "https://www.legenda.co.il/branches/",
     "https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/"
-   ]
+   ],
+   "cu": "קינוחים"
   },
   "n11849335669": {
    "n": "לונל",
@@ -358,8 +448,11 @@
    "bk": "https://ontopo.com/he/il/page/77603651",
    "src": [
     "https://lunel.co.il",
-    "https://ontopo.com/en/il/page/77603651"
-   ]
+    "https://ontopo.com/en/il/page/77603651",
+    "https://lunel.co.il/wp-content/uploads/2026/10/LUNEL.pdf"
+   ],
+   "cu": "מסעדת שף",
+   "pr": 3
   },
   "n14378638891": {
    "n": "לופה",
@@ -367,7 +460,9 @@
    "src": [
     "https://timeout.co.il/lupa-%D7%9C%D7%95%D7%A4%D7%94/",
     "https://www.mako.co.il/food-restaurants/restaurant-news/Article-34b8bfef79bad91026.htm"
-   ]
+   ],
+   "cu": "איטלקי",
+   "pr": 2
   },
   "n12516314407": {
    "n": "למעלה",
@@ -375,8 +470,12 @@
    "p": "+972 3 682 3486",
    "bk": "https://ontopo.com/he/il/page/lemalatlv",
    "src": [
-    "https://ontopo.com/he/il/page/lemalatlv"
-   ]
+    "https://ontopo.com/he/il/page/lemalatlv",
+    "https://timeout.co.il/לה-מעלה-ביקורת/"
+   ],
+   "cu": "מקסיקני",
+   "pr": 2,
+   "nm": "לה מעלה"
   },
   "n4958503425": {
    "n": "מינה טומיי",
@@ -384,8 +483,11 @@
    "w": "http://www.minna-tomei.co.il/",
    "src": [
     "http://www.minna-tomei.co.il/",
-    "https://wolt.com/he/isr/tel-aviv/restaurant/minna-tomei-tel-aviv"
-   ]
+    "https://wolt.com/he/isr/tel-aviv/restaurant/minna-tomei-tel-aviv",
+    "https://www.minna-tomei.co.il/wp-content/uploads/2026/11/MT_Reshet_hebrew1154_TelAviv_3_WEB.pdf"
+   ],
+   "cu": "אסייתי",
+   "pr": 2
   },
   "n705556743": {
    "n": "מציצים",
@@ -395,8 +497,11 @@
    "bk": "https://ontopo.com/en/il/page/82708640",
    "src": [
     "https://ontopo.com/en/il/page/82708640",
-    "https://timeout.co.il/חוף-מציצים-חדש/"
-   ]
+    "https://timeout.co.il/חוף-מציצים-חדש/",
+    "https://bayz.co.il/wp-content/uploads/2024/06/Breakfast_mezizim_29.5-merged.pdf"
+   ],
+   "cu": "דגים ופירות ים",
+   "pr": 3
   },
   "n2079202591": {
    "n": "מקום של בשר",
@@ -407,7 +512,8 @@
    "src": [
     "https://www.makomshelbasar.co.il",
     "https://ontopo.com/en/il/page/48470741"
-   ]
+   ],
+   "oh": "Su-Th 12:00-23:00; Fr-Sa 12:00-23:30"
   },
   "n2079214805": {
    "n": "משק ברזילי",
@@ -416,8 +522,11 @@
    "w": "https://www.meshekbarzilay.co.il/",
    "bk": "https://ontopo.co.il/meshekbarzilay",
    "src": [
-    "https://www.meshekbarzilay.co.il/המסעדה/"
-   ]
+    "https://www.meshekbarzilay.co.il/המסעדה/",
+    "https://www.meshekbarzilay.co.il/%d7%aa%d7%a4%d7%a8%d7%99%d7%98%d7%99%d7%9d/%d7%91%d7%99%d7%a0%d7%99%d7%99%d7%9d/"
+   ],
+   "cu": "טבעוני",
+   "pr": 2
   },
   "n8868656017": {
    "n": "סטודיו",
@@ -425,8 +534,11 @@
    "p": "+97235444024",
    "bk": "https://ontopo.com/en/il/page/96411086",
    "src": [
-    "https://ontopo.com/en/il/page/96411086"
-   ]
+    "https://ontopo.com/en/il/page/96411086",
+    "https://www.studio-cafe.co.il"
+   ],
+   "pr": 2,
+   "w": "https://www.studio-cafe.co.il"
   },
   "n5547241521": {
    "n": "פו סושי",
@@ -436,7 +548,9 @@
    "w": "http://www.fusushi.co.il",
    "src": [
     "http://www.fusushi.co.il"
-   ]
+   ],
+   "cu": "יפני / סושי",
+   "bk": "https://tgm-rsv.tabit.cloud/loading/590b1a4ef85bdd2200c77eec/"
   },
   "n12588084718": {
    "n": "פוקישופ",
@@ -445,7 +559,9 @@
    "src": [
     "https://pokeshop.co.il/",
     "https://wolt.com/en/isr/tel-aviv/restaurant/pokeshop-rothschild"
-   ]
+   ],
+   "cu": "אחר",
+   "pr": 2
   },
   "n1308752064": {
    "n": "פילדלפיה",
@@ -456,7 +572,9 @@
    "bk": "https://tabitisrael.co.il/tabit-order?siteName=phili_tlv&step=enter",
    "src": [
     "https://www.philadelphia.co.il/branches"
-   ]
+   ],
+   "cu": "אחר",
+   "pr": 1
   },
   "n11681523242": {
    "n": "פריז טקסס גבעתיים",
@@ -464,7 +582,9 @@
    "src": [
     "https://timeout.co.il/מנות-חריפות-תל-אביב/",
     "https://www.maariv.co.il/food/foodnews/article-1336510"
-   ]
+   ],
+   "cu": "המבורגר",
+   "pr": 2
   },
   "n12244120937": {
    "n": "קפה אירופה",
@@ -473,8 +593,11 @@
    "bk": "https://ontopo.com/en/il/page/cafeeuropa",
    "src": [
     "https://ontopo.com/en/il/page/cafeeuropa",
-    "https://timeout.co.il/topic/קפה-אירופה/"
-   ]
+    "https://timeout.co.il/topic/קפה-אירופה/",
+    "https://www.israelhayom.co.il/food/food-news/article/16211748"
+   ],
+   "cu": "ים-תיכוני",
+   "pr": 3
   },
   "n5195799584": {
    "n": "קפה ז'ולי",
@@ -484,7 +607,8 @@
    "w": "https://cafejolie-tlv.co.il/",
    "src": [
     "https://cafejolie-tlv.co.il/"
-   ]
+   ],
+   "cu": "קפה ובראנץ'"
   },
   "n2145835145": {
    "n": "קפה נואר",
@@ -493,8 +617,13 @@
    "bk": "https://ontopo.com/en/il/page/20527837",
    "src": [
     "https://ontopo.com/en/il/page/20527837",
-    "https://timeout.co.il/topic/קפה-נואר/"
-   ]
+    "https://timeout.co.il/topic/קפה-נואר/",
+    "https://www.cafenoir.co.il/menu/food"
+   ],
+   "cu": "אחר",
+   "pr": 3,
+   "oh": "Mo-Su 12:00-23:00",
+   "w": "https://www.cafenoir.co.il"
   },
   "n12952209648": {
    "n": "רוטשילד 48",
@@ -505,7 +634,10 @@
    "bk": "https://tabitisrael.co.il/site/r48-brasserie",
    "src": [
     "https://r48.co.il/he/רוטשילד-48-בראסרי/"
-   ]
+   ],
+   "nm": "רוטשילד 48 בראסרי",
+   "cu": "אחר",
+   "pr": 3
   },
   "n2079181976": {
    "n": "רוסטיקו",
@@ -514,7 +646,9 @@
    "bk": "https://ontopo.com/en/il/page/37905695",
    "src": [
     "https://ontopo.com/en/il/page/37905695"
-   ]
+   ],
+   "cu": "איטלקי",
+   "w": "https://rustico.co.il/basel"
   },
   "n6473212377": {
    "n": "שניצל קומפני",
@@ -523,15 +657,24 @@
    "w": "https://www.scompany.co.il/",
    "src": [
     "https://www.scompany.co.il/branches"
-   ]
+   ],
+   "cu": "אחר"
   },
   "n950284108": {
    "n": "שצ'ופק",
    "ok": "2026-11",
    "src": [
     "https://timeout.co.il/מסעדות-דגים-תל-אביב/",
-    "https://www.mako.co.il/food-restaurants/restaurant-news/Article-58a15f6d5bcaf91027.htm"
-   ]
+    "https://www.mako.co.il/food-restaurants/restaurant-news/Article-58a15f6d5bcaf91027.htm",
+    "https://shtsupak.co.il/",
+    "https://shtsupak.co.il/menu/"
+   ],
+   "cu": "דגים ופירות ים",
+   "pr": 3,
+   "oh": "Mo-We 12:00-22:30; Th-Fr 12:00-23:00; Sa 12:00-22:00; Su off",
+   "p": "+972 3-544-1973",
+   "w": "https://shtsupak.co.il/",
+   "bk": "https://ontopo.com/he/il/page/shtsupak"
   },
   "w149270614": {
    "n": "223 Bar",
@@ -540,7 +683,8 @@
    "w": "https://www.223.co.il",
    "src": [
     "https://www.223.co.il"
-   ]
+   ],
+   "cu": "בר קוקטיילים"
   },
   "n6317085385": {
    "n": "Akbar",
@@ -548,7 +692,9 @@
    "src": [
     "https://www.spottedbylocals.com/tel-aviv/akbar-bar/",
     "https://timeout.co.il/the-most-recommended-restaurants-bars-and-cafes-in-the-flea-market/"
-   ]
+   ],
+   "cu": "בר",
+   "pr": 2
   },
   "n2659433568": {
    "n": "Beer Bazaar",
@@ -559,7 +705,8 @@
    "src": [
     "https://www.beerbazaar.co.il/pages/סניפים",
     "https://ontopo.com/he/il/page/16680506"
-   ]
+   ],
+   "k": 1
   },
   "n10693747873": {
    "n": "Beer Bazaar Habima",
@@ -571,7 +718,8 @@
    "src": [
     "https://www.beerbazaar.co.il/pages/סניפים",
     "https://ontopo.com/he/il/page/76503731"
-   ]
+   ],
+   "cu": "פאב"
   },
   "n10814392959": {
    "n": "Beer Garden",
@@ -581,8 +729,12 @@
    "w": "https://www.beergarden.co.il",
    "bk": "https://ontopo.co.il/beergardensarona",
    "src": [
-    "https://www.beergarden.co.il"
-   ]
+    "https://www.beergarden.co.il",
+    "https://www.beergarden.co.il/sarona/59-2/"
+   ],
+   "cu": "פאב",
+   "pr": 2,
+   "nm": "בירגארדן פאולנר שרונה"
   },
   "n12102940425": {
    "n": "Bellboy",
@@ -591,8 +743,11 @@
    "w": "https://bellboygroup.com/bellboy-tlv/",
    "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ec15cb3356df600bd22b6f2&locale=he-IL&source=website",
    "src": [
-    "https://bellboygroup.com/bellboy-tlv/"
-   ]
+    "https://bellboygroup.com/bellboy-tlv/",
+    "https://bellboygroup.com/wp-content/uploads/2026/11/Bellboy-TLV-Drink-Menu-Oct-2026.pdf"
+   ],
+   "cu": "בר קוקטיילים",
+   "pr": 2
   },
   "n12115124837": {
    "n": "Brava Gente",
@@ -602,7 +757,8 @@
    "src": [
     "https://ontopo.com/he/il/page/96588689",
     "https://timeout.co.il/brava-gente/"
-   ]
+   ],
+   "cu": "בר יין"
   },
   "n2079194771": {
    "n": "Cheers Rock Bar",
@@ -610,16 +766,21 @@
    "p": "+972548794860",
    "w": "https://www.cheerstlv.com",
    "src": [
-    "https://www.cheerstlv.com"
-   ]
+    "https://www.cheerstlv.com",
+    "https://www.cheerstlv.com/menu"
+   ],
+   "cu": "בר",
+   "pr": 2
   },
   "n4430683196": {
    "n": "Mayer House",
    "ok": "2026-11",
    "src": [
     "https://www.maariv.co.il/lifestyle/travel/article-1198452",
-    "https://timeout.co.il/רופטופ-תל-אביב/"
-   ]
+    "https://timeout.co.il/רופטופ-תל-אביב/",
+    "https://jpost.com/consumerism/article-855186"
+   ],
+   "cu": "בר קוקטיילים"
   },
   "n347264446": {
    "n": "Molly Bloom's",
@@ -630,7 +791,8 @@
    "src": [
     "https://molly-blooms.com",
     "https://www.jpost.com/must/article-874931"
-   ]
+   ],
+   "cu": "פאב"
   },
   "n10175901222": {
    "n": "Opa",
@@ -638,8 +800,12 @@
    "p": "052-5838245",
    "w": "https://www.opatlv.co.il/",
    "src": [
-    "https://www.opatlv.co.il/"
-   ]
+    "https://www.opatlv.co.il/",
+    "https://www.jpost.com/food-recipes/article-879266"
+   ],
+   "cu": "טבעוני",
+   "pr": 4,
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=62692211f0e80682598dc05b&type=future_reservation&locale=he-IL&source=website"
   },
   "n8977950106": {
    "n": "Stolero",
@@ -649,8 +815,11 @@
    "w": "https://stolero.co.il/",
    "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=60f0229368816265f1d41ba5&source=website",
    "src": [
-    "https://stolero.co.il/"
-   ]
+    "https://stolero.co.il/",
+    "https://stolero.co.il/%d7%aa%d7%a4%d7%a8%d7%99%d7%98/"
+   ],
+   "cu": "ים-תיכוני",
+   "pr": 3
   },
   "n13506937918": {
    "n": "Suramare",
@@ -658,7 +827,8 @@
    "w": "https://suramare.co.il/",
    "src": [
     "https://suramare.co.il/home"
-   ]
+   ],
+   "cu": "בר קוקטיילים"
   }
  }
 }
