@@ -1,0 +1,26 @@
+name: gemini-check
+# Gemini as a third checker: writes data/gemini-flags-tlv.json (leads only, never applied to the catalog directly).
+on:
+  workflow_dispatch:
+    inputs:
+      limit: {description: "Places per run", default: "150"}
+  schedule:
+    - cron: "33 5 * * *"   # daily, 07:33 Israel time
+permissions:
+  contents: write
+concurrency:
+  group: gemini
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: osm-check}
+      - env: {GEMINI_API_KEY: "${{ secrets.GEMINI_API_KEY }}"}
+        run: python3 -u tools/gemini_check.py data/places-tlv.json data/gemini-flags-tlv.json "${{ inputs.limit || '150' }}"
+      - run: |
+          git config user.name "fomo-bot"; git config user.email "fomo-bot@users.noreply.github.com"
+          git add data/gemini-flags-tlv.json 2>/dev/null && git commit -qm "Gemini leads" || exit 0
+          git pull -q --rebase origin osm-check && git push -q origin HEAD:osm-check

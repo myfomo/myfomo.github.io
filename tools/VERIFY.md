@@ -11,6 +11,10 @@ on the `osm-check` branch of `myfomo/myfomo.github.io`. The catalog is `data/pla
 3. News and guides: Time Out Tel Aviv, ynet, Maariv, Walla, Haaretz, Calcalist, Mako, ice, Israel Hayom.
 4. Never use Google Maps / Google search snippets as a data source, never copy reviews, never use Wolt's internal API.
 
+5. **Gemini leads** (`data/gemini-flags-tlv.json`, `places[id]`): status open/closed/moved + evidence URLs.
+   A lead only — open its evidence URLs and decide by the rules below; never copy a Gemini answer as fact,
+   never store hours/phones from it. Start each run with queue places that Gemini flagged `closed` or `moved`.
+
 ## Decision rules (no guessing)
 - **ok (active)**: own site is live and names this place/branch, OR an active Tabit/Ontopo booking page for this branch,
   OR two independent recent sources (2025–2026) agree it operates.
