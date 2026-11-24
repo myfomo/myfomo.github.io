@@ -1,0 +1,13 @@
+"""Apply verified status to the catalog: closed places (tools/closed-<city>.json) get "x" and are hidden by the app;
+places whose own website answers and names them get "ok" (date of the check)."""
+import json, sys, os, time
+cat, closed, sitecheck = sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else ""
+D = json.load(open(cat)); C = json.load(open(closed))["closed"]
+S = json.load(open(sitecheck)) if sitecheck and os.path.exists(sitecheck) else {}
+today = time.strftime("%Y-%m-%d"); nx = nv = 0
+for p in D["places"]:
+    if p["id"] in C: p["x"] = C[p["id"]]["d"]; nx += 1
+    s = S.get(p["id"])
+    if s and s.get("st") == 200 and s.get("name") and not s.get("closed_txt") and not p.get("x"): p["ok"] = today; nv += 1
+json.dump(D, open(cat, "w"), ensure_ascii=False, separators=(",", ":"))
+print("closed", nx, "verified by own site", nv)

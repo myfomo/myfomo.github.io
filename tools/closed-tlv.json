@@ -1,0 +1,22 @@
+{"note":"Places confirmed closed by reliable news sources (mostly Time Out Tel Aviv closure lists and closure articles). Applied to the catalog by tools/apply_status.py; closed places are hidden in the app.",
+"closed":{
+"n723220062":{"n":"בנדיקט בן יהודה 171","d":"2025-07","src":["https://timeout.co.il/%d7%91%d7%a0%d7%93%d7%99%d7%a7%d7%98-%d7%a1%d7%92%d7%99%d7%a8%d7%94/"]},
+"n721908107":{"n":"בנדיקט רוטשילד","d":"2025-07","src":["https://timeout.co.il/%d7%91%d7%a0%d7%93%d7%99%d7%a7%d7%98-%d7%a1%d7%92%d7%99%d7%a8%d7%94/","https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"]},
+"n9866149822":{"n":"אלגריה","d":"2024-12","src":["https://timeout.co.il/סגירות-מלחמה-שנה/","https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"]},
+"n4875397221":{"n":"פורטונה דל מאר","d":"2024","src":["https://timeout.co.il/סגירות-מלחמה-שנה/","https://timeout.co.il/סגירת-מסעדות-נוב-0811/"]},
+"n9215660717":{"n":"416 (הארבעה 16)","d":"2023-10","src":["https://timeout.co.il/416-נסגרת/","https://timeout.co.il/סגירות-מלחמה-שנה/"]},
+"n9587310144":{"n":"416","d":"2023-10","src":["https://timeout.co.il/416-נסגרת/"]},
+"n2078982726":{"n":"ספוטניק אלנבי 122","d":"2024","src":["https://timeout.co.il/סגירות-מלחמה-שנה/","https://timeout.co.il/סגירת-מסעדות-נוב-0811/"]},
+"n4694933771":{"n":"ספוטניק אלנבי 122","d":"2024","src":["https://timeout.co.il/סגירות-מלחמה-שנה/","https://timeout.co.il/סגירת-מסעדות-נוב-0811/"]},
+"n8862063017":{"n":"מייקר'ס","d":"2024","src":["https://timeout.co.il/סגירות-מלחמה-שנה/","https://timeout.co.il/סגירת-מסעדות-נוב-0811/"]},
+"n1376048247":{"n":"בר הגאולה","d":"2023","src":["https://timeout.co.il/סגירות-מלחמה-שנה/","https://timeout.co.il/סגירת-מסעדות-נוב-0811/"]},
+"n2079006815":{"n":"נחמה וחצי","d":"2025","src":["https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"]},
+"n2556132735":{"n":"גלבי","d":"2025","src":["https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"]},
+"n11247029737":{"n":"אורבי","d":"2025","src":["https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"]},
+"n5273498821":{"n":"סאלוף ובניו","d":"2025-05","src":["https://timeout.co.il/%d7%a1%d7%90%d7%9c%d7%95%d7%a3-%d7%95%d7%91%d7%a0%d7%99%d7%95-%d7%a1%d7%92%d7%99%d7%a8%d7%94/","https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"]},
+"n4444435993":{"n":"ווסט סייד","d":"2026-01","src":["https://timeout.co.il/ווסט-סייד-סגירה/","https://timeout.co.il/5-%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-0126/"]},
+"n12184187992":{"n":"בושוויק","d":"2026-02","src":["https://timeout.co.il/בושוויק-מרלוזה-סגירה/"]},
+"n2078994157":{"n":"קפה שפירא","d":"2026-05","src":["https://timeout.co.il/%D7%A1%D7%92%D7%99%D7%A8%D7%95%D7%AA-05-06-26/","https://timeout.co.il/topic/סגירה/"]},
+"n6929570285":{"n":"אריא","d":"2026-05","src":["https://timeout.co.il/%D7%A1%D7%92%D7%99%D7%A8%D7%95%D7%AA-05-06-26/","https://timeout.co.il/%d7%90%d7%95%d7%90%d7%96%d7%99%d7%a1-%d7%a1%d7%92%d7%99%d7%a8%d7%94/"]},
+"n5961333787":{"n":"אואזיס","d":"2026-05","src":["https://timeout.co.il/%d7%90%d7%95%d7%90%d7%96%d7%99%d7%a1-%d7%a1%d7%92%d7%99%d7%a8%d7%94/","https://timeout.co.il/%D7%A1%D7%92%D7%99%D7%A8%D7%95%D7%AA-05-06-26/"]}
+}}
