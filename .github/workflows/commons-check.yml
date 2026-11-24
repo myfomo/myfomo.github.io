@@ -8,7 +8,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: catalog
+  group: commons-check
   cancel-in-progress: false
 jobs:
   check:
