@@ -1,0 +1,25 @@
+name: commons-check
+# Report only: which catalog places have a freely licensed photo on Wikimedia Commons. Does not change the catalog or the site.
+on:
+  workflow_dispatch:
+  push:
+    branches: [osm-check]
+    paths: [tools/commons_check.py, .github/workflows/commons-check.yml]
+permissions:
+  contents: write
+concurrency:
+  group: catalog
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: osm-check}
+      - run: python3 tools/commons_check.py data/places-tlv.json data/commons-check-tlv.json
+      - name: commit the report to osm-check
+        run: |
+          git config user.name "fomo-bot"; git config user.email "fomo-bot@users.noreply.github.com"
+          git add data/commons-check-tlv.json && git commit -qm "Commons photo check report (no catalog change)" || echo "no change"
+          git pull -q --rebase origin osm-check && git push -q origin HEAD:osm-check
