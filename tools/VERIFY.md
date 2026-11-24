@@ -15,6 +15,12 @@ on the `osm-check` branch of `myfomo/myfomo.github.io`. The catalog is `data/pla
    A lead only — open its evidence URLs and decide by the rules below; never copy a Gemini answer as fact,
    never store hours/phones from it. Start each run with queue places that Gemini flagged `closed` or `moved`.
 
+## Minimum effort per place (do not skip)
+At least: (a) one web search for the name + "תל אביב", (b) the own website if one exists or is found,
+(c) a search for the place on Tabit and on Ontopo, (d) one search for closure news ("נסגרה"/"closed").
+In `note`, list in a few words what was found (e.g. "Ontopo active; site down; Time Out 2026-03").
+If exactly one recent source supports it, use result `single` (not `none`) and give that source's URL in `note`.
+
 ## Decision rules (no guessing)
 - **ok (active)**: own site is live and names this place/branch, OR an active Tabit/Ontopo booking page for this branch,
   OR two independent recent sources (2025–2026) agree it operates.
@@ -27,7 +33,7 @@ on the `osm-check` branch of `myfomo/myfomo.github.io`. The catalog is `data/pla
 ## Writing results
 - Active / details → `tools/verified-tlv.json` under `places[id]`: `{"n": name, "ok": "YYYY-MM", "oh"?, "p"?, "w"?, "bk"?, "src": [url, ...]}`.
 - Closed → `tools/closed-tlv.json` under `closed[id]`: `{"n": name, "d": "YYYY or YYYY-MM", "src": [url, ...]}`.
-- Every checked id → `tools/verify-queue.json` `done[id] = {"r": "ok|closed|none|conflict", "note"?: short English note}`.
+- Every checked id → `tools/verify-queue.json` `done[id] = {"r": "ok|closed|single|none|conflict", "note": short English note}`.
 - Validate JSON (`python3 -m json.tool`) before committing.
 
 ## Publish
@@ -39,3 +45,8 @@ The push runs the `osm-check` workflow, which applies the results and publishes 
 ## Report (Hebrew)
 Short summary to the user: how many checked / ok / closed / no source / conflict, places left in the queue,
 and the names of the places found closed.
+
+## Phase 2 — when `order` is used up
+Re-check, 50 per run, the ids in `done` with `r` = `conflict` or `single` (then `none`), and catalog places that are
+active but missing hours (`oh`), phone (`p`) or website (`w`). Look only for what is missing and resolve conflicts by
+the same rules; update `done[id]` (add `"r2"` with the new result and date). Report what was resolved and what still needs the user.
