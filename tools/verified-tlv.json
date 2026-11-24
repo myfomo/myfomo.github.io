@@ -133,15 +133,6 @@
    "cu": "אסייתי",
    "pr": 2
   },
-  "n4486515206": {
-   "n": "The Streets",
-   "ok": "2026-11",
-   "w": "http://thestreets.co.il/streets-ibn-gbirol/",
-   "src": [
-    "http://thestreets.co.il/streets-ibn-gbirol/"
-   ],
-   "cu": "קפה ובראנץ'"
-  },
   "n12946465879": {
    "n": "Wat Sang",
    "ok": "2025-11",
@@ -1107,6 +1098,86 @@
    "src": [
     "https://www.6inmay.co.il",
     "https://wolt.com/he/isr/tel-aviv/restaurant/may-6"
+   ]
+  },
+  "n13227246101": {
+   "n": "Stephan",
+   "ok": "2026-11",
+   "nm": "Stefan",
+   "cu": "קינוחים",
+   "pr": 1,
+   "p": "+97236799788",
+   "w": "https://www.stefanbakery.com/",
+   "src": [
+    "https://www.stefanbakery.com/",
+    "https://timeout.co.il/%d7%a9%d7%98%d7%a4%d7%9f-2/"
+   ]
+  },
+  "n12032015683": {
+   "n": "mae",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 1,
+   "w": "https://maecafe.com",
+   "src": [
+    "https://maecafe.com",
+    "https://timeout.co.il/mae-שרונה/"
+   ]
+  },
+  "n12168362960": {
+   "n": "Teawei",
+   "ok": "2026-05",
+   "cu": "קינוחים",
+   "pr": 1,
+   "src": [
+    "https://wolt.com/ar/isr/tel-aviv/restaurant/tea-wei-2",
+    "https://asianinisrael.netlify.app/2026/05/bubble-tea-israel/"
+   ]
+  },
+  "n4922283576": {
+   "n": "Xo Ho",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 08:00-16:00; Fr 08:00-15:00; Sa off",
+   "p": "054-7105855",
+   "w": "http://www.cafexoho.com",
+   "k": 1,
+   "src": [
+    "http://www.cafexoho.com"
+   ]
+  },
+  "n2079034257": {
+   "n": "Neroli",
+   "ok": "2026-11",
+   "cu": "טבעוני",
+   "oh": "Su-Th 08:30-20:00; Fr 08:30-16:00; Sa off",
+   "p": "+972-3-510-7869",
+   "w": "http://neroli.co.il",
+   "vg": 1,
+   "src": [
+    "http://neroli.co.il"
+   ]
+  },
+  "n13516609157": {
+   "n": "Plaza Café",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "p": "073-331-9415",
+   "w": "https://plazacafe.co.il/",
+   "bk": "http://ontopo.com/50461915",
+   "src": [
+    "https://plazacafe.co.il/",
+    "http://ontopo.com/50461915"
+   ]
+  },
+  "n4737517953": {
+   "n": "cafelix - Jaffa",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "p": "+972-3-639-2687",
+   "w": "https://www.cafelix.co.il/",
+   "src": [
+    "https://www.cafelix.co.il/"
    ]
   }
  }

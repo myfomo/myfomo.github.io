@@ -1520,7 +1520,10 @@
   },
   "n4486515206": {
    "r": "ok",
-   "note": "chain branch page Ibn Gabirol"
+   "note": "chain branch page Ibn Gabirol",
+   "r2": "conflict",
+   "d2": "2026-11",
+   "note2": "Time Out 2025-10 says chain had two branches \"at its peak\" and King George closed; Ibn Gabirol branch page may be stale"
   },
   "n4706508216": {
    "r": "closed",
@@ -3316,6 +3319,206 @@
   "n13530063787": {
    "r": "ok",
    "note": "Own site live Dizengoff 141 (catalog Ben Ami 13; address fix added); Wolt same"
+  },
+  "n13516574988": {
+   "r": "none",
+   "note": "Nothing found; road-only address"
+  },
+  "n12723654096": {
+   "r": "none",
+   "note": "Time Out 2019/2022 Kfar Giladi 48 only"
+  },
+  "n11428462558": {
+   "r": "none",
+   "note": "Rebar branch list blocked; Landau unverified"
+  },
+  "n13227246101": {
+   "r": "ok",
+   "note": "Own site live, Tchernichovsky 21; Time Out 2024 prices"
+  },
+  "n2217192909": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n904502523": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12032015683": {
+   "r": "ok",
+   "note": "Own site lists Sarona branch David Elazar 17"
+  },
+  "n759498364": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n5977653886": {
+   "r": "single",
+   "note": "Only atly: hummus at Rabbi Meir 21 https://www.atly.com/location/חומוס-אסי-ועדנן-Hummus-Asi-and-Adnan"
+  },
+  "n1077311494": {
+   "r": "conflict",
+   "note": "Wolt/enjoyingisrael: Aroma Dizengoff-Gordon at Dizengoff 132, catalog 123; official page blocked"
+  },
+  "n12064670866": {
+   "r": "none",
+   "note": "Time Out 2021 only (Yona HaNavi 43)"
+  },
+  "n6005386185": {
+   "r": "none",
+   "note": "Time Out 2018/2019 only"
+  },
+  "n4922283687": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12168362960": {
+   "r": "ok",
+   "note": "Wolt live Bograshov 21 + asianinisrael 2026-05 guide"
+  },
+  "n1207157419": {
+   "r": "none",
+   "note": "No cafe Uno on Shaul HaMelech"
+  },
+  "n4496601591": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n8543934096": {
+   "r": "none",
+   "note": "Rebar branch list blocked; Sokolov unverified"
+  },
+  "n12133763256": {
+   "r": "closed",
+   "note": "Time Out 2025-07: closed after losing municipal tender (new cafe 'Aluf' opened 2025-12 at same spot)"
+  },
+  "n6226557904": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n1102234655": {
+   "r": "none",
+   "note": "Aroma site blocked; no Aharon Becker branch found"
+  },
+  "n1709219223": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n6515917557": {
+   "r": "closed",
+   "note": "Time Out 2022-11: 'former' Petit cafe on Frenkel"
+  },
+  "n8875616074": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n1643304613": {
+   "r": "closed",
+   "note": "Time Out 2025-10: King George 70 closing 15.11.2025"
+  },
+  "n905545300": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n6005408985": {
+   "r": "closed",
+   "note": "Time Out 2021-03: Cafe Bialik closed after 25 years"
+  },
+  "n1309308446": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n672126879": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n558793757": {
+   "r": "none",
+   "note": "No Lipkin-Shahak branch on official list"
+  },
+  "n1688194375": {
+   "r": "single",
+   "note": "Official Aroma branch page 'Heichal Menora' exists (blocked) https://www.aroma.co.il/store/%D7%94%D7%99%D7%9B%D7%9C-%D7%9E%D7%A0%D7%95%D7%A8%D7%94/"
+  },
+  "n10766084706": {
+   "r": "closed",
+   "note": "Time Out 2026-05: Jaffa flea-market cafe Niso closed after ~10 years"
+  },
+  "n10636910356": {
+   "r": "none",
+   "note": "Rebar branch list blocked; Jabotinsky unverified"
+  },
+  "n4587267164": {
+   "r": "none",
+   "note": "Maariv 2016 / Time Out 2017 only"
+  },
+  "n12110200617": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n4922283576": {
+   "r": "ok",
+   "note": "Own site: moved to Ben Yehuda 73 (address fix added); kosher certificate on site"
+  },
+  "n6005408785": {
+   "r": "single",
+   "note": "Time Out 2025-09 specialty coffee: cafe at Ahad Ha'am 51 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/"
+  },
+  "n1688194306": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n1137245914": {
+   "r": "none",
+   "note": "Own site unreachable; nothing else"
+  },
+  "n965950123": {
+   "r": "none",
+   "note": "Aroma site blocked; Ben Gurion branch unverified"
+  },
+  "n2794190068": {
+   "r": "none",
+   "note": "Aroma site blocked; only directories"
+  },
+  "n2079034257": {
+   "r": "ok",
+   "note": "Own site live Lilienblum 3, raw vegan diner"
+  },
+  "n13516609157": {
+   "r": "ok",
+   "note": "Own site + Ontopo active: Kikar Tzina Dizengoff 3 (address fix added)"
+  },
+  "n6760821216": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n10296516877": {
+   "r": "none",
+   "note": "Time Out 2017 only; Noga branch maybe replaced"
+  },
+  "n5479953359": {
+   "r": "none",
+   "note": "Only aggregators; own site unreachable"
+  },
+  "n4737517953": {
+   "r": "ok",
+   "note": "Own site lists Sgula branch, Noga complex"
+  },
+  "n6970440385": {
+   "r": "none",
+   "note": "Only atly; own site unreachable"
+  },
+  "n2558517112": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n715207449": {
+   "r": "none",
+   "note": "Aroma site blocked; Kikar Schnitzer unverified"
+  },
+  "n1851266184": {
+   "r": "none",
+   "note": "Aroma site blocked; maybe Opera Tower branch, unconfirmed"
   }
  }
 }
