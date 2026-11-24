@@ -152,6 +152,13 @@
    "field": "phone",
    "osm": "+972 035225005",
    "site": "035225005"
+  },
+  {
+   "id": "n10969247136",
+   "n": "הלבנטיני",
+   "field": "phone",
+   "osm": "+972 36324444",
+   "site": "0778048601"
   }
  ],
  "rejected_sites": [
@@ -324,8 +331,8 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 66,
- "phone_multi_skipped": 13,
+ "phone_confirmed": 70,
+ "phone_multi_skipped": 16,
  "coverage_after": {
   "address": "1321 (100%)",
   "hours": "346 (26%)",
@@ -334,5 +341,5 @@
   "cuisine": "934 (71%)",
   "extra_names": "743 (56%)"
  },
- "conflicts_n": 20
+ "conflicts_n": 21
 }
