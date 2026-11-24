@@ -1,0 +1,63 @@
+{
+ "fix": {
+  "n12768157195": {
+   "name": "קלבריה",
+   "old": "המלך ג׳ורג׳ 29",
+   "new": "שדרות בן ציון 1",
+   "status": "applied",
+   "moved_m": 520
+  },
+  "n12140324986": {
+   "name": "באבג’ים",
+   "old": "דרך שלמה 44",
+   "new": "דרך שלמה 43",
+   "status": "applied",
+   "moved_m": 37
+  },
+  "n725462337": {
+   "name": "Zappa",
+   "old": "ראול ולנברג 24",
+   "new": "דרך מנחם בגין 144",
+   "status": "blocked",
+   "why": "address already used by: מוזס (n9946189682, מנחם בגין 144א), ארקפה (c-ארקפה-דרךמנחםבגין144, דרך מנחם בגין 144)"
+  },
+  "n11345119701": {
+   "name": "אלברט 1943",
+   "old": "מל\"ן",
+   "new": "אלנבי 42",
+   "status": "blocked",
+   "why": "another place is within 12 m: מסעדת לונג סנג (n6759353882)"
+  },
+  "n6312684887": {
+   "name": "Ramesses",
+   "old": "בן פרחיה",
+   "new": "הגימנסיה העברית 7",
+   "status": "blocked",
+   "why": "no coordinates found for the new address"
+  },
+  "n2079214805": {
+   "name": "משק ברזילי",
+   "old": "אחד העם 8",
+   "new": "אחד העם 6",
+   "status": "applied",
+   "moved_m": 0
+  }
+ },
+ "dup": {
+  "n1185083191": {
+   "status": "merged",
+   "into": "n6759353882",
+   "name": "מסעדת לונג סנג"
+  },
+  "n7167094871": {
+   "status": "merged",
+   "into": "n2079214805",
+   "name": "Meshek Barzilay"
+  },
+  "n12505208002": {
+   "status": "merged",
+   "into": "n2079001406",
+   "name": "The Prince"
+  }
+ }
+}

@@ -1,13 +1,13 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 455,
+ "site_checked": 454,
  "site_jsonld": 47,
  "site_match": 12,
  "site_reject": 35,
  "phone_site": 0,
  "hours_site": 0,
- "addr_site": 1,
+ "addr_site": 0,
  "cuisine_site": 2,
  "names_site": 0,
  "web_wd": 0,
@@ -91,6 +91,13 @@
    "site": "0536114525"
   },
   {
+   "id": "n4263147702",
+   "n": "איציק הגדול",
+   "field": "phone",
+   "osm": "+972 3 6830033",
+   "site": "037773337"
+  },
+  {
    "id": "n4798363423",
    "n": "בצ'יקלטה",
    "field": "phone",
@@ -124,13 +131,6 @@
    "field": "hours",
    "osm": "Su-Th 12:00-23:00; Fr 11:00-17:00; Sa 09:15-23:30",
    "site": "Su,Mo,Tu,We,Th 12:00-20:00; Fr 11:00-15:00"
-  },
-  {
-   "id": "n6041389430",
-   "n": "גומבה",
-   "field": "phone",
-   "osm": "+972 3 973 9954‬",
-   "site": "037743330"
   },
   {
    "id": "n6041389431",
@@ -182,25 +182,11 @@
    "site": "035225005"
   },
   {
-   "id": "n9429290715",
-   "n": "המוסד לסנדוויצ'ים מיוחדים",
-   "field": "phone",
-   "osm": "+97235629896",
-   "site": "036038025"
-  },
-  {
    "id": "n10969247136",
    "n": "הלבנטיני",
    "field": "phone",
    "osm": "+972 36324444",
    "site": "0778048601"
-  },
-  {
-   "id": "n12588113205",
-   "n": "קנסאי",
-   "field": "hours",
-   "osm": "Su-Th 11:00-23:00; Sa (sunset+01:00)-23:00",
-   "site": "Su,Mo,Tu,We,Th 11:00-23:00"
   }
  ],
  "rejected_sites": [
@@ -416,14 +402,14 @@
   }
  ],
  "phone_confirmed": 83,
- "phone_multi_skipped": 20,
+ "phone_multi_skipped": 19,
  "coverage_after": {
   "address": "1327 (100%)",
-  "hours": "366 (28%)",
-  "phone": "386 (29%)",
-  "website": "485 (37%)",
+  "hours": "367 (28%)",
+  "phone": "388 (29%)",
+  "website": "486 (37%)",
   "cuisine": "969 (73%)",
   "extra_names": "746 (56%)"
  },
- "conflicts_n": 27
+ "conflicts_n": 25
 }
