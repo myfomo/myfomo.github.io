@@ -27,11 +27,25 @@ If exactly one recent source supports it, use result `single` (not `none`) and g
 - **closed**: only from a reliable source saying it closed (news article, own site/social post). Record the URL.
 - **hours `oh`**: only from the own site, or two sources that agree. OpenStreetMap syntax (`Su-Th 12:00-23:00; Fr 12:00-16:00; Sa off`).
 - **phone `p` / website `w` / booking link `bk`**: from the own site or the booking page.
+- **Fill every detail you can** for each place found active (user request, 2026-11): hours, website, phone, booking link,
+  official name, style, price level, kosher/vegan — each only from a reliable source as below. Never guess.
+- **official name `nm`**: only when the own site or booking page shows the venue's name clearly differently from the catalog `n`
+  (spelling, full name). The catalog name is kept as an alternative name automatically.
+- **style `cu`**: exactly one value from the app list: איטלקי, אסייתי, יפני / סושי, בשרים, דגים ופירות ים, ים-תיכוני, המבורגר,
+  פיצה, מקסיקני, הודי, מסעדת שף, בר קוקטיילים, בר יין, בר, פאב, קפה ובראנץ', טבעוני, חומוס ומזרחי, קינוחים, אחר —
+  from the own site, the booking page, or a news/guide article that describes the place. Set it even if the catalog has one, when the source is clearer.
+- **price level `pr`** (1–4): from menu prices on the own site / booking page, or a guide article giving prices.
+  Typical main dish (bars: typical cocktail/beer + bite): 1 = up to ₪50, 2 = ₪50–90, 3 = ₪90–150, 4 = over ₪150.
+- **kosher `k` / vegan `vg`** (value 1): only when the own site, booking page or a kosher listing says so (kosher: certificate named).
+- **address `a`: never change it** — navigation in the app depends on the catalog address and coordinates.
+  If the address looks wrong or the place moved, use `conflict` and say so in `note`.
 - Make sure it is the **same branch** (address matches). If sources disagree → `conflict`, change nothing.
 - Nothing reliable found → `none`, change nothing.
 
 ## Writing results
-- Active / details → `tools/verified-tlv.json` under `places[id]`: `{"n": name, "ok": "YYYY-MM", "oh"?, "p"?, "w"?, "bk"?, "src": [url, ...]}`.
+- Active / details → `tools/verified-tlv.json` under `places[id]`:
+  `{"n": catalog name, "ok": "YYYY-MM", "nm"?, "cu"?, "pr"?, "oh"?, "p"?, "w"?, "bk"?, "k"?, "vg"?, "src": [url, ...]}`.
+  `ok` is the month of the most recent source that showed the place operating (not just the month of the check).
 - Closed → `tools/closed-tlv.json` under `closed[id]`: `{"n": name, "d": "YYYY or YYYY-MM", "src": [url, ...]}`.
 - Every checked id → `tools/verify-queue.json` `done[id] = {"r": "ok|closed|single|none|conflict", "note": short English note}`.
 - Validate JSON (`python3 -m json.tool`) before committing.
