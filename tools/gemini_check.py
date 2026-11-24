@@ -38,7 +38,7 @@ for m in CANDS:
         except urllib.error.HTTPError as e2: print("  without search:", e2.code, body_of(e2), flush=True)
         except Exception as e2: print("  without search:", str(e2)[:100], flush=True)
         break
-if not MODEL: sys.exit("no Gemini model is available for this key right now")
+if not MODEL: print("Gemini web search is not available for this key (free tier has no search quota); skipping"); sys.exit(0)
 print("model", MODEL, flush=True)
 P = json.load(open(CAT))["places"]
 try: rep = json.load(open(OUT))
