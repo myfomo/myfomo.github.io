@@ -2,17 +2,17 @@
  "fix": {
   "n12768157195": {
    "name": "קלבריה",
-   "old": "המלך ג׳ורג׳ 29",
+   "old": "שדרות בן ציון 1",
    "new": "שדרות בן ציון 1",
    "status": "applied",
-   "moved_m": 520
+   "moved_m": 0
   },
   "n12140324986": {
    "name": "באבג’ים",
-   "old": "דרך שלמה 44",
+   "old": "דרך שלמה 43",
    "new": "דרך שלמה 43",
    "status": "applied",
-   "moved_m": 37
+   "moved_m": 0
   },
   "n725462337": {
    "name": "Zappa",
@@ -37,27 +37,45 @@
   },
   "n2079214805": {
    "name": "משק ברזילי",
-   "old": "אחד העם 8",
+   "old": "אחד העם 6",
    "new": "אחד העם 6",
    "status": "applied",
    "moved_m": 0
+  },
+  "n13374016467": {
+   "name": "סטנדאפ פאקטורי",
+   "old": "שביל המרץ",
+   "new": "שביל המרץ 5",
+   "status": "applied",
+   "moved_m": 87
+  },
+  "n2249328556": {
+   "name": "פיקוק",
+   "old": "מרמורק",
+   "new": "מרמורק 14",
+   "status": "applied",
+   "moved_m": 6
+  },
+  "n13532671475": {
+   "name": "Buti",
+   "old": "כיכר דיזנגוף (צינה)",
+   "new": "כיכר דיזנגוף 4",
+   "status": "applied",
+   "moved_m": 5
   }
  },
  "dup": {
   "n1185083191": {
-   "status": "merged",
-   "into": "n6759353882",
-   "name": "מסעדת לונג סנג"
+   "status": "skipped",
+   "why": "id not in catalog"
   },
   "n7167094871": {
-   "status": "merged",
-   "into": "n2079214805",
-   "name": "Meshek Barzilay"
+   "status": "skipped",
+   "why": "id not in catalog"
   },
   "n12505208002": {
-   "status": "merged",
-   "into": "n2079001406",
-   "name": "The Prince"
+   "status": "skipped",
+   "why": "id not in catalog"
   }
  }
 }
