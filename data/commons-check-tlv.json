@@ -1,0 +1,209 @@
+{
+ "checked": 1282,
+ "commons_files_in_city": 7690,
+ "places_with_candidates": 11,
+ "wikidata_images": 3,
+ "geo_name_matches": 24,
+ "date": "2026-11-24",
+ "places": {
+  "n445977129": {
+   "n": "מייקס פלייס",
+   "files": [
+    {
+     "file": "File:Citroën Dyane, near Mike's Place, in Tel-Aviv (2).jpg",
+     "match": "geotagged 36 m, name in file name"
+    },
+    {
+     "file": "File:Citroën Dyane, near Mike's Place, in Tel-Aviv (1).jpg",
+     "match": "geotagged 36 m, name in file name"
+    }
+   ]
+  },
+  "n1319999667": {
+   "n": "סוזנה",
+   "files": [
+    {
+     "file": "File:Tel Aviv Neve Zedek 2018.11 Suzana.jpg",
+     "match": "geotagged 32 m, name in file name"
+    }
+   ]
+  },
+  "n2454668203": {
+   "n": "Gordo",
+   "files": [
+    {
+     "file": "File:Tel Aviv Beach Gordo - panoramio.jpg",
+     "match": "geotagged 48 m, name in file name"
+    }
+   ]
+  },
+  "n4439622598": {
+   "n": "I ❤ LA MER",
+   "files": [
+    {
+     "file": "File:Tel Aviv-Yaffo - La Mer Beach Restaurant.JPG",
+     "match": "geotagged 30 m, name in file name"
+    }
+   ]
+  },
+  "n5325561830": {
+   "n": "תל השומר",
+   "files": [
+    {
+     "file": "File:Historical Buildings Tel Hashomer Avney Moreshet 171e2385.jpg",
+     "match": "geotagged 54 m, name in file name"
+    },
+    {
+     "file": "File:Historical Buildings Tel Hashomer Avney Moreshet 535ac2c7.jpg",
+     "match": "geotagged 54 m, name in file name"
+    },
+    {
+     "file": "File:125592 sheba hospital tel hashomer. synagogue PikiWiki Israel.jpg",
+     "match": "geotagged 52 m, name in file name"
+    },
+    {
+     "file": "File:125591 sheba hospital tel hashomer. synagogue PikiWiki Israel.jpg",
+     "match": "geotagged 47 m, name in file name"
+    },
+    {
+     "file": "File:125590 sheba hospital tel hashomer. synagogue PikiWiki Israel.jpg",
+     "match": "geotagged 47 m, name in file name"
+    },
+    {
+     "file": "File:PikiWiki Israel 62839 isolation area in tel hashomer - shiba.jpg",
+     "match": "geotagged 39 m, name in file name"
+    },
+    {
+     "file": "File:PikiWiki Israel 62840 isolation area in tel hashomer - shiba.jpg",
+     "match": "geotagged 40 m, name in file name"
+    },
+    {
+     "file": "File:PikiWiki Israel 62838 isolation area in tel hashomer - shiba.jpg",
+     "match": "geotagged 43 m, name in file name"
+    },
+    {
+     "file": "File:Sheba hospital in Tel Hashomer - 03.jpg",
+     "match": "geotagged 45 m, name in file name"
+    },
+    {
+     "file": "File:Sheba hospital in Tel Hashomer - 06.jpg",
+     "match": "geotagged 45 m, name in file name"
+    },
+    {
+     "file": "File:Sheba hospital in Tel Hashomer - 04.jpg",
+     "match": "geotagged 45 m, name in file name"
+    },
+    {
+     "file": "File:Sheba hospital in Tel Hashomer - 05.jpg",
+     "match": "geotagged 45 m, name in file name"
+    },
+    {
+     "file": "File:Sheba hospital in Tel Hashomer - 02.jpg",
+     "match": "geotagged 53 m, name in file name"
+    }
+   ]
+  },
+  "n6406434987": {
+   "n": "גוציה",
+   "files": [
+    {
+     "file": "File:Goocha restaurant - Tel Aviv (5101038813).jpg",
+     "match": "geotagged 23 m, name in file name",
+     "license": "CC BY 2.0",
+     "artist": "Julien Menichini from Paris, France",
+     "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Goocha_restaurant_-_Tel_Aviv_%285101038813%29.jpg/960px-Goocha_restaurant_-_Tel_Aviv_%285101038813%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "page": "https://commons.wikimedia.org/wiki/File:Goocha_restaurant_-_Tel_Aviv_(5101038813).jpg"
+    },
+    {
+     "file": "File:Goocha restaurant - Tel Aviv (5101634310).jpg",
+     "match": "geotagged 9 m, name in file name",
+     "license": "CC BY 2.0",
+     "artist": "Julien Menichini from Paris, France",
+     "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Goocha_restaurant_-_Tel_Aviv_%285101634310%29.jpg/960px-Goocha_restaurant_-_Tel_Aviv_%285101634310%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "page": "https://commons.wikimedia.org/wiki/File:Goocha_restaurant_-_Tel_Aviv_(5101634310).jpg"
+    },
+    {
+     "file": "File:Goocha restaurant - Tel Aviv (5101635248).jpg",
+     "match": "geotagged 9 m, name in file name",
+     "license": "CC BY 2.0",
+     "artist": "Julien Menichini from Paris, France",
+     "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Goocha_restaurant_-_Tel_Aviv_%285101635248%29.jpg/960px-Goocha_restaurant_-_Tel_Aviv_%285101635248%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "page": "https://commons.wikimedia.org/wiki/File:Goocha_restaurant_-_Tel_Aviv_(5101635248).jpg"
+    }
+   ]
+  },
+  "n6507147923": {
+   "n": "Mexicana",
+   "files": [
+    {
+     "file": "File:Mexicana - panoramio.jpg",
+     "match": "geotagged 11 m, name in file name",
+     "license": "CC BY-SA 3.0",
+     "artist": "Mujaddara",
+     "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Mexicana_-_panoramio.jpg/960px-Mexicana_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "page": "https://commons.wikimedia.org/wiki/File:Mexicana_-_panoramio.jpg"
+    }
+   ]
+  },
+  "n7088100847": {
+   "n": "Fat Cow",
+   "files": [
+    {
+     "file": "File:Fat Cow.jpg",
+     "match": "wikidata image",
+     "license": "CC0",
+     "artist": "Yotam Nachum",
+     "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Fat_Cow.jpg/960px-Fat_Cow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "page": "https://commons.wikimedia.org/wiki/File:Fat_Cow.jpg"
+    },
+    {
+     "file": "File:Fat Cow.jpg",
+     "match": "geotagged 5 m, name in file name",
+     "license": "CC0",
+     "artist": "Yotam Nachum",
+     "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Fat_Cow.jpg/960px-Fat_Cow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "page": "https://commons.wikimedia.org/wiki/File:Fat_Cow.jpg"
+    }
+   ]
+  },
+  "n10946223402": {
+   "n": "מיט בר בורגר",
+   "files": [
+    {
+     "file": "File:Meat Bar Burger 440 Burger With French Fries.jpg",
+     "match": "wikidata image",
+     "license": "CC0",
+     "artist": "Yotam Nachum",
+     "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Meat_Bar_Burger_440_Burger_With_French_Fries.jpg/960px-Meat_Bar_Burger_440_Burger_With_French_Fries.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "page": "https://commons.wikimedia.org/wiki/File:Meat_Bar_Burger_440_Burger_With_French_Fries.jpg"
+    }
+   ]
+  },
+  "n10946228150": {
+   "n": "מיט בר בורגר",
+   "files": [
+    {
+     "file": "File:Meat Bar Burger 440 Burger With French Fries.jpg",
+     "match": "wikidata image",
+     "license": "CC0",
+     "artist": "Yotam Nachum",
+     "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Meat_Bar_Burger_440_Burger_With_French_Fries.jpg/960px-Meat_Bar_Burger_440_Burger_With_French_Fries.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "page": "https://commons.wikimedia.org/wiki/File:Meat_Bar_Burger_440_Burger_With_French_Fries.jpg"
+    }
+   ]
+  },
+  "n11185427757": {
+   "n": "ברגר",
+   "files": [
+    {
+     "file": "File:Burger From Berger.jpg",
+     "match": "geotagged 11 m, name in file name",
+     "license": "CC0",
+     "artist": "Theipu",
+     "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Burger_From_Berger.jpg/960px-Burger_From_Berger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+     "page": "https://commons.wikimedia.org/wiki/File:Burger_From_Berger.jpg"
+    }
+   ]
+  }
+ }
+}
