@@ -1,15 +1,15 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 462,
- "site_jsonld": 49,
- "site_match": 13,
- "site_reject": 36,
+ "site_checked": 468,
+ "site_jsonld": 51,
+ "site_match": 14,
+ "site_reject": 37,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
  "cuisine_site": 2,
- "names_site": 0,
+ "names_site": 1,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -40,6 +40,13 @@
    "field": "phone",
    "osm": "+972723945751",
    "site": "039331922"
+  },
+  {
+   "id": "n2079034257",
+   "n": "Neroli",
+   "field": "hours",
+   "osm": "Su-Th 08:30-20:00; Fr 08:30-16:00; Sa off",
+   "site": "Su 08:30-21:00; Tu 08:30-21:00; We 08:30-21:00; Th 08:30-21:00; Fr 08:30-16:00"
   },
   {
    "id": "n2079180765",
@@ -103,6 +110,13 @@
    "field": "phone",
    "osm": "+972 3 6830033",
    "site": "037773337"
+  },
+  {
+   "id": "n4737517953",
+   "n": "cafelix - Jaffa",
+   "field": "phone",
+   "osm": "+972-3-639-2687",
+   "site": "0587986996"
   },
   {
    "id": "n4798363423",
@@ -273,6 +287,12 @@
    "why": "branch/name not confirmed"
   },
   {
+   "id": "n4922283576",
+   "n": "Xo Ho",
+   "w": "http://www.cafexoho.com",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n8765736218",
    "n": "קפה שניאור",
    "w": "https://shneor-cafe.com",
@@ -439,11 +459,11 @@
  "phone_multi_skipped": 21,
  "coverage_after": {
   "address": "1323 (100%)",
-  "hours": "371 (28%)",
-  "phone": "395 (30%)",
-  "website": "494 (37%)",
+  "hours": "372 (28%)",
+  "phone": "399 (30%)",
+  "website": "500 (38%)",
   "cuisine": "966 (73%)",
-  "extra_names": "749 (57%)"
+  "extra_names": "751 (57%)"
  },
- "conflicts_n": 29
+ "conflicts_n": 31
 }

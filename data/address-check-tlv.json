@@ -106,32 +106,67 @@
    "moved_m": 0
   },
   "n13227246101": {
-   "name": "Stephan",
-   "old": "טשרניחובסקי",
+   "name": "Stefan",
+   "old": "טשרניחובסקי 21",
    "new": "טשרניחובסקי 21",
    "status": "applied",
-   "moved_m": 6
+   "moved_m": 0
   },
   "n12032015683": {
    "name": "mae",
-   "old": "רב אלוף דוד אלעזר",
+   "old": "רב אלוף דוד אלעזר 17",
    "new": "רב אלוף דוד אלעזר 17",
    "status": "applied",
-   "moved_m": 10
+   "moved_m": 0
   },
   "n4922283576": {
    "name": "Xo Ho",
-   "old": "גורדון",
+   "old": "בן יהודה 73",
    "new": "בן יהודה 73",
    "status": "applied",
-   "moved_m": 205
+   "moved_m": 0
   },
   "n13516609157": {
    "name": "Plaza Café",
-   "old": "פינסקר",
+   "old": "כיכר צינה דיזנגוף 3",
    "new": "כיכר צינה דיזנגוף 3",
    "status": "applied",
-   "moved_m": 62
+   "moved_m": 0
+  },
+  "n4706508227": {
+   "name": "ארומה",
+   "old": "הברזל",
+   "new": "הברזל 25",
+   "status": "applied",
+   "moved_m": 334
+  },
+  "n12050619149": {
+   "name": "ארומה",
+   "old": "קרליבך",
+   "new": "קרליבך 1",
+   "status": "applied",
+   "moved_m": 15
+  },
+  "n10784964980": {
+   "name": "ארקפה",
+   "old": "ויצמן",
+   "new": "ויצמן 4",
+   "status": "blocked",
+   "why": "address already used by: סוסו ובניו (n6179097911, שדרות ויצמן 4)"
+  },
+  "n5182249023": {
+   "name": "המלביה",
+   "old": "גדרה",
+   "new": "אלנבי 60",
+   "status": "applied",
+   "moved_m": 21
+  },
+  "n12110687259": {
+   "name": "בית רדיקל",
+   "old": "3426",
+   "new": "התחייה 7",
+   "status": "applied",
+   "moved_m": 700
   }
  },
  "dup": {
@@ -150,6 +185,26 @@
   "n7677654261": {
    "status": "skipped",
    "why": "id not in catalog"
+  },
+  "n11802167414": {
+   "status": "merged",
+   "into": "c-ארקפה-דרךמנחםבגין144",
+   "name": "ארקפה"
+  },
+  "n7524489151": {
+   "status": "merged",
+   "into": "n5229027068",
+   "name": "דובנוב 8"
+  },
+  "n1989338521": {
+   "status": "merged",
+   "into": "c-ארקפה-שדרותרוטשילד31",
+   "name": "ארקפה"
+  },
+  "n7565262760": {
+   "status": "merged",
+   "into": "c-ארקפה-יגאלאלון94",
+   "name": "ארקפה"
   }
  }
 }
