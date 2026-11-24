@@ -2936,7 +2936,10 @@
   },
   "n7677654261": {
    "r": "conflict",
-   "note": "Time Out: Rabbi Hanina 9 Jaffa; catalog Rabbi Aha 2; possibly duplicate of n2079008750"
+   "note": "Time Out: Rabbi Hanina 9 Jaffa; catalog Rabbi Aha 2; possibly duplicate of n2079008750",
+   "r2": "dup",
+   "d2": "2026-11",
+   "note2": "Merged into n2079008750 (user approved)"
   },
   "n3346575490": {
    "r": "single",
