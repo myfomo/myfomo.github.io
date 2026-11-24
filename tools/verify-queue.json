@@ -1623,6 +1623,206 @@
   },
   "n1400686572": {
    "r": "none"
+  },
+  "w103768017": {
+   "r": "none",
+   "note": "Only undated directory listing (enjoyingisrael); no Tabit/Ontopo; no closure news"
+  },
+  "n4706508225": {
+   "r": "none",
+   "note": "No web results on HaBarzel; no Tabit/Ontopo; no closure news"
+  },
+  "n12140544814": {
+   "r": "ok",
+   "note": "Own site live names Frenkel 4; no Tabit/Ontopo; no closure news"
+  },
+  "n4625883208": {
+   "r": "none",
+   "note": "Only Alfredo Petah Tikva found; nothing for Martin Gehl TLV"
+  },
+  "n7194886836": {
+   "r": "none",
+   "note": "Own site unreachable; only undated listing; no Tabit/Ontopo; no closure news"
+  },
+  "w149384937": {
+   "r": "ok",
+   "note": "Own site live names Ibn Gabirol 100; Ontopo page (no online booking); no closure news"
+  },
+  "n5254086921": {
+   "r": "single",
+   "note": "Time Out 2025-12 burgers list: America Burgers at Allenby 112 (corner unconfirmed) https://timeout.co.il/theres-nothing-better-than-this-the-15-best-burgers-in-all-of-tel-aviv/"
+  },
+  "n11361520669": {
+   "r": "none",
+   "note": "Time Out 2021 review only; no recent source; no Tabit/Ontopo; no closure news"
+  },
+  "n2587900912": {
+   "r": "none",
+   "note": "Undated listings at Ben Yehuda 128; own site unreachable; no Tabit/Ontopo"
+  },
+  "n3465185951": {
+   "r": "single",
+   "note": "Own site akiko.co.il lists Sarona branch (David Elazar 6), location match unconfirmed https://akiko.co.il/en/home/a/main"
+  },
+  "n4891582060": {
+   "r": "none",
+   "note": "No Erlich restaurant found on Ef'al (may be Petah Tikva); no Tabit/Ontopo"
+  },
+  "n11690042615": {
+   "r": "none",
+   "note": "Duplicate of Erlich on Ef'al; no reliable source"
+  },
+  "w355302210": {
+   "r": "none",
+   "note": "Armonot Chen is an event hall in Bnei Brak, not a TLV restaurant; likely misclassified"
+  },
+  "n1718632804": {
+   "r": "none",
+   "note": "Only rest.co.il directory (Kedem 102 Jaffa); no Tabit/Ontopo; no closure news"
+  },
+  "n12140324986": {
+   "r": "single",
+   "note": "Wolt listing active at Derech Shlomo 43 https://wolt.com/he/isr/tel-aviv/restaurant/baba-jim ; Tabit page did not load"
+  },
+  "n12943579300": {
+   "r": "single",
+   "note": "Time Out 2025-03 review at Rothschild 60 https://timeout.co.il/%d7%91%d7%91%d7%99%d7%a7%d7%94-%d7%a8%d7%95%d7%98%d7%a9%d7%99%d7%9c%d7%93/ ; Tabit page did not load"
+  },
+  "n8558425246": {
+   "r": "none",
+   "note": "Wolt Bali food bar at Harugei Malchut 7, not Nemirover; branch unconfirmed"
+  },
+  "n13482140275": {
+   "r": "conflict",
+   "note": "Time Out/Mako 2022 + 2026 blog: Nahalat Binyamin 107; atly: Ben Yehuda 188 (possible move)"
+  },
+  "n1308842241": {
+   "r": "none",
+   "note": "Chain active (Time Out 2025-11) but no source for a Shlomo Kaplan branch"
+  },
+  "n12531978155": {
+   "r": "ok",
+   "note": "Ontopo booking active at Tchernichovsky 4; Tabit page exists; no closure news"
+  },
+  "n9105286223": {
+   "r": "none",
+   "note": "No source for Bis at Lehi 12"
+  },
+  "n4253786262": {
+   "r": "none",
+   "note": "Own site unreachable; no news/Tabit/Ontopo for Pines 27"
+  },
+  "n12943589029": {
+   "r": "ok",
+   "note": "Ontopo booking active Rothschild 35; Time Out 2025-02 relaunch; no closure news"
+  },
+  "n1400687793": {
+   "r": "none",
+   "note": "Black chain site down; no source for Kikar Schnitzer branch"
+  },
+  "n1757673286": {
+   "r": "none",
+   "note": "Black chain site down; no source for Derech Tel Aviv branch"
+  },
+  "n5199503625": {
+   "r": "none",
+   "note": "Black chain site down; Givat HaTahmoshet likely Jerusalem; unconfirmed"
+  },
+  "n5599780097": {
+   "r": "none",
+   "note": "Black chain site down; HaYozma branch unconfirmed"
+  },
+  "n11044131089": {
+   "r": "none",
+   "note": "Black chain site down; Sheshet HaYamim 301 branch unconfirmed"
+  },
+  "n904508667": {
+   "r": "conflict",
+   "note": "Own site/Ontopo active but only branch is TLV Port Yordei HaSira 1, catalog street Lipkin-Shahak; address mismatch"
+  },
+  "w1103789884": {
+   "r": "single",
+   "note": "Time Out 2026-02 column mentions Banana Beach as active https://timeout.co.il/העיר-שלי-ליאת-פלדמן/ ; own site dated 2022"
+  },
+  "n2540433561": {
+   "r": "none",
+   "note": "No source for Bar Basar on Ben Gurion; no Tabit/Ontopo"
+  },
+  "n4033655490": {
+   "r": "single",
+   "note": "Ontopo page (not bookable) Ibn Gabirol https://ontopo.com/en/il/page/19514958 ; Wolt live; undated"
+  },
+  "n11684986013": {
+   "r": "single",
+   "note": "Time Out 2026-11 casual list: Hillel HaZaken 12 https://timeout.co.il/מסעדות-קזואל-תל-אביב/ ; own site/Tabit did not load"
+  },
+  "n2079208883": {
+   "r": "ok",
+   "note": "Ontopo booking active Louis Pasteur 7; Wolt same hours; no closure news"
+  },
+  "n4706508224": {
+   "r": "none",
+   "note": "Ontopo HaBarzel 4 shows all days closed; Wolt branch offline; status unclear"
+  },
+  "n11843060618": {
+   "r": "none",
+   "note": "Nothing relevant found"
+  },
+  "n4706508223": {
+   "r": "single",
+   "note": "Ontopo Giraffe Ramat HaHayal HaBarzel 19 (not bookable) https://ontopo.com/en/il/page/girafferamathachayal"
+  },
+  "n12593349659": {
+   "r": "ok",
+   "note": "Tabit booking site live; Time Out 2026-07 news at Ben Gurion 34; no closure news"
+  },
+  "n777400975": {
+   "r": "ok",
+   "note": "Own site live linking Ontopo booking at Frishman 90; no closure news"
+  },
+  "n12857390749": {
+   "r": "none",
+   "note": "Only Time Out 2024-01; own site unreachable; no Tabit/Ontopo"
+  },
+  "n11459910986": {
+   "r": "none",
+   "note": "Only 'Grill Of' Ramat HaSharon found; no match"
+  },
+  "n10931741105": {
+   "r": "ok",
+   "note": "Ontopo booking active Ahad Ha'am 15; own site fetch failed; no closure news"
+  },
+  "n1546447299": {
+   "r": "closed",
+   "note": "Time Out 2022-03: Greco opened in place of the late Greenberg"
+  },
+  "n4679825296": {
+   "r": "none",
+   "note": "Ontopo pages exist but booking disabled; N12 2026-02 Greco chain shrinking (branch not named)"
+  },
+  "n12050619161": {
+   "r": "none",
+   "note": "Daboush known at Ibn Gabirol 64; no source for Lincoln branch"
+  },
+  "n1177264748": {
+   "r": "none",
+   "note": "Time Out 2017 only; 206.co.il now only 206 Meat; possibly converted"
+  },
+  "n12568199182": {
+   "r": "closed",
+   "note": "Time Out 2026-01: closed at Uriel Acosta, moved to HaMashbir"
+  },
+  "n4112079600": {
+   "r": "single",
+   "note": "Time Out fine-dining guide 2025-11/2026-01 lists DOK at Ibn Gabirol 27 https://timeout.co.il/26-most-recommended-fine-dining-restaurants-in-tel-aviv/"
+  },
+  "n5229027068": {
+   "r": "ok",
+   "note": "Own site dubnov8.com live; Ontopo booking active; no closure news"
+  },
+  "n8544693910": {
+   "r": "none",
+   "note": "Only 2016 JPost review, no address"
   }
  }
 }

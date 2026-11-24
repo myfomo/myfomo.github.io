@@ -169,6 +169,98 @@
    "src": [
     "http://www.azuratlv.co.il/"
    ]
+  },
+  "n12140544814": {
+   "n": "אלמז מנדל",
+   "ok": "2026-11",
+   "p": "+972 72-393-6452",
+   "w": "https://almazrestaurant.co.il/",
+   "src": [
+    "https://almazrestaurant.co.il/"
+   ]
+  },
+  "w149384937": {
+   "n": "אמורה מיו",
+   "ok": "2026-11",
+   "oh": "Mo-Su 12:00-00:30",
+   "p": "+972 3-524-4040",
+   "w": "https://amoremio.co.il",
+   "src": [
+    "https://amoremio.co.il",
+    "https://ontopo.com/en/il/page/33995400"
+   ]
+  },
+  "n12531978155": {
+   "n": "ביינה",
+   "ok": "2026-11",
+   "p": "+972 3-729-3333",
+   "bk": "https://ontopo.com/en/il/page/72067495",
+   "src": [
+    "https://ontopo.com/en/il/page/72067495",
+    "https://tabitisrael.co.il/site/%D7%91%D7%99%D7%99%D7%A0%D7%94"
+   ]
+  },
+  "n12943589029": {
+   "n": "בית גולדברג",
+   "ok": "2026-11",
+   "p": "+972-54-909-9269",
+   "bk": "https://ontopo.com/he/il/page/40690308",
+   "src": [
+    "https://ontopo.com/he/il/page/40690308",
+    "https://timeout.co.il/בית-גולדברג/"
+   ]
+  },
+  "n2079208883": {
+   "n": "ג'אסיה",
+   "ok": "2026-11",
+   "oh": "Mo-Sa 11:30-23:30; Su off",
+   "p": "*2417",
+   "bk": "https://ontopo.com/en/il/page/jasia",
+   "src": [
+    "https://ontopo.com/en/il/page/jasia",
+    "https://wolt.com/fr/Israel/Tel Aviv/restaurant/jasia"
+   ]
+  },
+  "n12593349659": {
+   "n": "גווידו",
+   "ok": "2026-11",
+   "p": "+972 77-980-0455",
+   "bk": "https://tabitisrael.co.il/site/guido",
+   "src": [
+    "https://tabitisrael.co.il/site/guido",
+    "https://timeout.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%94%D7%90%D7%95%D7%9B%D7%9C-107/"
+   ]
+  },
+  "n777400975": {
+   "n": "גוסטו",
+   "ok": "2026-11",
+   "p": "1-700-700-919",
+   "w": "https://www.gusto.co.il",
+   "bk": "https://ontopo.com/en/il/page/64592643",
+   "src": [
+    "https://www.gusto.co.il",
+    "https://ontopo.com/en/il/page/64592643"
+   ]
+  },
+  "n10931741105": {
+   "n": "גרין רול סושי בק",
+   "ok": "2026-11",
+   "p": "+97235245731",
+   "bk": "https://ontopo.com/en/il/page/thegreenroll",
+   "src": [
+    "https://ontopo.com/en/il/page/thegreenroll"
+   ]
+  },
+  "n5229027068": {
+   "n": "דובנוב",
+   "ok": "2026-11",
+   "p": "+97236968656",
+   "w": "https://www.dubnov8.com",
+   "bk": "https://ontopo.com/en/il/page/dubnov",
+   "src": [
+    "https://www.dubnov8.com",
+    "https://ontopo.com/en/il/page/dubnov"
+   ]
   }
  }
 }
