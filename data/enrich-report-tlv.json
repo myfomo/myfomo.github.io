@@ -253,13 +253,13 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 39,
+ "phone_confirmed": 56,
+ "phone_tel": 1,
  "phone_multi_skipped": 16,
- "phone_tel": 17,
  "coverage_after": {
   "address": "1308 (100%)",
   "hours": "330 (25%)",
-  "phone": "331 (25%)",
+  "phone": "332 (25%)",
   "website": "442 (34%)",
   "cuisine": "921 (70%)",
   "extra_names": "743 (57%)"
