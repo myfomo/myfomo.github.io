@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 426,
- "site_jsonld": 37,
+ "site_checked": 428,
+ "site_jsonld": 39,
  "site_match": 7,
- "site_reject": 30,
+ "site_reject": 32,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -152,6 +152,13 @@
    "field": "phone",
    "osm": "+972 035225005",
    "site": "035225005"
+  },
+  {
+   "id": "n10969247136",
+   "n": "הלבנטיני",
+   "field": "phone",
+   "osm": "+972 36324444",
+   "site": "0778048601"
   }
  ],
  "rejected_sites": [
@@ -334,17 +341,29 @@
    "n": "פיצה האט",
    "w": "https://www.pizzahut.co.il/branch/tlv-yad-eliyaho/",
    "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-רודנסקי5",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/rodansky/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "c-ארקפה-אבאאחימאיר27",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/schuster-centre/",
+   "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 66,
- "phone_multi_skipped": 13,
+ "phone_confirmed": 72,
+ "phone_multi_skipped": 16,
  "coverage_after": {
-  "address": "1323 (100%)",
-  "hours": "348 (26%)",
-  "phone": "351 (27%)",
-  "website": "457 (35%)",
-  "cuisine": "936 (71%)",
+  "address": "1325 (100%)",
+  "hours": "350 (26%)",
+  "phone": "353 (27%)",
+  "website": "459 (35%)",
+  "cuisine": "938 (71%)",
   "extra_names": "743 (56%)"
  },
- "conflicts_n": 20
+ "conflicts_n": 21
 }
