@@ -253,8 +253,7 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 56,
- "phone_tel": 1,
+ "phone_confirmed": 57,
  "phone_multi_skipped": 16,
  "coverage_after": {
   "address": "1308 (100%)",
