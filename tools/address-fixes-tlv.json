@@ -171,7 +171,9 @@
    "src": [
     "https://www.jpost.com/food-recipes/article-842007"
    ],
-   "note": "3426 complex address per JPost"
+   "note": "3426 complex address per JPost; coordinates kept at the OSM point (geocoder placed Hatchiya 7 700 m away, in Jaffa)",
+   "la": 32.04904,
+   "lo": 34.768859
   }
  },
  "dup": {
