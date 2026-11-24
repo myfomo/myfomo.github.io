@@ -19,8 +19,20 @@ def pick_model():
           if "generateContent" in m.get("supportedGenerationMethods", [])]
     fl = [m for m in ms if re.search(r"gemini-[\d.]+-flash$", m)] or [m for m in ms if "flash" in m and "lite" not in m and "preview" not in m]
     fl.sort(key=lambda m: [float(x) for x in re.findall(r"gemini-([\d.]+)", m)[:1] or [0]], reverse=True)
-    return fl[0]
-MODEL = pick_model(); print("model", MODEL, flush=True)
+    print("flash models:", fl, flush=True)
+    return fl
+def body_of(e):
+    try: return e.read().decode()[:400].replace("\n", " ")
+    except Exception: return ""
+# use the newest flash model that the free tier actually serves with web search
+CANDS = pick_model(); CANDS = [CANDS] if isinstance(CANDS, str) else CANDS; MODEL = None
+for m in CANDS:
+    try:
+        call(f"{API}/{m}:generateContent", {"contents": [{"parts": [{"text": "Reply with the word ok"}]}], "tools": [{"google_search": {}}]})
+        MODEL = m; break
+    except urllib.error.HTTPError as e: print("model", m, e.code, body_of(e), flush=True)
+if not MODEL: sys.exit("no Gemini model is available for this key right now")
+print("model", MODEL, flush=True)
 P = json.load(open(CAT))["places"]
 try: rep = json.load(open(OUT))
 except Exception: rep = {"model": MODEL, "places": {}}
@@ -49,7 +61,7 @@ for p in todo[:LIMIT]:
                "d": time.strftime("%Y-%m-%d")}
         rep["places"][p["id"]] = rec; n[rec["st"] if rec["st"] in n else "unknown"] += 1
     except urllib.error.HTTPError as e:
-        print("http", e.code, p["n"], flush=True); n["err"] += 1
+        print("http", e.code, p["n"], body_of(e), flush=True); n["err"] += 1
         if e.code == 429: break            # daily free quota used up; continue tomorrow
     except Exception as e:
         print("err", p["n"], str(e)[:120], flush=True); n["err"] += 1
