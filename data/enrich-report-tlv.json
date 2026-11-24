@@ -1,15 +1,15 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 468,
- "site_jsonld": 51,
+ "site_checked": 472,
+ "site_jsonld": 52,
  "site_match": 14,
- "site_reject": 37,
+ "site_reject": 38,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
  "cuisine_site": 2,
- "names_site": 1,
+ "names_site": 0,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -239,6 +239,12 @@
    "why": "branch/name not confirmed"
   },
   {
+   "id": "n715207462",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/harel/",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n777400975",
    "n": "גוסטו",
    "w": "https://www.gusto.co.il",
@@ -455,14 +461,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 84,
+ "phone_confirmed": 85,
  "phone_multi_skipped": 21,
+ "phone_tel": 1,
  "coverage_after": {
-  "address": "1323 (100%)",
-  "hours": "372 (28%)",
-  "phone": "399 (30%)",
-  "website": "500 (38%)",
-  "cuisine": "966 (73%)",
+  "address": "1319 (100%)",
+  "hours": "374 (28%)",
+  "phone": "402 (30%)",
+  "website": "504 (38%)",
+  "cuisine": "962 (73%)",
   "extra_names": "751 (57%)"
  },
  "conflicts_n": 31

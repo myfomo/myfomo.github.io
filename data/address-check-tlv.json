@@ -135,17 +135,17 @@
   },
   "n4706508227": {
    "name": "ארומה",
-   "old": "הברזל",
+   "old": "הברזל 25",
    "new": "הברזל 25",
    "status": "applied",
-   "moved_m": 334
+   "moved_m": 0
   },
   "n12050619149": {
    "name": "ארומה",
-   "old": "קרליבך",
+   "old": "קרליבך 1",
    "new": "קרליבך 1",
    "status": "applied",
-   "moved_m": 15
+   "moved_m": 0
   },
   "n10784964980": {
    "name": "ארקפה",
@@ -156,14 +156,14 @@
   },
   "n5182249023": {
    "name": "המלביה",
-   "old": "גדרה",
+   "old": "אלנבי 60",
    "new": "אלנבי 60",
    "status": "applied",
-   "moved_m": 21
+   "moved_m": 0
   },
   "n12110687259": {
    "name": "בית רדיקל",
-   "old": "3426",
+   "old": "התחייה 7",
    "new": "התחייה 7",
    "status": "applied",
    "moved_m": 700
@@ -187,24 +187,20 @@
    "why": "id not in catalog"
   },
   "n11802167414": {
-   "status": "merged",
-   "into": "c-ארקפה-דרךמנחםבגין144",
-   "name": "ארקפה"
+   "status": "skipped",
+   "why": "id not in catalog"
   },
   "n7524489151": {
-   "status": "merged",
-   "into": "n5229027068",
-   "name": "דובנוב 8"
+   "status": "skipped",
+   "why": "id not in catalog"
   },
   "n1989338521": {
-   "status": "merged",
-   "into": "c-ארקפה-שדרותרוטשילד31",
-   "name": "ארקפה"
+   "status": "skipped",
+   "why": "id not in catalog"
   },
   "n7565262760": {
-   "status": "merged",
-   "into": "c-ארקפה-יגאלאלון94",
-   "name": "ארקפה"
+   "status": "skipped",
+   "why": "id not in catalog"
   }
  }
 }
