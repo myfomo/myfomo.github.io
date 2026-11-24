@@ -1,15 +1,15 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 438,
+ "site_checked": 439,
  "site_jsonld": 41,
  "site_match": 8,
  "site_reject": 33,
  "phone_site": 0,
- "hours_site": 1,
- "addr_site": 1,
+ "hours_site": 0,
+ "addr_site": 0,
  "cuisine_site": 3,
- "names_site": 1,
+ "names_site": 0,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -361,13 +361,13 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 74,
+ "phone_confirmed": 76,
  "phone_multi_skipped": 17,
  "coverage_after": {
   "address": "1327 (100%)",
   "hours": "356 (27%)",
-  "phone": "363 (27%)",
-  "website": "469 (35%)",
+  "phone": "367 (28%)",
+  "website": "470 (35%)",
   "cuisine": "940 (71%)",
   "extra_names": "744 (56%)"
  },
