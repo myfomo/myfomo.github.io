@@ -14,13 +14,6 @@
  "names_wd": 0,
  "conflicts": [
   {
-   "id": "n902619087",
-   "n": "באבא יאגה",
-   "field": "phone",
-   "osm": "035175379",
-   "site": "035175179"
-  },
-  {
    "id": "n1950416514",
    "n": "איטלקיה בתחנה",
    "field": "phone",
@@ -152,6 +145,13 @@
    "field": "phone",
    "osm": "+972 035225005",
    "site": "035225005"
+  },
+  {
+   "id": "n10969247136",
+   "n": "הלבנטיני",
+   "field": "phone",
+   "osm": "+972 36324444",
+   "site": "0778048601"
   }
  ],
  "rejected_sites": [
@@ -348,8 +348,8 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 67,
- "phone_multi_skipped": 13,
+ "phone_confirmed": 69,
+ "phone_multi_skipped": 16,
  "coverage_after": {
   "address": "1327 (100%)",
   "hours": "349 (26%)",
