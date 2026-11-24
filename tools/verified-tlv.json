@@ -1,1 +1,12 @@
-{"note":"Per-place checks done by hand with web sources: 'ok' = date a source showed the place operating; optional fields filled only from the venue's own site or two agreeing sources. Each entry keeps its source URLs.","places":{}}
+{
+ "note": "Per-place checks done by hand with web sources: 'ok' = date a source showed the place operating; optional fields filled only from the venue's own site or two agreeing sources. Each entry keeps its source URLs.",
+ "places": {
+  "n13527216676": {
+   "n": "בר ורמיני",
+   "ok": "2025-09",
+   "src": [
+    "https://timeout.co.il/בר-ורמיני-bar-vermini/"
+   ]
+  }
+ }
+}
