@@ -137,6 +137,41 @@
     "http://ontopo.com/50461915"
    ],
    "note": "Own site and Ontopo"
+  },
+  "n4706508227": {
+   "a": "הברזל 25",
+   "src": [
+    "https://www.aroma.co.il/en/store/ramat-hahayal/"
+   ],
+   "note": "Official Aroma page"
+  },
+  "n12050619149": {
+   "a": "קרליבך 1",
+   "src": [
+    "https://www.aroma.co.il/en/store/karlibach-tel-aviv/"
+   ],
+   "note": "Official Aroma page"
+  },
+  "n10784964980": {
+   "a": "ויצמן 4",
+   "src": [
+    "https://arcaffe.co.il/branches/asia-house/"
+   ],
+   "note": "Official Arcaffe page (Beit Asia)"
+  },
+  "n5182249023": {
+   "a": "אלנבי 60",
+   "src": [
+    "https://www.hamalabiya.co.il/"
+   ],
+   "note": "Official HaMalabiya list (Allenby 60 corner Gedera)"
+  },
+  "n12110687259": {
+   "a": "התחייה 7",
+   "src": [
+    "https://www.jpost.com/food-recipes/article-842007"
+   ],
+   "note": "3426 complex address per JPost"
   }
  },
  "dup": {
@@ -156,6 +191,22 @@
   "n7677654261": {
    "keep": "n2079008750",
    "note": "Ada Hanina cafe in the Jaffa flea market: two points 170 m apart (Rabbi Aha 2 / Rabbi Ada 2); Time Out 2025-04 lists one cafe at Rabbi Hanina 9"
+  },
+  "n11802167414": {
+   "keep": "c-ארקפה-דרךמנחםבגין144",
+   "note": "Arcaffe Midtown twice"
+  },
+  "n7524489151": {
+   "keep": "n5229027068",
+   "note": "Dubnov 8 twice, 17 m apart"
+  },
+  "n1989338521": {
+   "keep": "c-ארקפה-שדרותרוטשילד31",
+   "note": "Same Arcaffe branch as the chain entry; merged"
+  },
+  "n7565262760": {
+   "keep": "c-ארקפה-יגאלאלון94",
+   "note": "Same Arcaffe branch as the chain entry; merged"
   }
  }
 }

@@ -3519,6 +3519,206 @@
   "n1851266184": {
    "r": "none",
    "note": "Aroma site blocked; maybe Opera Tower branch, unconfirmed"
+  },
+  "n3081263900": {
+   "r": "ok",
+   "note": "Official store page Sokolov 33 Ramat HaSharon (outside TLV)"
+  },
+  "n3731754512": {
+   "r": "none",
+   "note": "Catalog website aromatlv.com is hijacked (casino) -> removed; branch unverified"
+  },
+  "n3990604288": {
+   "r": "ok",
+   "note": "Official page Ayalon Mall, Ramat Gan"
+  },
+  "n4706508227": {
+   "r": "ok",
+   "note": "Official page Ramat HaHayal, HaBarzel 25"
+  },
+  "n4742671002": {
+   "r": "none",
+   "note": "No branch source for Spindel Yona"
+  },
+  "n5221386692": {
+   "r": "single",
+   "note": "d.co.il Ben Yehuda 21; official page exists but unreadable https://www.d.co.il/80014620"
+  },
+  "n5599780098": {
+   "r": "none",
+   "note": "No source for HaYozma"
+  },
+  "n6212721343": {
+   "r": "single",
+   "note": "d.co.il Nahalat Yitzhak 18 (undated) https://www.d.co.il/80014620"
+  },
+  "n10968175321": {
+   "r": "none",
+   "note": "Maybe London Ministore branch; unreadable"
+  },
+  "n11169886012": {
+   "r": "ok",
+   "note": "Official page Weizman City Ichilov, Weizmann 14"
+  },
+  "n12026384242": {
+   "r": "single",
+   "note": "d.co.il Kaufman 2; official page unreadable https://www.d.co.il/80014620"
+  },
+  "n12050619149": {
+   "r": "ok",
+   "note": "Official page Karlibach 1"
+  },
+  "n12050619150": {
+   "r": "single",
+   "note": "Official page Menachem Begin exists (unreadable); number unconfirmed https://www.aroma.co.il/en/store/menachem-begin-tel-aviv/"
+  },
+  "n12529707486": {
+   "r": "ok",
+   "note": "Official page Alon Tower, Yigal Alon 94"
+  },
+  "n715207462": {
+   "r": "ok",
+   "note": "Official branch Beit Harel, Abba Hillel 3 Ramat Gan (outside TLV)"
+  },
+  "n1989338521": {
+   "r": "dup",
+   "note": "Official branch Rothschild 31; duplicate of c-ארקפה-שדרותרוטשילד31, details moved there"
+  },
+  "n7565262760": {
+   "r": "dup",
+   "note": "Official branch Alon Towers, Yigal Alon 94; duplicate of c-ארקפה-יגאלאלון94, details moved there"
+  },
+  "n10784964980": {
+   "r": "ok",
+   "note": "Official branch Beit Asia, Weizmann 4"
+  },
+  "n11802167414": {
+   "r": "dup",
+   "note": "Duplicate of c-ארקפה-דרךמנחםבגין144 (Arcaffe Midtown, Begin 144); merged"
+  },
+  "n13472351447": {
+   "r": "none",
+   "note": "Not on official branch list (Gesher HaKirya)"
+  },
+  "w97523440": {
+   "r": "ok",
+   "note": "Official list has HaBarzel 20 and 21; which one unclear"
+  },
+  "n1626825015": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n2332149776": {
+   "r": "none",
+   "note": "Nothing found; coords look outside TLV"
+  },
+  "n5994818485": {
+   "r": "none",
+   "note": "Only undated atly"
+  },
+  "n12529700143": {
+   "r": "none",
+   "note": "Only d.co.il"
+  },
+  "n1576931591": {
+   "r": "none",
+   "note": "Nothing found; coords look like Holon"
+  },
+  "n1696894810": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n11088954278": {
+   "r": "none",
+   "note": "Time Out 2024-08 mention only"
+  },
+  "w334755929": {
+   "r": "none",
+   "note": "Nothing found; coords look like Ramat Gan"
+  },
+  "n11409921543": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n12110687259": {
+   "r": "ok",
+   "note": "Time Out 2025-03 cafe 3426 opened + JPost 2025-02 + Time Out 2026-03 venue active"
+  },
+  "w104699084": {
+   "r": "ok",
+   "note": "Benedict official site lists Picnic Park HaYarkon"
+  },
+  "n2055189672": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n9312382294": {
+   "r": "single",
+   "note": "Spotted by Locals 2025-04 Juno wine bar, De Haas 1 https://spottedbylocals.com/tel-aviv/juno-wine-bar"
+  },
+  "n13424384603": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n2079185866": {
+   "r": "none",
+   "note": "Time Out 2017 only"
+  },
+  "n10949032625": {
+   "r": "conflict",
+   "note": "Time Out 2026-04: cafe building hit by missile, closed for renovation >1 year (temporary), runs a coffee cart; branch unclear"
+  },
+  "n12568199183": {
+   "r": "closed",
+   "note": "Duplicate point of closed Dede at Uriel Acosta (Time Out 2026-01)"
+  },
+  "n7524489151": {
+   "r": "dup",
+   "note": "Duplicate of n5229027068 (Dubnov 8, 17 m away); merged"
+  },
+  "n4973245325": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n4839734632": {
+   "r": "conflict",
+   "note": "Official list: Jaffa branch at Olei Zion 10; catalog Rabbi Aha; maybe same as n13643518346"
+  },
+  "n5182249023": {
+   "r": "ok",
+   "note": "Official site lists Allenby 60 corner Gedera"
+  },
+  "n13643518346": {
+   "r": "none",
+   "note": "Time Out 2015 Amiad 11; unconfirmed"
+  },
+  "n11215205637": {
+   "r": "none",
+   "note": "Nothing found; coords look like Ramat Gan"
+  },
+  "n9865541170": {
+   "r": "ok",
+   "note": "Own site live Frishman 43"
+  },
+  "n3725300035": {
+   "r": "single",
+   "note": "Time Out 2026-06: reopened after 30-day police closure https://timeout.co.il/קפה-התחתית-פתוח/"
+  },
+  "n1717768353": {
+   "r": "none",
+   "note": "Own site unreachable; Time Out 2017 only"
+  },
+  "n5779429747": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n4428950690": {
+   "r": "none",
+   "note": "Nothing found; OSM entry mixed up"
+  },
+  "n1437321464": {
+   "r": "single",
+   "note": "Wolt Tatti Bakery HaShalom 53 Givatayim https://wolt.com/en/isr/tel-aviv/venue/tatti-bakery/items/menucategory-2"
   }
  }
 }

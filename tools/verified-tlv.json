@@ -1179,6 +1179,174 @@
    "src": [
     "https://www.cafelix.co.il/"
    ]
+  },
+  "n3081263900": {
+   "n": "ארומה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 07:00-20:00; Fr-Sa 07:00-15:00",
+   "w": "https://www.aroma.co.il/en/store/ramat-hasharon/",
+   "src": [
+    "https://www.aroma.co.il/en/store/ramat-hasharon/"
+   ]
+  },
+  "n3990604288": {
+   "n": "ארומה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 08:00-22:00; Fr 08:00-16:00; Sa 20:30-23:00",
+   "w": "https://www.aroma.co.il/en/store/ayalon-mall/",
+   "src": [
+    "https://www.aroma.co.il/en/store/ayalon-mall/"
+   ]
+  },
+  "n4706508227": {
+   "n": "ארומה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "p": "+972 3 648 9432",
+   "w": "https://www.aroma.co.il/en/store/ramat-hahayal/",
+   "src": [
+    "https://www.aroma.co.il/en/store/ramat-hahayal/"
+   ]
+  },
+  "n11169886012": {
+   "n": "ארומה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 06:30-21:00; Fr 06:30-15:00; Sa off",
+   "src": [
+    "https://www.aroma.co.il/en/store/weizman-city-ichilov/"
+   ]
+  },
+  "n12050619149": {
+   "n": "ארומה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 06:00-20:00; Fr 07:00-14:00; Sa off",
+   "w": "https://www.aroma.co.il/en/store/karlibach-tel-aviv/",
+   "src": [
+    "https://www.aroma.co.il/en/store/karlibach-tel-aviv/"
+   ]
+  },
+  "n12529707486": {
+   "n": "ארומה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 06:00-18:00; Fr 07:00-13:00; Sa off",
+   "src": [
+    "https://www.aroma.co.il/en/store/alon-tower/"
+   ]
+  },
+  "n715207462": {
+   "n": "ארקפה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 2,
+   "oh": "Su-Th 07:00-19:00; Fr 07:00-16:00; Sa off",
+   "p": "+972 55 973 7868",
+   "w": "https://arcaffe.co.il/branches/harel/",
+   "bk": "https://tabitisrael.co.il/tabit-order?siteName=arcaffebeitharel&step=enter",
+   "src": [
+    "https://arcaffe.co.il/branches/harel/"
+   ]
+  },
+  "n10784964980": {
+   "n": "ארקפה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 2,
+   "oh": "Su-Th 06:30-20:00; Fr 06:30-14:00; Sa off",
+   "p": "+972 72 277 5528",
+   "w": "https://arcaffe.co.il/branches/asia-house/",
+   "bk": "https://tabitisrael.co.il/tabit-order?siteName=arcaffebeitasia&step=enter",
+   "src": [
+    "https://arcaffe.co.il/branches/asia-house/"
+   ]
+  },
+  "w97523440": {
+   "n": "ארקפה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 2,
+   "src": [
+    "https://arcaffe.co.il/branches/"
+   ]
+  },
+  "n12110687259": {
+   "n": "בית רדיקל",
+   "ok": "2026-03",
+   "cu": "קפה ובראנץ'",
+   "pr": 1,
+   "src": [
+    "https://timeout.co.il/3426-קפה-בית-רדיקל/",
+    "https://www.jpost.com/food-recipes/article-842007"
+   ]
+  },
+  "w104699084": {
+   "n": "בנדיקט פיקניק פארק",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "w": "https://www.benedict.co.il/pages/%D7%91%D7%A0%D7%93%D7%99%D7%A7%D7%98-%D7%A4%D7%99%D7%A7%D7%A0%D7%99%D7%A7-%D7%A4%D7%90%D7%A8%D7%A7",
+   "src": [
+    "https://www.benedict.co.il/"
+   ]
+  },
+  "n5182249023": {
+   "n": "המלביה",
+   "ok": "2026-11",
+   "cu": "קינוחים",
+   "p": "+972773206293",
+   "w": "https://www.hamalabiya.co.il",
+   "src": [
+    "https://www.hamalabiya.co.il/"
+   ]
+  },
+  "n9865541170": {
+   "n": "העוגן",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "oh": "Mo-Th 07:30-17:00; Fr 07:30-15:00; Sa,Su off",
+   "w": "https://haogentlv.com/עברית",
+   "src": [
+    "https://haogentlv.com/עברית"
+   ]
+  },
+  "n3731754512": {
+   "n": "ארומה",
+   "rm": [
+    "w"
+   ],
+   "src": [
+    "https://aromatlv.com/"
+   ],
+   "note": "website hijacked (casino)"
+  },
+  "c-ארקפה-שדרותרוטשילד31": {
+   "n": "ארקפה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 2,
+   "oh": "Su-Th 07:00-20:00; Fr 07:00-15:00; Sa 07:00-19:00",
+   "p": "+972 55 993 3171",
+   "w": "https://arcaffe.co.il/branches/rothschild/",
+   "bk": "https://tabitisrael.co.il/tabit-order?siteName=arcafferothschild&step=enter",
+   "src": [
+    "https://arcaffe.co.il/branches/rothschild/"
+   ]
+  },
+  "c-ארקפה-יגאלאלון94": {
+   "n": "ארקפה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 2,
+   "oh": "Su-Th 06:00-16:30; Fr,Sa off",
+   "p": "+972 55 980 1807",
+   "w": "https://arcaffe.co.il/branches/alon-towers/",
+   "bk": "https://tabitisrael.co.il/tabit-order?siteName=arcaffemigdaleialon&step=enter",
+   "src": [
+    "https://arcaffe.co.il/branches/alon-towers/"
+   ]
   }
  }
 }

@@ -21,6 +21,9 @@ for p in D["places"]:
         for k in ("oh", "p", "w", "bk", "cu", "pr", "k", "vg"):
             if V.get(k):
                 p[k] = V[k]; p.setdefault("src", {})[k] = (V.get("src") or ["web"])[0]
+        # fields found to be wrong (e.g. a hijacked website) are removed
+        for k in V.get("rm", []):
+            if k in p: p.pop(k); p.setdefault("src", {})[k + "_removed"] = (V.get("src") or ["web"])[0]
         # official name ("nm") replaces the catalog name; the old name stays searchable in "al"
         if V.get("nm") and V["nm"] != p["n"]:
             al = p.setdefault("al", [])
