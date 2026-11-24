@@ -44,24 +44,24 @@
   },
   "n13374016467": {
    "name": "סטנדאפ פאקטורי",
-   "old": "שביל המרץ",
+   "old": "שביל המרץ 5",
    "new": "שביל המרץ 5",
    "status": "applied",
-   "moved_m": 87
+   "moved_m": 0
   },
   "n2249328556": {
    "name": "פיקוק",
-   "old": "מרמורק",
+   "old": "מרמורק 14",
    "new": "מרמורק 14",
    "status": "applied",
-   "moved_m": 6
+   "moved_m": 0
   },
   "n13532671475": {
-   "name": "Buti",
-   "old": "כיכר דיזנגוף (צינה)",
+   "name": "Buti & Co",
+   "old": "כיכר דיזנגוף 4",
    "new": "כיכר דיזנגוף 4",
    "status": "applied",
-   "moved_m": 5
+   "moved_m": 0
   }
  },
  "dup": {
@@ -76,6 +76,11 @@
   "n12505208002": {
    "status": "skipped",
    "why": "id not in catalog"
+  },
+  "n7677654261": {
+   "status": "merged",
+   "into": "n2079008750",
+   "name": "Ada Hanina"
   }
  }
 }

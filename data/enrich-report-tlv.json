@@ -1,15 +1,15 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 455,
- "site_jsonld": 47,
- "site_match": 12,
+ "site_checked": 458,
+ "site_jsonld": 48,
+ "site_match": 13,
  "site_reject": 35,
- "phone_site": 0,
+ "phone_site": 1,
  "hours_site": 0,
  "addr_site": 0,
  "cuisine_site": 2,
- "names_site": 0,
+ "names_site": 1,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -19,6 +19,13 @@
    "field": "phone",
    "osm": "035175379",
    "site": "035175179"
+  },
+  {
+   "id": "n904508667",
+   "n": "בני הדייג",
+   "field": "phone",
+   "osm": "03-5440518",
+   "site": "0737585695"
   },
   {
    "id": "n950284108",
@@ -180,6 +187,34 @@
    "field": "phone",
    "osm": "+972 035225005",
    "site": "035225005"
+  },
+  {
+   "id": "n10969247136",
+   "n": "הלבנטיני",
+   "field": "phone",
+   "osm": "+972 36324444",
+   "site": "0778048601"
+  },
+  {
+   "id": "n11534655277",
+   "n": "Amita Pastry House at Bialik",
+   "field": "phone",
+   "osm": "+972 3 621 8586",
+   "site": "0548761616"
+  },
+  {
+   "id": "n12078593856",
+   "n": "נייט שיפט",
+   "field": "phone",
+   "osm": "+972 54 223 0223",
+   "site": "0537933664"
+  },
+  {
+   "id": "n13532671475",
+   "n": "Buti & Co",
+   "field": "hours",
+   "osm": "Su-Th 07:30-20:00; Fr 07:30-17:00; Sa 08:00-20:00",
+   "site": "Su 07:30-20:00; Tu 07:30-20:00; We 07:30-20:00; Th 07:30-20:00; Fr 07:30-17:00; Sa 08:30-20:00"
   }
  ],
  "rejected_sites": [
@@ -394,15 +429,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 76,
- "phone_multi_skipped": 16,
+ "phone_confirmed": 82,
+ "phone_multi_skipped": 20,
  "coverage_after": {
   "address": "1324 (100%)",
-  "hours": "367 (28%)",
-  "phone": "389 (29%)",
-  "website": "487 (37%)",
+  "hours": "369 (28%)",
+  "phone": "391 (30%)",
+  "website": "490 (37%)",
   "cuisine": "967 (73%)",
-  "extra_names": "746 (56%)"
+  "extra_names": "747 (56%)"
  },
- "conflicts_n": 24
+ "conflicts_n": 29
 }
