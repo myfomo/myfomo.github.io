@@ -66,6 +66,48 @@
     "https://www.butiandco.com/"
    ],
    "note": "Own site"
+  },
+  "n3146954531": {
+   "a": "שדרות ירושלים 77",
+   "src": [
+    "https://timeout.co.il/בתי-קפה-מומלצים-יפו/"
+   ],
+   "note": "Reopened at Jerusalem Blvd 77 after 2023 arson (Time Out)"
+  },
+  "n4161854778": {
+   "a": "ארלוזורוב 186",
+   "src": [
+    "https://caffehenrietta.com/"
+   ],
+   "note": "Own site"
+  },
+  "n9996994153": {
+   "a": "התבור 2",
+   "src": [
+    "https://timeout.co.il/קפה-ספיישלטי-תל-אביב/"
+   ],
+   "note": "Time Out 2025-09"
+  },
+  "n13541827938": {
+   "a": "הרברט סמואל 3",
+   "src": [
+    "https://www.calcalist.co.il/style/article/s1jgfrrqlx"
+   ],
+   "note": "Calcalist 2025-06"
+  },
+  "n13532692938": {
+   "a": "בילינסון 3",
+   "src": [
+    "https://timeout.co.il/goodboy/"
+   ],
+   "note": "Time Out 2026-01"
+  },
+  "n13530063787": {
+   "a": "דיזנגוף 141",
+   "src": [
+    "https://www.6inmay.co.il"
+   ],
+   "note": "Own site and Wolt; catalog had Ben Ami 13"
   }
  },
  "dup": {

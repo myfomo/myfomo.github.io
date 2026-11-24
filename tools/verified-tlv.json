@@ -1028,6 +1028,86 @@
    "src": [
     "https://www.betacaffe.co.il/"
    ]
+  },
+  "n4161854778": {
+   "n": "Cafe Henrietta",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 2,
+   "oh": "Su-Th 08:00-22:00; Fr 08:00-16:00; Sa 08:30-22:00",
+   "p": "03-6911715",
+   "w": "https://caffehenrietta.com/",
+   "src": [
+    "https://caffehenrietta.com/",
+    "https://caffehenrietta.com/Menu"
+   ]
+  },
+  "n5619074223": {
+   "n": "Loveat",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "w": "https://coffeeorg.co/",
+   "src": [
+    "https://coffeeorg.co/pages/סניפים"
+   ]
+  },
+  "n3346575491": {
+   "n": "Grand Cafe Torquise",
+   "ok": "2026-11",
+   "nm": "Grand Cafe Turkiz",
+   "oh": "Su-Th 09:00-22:30; Fr 08:30-22:30; Sa 09:00-23:30",
+   "p": "03-5536677",
+   "w": "https://www.grandcafe.co.il/",
+   "src": [
+    "https://www.grandcafe.co.il/"
+   ]
+  },
+  "n13541827938": {
+   "n": "Chacoli",
+   "ok": "2026-08",
+   "cu": "דגים ופירות ים",
+   "pr": 2,
+   "src": [
+    "https://www.calcalist.co.il/style/article/s1jgfrrqlx",
+    "https://www.i24news.co.il/news/food/artc-9aa24a8e",
+    "https://timeout.co.il/צאקולי/"
+   ]
+  },
+  "n5614670182": {
+   "n": "Farouk BaShuk",
+   "ok": "2026-06",
+   "cu": "בר",
+   "p": "03-6515670",
+   "w": "https://faruk-bashuk.co.il",
+   "bk": "https://ontopo.com/he/il/page/94959917",
+   "src": [
+    "https://faruk-bashuk.co.il",
+    "https://ontopo.com/he/il/page/94959917"
+   ]
+  },
+  "n1758265855": {
+   "n": "Hotel & Cafe 65",
+   "ok": "2026-03",
+   "cu": "קפה ובראנץ'",
+   "pr": 3,
+   "w": "https://www.atlas.co.il/en/65-hotel-tel-aviv",
+   "src": [
+    "https://www.atlas.co.il/en/65-hotel-tel-aviv",
+    "https://jpost.com/consumerism/article-887904"
+   ]
+  },
+  "n13530063787": {
+   "n": "May 6",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "pr": 2,
+   "oh": "Su-Th 08:00-23:00; Fr 08:00-18:00; Sa 08:00-23:00",
+   "p": "072-241-0551",
+   "w": "https://www.6inmay.co.il",
+   "src": [
+    "https://www.6inmay.co.il",
+    "https://wolt.com/he/isr/tel-aviv/restaurant/may-6"
+   ]
   }
  }
 }

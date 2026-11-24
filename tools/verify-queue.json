@@ -3116,6 +3116,206 @@
   "n1171857553": {
    "r": "conflict",
    "note": "Own site lists no Tzahal branch; likely closed, no closure source"
+  },
+  "n2051085614": {
+   "r": "none",
+   "note": "Nothing found; coords look like Ramat Gan"
+  },
+  "n4161854779": {
+   "r": "none",
+   "note": "Only wanderlog 'closed' (unreliable)"
+  },
+  "n12064670865": {
+   "r": "none",
+   "note": "No source for a Europa kiosk"
+  },
+  "n13527237951": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n10292747709": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n13516617027": {
+   "r": "none",
+   "note": "Address '1105', branch can't be matched"
+  },
+  "n12105823467": {
+   "r": "none",
+   "note": "No official branch list; unverified"
+  },
+  "n13534284801": {
+   "r": "conflict",
+   "note": "eatintlv Yehudit 21, atly King George 48, Pudlowski Shlomo HaMelech; see also n11681494372"
+  },
+  "n12977182602": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n651304178": {
+   "r": "none",
+   "note": "Time Out 2017 only"
+  },
+  "n4161854778": {
+   "r": "ok",
+   "note": "Own site live Arlozorov 186; menu 59-82"
+  },
+  "n1449351652": {
+   "r": "none",
+   "note": "Time Out 2024-12 Walter Moses 10 only"
+  },
+  "n3146954531": {
+   "r": "conflict",
+   "note": "Burned 2023 at Yehuda HaYamit; reopened at Jerusalem Blvd 77 (Time Out 2024/2025); address fix added"
+  },
+  "n11681467820": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n2079042219": {
+   "r": "none",
+   "note": "Time Out 2018 only"
+  },
+  "n13516610017": {
+   "r": "none",
+   "note": "No branch list; unverified"
+  },
+  "n12104037732": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n4587267189": {
+   "r": "none",
+   "note": "Time Out 2021 only"
+  },
+  "n12016665366": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n5619074223": {
+   "r": "ok",
+   "note": "Official locations page lists Loveat Dizengoff 232"
+  },
+  "n2659433566": {
+   "r": "none",
+   "note": "Own site unreachable; nothing else"
+  },
+  "n5222973331": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n13516618072": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n3346575491": {
+   "r": "ok",
+   "note": "Own site lists Einstein 40 Ramat Aviv Mall"
+  },
+  "n9996994153": {
+   "r": "single",
+   "note": "Time Out 2025-09 HOC at HaTavor 2 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/"
+  },
+  "n9879111022": {
+   "r": "none",
+   "note": "Time Out 2014/2021 only"
+  },
+  "n10296522482": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n10948700190": {
+   "r": "none",
+   "note": "Only atly"
+  },
+  "n1718632809": {
+   "r": "none",
+   "note": "No port branch on official site; likely gone"
+  },
+  "n347264681": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n6005408786": {
+   "r": "closed",
+   "note": "Time Out 2021-04: closed after 11 years"
+  },
+  "n13541827938": {
+   "r": "ok",
+   "note": "Time Out 2024 + Calcalist 2025-06 + i24 2026-08; Herbert Samuel 3"
+  },
+  "n5614670182": {
+   "r": "ok",
+   "note": "Own site live Nachman 6; Ontopo active"
+  },
+  "n13532692938": {
+   "r": "single",
+   "note": "Time Out 2026-01 Goodboy Bilinson 3 https://timeout.co.il/goodboy/"
+  },
+  "n1758265855": {
+   "r": "ok",
+   "note": "Atlas hotel page names Cafe 65 at Rothschild 65; JPost 2026-03 brunch 130-155"
+  },
+  "n13527184493": {
+   "r": "none",
+   "note": "No branch list; no Dizengoff source"
+  },
+  "n1851266185": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n11681494372": {
+   "r": "single",
+   "note": "Time Out Rothschild map 2025-04 Rothschild corner Mazeh https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/"
+  },
+  "n4922280517": {
+   "r": "none",
+   "note": "Time Out 2017 / 2023 only"
+  },
+  "n9507908019": {
+   "r": "none",
+   "note": "Montefiore 3 or 16; no recent source"
+  },
+  "n6005369587": {
+   "r": "none",
+   "note": "Generic office cafeteria"
+  },
+  "n13516618073": {
+   "r": "none",
+   "note": "TAU building number; nothing found"
+  },
+  "n14152436486": {
+   "r": "none",
+   "note": "Nothing found"
+  },
+  "n11691761924": {
+   "r": "single",
+   "note": "Wolt active HaHashmonaim 88 https://wolt.com/en/isr/tel-aviv/restaurant/green-kitchen1"
+  },
+  "n13516605829": {
+   "r": "none",
+   "note": "TAU campus; no branch source"
+  },
+  "n6771850686": {
+   "r": "none",
+   "note": "Time Out 2015 only"
+  },
+  "n13516554792": {
+   "r": "none",
+   "note": "TAU building number; nothing found"
+  },
+  "n12729335013": {
+   "r": "none",
+   "note": "Only atly (Bograshov 43)"
+  },
+  "n2160093335": {
+   "r": "none",
+   "note": "Nahalat Binyamin branch only in 2017; likely closed"
+  },
+  "n13530063787": {
+   "r": "ok",
+   "note": "Own site live Dizengoff 141 (catalog Ben Ami 13; address fix added); Wolt same"
   }
  }
 }
