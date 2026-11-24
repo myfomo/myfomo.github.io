@@ -5,6 +5,7 @@ def get(u):
     with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=25) as r:
         return r.geturl(), r.read().decode("utf-8", "replace")
 import sys
+KW = re.compile(r"branch|store|location|סניפ", re.I)
 def text(t):
     t=re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>"," ",t); t=re.sub(r"(?i)<br\s*/?>|</(p|div|li|h\d|tr|span)>","\n",t)
     t=H.unescape(re.sub(r"<[^>]+>"," ",t)); return "\n".join(l.strip() for l in t.splitlines() if l.strip())
