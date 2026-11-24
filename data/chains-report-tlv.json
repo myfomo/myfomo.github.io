@@ -277,16 +277,12 @@
   ]
  },
  "בנדיקט": {
-  "official": 0,
-  "matched": 0,
+  "official": 1,
+  "matched": 1,
   "added": 0,
   "hours": 0,
   "phones": 0,
   "ours_not_listed": [
-   {
-    "id": "n7769668171",
-    "a": "אלוף קלמן מגן 3"
-   },
    {
     "id": "w104699084",
     "a": "מסלול החושים האתגרי"
@@ -295,9 +291,9 @@
  },
  "פיצה האט": {
   "official": 3,
-  "matched": 1,
-  "added": 2,
-  "hours": 1,
+  "matched": 3,
+  "added": 0,
+  "hours": 0,
   "phones": 0,
   "ours_not_listed": [
    {
