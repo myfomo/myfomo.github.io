@@ -1593,6 +1593,64 @@
    "src": [
     "https://www.mcdonalds.co.il/%D7%90%D7%99%D7%AA%D7%95%D7%A8_%D7%9E%D7%A1%D7%A2%D7%93%D7%94?store_id=290"
    ]
+  },
+  "n11414939014": {
+   "n": "Papa John's",
+   "ok": "2026-11",
+   "cu": "פיצה",
+   "w": "https://www.papajohns.co.il/branch/%d7%a4%d7%99%d7%a6%d7%94-%d7%91%d7%a8%d7%9e%d7%aa-%d7%94%d7%a9%d7%a8%d7%95%d7%9f/",
+   "src": [
+    "https://www.papajohns.co.il/en/branch/%D7%A4%D7%99%D7%A6%D7%94-%D7%91%D7%97%D7%93%D7%A8%D7%94"
+   ]
+  },
+  "n12802963142": {
+   "n": "Papa John's",
+   "ok": "2026-11",
+   "cu": "פיצה",
+   "w": "https://www.papajohns.co.il/branch/%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91-%d7%9c%d7%91%d7%95%d7%a0%d7%98%d7%99%d7%9f/",
+   "src": [
+    "https://www.papajohns.co.il/en/branch/%D7%A4%D7%99%D7%A6%D7%94-%D7%91%D7%97%D7%93%D7%A8%D7%94"
+   ]
+  },
+  "n10968175322": {
+   "n": "Shi shi",
+   "ok": "2026-11",
+   "cu": "אסייתי",
+   "src": [
+    "https://timeout.co.il/שי-שי-מיקדו/",
+    "https://wolt.com/he/Israel/Tel Aviv/restaurant/shi-shi"
+   ]
+  },
+  "n5700184286": {
+   "n": "Tal Bagels",
+   "ok": "2025-05",
+   "src": [
+    "https://timeout.co.il/בייגל-תל-אביב/",
+    "https://wolt.com/en/isr/tel-aviv/restaurant/tal-bagels/items/menucategory-3"
+   ]
+  },
+  "n746730771": {
+   "n": "אגדיר",
+   "ok": "2026-06",
+   "nm": "אגאדיר",
+   "cu": "המבורגר",
+   "src": [
+    "https://timeout.co.il/%D7%A4%D7%95%D7%A8%D7%98-%D7%A9%D7%A3-2026/",
+    "https://www.ias.co.il/?p=188582",
+    "https://timeout.co.il/ppost/select-agadir/",
+    "https://www.israelhayom.co.il/food/food-news/article/19367252"
+   ]
+  },
+  "n12588050745": {
+   "n": "אסתר המלכה",
+   "ok": "2025-02",
+   "cu": "המבורגר",
+   "pr": 2,
+   "src": [
+    "https://www.maariv.co.il/food/article-1174491",
+    "https://www.ice.co.il/food/news/article/1047785",
+    "https://wolt.com/ar/isr/tel-aviv/restaurant/ester-hamalka"
+   ]
   }
  }
 }
