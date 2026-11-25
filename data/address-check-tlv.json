@@ -170,10 +170,66 @@
   },
   "n14322088164": {
    "name": "Yotam's Donuts",
-   "old": "המלך ג׳ורג׳",
+   "old": "המלך ג׳ורג׳ 1",
    "new": "המלך ג׳ורג׳ 1",
    "status": "applied",
-   "moved_m": 5
+   "moved_m": 0
+  },
+  "n5604815955": {
+   "name": "Brasserie 18",
+   "old": "Levontin Street",
+   "new": "לבונטין 19",
+   "status": "applied",
+   "moved_m": 56
+  },
+  "n6926507885": {
+   "name": "Cicchetti",
+   "old": "מזא\"ה",
+   "new": "יהודה הלוי 58",
+   "status": "applied",
+   "moved_m": 12
+  },
+  "n450524210": {
+   "name": "Ernesto",
+   "old": "סמולנסקין",
+   "new": "בן יהודה 90",
+   "status": "applied",
+   "moved_m": 10
+  },
+  "n5018171923": {
+   "name": "Goocha",
+   "old": "הברזל",
+   "new": "הברזל 7",
+   "status": "applied",
+   "moved_m": 2
+  },
+  "n12647744238": {
+   "name": "Hummus HaMeshorer",
+   "old": "אבן גבירול",
+   "new": "אבן גבירול 8",
+   "status": "blocked",
+   "why": "geocoded point [32.124904, 34.788601] is 5910 m from the old point"
+  },
+  "n6317085485": {
+   "name": "Italkiya",
+   "old": "עולי ציון",
+   "new": "עולי ציון 16",
+   "status": "applied",
+   "moved_m": 2
+  },
+  "n2672314363": {
+   "name": "Porter & Sons",
+   "old": "הארבעה",
+   "new": "הארבעה 14",
+   "status": "blocked",
+   "why": "another place is within 12 m: Mike's Place (n5703238537)"
+  },
+  "n705556743": {
+   "name": "מציצים",
+   "old": "נמל תל אביב",
+   "new": "חבקוק הנביא 1",
+   "status": "applied",
+   "moved_m": 139
   }
  },
  "dup": {
