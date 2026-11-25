@@ -5138,6 +5138,206 @@
   "n12635329110": {
    "r": "none",
    "note": "Coordinates = Azrieli Mall (Menachem Begin 132); only undated directories list it (d.co.il https://www.d.co.il/80242228/30455/, enjoyingisrael); burgerking.co.il could not be fetched; no 2025-26 news; no closure news"
+  },
+  "n1388903440": {
+   "r": "none",
+   "note": "Burgeranch site branch locator is dynamic (no data readable); Wolt brand lists only Azrieli, Menora, Ramat Gan (Landau Haim 7), Herzliya, Rehovot - none matches Ben Gurion at these coords; no Tabit/Ontopo; no closure news"
+  },
+  "n1851267416": {
+   "r": "none",
+   "note": "No current source for an Allenby Burgeranch branch: not on Wolt brand page, branch locator unreadable, no Tabit/Ontopo, no closure article found"
+  },
+  "n4159749096": {
+   "r": "single",
+   "note": "Wolt page Burgeranch Azrieli TLV, Begin 132 (matches coords): https://wolt.com/en/isr/tel-aviv/restaurant/burgeranch-azrieli-tlv ; d.co.il listing (undated) https://www.d.co.il/64405150/30455 ; own site locator unreadable; no Tabit/Ontopo"
+  },
+  "n5596945445": {
+   "r": "single",
+   "note": "Wolt page Burgeranch Menora, Yigal Alon 51, kosher Tel Aviv Rabbinate: https://wolt.com/en/isr/tel-aviv/restaurant/burgeranch-menora ; no other source; no Tabit/Ontopo; no closure news"
+  },
+  "n9190133517": {
+   "r": "single",
+   "note": "Wolt 'Burgerim BSR' has same phone 03-537-8823 but address Matzada 7, Bnei Brak (BSR complex, catalog says Kinneret 3): https://wolt.com/en/isr/tel-aviv/restaurant/burgerim-bsr ; no own site found; no Tabit/Ontopo"
+  },
+  "n11405068715": {
+   "r": "single",
+   "note": "Wolt 'Burgerim Carlebach' at Carlebach 25 (near coords; catalog street is Bayliss from OSM): https://wolt.com/en/isr/tel-aviv/restaurant/burgerim-carlebach ; enjoyingisrael listing undated; no own site; no Tabit/Ontopo; address may need Carlebach 25"
+  },
+  "n4742670231": {
+   "r": "none",
+   "note": "No source for a Burgeranch on Yohanan HaSandlar; not on Wolt brand list; locator unreadable; no Tabit/Ontopo; OSM entry from 2017"
+  },
+  "n2577660818": {
+   "r": "single",
+   "note": "Wolt 'Burgers Bar Kosher Mahfud Ramat Aviv', Tagore Center 30: https://wolt.com/en/isr/tel-aviv/restaurant/burgers-bar ; own site branches page (burgersbar.co.il/branches/) did not show TLV branches; no Tabit/Ontopo"
+  },
+  "n6469411086": {
+   "r": "single",
+   "note": "Wolt 'Burgers Bar Azrieli', Begin 132, kosher mehadrin Badatz Beit Yosef: https://wolt.com/en/isr/tel-aviv/restaurant/burgers-bar-azrieli ; own branches page did not list it; no Tabit/Ontopo"
+  },
+  "n10765326958": {
+   "r": "ok",
+   "note": "Own site live naming Sharit Israel 23 (menu page modified 2026-10); Time Out/Israel Hayom articles; no Tabit/Ontopo; hours on site ambiguous, not taken"
+  },
+  "n12281652113": {
+   "r": "none",
+   "note": "Only Time Out 2022 (Stern 5) and an aggregator page; no 2025-2026 source, no site, not on Tabit/Ontopo/Wolt; no closure news found"
+  },
+  "n12187698113": {
+   "r": "ok",
+   "note": "Maariv 2025-06 (Levinsky 43, borekas 37 NIS) + asif.org 2025-04; no own site; not on Tabit/Ontopo; no closure news"
+  },
+  "n6469415931": {
+   "r": "none",
+   "note": "Bayern Market Azrieli food court only in Israel Hayom 2018-06; Time Out 2018-12 says only the Bayern bistro closed, market chain continues; no recent source, no site/Tabit/Ontopo"
+  },
+  "n4587267133": {
+   "r": "none",
+   "note": "No source found for a food place named Bloomberg at Ibn Gabirol 15; no site, not on Tabit/Ontopo/Wolt, no closure news"
+  },
+  "n2862959839": {
+   "r": "ok",
+   "note": "Time Out 2026-07 and 2025-12 list Yedidya Frankel 4; public Wolt page 'Benz Brothers | Florentin' Harav Frankel 4; own site unreachable; not on Tabit/Ontopo; no closure news"
+  },
+  "n10929350209": {
+   "r": "ok",
+   "note": "Time Out 2025-12 lists Ibn Gvirol 37; public Wolt page 'Benz Brothers | Ibn Gabirol' Ibn Gabirol 37 (+972 77-724-2085); Time Out 2025-01 burger 46 NIS; own site unreachable; not on Tabit/Ontopo"
+  },
+  "n2051086928": {
+   "r": "none",
+   "note": "No source found for Bar-Lin burger on Talpiot St; not on Tabit/Ontopo/Wolt; no closure news"
+  },
+  "n7617623785": {
+   "r": "none",
+   "note": "Breadly (Menachem Begin 132, Azrieli) only in Mako 2015-08; no recent source, no site/Tabit/Ontopo, no closure news found"
+  },
+  "n9392521640": {
+   "r": "ok",
+   "note": "ynetnews 2026-05 lists Brooklyn at 88 King George; gillespudlowski.com 2025-04 King George 88; public Wolt page active listing; no own site; not on Tabit/Ontopo"
+  },
+  "n12087608626": {
+   "r": "single",
+   "note": "Only recent source: public Wolt page Junky Burger, Levinsky 45 https://wolt.com/en/isr/tel-aviv/restaurant/junky-burger ; Time Out review is 2023-08; own site unreachable; not on Tabit/Ontopo; no closure news"
+  },
+  "n12505246771": {
+   "r": "single",
+   "note": "Time Out TA pieces mention Jasmino as operating street-food grill (2025-03 street-food picks; 2026-09 news roundup referencing it) - one outlet only: https://timeout.co.il/topic/גסמינו/ ; older listing gives Allenby 97 (2018); no site, no Tabit/Ontopo, no closure news"
+  },
+  "n6790992294": {
+   "r": "none",
+   "note": "Own site galiromapizza.co.il unreachable; only Time Out review 2019 (Dizengoff 145); no Tabit/Ontopo, no Wolt page, no 2025-26 source, no closure news found"
+  },
+  "n11226651758": {
+   "r": "none",
+   "note": "No web results for Grill Street on Jabotinsky; no site, Tabit/Ontopo or closure news"
+  },
+  "n13727295703": {
+   "r": "none",
+   "note": "Searches for Grill Lunch at HaMetzuda 10 returned nothing relevant; no site, Tabit/Ontopo or closure news"
+  },
+  "n777400976": {
+   "r": "none",
+   "note": "Only Time Out mentions 2019-2022 (shawarma), no address on Zeitlin confirmed, nothing 2025-26; no site, Tabit/Ontopo or closure news"
+  },
+  "n1150925905": {
+   "r": "ok",
+   "note": "Own site has live Domino's Ramat Aviv branch page; directory lists Ramat Aviv branch at Tagore 30 (matches coords); no closure news"
+  },
+  "n2862959848": {
+   "r": "ok",
+   "note": "Own site has live Domino's Florentin branch page; directories give Florentin 25 (matches coords); no closure news"
+  },
+  "n10923451005": {
+   "r": "none",
+   "note": "Domino's site lists 7 TA branches (Ramat Aviv, Florentin, Yigal Allon, Ramat HaHayal, Carlebach, HaYarkon kosher...) - none found on/near HaGilad; no source for this branch"
+  },
+  "n5352170383": {
+   "r": "none",
+   "note": "No reliable source for 'Diana BaIr' at Gesher HaKirya (only Nazareth Diana results); no Tabit/Ontopo or closure news"
+  },
+  "n5030846823": {
+   "r": "none",
+   "note": "Catalog website 'https://habarbanel' invalid; only undated atly.com listing (Abarbanel 34); no Tabit/Ontopo, no 2025-26 source, no closure news"
+  },
+  "n11217654480": {
+   "r": "none",
+   "note": "No web/news mention of Doron's jachnun on Malchei Israel; no own site; not on Tabit/Ontopo; no closure news found"
+  },
+  "n11345095156": {
+   "r": "conflict",
+   "note": "atly lists Holstein at Yom Tov 17, but Time Out 2025-11 (Carmel market roundup) lists San Mai Russian dumplings at Yom Tov 17; Time Out 2025-12 names only the Ibn Gabirol 21 branch. Possibly closed/replaced; no explicit closure source. https://timeout.co.il/%d7%a9%d7%95%d7%a7-%d7%94%d7%9b%d7%a8%d7%9e%d7%9c-2/"
+  },
+  "n12768172727": {
+   "r": "ok",
+   "note": "Time Out 2025-12 (capsule collab, branch Ibn Gabirol 21 operating, hours given) + Maariv 2025-07 (Ibn Gabirol 21, not kosher); Time Out opening article 2024-10 (classic burger 53 NIS); Tabit page exists in index but could not be read; catalog website invalid; hours from one source only so not set"
+  },
+  "n6644550263": {
+   "r": "none",
+   "note": "Coordinates in Ramat HaSharon (Ussishkin); no reliable source found for 'HaHummusia' there; not on Tabit/Ontopo; no closure news"
+  },
+  "n12084976087": {
+   "r": "none",
+   "note": "No web/news source found for HaYnuka on Herzl; not on Tabit/Ontopo; no closure news"
+  },
+  "n5997818137": {
+   "r": "none",
+   "note": "Only Hello Teyman found is a Jerusalem business (d.co.il, own site hello-teyman.co.il unreachable); nothing for a Sokolov branch near these coordinates; not on Tabit/Ontopo"
+  },
+  "n11413029245": {
+   "r": "none",
+   "note": "Bnei Brak Yochanan HaSandlar: no reliable source; only Hello Teyman listing found is in Jerusalem; own site unreachable; not on Tabit/Ontopo"
+  },
+  "n9429290715": {
+   "r": "single",
+   "note": "Own site hamosadtlv.co.il failed to load; Wolt public page lists HaMosad at Ibn Gabirol 67 (footer 2026) https://wolt.com/fr/Israel/Tel Aviv/restaurant/hamosad ; Time Out review is 2015; plantspack is OSM import; not on Tabit/Ontopo; no closure news"
+  },
+  "n1857121006": {
+   "r": "ok",
+   "note": "Maariv 2025-09 (Sirkin 7 Givatayim, line at stand, sabich 34 NIS) + ynet 2025-07 (Oved Sirkin 7 Givatayim); no own site; not on Tabit/Ontopo; no closure news"
+  },
+  "n1102304293": {
+   "r": "none",
+   "note": "d.co.il lists HaSushia at Aharon Becker 8 (Migdo Center) with reviews only up to 2013; wanderlog marks it permanently closed (not reliable, likely Google-derived); chain site hasushia.co.il unreachable; not on Tabit/Ontopo; no closure news article"
+  },
+  "n1407004659": {
+   "r": "none",
+   "note": "Own site hasushia.com down; d.co.il lists Hasushia at Jabotinsky 75 Ramat Gan (no recent date, last review 2018); HappyCow shows Ben Yehuda branch closed 2020 (other branch); no Tabit/Ontopo; no 2025-26 source"
+  },
+  "n5995053444": {
+   "r": "none",
+   "note": "Searches for name + Sharaf street (Ramat HaSharon/Herzliya) found nothing; no site, no Tabit/Ontopo, no closure news"
+  },
+  "n2534433985": {
+   "r": "none",
+   "note": "No source naming this falafel stand at Nahalat Yitzhak; no site, no Tabit/Ontopo, no closure news"
+  },
+  "n11217657479": {
+   "r": "none",
+   "note": "Only unrelated results (Time Out 'parliaments' feature); no site, no Tabit/Ontopo, no closure news"
+  },
+  "n2327291685": {
+   "r": "none",
+   "note": "No source found for this schnitzel place on Rashi (Bnei Brak/Ramat Gan coords); no site, no Tabit/Ontopo, no closure news"
+  },
+  "n12668726983": {
+   "r": "none",
+   "note": "No source found for this stall on Markolet (Jaffa flea market); no site, no Tabit/Ontopo, no closure news"
+  },
+  "n10814448813": {
+   "r": "none",
+   "note": "Time Out review 2021-09 (Kalman Magen 3, Sarona Market) only; catalog website invalid; no 2025-26 source, no Tabit/Ontopo, no closure news"
+  },
+  "n12802945060": {
+   "r": "none",
+   "note": "Catalog website invalid; Atly lists Wok Sushi 9 branches at Washington 24 (Florentin) and Carmel Market, not Yehuda HaLevi 55; no dated source, no Tabit/Ontopo"
+  },
+  "n9597836917": {
+   "r": "single",
+   "note": "Only recent source: Wolt public page lists 'Vitrina | Ibn Gabirol' as active https://wolt.com/ar/isr/tel-aviv/brand/vitrina ; Time Out/Mako articles 2017-2018 only (reopened at Ibn Gabirol 36 after 2017 renovation closure); no Tabit/Ontopo"
+  },
+  "n11818013490": {
+   "r": "none",
+   "note": "Own site zotapizza.com now redirects to an unrelated gambling site (domain lost); no reliable source for Meir Yaari 19 branch; no Tabit/Ontopo, no closure news"
   }
  }
 }
