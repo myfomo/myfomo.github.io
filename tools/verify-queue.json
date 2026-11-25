@@ -5938,6 +5938,178 @@
   "n2079183654": {
    "r": "ok",
    "note": "Time Out Carmel Market guide 2026-05 lists Panda Pita at Mlan 45; Time Out pita roundup 2025 (Mlan 45, eggplant pita 44 NIS); ice 2025-05. No own site/Tabit/Ontopo found; no closure news."
+  },
+  "n10829552505": {
+   "r": "single",
+   "note": "Time Out TLV ice-cream guide 2026-08 lists Anita at Elazar 15 (Sarona), matching catalog street; official site anita-gelato.com shows only Neve Tzedek/Florentin pages, no Sarona entry found; no Tabit/Ontopo; no closure news. Single source: https://timeout.co.il/הגלידריות-הכי-טובות/"
+  },
+  "n7109726932": {
+   "r": "none",
+   "note": "No own site, no Tabit/Ontopo, no news/guide mention found for Bianco Nero (Nahalat Yitzhak); no closure news either."
+  },
+  "n904507636": {
+   "r": "none",
+   "note": "No own site, no Tabit/Ontopo, no news/guide mention found for Cappa (Lipkin-Shahak); no closure news either."
+  },
+  "n5703238538": {
+   "r": "none",
+   "note": "Deli Cream chain: no official site found, only Wolt/easy (not counted); Time Out 2023-04 mentions Deli Cream with 'HaArba'a 4' but ambiguous and old; no Tabit/Ontopo; no 2025-26 source; no closure news."
+  },
+  "n1851266186": {
+   "r": "none",
+   "note": "No own site, no Tabit/Ontopo, no news/guide mention found for Gelato Ice (Herbert Samuel); no closure news either."
+  },
+  "n454388595": {
+   "r": "none",
+   "note": "Golda official site goldaglida.co.il could not be fetched (branch list unverifiable); Time Out 2026-08 says Golda has branches citywide but gives no Ben Yehuda address; no Tabit/Ontopo; no closure news."
+  },
+  "n11459910982": {
+   "r": "none",
+   "note": "Coordinates (32.142,34.837) are in Herzliya (Sokolov St), not Tel Aviv - real place outside TLV, left as is. Golda official site could not be fetched; only Wolt/directories found (not counted); no closure news."
+  },
+  "n12164215612": {
+   "r": "none",
+   "note": "Coordinates (32.075,34.819) lie east of the Ayalon, likely Ramat Gan/Givatayim rather than Tel Aviv. Golda official site could not be fetched; no news/Tabit/Ontopo for this branch; no closure news."
+  },
+  "n12592442310": {
+   "r": "none",
+   "note": "Mystic at Dizengoff 138 confirmed by Time Out (opened 2020-10; ice-cream guide 2024-04) and Calcalist 2021, but no 2025-26 source; it is absent from the updated Time Out guide 2026-08 (not proof of closure); no closure news, no Tabit/Ontopo; catalog w 'https://mystic_artisanicecream' is invalid (loo"
+  },
+  "n13530045249": {
+   "r": "single",
+   "note": "Catalog name typo (Otello). Time Out IL best-ice-cream list 2026-08 lists Otello Dizengoff 165 (coords match); Time Out EN 2023 same address/phone. Official site otello.co.il unreachable; no Tabit/Ontopo; no closure news."
+  },
+  "n12295905111": {
+   "r": "single",
+   "note": "Time Out IL list 2026-08 lists Otello Einstein 40 (Ramat Aviv mall); Time Out 2021 opening article. Official site unreachable; no Tabit/Ontopo; no closure news. Only one recent outlet."
+  },
+  "n14066191075": {
+   "r": "conflict",
+   "note": "Rivareno TLV is at Nahalat Binyamin 3 per Time Out 2025-03 and Time Out list 2026-08 (also ynetnews 2025-05: Nahalat Binyamin); catalog says Washington Blvd 14 with coords ~1.2 km south. Could be a second branch (Time Out 2026 mentions an unaddressed Jerusalem Blvd branch) but no source confirms Was"
+  },
+  "n5178466608": {
+   "r": "none",
+   "note": "No own site, no Tabit/Ontopo, no news/guide mention of Tutto Crema at Mandler 10 (Sarona); no closure news found."
+  },
+  "n8543934098": {
+   "r": "none",
+   "note": "Coords (32.146,34.839) are in Herzliya, not Tel Aviv (Sokolov St). Only directory listings (easy) found; no own site, booking page or news; no closure news."
+  },
+  "n6005587385": {
+   "r": "conflict",
+   "note": "Official anita-gelato.com lists Tel Aviv branches at Shabazi 40, Shabazi 44, Florentin 3 and Rav Aluf David Elazar 16 - no Shabazi 25. Time Out 2026-08 lists Shabazi 40 and Eliezer 15 (Sarona). Catalog address not confirmed; possibly meant Shabazi 40/44. No closure news for a Shabazi 25 branch."
+  },
+  "n2288503796": {
+   "r": "none",
+   "note": "Nothing found for 'browny' at Brodetsky 17 (no site, no Tabit/Ontopo, no news, no closure news)."
+  },
+  "n13111034257": {
+   "r": "none",
+   "note": "Nothing found for 'icey' on Truman St (coords ~32.068,34.824 look like Givatayim/Ramat Gan border); no site, booking page, news or closure news."
+  },
+  "n12064652432": {
+   "r": "single",
+   "note": "Time Out IL list 2026-08 lists Otello Herzl 12 (also Time Out 2024-04). Official site otello.co.il unreachable; no Tabit/Ontopo; no closure news. One recent outlet only."
+  },
+  "n10549077960": {
+   "r": "none",
+   "note": "Otello has no own site (Instagram only); Time Out TLV list 2026-08 gives Otello branches Herzl 12, Dizengoff 165, Sarona Market, Yordei HaSira 1, Einstein 40, Pinchas Rosen 65 - no Katznelson branch; catalog coords look like Givatayim; no Tabit/Ontopo; no closure news found"
+  },
+  "n10812430077": {
+   "r": "single",
+   "note": "Sarona Market branch (coords match Sarona Market) listed in Time Out TLV ice-cream list 2026-08 https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/ ; no own site (Instagram only); no Tabit/Ontopo; no closure news"
+  },
+  "n10825042749": {
+   "r": "single",
+   "note": "Yordei HaSira 1 branch listed in Time Out TLV ice-cream list 2026-08 https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/ (also 2024-04 list, ~15-22 ILS); no own site (catalog w malformed, Instagram only); no Tabit/Ontopo; no"
+  },
+  "n1368786629": {
+   "r": "none",
+   "note": "No source for an Iceberg branch at Hangar 11/port; iceberg.co.il unreachable; no Tabit/Ontopo; Walla/Globes 2019-11 reported the Iceberg chain winding down (not branch-specific); Time Out EN listing is Ibn Gvirol 24 (2016)"
+  },
+  "n2264923571": {
+   "r": "conflict",
+   "note": "Time Out 2026-03 (Jul Abud 'my city') recommends Andrey ice cream at Yefet 138, Jaffa (third-generation Chabbaz family shop) - only source; catalog address is street-only 'Nevatim' - suggested exact address: יפת 138, תל אביב-יפו; no own site, no Tabit/Ontopo, no closure news"
+  },
+  "n5600793021": {
+   "r": "ok",
+   "note": "Own site live (c 2026) lists Nahalat Binyamin 11, phone 03-5240006, hours; Time Out list 2026-08 and Time Out 'my city' with owners 2025-04; ~20 ILS/scoop (Time Out 2024); no Tabit/Ontopo; no closure news"
+  },
+  "n11602031662": {
+   "r": "single",
+   "note": "Hashmonaim 91 listed in Time Out TLV ice-cream list 2026-08 https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/ (also 2024 articles, 18 ILS/scoop); own site not reachable (catalog w malformed); no Tabit/Ontopo; no closure ne"
+  },
+  "n9141096227": {
+   "r": "none",
+   "note": "Golda official site goldaglida.co.il failed to load, branch list not verifiable; no news/guide naming a Golda branch at Lipkin-Shahak/port (Time Out just says branches all over the city); only Wolt/directories; no Tabit/Ontopo; no closure news"
+  },
+  "n9595936982": {
+   "r": "none",
+   "note": "Golda official site goldaglida.co.il failed to load, branch list not verifiable; no news/guide naming a Golda branch at Givat HaTachmoshet (street-only catalog address); only Wolt/directories; no Tabit/Ontopo; no closure news"
+  },
+  "n9721167917": {
+   "r": "none",
+   "note": "Golda official site goldaglida.co.il unreachable (blocked/client error), so branch list could not be checked; no Tabit/Ontopo page; news (Time Out 2021, Calcalist 2021) only mention the chain generally, no Rothschild 22 branch; no closure news. Catalog w 'https://Golda.rothschild' is not a valid URL"
+  },
+  "n10084859811": {
+   "r": "none",
+   "note": "Golda official branch list unreachable; no Tabit/Ontopo page; no news naming a Yehuda Margoza (Jaffa) branch; no closure news. Catalog address is street only"
+  },
+  "n11361510170": {
+   "r": "none",
+   "note": "Golda official site unreachable so Jabotinsky 110 branch not confirmed; no Tabit/Ontopo; only Wolt/directory hits (not allowed); no closure news"
+  },
+  "w1256561021": {
+   "r": "none",
+   "note": "Golda official branch list unreachable; no reliable source naming a Borochov branch; no Tabit/Ontopo; no closure news"
+  },
+  "n1368786620": {
+   "r": "closed",
+   "note": "ynet 2019-06 says Montana ice cream (1970s, Tel Aviv Port building) closed during the port renovation years earlier; building reopened as 'Pita Montana' skewer bar. Coordinates are at the port; catalog address 'Kikar Plumer' looks wrong. Exact closure date unknown (before 2019)"
+  },
+  "n13619385018": {
+   "r": "none",
+   "note": "Feldman is an ice cream manufacturer/brand (ice 2025-12); no source for a shop at Shapira 5 Ramat Gan (place is in Ramat Gan, not Tel Aviv); only directory hits; no Tabit/Ontopo; no closure news"
+  },
+  "n5501827918": {
+   "r": "none",
+   "note": "No reliable source for a 'Neve Tzedek ice cream' shop at this point (port area, near Lipkin-Shahak); searches return Anita (Shabazi) only; no own site, no Tabit/Ontopo, no closure news"
+  },
+  "n8321535297": {
+   "r": "none",
+   "note": "Dr Lek chain: no official site found; only directories and a non-allowed listing (enjoyingisrael 'Shikun Dan'); no source confirming Pinchas Rosen 72 branch; no Tabit/Ontopo; no closure news"
+  },
+  "n2301194111": {
+   "r": "none",
+   "note": "No source found for Henry's & Kiyortosh at Yael Man street; no own site, no Tabit/Ontopo, no news, no closure news"
+  },
+  "n8521516361": {
+   "r": "ok",
+   "note": "Official Vaniglia branch list names this branch at Ussishkin 59, Ramat HaSharon (not Tel Aviv); catalog has street only and city Tel Aviv, coords are in Ramat HaSharon. Exact address: אוסישקין 59, רמת השרון. Official site lists hours daily 09:00-21:30, phone 03-5498998. No Tabit/Ontopo; no closure n"
+  },
+  "n12505185832": {
+   "r": "ok",
+   "note": "Time Out best-gelato list 2026-08 (Beit Lechem 3, Bezalel market) and Mako 2025-04 (Beit Lechem 3) agree; Time Out 2024 price 19 NIS/scoop. No own site (catalog w is an Instagram handle), no Tabit/Ontopo, no closure news."
+  },
+  "n12116666623": {
+   "r": "ok",
+   "note": "Eyal Shani's Cassata at Yehuda HaLevi 12 (Park HaMesila): Time Out list 2026-08, Time Out new ice creams 2025-07, Mako 2025-04, ynetnews 2025-05. Prices 17-22 NIS. No own site found, no Tabit/Ontopo, no closure news; hours only from 2023 article (not used)."
+  },
+  "n5957905814": {
+   "r": "none",
+   "note": "No reliable source for 'קסם של גלידה' or a Golda branch on Yehieli St; Golda official site unreachable; only directories/Wolt. No Tabit/Ontopo, no closure news."
+  },
+  "n14158302261": {
+   "r": "none",
+   "note": "No reliable source found for 'קצפת' on Jabotinsky (coords near Ramat Gan/Bnei Brak); only business directories. No own site, no Tabit/Ontopo, no closure news."
+  },
+  "n12825521124": {
+   "r": "ok",
+   "note": "Rivareno at Nahalat Binyamin 3: Time Out list 2026-08, Time Out review 2025-03 (scoop 22-26 NIS), Mako 2025-04, ynetnews 2025-05. Time Out hours garbled, not used; no own site/phone found; no Tabit/Ontopo; no closure news."
+  },
+  "n4900327064": {
+   "r": "none",
+   "note": "No recent reliable source for Tamara at Ben Yehuda 96; Time Out sources (2014, timeout.com 2023) list Tamara yogurt at Rothschild 19 instead. Not in 2025-2026 ice cream guides; no Tabit/Ontopo; no closure news; only Facebook/directories."
   }
  }
 }

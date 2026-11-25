@@ -2336,6 +2336,67 @@
     "https://timeout.co.il/פיתות-הכי-טובות/",
     "https://www.ice.co.il/food/news/article/1062440"
    ]
+  },
+  "n5600793021": {
+   "n": "ארטה גלידה",
+   "ok": "2026-11",
+   "cu": "קינוחים",
+   "pr": 1,
+   "oh": "Su-Fr 11:00-23:00; Sa 12:00-23:00",
+   "p": "+972-3-524-0006",
+   "w": "https://arteglideria.com/",
+   "src": [
+    "https://arteglideria.com/",
+    "https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/",
+    "https://timeout.co.il/%D7%92%D7%9C%D7%99%D7%93%D7%94-%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/"
+   ]
+  },
+  "n8521516361": {
+   "n": "וניליה",
+   "ok": "2026-11",
+   "cu": "קינוחים",
+   "oh": "Mo-Su 09:00-21:30",
+   "p": "+972 3-549-8998",
+   "w": "https://www.vaniglia.co.il",
+   "src": [
+    "https://www.vaniglia.co.il/סניפים/"
+   ]
+  },
+  "n12505185832": {
+   "n": "פרדיסו דל ג׳לטו",
+   "ok": "2026-08",
+   "cu": "קינוחים",
+   "pr": 1,
+   "src": [
+    "https://timeout.co.il/%d7%94%d7%92%d7%9c%d7%99%d7%93%d7%a8%d7%99%d7%95%d7%aa-%d7%94%d7%9b%d7%99-%d7%98%d7%95%d7%91%d7%95%d7%aa/",
+    "https://www.mako.co.il/news-money/consumer/Article-28a2845a0724691027.htm",
+    "https://timeout.co.il/%d7%92%d7%9c%d7%99%d7%93%d7%94-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/"
+   ]
+  },
+  "n12116666623": {
+   "n": "קסטה",
+   "ok": "2026-08",
+   "cu": "קינוחים",
+   "pr": 1,
+   "src": [
+    "https://timeout.co.il/%d7%94%d7%92%d7%9c%d7%99%d7%93%d7%a8%d7%99%d7%95%d7%aa-%d7%94%d7%9b%d7%99-%d7%98%d7%95%d7%91%d7%95%d7%aa/",
+    "https://timeout.co.il/גלידות-חדשות-2025/",
+    "https://www.mako.co.il/news-money/consumer/Article-28a2845a0724691027.htm",
+    "https://www.ynetnews.com/food/article/rjjhok00zxx",
+    "https://timeout.co.il/קסטה-אייל-שני/"
+   ]
+  },
+  "n12825521124": {
+   "n": "ריבה רנו",
+   "ok": "2026-08",
+   "cu": "קינוחים",
+   "pr": 1,
+   "src": [
+    "https://timeout.co.il/%d7%94%d7%92%d7%9c%d7%99%d7%93%d7%a8%d7%99%d7%95%d7%aa-%d7%94%d7%9b%d7%99-%d7%98%d7%95%d7%91%d7%95%d7%aa/",
+    "https://timeout.co.il/rivareno/",
+    "https://www.mako.co.il/news-money/consumer/Article-28a2845a0724691027.htm",
+    "https://www.ynetnews.com/food/article/rjjhok00zxx"
+   ]
   }
  }
 }
