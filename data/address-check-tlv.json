@@ -230,6 +230,13 @@
    "new": "חבקוק הנביא 1",
    "status": "applied",
    "moved_m": 0
+  },
+  "n12116648772": {
+   "name": "ג'אז קיסה",
+   "old": "443",
+   "new": "דרך יפו 9",
+   "status": "blocked",
+   "why": "address already used by: תדר (n9514689217, יפו 9), מיראז' (n12117313515, יפו 9)"
   }
  },
  "dup": {
