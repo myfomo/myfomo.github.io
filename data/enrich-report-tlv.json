@@ -1,9 +1,9 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 478,
- "site_jsonld": 52,
- "site_match": 14,
+ "site_checked": 483,
+ "site_jsonld": 53,
+ "site_match": 15,
  "site_reject": 38,
  "phone_site": 0,
  "hours_site": 0,
@@ -154,6 +154,13 @@
    "site": "Su,Mo,Tu,We,Th 12:00-20:00; Fr 11:00-15:00"
   },
   {
+   "id": "n6041389430",
+   "n": "גומבה",
+   "field": "phone",
+   "osm": "+972 3 973 9954‬",
+   "site": "037743330"
+  },
+  {
    "id": "n6041389431",
    "n": "שניצל קומפני",
    "field": "phone",
@@ -203,6 +210,13 @@
    "site": "035225005"
   },
   {
+   "id": "n9429290715",
+   "n": "המוסד לסנדוויצ'ים מיוחדים",
+   "field": "phone",
+   "osm": "+97235629896",
+   "site": "036038025"
+  },
+  {
    "id": "n10969247136",
    "n": "הלבנטיני",
    "field": "phone",
@@ -222,6 +236,13 @@
    "field": "phone",
    "osm": "+972 54 223 0223",
    "site": "0537933664"
+  },
+  {
+   "id": "n12588113205",
+   "n": "קנסאי",
+   "field": "hours",
+   "osm": "Su-Th 11:00-23:00; Sa (sunset+01:00)-23:00",
+   "site": "Su,Mo,Tu,We,Th 11:00-23:00"
   },
   {
    "id": "n13532671475",
@@ -461,15 +482,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 87,
- "phone_multi_skipped": 22,
+ "phone_confirmed": 96,
+ "phone_multi_skipped": 25,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "379 (29%)",
-  "phone": "406 (31%)",
-  "website": "510 (39%)",
-  "cuisine": "962 (73%)",
-  "extra_names": "752 (57%)"
+  "hours": "382 (29%)",
+  "phone": "408 (31%)",
+  "website": "515 (39%)",
+  "cuisine": "965 (73%)",
+  "extra_names": "757 (57%)"
  },
- "conflicts_n": 31
+ "conflicts_n": 34
 }
