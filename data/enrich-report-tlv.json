@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 490,
- "site_jsonld": 53,
+ "site_checked": 491,
+ "site_jsonld": 54,
  "site_match": 14,
- "site_reject": 39,
+ "site_reject": 40,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -282,6 +282,12 @@
    "why": "branch/name not confirmed"
   },
   {
+   "id": "n3346575490",
+   "n": "ארקפה קניון רמת אביב",
+   "w": "https://www.arcaffe.co.il/branches",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n3346575491",
    "n": "Grand Cafe Turkiz",
    "w": "https://www.grandcafe.co.il/",
@@ -474,15 +480,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 92,
- "phone_multi_skipped": 24,
+ "phone_confirmed": 88,
+ "phone_multi_skipped": 25,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "386 (29%)",
-  "phone": "416 (32%)",
-  "website": "522 (40%)",
+  "hours": "387 (29%)",
+  "phone": "418 (32%)",
+  "website": "523 (40%)",
   "cuisine": "970 (74%)",
-  "extra_names": "758 (57%)"
+  "extra_names": "759 (58%)"
  },
  "conflicts_n": 32
 }
