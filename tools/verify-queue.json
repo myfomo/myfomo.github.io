@@ -5738,6 +5738,206 @@
   "n6226661958": {
    "r": "none",
    "note": "Bnei Brak (outside TLV). Catalog ordering link order.plweb.online failed to load; no other source for Pita Hit at Mivtza Kadesh 55; no Tabit/Ontopo, no closure news"
+  },
+  "n1450724670": {
+   "r": "none",
+   "note": "No source for a Carlebach branch. Time Out 2022 lists 4 Taamim at Ibn Gabirol 93 (different branch); directory pages list Yehuda HaLevi 49. No own site, Tabit or Ontopo page, no closure news."
+  },
+  "n2323479178": {
+   "r": "none",
+   "note": "No news, guide, own site, Tabit or Ontopo for Ariela Falafel; only directory listings. Coords (32.093,34.817) look outside Tel Aviv (Ramat Gan/Bnei Brak area)."
+  },
+  "n6760843102": {
+   "r": "none",
+   "note": "No news, guide, own site, Tabit or Ontopo for Falafel Ben Hur on Washington Blvd; no closure news."
+  },
+  "n3928118513": {
+   "r": "ok",
+   "note": "Israel Hayom 2026-08: Bograshov 25 branch celebrating 26 years; Maariv 2025-12: 30-day police closure order (to 2026-01-29) after illegal workers found, temporary. No own site/Tabit/Ontopo."
+  },
+  "n8889934918": {
+   "r": "none",
+   "note": "No reliable source for Falafel Dror at Yerushalayim 74 (coords look like Ramat Gan/Givatayim). Time Out 2014 Dror at Ahad HaAm/Nahalat Binyamin is a different place. No Tabit/Ontopo, no closure news."
+  },
+  "n5056671648": {
+   "r": "none",
+   "note": "No news, guide, own site, Tabit or Ontopo for Joker Falafel; no closure news."
+  },
+  "n6023053937": {
+   "r": "none",
+   "note": "Only Time Out 2020 Sharon street-food article (Sokolov 72, Ramat HaSharon); nothing recent, no own site/Tabit/Ontopo, no closure news."
+  },
+  "n1791481321": {
+   "r": "ok",
+   "note": "Time Out 2026-04 (Daniel Sabag column) and Time Out 2025-02 pita list (falafel 26 NIS, Shlomo HaMelech 1) show it operating. Own site falafelhakosem.com unreachable here, so hours/phone not re-verified. No Tabit/Ontopo, no closure news."
+  },
+  "n2264923680": {
+   "r": "none",
+   "note": "No news, guide, own site, Tabit or Ontopo for Falafel Haj (Avodat Israel, Jaffa); only directory listing; no closure news."
+  },
+  "n4462556312": {
+   "r": "none",
+   "note": "Only Time Out 2022 articles (Yad LaBanim Blvd 2); no 2025-2026 source, no own site/Tabit/Ontopo, no closure news."
+  },
+  "n2788989513": {
+   "r": "none",
+   "note": "No source found for Falafel Loop at Nahalat Binyamin 61 (searches of name/Tabit/Ontopo/closure gave nothing relevant)"
+  },
+  "n6507151825": {
+   "r": "none",
+   "note": "Only Time Out 2022-12 (chefs' falafel picks) names Falafel Neto at Ibn Gabirol 20, open until 23:00; no 2025-2026 source, no Tabit/Ontopo, no closure news"
+  },
+  "n4884971621": {
+   "r": "none",
+   "note": "Falafel Ratzon in Time Out 2022 and Maariv 2025-07 is at King George 17 (near Carmel market), not Jabotinsky; nothing found for a Jabotinsky stand (catalog coords look like Ramat Gan)"
+  },
+  "n9724554417": {
+   "r": "none",
+   "note": "Own site delifleishman.com could not be fetched (robots/unreachable); no Tabit/Ontopo page, no news source for Bar Kochba 16 branch (coords suggest Bnei Brak); no closure news"
+  },
+  "n4421914374": {
+   "r": "none",
+   "note": "No news/guide, Tabit or Ontopo source found for Falafel Tadmor on Shlomo St; no closure news"
+  },
+  "n10279205509": {
+   "r": "none",
+   "note": "No reliable source found for Pninat HaShawarma (Mikve Israel); not in Time Out kosher list 2025-08; no closure news"
+  },
+  "n2322587082": {
+   "r": "none",
+   "note": "Chain; own site pastabasta.co.il failed to load; Time Out/Mako only 2014 (Carmel market branch, no exact address), Mako 2024-11 mentions chain generally; no branch-specific recent source, no closure news"
+  },
+  "n5286792924": {
+   "r": "ok",
+   "note": "Time Out 2025-01 sausage guide: Frank, Ibn Gabirol 23, open daily until early morning; Maariv 2025-02 review of Frank (sausages 37-45 NIS); no Tabit/Ontopo, no closure news"
+  },
+  "n10814448819": {
+   "r": "none",
+   "note": "Only Time Out 2016 (first branch at Vital 10, Florentin); nothing found for Kalman Magen 3; catalog website value is malformed (amsterdamfriestlv); no Tabit/Ontopo, no closure news"
+  },
+  "n13472326035": {
+   "r": "none",
+   "note": "Chain; no official branch page found, only directories (easy) which do not count; not in Time Out kosher list 2025-08; no closure news"
+  },
+  "n14400027907": {
+   "r": "none",
+   "note": "Chicken Station HaMasger: no own site, no Tabit/Ontopo, no news/guide mentions (only easy.co.il directory listings, not counted); no closure news"
+  },
+  "n2124580743": {
+   "r": "none",
+   "note": "Chicken & Beef HaMetzuda: no own site, no Tabit/Ontopo, no news/guide coverage found; no closure news"
+  },
+  "n2131481387": {
+   "r": "none",
+   "note": "Casa del Pepe Snapir 1: no own site found, no Tabit/Ontopo; only d.co.il directory and kosher-travel listing (Hadera branch); no news for TLV branch, no closure news"
+  },
+  "n10084859808": {
+   "r": "none",
+   "note": "Cafe Shaked Margoza St, Jaffa: no own site, no Tabit/Ontopo; not mentioned in Time Out Jaffa cafe/flea-market guides (2024-2026); Time Out 2026-06 closure article is about neighbouring Margoza bakery, not Shaked"
+  },
+  "n11681542100": {
+   "r": "none",
+   "note": "Captain Burger Borochov: only Time Out 2019 review of a branch at Ibn Gabirol 67 (different address); catalog coords (Borochov, 34.81E) look like Givatayim; no own site, no Tabit/Ontopo, no recent source, no closure news"
+  },
+  "n12135747445": {
+   "r": "single",
+   "note": "Carnal (קרנל) Frankel 7: Time Out taco guide 2026-08 lists it at Frankel 7 (only recent source: https://timeout.co.il/%d7%98%d7%90%d7%a7%d7%95-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/); Time Out opening article 2023-05 (tacos 35-52, has vegan options but not a vegan restaurant); carnal.fast.food"
+  },
+  "n746739281": {
+   "r": "none",
+   "note": "Karnaf Ibn Gabirol: only Time Out review 2019-12 (Ibn Gabirol 164, entrecote tortilla); no own site, no Tabit/Ontopo, no recent source, no closure news"
+  },
+  "n802884044": {
+   "r": "none",
+   "note": "Karnaf Dizengoff: no own site/branch list, no Tabit/Ontopo, no news mentioning a Dizengoff branch; no closure news"
+  },
+  "n5890281794": {
+   "r": "none",
+   "note": "Karnaf Derech Tel Aviv (coords far north, likely outside TLV): no own site, no Tabit/Ontopo, no news; no closure news"
+  },
+  "n12668725563": {
+   "r": "none",
+   "note": "Red Meat Nahalat Binyamin: only Time Out 2024-10 (sandwich 47 NIS, central Nahalat Binyamin) - not recent; no own site, no Tabit/Ontopo, no closure news"
+  },
+  "n10814448811": {
+   "r": "single",
+   "note": "Sarona Market official site still lists the stall (page https://saronamarket.co.il/%d7%a8%d7%97%d7%9c-%d7%91%d7%a9%d7%93%d7%a8%d7%94/ ; Su-We 10-22, Th 10-23, Fr 9-15 per market page, phone shown is market's general line); Time Out review only 2020; no Tabit/Ontopo; no closure news. Hours/phone not "
+  },
+  "n4159749101": {
+   "r": "none",
+   "note": "Re Bar chain site unreachable; only directories (easy/d.co.il) mention branches; no source for a Kirya-bridge branch; no Tabit/Ontopo; no closure news."
+  },
+  "n8667046317": {
+   "r": "none",
+   "note": "No web/news/Tabit/Ontopo results for this pizza bar (Ussishkin, Ramat HaSharon coords); no closure news found."
+  },
+  "n10272767909": {
+   "r": "single",
+   "note": "Jerusalem Post review 2025-04 (https://www.jpost.com/food-recipes/article-848725): vegan soup bar, Bialik 76 Ramat Gan (Bialik Mall), soups 31-56 NIS, Mehadrin per article; no own site, no Tabit/Ontopo, no closure news. Place is in Ramat Gan, not Tel Aviv."
+  },
+  "n11226656316": {
+   "r": "none",
+   "note": "No own site, news or Tabit/Ontopo page found for Shawarma Street on Jabotinsky (Ramat Gan coords); only directories/Wolt; no closure news."
+  },
+  "w406848827": {
+   "r": "none",
+   "note": "No reliable source found for Shawarma BaSdera (Weizmann 1, Ramat HaSharon coords); only directory pages; no Tabit/Ontopo; no closure news."
+  },
+  "n13233074217": {
+   "r": "none",
+   "note": "No source for a 'Turkish shawarma' on Yesod HaMa'ala; Time Out Turkish-food guide (2023) lists only 'Istanbul' at Yesod HaMa'ala 56 (different name, not confirmed same place); no Tabit/Ontopo; no closure news."
+  },
+  "n6023052884": {
+   "r": "ok",
+   "note": "Own site yoni71.co.il live (names YONI 71, meat/shawarma restaurant + events, phone 03-6316161, Tabit order link); site gives no street address or hours, so Sokolov 71 not confirmed by site; no news or closure found; Tabit order page did not load."
+  },
+  "n6679646842": {
+   "r": "none",
+   "note": "No source for a shawarma place on Nahalat Yitzhak; Time Out neighborhood topic page has none; no Tabit/Ontopo; no closure news."
+  },
+  "n6337803585": {
+   "r": "none",
+   "note": "No source for Shawarma Falafel Eli at Levinsky 38 (searched name, address, ynet/Time Out street-food guides); no Tabit/Ontopo; no closure news."
+  },
+  "n11199665737": {
+   "r": "none",
+   "note": "No reliable source: only directories (d.co.il, easy, spinach.guide); Instagram blocked; no Tabit/Ontopo page; no closure news. Coordinates suggest Bnei Brak/Ramat Gan business district, not Tel Aviv."
+  },
+  "n8691409565": {
+   "r": "none",
+   "note": "No source found for 'Shake Gurion' (searched Hebrew/English, Tabit/Ontopo, closure); only non-allowed aggregator (atly). Same corner as Tamara juice bar (Dizengoff/Ben Gurion), possibly the same venue."
+  },
+  "n3588316533": {
+   "r": "none",
+   "note": "Only source is ynet 2015 (16 best skewer places): Shipudei HaPina, Shalom/Shalem 2 Ramat Gan by the stadium (catalog city says Tel Aviv). No recent source, no Tabit/Ontopo, no closure news."
+  },
+  "n2374604747": {
+   "r": "none",
+   "note": "Only source is ynet 2015: Shipudei Chen, Malki Tzedek 23 Ramat Gan (behind National Park; catalog city says Tel Aviv). No recent source, no Tabit/Ontopo, no closure news."
+  },
+  "n8640011594": {
+   "r": "none",
+   "note": "Pizza Shiroko sources (Time Out EN 2017, Time Out HE 2017/2024) refer to King George 23 branch only; nothing found for Washington Blvd 30; no Tabit/Ontopo; no closure news."
+  },
+  "n1400686576": {
+   "r": "none",
+   "note": "Likely Shawarma Shemesh, Jabotinsky 85 Ramat Gan (ynet 2019, mako 2013) - shawarma, not hummus; only Wolt shows it recently (not a source). No Tabit/Ontopo, no closure news."
+  },
+  "n3732734477": {
+   "r": "none",
+   "note": "Schnitzel Company Lilienblum 29: only directory listings (enjoyingisrael, easy); no chain branch page found; no Tabit/Ontopo; no closure news."
+  },
+  "n11708802379": {
+   "r": "ok",
+   "note": "Own site schnitzelcompany-bsr.co.il live (modified 2026-05) for branch at Derech Ben Gurion 1, Bnei Brak (catalog city says Tel Aviv); kosher claimed without named certificate; no hours/prices on site; ynet 2022 sponsored piece agrees."
+  },
+  "n8691409564": {
+   "r": "none",
+   "note": "Tamara juice bar, corner Dizengoff/Ben Gurion: Time Out EN listing (2023) gives site tamaratlv.co.il and phone, but own site (Wix) showed no readable content; no 2025-2026 source, no Tabit/Ontopo, no closure news."
+  },
+  "n2079183654": {
+   "r": "ok",
+   "note": "Time Out Carmel Market guide 2026-05 lists Panda Pita at Mlan 45; Time Out pita roundup 2025 (Mlan 45, eggplant pita 44 NIS); ice 2025-05. No own site/Tabit/Ontopo found; no closure news."
   }
  }
 }
