@@ -8,11 +8,13 @@ BBOX = "32.029,34.739,32.147,34.853"
 MIRRORS = ["https://overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter",
            "https://maps.mail.ru/osm/tools/overpass/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]
 def overpass(q):
-    for url in MIRRORS:
-        try:
-            req = urllib.request.Request(url, data=urllib.parse.urlencode({"data": q}).encode(), headers={"User-Agent": "fomo-catalog/1.0 (myfomo.github.io)"})
-            return json.load(urllib.request.urlopen(req, timeout=200))["elements"]
-        except Exception as e: print("fail", url, e)
+    for attempt in range(4):
+        for url in MIRRORS:
+            try:
+                req = urllib.request.Request(url, data=urllib.parse.urlencode({"data": q}).encode(), headers={"User-Agent": "fomo-catalog/1.0 (myfomo.github.io)"})
+                return json.load(urllib.request.urlopen(req, timeout=200))["elements"]
+            except Exception as e: print("fail", url, e, flush=True)
+        time.sleep(40)
     return None
 C = None
 if os.path.exists(CACHE):
