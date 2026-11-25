@@ -258,6 +258,34 @@
     "https://www.landwercafe.co.il/branch/%d7%a2%d7%96%d7%a8%d7%99%d7%90%d7%9c%d7%99-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/"
    ],
    "note": "Own site: Azrieli Towers, Derech Menachem Begin 132; catalog has only 'Gesher HaKirya'; coordinates already at Azrieli Mall. Shared mall address - apply only with user approval."
+  },
+  "n445977119": {
+   "a": "הירקון 81",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=26"
+   ],
+   "note": "Official locator address of the Tayelet branch; catalog has only street Herbert Samuel"
+  },
+  "n1102290365": {
+   "a": "אהרון בקר 8",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=96"
+   ],
+   "note": "Adds house number from official locator (Mikado Center)"
+  },
+  "n1989338513": {
+   "a": "שדרות רוטשילד 33",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=166"
+   ],
+   "note": "Adds house number from official locator"
+  },
+  "n4112078463": {
+   "a": "אבן גבירול 30",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=12"
+   ],
+   "note": "Official address of London Ministore branch; catalog has only Shaul HaMelech (corner street). Shared mall address"
   }
  },
  "dup": {

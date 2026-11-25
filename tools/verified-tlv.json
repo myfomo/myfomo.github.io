@@ -2066,6 +2066,121 @@
     "https://www.maariv.co.il/food/foodnews/article-1234129",
     "https://www.ynet.co.il/food/article/rk1qowyvlg"
    ]
+  },
+  "n10815722356": {
+   "n": "חומוס אליהו",
+   "ok": "2026-03",
+   "cu": "חומוס ומזרחי",
+   "oh": "Su-Th 08:00-20:00; Fr 08:00-16:00; Sa off",
+   "p": "054-5723838",
+   "w": "https://www.humus-eli-yahoo.com",
+   "k": 1,
+   "src": [
+    "https://www.humus-eli-yahoo.com/restaurants/",
+    "https://www.humus-eli-yahoo.com"
+   ]
+  },
+  "n13233055375": {
+   "n": "טאקו בא",
+   "ok": "2026-08",
+   "cu": "מקסיקני",
+   "pr": 1,
+   "src": [
+    "https://timeout.co.il/טאקו-בא-taco-ba/",
+    "https://timeout.co.il/טאקו-בתל-אביב/"
+   ]
+  },
+  "n5170599211": {
+   "n": "יאשקה",
+   "ok": "2026-11",
+   "cu": "בשרים",
+   "p": "+972 3-505-7632",
+   "w": "https://www.yashka.co.il/",
+   "src": [
+    "https://www.yashka.co.il/",
+    "https://wolt.com/he/isr/tel-aviv/restaurant/yashka-ramat-hasharon",
+    "https://timeout.co.il/ppost/יאשקה/"
+   ]
+  },
+  "n10946223402": {
+   "n": "מיט בר בורגר",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "src": [
+    "https://saronamarket.co.il/מיטבר/",
+    "https://wolt.com/ar/isr/tel-aviv/restaurant/mbburger"
+   ]
+  },
+  "n10829498178": {
+   "n": "מנאל",
+   "ok": "2026-11",
+   "cu": "חומוס ומזרחי",
+   "pr": 2,
+   "p": "+972-54-3421956",
+   "src": [
+    "https://saronamarket.co.il/מנאל/",
+    "https://timeout.co.il/מנאל-ביקורת/"
+   ]
+  },
+  "n445977119": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Su-We 11:00-22:00; Th-Sa 11:00-23:00",
+   "w": "https://www.mcdonalds.co.il/",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=26"
+   ]
+  },
+  "n1102290365": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Su-Th 11:00-22:00; Fr 10:30-20:00; Sa 11:00-22:00",
+   "w": "https://www.mcdonalds.co.il/",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=96"
+   ]
+  },
+  "n1757673287": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Su-Fr 11:00-22:00; Sa 10:30-22:30",
+   "w": "https://www.mcdonalds.co.il/",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=99"
+   ]
+  },
+  "n1989338513": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Su-We 11:00-03:00; Th,Fr 11:00-06:00; Sa 11:00-05:00",
+   "w": "https://www.mcdonalds.co.il/",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=166"
+   ]
+  },
+  "n3194233165": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "We-Fr 11:00-04:00; Sa-Tu 11:00-22:00",
+   "w": "https://www.mcdonalds.co.il/",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=237"
+   ]
+  },
+  "n4112078463": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Mo-Su 10:30-03:00",
+   "w": "https://www.mcdonalds.co.il/",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=12"
+   ]
   }
  }
 }

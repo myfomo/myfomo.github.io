@@ -5338,6 +5338,206 @@
   "n11818013490": {
    "r": "none",
    "note": "Own site zotapizza.com now redirects to an unrelated gambling site (domain lost); no reliable source for Meir Yaari 19 branch; no Tabit/Ontopo, no closure news"
+  },
+  "n1166180085": {
+   "r": "none",
+   "note": "Generic name 'Hummus' on Ben Zvarah; searches found no identifiable venue; no Tabit/Ontopo; no closure news"
+  },
+  "n1450724660": {
+   "r": "none",
+   "note": "Abu Adham, Carlebach 7: only undated directories (d.co.il, enjoyingisrael, eatintlv) and HappyCow updated 2022; not in Time Out 2025/2026 hummus lists; no own site, no Tabit/Ontopo; no closure news"
+  },
+  "n10815722356": {
+   "r": "ok",
+   "note": "Own chain site branch list names Sarona Market branch, Magen Kalman Aluf 5 (site modified 2026-03); matches coords; kosher Rabbanut"
+  },
+  "n1975875696": {
+   "r": "none",
+   "note": "Hummus Asli, Dizengoff 338: only 2017 blog (gillespudlowski) and aggregators; not in Time Out 2025/2026 lists; no Tabit/Ontopo; no closure news found"
+  },
+  "n8518709289": {
+   "r": "none",
+   "note": "Bahadunas Ramat Gan: only undated d.co.il directory listing at Bialik 138 (Bursa complex), reviews to 2019; no own site, no Tabit/Ontopo, no recent articles; no closure news"
+  },
+  "n12147738378": {
+   "r": "none",
+   "note": "Hummus Beirut, Sderot Yerushalayim 15: only Wanderlog (Google-derived, marks 'permanently closed', reviews to 2023-09) - not a reliable source; Instagram not readable; no Tabit/Ontopo; no news on closure. Possibly closed - needs reliable source"
+  },
+  "n1857128180": {
+   "r": "none",
+   "note": "Hummus Givatayim, Weizmann: nothing found beyond generic directories; no Tabit/Ontopo; no closure news"
+  },
+  "n2264923573": {
+   "r": "single",
+   "note": "Time Out TLV 2026-04 (mod 2026-06) lists 'חומוס חג' כחיל' at Yafet 93, Jaffa (its Clock Square restaurant closed at war start): https://timeout.co.il/החומוס-הכי-טוב-בתל-אביב-יפו/ ; no second recent source, no own site/Tabit/Ontopo"
+  },
+  "n4323031689": {
+   "r": "none",
+   "note": "Hummus Magen David, HaCarmel 11: only Time Out English 2018 review; no 2025-2026 sources, no Tabit/Ontopo; no closure news"
+  },
+  "n8558425244": {
+   "r": "none",
+   "note": "Hummusiat George, Harugei Malchut 9: only undated aggregator (atly); no own site, no Tabit/Ontopo, no news; no closure news"
+  },
+  "n3346678358": {
+   "r": "none",
+   "note": "No Tel Aviv/Lilienblum source found; only a Humusim branch in Netanya (gokosher). No Tabit/Ontopo page, no closure news."
+  },
+  "n11401082665": {
+   "r": "none",
+   "note": "Searches (name + Ussishkin, Ramat HaSharon area) returned nothing about this place; no site, Tabit/Ontopo or closure news."
+  },
+  "n13760565673": {
+   "r": "none",
+   "note": "Only an undated aggregator listing (atly, schnitzel-in-challah, Allenby 95); catalog w is an Instagram handle, not fetchable. No Time Out/news, Tabit/Ontopo or closure news."
+  },
+  "n13233055375": {
+   "r": "ok",
+   "note": "Time Out review 2025-07 (Levinsky 45, tacos 24 NIS) + Time Out taco roundup 2026-08 lists it at Levinsky 45 (same outlet, two separate articles); no Tabit/Ontopo; no closure news. Hours given only in one source, so not set."
+  },
+  "n4591383346": {
+   "r": "conflict",
+   "note": "Taqueria is active (Time Out taco roundup 2026-08), but sources give the original branch as Levontin 28 (Time Out 2026-08; timeout.com 2023), not Levontin 15 as in the catalog. Delivery branch is at Nirim 1 (Wolt page). No closure news."
+  },
+  "n606974700": {
+   "r": "none",
+   "note": "No source names a Dizengoff 267 branch (found Dizengoff Center/Dizengoff 50 on an aggregator, Rothschild 140, and HaArba'a 8 from 2016). Own site tonyvespa.co.il unreachable; no Tabit/Ontopo; no closure news."
+  },
+  "n711673453": {
+   "r": "none",
+   "note": "Rothschild 140 appears only in an undated d.co.il directory listing, an aggregator and Time Out 2017. Own site tonyvespa.co.il unreachable; no Tabit/Ontopo; no closure news."
+  },
+  "n6756022495": {
+   "r": "none",
+   "note": "Own site tonys.co.il now redirects to gokosher.co.il (site down); only an aggregator (spinach.guide) lists Rashi 21 Ramat Gan as kosher dairy. No Tabit/Ontopo, no news, no closure news."
+  },
+  "n12187697477": {
+   "r": "none",
+   "note": "Nothing found for 'Levinsky Toast' (searches in Hebrew and English, Time Out Levinsky market articles 2025 don't mention it); no site, Tabit/Ontopo or closure news."
+  },
+  "n12270410087": {
+   "r": "none",
+   "note": "No source found for 'Tortilla Street' at HaMetzuda (coordinates are south of Tel Aviv); no site, Tabit/Ontopo or closure news."
+  },
+  "n12106426945": {
+   "r": "single",
+   "note": "Own site unreachable (robots/timeout); Time Out Hebrew 2024-12-18 mentions it as long-standing shawarma spot in Nahalat Binyamin (https://timeout.co.il/מה-מזמינים-היום-181224/); Time Out EN 2016, d.co.il and eatintlv undated directory listings at Nahalat Binyamin 77; no Tabit/Ontopo; no closure news found"
+  },
+  "n10814448820": {
+   "r": "none",
+   "note": "Own site tandoortlv.co.il unreachable; searches found only Tandoori (Herbert Samuel 76 / Lands End), not this place at Aluf Kalman Magen 3; no Tabit/Ontopo; no closure news"
+  },
+  "n11217647041": {
+   "r": "none",
+   "note": "No source found for Yanas on Frishman; no Tabit/Ontopo; no closure news; catalog address partial"
+  },
+  "n5170599211": {
+   "r": "ok",
+   "note": "Own site yashka.co.il live listing Ramat HaSharon branch; Wolt branch page Trumpeldor 5 Ramat HaSharon active (kosher, Ramat HaSharon rabbinate); Time Out 2023 lists Ramat HaSharon branch; hours on site and Wolt differ so not set"
+  },
+  "n711325479": {
+   "r": "none",
+   "note": "No source for Yugurtiya at Ben Yehuda 221 (Time Out hit was TOPYA at Ben Yehuda 126, 2016); no Tabit/Ontopo; no closure news"
+  },
+  "n11380388507": {
+   "r": "none",
+   "note": "No source found for Kochav HaSchnitzel on Tushia; Time Out schnitzel lists do not show it; no Tabit/Ontopo; no closure news"
+  },
+  "n4362814194": {
+   "r": "none",
+   "note": "Own site (פיצה-רמת-השרון.co.il) unreachable; no search results for Mama Rasko in Ramat HaSharon; no Tabit/Ontopo; no closure news"
+  },
+  "n1400686574": {
+   "r": "none",
+   "note": "Generic name 'bakery'; no source identifying this place on HaTikva street; no Tabit/Ontopo; no closure news"
+  },
+  "n12956744483": {
+   "r": "single",
+   "note": "Mako 2026-07-30 (https://www.mako.co.il/news-tip12/2026_q3/Article-247eb5c2613bf91027.htm) describes Mob Deli at Allenby 49, opened early 2024; atly undated listing at Allenby 49 links instagram.com/mobdeli; catalog website https://mobdeli is invalid; no Tabit/Ontopo; no closure news"
+  },
+  "n10852457605": {
+   "r": "none",
+   "note": "Own site mitbachrehov.co.il unreachable; no news/guide source found for Mitbach Rehov at HaYetzira 26; no Tabit/Ontopo; no closure news"
+  },
+  "n6702772885": {
+   "r": "none",
+   "note": "Searches (name+Jaffa, Time Out 2024 Sderot Yerushalayim guide, Mako 2015 guide) do not mention it; no own site, no Tabit/Ontopo; no closure news found"
+  },
+  "n10239685409": {
+   "r": "none",
+   "note": "Mucha pizza found only for Netanya/Kfar Saba branches (Wolt); nothing for Ben Gurion 13 branch; no Tabit/Ontopo; no closure news"
+  },
+  "n5934127582": {
+   "r": "conflict",
+   "note": "Own site miznon.com/locations lists only Ibn Gabirol 23 and Sarona (Kalman Magen 3) in Israel - no Ramat HaHayal/HaNechoshet 1 branch; only old directory listing (enjoyingisrael) shows it; no explicit closure article found (Maariv 2026-05 on Ramat HaHayal decline doesn't name it). Likely closed, unconfirmed"
+  },
+  "n10279205409": {
+   "r": "none",
+   "note": "No reliable source found for Metro Burger on Mikve Israel; no site, no Tabit/Ontopo, no closure news"
+  },
+  "n10946223402": {
+   "r": "ok",
+   "note": "Sarona Market official site lists Meatbar stall (Kalman Magen 3) 2026-11; Wolt page 'MeatBar Burger | Sarona Market' live; mbburgers.com unreachable; no Tabit/Ontopo; no closure news. Hours on market page are generic market hours, not used"
+  },
+  "n10946228150": {
+   "r": "none",
+   "note": "No source for a Meat Bar Burger at Ibn Gabirol 67 (own site down; Time Out 2021 names Ben Ami 13, Chen Blvd, Sarona, Herzliya branches only; catalog phone is 09 Herzliya area); possibly wrong address"
+  },
+  "n11395473947": {
+   "r": "none",
+   "note": "No source found for 'Michael in the middle of the day' on Beit Oved; no site, no Tabit/Ontopo, no closure news"
+  },
+  "n10829498178": {
+   "r": "ok",
+   "note": "Sarona Market official site has Manal page (Kalman Magen 3, Arabic food) 2026-11; Time Out review 2023-06 at same address (dishes ~60 NIS); no Tabit/Ontopo; no closure news"
+  },
+  "n10955696002": {
+   "r": "none",
+   "note": "Searches for Masba Ful at Ben Gurion 18 returned nothing relevant (ynet 2025 hummus article is a different place); only catalog Facebook link; no Tabit/Ontopo; no closure news"
+  },
+  "n11169618825": {
+   "r": "none",
+   "note": "No reliable source found for Galili restaurant on Ben Gamliel, Jaffa; Time Out Jaffa articles don't mention it; no Tabit/Ontopo; no closure news"
+  },
+  "n2328500401": {
+   "r": "none",
+   "note": "No web/Tabit/Ontopo/Wolt trace of 'Mifgash Gruner' (coords in Ramat Gan area); no closure news either"
+  },
+  "n11922562885": {
+   "r": "none",
+   "note": "No web/Tabit/Ontopo/Wolt trace of 'Mifgash HaHatzilim' (coords Ramat HaSharon, Shivtei Israel); no closure news"
+  },
+  "n12578978007": {
+   "r": "single",
+   "note": "Only Wolt page https://wolt.com/en/isr/tel-aviv/restaurant/mifgash-shemesh/items/15-14 (Mifgash Shemesh Shawarma, Zhabotinsky 155 Ramat Gan, kosher mehadrin RG rabbinate, Su-Th 10:30-21:00); own site mifgashshemesh.co.il unreachable; not on Tabit/Ontopo; no closure news"
+  },
+  "n445977119": {
+   "r": "ok",
+   "note": "Official locator lists 'Tayelet Tel Aviv' branch HaYarkon 81 (Waze 32.07746,34.76733, ~45m from catalog point; catalog street Herbert Samuel is the parallel street)"
+  },
+  "n1102290365": {
+   "r": "ok",
+   "note": "Official locator: Mikado Center Tel Baruch, Aharon Becker 8 (Waze coords match within 10m)"
+  },
+  "n1688194296": {
+   "r": "none",
+   "note": "Not found in official McDonald's locator (only Yigal Alon branch listed is Rosh HaAyin); no Tel Aviv branch near these coords; no closure article found - possibly closed but unconfirmed"
+  },
+  "n1757673287": {
+   "r": "ok",
+   "note": "Official locator: Cinema City Glilot branch, Glilot Junction Ramat HaSharon (Waze 32.14618,34.80452, ~25m from catalog point); outside TLV, left as is"
+  },
+  "n1989338513": {
+   "r": "ok",
+   "note": "Official locator: Rothschild branch, Sderot Rothschild 33 (Waze coords match within 5m)"
+  },
+  "n3194233165": {
+   "r": "ok",
+   "note": "Official locator: Sarona branch, Arania Osvaldo 6 (Waze coords match)"
+  },
+  "n4112078463": {
+   "r": "ok",
+   "note": "Official locator: London Ministore branch, Ibn Gabirol 30 (corner Shaul HaMelech; Waze coords match within 3m)"
   }
  }
 }
