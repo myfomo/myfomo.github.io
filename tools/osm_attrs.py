@@ -19,14 +19,22 @@ def overpass(q):
 C = None
 if os.path.exists(CACHE):
     C = json.load(open(CACHE))
-    if time.time() - C.get("at", 0) > 7 * 86400: C = None
+    if time.time() - C.get("at", 0) > 7 * 86400 or C.get("v") != 2: C = None
 if C is None:
-    hoods = overpass(f'[out:json][timeout:90];node({BBOX})["place"~"^(suburb|quarter|neighbourhood)$"]["name"];out;')
+    hoods = overpass(f'[out:json][timeout:120];nwr({BBOX})["place"~"^(suburb|quarter|neighbourhood)$"]["name"];out geom;')
     venues = overpass(f'[out:json][timeout:120];nwr({BBOX})["amenity"~"^(restaurant|cafe|bar|pub|fast_food|ice_cream|biergarten)$"]["name"];out;')
     if hoods is None or venues is None or len(venues) < 200:
         print("Overpass unavailable; keeping old attributes"); C = json.load(open(CACHE)) if os.path.exists(CACHE) else None
     else:
-        H = [{"n": (h["tags"].get("name:he") or h["tags"]["name"]), "la": h["lat"], "lo": h["lon"], "k": h["tags"]["place"]} for h in hoods if "lat" in h]
+        H = []
+        for h in hoods:
+            n = h["tags"].get("name:he") or h["tags"]["name"]; k = h["tags"]["place"]
+            if h["type"] == "node": H.append({"n": n, "la": h["lat"], "lo": h["lon"], "k": k}); continue
+            ring = [(g["lat"], g["lon"]) for g in h.get("geometry", [])] if h["type"] == "way" else \
+                   [(g["lat"], g["lon"]) for m in h.get("members", []) if m.get("role") in ("outer", "") for g in m.get("geometry", [])]
+            if len(ring) >= 4:
+                la = sum(p[0] for p in ring) / len(ring); lo = sum(p[1] for p in ring) / len(ring)
+                H.append({"n": n, "la": la, "lo": lo, "k": k, "poly": [[round(a, 6), round(b, 6)] for a, b in ring]})
         A = {}
         for v in venues:
             t = v.get("tags", {}); a = {}
@@ -36,19 +44,31 @@ if C is None:
             if t.get("kids_area") == "yes" or t.get("highchair") == "yes" or t.get("changing_table") == "yes": a["kd"] = 1
             if t.get("dog") in ("yes", "leashed"): a["dg"] = 1
             if a: A[v["type"][0] + str(v["id"])] = a
-        C = {"at": time.time(), "hoods": H, "attrs": A}
+        C = {"v": 2, "at": time.time(), "hoods": H, "attrs": A}
         json.dump(C, open(CACHE, "w"), ensure_ascii=False, indent=0)
 if not C: sys.exit(0)
 def km(a, b, c, d):
     t = math.radians; x = t(d - b) * math.cos(t((a + c) / 2)); y = t(c - a); return 6371 * math.hypot(x, y)
 D = json.load(open(CAT)); n = {"nb": 0, "attrs": 0}
-# smaller units (neighbourhood/quarter) win over a suburb at a similar distance
-W = {"neighbourhood": 0.8, "quarter": 0.9, "suburb": 1.0}
+def inside(la, lo, poly):
+    c = False; j = len(poly) - 1
+    for i in range(len(poly)):
+        yi, xi = poly[i]; yj, xj = poly[j]
+        if (yi > la) != (yj > la) and lo < (xj - xi) * (la - yi) / ((yj - yi) or 1e-12) + xi: c = not c
+        j = i
+    return c
+def area(poly): return abs(sum(poly[i][1] * poly[i - 1][0] - poly[i - 1][1] * poly[i][0] for i in range(len(poly))))
+POLYS = sorted([h for h in C["hoods"] if h.get("poly")], key=lambda h: area(h["poly"]))   # smallest area first
+NODES = [h for h in C["hoods"] if not h.get("poly")]
+print("hood polygons", len(POLYS), "points", len(NODES))
 for p in D["places"]:
     best = None
-    for h in C["hoods"]:
-        d = km(p["la"], p["lo"], h["la"], h["lo"]) * W.get(h["k"], 1)
-        if d < 1.5 and (best is None or d < best[0]): best = (d, h["n"])
+    for h in POLYS:                               # inside a neighbourhood outline: the smallest one wins
+        if inside(p["la"], p["lo"], h["poly"]): best = (0, h["n"]); break
+    if best is None:                              # otherwise only a very close neighbourhood point counts
+        for h in NODES:
+            d = km(p["la"], p["lo"], h["la"], h["lo"])
+            if d < 0.5 and (best is None or d < best[0]): best = (d, h["n"])
     if best: p["nb"] = best[1]; n["nb"] += 1
     else: p.pop("nb", None)
     for k in ("os", "wc", "rs", "kd", "dg"): p.pop(k, None)
