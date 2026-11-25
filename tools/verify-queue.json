@@ -4246,27 +4246,45 @@
   },
   "n11063336012": {
    "r": "conflict",
-   "note": "Own site fika.co.il (last modified 2023-04) lists TA branches Gordon 36, Yirmiyahu 27, Shlomo 43 with catalog phone 03-5229505 but no Dov Hoz branch; cannot confirm catalog point on Dov Hoz is the Gordon 36 branch; Time Out 2020 Gordon opening; no closure news; no Tabit/Ontopo."
+   "note": "Own site fika.co.il (last modified 2023-04) lists TA branches Gordon 36, Yirmiyahu 27, Shlomo 43 with catalog phone 03-5229505 but no Dov Hoz branch; cannot confirm catalog point on Dov Hoz is the Gordon 36 branch; Time Out 2020 Gordon opening; no closure news; no Tabit/Ontopo.",
+   "r2": "conflict",
+   "note2": "Re-check: own site fika.co.il now opened live: lists TA branches Gordon 36, Yirmiyahu 27, Shlomo 43 (phone 03-5229505) but no Dov Hoz branch; catalog point on Dov Hoz cannot be matched to Gordon 36 (one block north); Time Out 2020 Gordon opening; no closure news; no Tabit/Ontopo. https://www.fika.co.il/",
+   "d2": "2026-11-25"
   },
   "n12768123437": {
    "r": "none",
-   "note": "Only Time Out 2021-05 list (Rambam 18, 33 years, 03-627-8890) and atly directory; no 2024-26 source; no Tabit/Ontopo; no closure news."
+   "note": "Only Time Out 2021-05 list (Rambam 18, 33 years, 03-627-8890) and atly directory; no 2024-26 source; no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: no own site (w is an Instagram-style handle); still only Time Out 2021-05 list (Rambam 18, 03-627-8890) and atly/findmeglutenfree directories; no 2024-26 source; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n11681560805": {
    "r": "single",
-   "note": "Time Out Sheinkin mapping 2025-03 lists Frenchy at Sheinkin 54, bakery-cafe, Su-Th 9-21 Fr 9-14 (only atly directory otherwise); no Tabit/Ontopo; no closure news. https://timeout.co.il/מיפוי-שינקין-2025/"
+   "note": "Time Out Sheinkin mapping 2025-03 lists Frenchy at Sheinkin 54, bakery-cafe, Su-Th 9-21 Fr 9-14 (only atly directory otherwise); no Tabit/Ontopo; no closure news. https://timeout.co.il/מיפוי-שינקין-2025/",
+   "r2": "single",
+   "note2": "Re-check: no own site found (Instagram handle only); still only Time Out Sheinkin mapping 2025-03 (Sheinkin 54, bakery-cafe); no Tabit/Ontopo; no closure news. https://timeout.co.il/מיפוי-שינקין-2025/",
+   "d2": "2026-11-25"
   },
   "n12102839853": {
    "r": "single",
-   "note": "Time Out Florentin cafes 2024-03 (and 2022-11) list Frenkel Cafe at Yedidya Frenkel 6; no 2025-26 source; Instagram not fetchable; no Tabit/Ontopo; no closure news. https://timeout.co.il/%d7%91%d7%aa%d7%99-%d7%a7%d7%a4%d7%94-%d7%a4%d7%9c%d7%95%d7%a8%d7%a0%d7%98%d7%99%d7%9f/"
+   "note": "Time Out Florentin cafes 2024-03 (and 2022-11) list Frenkel Cafe at Yedidya Frenkel 6; no 2025-26 source; Instagram not fetchable; no Tabit/Ontopo; no closure news. https://timeout.co.il/%d7%91%d7%aa%d7%99-%d7%a7%d7%a4%d7%94-%d7%a4%d7%9c%d7%95%d7%a8%d7%a0%d7%98%d7%99%d7%9f/",
+   "r2": "single",
+   "note2": "Re-check: no own site (Instagram not fetchable); still only Time Out Florentin cafes 2024-03 (and 2022-11) at Yedidya Frenkel 6; no 2025-26 source; no Tabit/Ontopo; no closure news. https://timeout.co.il/%d7%91%d7%aa%d7%99-%d7%a7%d7%a4%d7%94-%d7%a4%d7%9c%d7%95%d7%a8%d7%a0%d7%98%d7%99%d7%9f/",
+   "d2": "2026-11-25"
   },
   "n13662024127": {
    "r": "single",
-   "note": "Only Time Out (one outlet, 4 articles: 2025-03 review with hours Su-Th 7:30-18 Fr 7:30-15 Sa 9-16 and prices, 2025-04, 2026-04 laptop cafes, 2026-10 Saturday-open list) at Frenkel 56; no independent 2nd source; no Tabit/Ontopo; no closure news. https://timeout.co.il/%d7%91%d7%aa%d7%99-%d7%a7%d7%a4%d7%94-%d7%a4%d7%aa%d7%95%d7%97%d7%99%d7%9d-%d7%91%d7%a9%d7%91%d7%aa-49/"
+   "note": "Only Time Out (one outlet, 4 articles: 2025-03 review with hours Su-Th 7:30-18 Fr 7:30-15 Sa 9-16 and prices, 2025-04, 2026-04 laptop cafes, 2026-10 Saturday-open list) at Frenkel 56; no independent 2nd source; no Tabit/Ontopo; no closure news. https://timeout.co.il/%d7%91%d7%aa%d7%99-%d7%a7%d7%a4%d7%94-%d7%a4%d7%aa%d7%95%d7%97%d7%99%d7%9d-%d7%91%d7%a9%d7%91%d7%aa-49/",
+   "r2": "single",
+   "note2": "Re-check: Instagram (own handle) blocked by robots; still only Time Out (one outlet, several articles 2025-03 to 2026-10) at Frenkel 56; no independent 2nd source; no Tabit/Ontopo; no closure news. https://timeout.co.il/%d7%91%d7%aa%d7%99-%d7%a7%d7%a4%d7%94-%d7%a4%d7%aa%d7%95%d7%97%d7%99%d7%9d-%d7%91%d7%a9%d7%91%d7%aa-49/",
+   "d2": "2026-11-25"
   },
   "n1724608444": {
    "r": "none",
-   "note": "Name mismatch in catalog (Kassita vs alt 'Cafe Vista'); no source for Kassita; 'Vista Coffee' kiosk on Retzif HaAliya HaShniya only in directories/undated Secret Tel Aviv; Time Out Jaffa lists don't mention; no Tabit/Ontopo; no closure news."
+   "note": "Name mismatch in catalog (Kassita vs alt 'Cafe Vista'); no source for Kassita; 'Vista Coffee' kiosk on Retzif HaAliya HaShniya only in directories/undated Secret Tel Aviv; Time Out Jaffa lists don't mention; no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: no own site; name mismatch (Kassita vs 'Cafe Vista') unresolved; no source for Kassita at Retzif HaAliya HaShniya; Time Out Jaffa lists don't mention; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n8850202417": {
    "r": "none",
@@ -4286,7 +4304,10 @@
   },
   "n4580402528": {
    "r": "none",
-   "note": "Only old/undated sources: Time Out IL 2016 (pre-opening, Lilienblum) and Time Out EN kiosks list (undated, 3 Lilienblum). Own 'site' is an Instagram handle, not fetchable. No Tabit/Ontopo, no 2025-26 source, no closure news."
+   "note": "Only old/undated sources: Time Out IL 2016 (pre-opening, Lilienblum) and Time Out EN kiosks list (undated, 3 Lilienblum). Own 'site' is an Instagram handle, not fetchable. No Tabit/Ontopo, no 2025-26 source, no closure news.",
+   "r2": "none",
+   "note2": "Re-check: own 'site' is an Instagram handle (not fetchable); only Time Out IL 2016-05 (pre-opening, Lilienblum opposite Eden cinema) and undated Time Out EN kiosks list; no 2025-26 source; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n12104197505": {
    "r": "none",
@@ -4314,7 +4335,10 @@
   },
   "n13355845440": {
    "r": "single",
-   "note": "Only source: Time Out 2025-04 opening article, Levontin 2 (replaced Batha VeGriga), Su-Fr 8:30-17:00 https://timeout.co.il/קפה-אלנבי/ ; no own site, no Tabit/Ontopo, no closure news."
+   "note": "Only source: Time Out 2025-04 opening article, Levontin 2 (replaced Batha VeGriga), Su-Fr 8:30-17:00 https://timeout.co.il/קפה-אלנבי/ ; no own site, no Tabit/Ontopo, no closure news.",
+   "r2": "single",
+   "note2": "Re-check: still only Time Out 2025-04-06 opening article, Levontin 2, Su-Fr 8:30-17:00, cafe menu prices ~28-52 NIS https://timeout.co.il/קפה-אלנבי/ ; no own site found; no Tabit/Ontopo; no closure news (Time Out closures list mentions Batha VeGriga replaced on Allenby-Levontin corner). atly aggregator ignored.",
+   "d2": "2026-11-25"
   },
   "n1386293498": {
    "r": "none",
@@ -4342,7 +4366,10 @@
   },
   "n2142643229": {
    "r": "none",
-   "note": "No recent reliable source for Cafe Bar HaBima (Time Out topic page only old items); no Tabit/Ontopo; no closure news."
+   "note": "No recent reliable source for Cafe Bar HaBima (Time Out topic page only old items); no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: only Time Out English review 2017-02 (Cafe Habima, 31 Ben Zion Blvd, 07-24) https://www.timeout.com/israel/restaurants/cafe-habima - too old; no own site found; no Tabit/Ontopo; no closure news found.",
+   "d2": "2026-11-25"
   },
   "n525733699": {
    "r": "none",
@@ -4358,15 +4385,24 @@
   },
   "n11428462556": {
    "r": "none",
-   "note": "Matches Cafe Joe Merom Center, Chaim Landau 7, Ramat Gan (Merom Neve) per directories (d.co.il/62498090, snifi) - undated, not reliable; official site blocked; no Tabit/Ontopo; no closure news."
+   "note": "Matches Cafe Joe Merom Center, Chaim Landau 7, Ramat Gan (Merom Neve) per directories (d.co.il/62498090, snifi) - undated, not reliable; official site blocked; no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: official joe.co.il still fails to load (client_error); search finds only directories (d.co.il/62498090, easy.co.il) for Cafe Joe Merom Center, Chaim Landau 7, Ramat Gan - undated, not usable; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n11987402410": {
    "r": "none",
-   "note": "Official joe.co.il branch list unreachable (blocked); no Tabit/Ontopo page; no source for a HaYarkon branch; no closure news. Missing from undated directory list - not proof of closure."
+   "note": "Official joe.co.il branch list unreachable (blocked); no Tabit/Ontopo page; no source for a HaYarkon branch; no closure news. Missing from undated directory list - not proof of closure.",
+   "r2": "none",
+   "note2": "Re-check: joe.co.il branch list still fails to load (client_error); only directory listings (easy.co.il) in search; no source for a HaYarkon branch; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n3688239225": {
    "r": "conflict",
-   "note": "Time Out 2025-09 (https://timeout.co.il/אוטוטו/) says the old kiosk at Groniman 8 garden (Ramat Aviv) reopened as new cafe 'Ottoto' (אוטוטו) by tender winners; catalog name Groniman 8/Zoharit likely outdated - name/operator change, needs user decision. No Tabit/Ontopo, no own site."
+   "note": "Time Out 2025-09 (https://timeout.co.il/אוטוטו/) says the old kiosk at Groniman 8 garden (Ramat Aviv) reopened as new cafe 'Ottoto' (אוטוטו) by tender winners; catalog name Groniman 8/Zoharit likely outdated - name/operator change, needs user decision. No Tabit/Ontopo, no own site.",
+   "r2": "conflict",
+   "note2": "Re-check: Time Out 2025-09-29 (https://timeout.co.il/אוטוטו/) confirms the Groniman 8 garden kiosk, Ramat Aviv, now runs as new cafe 'Ottoto' (אוטוטו, Italian-style cafe, focaccia/taboon pizza) by 5 tender winners; catalog name Groniman 8/Zoharit appears outdated - name/operator change, needs user decision. Groniman owners' other venue (Time Out 2024-11) is at Levitan 1, not here. No Tabit/Ontopo, no own site.",
+   "d2": "2026-11-25"
   },
   "n10103385534": {
    "r": "none",
@@ -4374,27 +4410,45 @@
   },
   "n5366762821": {
    "r": "single",
-   "note": "Only source: Wolt venue page https://wolt.com/uk/Israel/Tel Aviv/restaurant/coffee-haroeh (HaRa'ah 12, Ramat Gan, +972 3-600-6969, Su-Th 07:30-21:00 Fr 08:00-15:00 Sa off; live status not confirmable). Facebook blocked; no Tabit/Ontopo; no closure news."
+   "note": "Only source: Wolt venue page https://wolt.com/uk/Israel/Tel Aviv/restaurant/coffee-haroeh (HaRa'ah 12, Ramat Gan, +972 3-600-6969, Su-Th 07:30-21:00 Fr 08:00-15:00 Sa off; live status not confirmable). Facebook blocked; no Tabit/Ontopo; no closure news.",
+   "r2": "single",
+   "note2": "Re-check: still only Wolt venue page https://wolt.com/uk/Israel/Tel Aviv/restaurant/coffee-haroeh (HaRa'ah 12, Ramat Gan, +972 3-600-6969). Facebook blocked by robots; no Tabit/Ontopo; no news; no closure news.",
+   "d2": "2026-11-25"
   },
   "n8518709288": {
    "r": "none",
-   "note": "Cafe Haruzim is a coffee cart at Yoav 12, Ramat Gan; only directory/Google-derived pages (easy.co.il, happytlv) - not usable; Facebook blocked; no Tabit/Ontopo; no closure news."
+   "note": "Cafe Haruzim is a coffee cart at Yoav 12, Ramat Gan; only directory/Google-derived pages (easy.co.il, happytlv) - not usable; Facebook blocked; no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: still only directory pages (easy.co.il, d.co.il, atly) for coffee cart at Yoav 12, Ramat Gan - not usable; not in Time Out coffee-cart article 2025-12; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n13708430165": {
    "r": "single",
-   "note": "Time Out 2025-09 https://timeout.co.il/אוטוטו/ says Ottoto's operators also run Topol at the Cinematheque (opened per Time Out 2024-05, ynet 2024-08). Cinematheque itself temporarily closed 'until further notice' per Time Out 2026-04 (https://timeout.co.il/סינמטק-סגור/). No Tabit/Ontopo; Instagram unreadable."
+   "note": "Time Out 2025-09 https://timeout.co.il/אוטוטו/ says Ottoto's operators also run Topol at the Cinematheque (opened per Time Out 2024-05, ynet 2024-08). Cinematheque itself temporarily closed 'until further notice' per Time Out 2026-04 (https://timeout.co.il/סינמטק-סגור/). No Tabit/Ontopo; Instagram unreadable.",
+   "r2": "single",
+   "note2": "Re-check: Time Out 2025-09-29 https://timeout.co.il/אוטוטו/ says Ottoto's operators also run Topol at the Cinematheque (opened per Time Out 2024-05 https://timeout.co.il/קפה-טופול/). Cinematheque closed to the public again per Time Out 2026-04-07 (https://timeout.co.il/topic/סינמטק-תל-אביב/), no later reopening report - cafe status uncertain. No Tabit/Ontopo; Instagram unreadable.",
+   "d2": "2026-11-25"
   },
   "n1717768356": {
    "r": "single",
-   "note": "Time Out specialty-coffee list 2025-09 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/ lists Timothy at Ibn Gabirol 187. Facebook blocked; no Tabit/Ontopo/Wolt page; no closure news (Time Out 2022 Levinsky branch article is about a second branch)."
+   "note": "Time Out specialty-coffee list 2025-09 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/ lists Timothy at Ibn Gabirol 187. Facebook blocked; no Tabit/Ontopo/Wolt page; no closure news (Time Out 2022 Levinsky branch article is about a second branch).",
+   "r2": "single",
+   "note2": "Re-check: Time Out 2025-09 lists Timothy at Ibn Gabirol 187 in two articles (https://timeout.co.il/קפה-ספיישלטי-תל-אביב/ and https://timeout.co.il/בתי-קפה-מוקפדים/ dated 2025-09-06) - same outlet, so counted as one source. Facebook blocked by robots; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n1201454406": {
    "r": "none",
-   "note": "No web/Time Out/Tabit/Ontopo source found for Yoto Caffe; bridge address not traceable; no closure news found"
+   "note": "No web/Time Out/Tabit/Ontopo source found for Yoto Caffe; bridge address not traceable; no closure news found",
+   "r2": "none",
+   "note2": "Re-check: no web/Time Out/Tabit/Ontopo source for Yoto Caffe & Food; not in Time Out coffee-cart article 2025-12; bridge address not traceable; no closure news.",
+   "d2": "2026-11-25"
   },
   "n5975671085": {
    "r": "ok",
-   "note": "Ontopo active booking page (Yom Tov 30, Kerem HaTeimanim); Time Out EN listing 2023; Time Out review 2022 with prices; no closure news. Hours differ between Ontopo and Time Out, so oh not set"
+   "note": "Ontopo active booking page (Yom Tov 30, Kerem HaTeimanim); Time Out EN listing 2023; Time Out review 2022 with prices; no closure news. Hours differ between Ontopo and Time Out, so oh not set",
+   "r2": "ok",
+   "note2": "Re-check: Ontopo page live with booking form (Yom Tov Cafe, Yom Tov 30); Time Out EN 2023 and Time Out review 2022 still valid; no closure news. Ontopo hours (Fr 08:00-17:00) differ from Time Out/catalog, so oh not set.",
+   "d2": "2026-11-25"
   },
   "n4118545634": {
    "r": "none",
@@ -4402,19 +4456,31 @@
   },
   "n11802322493": {
    "r": "none",
-   "note": "Landwer Cafe official branch list (landwercafe.co.il/מסעדות) has no Ramat HaHayal/HaNechoshet branch; a delivery.landwercafe.co.il 'Tel Aviv - Ramat HaHayal (kosher)' URL appears in search but page unreachable; no Ontopo/Tabit page; no closure news. Not proof of closure"
+   "note": "Landwer Cafe official branch list (landwercafe.co.il/מסעדות) has no Ramat HaHayal/HaNechoshet branch; a delivery.landwercafe.co.il 'Tel Aviv - Ramat HaHayal (kosher)' URL appears in search but page unreachable; no Ontopo/Tabit page; no closure news. Not proof of closure",
+   "r2": "none",
+   "note2": "Re-check: official site landwercafe.co.il opened - Tel Aviv branches listed are only Azrieli, Sharona, Ramat Aviv Mall, Ayalon Mall; no Ramat HaHayal/HaNechoshet branch; no Ontopo/Tabit page; no closure news. Absence from list is not proof of closure.",
+   "d2": "2026-11-25"
   },
   "n1643304646": {
    "r": "none",
-   "note": "Cafe Masaryk (Masaryk 12): only old Time Out items (2017, 2021); rest.co.il directory listing updated 2026-09 (not an accepted source); not on Tabit/Ontopo; no closure news"
+   "note": "Cafe Masaryk (Masaryk 12): only old Time Out items (2017, 2021); rest.co.il directory listing updated 2026-09 (not an accepted source); not on Tabit/Ontopo; no closure news",
+   "r2": "none",
+   "note2": "Re-check 2026-11: Cafe Masaryk still only in old Time Out guides (2017/2019 modified) https://timeout.co.il/בתי-קפה-בתל-אביב-מרכז-תל-אביב/ ; no own site, no Tabit/Ontopo, no 2025-26 source, no closure news",
+   "d2": "2026-11-25"
   },
   "n9756805618": {
    "r": "none",
-   "note": "Nina cafe (Nina Cafe Suites hotel, Neve Tzedek): only Time Out 2017 list and hotel booking sites; no own site found; not on Tabit/Ontopo; no closure news"
+   "note": "Nina cafe (Nina Cafe Suites hotel, Neve Tzedek): only Time Out 2017 list and hotel booking sites; no own site found; not on Tabit/Ontopo; no closure news",
+   "r2": "none",
+   "note2": "Re-check 2026-11: Nina Cafe (Nina Cafe Suites hotel) only hotel-booking/travel listings; no own site, no Tabit/Ontopo, no 2025-26 guide, no closure news",
+   "d2": "2026-11-25"
   },
   "n12139988888": {
    "r": "none",
-   "note": "Cafe Otef: Time Out/ice 2024 show Netiv HaAsara branch in Sarona (Kaplan 30, opened 2024-05, planned ~6 months) and Re'im branch at Wolfson 54; no 2025-26 source and cannot match 'Kikar HaMoshava'; no closure news; not on Tabit/Ontopo"
+   "note": "Cafe Otef: Time Out/ice 2024 show Netiv HaAsara branch in Sarona (Kaplan 30, opened 2024-05, planned ~6 months) and Re'im branch at Wolfson 54; no 2025-26 source and cannot match 'Kikar HaMoshava'; no closure news; not on Tabit/Ontopo",
+   "r2": "none",
+   "note2": "Re-check 2026-11: Time Out 2024-05 https://timeout.co.il/קפה-עוטף-נתיב-העשרה/ shows Cafe Otef Netiv HaAsara at Kaplan 30, Sarona (no square named); no 2025-26 source, no own site, no Tabit/Ontopo, no closure news",
+   "d2": "2026-11-25"
   },
   "n3990565224": {
    "r": "none",
@@ -4422,7 +4488,10 @@
   },
   "n3799486467": {
    "r": "single",
-   "note": "Time Out guide to Jaffa cafes 2024-08 (modified 2025-04) lists Cafe Alma at Shivtei Israel 14: https://timeout.co.il/בתי-קפה-מומלצים-יפו/ ; catalog site pieceofcake.co.il down; Ontopo only has Gan Meir/Rishon branches; no closure news"
+   "note": "Time Out guide to Jaffa cafes 2024-08 (modified 2025-04) lists Cafe Alma at Shivtei Israel 14: https://timeout.co.il/בתי-קפה-מומלצים-יפו/ ; catalog site pieceofcake.co.il down; Ontopo only has Gan Meir/Rishon branches; no closure news",
+   "r2": "single",
+   "note2": "Re-check 2026-11: still only Time Out Jaffa cafes guide 2024-08 (mod 2025-04) https://timeout.co.il/בתי-קפה-מומלצים-יפו/ ; catalog site pieceofcake.co.il fails to load (site error); Time Out topic page has no 2025-26 Alma article; no Ontopo for this branch; no closure news",
+   "d2": "2026-11-25"
   },
   "n10279175910": {
    "r": "single",
@@ -4438,15 +4507,24 @@
   },
   "n12346297844": {
    "r": "single",
-   "note": "Only source: Time Out 2024-11 (Keshet, day cafe of Anan bar, Raanan 36, Florentin; Su-Th 08-16, Fr 08-14) https://timeout.co.il/%D7%A7%D7%A9%D7%AA-%D7%A2%D7%A0%D7%9F/ ; Instagram not readable; no Tabit/Ontopo; no closure news"
+   "note": "Only source: Time Out 2024-11 (Keshet, day cafe of Anan bar, Raanan 36, Florentin; Su-Th 08-16, Fr 08-14) https://timeout.co.il/%D7%A7%D7%A9%D7%AA-%D7%A2%D7%A0%D7%9F/ ; Instagram not readable; no Tabit/Ontopo; no closure news",
+   "r2": "single",
+   "note2": "Re-check 2026-11: still only Time Out 2024-11 https://timeout.co.il/%D7%A7%D7%A9%D7%AA-%D7%A2%D7%A0%D7%9F/ (Keshet, day cafe of Anan bar, Raanan 36); not in Florentin cafe guides; catalog w is an invalid Instagram-handle URL; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-25"
   },
   "n553022802": {
    "r": "single",
-   "note": "Only recent source: public Wolt page (Cafe Shraga, Yosef Karo 10, phone matches) https://wolt.com/he/Israel/Tel Aviv/restaurant/cafe-shraga ; Time Out 2017 old; no Tabit/Ontopo; no closure news"
+   "note": "Only recent source: public Wolt page (Cafe Shraga, Yosef Karo 10, phone matches) https://wolt.com/he/Israel/Tel Aviv/restaurant/cafe-shraga ; Time Out 2017 old; no Tabit/Ontopo; no closure news",
+   "r2": "single",
+   "note2": "Re-check 2026-11: public Wolt page opened (Cafe Shraga, Yosef Karo 10, phone +97235626691, delivery Su-Th 12:00-15:45) https://wolt.com/he/Israel/Tel Aviv/restaurant/cafe-shraga ; Time Out East TA guide only 2017/2019; no own site, no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-25"
   },
   "n12601370080": {
    "r": "single",
-   "note": "Only source: Time Out 2024-09 opening article (Thomas Cafe, Florentin 33, sandwiches 15-36 NIS) https://timeout.co.il/תומאס-קפה/ ; Instagram not readable; no Tabit/Ontopo; no closure news"
+   "note": "Only source: Time Out 2024-09 opening article (Thomas Cafe, Florentin 33, sandwiches 15-36 NIS) https://timeout.co.il/תומאס-קפה/ ; Instagram not readable; no Tabit/Ontopo; no closure news",
+   "r2": "single",
+   "note2": "Re-check 2026-11: still only Time Out 2024-09 opening article https://timeout.co.il/תומאס-קפה/ (Florentin 33); not in Florentin cafe guides; catalog w is an invalid Instagram-handle URL; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-25"
   },
   "n2288503813": {
    "r": "none",
@@ -4454,7 +4532,10 @@
   },
   "n683387957": {
    "r": "conflict",
-   "note": "No current source for Cacao; Time Out Rothschild mapping 2025-04 lists Umai and Lulu & Co at Rothschild 37, not Cacao (https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/); no closure article found; possibly closed/replaced"
+   "note": "No current source for Cacao; Time Out Rothschild mapping 2025-04 lists Umai and Lulu & Co at Rothschild 37, not Cacao (https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/); no closure article found; possibly closed/replaced",
+   "r2": "conflict",
+   "note2": "Re-check 2026-11: still no current source for Cacao; Time Out Rothschild mapping 2025-04 lists Umai and Lulu & Co at Rothschild 37, not Cacao (https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/); only old travel listings (enjoyingisrael 'Kakao Rothschild'); no closure article; likely replaced",
+   "d2": "2026-11-25"
   },
   "n8537109447": {
    "r": "none",
@@ -4522,7 +4603,10 @@
   },
   "n2567910213": {
    "r": "single",
-   "note": "https://timeout.co.il/מיפוי-שינקין-2025/ (Time Out 2025-03: unnamed eatery at Shenkin 17 run by Rivka, open daily 7-22). Only a d.co.il directory listing otherwise (undated, different hours); no Tabit/Ontopo; no closure news."
+   "note": "https://timeout.co.il/מיפוי-שינקין-2025/ (Time Out 2025-03: unnamed eatery at Shenkin 17 run by Rivka, open daily 7-22). Only a d.co.il directory listing otherwise (undated, different hours); no Tabit/Ontopo; no closure news.",
+   "r2": "single",
+   "note2": "Re-check 2026-11: still only Time Out 2025-03 Shenkin mapping https://timeout.co.il/מיפוי-שינקין-2025/ (unnamed eatery at Shenkin 17 run by Rivka, daily 7-22); catalog w is dead Google+; only d.co.il directory otherwise; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-25"
   },
   "n984578657": {
    "r": "none",
@@ -4530,11 +4614,17 @@
   },
   "n13760624550": {
    "r": "none",
-   "note": "Shroitman bakery Nachalat Yitzhak only in Time Out 2017 (opening) and 2020 (as existing); no 2025-2026 source for the Chayei Adam location; site URL in catalog invalid; no Tabit/Ontopo; no closure news."
+   "note": "Shroitman bakery Nachalat Yitzhak only in Time Out 2017 (opening) and 2020 (as existing); no 2025-2026 source for the Chayei Adam location; site URL in catalog invalid; no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: no own site found (catalog URL invalid), no Tabit/Ontopo. Only Time Out 2017-08 (Nachalat Yitzhak 30 opening), 2017-10 and 2020-06 (Tchernichovsky branch article, Nachalat Yitzhak branch presented as operating). No 2025-2026 source; no closure news found (Time Out 2025 closures list does not name it).",
+   "d2": "2026-11-25"
   },
   "n777401729": {
    "r": "single",
-   "note": "https://timeout.co.il/העיר-שלנו-בתי-קפה-1811/ (Time Out 2024-11, mod 2025-03: legendary cafe run by Michel Garcia, listed at Kikar Masaryk 12 - next to catalog coords on Mane St). No second recent source, no Tabit/Ontopo, no closure news."
+   "note": "https://timeout.co.il/העיר-שלנו-בתי-קפה-1811/ (Time Out 2024-11, mod 2025-03: legendary cafe run by Michel Garcia, listed at Kikar Masaryk 12 - next to catalog coords on Mane St). No second recent source, no Tabit/Ontopo, no closure news.",
+   "r2": "single",
+   "note2": "Re-check: still only https://timeout.co.il/העיר-שלנו-בתי-קפה-1811/ (Time Out 2024-11, mod 2025-03, Kikar Masaryk 12 near catalog point). Searches found no own site, no Tabit/Ontopo, no second recent source (Time Out 2025-09 cafe guide does not list it), no closure news.",
+   "d2": "2026-11-25"
   },
   "n5325561830": {
    "r": "none",
@@ -4546,7 +4636,10 @@
   },
   "n12731352019": {
    "r": "ok",
-   "note": "Time Out 2025-02 opening review (Yafet 9, burgers 58-68 NIS), Time Out Jaffa restaurants guide 2025-09/10 lists it, Wolt venue page live. Hours only from one source (Time Out) so not set."
+   "note": "Time Out 2025-02 opening review (Yafet 9, burgers 58-68 NIS), Time Out Jaffa restaurants guide 2025-09/10 lists it, Wolt venue page live. Hours only from one source (Time Out) so not set.",
+   "r2": "ok",
+   "note2": "Kept ok: Time Out 2025-02 opening review (Yafet 9, burgers 58-68 NIS), Time Out Jaffa guide 2025-09/10; Wolt venue page re-opened 2026-11, still lists Yafet 9 with delivery hours. No own site, no Tabit/Ontopo; hours only from single sources so not set.",
+   "d2": "2026-11-25"
   },
   "n2079221945": {
    "r": "none",
@@ -4554,7 +4647,10 @@
   },
   "n11109493715": {
    "r": "none",
-   "note": "Amsterdam Fries at Kalman Magen 3 (Sarona): only old Time Out Florentin review and an aggregator (spinach.guide) marking a King George branch closed; nothing reliable for this branch; no Tabit/Ontopo"
+   "note": "Amsterdam Fries at Kalman Magen 3 (Sarona): only old Time Out Florentin review and an aggregator (spinach.guide) marking a King George branch closed; nothing reliable for this branch; no Tabit/Ontopo",
+   "r2": "none",
+   "note2": "Re-check: search found nothing for Amsterdam Fries at Kalman Magen 3 (Sarona); no own site, no Tabit/Ontopo, no closure news. Earlier: only old Time Out Florentin review and an aggregator.",
+   "d2": "2026-11-25"
   },
   "n13541744684": {
    "r": "none",
@@ -4562,7 +4658,10 @@
   },
   "n6579652086": {
    "r": "none",
-   "note": "Arepita's, HaCarmel: only Time Out 2017 listing 'Arepas' at HaCarmel 38; no recent source, no Tabit/Ontopo, no closure news"
+   "note": "Arepita's, HaCarmel: only Time Out 2017 listing 'Arepas' at HaCarmel 38; no recent source, no Tabit/Ontopo, no closure news",
+   "r2": "none",
+   "note2": "Re-check: only Time Out EN 2017-02 Latin list (Arepa's, Carmel Market, price 1) and older Time Out listing (HaCarmel 38); no own site, no Tabit/Ontopo, no 2025-2026 source, no closure news.",
+   "d2": "2026-11-25"
   },
   "n9786819303": {
    "r": "single",
@@ -4594,7 +4693,10 @@
   },
   "n11295755741": {
    "r": "single",
-   "note": "https://timeout.co.il/%d7%90%d7%9c-%d7%91%d7%a8%d7%99%d7%95-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/ (Time Out 2026-09, new TA branch of El Barrio; says original is at Jabotinsky-Bialik, Ramat Gan, implied still open). Catalog website elbarrio.rg invalid; no Tabit/Ontopo; no closure news."
+   "note": "https://timeout.co.il/%d7%90%d7%9c-%d7%91%d7%a8%d7%99%d7%95-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/ (Time Out 2026-09, new TA branch of El Barrio; says original is at Jabotinsky-Bialik, Ramat Gan, implied still open). Catalog website elbarrio.rg invalid; no Tabit/Ontopo; no closure news.",
+   "r2": "single",
+   "note2": "Re-check: still only https://timeout.co.il/%d7%90%d7%9c-%d7%91%d7%a8%d7%99%d7%95-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/ (Time Out 2026-09, new TA branch at Ben Yehuda 177; original Ramat Gan branch on Jabotinsky-Bialik mentioned, status not stated). No own site found (catalog elbarrio.rg invalid), no Tabit/Ontopo, no closure news.",
+   "d2": "2026-11-25"
   },
   "n10840287010": {
    "r": "none",
@@ -4602,19 +4704,31 @@
   },
   "n2078982908": {
    "r": "none",
-   "note": "Time Out 2023-04 mentions Falafel Gina at Shocken 22 (not Begin 126); nothing recent for this location; no Tabit/Ontopo; no closure news."
+   "note": "Time Out 2023-04 mentions Falafel Gina at Shocken 22 (not Begin 126); nothing recent for this location; no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2023-04 gives Falafel Gina at Shocken 22 (not Begin 126); no own site, no Tabit/Ontopo, nothing recent for this location, no closure news.",
+   "d2": "2026-11-25"
   },
   "n4362814196": {
    "r": "none",
-   "note": "Coordinates are Sokolov St, Herzliya; no reliable source naming 'Falafel Square' there (Time Out 2020 lists Falafel Haim, Sokolov 66 - different name); no Tabit/Ontopo; no closure news."
+   "note": "Coordinates are Sokolov St, Herzliya; no reliable source naming 'Falafel Square' there (Time Out 2020 lists Falafel Haim, Sokolov 66 - different name); no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: coords are Sokolov St, Herzliya; no source names 'Falafel Square' there (searches return other Sharon falafel places); no own site, no Tabit/Ontopo, no closure news.",
+   "d2": "2026-11-25"
   },
   "n4431080389": {
    "r": "none",
-   "note": "Time Out EN page (2023-03) lists Frishman Falafel, Frishman 42; ynet 2020; Time Out 2024-12 recommends Sabich Frishman chain without address. No 2025-26 source for this location; no Tabit/Ontopo; no closure news."
+   "note": "Time Out EN page (2023-03) lists Frishman Falafel, Frishman 42; ynet 2020; Time Out 2024-12 recommends Sabich Frishman chain without address. No 2025-26 source for this location; no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: ynet 2020-05 (Sabich Frishman, Frishman 42, kosher, 054-4524666), Time Out EN 2023-03; no own site found (only easy.co.il listings), no Tabit/Ontopo, no 2025-2026 source naming this branch, no closure news.",
+   "d2": "2026-11-25"
   },
   "n11390084018": {
    "r": "ok",
-   "note": "JPost 2026-06 best burgers list (GDB, Ibn Gabirol 22); Time Out 2025-12 best burgers (Ibn Gvirol 22); Wolt venue page active, burgers 50-67 NIS. No own site, no Tabit/Ontopo, no closure news."
+   "note": "JPost 2026-06 best burgers list (GDB, Ibn Gabirol 22); Time Out 2025-12 best burgers (Ibn Gvirol 22); Wolt venue page active, burgers 50-67 NIS. No own site, no Tabit/Ontopo, no closure news.",
+   "r2": "ok",
+   "note2": "Kept ok: JPost 2026-06 best burgers (Ibn Gabirol 22) re-opened and confirmed; Time Out 2025-12 best burgers. WARNING: Wolt page now titled 'GDB Burger | Ibn Gabirol | DELETED' (2026-11) - possible closure, but no closure news found; recheck later. No own site, no Tabit/Ontopo.",
+   "d2": "2026-11-25"
   },
   "n9967204622": {
    "r": "none",
@@ -4622,7 +4736,10 @@
   },
   "n9967204623": {
    "r": "none",
-   "note": "No source found for HaBukhari on HaMelacha (Time Out Bukharian lists 2022/2025 don't include it); no Tabit/Ontopo; no closure news."
+   "note": "No source found for HaBukhari on HaMelacha (Time Out Bukharian lists 2022/2025 don't include it); no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Re-check: still no source for HaBukhari on HaMelacha (Time Out Bukharian guides don't list it); no own site, Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n4964231827": {
    "r": "none",
@@ -4630,7 +4747,10 @@
   },
   "n5273498721": {
    "r": "none",
-   "note": "Could not tie to a source: 'House of Hummus' may be Humus Habait (Paste 2016 places it at Allenby/King George, not Nahalat Binyamin); no own site, Tabit/Ontopo or recent news; no closure news"
+   "note": "Could not tie to a source: 'House of Hummus' may be Humus Habait (Paste 2016 places it at Allenby/King George, not Nahalat Binyamin); no own site, Tabit/Ontopo or recent news; no closure news",
+   "r2": "none",
+   "note2": "Re-check: no source ties 'House of Hummus' to Nahalat Binyamin (only Paste 2016 / blogs on Hummus HaBayit elsewhere); no own site, Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n11330876276": {
    "r": "none",
@@ -4646,7 +4766,10 @@
   },
   "n12956754012": {
    "r": "single",
-   "note": "Only the public Wolt venue page names Joe's Pizza at Allenby 118 (phone +97235554989): https://wolt.com/en/isr/tel-aviv/restaurant/hapizzeria ; Time Out 2022 opening article for the same address; catalog site 'joespizzatlv' not found; no Tabit/Ontopo; no closure news"
+   "note": "Only the public Wolt venue page names Joe's Pizza at Allenby 118 (phone +97235554989): https://wolt.com/en/isr/tel-aviv/restaurant/hapizzeria ; Time Out 2022 opening article for the same address; catalog site 'joespizzatlv' not found; no Tabit/Ontopo; no closure news",
+   "r2": "single",
+   "note2": "Re-check: still only public Wolt page (Joe's Pizza, Allenby 118, +97235554989) https://wolt.com/en/isr/tel-aviv/restaurant/hapizzeria ; Time Out 2022-02 opening (Slice of New York, Allenby 118, old); catalog site joespizzatlv unreachable; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n11469869089": {
    "r": "ok",
@@ -4658,7 +4781,10 @@
   },
   "n6508607296": {
    "r": "none",
-   "note": "Kaimak (Levinsky) is mentioned in a Time Out Levinsky guide (2021, updated 2022), and Time Out 2014 covers the group; no own site, Tabit/Ontopo or 2025-2026 source; no closure news"
+   "note": "Kaimak (Levinsky) is mentioned in a Time Out Levinsky guide (2021, updated 2022), and Time Out 2014 covers the group; no own site, Tabit/Ontopo or 2025-2026 source; no closure news",
+   "r2": "none",
+   "note2": "Re-check: Cafe Kaymak, Levinsky 49 (vegetarian), Time Out EN page dated 2023-03 https://www.timeout.com/israel/restaurants/cafe-kaymak ; Time Out Levinsky guide 2021/2022; no 2025-2026 source; only Facebook as site; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n1643304615": {
    "r": "none",
@@ -4666,7 +4792,10 @@
   },
   "n11725313138": {
    "r": "single",
-   "note": "Time Out only (same outlet twice): 24 best burgers 2026-05 lists Lokal Burger at Ahad HaAm 30 + Einstein 69 https://timeout.co.il/ההמבורגרים-הטובים-בתל-אביב/ ; also Time Out EN 2025-12; no own site/Tabit/Ontopo/Wolt found; no closure news"
+   "note": "Time Out only (same outlet twice): 24 best burgers 2026-05 lists Lokal Burger at Ahad HaAm 30 + Einstein 69 https://timeout.co.il/ההמבורגרים-הטובים-בתל-אביב/ ; also Time Out EN 2025-12; no own site/Tabit/Ontopo/Wolt found; no closure news",
+   "r2": "single",
+   "note2": "Re-check: still Time Out only (same outlet): best burgers 2026-05 (Ahad HaAm 30) https://timeout.co.il/ההמבורגרים-הטובים-בתל-אביב/ + Time Out EN 2025-12; Mako review 2021-11 (old); no own site/Tabit/Ontopo/Wolt; no closure news.",
+   "d2": "2026-11-25"
   },
   "n14339025501": {
    "r": "none",
@@ -4674,7 +4803,10 @@
   },
   "n3346678359": {
    "r": "none",
-   "note": "Only Time Out 2014-2016 articles on Lunch Box (Lilienblum); no recent source, no own site, nothing on Tabit/Ontopo, no closure news found."
+   "note": "Only Time Out 2014-2016 articles on Lunch Box (Lilienblum); no recent source, no own site, nothing on Tabit/Ontopo, no closure news found.",
+   "r2": "none",
+   "note2": "Re-check: only Time Out 2014-2016 articles on Lunch Box (Lilienblum); no recent source, own site, Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n6644530328": {
    "r": "none",
@@ -4686,7 +4818,10 @@
   },
   "n6755794786": {
    "r": "single",
-   "note": "Public Wolt page active (Derech Shlomo/Salame 110, Turkish) https://wolt.com/en/isr/tel-aviv/restaurant/mutfak ; Time Out review 2024-03 (older); own site (business.site) defunct; not on Tabit/Ontopo; no closure news."
+   "note": "Public Wolt page active (Derech Shlomo/Salame 110, Turkish) https://wolt.com/en/isr/tel-aviv/restaurant/mutfak ; Time Out review 2024-03 (older); own site (business.site) defunct; not on Tabit/Ontopo; no closure news.",
+   "r2": "single",
+   "note2": "Re-check: public Wolt page active (Derech Shlomo 110, Turkish, phone +972524704419) https://wolt.com/he/isr/tel-aviv/restaurant/mutfak ; Time Out review 2024-03 and lists 2019/2022 (older); own site business.site defunct; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n13724728329": {
    "r": "none",
@@ -4702,11 +4837,17 @@
   },
   "n12017147884": {
    "r": "single",
-   "note": "OSU (Japanese-style smash burger stall, Hillel HaZaken 18, Carmel Market): Time Out best-burgers list 2025-12 https://timeout.co.il/theres-nothing-better-than-this-the-15-best-burgers-in-all-of-tel-aviv/ ; opening article Time Out 2024-01; not on Tabit/Ontopo/Wolt; no closure news."
+   "note": "OSU (Japanese-style smash burger stall, Hillel HaZaken 18, Carmel Market): Time Out best-burgers list 2025-12 https://timeout.co.il/theres-nothing-better-than-this-the-15-best-burgers-in-all-of-tel-aviv/ ; opening article Time Out 2024-01; not on Tabit/Ontopo/Wolt; no closure news.",
+   "r2": "single",
+   "note2": "Re-check: Time Out only (same outlet): Carmel Market guide 2026-05 lists OSU at Hillel HaZaken 18 https://timeout.co.il/שוק-הכרמל-3/ ; best burgers 2025-12; opening 2024-01; no own site, Tabit/Ontopo/Wolt; no closure news.",
+   "d2": "2026-11-25"
   },
   "n11868727704": {
    "r": "none",
-   "note": "No source for a 'Panino' at Carmel Market (HaCarmel). Time Out 2023 covers a different Panino at Ahad Ha'am 15 (doesn't match coords). Nothing on Tabit/Ontopo, no closure news."
+   "note": "No source for a 'Panino' at Carmel Market (HaCarmel). Time Out 2023 covers a different Panino at Ahad Ha'am 15 (doesn't match coords). Nothing on Tabit/Ontopo, no closure news.",
+   "r2": "none",
+   "note2": "Re-check: still no source for a Panino at Carmel Market (Time Out/Mako Carmel guides don't list it; Time Out 2023 Panino is Ahad HaAm 15, not these coords); no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n11414939014": {
    "r": "ok",
