@@ -2470,7 +2470,10 @@
   },
   "n11681523242": {
    "r": "ok",
-   "note": "Time Out 2025-02 + Maariv 2026-06 agree Givatayim branch operates"
+   "note": "Time Out 2025-02 + Maariv 2026-06 agree Givatayim branch operates",
+   "r2": "ok",
+   "note2": "Kept prev ok: Maariv 2026-06 re-opened, confirms Givatayim flagship branch operates; Time Out 2025-02; search budget exhausted, no Tabit/Ontopo check",
+   "d2": "2026-11-25"
   },
   "n10161946945": {
    "r": "none",
@@ -2500,12 +2503,15 @@
    "r": "conflict",
    "note": "Moved: Time Out 2026-06 reopened at Ben Zion 1 (Ontopo active); catalog King George 29 outdated",
    "r2": "ok",
-   "d2": "2026-11",
-   "note2": "Moved to Ben Zion 1 (address fix approved); Ontopo active"
+   "d2": "2026-11-25",
+   "note2": "Ontopo page live at 1 Ben Tsiyon Blvd with booking widget; Mako 2026-04 relaunch at King George/Ben Zion corner; Time Out 2026-06 (address fix already approved)"
   },
   "n12244120937": {
    "r": "ok",
-   "note": "Ontopo booking active Rothschild 9, phone matches; Time Out 2026-01"
+   "note": "Ontopo booking active Rothschild 9, phone matches; Time Out 2026-01",
+   "r2": "ok",
+   "note2": "Ontopo page live at 9 Rothschild, booking widget, phone matches; hours only on Ontopo (not stored); Time Out 2026-01",
+   "d2": "2026-11-25"
   },
   "n5195799584": {
    "r": "ok",
@@ -2517,11 +2523,17 @@
   },
   "n1432492607": {
    "r": "none",
-   "note": "Time Out 2013 only; listed site now unrelated blog; maybe gone"
+   "note": "Time Out 2013 only; listed site now unrelated blog; maybe gone",
+   "r2": "none",
+   "note2": "Only Time Out 2013 review (Harugei Malkhut 11, Ramat HaHayal); nothing recent; no Tabit/Ontopo found",
+   "d2": "2026-11-25"
   },
   "n2145835145": {
    "r": "ok",
-   "note": "Ontopo booking active Ahad Ha'Am 43; Time Out 2025-05"
+   "note": "Ontopo booking active Ahad Ha'Am 43; Time Out 2025-05",
+   "r2": "ok",
+   "note2": "Own site live (Ahad Ha'Am 43, daily 12-23, phone matches) + Ontopo page live with booking widget, same hours; Time Out 2025-05",
+   "d2": "2026-11-25"
   },
   "n2264923579": {
    "r": "none",
@@ -2583,7 +2595,10 @@
   },
   "n1386787886": {
    "r": "none",
-   "note": "Own site unreachable; nothing for Tuval 9"
+   "note": "Own site unreachable; nothing for Tuval 9",
+   "r2": "single",
+   "note2": "Own site unreachable (robots); single source: active Wolt page 'Shawarma Shemesh | Bursa' at Tuval 9 Ramat Gan, phone matches, kosher Ramat Gan rabbinate: https://wolt.com/mt/Israel/Tel Aviv/restaurant/shawarma-shemesh-bursa",
+   "d2": "2026-11-25"
   },
   "n6473212377": {
    "r": "ok",
@@ -2591,11 +2606,17 @@
   },
   "n12505246770": {
    "r": "none",
-   "note": "Time Out 2020 opening only"
+   "note": "Time Out 2020 opening only",
+   "r2": "none",
+   "note2": "Only Time Out 2020-02 pre-opening article (Allenby 97); nothing recent; no Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n950284108": {
    "r": "ok",
-   "note": "Time Out 2025-11 + Mako 2026-07 at Ben Yehuda 256"
+   "note": "Time Out 2025-11 + Mako 2026-07 at Ben Yehuda 256",
+   "r2": "ok",
+   "note2": "Own site live (Ben Yehuda 256, hours, phone) + Ontopo page live with booking widget; Time Out 2025-11; Mako 2026-07. Ontopo hours differ slightly; own site hours kept",
+   "d2": "2026-11-25"
   },
   "n12529700323": {
    "r": "none",
@@ -2623,7 +2644,10 @@
   },
   "n6317085385": {
    "r": "ok",
-   "note": "Spotted by Locals 2025-10 + Time Out 2025-12 at Rabbi Nachman 2"
+   "note": "Spotted by Locals 2025-10 + Time Out 2025-12 at Rabbi Nachman 2",
+   "r2": "ok",
+   "note2": "Own site akbar.co.il live (Rabbi Nachman 2, hours, phone); Ontopo booking page Nakhman 2; plus earlier Spotted by Locals 2025-10 + Time Out 2025-12",
+   "d2": "2026-11-25"
   },
   "n12162301524": {
    "r": "single",
@@ -2731,12 +2755,16 @@
   "n5859517185": {
    "r": "single",
    "note": "Time Out bars list 2025-11 Mikveh Israel 26 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars",
-   "r2": "single",
-   "d2": "2026-11"
+   "r2": "ok",
+   "d2": "2026-11-25",
+   "note2": "Ontopo booking page active for Guest Room, Mikve Israel 26 (phone, booking widget); plus Time Out bars list 2025-11; Ontopo hours incomplete so oh not set"
   },
   "n6538359142": {
    "r": "none",
-   "note": "Time Out 2017/2019 only"
+   "note": "Time Out 2017/2019 only",
+   "r2": "ok",
+   "note2": "Ontopo booking page active for HaMezeg, Ibn Gabirol 151 (bar, phone); Time Out 2017 page old; Ontopo hours incomplete so oh not set",
+   "d2": "2026-11-25"
   },
   "n10176062633": {
    "r": "none",
@@ -2772,7 +2800,10 @@
   },
   "n4430683196": {
    "r": "ok",
-   "note": "Maariv 2025-05 + Time Out 2025-10 agree Dizengoff 98 operates"
+   "note": "Maariv 2025-05 + Time Out 2025-10 agree Dizengoff 98 operates",
+   "r2": "ok",
+   "note2": "Kept prev ok: Maariv 2025-05 + Time Out + JPost agree Mayer House (Dizengoff 98) operates; Time Out 2024-04 shows rooftop now 'Rooftop 98' restaurant; hotel own site/Tabit/Ontopo not checked (search budget used up)",
+   "d2": "2026-11-25"
   },
   "n725456792": {
    "r": "none",
@@ -2786,8 +2817,8 @@
    "r": "single",
    "note": "Time Out 2025-06 Ahad Ha'am 60 https://timeout.co.il/3-ברים-אולדסקול/",
    "r2": "single",
-   "d2": "2026-11",
-   "note2": "Two Time Out articles 2025 Ahad Ha'am 60, same outlet only"
+   "d2": "2026-11-25",
+   "note2": "Time Out 2025-06 Ahad Ha'am 60 https://timeout.co.il/3-ברים-אולדסקול/ ; Time Out EN 2016 listing only (facebook.com/octobertlv); no Tabit/Ontopo or second independent 2025-26 source found; no closure news"
   },
   "n5796680566": {
    "r": "none",
@@ -2803,7 +2834,10 @@
   },
   "n6806590885": {
    "r": "none",
-   "note": "Time Out 2017, Globes 2019 only"
+   "note": "Time Out 2017, Globes 2019 only",
+   "r2": "none",
+   "note2": "Time Out topic page: only 2015 articles (fish restaurant, Nachalat Binyamin); Globes 2019; no recent source, no closure news",
+   "d2": "2026-11-25"
   },
   "n8518696077": {
    "r": "none",
@@ -2811,7 +2845,10 @@
   },
   "n2659433567": {
    "r": "none",
-   "note": "Time Out 2020: rebranded Beatrice Post; no recent source"
+   "note": "Time Out 2020: rebranded Beatrice Post; no recent source",
+   "r2": "none",
+   "note2": "Only aggregator (atly) listing Beatrice at King George 22; Time Out 2020 rebrand to Beatrice Post; no reliable recent source",
+   "d2": "2026-11-25"
   },
   "n1770120429": {
    "r": "closed",
@@ -2873,7 +2910,10 @@
   },
   "n6507652672": {
    "r": "single",
-   "note": "Time Out 2025-07 mention https://timeout.co.il/%d7%9e%d7%a2%d7%a6%d7%91%d7%9f-%d7%91%d7%a8%d7%99%d7%9d/"
+   "note": "Time Out 2025-07 mention https://timeout.co.il/%d7%9e%d7%a2%d7%a6%d7%91%d7%9f-%d7%91%d7%a8%d7%99%d7%9d/",
+   "r2": "none",
+   "note2": "Prev 'single' Time Out article is actually dated 2024-01 (modified 2025-07), passing mention, no address/status - not a 2025-26 source; site URL w invalid; no other source",
+   "d2": "2026-11-25"
   },
   "n4944915822": {
    "r": "none",
@@ -2881,7 +2921,10 @@
   },
   "n12129104729": {
    "r": "none",
-   "note": "Time Out 2024-07 only (Zevulun 7)"
+   "note": "Time Out 2024-07 only (Zevulun 7)",
+   "r2": "closed",
+   "note2": "Time Out 2025-04 (Ma Pao moved into Zevulun 7): Bindaaz 'has since closed due to the war'; Time Out 2024-07 opening",
+   "d2": "2026-11-25"
   },
   "n711677517": {
    "r": "none",
@@ -2893,7 +2936,10 @@
   },
   "n12857340068": {
    "r": "single",
-   "note": "Time Out 2025-01 Abarbanel 52 https://timeout.co.il/הוטל-ססיל/"
+   "note": "Time Out 2025-01 Abarbanel 52 https://timeout.co.il/הוטל-ססיל/",
+   "r2": "single",
+   "note2": "Time Out 2025-01 Abarbanel 52 https://timeout.co.il/הוטל-ססיל/ ; no own site (w is Instagram handle); no Tabit/Ontopo found",
+   "d2": "2026-11-25"
   },
   "n720987299": {
    "r": "none",
@@ -2901,11 +2947,17 @@
   },
   "n12104186199": {
    "r": "none",
-   "note": "Time Out 2024-08 only (Florentin 7)"
+   "note": "Time Out 2024-08 only (Florentin 7)",
+   "r2": "ok",
+   "note2": "Own site bluefox-telaviv.com live, Florentin 7, events Aug/Nov 2026; Time Out 2024-08 and 2024-11",
+   "d2": "2026-11-25"
   },
   "n1717768352": {
    "r": "none",
-   "note": "Time Out 2020 only"
+   "note": "Time Out 2020 only",
+   "r2": "none",
+   "note2": "Time Out 2020 only; Facebook page not fetchable; no Tabit/Ontopo found",
+   "d2": "2026-11-25"
   },
   "n1697433601": {
    "r": "none",
@@ -2913,7 +2965,10 @@
   },
   "n2821426609": {
    "r": "ok",
-   "note": "Ontopo booking active Lilienblum 40; Time Out 2025-11 bars list"
+   "note": "Ontopo booking active Lilienblum 40; Time Out 2025-11 bars list",
+   "r2": "ok",
+   "note2": "Ontopo page live 2026-11 Lilienblum 40 (phone 054-674-5149); Time Out 2025-11 bars list",
+   "d2": "2026-11-25"
   },
   "n1626825014": {
    "r": "conflict",
@@ -2941,7 +2996,10 @@
   },
   "n2079001406": {
    "r": "single",
-   "note": "Time Out 2026-01 Prince 2.0 Nahalat Binyamin 18 (likely duplicate of n12505208002) https://timeout.co.il/הנסיך-2026/"
+   "note": "Time Out 2026-01 Prince 2.0 Nahalat Binyamin 18 (likely duplicate of n12505208002) https://timeout.co.il/הנסיך-2026/",
+   "r2": "single",
+   "note2": "Time Out 2026-01 Prince renewed, Nahalat Binyamin 18 https://timeout.co.il/הנסיך-2026/ (likely duplicate of n12505208002); no own site/Ontopo found",
+   "d2": "2026-11-25"
   },
   "n10549077961": {
    "r": "conflict",
@@ -2957,11 +3015,17 @@
   },
   "n12731352352": {
    "r": "none",
-   "note": "Time Out 2023 only"
+   "note": "Time Out 2023 only",
+   "r2": "none",
+   "note2": "Time Out 2023 only; w is Instagram handle, not fetchable; no Tabit/Ontopo found",
+   "d2": "2026-11-25"
   },
   "n12122780382": {
    "r": "single",
-   "note": "Time Out bars list 2025-11 Zvulun 5 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars"
+   "note": "Time Out bars list 2025-11 Zvulun 5 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars",
+   "r2": "single",
+   "note2": "Time Out bars list 2025-11 Zvulun 5 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars ; Time Out/Maariv 2023 older; no Tabit/Ontopo found",
+   "d2": "2026-11-25"
   },
   "n723198061": {
    "r": "none",
@@ -3009,7 +3073,10 @@
   },
   "n1731091553": {
    "r": "ok",
-   "note": "Own site dancingcamel.com live (brewery pub TLV); Time Out address HaTaasiya 12"
+   "note": "Own site dancingcamel.com live (brewery pub TLV); Time Out address HaTaasiya 12",
+   "r2": "ok",
+   "note2": "Recheck: dancingcamel.com live via WebFetch (only working brewery in Tel Aviv proper); no hours/phone on fetched page; prev ok kept",
+   "d2": "2026-11-25"
   },
   "n11607497249": {
    "r": "none",

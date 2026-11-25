@@ -574,26 +574,26 @@
   },
   "n11681523242": {
    "n": "פריז טקסס גבעתיים",
-   "ok": "2026-11",
+   "ok": "2026-06",
+   "cu": "המבורגר",
+   "pr": 2,
    "src": [
     "https://timeout.co.il/מנות-חריפות-תל-אביב/",
     "https://www.maariv.co.il/food/foodnews/article-1336510"
-   ],
-   "cu": "המבורגר",
-   "pr": 2
+   ]
   },
   "n12244120937": {
    "n": "קפה אירופה",
    "ok": "2026-11",
    "p": "+972 3 525 9987",
    "bk": "https://ontopo.com/en/il/page/cafeeuropa",
+   "cu": "ים-תיכוני",
+   "pr": 3,
    "src": [
     "https://ontopo.com/en/il/page/cafeeuropa",
     "https://timeout.co.il/topic/קפה-אירופה/",
     "https://www.israelhayom.co.il/food/food-news/article/16211748"
-   ],
-   "cu": "ים-תיכוני",
-   "pr": 3
+   ]
   },
   "n5195799584": {
    "n": "קפה ז'ולי",
@@ -610,16 +610,17 @@
    "n": "קפה נואר",
    "ok": "2026-11",
    "p": "+972 3-566-3018",
+   "w": "https://www.cafenoir.co.il",
    "bk": "https://ontopo.com/en/il/page/20527837",
+   "oh": "Mo-Su 12:00-23:00",
+   "cu": "אחר",
+   "pr": 3,
    "src": [
+    "https://www.cafenoir.co.il",
     "https://ontopo.com/en/il/page/20527837",
     "https://timeout.co.il/topic/קפה-נואר/",
     "https://www.cafenoir.co.il/menu/food"
-   ],
-   "cu": "אחר",
-   "pr": 3,
-   "oh": "Mo-Su 12:00-23:00",
-   "w": "https://www.cafenoir.co.il"
+   ]
   },
   "n12952209648": {
    "n": "רוטשילד 48",
@@ -659,18 +660,19 @@
   "n950284108": {
    "n": "שצ'ופק",
    "ok": "2026-11",
-   "src": [
-    "https://timeout.co.il/מסעדות-דגים-תל-אביב/",
-    "https://www.mako.co.il/food-restaurants/restaurant-news/Article-58a15f6d5bcaf91027.htm",
-    "https://shtsupak.co.il/",
-    "https://shtsupak.co.il/menu/"
-   ],
    "cu": "דגים ופירות ים",
    "pr": 3,
    "oh": "Mo-We 12:00-22:30; Th-Fr 12:00-23:00; Sa 12:00-22:00; Su off",
    "p": "+972 3-544-1973",
    "w": "https://shtsupak.co.il/",
-   "bk": "https://ontopo.com/he/il/page/shtsupak"
+   "bk": "https://ontopo.com/he/il/page/shtsupak",
+   "src": [
+    "https://shtsupak.co.il/",
+    "https://ontopo.com/he/il/page/shtsupak",
+    "https://timeout.co.il/מסעדות-דגים-תל-אביב/",
+    "https://www.mako.co.il/food-restaurants/restaurant-news/Article-58a15f6d5bcaf91027.htm",
+    "https://shtsupak.co.il/menu/"
+   ]
   },
   "w149270614": {
    "n": "223 Bar",
@@ -685,12 +687,18 @@
   "n6317085385": {
    "n": "Akbar",
    "ok": "2026-11",
+   "cu": "בר",
+   "pr": 2,
+   "oh": "Su-Th 17:00-02:00; Fr,Sa 11:00-02:00",
+   "p": "+972546055190",
+   "w": "https://akbar.co.il",
+   "bk": "https://ontopo.com/en/il/page/92006305",
    "src": [
+    "https://akbar.co.il",
+    "https://ontopo.com/en/il/page/92006305",
     "https://www.spottedbylocals.com/tel-aviv/akbar-bar/",
     "https://timeout.co.il/the-most-recommended-restaurants-bars-and-cafes-in-the-flea-market/"
-   ],
-   "cu": "בר",
-   "pr": 2
+   ]
   },
   "n2659433568": {
    "n": "Beer Bazaar",
@@ -771,12 +779,12 @@
   "n4430683196": {
    "n": "Mayer House",
    "ok": "2026-11",
+   "cu": "בר קוקטיילים",
    "src": [
     "https://www.maariv.co.il/lifestyle/travel/article-1198452",
     "https://timeout.co.il/רופטופ-תל-אביב/",
     "https://jpost.com/consumerism/article-855186"
-   ],
-   "cu": "בר קוקטיילים"
+   ]
   },
   "n347264446": {
    "n": "Molly Bloom's",
@@ -902,7 +910,8 @@
    "bk": "https://ontopo.com/en/il/page/67927743",
    "src": [
     "https://timeout.co.il/קלבריה-בן-ציון/",
-    "https://ontopo.com/en/il/page/67927743"
+    "https://ontopo.com/en/il/page/67927743",
+    "https://www.mako.co.il/food-restaurants/restaurant-news/Article-dc834656fcdcd91027.htm"
    ]
   },
   "n11345119701": {
@@ -1746,6 +1755,40 @@
    "src": [
     "https://timeout.co.il/3-מסעדות-מומולצות-שוק-לוינסקי/",
     "https://asianinisrael.netlify.app/2026/05/vietnamese-restaurants-israel/"
+   ]
+  },
+  "n5859517185": {
+   "n": "Guest room",
+   "ok": "2026-11",
+   "cu": "בר",
+   "p": "+972503330125",
+   "bk": "https://ontopo.com/en/il/page/78520567",
+   "src": [
+    "https://ontopo.com/en/il/page/78520567",
+    "https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars"
+   ]
+  },
+  "n6538359142": {
+   "n": "HaMezeg",
+   "ok": "2026-11",
+   "cu": "בר",
+   "p": "+972524316823",
+   "bk": "https://ontopo.com/en/il/page/91240409",
+   "src": [
+    "https://ontopo.com/en/il/page/91240409"
+   ]
+  },
+  "n12104186199": {
+   "n": "השועל הכחול",
+   "ok": "2026-11",
+   "cu": "בר",
+   "pr": 2,
+   "oh": "Mo-We 18:00-24:00; Th 18:00-01:00; Fr-Sa 19:00-01:00",
+   "w": "https://www.bluefox-telaviv.com/",
+   "src": [
+    "https://www.bluefox-telaviv.com/",
+    "https://timeout.co.il/the-blue-fox/",
+    "https://timeout.co.il/עסקים-רחוב-פלורנטין/"
    ]
   }
  }
