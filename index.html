@@ -15,9 +15,9 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Playfair+Display:ital,wght@1,800&family=Rubik:wght@500;700;800&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="vendor/leaflet.css?v=55">
-<link rel="stylesheet" href="vendor/markercluster.css?v=55">
-<link rel="stylesheet" href="style.css?v=55">
+<link rel="stylesheet" href="vendor/leaflet.css?v=56">
+<link rel="stylesheet" href="vendor/markercluster.css?v=56">
+<link rel="stylesheet" href="style.css?v=56">
 </head>
 <body class="splashing">
 <div id="splash" role="presentation">
@@ -70,7 +70,6 @@
         <button type="button" data-view="been" aria-pressed="false">היינו</button>
         <button type="button" data-view="match" aria-pressed="false">שנינו רוצים השבוע</button>
       </div>
-      <span class="sx-qwrap"><span class="sx-spark" aria-hidden="true">✨</span><input class="search" id="q" type="search" enterkeyhint="search" placeholder="חיפוש חכם: שם, או ״בר יין שקט״" aria-label="חיפוש חכם"></span>
       <div class="sortrow"><select id="sort" aria-label="מיון">
         <option value="recent">עודכנו לאחרונה</option>
         <option value="rating">הכי אהבנו</option>
@@ -79,7 +78,7 @@
         <option value="near">הכי קרוב אליי</option>
       </select><button class="btn mobonly" id="pickBtnM" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg>לאן הולכים?</button></div>
     </div>
-    <div class="stk-sen" id="stkSen" aria-hidden="true"></div><div class="band wrap stickybar" id="stickyBar"><div class="chips" id="cuis" role="toolbar" aria-label="סינון מהיר"></div><div class="chips featrow" id="featRow" role="group" aria-label="סינון לפי תכונות" hidden></div></div>
+    <div class="stk-sen" id="stkSen" aria-hidden="true"></div><div class="band wrap stickybar" id="stickyBar"><div class="stkrow"><button type="button" class="sxbtn" id="sxBtn" aria-label="חיפוש"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button><div class="chips" id="cuis" role="toolbar" aria-label="סינון מהיר"></div></div><div class="chips featrow" id="featRow" role="group" aria-label="סינון לפי תכונות" hidden></div></div>
     <div class="band wrap"><div id="friendsLoved"></div><p class="status" id="status"></p><div class="grid" id="grid"></div></div>
   </section>
   <section class="view band wrap" id="v-map" hidden>
@@ -114,8 +113,8 @@
 <div class="utoast" id="utoast" hidden role="status"><span id="utTxt"></span><button type="button" id="utBtn">ביטול</button><i id="utBar"></i></div>
 <div class="ptr" id="ptr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 4v12M6 10l6 6 6-6"/></svg></div>
 <datalist id="cuisList"><option>איטלקי</option><option>אסייתי</option><option>יפני / סושי</option><option>בשרים</option><option>דגים ופירות ים</option><option>ים-תיכוני</option><option>המבורגר</option><option>פיצה</option><option>מקסיקני</option><option>הודי</option><option>מסעדת שף</option><option>בר קוקטיילים</option><option>בר יין</option><option>פאב</option><option>קפה ובראנץ'</option><option>טבעוני</option><option>חומוס ומזרחי</option><option>קינוחים</option></datalist>
-<script src="config.js?v=55"></script>
-<script src="vendor/supabase.js?v=55"></script>
-<script src="app.js?v=55"></script>
+<script src="config.js?v=56"></script>
+<script src="vendor/supabase.js?v=56"></script>
+<script src="app.js?v=56"></script>
 </body>
 </html>
