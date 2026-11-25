@@ -181,6 +181,69 @@
     "https://timeout.co.il/יותמס-דונאטס/"
    ],
    "note": "Catalog has street only; Time Out gives King George 1."
+  },
+  "n5604815955": {
+   "a": "לבונטין 19",
+   "src": [
+    "http://brasstlv.co.il/",
+    "https://timeout.co.il/בראסרי-18-לבונטין/"
+   ],
+   "note": "catalog has street only; own site and Time Out give Levontin 19"
+  },
+  "n6926507885": {
+   "a": "יהודה הלוי 58",
+   "src": [
+    "https://www.cicchettitlv.com/",
+    "https://ontopo.com/he/il/page/19190300"
+   ],
+   "note": "catalog has street Mazeh only; own site and Ontopo give Yehuda HaLevi 58"
+  },
+  "n450524210": {
+   "a": "בן יהודה 90",
+   "src": [
+    "https://www.ernesto.co.il/",
+    "https://timeout.co.il/%D7%9E%D7%A1%D7%A2%D7%93%D7%95%D7%AA-%D7%90%D7%99%D7%98%D7%9C%D7%A7%D7%99%D7%95%D7%AA-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/"
+   ],
+   "note": "catalog has street Smolenskin only (corner); own site and Time Out give Ben Yehuda 90"
+  },
+  "n5018171923": {
+   "a": "הברזל 7",
+   "src": [
+    "https://www.goocha.co.il/%D7%92%D7%95%D7%A6%D7%94-%D7%A8%D7%9E%D7%AA-%D7%94%D7%97%D7%99%D7%99%D7%9C",
+    "https://ontopo.com/he/il/page/51715841"
+   ],
+   "note": "catalog has street only; own site and Ontopo give Habarzel 7"
+  },
+  "n12647744238": {
+   "a": "אבן גבירול 8",
+   "src": [
+    "https://timeout.co.il/%D7%97%D7%95%D7%9E%D7%95%D7%A1-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91",
+    "https://timeout.co.il/חומוס-המשורר-חוזר/"
+   ],
+   "note": "catalog has street only; Time Out gives Ibn Gabirol 8 (moved there 2022)"
+  },
+  "n6317085485": {
+   "a": "עולי ציון 16",
+   "src": [
+    "https://www.italkiya.co.il/",
+    "https://timeout.co.il/שוק-הפשפשים-מומלצים/"
+   ],
+   "note": "Catalog has street only; own site and Time Out 2026-04 give Olei Zion 16"
+  },
+  "n2672314363": {
+   "a": "הארבעה 14",
+   "src": [
+    "https://porter.co.il",
+    "https://ontopo.com/he/il/page/porterandsons"
+   ],
+   "note": "Catalog has street only; own site and Ontopo give HaArba'a 14"
+  },
+  "n705556743": {
+   "a": "חבקוק הנביא 1",
+   "src": [
+    "https://ontopo.com/en/il/page/82708640"
+   ],
+   "note": "Catalog address is partial (Tel Aviv Port); Ontopo gives 1 Havakuk HaNavi St"
   }
  },
  "dup": {

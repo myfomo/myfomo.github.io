@@ -1116,8 +1116,9 @@
   "n2079041793": {
    "r": "conflict",
    "note": "Time Out Hebrew and English list different hours",
-   "r2": "conflict",
-   "d2": "2026-11"
+   "r2": "closed",
+   "d2": "2026-11-25",
+   "note2": "Time Out Feb 2026 vegan guide says Bana closed ('סגירות של מוסדות כמו דוסה בר, אלגריה, באנה'); own site banatlv.co.il fails; Ontopo page ontopo.co.il/en/bana still up (no street number, no availability shown, likely stale); exact closure date unknown, reported by 2026-02"
   },
   "n5801482129": {
    "r": "conflict",
@@ -1133,7 +1134,10 @@
   },
   "n13527219782": {
    "r": "ok",
-   "note": "Time Out and Maariv Jul 2026"
+   "note": "Time Out and Maariv Jul 2026",
+   "r2": "ok",
+   "note2": "Ontopo page active (Nahalat Binyamin 31, booking widget, no closure); Time Out and Maariv Jul 2026; no closure news; Ontopo hours not stored (single source, Wednesday missing)",
+   "d2": "2026-11-25"
   },
   "n5997844471": {
    "r": "none"
@@ -1157,7 +1161,10 @@
   },
   "n5604815955": {
    "r": "none",
-   "note": "moved to Levontin 19 per Time Out 2025-09; one source"
+   "note": "moved to Levontin 19 per Time Out 2025-09; one source",
+   "r2": "ok",
+   "note2": "Own site brasstlv.co.il live: Levontin 19, hours, phone, Tabit booking; Time Out 2025-09 (Levontin 19, prices); Maariv review 2026-07; earlier branch was Abba Achimeir 18 Ramat Aviv (Time Out 2023); catalog address lacks number",
+   "d2": "2026-11-25"
   },
   "n4706508222": {
    "r": "none"
@@ -1167,15 +1174,24 @@
   },
   "n11681467287": {
    "r": "none",
-   "note": "Time Out 2025-04 only"
+   "note": "Time Out 2025-04 only",
+   "r2": "none",
+   "note2": "No own site/Tabit/Ontopo found (hotel page the-rothschild.com has no details); only Time Out EN 2016 and Gilles Pudlowski 2024-04 (Rothschild 71); earlier-noted Time Out 2025-04 not re-found; no closure news",
+   "d2": "2026-11-25"
   },
   "n13541796405": {
    "r": "ok",
-   "note": "Calcalist 2025-06 and Time Out 2025-12"
+   "note": "Calcalist 2025-06 and Time Out 2025-12",
+   "r2": "ok",
+   "note2": "i24news review 2026-08 (operating, beachfront); Time Out 2024-11 opening review; Calcalist 2025-06 and Time Out 2025-12 earlier; no own site/Tabit/Ontopo found; no closure news",
+   "d2": "2026-11-25"
   },
   "n6926507885": {
    "r": "none",
-   "note": "Time Out 2026-01 only"
+   "note": "Time Out 2026-01 only",
+   "r2": "ok",
+   "note2": "Own site cicchettitlv.com live (Yehuda HaLevi 58, hours, phone, Ontopo); Ontopo page active; Time Out 2026-05 Italian guide; catalog has only street Mazeh (corner)",
+   "d2": "2026-11-25"
   },
   "n904548242": {
    "r": "none"
@@ -1198,7 +1214,10 @@
   },
   "n450524210": {
    "r": "none",
-   "note": "Time Out 2026-01 only"
+   "note": "Time Out 2026-01 only",
+   "r2": "ok",
+   "note2": "Own site ernesto.co.il live (Ben Yehuda 90, phone, phone booking); Time Out 2026-05 Italian guide; no Tabit/Ontopo; hours on site ambiguous, not stored",
+   "d2": "2026-11-25"
   },
   "n1185083224": {
    "r": "none"
@@ -1211,7 +1230,10 @@
   },
   "n4453724157": {
    "r": "none",
-   "note": "not in Time Out 2026 flea-market guide; no closure source"
+   "note": "not in Time Out 2026 flea-market guide; no closure source",
+   "r2": "none",
+   "note2": "Only Time Out 2012 review and Time Out EN 2016 (Rabbi Yohanan 8); no own site, Tabit or Ontopo found; not in recent flea-market guides; no closure news",
+   "d2": "2026-11-25"
   },
   "n6953819390": {
    "r": "none"
@@ -1241,7 +1263,10 @@
   },
   "n5018171923": {
    "r": "none",
-   "note": "Calcalist 2026-01 only; own site not fetched"
+   "note": "Calcalist 2026-01 only; own site not fetched",
+   "r2": "ok",
+   "note2": "Own Goocha branch page live (Habarzel 7, hours, phone, menu 2026-09); Ontopo page active; Calcalist 2026-01",
+   "d2": "2026-11-25"
   },
   "n2454668203": {
    "r": "none"
@@ -1274,7 +1299,10 @@
   },
   "n12647744238": {
    "r": "none",
-   "note": "Time Out 2026-04 only; own FB not fetched"
+   "note": "Time Out 2026-04 only; own FB not fetched",
+   "r2": "single",
+   "note2": "Only Time Out (same outlet twice): https://timeout.co.il/%D7%97%D7%95%D7%9E%D7%95%D7%A1-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91 (2026-04) and 3-מנות-חומוס (2025-06), both Ibn Gabirol 8; own Facebook blocked; no Tabit/Ontopo/Wolt found; no closure news",
+   "d2": "2026-11-25"
   },
   "n6050037671": {
    "r": "none"
@@ -1291,7 +1319,10 @@
   },
   "n6317085485": {
    "r": "none",
-   "note": "Time Out 2025-12 only"
+   "note": "Time Out 2025-12 only",
+   "r2": "ok",
+   "note2": "Own site italkiya.co.il live naming Olei Zion 16 (Tabit link); Time Out flea-market list 2026-04 names Olei Zion 16; Tabit page did not load; no closure news. Site hours look garbled, not used",
+   "d2": "2026-11-25"
   },
   "n2078996725": {
    "r": "none"
@@ -1339,7 +1370,10 @@
   },
   "n12524361966": {
    "r": "ok",
-   "note": "Time Out 2025-01 and Asian in Israel 2025; hours agree"
+   "note": "Time Out 2025-01 and Asian in Israel 2025; hours agree",
+   "r2": "ok",
+   "note2": "Time Out 2025-01 and Asian in Israel 2025-06; Time Out 2026-06 (new Pil Junction branch) says Florentin original stays open; no own site/Ontopo/Tabit found; no closure news",
+   "d2": "2026-11-25"
   },
   "n905252043": {
    "r": "none"
@@ -1372,7 +1406,8 @@
    "r": "conflict",
    "note": "Time Out marks Meat Kitchen closed but at Yigal Alon 65, not HaTaasia 10",
    "r2": "conflict",
-   "d2": "2026-11"
+   "d2": "2026-11-25",
+   "note2": "Still conflict: timeout.com lists Meat Kitchen (CLOSED) at Yigal Alon 65; HaTaasia 10 is Deca (kosher dairy, timeout.com 2020); no 2025-26 source for either at this address; no own site/Ontopo/Tabit found"
   },
   "n10795083145": {
    "r": "none"
@@ -1422,7 +1457,10 @@
   },
   "n10759261454": {
    "r": "none",
-   "note": "Time Out only (one outlet)"
+   "note": "Time Out only (one outlet)",
+   "r2": "single",
+   "note2": "Time Out 2026-06 says Pastel continues under new chef Tedi Kagan (https://timeout.co.il/%d7%a4%d7%90%d7%a1%d7%98%d7%9c-%d7%a9%d7%99%d7%a0%d7%95%d7%99-%d7%a9%d7%a3/); other sources 2022-2023; no own site/Ontopo/Tabit found",
+   "d2": "2026-11-25"
   },
   "n3465151092": {
    "r": "none"
@@ -1455,15 +1493,18 @@
    "r": "conflict",
    "note": "Time Out 2025-04 names Babika at Rothschild 60; no explicit Polly closure",
    "r2": "ok",
-   "d2": "2026-11",
-   "note2": "Own site polybar.co.il live (2025-12) names Rothschild 60, Ontopo link"
+   "d2": "2026-11-25",
+   "note2": "Own site polybar.co.il live (modified 2025-12) names Rothschild 60; Ontopo page active (Rothschild 60). Ontopo hours differ from site; site hours kept"
   },
   "n12840680501": {
    "r": "none"
   },
   "n2672314363": {
    "r": "none",
-   "note": "Time Out 2025-12 only (now Porter, HaArba'a 14)"
+   "note": "Time Out 2025-12 only (now Porter, HaArba'a 14)",
+   "r2": "ok",
+   "note2": "Own site porter.co.il live (HaArba'a 14); Ontopo active; Time Out Select 2025-12; no closure news",
+   "d2": "2026-11-25"
   },
   "n904544177": {
    "r": "none"
@@ -1497,7 +1538,10 @@
   },
   "n6344546585": {
    "r": "none",
-   "note": "Time Out only (one publisher)"
+   "note": "Time Out only (one publisher)",
+   "r2": "single",
+   "note2": "Time Out flea-market list 2026-04 (https://timeout.co.il/שוק-הפשפשים-מומלצים/) lists Shaffa at Nahman 2 (catalog street HaRav Mevakrach); Time Out 2024-11 'last effort to survive'; no own site/Ontopo/Tabit; no closure report",
+   "d2": "2026-11-25"
   },
   "n5551424422": {
    "r": "closed",
@@ -1505,14 +1549,20 @@
   },
   "n12752611307": {
    "r": "none",
-   "note": "Time Out 2025-06 only"
+   "note": "Time Out 2025-06 only",
+   "r2": "none",
+   "note2": "Only 2023 sources found (Time Out 2023-07, Israel Hayom 2023-07, ynet 2023-08, Carlebach 3); earlier-noted Time Out 2025-06 not located; no own site/Ontopo/Tabit/closure news",
+   "d2": "2026-11-25"
   },
   "n5483139421": {
    "r": "none"
   },
   "n2079027451": {
    "r": "ok",
-   "note": "Spotted by Locals 2025-08 and Time Out 2025-11"
+   "note": "Spotted by Locals 2025-08 and Time Out 2025-11",
+   "r2": "ok",
+   "note2": "Spotted by Locals 2025-08 (Chlenov 27) and Time Out 2025-11; no own site/Ontopo/Tabit found; no closure news",
+   "d2": "2026-11-25"
   },
   "n2078991188": {
    "r": "ok",
@@ -1538,7 +1588,10 @@
   },
   "n12946465879": {
    "r": "ok",
-   "note": "Time Out 2025-11 and Asians in Israel 2025-06"
+   "note": "Time Out 2025-11 and Asians in Israel 2025-06",
+   "r2": "ok",
+   "note2": "Time Out 2025-11 and Asians in Israel 2025-06; Time Out/Israel Hayom 2023-11 confirm HaRakevet 12; no own site/Ontopo/Tabit found; no closure news",
+   "d2": "2026-11-25"
   },
   "n6808110446": {
    "r": "none"
@@ -1658,7 +1711,10 @@
   },
   "n7194886836": {
    "r": "none",
-   "note": "Own site unreachable; only undated listing; no Tabit/Ontopo; no closure news"
+   "note": "Own site unreachable; only undated listing; no Tabit/Ontopo; no closure news",
+   "r2": "none",
+   "note2": "Re-check: own site alter-native.co.il still unreachable; only undated kosher listing (enjoyingisrael, Dubnov 10); no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-25"
   },
   "w149384937": {
    "r": "ok",
@@ -1668,15 +1724,22 @@
    "r": "single",
    "note": "Time Out 2025-12 burgers list: America Burgers at Allenby 112 (corner unconfirmed) https://timeout.co.il/theres-nothing-better-than-this-the-15-best-burgers-in-all-of-tel-aviv/",
    "r2": "single",
-   "d2": "2026-11"
+   "d2": "2026-11-25",
+   "note2": "Re-check: no own site/Tabit/Ontopo found; Time Out 2025-12 burgers list (America Burgers, Allenby 112 per aggregator; near catalog Ahad HaAm point) https://timeout.co.il/theres-nothing-better-than-this-the-15-best-burgers-in-all-of-tel-aviv/ ; Time Out topic page latest direct article 2023; no closure news"
   },
   "n11361520669": {
    "r": "none",
-   "note": "Time Out 2021 review only; no recent source; no Tabit/Ontopo; no closure news"
+   "note": "Time Out 2021 review only; no recent source; no Tabit/Ontopo; no closure news",
+   "r2": "none",
+   "note2": "Re-check: only Time Out 2021-07 opening review (Jabotinsky 110); no own site, no Tabit/Ontopo/Wolt, no recent source; no closure news",
+   "d2": "2026-11-25"
   },
   "n2587900912": {
    "r": "none",
-   "note": "Undated listings at Ben Yehuda 128; own site unreachable; no Tabit/Ontopo"
+   "note": "Undated listings at Ben Yehuda 128; own site unreachable; no Tabit/Ontopo",
+   "r2": "conflict",
+   "note2": "Wolt page Atza Sushi Bar TLV (kosher) at Ben Yehuda 128 https://wolt.com/en/isr/tel-aviv/restaurant/atza-tlv (undated; status not shown); own site atza.co.il/tlv fails; no Tabit/Ontopo; no closure news. Catalog street is Ben Gurion Blvd (osm-street) while sources give Ben Yehuda 128 near same corner",
+   "d2": "2026-11-25"
   },
   "n3465185951": {
    "r": "single",
@@ -1703,15 +1766,16 @@
   "n12140324986": {
    "r": "single",
    "note": "Wolt listing active at Derech Shlomo 43 https://wolt.com/he/isr/tel-aviv/restaurant/baba-jim ; Tabit page did not load",
-   "r2": "conflict",
-   "d2": "2026-11",
-   "note2": "Time Out 2022: moved across road to Derech Shlomo 43; Wolt active there; catalog 44"
+   "r2": "single",
+   "d2": "2026-11-25",
+   "note2": "Re-check: Wolt page active at Derech Shlomo 43 (now matches catalog) https://wolt.com/he/isr/tel-aviv/restaurant/baba-jim ; own site babacimrest.co.il unreachable; no Tabit/Ontopo page found; Time Out tag page latest mention 2025-02 (no address); no closure news"
   },
   "n12943579300": {
    "r": "single",
    "note": "Time Out 2025-03 review at Rothschild 60 https://timeout.co.il/%d7%91%d7%91%d7%99%d7%a7%d7%94-%d7%a8%d7%95%d7%98%d7%a9%d7%99%d7%9c%d7%93/ ; Tabit page did not load",
    "r2": "single",
-   "d2": "2026-11"
+   "d2": "2026-11-25",
+   "note2": "Re-check: Time Out 2025-03 review at Rothschild 60 (kosher dairy) https://timeout.co.il/%d7%91%d7%91%d7%99%d7%a7%d7%94-%d7%a8%d7%95%d7%98%d7%a9%d7%99%d7%9c%d7%93/ ; no Tabit/Ontopo page found; own site is Instagram handle; no closure news"
   },
   "n8558425246": {
    "r": "none",
@@ -1720,12 +1784,16 @@
   "n13482140275": {
    "r": "conflict",
    "note": "Time Out/Mako 2022 + 2026 blog: Nahalat Binyamin 107; atly: Ben Yehuda 188 (possible move)",
-   "r2": "conflict",
-   "d2": "2026-11"
+   "r2": "ok",
+   "d2": "2026-11-25",
+   "note2": "Time Out 2025-05 Levinsky market article + 2026 blog both at Nahalat Binyamin 107 (matches catalog); atly aggregator (Google-based) says Ben Yehuda 188, not reliable; no Tabit/Ontopo; no closure news"
   },
   "n1308842241": {
    "r": "none",
-   "note": "Chain active (Time Out 2025-11) but no source for a Shlomo Kaplan branch"
+   "note": "Chain active (Time Out 2025-11) but no source for a Shlomo Kaplan branch",
+   "r2": "conflict",
+   "note2": "No Shlomo Kaplan branch; Time Out 2025-11 names the original bakery at Yigal Alon 96, which matches the coordinates (osm-street gave nearby Kaplan) https://timeout.co.il/%D7%91%D7%95%D7%9C%D7%A0%D7%96%D7%A8%D7%99-96-%D7%A7%D7%99%D7%95%D7%A1%D7%A7/ ; d.co.il listing also Yigal Alon 96; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-25"
   },
   "n12531978155": {
    "r": "ok",
@@ -1737,11 +1805,17 @@
   },
   "n4253786262": {
    "r": "none",
-   "note": "Own site unreachable; no news/Tabit/Ontopo for Pines 27"
+   "note": "Own site unreachable; no news/Tabit/Ontopo for Pines 27",
+   "r2": "none",
+   "note2": "Re-check: own site italian-house.co.il unreachable; no news, Tabit or Ontopo for Pines 27; no closure news",
+   "d2": "2026-11-25"
   },
   "n12943589029": {
    "r": "ok",
-   "note": "Ontopo booking active Rothschild 35; Time Out 2025-02 relaunch; no closure news"
+   "note": "Ontopo booking active Rothschild 35; Time Out 2025-02 relaunch; no closure news",
+   "r2": "ok",
+   "note2": "Re-check: Ontopo page live with booking widget, Rothschild 35, phone 054-909-9269; Time Out 2025-02 relaunch; no closure news",
+   "d2": "2026-11-25"
   },
   "n1400687793": {
    "r": "none",
@@ -1774,7 +1848,8 @@
    "r": "single",
    "note": "Time Out 2026-02 column mentions Banana Beach as active https://timeout.co.il/העיר-שלי-ליאת-פלדמן/ ; own site dated 2022",
    "r2": "single",
-   "d2": "2026-11"
+   "d2": "2026-11-25",
+   "note2": "Recheck: Time Out topic page lists Liat Feldman My City column 2026-02-17 https://timeout.co.il/העיר-שלי-ליאת-פלדמן/ ; Time Out beach-restaurants guide 2025-09 does not list it; no Tabit/Ontopo; no closure news. Caution: known Banana Beach is near south TLV/Jaffa promenade; catalog coords (32.140) are far north - check location"
   },
   "n2540433561": {
    "r": "none",
@@ -1790,7 +1865,8 @@
    "r": "single",
    "note": "Time Out 2026-11 casual list: Hillel HaZaken 12 https://timeout.co.il/מסעדות-קזואל-תל-אביב/ ; own site/Tabit did not load",
    "r2": "single",
-   "d2": "2026-11"
+   "d2": "2026-11-25",
+   "note2": "Recheck: Time Out casual list updated 2026-11-18 lists Jango at Hillel HaZaken 12 https://timeout.co.il/מסעדות-קזואל-תל-אביב/ ; own site robots unreachable; Wolt jango page is Rishon LeZion branch; JPost 2023 Jango is a different venue (Ben Yehuda 155 wine bar); no Tabit/Ontopo for this branch; no closure news"
   },
   "n2079208883": {
    "r": "ok",
@@ -1812,7 +1888,10 @@
   },
   "n12593349659": {
    "r": "ok",
-   "note": "Tabit booking site live; Time Out 2026-07 news at Ben Gurion 34; no closure news"
+   "note": "Tabit booking site live; Time Out 2026-07 news at Ben Gurion 34; no closure news",
+   "r2": "ok",
+   "note2": "Prev ok kept: Tabit page (fetch failed today, client error); Time Out 2026-07 news at Ben Gurion 34; Time Out 2023 review (Italian-American, mains 46-78); no closure news",
+   "d2": "2026-11-25"
   },
   "n777400975": {
    "r": "ok",
@@ -1820,7 +1899,10 @@
   },
   "n12857390749": {
    "r": "none",
-   "note": "Only Time Out 2024-01; own site unreachable; no Tabit/Ontopo"
+   "note": "Only Time Out 2024-01; own site unreachable; no Tabit/Ontopo",
+   "r2": "none",
+   "note2": "Recheck: only Time Out 2024-01 (Abarbanel 17, Italian deli) https://timeout.co.il/גליאנו/ ; catalog w invalid; no own site, Tabit, Ontopo or Wolt page found; no 2025-26 source; no closure news",
+   "d2": "2026-11-25"
   },
   "n11459910986": {
    "r": "none",
@@ -1828,7 +1910,10 @@
   },
   "n10931741105": {
    "r": "ok",
-   "note": "Ontopo booking active Ahad Ha'am 15; own site fetch failed; no closure news"
+   "note": "Ontopo booking active Ahad Ha'am 15; own site fetch failed; no closure news",
+   "r2": "ok",
+   "note2": "Recheck: Ontopo page live today, Ahad Ha'am 15, phone +97235245731, vegan sushi; own site fetch failed; no closure news",
+   "d2": "2026-11-25"
   },
   "n1546447299": {
    "r": "closed",
@@ -1844,7 +1929,10 @@
   },
   "n1177264748": {
    "r": "none",
-   "note": "Time Out 2017 only; 206.co.il now only 206 Meat; possibly converted"
+   "note": "Time Out 2017 only; 206.co.il now only 206 Meat; possibly converted",
+   "r2": "none",
+   "note2": "Recheck: only Time Out 2017 (Moshe Sne 54); not in Time Out fish guide 2025-11; no Tabit/Ontopo; no 2025-26 source; possibly converted to 206 Meat",
+   "d2": "2026-11-25"
   },
   "n12568199182": {
    "r": "closed",
@@ -1854,7 +1942,8 @@
    "r": "single",
    "note": "Time Out fine-dining guide 2025-11/2026-01 lists DOK at Ibn Gabirol 27 https://timeout.co.il/26-most-recommended-fine-dining-restaurants-in-tel-aviv/",
    "r2": "single",
-   "d2": "2026-11"
+   "d2": "2026-11-25",
+   "note2": "Recheck: Time Out fine-dining guide 2025-11 (upd 2026-01) lists DOK at Ibn Gabirol 27 https://timeout.co.il/26-most-recommended-fine-dining-restaurants-in-tel-aviv/ ; Time Out 2021 reopening article same address; no own site/Tabit/Ontopo found; no closure news"
   },
   "n5229027068": {
    "r": "ok",
@@ -1870,7 +1959,10 @@
   },
   "n3315453277": {
    "r": "none",
-   "note": "Only Time Out 2015/2019 (eviction threat); no 2025-26 source; recheck for closure"
+   "note": "Only Time Out 2015/2019 (eviction threat); no 2025-26 source; recheck for closure",
+   "r2": "none",
+   "note2": "Recheck: only Time Out 2017 (Beit Eshel 3) and older articles; no own site, Tabit or Ontopo; no 2025-26 source; no closure article found",
+   "d2": "2026-11-25"
   },
   "w126469106": {
    "r": "none",
@@ -1931,7 +2023,10 @@
   },
   "n5872689085": {
    "r": "ok",
-   "note": "Ontopo booking active Dam HaMaccabim 26; Time Out 2022 same address"
+   "note": "Ontopo booking active Dam HaMaccabim 26; Time Out 2022 same address",
+   "r2": "ok",
+   "note2": "Recheck: Ontopo page live today, HaShovach, Dam HaMaccabim 26, cafe-deli by chef Shahar Levy; Time Out 2022 same address",
+   "d2": "2026-11-25"
   },
   "n972616162": {
    "r": "closed",
@@ -1945,7 +2040,8 @@
    "r": "single",
    "note": "Wolt brand page lists Vitrina Lilienblum branch https://wolt.com/ar/isr/tel-aviv/brand/vitrina ; Time Out 2023",
    "r2": "single",
-   "d2": "2026-11"
+   "d2": "2026-11-25",
+   "note2": "Recheck: Wolt brand page lists 'Vitrina Burgers | Lilienblum' but shown temporarily offline https://wolt.com/ar/isr/tel-aviv/brand/vitrina ; Time Out 2016 opening article Lilienblum 40, 2023 review; catalog w invalid; no Tabit/Ontopo; no closure news for Lilienblum"
   },
   "n12588072063": {
    "r": "none",
@@ -1953,7 +2049,10 @@
   },
   "w539690342": {
    "r": "none",
-   "note": "No source for this name on Meir Shamgar; Tabit 'Hadar HaOchel' different name, did not load"
+   "note": "No source for this name on Meir Shamgar; Tabit 'Hadar HaOchel' different name, did not load",
+   "r2": "none",
+   "note2": "Re-check: only 'Heder HaOchel' at Kameri complex, Shaul HaMelech 23 (Time Out 2020-09 says it closed) - different place/address; nothing for this name on Meir Shamgar; no Tabit/Ontopo page found",
+   "d2": "2026-11-25"
   },
   "n12270410088": {
    "r": "none",
@@ -1973,7 +2072,10 @@
   },
   "n11405083079": {
    "r": "none",
-   "note": "Only Time Out 2017 (Hinawi deli Carlebach 25); no recent source"
+   "note": "Only Time Out 2017 (Hinawi deli Carlebach 25); no recent source",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2017 only for Hinawi Wine&More deli at Carlebach 25; Time Out 2025-12 covers a new Hinawi stall in Carmel Market (different place); no Tabit/Ontopo, no closure news for Carlebach",
+   "d2": "2026-11-25"
   },
   "n12944761385": {
    "r": "ok",
@@ -1981,7 +2083,10 @@
   },
   "n13339000845": {
    "r": "none",
-   "note": "Time Out 2024-04 and Mako 2023 only (Yehuda HaLevi 52); no 2025-26 source"
+   "note": "Time Out 2024-04 and Mako 2023 only (Yehuda HaLevi 52); no 2025-26 source",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2024-04 mention, Mako 2023-04 (Yehuda HaLevi 52, Hungarian), Walla 2009; no 2025-26 source, no own site/Tabit/Ontopo, no closure news",
+   "d2": "2026-11-25"
   },
   "n8537137962": {
    "r": "single",
@@ -1991,7 +2096,10 @@
   },
   "n6653156709": {
    "r": "ok",
-   "note": "Ontopo booking active (Levinski 39, Levinsky market); Time Out 2025: back to cafe-only format at same spot"
+   "note": "Ontopo booking active (Levinski 39, Levinsky market); Time Out 2025: back to cafe-only format at same spot",
+   "r2": "ok",
+   "note2": "Re-check: Ontopo page opened, active booking, Levinski 39; Time Out 2025 cafe format; Ontopo hours 08-23 daily not stored (single source)",
+   "d2": "2026-11-25"
   },
   "n10549077965": {
    "r": "none",
@@ -1999,7 +2107,10 @@
   },
   "n672150097": {
    "r": "none",
-   "note": "Only Time Out 2016 (Topsi, Hilton beach)"
+   "note": "Only Time Out 2016 (Topsi, Hilton beach)",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2016 Topsi beach at Hilton; Time Out 2025-09 mentions Topsi only as lifeguard name (Stolero); municipal Hilton beach page names no operator; no Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n6578423186": {
    "r": "ok",
@@ -2015,11 +2126,17 @@
   },
   "n5754868832": {
    "r": "none",
-   "note": "Time Out 2024-08 Yom Tov Deli Nahalat Yitzhak; no 2025-26 source"
+   "note": "Time Out 2024-08 Yom Tov Deli Nahalat Yitzhak; no 2025-26 source",
+   "r2": "single",
+   "note2": "Re-check: Yom Tov Deli (deli, not restaurant) Aliyat HaNoar 14, Nahalat Yitzhak: Time Out 2024-08 https://timeout.co.il/יום-טוב-נחלת-יצחק/ ; public Wolt page live https://wolt.com/en/isr/tel-aviv/venue/yom-tov-deli-aliyat-hanoar/items/menucategory-5 (only recent source); no own site/Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n735841918": {
    "r": "none",
-   "note": "Only Time Out 2012"
+   "note": "Only Time Out 2012",
+   "r2": "none",
+   "note2": "Re-check: only Time Out 2012 review (promenade); no recent source, no Tabit/Ontopo, no closure news found",
+   "d2": "2026-11-25"
   },
   "n13619434567": {
    "r": "none",
@@ -2031,7 +2148,10 @@
   },
   "n9879110650": {
    "r": "none",
-   "note": "Kaspi Ben Yehuda/Arlozorov: Time Out 2015 only"
+   "note": "Kaspi Ben Yehuda/Arlozorov: Time Out 2015 only",
+   "r2": "single",
+   "note2": "Re-check: Secret Tel Aviv best hummus, updated 2026-10, lists Kaspi at Arlozorov 13 and Ben Yehuda 145 https://www.secrettelaviv.com/magazine/blog/toptens/best-hummus-in-tel-aviv ; Time Out 2015/2017 older; no own site/Tabit/Ontopo found",
+   "d2": "2026-11-25"
   },
   "n11091229844": {
    "r": "none",
@@ -2041,12 +2161,15 @@
    "r": "single",
    "note": "Time Out 2026-01 Italian list: Tometomato/Lava, Beit HaBad 7 https://timeout.co.il/the-most-recommended-italian-restaurants-in-tel-aviv/",
    "r2": "single",
-   "d2": "2026-11",
-   "note2": "Two Time Out articles 2026 Beit HaBad 7, same outlet only"
+   "d2": "2026-11-25",
+   "note2": "Re-check: Time Out only (2026-01 Italian list, 2026-10 pasta list https://timeout.co.il/%d7%a4%d7%a1%d7%98%d7%94-%d7%a9%d7%95%d7%95%d7%94-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/ , 2023 opening review), Beit HaBad 7; Instagram blocked; no Tabit/Ontopo; atly aggregator not used"
   },
   "n2322594230": {
    "r": "ok",
-   "note": "Own site branches page lists Rothschild; Time Out 2025-04 Rothschild 45"
+   "note": "Own site branches page lists Rothschild; Time Out 2025-04 Rothschild 45",
+   "r2": "ok",
+   "note2": "Re-check: own site branches page opened, lists 'Tel Aviv - Rothschild' branch (details not expanded); Time Out 2025-04 Rothschild 45",
+   "d2": "2026-11-25"
   },
   "n5876238030": {
    "r": "none",
@@ -2058,11 +2181,17 @@
   },
   "n14378638891": {
    "r": "ok",
-   "note": "Opened 2026-03 Levontin 13; Time Out + Mako 2026-04 agree operating"
+   "note": "Opened 2026-03 Levontin 13; Time Out + Mako 2026-04 agree operating",
+   "r2": "ok",
+   "note2": "Kept ok: Time Out 2026-04-15 + Mako 2026-04-23 both Levontin 13, Italian tavola calda; hours disagree (Fr) so no oh; no Tabit/Ontopo page found",
+   "d2": "2026-11-25"
   },
   "n454907312": {
    "r": "none",
-   "note": "Only Time Out 2016"
+   "note": "Only Time Out 2016",
+   "r2": "none",
+   "note2": "Only Time Out 2016 (Ben Yehuda 128); no Tabit/Ontopo, no own site, no recent or closure source",
+   "d2": "2026-11-25"
   },
   "n12516314407": {
    "r": "ok",
@@ -2074,7 +2203,10 @@
   },
   "n8558425247": {
    "r": "none",
-   "note": "Mabali only in Ramat Gan; own site did not load"
+   "note": "Mabali only in Ramat Gan; own site did not load",
+   "r2": "none",
+   "note2": "Mabali found only as malabi shop Herzl 75 Ramat Gan (Time Out 2020), not this Zohar TA restaurant; nothing else",
+   "d2": "2026-11-25"
   },
   "n6470389885": {
    "r": "none",
@@ -2082,11 +2214,17 @@
   },
   "n381410923": {
    "r": "none",
-   "note": "Undated enjoyingisrael HaBarzel 26; own site unreachable"
+   "note": "Undated enjoyingisrael HaBarzel 26; own site unreachable",
+   "r2": "none",
+   "note2": "Own site mosesrest.co.il blocked by proxy; only undated enjoyingisrael listing HaBarzel 26; Time Out Moses topic has no branch info; no Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n9946189682": {
    "r": "none",
-   "note": "No source for Moses Begin 144; own site unreachable"
+   "note": "No source for Moses Begin 144; own site unreachable",
+   "r2": "none",
+   "note2": "Own site mosesrest.co.il blocked by proxy; no source names Begin 144 branch; no Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n711326192": {
    "r": "none",
@@ -2094,7 +2232,10 @@
   },
   "n12588129401": {
    "r": "none",
-   "note": "Own site unreachable; nothing for Yigal Alon 94"
+   "note": "Own site unreachable; nothing for Yigal Alon 94",
+   "r2": "none",
+   "note2": "Own site middle.east.rest blocked by proxy; no source for Yigal Alon 94; not in Time Out kosher list 2025-11",
+   "d2": "2026-11-25"
   },
   "n5018171922": {
    "r": "none",
@@ -2102,7 +2243,10 @@
   },
   "n10034263918": {
    "r": "none",
-   "note": "Time Out 2021 Ben Ami 13; Tabit/Wolt list only other branches; no recent source"
+   "note": "Time Out 2021 Ben Ami 13; Tabit/Wolt list only other branches; no recent source",
+   "r2": "none",
+   "note2": "mbburgers.com blocked; Time Out 2021 Ben Ami 13; Time Out 2024-12-24 mentions Dizengoff Sq branch (pre-2025); Wolt page found is Sarona branch only; no Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n4958503425": {
    "r": "ok",
@@ -2110,7 +2254,10 @@
   },
   "n12117313515": {
    "r": "none",
-   "note": "Only Time Out 2022 for Mirage Derech Yafo 9"
+   "note": "Only Time Out 2022 for Mirage Derech Yafo 9",
+   "r2": "conflict",
+   "note2": "Time Out Park HaMesila guide (updated 2025-10-11) lists Mirage (Eyal Shani) at Yehuda Halevi 12, not Derech Yafo 9 (that address is HaTeder); Time Out 2022 Jazz Kissa piece only says 'next to Mirage' at Derech Yafo 9. https://timeout.co.il/%D7%A4%D7%90%D7%A8%D7%A7-%D7%94%D7%9E%D7%A1%D7%99%D7%9C%D7%94-%D7%A2%D7%A1%D7%A7%D7%99%D7%9D/",
+   "d2": "2026-11-25"
   },
   "n13711728405": {
    "r": "none",
@@ -2155,7 +2302,10 @@
   },
   "n705556743": {
    "r": "ok",
-   "note": "Ontopo active Mezizim Beach; Time Out 2025-08 relaunch"
+   "note": "Ontopo active Mezizim Beach; Time Out 2025-08 relaunch",
+   "r2": "ok",
+   "note2": "Ontopo page opened, active booking form, Mezizim Beach, Havakuk HaNavi 1, phone matches; bayz own page live (Mediterranean); Time Out 2025-08 relaunch",
+   "d2": "2026-11-25"
   },
   "n2079202591": {
    "r": "ok",
@@ -2171,7 +2321,10 @@
   },
   "n12159945050": {
    "r": "none",
-   "note": "Only Time Out 2024-09 opening at Herzl 20; no 2025-26 source"
+   "note": "Only Time Out 2024-09 opening at Herzl 20; no 2025-26 source",
+   "r2": "none",
+   "note2": "Only Time Out 2024-09 opening at Herzl 20; own handle not a URL; no Tabit/Ontopo/Wolt TA page or 2025-26 source; no closure news",
+   "d2": "2026-11-25"
   },
   "n3722560627": {
    "r": "closed",
