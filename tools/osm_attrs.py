@@ -21,12 +21,12 @@ if os.path.exists(CACHE):
     C = json.load(open(CACHE))
     if time.time() - C.get("at", 0) > 7 * 86400: C = None
 if C is None:
-    hoods = overpass(f'[out:json][timeout:90];node({BBOX})["place"~"^(suburb|quarter|neighbourhood)$"]["name"];out tags;')
-    venues = overpass(f'[out:json][timeout:120];nwr({BBOX})["amenity"~"^(restaurant|cafe|bar|pub|fast_food|ice_cream|biergarten)$"]["name"];out tags;')
+    hoods = overpass(f'[out:json][timeout:90];node({BBOX})["place"~"^(suburb|quarter|neighbourhood)$"]["name"];out;')
+    venues = overpass(f'[out:json][timeout:120];nwr({BBOX})["amenity"~"^(restaurant|cafe|bar|pub|fast_food|ice_cream|biergarten)$"]["name"];out;')
     if hoods is None or venues is None or len(venues) < 200:
         print("Overpass unavailable; keeping old attributes"); C = json.load(open(CACHE)) if os.path.exists(CACHE) else None
     else:
-        H = [{"n": (h["tags"].get("name:he") or h["tags"]["name"]), "la": h["lat"], "lo": h["lon"], "k": h["tags"]["place"]} for h in hoods]
+        H = [{"n": (h["tags"].get("name:he") or h["tags"]["name"]), "la": h["lat"], "lo": h["lon"], "k": h["tags"]["place"]} for h in hoods if "lat" in h]
         A = {}
         for v in venues:
             t = v.get("tags", {}); a = {}
