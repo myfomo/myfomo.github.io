@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 484,
- "site_jsonld": 52,
+ "site_checked": 489,
+ "site_jsonld": 53,
  "site_match": 14,
- "site_reject": 38,
+ "site_reject": 39,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -175,6 +175,13 @@
    "site": "0506969222"
   },
   {
+   "id": "n6926507885",
+   "n": "Cicchetti",
+   "field": "phone",
+   "osm": "+972-3-685-3499",
+   "site": "0036853499"
+  },
+  {
    "id": "n7211406506",
    "n": "מקס ברנר",
    "field": "phone",
@@ -296,6 +303,12 @@
    "id": "n4922283576",
    "n": "Xo Ho",
    "w": "http://www.cafexoho.com",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n6926507885",
+   "n": "Cicchetti",
+   "w": "https://www.cicchettitlv.com/",
    "why": "branch/name not confirmed"
   },
   {
@@ -461,15 +474,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 90,
- "phone_multi_skipped": 23,
+ "phone_confirmed": 88,
+ "phone_multi_skipped": 24,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "382 (29%)",
-  "phone": "408 (31%)",
-  "website": "516 (39%)",
-  "cuisine": "966 (73%)",
-  "extra_names": "757 (57%)"
+  "hours": "385 (29%)",
+  "phone": "413 (31%)",
+  "website": "521 (39%)",
+  "cuisine": "970 (74%)",
+  "extra_names": "758 (57%)"
  },
- "conflicts_n": 31
+ "conflicts_n": 32
 }

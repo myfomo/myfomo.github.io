@@ -177,31 +177,31 @@
   },
   "n5604815955": {
    "name": "Brasserie 18",
-   "old": "Levontin Street",
+   "old": "לבונטין 19",
    "new": "לבונטין 19",
    "status": "applied",
-   "moved_m": 56
+   "moved_m": 0
   },
   "n6926507885": {
    "name": "Cicchetti",
-   "old": "מזא\"ה",
+   "old": "יהודה הלוי 58",
    "new": "יהודה הלוי 58",
    "status": "applied",
-   "moved_m": 12
+   "moved_m": 0
   },
   "n450524210": {
    "name": "Ernesto",
-   "old": "סמולנסקין",
+   "old": "בן יהודה 90",
    "new": "בן יהודה 90",
    "status": "applied",
-   "moved_m": 10
+   "moved_m": 0
   },
   "n5018171923": {
    "name": "Goocha",
-   "old": "הברזל",
+   "old": "הברזל 7",
    "new": "הברזל 7",
    "status": "applied",
-   "moved_m": 2
+   "moved_m": 0
   },
   "n12647744238": {
    "name": "Hummus HaMeshorer",
@@ -212,10 +212,10 @@
   },
   "n6317085485": {
    "name": "Italkiya",
-   "old": "עולי ציון",
+   "old": "עולי ציון 16",
    "new": "עולי ציון 16",
    "status": "applied",
-   "moved_m": 2
+   "moved_m": 0
   },
   "n2672314363": {
    "name": "Porter & Sons",
@@ -226,10 +226,10 @@
   },
   "n705556743": {
    "name": "מציצים",
-   "old": "נמל תל אביב",
+   "old": "חבקוק הנביא 1",
    "new": "חבקוק הנביא 1",
    "status": "applied",
-   "moved_m": 139
+   "moved_m": 0
   }
  },
  "dup": {
