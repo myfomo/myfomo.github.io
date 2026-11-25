@@ -1,9 +1,9 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 491,
- "site_jsonld": 54,
- "site_match": 14,
+ "site_checked": 492,
+ "site_jsonld": 55,
+ "site_match": 15,
  "site_reject": 40,
  "phone_site": 0,
  "hours_site": 0,
@@ -208,6 +208,13 @@
    "field": "phone",
    "osm": "+972 035225005",
    "site": "035225005"
+  },
+  {
+   "id": "n10296516877",
+   "n": "The Urban Bakery",
+   "field": "hours",
+   "osm": "Su-Th 07:00-19:00; Fr-Sa 07:00-16:00",
+   "site": "Su,Mo,Tu,We,Th 07:00-19:00; Fr,Sa 07:00-16:00"
   },
   {
    "id": "n10969247136",
@@ -480,15 +487,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 88,
+ "phone_confirmed": 90,
  "phone_multi_skipped": 25,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "387 (29%)",
-  "phone": "418 (32%)",
-  "website": "523 (40%)",
+  "hours": "388 (29%)",
+  "phone": "419 (32%)",
+  "website": "524 (40%)",
   "cuisine": "970 (74%)",
   "extra_names": "759 (58%)"
  },
- "conflicts_n": 32
+ "conflicts_n": 33
 }
