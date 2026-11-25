@@ -1,7 +1,7 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 510,
+ "site_checked": 511,
  "site_jsonld": 59,
  "site_match": 18,
  "site_reject": 41,
@@ -514,13 +514,13 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 101,
+ "phone_confirmed": 102,
  "phone_multi_skipped": 27,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "406 (31%)",
-  "phone": "432 (33%)",
-  "website": "542 (41%)",
+  "hours": "408 (31%)",
+  "phone": "433 (33%)",
+  "website": "543 (41%)",
   "cuisine": "977 (74%)",
   "extra_names": "760 (58%)"
  },
