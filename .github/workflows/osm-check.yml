@@ -38,6 +38,7 @@ jobs:
           PY
       - run: python3 tools/osm_enrich.py data/places-tlv.json data/enrich-report-tlv.json
       - run: python3 tools/site_check.py data/places-tlv.json data/site-check-tlv.json
+      - run: python3 tools/osm_attrs.py data/places-tlv.json data/osm-attrs-tlv.json
       - run: python3 tools/chains.py data/places-tlv.json data/chains-report-tlv.json
       - run: python3 tools/chefs.py data/places-tlv.json tools/chefs-tlv.json
       - run: python3 tools/address_fix.py data/places-tlv.json tools/address-fixes-tlv.json data/address-check-tlv.json
