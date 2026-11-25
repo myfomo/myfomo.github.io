@@ -1,7 +1,7 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 503,
+ "site_checked": 509,
  "site_jsonld": 58,
  "site_match": 17,
  "site_reject": 41,
@@ -497,9 +497,9 @@
  "phone_multi_skipped": 25,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "400 (30%)",
-  "phone": "430 (33%)",
-  "website": "535 (41%)",
+  "hours": "406 (31%)",
+  "phone": "431 (33%)",
+  "website": "541 (41%)",
   "cuisine": "974 (74%)",
   "extra_names": "760 (58%)"
  },
