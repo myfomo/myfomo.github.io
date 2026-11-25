@@ -1614,8 +1614,11 @@
    "n": "Papa John's",
    "ok": "2026-11",
    "cu": "פיצה",
+   "oh": "Mo-Su 12:00-24:00",
+   "p": "*6699",
    "w": "https://www.papajohns.co.il/branch/%d7%a4%d7%99%d7%a6%d7%94-%d7%91%d7%a8%d7%9e%d7%aa-%d7%94%d7%a9%d7%a8%d7%95%d7%9f/",
    "src": [
+    "https://www.papajohns.co.il/branch/%d7%a4%d7%99%d7%a6%d7%94-%d7%91%d7%a8%d7%9e%d7%aa-%d7%94%d7%a9%d7%a8%d7%95%d7%9f/",
     "https://www.papajohns.co.il/en/branch/%D7%A4%D7%99%D7%A6%D7%94-%D7%91%D7%97%D7%93%D7%A8%D7%94"
    ]
   },
@@ -1623,8 +1626,11 @@
    "n": "Papa John's",
    "ok": "2026-11",
    "cu": "פיצה",
+   "oh": "Mo-Su 12:00-24:00",
+   "p": "*6699",
    "w": "https://www.papajohns.co.il/branch/%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91-%d7%9c%d7%91%d7%95%d7%a0%d7%98%d7%99%d7%9f/",
    "src": [
+    "https://www.papajohns.co.il/branch/%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91-%d7%9c%d7%91%d7%95%d7%a0%d7%98%d7%99%d7%9f/",
     "https://www.papajohns.co.il/en/branch/%D7%A4%D7%99%D7%A6%D7%94-%D7%91%D7%97%D7%93%D7%A8%D7%94"
    ]
   },
@@ -1639,18 +1645,28 @@
   },
   "n5700184286": {
    "n": "Tal Bagels",
-   "ok": "2025-05",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "oh": "Mo-Su 08:00-17:00",
+   "p": "03-5610564",
+   "w": "https://tal-bagels.co.il",
    "src": [
+    "https://tal-bagels.co.il",
     "https://timeout.co.il/בייגל-תל-אביב/",
     "https://wolt.com/en/isr/tel-aviv/restaurant/tal-bagels/items/menucategory-3"
    ]
   },
   "n746730771": {
-   "n": "אגדיר",
-   "ok": "2026-06",
-   "nm": "אגאדיר",
+   "n": "אגאדיר",
+   "ok": "2026-11",
    "cu": "המבורגר",
+   "oh": "Su-We 12:00-23:00; Th-Sa 12:00-24:00",
+   "p": "*5690",
+   "w": "https://agadir.co.il/branch/tel-aviv-port/",
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ad5d4275b0cca12003c9509",
    "src": [
+    "https://agadir.co.il/branch/tel-aviv-port/",
+    "https://agadir.co.il/branches/",
     "https://timeout.co.il/%D7%A4%D7%95%D7%A8%D7%98-%D7%A9%D7%A3-2026/",
     "https://www.ias.co.il/?p=188582",
     "https://timeout.co.il/ppost/select-agadir/",
@@ -1871,6 +1887,86 @@
    "src": [
     "https://www.landwercafe.co.il/branch/%d7%a2%d7%96%d7%a8%d7%99%d7%90%d7%9c%d7%99-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/",
     "https://www.landwercafe.co.il/%d7%9e%d7%a1%d7%a2%d7%93%d7%95%d7%aa/"
+   ]
+  },
+  "n10829518083": {
+   "n": "Rotisserie",
+   "nm": "Rotisserie Chicken Club",
+   "ok": "2026-11",
+   "oh": "Su-We 10:00-22:00; Th 10:00-23:00; Fr 09:00-15:00; Sa off",
+   "p": "03-6414222",
+   "src": [
+    "https://saronamarket.co.il/%d7%a8%d7%95%d7%98%d7%99%d7%a1%d7%a8%d7%99/",
+    "https://timeout.co.il/מנת-יתר-רוטיסרי-ציקן-קלאב/",
+    "https://timeout.co.il/מה-מזמינים-היום-1108/"
+   ]
+  },
+  "n12365229272": {
+   "n": "Smoked Kitchen",
+   "ok": "2026-11",
+   "cu": "בשרים",
+   "p": "054-4454931",
+   "w": "https://smoked.kitchen",
+   "src": [
+    "https://smoked.kitchen"
+   ]
+  },
+  "n6538359143": {
+   "n": "The Showroom Bakehouse",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "w": "https://theshowroom.co.il",
+   "src": [
+    "https://theshowroom.co.il/branches",
+    "https://www.spottedbylocals.com/telaviv/showroom-bakehouse"
+   ]
+  },
+  "n10812430080": {
+   "n": "Wok to Walk",
+   "ok": "2026-11",
+   "cu": "אסייתי",
+   "w": "https://www.woktowalk.com/he/",
+   "src": [
+    "https://www.woktowalk.com/he/restaurants/",
+    "https://spinach.guide/venues/wok-to-walk-217848/"
+   ]
+  },
+  "n10948715137": {
+   "n": "Wok to Walk",
+   "ok": "2026-11",
+   "cu": "אסייתי",
+   "w": "https://www.woktowalk.com/he/",
+   "src": [
+    "https://www.woktowalk.com/he/restaurants/",
+    "https://www.woktowalk.com/he"
+   ]
+  },
+  "n2160093315": {
+   "n": "אגדיר",
+   "ok": "2026-11",
+   "nm": "אגאדיר",
+   "cu": "המבורגר",
+   "oh": "Su-We 12:00-24:00; Th-Fr 12:00-01:00; Sa 12:00-24:00",
+   "p": "*5690",
+   "w": "https://agadir.co.il/branch/nahalat-binyamin/",
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ac0babe14876d1700414536",
+   "src": [
+    "https://agadir.co.il/branch/nahalat-binyamin/",
+    "https://agadir.co.il/branches/",
+    "https://timeout.co.il/ppost/select-agadir/"
+   ]
+  },
+  "n13809202206": {
+   "n": "איציק הגדול השווארמה",
+   "ok": "2026-11",
+   "nm": "איציק הגדול",
+   "cu": "חומוס ומזרחי",
+   "pr": 2,
+   "oh": "Su-Th 11:00-23:30; Fr,Sa off",
+   "p": "03-5285777",
+   "w": "https://delivery.itzikhagadol.co.il/collections/לשווארמה",
+   "src": [
+    "https://delivery.itzikhagadol.co.il/collections/לשווארמה"
    ]
   }
  }
