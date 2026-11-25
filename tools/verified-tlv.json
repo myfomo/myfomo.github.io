@@ -2181,6 +2181,99 @@
    "src": [
     "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=12"
    ]
+  },
+  "n4490683591": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Mo-Su 11:00-22:00",
+   "w": "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=74",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=74"
+   ]
+  },
+  "n5910158672": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Sa-Th 11:00-22:00; Fr 10:30-21:00",
+   "w": "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=5",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=5"
+   ]
+  },
+  "n8321535292": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Sa-Th 11:00-22:00; Fr 11:00-20:00",
+   "w": "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=298",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=298"
+   ]
+  },
+  "n11178748578": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Su-Th 10:00-22:00; Fr 11:00-16:00; Sa 11:00-22:00",
+   "w": "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=104",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=104"
+   ]
+  },
+  "n11428462549": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "nm": "מקדונלד'ס מרום נווה",
+   "cu": "המבורגר",
+   "oh": "Su-Th 10:30-22:00; Fr 10:30-14:30; Sa 18:15-22:30",
+   "w": "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=297",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=297"
+   ]
+  },
+  "n12635329122": {
+   "n": "מקדונלד'ס",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "oh": "Su-Th 10:30-22:00; Fr 10:30-15:30; Sa 18:00-22:00",
+   "w": "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=53",
+   "src": [
+    "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=53"
+   ]
+  },
+  "n11066164305": {
+   "n": "סודוך",
+   "ok": "2026-04",
+   "cu": "אחר",
+   "pr": 1,
+   "w": "https://suduch.co.il/",
+   "src": [
+    "http://suduch.co.il/"
+   ]
+  },
+  "n4724767082": {
+   "n": "עַלִי קַרַוַאן – אַבּוּ חַסַן",
+   "ok": "2026-06",
+   "cu": "חומוס ומזרחי",
+   "src": [
+    "https://timeout.co.il/החומוס-הכי-טוב-בתל-אביב-יפו/",
+    "https://www.ice.co.il/food/news/article/1099152"
+   ]
+  },
+  "n10944106301": {
+   "n": "עגבניה",
+   "ok": "2026-11",
+   "cu": "פיצה",
+   "oh": "Su-Th 11:00-24:00; Fr 11:00-15:00",
+   "p": "03-5467996",
+   "w": "https://agvania.co.il/2025/01/07/%d7%a4%d7%99%d7%a6%d7%94-%d7%a2%d7%92%d7%91%d7%a0%d7%99%d7%94-%d7%a1%d7%a0%d7%99%d7%a3-%d7%92%d7%9f-%d7%94%d7%a2%d7%99%d7%a8-%d7%aa%d7%9c-%d7%90%d7%91%d7%99/",
+   "k": 1,
+   "src": [
+    "https://agvania.co.il/category/%d7%a1%d7%a0%d7%99%d7%a4%d7%99%d7%9d/",
+    "https://agvania.co.il/2025/01/07/%d7%a4%d7%99%d7%a6%d7%94-%d7%a2%d7%92%d7%91%d7%a0%d7%99%d7%94-%d7%a1%d7%a0%d7%99%d7%a3-%d7%92%d7%9f-%d7%94%d7%a2%d7%99%d7%a8-%d7%aa%d7%9c-%d7%90%d7%91%d7%99/"
+   ]
   }
  }
 }

@@ -5538,6 +5538,206 @@
   "n4112078463": {
    "r": "ok",
    "note": "Official locator: London Ministore branch, Ibn Gabirol 30 (corner Shaul HaMelech; Waze coords match within 3m)"
+  },
+  "n4490683591": {
+   "r": "ok",
+   "note": "Official locator: branch 'Hatzrot Yafo', Sderot Yerushalayim 15 (store 74), hours listed all week; no closure news; fast food, no Tabit/Ontopo"
+  },
+  "n5910158672": {
+   "r": "ok",
+   "note": "Official locator: branch 'Ramat Aviv Gimel', Abba Achimeir 29 (store 5); no closure news; no Tabit/Ontopo"
+  },
+  "n8321535292": {
+   "r": "ok",
+   "note": "Official locator: branch 'Top Dan', Pinchas Rosen 72 (store 298); no closure news; no Tabit/Ontopo"
+  },
+  "n10637248245": {
+   "r": "conflict",
+   "note": "No official McDonald's branch on Jabotinsky in Tel Aviv; coords are on the Ramat Gan side. Nearest official branch is Bialik Mall Ramat Gan (Bialik 76 cnr Jabotinsky, store 73, kosher) - could not confirm it is this point; check address"
+  },
+  "n10976106839": {
+   "r": "conflict",
+   "note": "No official branch at Kikar Atzei; point is on the Ramat Gan (Bursa) side. Nearest official branch is Bursa, HaYetzira 3 Ramat Gan (store 61) - match unconfirmed; check address"
+  },
+  "n11178748578": {
+   "r": "ok",
+   "note": "Official locator: 'Weizmann Center - Ichilov', Weizmann City mall, Weizmann 14 (store 104); hours differ from catalog (Su-Th 10-22, Fr 11-16, Sa 11-22); no phone shown on page"
+  },
+  "n11428462549": {
+   "r": "ok",
+   "note": "Official locator: 'Marom Nave Ramat Gan (kosher)', Chaim Landau 7, Ramat Gan (store 297) - place is in Ramat Gan, not Tel Aviv; kosher per branch name on own site (certifier not named)"
+  },
+  "n12635329122": {
+   "r": "ok",
+   "note": "Official locator: 'Azrieli Shalom Mall', Menachem Begin 132 (store 53); no closure news; no Tabit/Ontopo"
+  },
+  "n13725354463": {
+   "r": "none",
+   "note": "Mr. Pretzels kiosk at Kirya bridge: no official branch page, no Tabit/Ontopo, no news found (only easy.co.il directory listings, not usable); no closure news"
+  },
+  "n10951185355": {
+   "r": "conflict",
+   "note": "Time Out (2024-03) says Marlen TLV moved Aug 2023 to King George / Ben Zion corner (atly: Ben Tsiyon Blvd 2), not Malchei Israel 8; Time Out tags active to 2026-02. Catalog site marlen.giv.tlv and phone 051-5008717 belong to Givatayim branch (Wolt: Rambam 30 Givatayim). Address needs fix"
+  },
+  "n12140306333": {
+   "r": "single",
+   "note": "Time Out 2025-02 (Iskender article) names Nivo Grill Bar at Vital 2, Florentin; earlier Time Out opening piece 2024-03 (same outlet). No own site, no Tabit/Ontopo, no closure news. Hours differ between articles (21:00 vs 20:00) so not set. Turkish grill, kebab plate 65, iskender 80 NIS. Source: http"
+  },
+  "n10072704828": {
+   "r": "none",
+   "note": "No source found for a Sabich Frishman branch at Ibn Gvirol 64; known locations are Frishman 42/44 (original) and Levinsky. No own site, no Tabit/Ontopo, no closure news."
+  },
+  "n12187684500": {
+   "r": "single",
+   "note": "Only Time Out 2024-12 photo caption 'Sabich Frishman in Levinsky' supports this branch (no street number). Catalog website value is invalid. No own site, no Tabit/Ontopo, no closure news. Source: https://timeout.co.il/מה-מזמינים-היום-111224/"
+  },
+  "n14403721753": {
+   "r": "none",
+   "note": "No source found for a Sabich Frishman on Sderot Yehudit (street-only address). No own site, no Tabit/Ontopo, no closure news."
+  },
+  "n12578960888": {
+   "r": "none",
+   "note": "No reliable source found for 'Sabicha' on Jabotinsky (street-only address); searches return unrelated sabich places. No site, Tabit/Ontopo or closure news."
+  },
+  "n11066164305": {
+   "r": "ok",
+   "note": "Own site suduch.co.il (modified 2026-04) lists Karlibach branch at Karlibach 20, Tel Aviv. Late-night toast/sausage chain; toast 37-43 NIS. Hours text on site ambiguous (shown as 04:00-09:00, likely night hours) so oh not set; Fri closed, Sat night after Shabbat to 04:00. Site says all branches kosh"
+  },
+  "n6226538104": {
+   "r": "none",
+   "note": "Only old source: Time Out 2018 lists a Susu & Sons branch at Derech HaShalom 53. Own site susu.co.il unreachable (robots); no Tabit/Ontopo or recent source for this branch; no closure news for it (Allenby branch closed 2020). Catalog city says Givatayim though Derech HaShalom 53 is Tel Aviv - check."
+  },
+  "n11401163746": {
+   "r": "none",
+   "note": "No source found for juice place 'Sachut' on Ussishkin (street-only address). Coordinates (32.139, 34.842) look far north of Ussishkin St - possibly wrong point. No site, Tabit/Ontopo or closure news."
+  },
+  "n10147635617": {
+   "r": "none",
+   "note": "Own site stationmarket.co.il blocks automated access (robots); no news, Tabit/Ontopo or closure source found. Bar Kochba 21 with these coords appears to be in Bnei Brak, not Tel Aviv - check."
+  },
+  "n11681593604": {
+   "r": "single",
+   "note": "Time Out 2026-07 crispy-chicken list names Silly Kid at Yona HaNavi 48 (68 NIS with fries and drink); earlier Time Out 2023-11 opening article. Tabit order link seen on an aggregator but Tabit page could not be loaded; no Ontopo; no closure news. Catalog website value invalid. Source: https://timeou"
+  },
+  "n13760622005": {
+   "r": "none",
+   "note": "No web/news/Time Out result for 'סיפורו של גרגר' or Mesilat Wolfson 28; no own site; no Tabit/Ontopo page; no closure news."
+  },
+  "n2547089658": {
+   "r": "none",
+   "note": "No reliable source for Sandwich Bar Baget on Jabotinsky (coords Ramat Gan); only generic directory listings; no own site, no Tabit/Ontopo, no closure news."
+  },
+  "n4724767082": {
+   "r": "ok",
+   "note": "Time Out TLV hummus guide (pub 2026-04, updated 2026-06) lists Ali Karavan Abu Hassan at HaDolphin 1 Jaffa (plus Shivtei Israel 14/17); ice hummus survey 2026-01 ranks it 3rd; no own site; no Tabit/Ontopo (counter place); no closure news. Hours/phone not from allowed source."
+  },
+  "n10944106301": {
+   "r": "ok",
+   "note": "Official Agvania site lists branch Gan HaIr, Ibn Gabirol 88 (opposite Gan HaIr) - matches coords; branch page gives hours, phone, Rabbanut Mehadrin kosher. Saturday: from 1h after Shabbat to 23:00 (not encoded in oh). No Tabit/Ontopo; no closure news."
+  },
+  "n11681572591": {
+   "r": "conflict",
+   "note": "Official Agvania branch list has no Yohanan HaSandlar branch; nearest official branch is Shenkin 19 (Time Out Shenkin guide 2025-03 also lists Shenkin 19). Catalog point is on Yohanan HaSandlar ~150m from Shenkin - either same branch with wrong address/coords or a closed branch. Address check needed"
+  },
+  "n6023106967": {
+   "r": "closed",
+   "note": "Mako 2023-02: Ad HaEtzem Express chain went bankrupt and closed; relaunched as Smashburger Ad HaEtzem (incl. Ramat HaSharon). ice 2024-11: successor chain closed all 7 branches incl. Ramat HaSharon. Catalog website adhaetzemex.co.il now shows an unrelated Rishon LeZion catering business. Sokolov 72 "
+  },
+  "n11681515163": {
+   "r": "single",
+   "note": "Only Time Out (2025-03 Shenkin guide and 2025-04 chicken sandwiches list, same outlet) shows Aharoni's 'עוף בשינקין' rotisserie at Shenkin 55 operating; Time Out/Mako 2021 opening coverage. No own site, no Tabit/Ontopo, no closure news. Hours only from one outlet - not set."
+  },
+  "n5890281795": {
+   "r": "none",
+   "note": "No source found for 'עממיה' (name, phone 03-9799484 or Derech Tel Aviv); coords ~32.146 look north of TLV (Glilot/Herzliya area). No own site, no Tabit/Ontopo, no closure news."
+  },
+  "n12064685793": {
+   "r": "none",
+   "note": "Only Time Out review 2019 (Herzl 12, hours, prices) - nothing recent; catalog website 'araismahneyuda' is malformed/no site found; chain branches found only in Rishon/Petah Tikva; no Tabit/Ontopo; no closure news."
+  },
+  "n11226657264": {
+   "r": "none",
+   "note": "No source for Favela at Bialik 77 (coords Ramat Gan). Time Out 2023 reviews a 'פאבלה' sandwich place at La Guardia 64 TLV - different address/concept, not linked. No own site, no Tabit/Ontopo, no closure news."
+  },
+  "n10948721644": {
+   "r": "none",
+   "note": "No source for 'Polka' on Yehudit Blvd; no Tabit/Ontopo/site/closure news. Coords ~100 m from Pulkale (n12737176484) - possibly the same place under a misspelled OSM name, unconfirmed."
+  },
+  "n12737176484": {
+   "r": "none",
+   "note": "Only source: active Wolt page 'Pulkale', Hanatziv 18 (chicken & schnitzel since 2014). No own site (catalog w 'https://pulkelea' is invalid), no Tabit/Ontopo, no closure news. Mako 2018 covers a separate Pulkale Bombay branch. | downgraded to none: Wolt / old article only"
+  },
+  "n2264948141": {
+   "r": "none",
+   "note": "Only aggregator (wanderlog) listing Yefet 97; no own site, Tabit/Ontopo, Wolt or news; no closure news."
+  },
+  "n9124093817": {
+   "r": "none",
+   "note": "Nothing found for Pizza Broadway on Ussishkin (coords are in Ramat HaSharon); no site, booking page, news or closure news."
+  },
+  "n12161917016": {
+   "r": "none",
+   "note": "Active Wolt page at Chaim Vital 1 (Florentin), the only recent source; Time Out 2023-04 article on renewal (new partners, renovation). No own site, no Tabit/Ontopo, no closure news. Wolt says kosher without naming certificate; hours only from Wolt so not set. | downgraded to none: Wolt / old article"
+  },
+  "n10815695259": {
+   "r": "none",
+   "note": "Nothing found for Pizza Granada on Aluf Kalman Magen; no site, booking page, news or closure news."
+  },
+  "n12944781213": {
+   "r": "none",
+   "note": "Only d.co.il directory entry 'Pizza Domino', Laskov Haim 4 (site domino-telaviv.co.il unreachable); no Tabit/Ontopo, no news, no closure news. Not the Domino's chain."
+  },
+  "n6644531999": {
+   "r": "none",
+   "note": "Nothing found for Pizza Yerushalmit on Ussishkin (coords in Ramat HaSharon); no site, booking page, news or closure news."
+  },
+  "n12250377901": {
+   "r": "none",
+   "note": "Pizza Story appears only in easy.co.il chain listing (page unreachable); no own site, Tabit/Ontopo, Wolt or news for Sderot Yerushalayim 42; no closure news."
+  },
+  "n1171637832": {
+   "r": "none",
+   "note": "Prego chain site prego.co.il exists but branch list loads dynamically and could not be read; directories show only Carlebach 12 branch; no source for a Wolman St branch; no closure news."
+  },
+  "n6578624685": {
+   "r": "none",
+   "note": "Prego chain site live (prego.co.il, 21 branches) but branch list loads dynamically and could not be read; no source found for a Katznelson branch (directories show Karlibach 12 TLV, other cities); no Tabit/Ontopo; no closure news"
+  },
+  "n2235188149": {
+   "r": "none",
+   "note": "No source found for a Pizza Roma on Yefet St, Jaffa (search hits were other cities/Rome); no own site, no Tabit/Ontopo, no closure news"
+  },
+  "n10084859809": {
+   "r": "none",
+   "note": "No source found for Pizza Roma on Olei Zion St; no own site, no Tabit/Ontopo, no closure news"
+  },
+  "n2241801617": {
+   "r": "none",
+   "note": "Only a b144 directory listing 'פיצריה רמת חן' (no date/address detail); no own site, no Tabit/Ontopo, no news, no closure news"
+  },
+  "n8543448689": {
+   "r": "none",
+   "note": "Nothing found for 'פיצה. תלפיות' on HaDekalim St; no own site, no Tabit/Ontopo, no closure news"
+  },
+  "n4791425823": {
+   "r": "none",
+   "note": "Nothing found for Millenium kiosk at Allenby 26; no own site, no booking page, no closure news"
+  },
+  "n12106414886": {
+   "r": "none",
+   "note": "Catalog site pizzottlv.co.il unreachable (proxy refused/robots unreachable); only Time Out 2018 listing Pizzot at Dizengoff 145 (different address, old); no Herzl 20 source, no Tabit/Ontopo, no closure news"
+  },
+  "n10829562649": {
+   "r": "single",
+   "note": "Time Out 2025-02 pita guide lists Pita Basta at Sarona Market (= Kalman Magen 3), schnitzel-egg pita 47 NIS; no own site found, no Tabit/Ontopo, no closure news. Source: https://timeout.co.il/פיתות-הכי-טובות/"
+  },
+  "n12668721404": {
+   "r": "none",
+   "note": "Pita Basar chain exists (Wolt Hasharon / Tel HaShomer) but no source for a Nahalat Binyamin branch; no own site, no Tabit/Ontopo, no closure news"
+  },
+  "n6226661958": {
+   "r": "none",
+   "note": "Bnei Brak (outside TLV). Catalog ordering link order.plweb.online failed to load; no other source for Pita Hit at Mivtza Kadesh 55; no Tabit/Ontopo, no closure news"
   }
  }
 }
