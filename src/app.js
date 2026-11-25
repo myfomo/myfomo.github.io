@@ -1981,7 +1981,12 @@ function openAt(H,d,m){if(!H||!Object.keys(H).length)return null;const y=H[(d+6)
 /* ---- catalog extras ---- */
 function sxpCat(){return (locCat||[]).map(p=>{const x=locToItem(p);x.t=p.t||'';x.nb=p.nb||'';x.ch=p.ch||'';x.os=!!p.os;x.kd=!!p.kd;x.dg=!!p.dg;x.wc=!!p.wc;x.rs=!!p.rs;x.bk=p.bk||'';x._n=[p.n,...(p.al||[])];return x})}
 let sxpCatC=null;const sxpCatL=()=>sxpCatC||(sxpCatC=sxpCat());
-function sxpHoods(){const M=new Map();for(const x of sxpCatL())if(x.nb){const h=M.get(x.nb)||{n:x.nb,la:0,lo:0,c:0};h.la+=x.lat;h.lo+=x.lng;h.c++;M.set(x.nb,h)}return [...M.values()].filter(h=>h.c>=2).map(h=>({n:h.n,la:h.la/h.c,lo:h.lo/h.c,c:h.c})).sort((a,b)=>b.c-a.c)}
+const hoodKey=n=>fomoNorm(n).replace(/וו/g,'ו').replace(/יי/g,'י');
+const SXP_HOOD_ALIAS={'לב העיר':'לב תל-אביב','מרכז העיר':'לב תל-אביב','הנמל':'נמל תל-אביב','נמל תל אביב':'נמל תל-אביב','שוק הכרמל':'כרם התימנים','יפו העתיקה':'יפו העתיקה,נמל יפו','נמל יפו':'יפו העתיקה,נמל יפו','רמת אביב':'רמת-אביב','הצפון הישן':'הצפון הישן','הצפון החדש':'הצפון החדש'};
+/* neighbourhoods from the catalog; "הצפון הישן" also covers its parts ("הצפון הישן - החלק הצפוני") */
+function sxpHoods(){const M=new Map();const put=(n,x)=>{const h=M.get(n)||{n,set:new Set(),la:0,lo:0,c:0};h.set.add(x.nb);h.la+=x.lat;h.lo+=x.lng;h.c++;M.set(n,h)};
+  for(const x of sxpCatL())if(x.nb){const nm=x.nb.split(',')[0];put(nm,x);const pr=x.nb.split(' - ')[0];if(pr!==x.nb)put(pr,x)}
+  return [...M.values()].filter(h=>h.c>=2).map(h=>({n:h.n,set:h.set,la:h.la/h.c,lo:h.lo/h.c,c:h.c,k:hoodKey(h.n)})).sort((a,b)=>b.c-a.c)}
 let sxpHoodC=null;const sxpHoodL=()=>sxpHoodC||(sxpHoodC=sxpHoods());
 const sxpChefs=()=>[...new Set(sxpCatL().map(x=>x.ch).filter(Boolean))];
 const kmB=(a,b,c,d)=>{const R=6371,t=x=>x*Math.PI/180,dl=t(c-a),dg=t(d-b);const s=Math.sin(dl/2)**2+Math.cos(t(a))*Math.cos(t(c))*Math.sin(dg/2)**2;return 2*R*Math.asin(Math.sqrt(s))};
@@ -1997,7 +2002,9 @@ const SXP_TIME=[[/(?:^|\s)ב?בוקר(?=\s|$)/,9*60],[/(?:^|\s)(?:ב?צהריי�
 function sxpParse(v){const I={text:'',flags:new Set(),types:new Set(),day:null,min:null,cu:'',hood:'',chef:'',vibes:new Set(),soft:new Set(),parts:[]};
   let s=' '+String(v||'').replace(/[?!.,]/g,' ').replace(/\s+/g,' ')+' ';const cut=re=>{const m=s.match(re);if(!m)return null;s=s.replace(re,' ');return m};
   for(const c of sxpChefs()){const re=new RegExp('(?:^|\\s)(?:של\\s|השף\\s|שף\\s)?'+c.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?=\\s|$)');if(cut(re)){I.chef=c;break}}
-  {const H=sxpHoodL().map(h=>h.n).sort((a,b)=>b.length-a.length);for(const h of H){const re=new RegExp('(?:^|\\s)(?:ב|באזור\\s|בשכונת\\s|ליד\\s)?'+h.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?=\\s|$)');if(cut(re)){I.hood=h;break}}}
+  {const rx=k=>k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/ו/g,'ו{1,2}').replace(/י/g,'י{1,2}').replace(/ /g,'[\\s\\-]+');
+   const L=[...Object.entries(SXP_HOOD_ALIAS).map(([a,n])=>[a,n]),...sxpHoodL().map(h=>[h.n,h.n])].sort((a,b)=>b[0].length-a[0].length);
+   for(const [a,n] of L){const re=new RegExp('(?:^|\\s)(?:ב|באזור\\s|בשכונת\\s|ליד\\s)?'+rx(hoodKey(a))+'(?=\\s|$)');const t=' '+fomoNorm(s)+' ';if(re.test(t)){if(!sxpHoodL().some(h=>h.n===n))continue;I.hood=n;s=t.replace(re,' ');break}}}
   cut(/(?:^|\s)ב?תל[\s-]?אביב(?:[\s-]?יפו)?(?=\s|$)/);
   const today=new Date().getDay();
   if(cut(/(?:^|\s)(?:מוצ"ש|מוצ״ש|מוצאי שבת|במוצאי שבת)(?=\s|$)/)){I.day=6;I.min=21*60}
@@ -2038,7 +2045,7 @@ async function sxpRun(){const seq=++sxp.seq;const v=sxp.q.trim();await locLoadAl
     if(tl){ns=sxpNameScore(x._n,I.text);x._ns=ns;if(x.own&&ns<.6&&x._x&&fomoNorm(x._x).includes(fomoNorm(I.text)))ns=.7;if(ns<.6&&!(x.ch&&sxDice(x.ch,I.text)>.7))return -1}
     if(I.cu&&!d.has('cu')&&x.cuisine!==I.cu&&!(I.cu==='קפה ובראנץ\''&&x.t==='cafe'))return -1;
     if(I.chef&&x.ch!==I.chef)return -1;
-    if(hood&&!d.has('hood')){if(x.nb?x.nb!==hood.n:!(hasLL(x)&&kmB(x.lat,x.lng,hood.la,hood.lo)<.8))return -1}
+    if(hood&&!d.has('hood')){if(x.nb?!hood.set.has(x.nb):!(hasLL(x)&&kmB(x.lat,x.lng,hood.la,hood.lo)<.8))return -1}
     if(sxp.area&&!(hasLL(x)&&sxp.area.contains([x.lat,x.lng])))return -1;
     if(I.types.size&&!I.chef&&!d.has('type')&&![...I.types].some(t=>T(t).includes(x.t)))return -1;
     if(I.flags.has('kosher')&&!x.kosher)return -1;if(I.flags.has('vegan')&&!x.vegan)return -1;
@@ -2065,7 +2072,7 @@ async function sxpRun(){const seq=++sxp.seq;const v=sxp.q.trim();await locLoadAl
 function sxpWhy(x,I,P){const w=[];const dk=distKm(x);if(dk!=null)w.push(distTxt(dk).split(' · ')[0]);
   if(I&&I.day!=null&&I.min!=null&&x._unk===0)w.push(I.min<300?'פתוח אחרי חצות':'פתוח '+(I.day===new Date().getDay()?'':'ב'+['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'][I.day]+' ')+'ב־'+String(Math.floor(I.min/60)%24).padStart(2,'0')+':'+String(I.min%60).padStart(2,'0'));
   else{const o=x.hours?openState(x):null;if(o)w.push(o.open?'פתוח עכשיו'+(o.until?' עד '+o.until:''):o.from?'נפתח ב־'+o.from:'סגור עכשיו')}
-  if(x._unk)w.push('אין לנו שעות');if(x.ch)w.push('של השף '+x.ch);if(x.nb&&!(I&&I.hood))w.push(x.nb);
+  if(x._unk)w.push('אין לנו שעות');if(x.ch)w.push('של השף '+x.ch);if(x.nb&&!(I&&I.hood))w.push(x.nb.split(',')[0]);
   for(const k of (I?I.vibes:[]))if(x[SXP_VIBE[k][1]]||(x.tags||[]).includes(SXP_VIBE[k][0]))w.push(SXP_VIBE[k][2]);
   return w.slice(0,4).join(' · ')}
 function sxpLike(x,P){if(x.own)return x.rating?`⭐ ${x.rating.toFixed(1)} אצלכם`:x.status==='been'?'הייתם כאן':'ברשימת "רוצים ללכת"';const b=P.best[x.cuisine];if(b&&b.n)return `דומה ל־${b.n} שאהבתם`;if(P.mine.has(x.cuisine))return 'מתאים לטעם שלך';return ''}
@@ -2082,7 +2089,7 @@ function sxpSuggest(v){const n=fomoNorm(v);if(n.length<2)return '';const out=[];
   const C=[];for(const x of sxpCatL()){if(sxInList(x))continue;const s=sxpNameScore(x._n,v);if(s>=.78)C.push([s,x])}C.sort((a,b)=>b[0]-a[0]);
   for(const [,x] of C.slice(0,4))out.push(`<button type="button" class="sxp-s" data-sxp-q="${esc(x.name)}"><i>🍽️</i><span><b>${esc(x.name)}</b><small>${esc([x.cuisine,x.nb||x.address].filter(Boolean).join(' · '))}</small></span></button>`);
   for(const c of CUIS)if(fomoNorm(c).includes(n))out.push(`<button type="button" class="sxp-s" data-sxp-q="${esc(c)}"><i>🍴</i><span><b>${esc(c)}</b><small>סוג מטבח</small></span></button>`);
-  for(const h of sxpHoodL())if(fomoNorm(h.n).includes(n))out.push(`<button type="button" class="sxp-s" data-sxp-q="${esc(h.n)}"><i>📍</i><span><b>${esc(h.n)}</b><small>שכונה · ${h.c} מקומות</small></span></button>`);
+  for(const h of sxpHoodL())if(h.k.includes(hoodKey(v)))out.push(`<button type="button" class="sxp-s" data-sxp-q="${esc(h.n)}"><i>📍</i><span><b>${esc(h.n)}</b><small>שכונה · ${h.c} מקומות</small></span></button>`);
   for(const c of sxpChefs())if(fomoNorm(c).includes(n))out.push(`<button type="button" class="sxp-s" data-sxp-q="${esc(c)}"><i>👨‍🍳</i><span><b>${esc(c)}</b><small>שף · כל המסעדות שלו</small></span></button>`);
   return out.length?`<div class="sxp-list">${out.slice(0,9).join('')}</div><button type="button" class="sxp-go" data-sxp-go>חיפוש "${esc(v)}" ←</button>`:`<button type="button" class="sxp-go" data-sxp-go>חיפוש "${esc(v)}" ←</button>`}
 function sxpIntentHtml(I){const c=[I.text&&'"'+I.text+'"',I.cu,I.hood&&'📍 '+I.hood,I.chef&&'👨‍🍳 '+I.chef,I.day!=null&&I.min!=null&&I.min<300&&'🕘 אחרי חצות',I.day!=null&&!(I.min!=null&&I.min<300)&&('🕘 '+(I.day===new Date().getDay()?'היום':['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'][I.day])+(I.min!=null?' '+String(Math.floor(I.min/60)%24).padStart(2,'0')+':'+String(I.min%60).padStart(2,'0'):'')),
