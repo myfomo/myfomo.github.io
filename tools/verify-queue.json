@@ -2352,7 +2352,10 @@
   },
   "n746735332": {
    "r": "none",
-   "note": "Time Out 2022: moved from Frishman to Prima City hotel; nothing for Ashtori HaParchi 20"
+   "note": "Time Out 2022: moved from Frishman to Prima City hotel; nothing for Ashtori HaParchi 20",
+   "r2": "conflict",
+   "note2": "UNCHECKED booking pages (Tabit/Ontopo unreachable). Time Out 2022-11 (timeout.co.il/סושי-בזל-מתחדש/), Srugim 2022-11 and Kipa 2023-06 say Sushi Bar Basel moved from Frishman to Prima City hotel, Mapu 9 (Kipa says Mapu 4), kosher; nothing for Ashtori HaParchi 20 - catalog address likely outdated, exact current address unclear (Mapu 4 vs 9) so no addr_fix.",
+   "d2": "2026-11-25"
   },
   "n8868656017": {
    "r": "ok",
@@ -2412,7 +2415,10 @@
   },
   "n4377141791": {
    "r": "none",
-   "note": "Time Out 2014 Dizengoff 99; building became hotel; probably gone, no closure source"
+   "note": "Time Out 2014 Dizengoff 99; building became hotel; probably gone, no closure source",
+   "r2": "conflict",
+   "note2": "UNCHECKED booking pages. Maariv 2026-08 (maariv.co.il/food/foodnews/article-1354844): Dizengoff 99 building renovated into hotel/restaurant complex, ground floor now Haim Cohen breakfast venue; Piazza not mentioned. Only old Time Out 2014 for Piazza; likely gone but no explicit closure source.",
+   "d2": "2026-11-25"
   },
   "n1308752064": {
    "r": "ok",
@@ -2481,7 +2487,10 @@
   },
   "n12531988291": {
    "r": "none",
-   "note": "Only Time Out 2024-11 Florentin guide (Florentin 34)"
+   "note": "Only Time Out 2024-11 Florentin guide (Florentin 34)",
+   "r2": "single",
+   "note2": "UNCHECKED booking/own pages (no real site). Only Time Out 2024-11 Florentin businesses guide (https://timeout.co.il/עסקים-רחוב-פלורנטין/): Florentin 34, home-style food, Su-Th 11-20, Fr 11-15. No other source, no closure news.",
+   "d2": "2026-11-25"
   },
   "n5997818140": {
    "r": "none",
@@ -2640,7 +2649,10 @@
   },
   "n2862959862": {
    "r": "none",
-   "note": "Time Out 2024-06 opening only"
+   "note": "Time Out 2024-06 opening only",
+   "r2": "none",
+   "note2": "Re-check: only Time Out 2024-06 opening article (Florentin 19 cor. Vital, https://timeout.co.il/אבא-בר/); no own site, no Tabit/Ontopo page found, no 2025-26 source, no closure news",
+   "d2": "2026-11-25"
   },
   "n6317085385": {
    "r": "ok",
@@ -2674,7 +2686,10 @@
   },
   "n2468087912": {
    "r": "none",
-   "note": "Time Out 2018 Reines 2; chain site shows only Kfar Saba; likely gone, no closure source"
+   "note": "Time Out 2018 Reines 2; chain site shows only Kfar Saba; likely gone, no closure source",
+   "r2": "none",
+   "note2": "Re-check: chain site beer-garden.co.il/Tel-aviv/ now shows only Kfar Saba branch (Ontopo beergardenkfarsaba); Time Out 2022-10 review Reines 2 is old; likely gone but no closure source",
+   "d2": "2026-11-25"
   },
   "n10814392959": {
    "r": "ok",
@@ -2712,7 +2727,10 @@
   },
   "n3715337068": {
    "r": "none",
-   "note": "Time Out 2019/2022 only, Malkhei Israel 19"
+   "note": "Time Out 2019/2022 only, Malkhei Israel 19",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2019/2022 and raisin.digital (Malkhei Israel 19, last comment 2023-03) only; no own site, Tabit/Ontopo page or 2025-26 source found; no closure news",
+   "d2": "2026-11-25"
   },
   "n2079194771": {
    "r": "ok",
@@ -2724,7 +2742,10 @@
   },
   "n11398452853": {
    "r": "none",
-   "note": "Time Out 2017 King George 83 only"
+   "note": "Time Out 2017 King George 83 only",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2017 King George 83 only (Facebook DenimDrinksFirst listed, not opened); no Tabit/Ontopo, no recent source, no closure news",
+   "d2": "2026-11-25"
   },
   "n6005551786": {
    "r": "none",
@@ -2746,7 +2767,10 @@
   },
   "n7619688407": {
    "r": "none",
-   "note": "Time Out 2019 Gigi Bar Rothschild 22 only"
+   "note": "Time Out 2019 Gigi Bar Rothschild 22 only",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2019 Gigi Bar Rothschild 22 only; not in Time Out 2025-11 Nahalat Binyamin guide; no own site/Tabit/Ontopo found; no closure news",
+   "d2": "2026-11-25"
   },
   "n1851422057": {
    "r": "none",
@@ -2768,7 +2792,10 @@
   },
   "n10176062633": {
    "r": "none",
-   "note": "Time Out 2019/2020 only; own site shows spam"
+   "note": "Time Out 2019/2020 only; own site shows spam",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2020-02 (Jackie's bar & pizza, Rothschild, no number) only; own site spam earlier; no Tabit/Ontopo, no recent source, no closure news",
+   "d2": "2026-11-25"
   },
   "n6578840786": {
    "r": "none",
@@ -2830,7 +2857,10 @@
   },
   "n2479682972": {
    "r": "none",
-   "note": "Time Out 2017 only; own site failed"
+   "note": "Time Out 2017 only; own site failed",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2017 (Rothschild 39, patrickstelaviv.com) only; own site could not be fetched (robots unreachable); no Tabit/Ontopo or recent source; no closure news",
+   "d2": "2026-11-25"
   },
   "n6806590885": {
    "r": "none",
@@ -2856,11 +2886,17 @@
   },
   "n14322128694": {
    "r": "none",
-   "note": "Time Out 2023 opening only"
+   "note": "Time Out 2023 opening only",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2023-11 (Frishman 22 cor. Sirkin, wine bar) and atly listing (no date, instagram renee.tlv) only; no Tabit/Ontopo page found, no 2025-26 source, no closure news",
+   "d2": "2026-11-25"
   },
   "n777401732": {
    "r": "none",
-   "note": "Time Out 2017 only"
+   "note": "Time Out 2017 only",
+   "r2": "none",
+   "note2": "Re-check: Time Out 2017 Masaryk 14 only; no own site, Tabit/Ontopo or recent source found; no closure news",
+   "d2": "2026-11-25"
   },
   "n12114474901": {
    "r": "none",
@@ -2902,7 +2938,10 @@
   },
   "n8640203134": {
    "r": "none",
-   "note": "Time Out 2016/2018 only"
+   "note": "Time Out 2016/2018 only",
+   "r2": "conflict",
+   "note2": "Re-check: Ultra Hotel own site (ultra-hotels.com, Hayarkon 78, page modified 2025-10) lists only 'Upperitivo BAR', no 'Ultra Cocktail Bar' - possibly renamed/replaced; Time Out 2018 only for cocktail bar; Facebook not readable (robots); no Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n725462337": {
    "r": "conflict",
@@ -3115,7 +3154,10 @@
   },
   "n12116648772": {
    "r": "conflict",
-   "note": "Mirage Jazz Kissa Derech Yafo 9 (Time Out 2022); catalog address unusable"
+   "note": "Mirage Jazz Kissa Derech Yafo 9 (Time Out 2022); catalog address unusable",
+   "r2": "single",
+   "note2": "Jazz Kissa (Mirage Jazz Kissa) at Beit Romano/Teder, Derech Yafo 9: Time Out 2025-11 jazz festival article https://timeout.co.il/פסטיבל-גאז-תדר/ ; also Time Out 2025-02 Eyal Shani list (same outlet, not independent); telavivian/europejazz undated; catalog address '443' unusable, own site jazzkissa.telaviv invalid; no Ontopo/Tabit found",
+   "d2": "2026-11-25"
   },
   "n4964231828": {
    "r": "none",
@@ -3127,7 +3169,10 @@
   },
   "n12090740822": {
    "r": "single",
-   "note": "Time Out 2026-01 HaMashbir operating https://timeout.co.il/דדה-במשביר/"
+   "note": "Time Out 2026-01 HaMashbir operating https://timeout.co.il/דדה-במשביר/",
+   "r2": "ok",
+   "note2": "Ontopo page active with booking widget, Ha-Mashbir 2 (Mexican menu, Instagram hamashbir2); Time Out 2026-01 operating",
+   "d2": "2026-11-25"
   },
   "n6635157385": {
    "r": "none",
@@ -3135,11 +3180,17 @@
   },
   "n12114440012": {
    "r": "none",
-   "note": "Time Out 2021 only"
+   "note": "Time Out 2021 only",
+   "r2": "single",
+   "note2": "Public Wolt page 'Wine Bakerem' Nachalat Binyamin 29 listed with hours https://wolt.com/en/isr/tel-aviv/venue/wine-in-the-vineyard ; Tabit page found in search but failed to open (UNCHECKED); Time Out 2021 (moved there from Rambam)",
+   "d2": "2026-11-25"
   },
   "n12768176013": {
    "r": "none",
-   "note": "Time Out 2023-07 only (Mohaliver 43)"
+   "note": "Time Out 2023-07 only (Mohaliver 43)",
+   "r2": "ok",
+   "note2": "Ontopo page active with booking widget, 43 Mohaliver; Time Out 2023-07 prices (cocktails ~40-46, plates ~38-53); Tabit page failed to open",
+   "d2": "2026-11-25"
   },
   "n12078593856": {
    "r": "ok",
@@ -3166,7 +3217,10 @@
   },
   "n3346575490": {
    "r": "single",
-   "note": "Time Out 2026-04 Ramat Aviv Mall lists Arcaffe https://timeout.co.il/קולינריה-קניון-רמת-אביב/"
+   "note": "Time Out 2026-04 Ramat Aviv Mall lists Arcaffe https://timeout.co.il/קולינריה-קניון-רמת-אביב/",
+   "r2": "ok",
+   "note2": "Arcaffe own site branch list names Ramat Aviv Mall branch (Einstein 40) with hours; Time Out 2026-04 mall guide",
+   "d2": "2026-11-25"
   },
   "n2500253399": {
    "r": "closed",
@@ -3202,7 +3256,10 @@
   },
   "n5613184679": {
    "r": "none",
-   "note": "Time Out 2019 only"
+   "note": "Time Out 2019 only",
+   "r2": "none",
+   "note2": "Only Time Out 2019 / old Walla; no own site, Ontopo or Tabit found; no closure news",
+   "d2": "2026-11-25"
   },
   "n3237102688": {
    "r": "none",
@@ -3210,7 +3267,10 @@
   },
   "n2699677164": {
    "r": "none",
-   "note": "Time Out 2018 only"
+   "note": "Time Out 2018 only",
+   "r2": "none",
+   "note2": "Time Out EN 2018 only (Tchernichovsky 4); no own site, Ontopo or Tabit found; no closure news",
+   "d2": "2026-11-25"
   },
   "n13532671475": {
    "r": "ok",
@@ -3262,7 +3322,10 @@
   },
   "n12087594921": {
    "r": "ok",
-   "note": "Ontopo booking active Levinsky 33; Time Out 2024 prices; atly agrees hours"
+   "note": "Ontopo booking active Levinsky 33; Time Out 2024 prices; atly agrees hours",
+   "r2": "ok",
+   "note2": "Ontopo booking active Levinsky 33 (re-checked 2026-11, tables available; hours there differ from catalog, not stored); Time Out 2024 prices",
+   "d2": "2026-11-25"
   },
   "n711680730": {
    "r": "none",
@@ -3438,11 +3501,17 @@
   },
   "n9996994153": {
    "r": "single",
-   "note": "Time Out 2025-09 HOC at HaTavor 2 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/"
+   "note": "Time Out 2025-09 HOC at HaTavor 2 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/",
+   "r2": "single",
+   "note2": "Time Out 2025-09 (https://timeout.co.il/קפה-ספיישלטי-תל-אביב/) and Time Out 2025-10 (https://timeout.co.il/בתי-קפה-טובים-בתל-אביב/) both list HOC at HaTavor 2 + Trumpeldor 6 (Florentin branch closed), but same publisher, so not independent; no own site found (Facebook only); Maariv 2023, timeout.com 2020 too old; no Tabit/Ontopo page found",
+   "d2": "2026-11-25"
   },
   "n9879111022": {
    "r": "none",
-   "note": "Time Out 2014/2021 only"
+   "note": "Time Out 2014/2021 only",
+   "r2": "none",
+   "note2": "Only Time Out 2016/2020 on Java Ben Yehuda (https://timeout.co.il/topic/גאבה/); no own site, Tabit or Ontopo found; no 2025-2026 source, no closure news",
+   "d2": "2026-11-25"
   },
   "n10296522482": {
    "r": "none",
@@ -3466,7 +3535,10 @@
   },
   "n13541827938": {
    "r": "ok",
-   "note": "Time Out 2024 + Calcalist 2025-06 + i24 2026-08; Herbert Samuel 3"
+   "note": "Time Out 2024 + Calcalist 2025-06 + i24 2026-08; Herbert Samuel 3",
+   "r2": "ok",
+   "note2": "Kept earlier ok (Time Out 2024 + Calcalist 2025-06 + i24 2026-08); new: Gilles Pudlowski 2026-06 review (gives 'Herbert Samuel 36', likely typo; catalog/Calcalist say 3), booking via Ontopo; Ontopo branch page itself not opened",
+   "d2": "2026-11-25"
   },
   "n5614670182": {
    "r": "ok",
@@ -3474,7 +3546,10 @@
   },
   "n13532692938": {
    "r": "single",
-   "note": "Time Out 2026-01 Goodboy Bilinson 3 https://timeout.co.il/goodboy/"
+   "note": "Time Out 2026-01 Goodboy Bilinson 3 https://timeout.co.il/goodboy/",
+   "r2": "ok",
+   "note2": "Time Out 2026-01 (Bilinson 3, prices) + Gilles Pudlowski 2026-08 (Beilinson St 3); hours differ between the two so no oh; no own site/Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n1758265855": {
    "r": "ok",
@@ -3490,11 +3565,17 @@
   },
   "n11681494372": {
    "r": "single",
-   "note": "Time Out Rothschild map 2025-04 Rothschild corner Mazeh https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/"
+   "note": "Time Out Rothschild map 2025-04 Rothschild corner Mazeh https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/",
+   "r2": "single",
+   "note2": "Only Time Out Rothschild map 2025-04 (Rothschild corner Mazeh) https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/; other sources are old (Gilles 2022, Shlomo HaMelekh) or other branch (eatintlv Yehudit 21); no own site/Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n4922280517": {
    "r": "none",
-   "note": "Time Out 2017 / 2023 only"
+   "note": "Time Out 2017 / 2023 only",
+   "r2": "none",
+   "note2": "Only Time Out 2014/2017/2023 (King George 19); no own site, Tabit or Ontopo found; no 2025-2026 source, no closure news",
+   "d2": "2026-11-25"
   },
   "n9507908019": {
    "r": "none",
@@ -3522,7 +3603,10 @@
   },
   "n6771850686": {
    "r": "none",
-   "note": "Time Out 2015 only"
+   "note": "Time Out 2015 only",
+   "r2": "none",
+   "note2": "Only Time Out 2015; Facebook page in catalog not usable; no Tabit/Ontopo, no 2025-2026 source, no closure news",
+   "d2": "2026-11-25"
   },
   "n13516554792": {
    "r": "none",
@@ -3546,7 +3630,10 @@
   },
   "n12723654096": {
    "r": "none",
-   "note": "Time Out 2019/2022 Kfar Giladi 48 only"
+   "note": "Time Out 2019/2022 Kfar Giladi 48 only",
+   "r2": "none",
+   "note2": "Time Out 2022 (Kfar Giladi 48), thetelavivi 2022/2023 only; poc.cafe is an unrelated Jakarta cafe; catalog w is invalid; no Tabit/Ontopo, no recent source",
+   "d2": "2026-11-25"
   },
   "n11428462558": {
    "r": "none",
@@ -3554,7 +3641,10 @@
   },
   "n13227246101": {
    "r": "ok",
-   "note": "Own site live, Tchernichovsky 21; Time Out 2024 prices"
+   "note": "Own site live, Tchernichovsky 21; Time Out 2024 prices",
+   "r2": "ok",
+   "note2": "Own site live 2026-11: Tchernichovsky 21, phone 03-6799788, Tabit/Wolt ordering links; Time Out 2024 prices",
+   "d2": "2026-11-25"
   },
   "n2217192909": {
    "r": "none",

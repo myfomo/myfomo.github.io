@@ -1076,7 +1076,8 @@
    "src": [
     "https://www.calcalist.co.il/style/article/s1jgfrrqlx",
     "https://www.i24news.co.il/news/food/artc-9aa24a8e",
-    "https://timeout.co.il/צאקולי/"
+    "https://timeout.co.il/צאקולי/",
+    "https://www.gillespudlowski.com/426940/restaurants/tel-aviv-chacoli-lespagne-marine-a-tel-aviv"
    ]
   },
   "n5614670182": {
@@ -1789,6 +1790,52 @@
     "https://www.bluefox-telaviv.com/",
     "https://timeout.co.il/the-blue-fox/",
     "https://timeout.co.il/עסקים-רחוב-פלורנטין/"
+   ]
+  },
+  "n12090740822": {
+   "n": "המשביר",
+   "ok": "2026-11",
+   "p": "+972 52 460 7892",
+   "bk": "https://ontopo.com/en/il/page/21058464",
+   "src": [
+    "https://ontopo.com/en/il/page/21058464",
+    "https://timeout.co.il/דדה-במשביר/"
+   ]
+  },
+  "n12768176013": {
+   "n": "ליבר",
+   "ok": "2026-11",
+   "nm": "Livere - ליבר",
+   "cu": "בר",
+   "pr": 2,
+   "p": "+972 54 888 4875",
+   "bk": "https://ontopo.com/en/il/page/32089327",
+   "src": [
+    "https://ontopo.com/en/il/page/32089327",
+    "https://timeout.co.il/ליבר-בר/"
+   ]
+  },
+  "n3346575490": {
+   "n": "Arcafe",
+   "ok": "2026-11",
+   "nm": "ארקפה קניון רמת אביב",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 07:00-23:00; Fr 07:00-16:00; Sa 21:00-23:00",
+   "p": "+972 58 600 0261",
+   "w": "https://www.arcaffe.co.il/branches",
+   "src": [
+    "https://www.arcaffe.co.il/branches",
+    "https://timeout.co.il/קולינריה-קניון-רמת-אביב/"
+   ]
+  },
+  "n13532692938": {
+   "n": "Goodboy",
+   "ok": "2026-08",
+   "cu": "קפה ובראנץ'",
+   "pr": 1,
+   "src": [
+    "https://timeout.co.il/goodboy/",
+    "https://www.gillespudlowski.com/?p=433322"
    ]
   }
  }
