@@ -3672,11 +3672,17 @@
   },
   "n12064670866": {
    "r": "none",
-   "note": "Time Out 2021 only (Yona HaNavi 43)"
+   "note": "Time Out 2021 only (Yona HaNavi 43)",
+   "r2": "none",
+   "note2": "Only Time Out 2021-05 (Yona HaNavi 43) https://timeout.co.il/ppost/נאבי-יונה/ ; not in Time Out specialty-coffee 2025 list; HappyCow page unreadable; no own site/Tabit/Ontopo; no closure news found",
+   "d2": "2026-11-25"
   },
   "n6005386185": {
    "r": "none",
-   "note": "Time Out 2018/2019 only"
+   "note": "Time Out 2018/2019 only",
+   "r2": "none",
+   "note2": "Only Time Out 2018/2019 (Geula 26) https://www.timeout.com/israel/restaurants/papua-cafe ; FB/business.site not checkable; no Tabit/Ontopo; no 2025-26 source; no closure news found",
+   "d2": "2026-11-25"
   },
   "n4922283687": {
    "r": "none",
@@ -3696,7 +3702,10 @@
   },
   "n8543934096": {
    "r": "none",
-   "note": "Rebar branch list blocked; Sokolov unverified"
+   "note": "Rebar branch list blocked; Sokolov unverified",
+   "r2": "single",
+   "note2": "Coords are Ramat HaSharon. Wolt page 'rebar | Ramat HaSharon' at Sokolov 71, Ramat HaSharon, active listing https://wolt.com/he/isr/tel-aviv/restaurant/rebar-ramat-hasharon ; rebar.co.il blocked (own site UNCHECKED); no Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n12133763256": {
    "r": "closed",
@@ -3760,7 +3769,10 @@
   },
   "n4587267164": {
    "r": "none",
-   "note": "Maariv 2016 / Time Out 2017 only"
+   "note": "Maariv 2016 / Time Out 2017 only",
+   "r2": "none",
+   "note2": "Only Time Out 2016-05/2017 and Maariv 2016 (Kaplan 4); no own site/Tabit/Ontopo; no 2025-26 source; no closure news found",
+   "d2": "2026-11-25"
   },
   "n12110200617": {
    "r": "none",
@@ -3772,7 +3784,10 @@
   },
   "n6005408785": {
    "r": "single",
-   "note": "Time Out 2025-09 specialty coffee: cafe at Ahad Ha'am 51 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/"
+   "note": "Time Out 2025-09 specialty coffee: cafe at Ahad Ha'am 51 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/",
+   "r2": "single",
+   "note2": "Time Out 2025-09 (updated 2025-10) specialty coffee list: 'קפה אחד העם' at Ahad Ha'am 51 https://timeout.co.il/קפה-ספיישלטי-תל-אביב/ ; Time Out 2016 calls it 'קפה 51' (opened in place of Mezze), Time Out 2024 topic pages on Cafe 51 operators - same outlet, not independent; no own site/Tabit/Ontopo",
+   "d2": "2026-11-25"
   },
   "n1688194306": {
    "r": "none",
@@ -3804,11 +3819,17 @@
   },
   "n10296516877": {
    "r": "none",
-   "note": "Time Out 2017 only; Noga branch maybe replaced"
+   "note": "Time Out 2017 only; Noga branch maybe replaced",
+   "r2": "ok",
+   "note2": "Own site urbanbakery.co live: Nitzana 14, Noga Square (Mitcham Noga) with hours/phone; Time Out 2017 Noga branch; atly matches; no closure news",
+   "d2": "2026-11-25"
   },
   "n5479953359": {
    "r": "none",
-   "note": "Only aggregators; own site unreachable"
+   "note": "Only aggregators; own site unreachable",
+   "r2": "single",
+   "note2": "Time Out 2025-09 (upd 2025-10) lists Yochanan HaSandlar 23 branch: https://timeout.co.il/קפה-ספיישלטי-תל-אביב/ ; Isrotel 2025 guide names WayCup without address; thetelavivi 2024; no own site (Facebook only), no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-25"
   },
   "n4737517953": {
    "r": "ok",
@@ -3816,7 +3837,10 @@
   },
   "n6970440385": {
    "r": "none",
-   "note": "Only atly; own site unreachable"
+   "note": "Only atly; own site unreachable",
+   "r2": "single",
+   "note2": "Time Out 2025-09 (upd 2025-10) lists Mikve Israel 17 branch: https://timeout.co.il/קפה-ספיישלטי-תל-אביב/ ; Isrotel 2025 guide names WayCup without address; thetelavivi 2024; no own site (Facebook only), no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-25"
   },
   "n2558517112": {
    "r": "none",
@@ -3940,7 +3964,10 @@
   },
   "n11088954278": {
    "r": "none",
-   "note": "Time Out 2024-08 mention only"
+   "note": "Time Out 2024-08 mention only",
+   "r2": "single",
+   "note2": "Time Out 2026-04 bakeries guide lists Beit Lechem, Weizmann 20 cnr Arlozorov: https://timeout.co.il/%D7%9E%D7%90%D7%A4%D7%99%D7%95%D7%AA-%D7%9E%D7%95%D7%9E%D7%9C%D7%A6%D7%95%D7%AA-%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/ ; Time Out 2024-08 mention; own site betlehem.tlv unreachable; no closure news",
+   "d2": "2026-11-25"
   },
   "w334755929": {
    "r": "none",
@@ -3952,7 +3979,10 @@
   },
   "n12110687259": {
    "r": "ok",
-   "note": "Time Out 2025-03 cafe 3426 opened + JPost 2025-02 + Time Out 2026-03 venue active"
+   "note": "Time Out 2025-03 cafe 3426 opened + JPost 2025-02 + Time Out 2026-03 venue active",
+   "r2": "ok",
+   "note2": "Time Out 2025-03-17 cafe 3426 opened (Hatehiya cnr Herzl, prices) + Time Out 2025-03-24 (gives Hatehiya 27 cnr Herzl, catalog says 7 - check) + JPost 2025-02 + Time Out Beit Radical topic active through 2026-10; own site URL invalid",
+   "d2": "2026-11-25"
   },
   "w104699084": {
    "r": "ok",
@@ -3972,11 +4002,17 @@
   },
   "n2079185866": {
    "r": "none",
-   "note": "Time Out 2017 only"
+   "note": "Time Out 2017 only",
+   "r2": "none",
+   "note2": "Only Time Out 2017 (48 Mesilat Yesharim) and undated eatintlv listing; not in Time Out 2025 cafe lists; no own site/Tabit/Ontopo; no closure news",
+   "d2": "2026-11-25"
   },
   "n10949032625": {
    "r": "conflict",
-   "note": "Time Out 2026-04: cafe building hit by missile, closed for renovation >1 year (temporary), runs a coffee cart; branch unclear"
+   "note": "Time Out 2026-04: cafe building hit by missile, closed for renovation >1 year (temporary), runs a coffee cart; branch unclear",
+   "r2": "conflict",
+   "note2": "Time Out 2026-04-19 https://timeout.co.il/גרציאני-עגלת-קפה/ : missile damaged the cafe building in central TLV, closed for renovation est. >1 year (temporary), temporary coffee cart in Gan Kiryat Sefer; Time Out 2021 listing gives two branches (Yehuda HaLevi 123, King George 105) and does not say which was hit. Catalog w invalid; only Instagram @caffe_grasyani. Temporarily closed / branch unclear - no change.",
+   "d2": "2026-11-25"
   },
   "n12568199183": {
    "r": "closed",
@@ -4012,7 +4048,10 @@
   },
   "n3725300035": {
    "r": "single",
-   "note": "Time Out 2026-06: reopened after 30-day police closure https://timeout.co.il/קפה-התחתית-פתוח/"
+   "note": "Time Out 2026-06: reopened after 30-day police closure https://timeout.co.il/קפה-התחתית-פתוח/",
+   "r2": "ok",
+   "note2": "Walla 2026-06-02 (temporary administrative closure of the operating cafe) + Time Out 2026-06-09 reopened after closure order; two independent 2026 sources; sources do not state the street address (single well-known Lincoln location).",
+   "d2": "2026-11-25"
   },
   "n1717768353": {
    "r": "none",
@@ -4060,7 +4099,10 @@
   },
   "n3559225999": {
    "r": "none",
-   "note": "Kremenetski branch only in Time Out 2015; recent sources (Time Out 2025-01) mention only Marmorek 4 branch; Tabit page is Einstein branch; no closure news for Kremenetski"
+   "note": "Kremenetski branch only in Time Out 2015; recent sources (Time Out 2025-01) mention only Marmorek 4 branch; Tabit page is Einstein branch; no closure news for Kremenetski",
+   "r2": "none",
+   "note2": "Kremenetski branch only in Time Out 2015; recent sources (Time Out 2025-01) mention only Marmorek 4 branch; Tabit page is Einstein branch; no official site found; no closure news for Kremenetski.",
+   "d2": "2026-11-25"
   },
   "n11169616173": {
    "r": "none",
@@ -4072,27 +4114,45 @@
   },
   "n769268166": {
    "r": "none",
-   "note": "Rabbenu Tam (street only). Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure. No source names a Landwer on Rabbenu Tam."
+   "note": "Rabbenu Tam (street only). Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure. No source names a Landwer on Rabbenu Tam.",
+   "r2": "none",
+   "note2": "Rabbenu Tam (street only). Official landwercafe.co.il branch list opened 2026-11: TLV branches only Azrieli, Ayalon Mall, Ramat Aviv Mall, Sarona - this branch not listed; not on Ontopo/Tabit/Wolt TLV brand page (earlier run); no closure news; only stale directories. Absence alone not proof of closure.",
+   "d2": "2026-11-25"
   },
   "n1500191403": {
    "r": "none",
-   "note": "Shuster Center, Abba Ahimeir 19. Catalog w (branch/שוסטר) now just renders the general branch list. Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure. Note: Shuster Center now has HaSmata (Abba Ahimeir 17, Time Out 2025-10) - no source says it replaced Landwer."
+   "note": "Shuster Center, Abba Ahimeir 19. Catalog w (branch/שוסטר) now just renders the general branch list. Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure. Note: Shuster Center now has HaSmata (Abba Ahimeir 17, Time Out 2025-10) - no source says it replaced Landwer.",
+   "r2": "none",
+   "note2": "Shuster Center, Abba Ahimeir 19. Catalog w (branch/שוסטר) opened 2026-11: renders general list only (Azrieli, Ayalon Mall, Ramat Aviv Mall, Sarona) - no Shuster branch; not on Ontopo/Tabit/Wolt (earlier run); no closure news; only stale directories. Shuster Center now has HaSmata (Abba Ahimeir 17, Time Out 2025-10) - no source says it replaced Landwer. Absence alone not proof of closure.",
+   "d2": "2026-11-25"
   },
   "n2322594231": {
    "r": "none",
-   "note": "Rothschild 45. Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure."
+   "note": "Rothschild 45. Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure.",
+   "r2": "conflict",
+   "note2": "Rothschild 45. Time Out Rothschild guide 2025-04 lists Landwer at Rothschild 45 as operating (https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/), but official landwercafe.co.il branch list (fetched 2026-11; TLV only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) omits it - likely closed but no closure news found; no Ontopo/Tabit page.",
+   "d2": "2026-11-25"
   },
   "n4065946136": {
    "r": "none",
-   "note": "Sderot Tarsat (Habima Square branch, Time Out 2023-01 mention). Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure."
+   "note": "Sderot Tarsat (Habima Square branch, Time Out 2023-01 mention). Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure.",
+   "r2": "none",
+   "note2": "Sderot Tarsat (Habima branch, Time Out 2023-01 mention only). Official landwercafe.co.il branch list fetched 2026-11 does not include it; no Ontopo/Tabit page; no closure news; only stale directories.",
+   "d2": "2026-11-25"
   },
   "n6469411087": {
    "r": "none",
-   "note": "Gesher HaKirya. Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure."
+   "note": "Gesher HaKirya. Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure.",
+   "r2": "ok",
+   "note2": "Coordinates are at Azrieli Mall (Gesher HaKirya bridge end). Official landwercafe.co.il branch page (fetched 2026-11) lists 'Landwer Azrieli Tel Aviv', Menachem Begin 132, kosher, hours, phone; no reservations (walk-in). Catalog address is only the bridge name - addr_fix to mall address (shared address, needs user OK).",
+   "d2": "2026-11-25"
   },
   "n6515900215": {
    "r": "none",
-   "note": "'Derech Tel Aviv' (street only, city unclear - could be outside TLV). Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure."
+   "note": "'Derech Tel Aviv' (street only, city unclear - could be outside TLV). Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure.",
+   "r2": "none",
+   "note2": "'Derech Tel Aviv' at Glilot (coords ~Cinema City Glilot, Ramat HaSharon area). Official landwercafe.co.il branch list fetched 2026-11 has no Glilot/Ramat HaSharon branch (Herzliya branch marked closed); no Ontopo/Tabit; no closure news.",
+   "d2": "2026-11-25"
   },
   "n9245806417": {
    "r": "ok",
@@ -4100,11 +4160,17 @@
   },
   "n9312382295": {
    "r": "none",
-   "note": "Antigonus (street only). Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure."
+   "note": "Antigonus (street only). Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure.",
+   "r2": "none",
+   "note2": "Antigonus (street only). Not on official landwercafe.co.il branch list fetched 2026-11; no Ontopo/Tabit page; no closure news; only stale directories.",
+   "d2": "2026-11-25"
   },
   "n11076491808": {
    "r": "none",
-   "note": "Dr Walter Moses 12. Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure."
+   "note": "Dr Walter Moses 12. Official landwercafe.co.il branch list (2026-11; TLV branches only Azrieli, Sarona, Ramat Aviv Mall, Ayalon Mall) does not include this branch; not on Ontopo/Tabit/Wolt TLV brand page; no closure news found (Time Out/ice/mako searches); only stale directories (d.co.il, enjoyingisrael) list it - absence alone not proof of closure.",
+   "r2": "none",
+   "note2": "Dr Walter Moses 12. Not on official landwercafe.co.il branch list fetched 2026-11 (Sarona branch is Aranya Osvaldo 13, ~850 m away - different place); no Ontopo/Tabit; no closure news.",
+   "d2": "2026-11-25"
   },
   "n10279238209": {
    "r": "ok",
@@ -4116,7 +4182,10 @@
   },
   "n12825550802": {
    "r": "none",
-   "note": "Only Time Out 2021-04 article (Montefiore 41, IG monti41tlv); Instagram not readable; no Tabit/Ontopo; no closure news. Mako/Kipa 2026-01 show new Fiori 41 hotel at Montefiore 41 without mentioning Monti - may be gone, unconfirmed"
+   "note": "Only Time Out 2021-04 article (Montefiore 41, IG monti41tlv); Instagram not readable; no Tabit/Ontopo; no closure news. Mako/Kipa 2026-01 show new Fiori 41 hotel at Montefiore 41 without mentioning Monti - may be gone, unconfirmed",
+   "r2": "none",
+   "note2": "Only Time Out 2021-04 article (Monti, across from Montefiore Hotel); Instagram monti41tlv blocked (robots); Time Out Montefiore topic 2025-26 has no mention; no Tabit/Ontopo; no closure news. Fiori 41 hotel now at Montefiore 41 - may be gone, unconfirmed.",
+   "d2": "2026-11-25"
   },
   "n1450724665": {
    "r": "none",
@@ -4152,15 +4221,24 @@
   },
   "n2488604312": {
    "r": "single",
-   "note": "Time Out 2024-10 article on cafe 'HaSafsal' in Dubnov Garden kiosk (Dubnov 26), opened ~Sep 2024; no 2025-26 source; FB not fetchable; no Tabit/Ontopo; no closure news. https://timeout.co.il/הספסל-דובנוב/"
+   "note": "Time Out 2024-10 article on cafe 'HaSafsal' in Dubnov Garden kiosk (Dubnov 26), opened ~Sep 2024; no 2025-26 source; FB not fetchable; no Tabit/Ontopo; no closure news. https://timeout.co.il/הספסל-דובנוב/",
+   "r2": "single",
+   "note2": "Time Out 'My City' 2026-01-19 lists Cafe Safsal at Dubnov Garden entrance, Dubnov 24 (https://timeout.co.il/העיר-שלי-יוסי-ירום/); earlier Time Out 2024-10 opening article (https://timeout.co.il/הספסל-דובנוב/); FB blocked (robots); no Tabit/Ontopo; no closure news. Only one 2025-26 source.",
+   "d2": "2026-11-25"
   },
   "n1201454394": {
    "r": "none",
-   "note": "No source found for 'Seshek' at Einstein Square (web, Time Out, Tabit/Ontopo, closure search all empty)."
+   "note": "No source found for 'Seshek' at Einstein Square (web, Time Out, Tabit/Ontopo, closure search all empty).",
+   "r2": "none",
+   "note2": "No source found for 'Seshek' at Einstein Square (web, Time Out, Tabit/Ontopo, closure searches empty).",
+   "d2": "2026-11-25"
   },
   "n13662003681": {
    "r": "none",
-   "note": "Only directories (atly, isitfunky: natural wine bar, Yehuda Halevi 44/Nahalat Binyamin 81, conflicting hours); not in Time Out/JPost/ynet wine-bar guides 2024-26; Instagram not fetchable; no Tabit/Ontopo; no closure news."
+   "note": "Only directories (atly, isitfunky: natural wine bar, Yehuda Halevi 44/Nahalat Binyamin 81, conflicting hours); not in Time Out/JPost/ynet wine-bar guides 2024-26; Instagram not fetchable; no Tabit/Ontopo; no closure news.",
+   "r2": "none",
+   "note2": "Only directories (atly, isitfunky: natural wine bar, conflicting addresses Yehuda Halevi 44 / Nahalat Binyamin 81); Instagram blocked (robots); Time Out 'Petit' article is a different bar (HaRakevet 18); no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-25"
   },
   "n2301194113": {
    "r": "none",

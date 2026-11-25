@@ -1296,6 +1296,7 @@
    "pr": 1,
    "src": [
     "https://timeout.co.il/3426-קפה-בית-רדיקל/",
+    "https://timeout.co.il/3-בתי-קפה-מומלצים-תרבות/",
     "https://www.jpost.com/food-recipes/article-842007"
    ]
   },
@@ -1836,6 +1837,41 @@
    "src": [
     "https://timeout.co.il/goodboy/",
     "https://www.gillespudlowski.com/?p=433322"
+   ]
+  },
+  "n10296516877": {
+   "n": "The Urban Bakery",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 07:00-19:00; Fr-Sa 07:00-16:00",
+   "p": "055-7756454",
+   "w": "https://urbanbakery.co/",
+   "src": [
+    "https://urbanbakery.co/",
+    "https://timeout.co.il/אורבן-בייקרי-סניף-חדש-ביפו/"
+   ]
+  },
+  "n3725300035": {
+   "n": "התחתית",
+   "ok": "2026-06",
+   "cu": "קפה ובראנץ'",
+   "src": [
+    "https://www.walla.co.il/news/law/3842777",
+    "https://timeout.co.il/קפה-התחתית-פתוח/"
+   ]
+  },
+  "n6469411087": {
+   "n": "לנדוור",
+   "ok": "2026-11",
+   "nm": "לנדוור עזריאלי תל אביב",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 08:30-22:00; Fr 08:00-13:30; Sa (sunset+01:00)-23:00",
+   "p": "+972 50 857 2530",
+   "w": "https://www.landwercafe.co.il/branch/%d7%a2%d7%96%d7%a8%d7%99%d7%90%d7%9c%d7%99-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/",
+   "k": 1,
+   "src": [
+    "https://www.landwercafe.co.il/branch/%d7%a2%d7%96%d7%a8%d7%99%d7%90%d7%9c%d7%99-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/",
+    "https://www.landwercafe.co.il/%d7%9e%d7%a1%d7%a2%d7%93%d7%95%d7%aa/"
    ]
   }
  }
