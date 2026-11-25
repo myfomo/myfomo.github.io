@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 492,
+ "site_checked": 499,
  "site_jsonld": 56,
- "site_match": 16,
- "site_reject": 40,
+ "site_match": 15,
+ "site_reject": 41,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -19,13 +19,6 @@
    "field": "phone",
    "osm": "035175379",
    "site": "035175179"
-  },
-  {
-   "id": "n904508667",
-   "n": "בני הדייג",
-   "field": "phone",
-   "osm": "03-5440518",
-   "site": "0737585695"
   },
   {
    "id": "n950284108",
@@ -154,13 +147,6 @@
    "site": "Su,Mo,Tu,We,Th 12:00-20:00; Fr 11:00-15:00"
   },
   {
-   "id": "n6041389430",
-   "n": "גומבה",
-   "field": "phone",
-   "osm": "+972 3 973 9954‬",
-   "site": "037743330"
-  },
-  {
    "id": "n6041389431",
    "n": "שניצל קומפני",
    "field": "phone",
@@ -217,25 +203,11 @@
    "site": "035225005"
   },
   {
-   "id": "n9429290715",
-   "n": "המוסד לסנדוויצ'ים מיוחדים",
-   "field": "phone",
-   "osm": "+97235629896",
-   "site": "036038025"
-  },
-  {
    "id": "n10296516877",
    "n": "The Urban Bakery",
    "field": "hours",
    "osm": "Su-Th 07:00-19:00; Fr-Sa 07:00-16:00",
    "site": "Su,Mo,Tu,We,Th 07:00-19:00; Fr,Sa 07:00-16:00"
-  },
-  {
-   "id": "n10969247136",
-   "n": "הלבנטיני",
-   "field": "phone",
-   "osm": "+972 36324444",
-   "site": "0778048601"
   },
   {
    "id": "n11534655277",
@@ -250,13 +222,6 @@
    "field": "phone",
    "osm": "+972 54 223 0223",
    "site": "0537933664"
-  },
-  {
-   "id": "n12588113205",
-   "n": "קנסאי",
-   "field": "hours",
-   "osm": "Su-Th 11:00-23:00; Sa (sunset+01:00)-23:00",
-   "site": "Su,Mo,Tu,We,Th 11:00-23:00"
   },
   {
    "id": "n13532671475",
@@ -337,6 +302,12 @@
    "id": "n4922283576",
    "n": "Xo Ho",
    "w": "http://www.cafexoho.com",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n5700184286",
+   "n": "Tal Bagels",
+   "w": "https://tal-bagels.co.il",
    "why": "branch/name not confirmed"
   },
   {
@@ -508,15 +479,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 98,
- "phone_multi_skipped": 27,
+ "phone_confirmed": 85,
+ "phone_multi_skipped": 20,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "388 (29%)",
-  "phone": "419 (32%)",
-  "website": "524 (40%)",
-  "cuisine": "970 (74%)",
-  "extra_names": "759 (58%)"
+  "hours": "393 (30%)",
+  "phone": "427 (32%)",
+  "website": "531 (40%)",
+  "cuisine": "971 (74%)",
+  "extra_names": "760 (58%)"
  },
- "conflicts_n": 36
+ "conflicts_n": 31
 }
