@@ -1,15 +1,15 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 499,
- "site_jsonld": 56,
- "site_match": 15,
+ "site_checked": 501,
+ "site_jsonld": 58,
+ "site_match": 17,
  "site_reject": 41,
  "phone_site": 0,
- "hours_site": 0,
- "addr_site": 0,
+ "hours_site": 2,
+ "addr_site": 1,
  "cuisine_site": 2,
- "names_site": 0,
+ "names_site": 1,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -19,6 +19,13 @@
    "field": "phone",
    "osm": "035175379",
    "site": "035175179"
+  },
+  {
+   "id": "n904508667",
+   "n": "בני הדייג",
+   "field": "phone",
+   "osm": "03-5440518",
+   "site": "0737585695"
   },
   {
    "id": "n950284108",
@@ -208,6 +215,13 @@
    "field": "hours",
    "osm": "Su-Th 07:00-19:00; Fr-Sa 07:00-16:00",
    "site": "Su,Mo,Tu,We,Th 07:00-19:00; Fr,Sa 07:00-16:00"
+  },
+  {
+   "id": "n10969247136",
+   "n": "הלבנטיני",
+   "field": "phone",
+   "osm": "+972 36324444",
+   "site": "0778048601"
   },
   {
    "id": "n11534655277",
@@ -479,15 +493,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 85,
- "phone_multi_skipped": 20,
+ "phone_confirmed": 95,
+ "phone_multi_skipped": 25,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "393 (30%)",
+  "hours": "395 (30%)",
   "phone": "427 (32%)",
-  "website": "531 (40%)",
-  "cuisine": "971 (74%)",
+  "website": "533 (40%)",
+  "cuisine": "972 (74%)",
   "extra_names": "760 (58%)"
  },
- "conflicts_n": 31
+ "conflicts_n": 33
 }
