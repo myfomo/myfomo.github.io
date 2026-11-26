@@ -1229,6 +1229,166 @@
   "n13535415313": {
    "r": "none",
    "note": "No source found for 'The Message Café' in Jerusalem (catalog address only '14'); 2026 news about a Jews-for-Jesus-run cafe in Nahlaot names it Cafe Basimta, not this place"
+  },
+  "n11910527193": {
+   "r": "none",
+   "note": "No web, Tabit or Ontopo presence found for 'The Pizza Experience' in Jerusalem or on Daniel Yanovsky St, and no closure news."
+  },
+  "n14365785705": {
+   "r": "single",
+   "note": "Only a live Wolt listing found: 'Tipsy Cafe (Caffinated Mornings)', Keren HaYesod 38, with a brunch/cafe menu (~59 NIS dishes, cocktails 49). Not a listed source type. Wolt says Jerusalem Rabbinate kosher, but that is not an allowed kosher source. No own site, Tabit, Ontopo or news found."
+  },
+  "n5896809439": {
+   "r": "none",
+   "note": "Nothing found for a 'Toasty' on Rabaa al-Adawiya St, Jerusalem (English and Arabic searches)."
+  },
+  "n13535438303": {
+   "r": "none",
+   "note": "No source found for a 'Tokyo' restaurant on HaKaraim St (Jewish Quarter). Hebrew and English searches returned nothing relevant."
+  },
+  "n9362751139": {
+   "r": "none",
+   "note": "Generic name. Cotton Market guides mention no identifiable 'Traditional coffee' cafe, and nothing reliable was found."
+  },
+  "n1366483913": {
+   "r": "none",
+   "note": "No 'Turkish Doner Shop' found on Omar Ibn al-Aas St. The only Turkish shawarma found (Istanbul Samer, 5 Azzahra St) is a different place and address."
+  },
+  "n562625361": {
+   "r": "single",
+   "note": "Own site tzidkiyahu.co.il fetch blocked (permission not granted). Maariv 2025-03 reviews it as operating (skewer meals 98-120 NIS). Kipa 2023 and d.co.il list it at Yad Harutzim 21, Talpiot. The catalog says HaTnufa, a nearby cross street in the same Talpiot block, so the branch match is my judgement. No Tabit/Ontopo page and no closure news found."
+  },
+  "n13436566655": {
+   "r": "none",
+   "note": "Official waffle-bar.co.il fetch blocked (permission not granted). Undated listings (enjoyingisrael, gokosher: Paran 7, Ramat Eshkol, Mehadrin Harav Rubin, 02-5815434) match the address, but no dated 2025-2026 source, Tabit/Ontopo page or closure news found. Retry via the official branch list."
+  },
+  "n12816126409": {
+   "r": "none",
+   "note": "Searches (EN/HE, tabit/ontopo, opening/closure) found no Wino bar on Aza St; only unrelated Vino bar at Agripas 111 (itraveljerusalem) and a 2014 Maariv wine-bar list without venue text."
+  },
+  "n9667880579": {
+   "r": "none",
+   "note": "Searches only return cafes in Yerevan, Armenia; nothing found for a Yerevan cafe on St Francis St, Jerusalem."
+  },
+  "n1370029068": {
+   "r": "none",
+   "note": "No reliable source found for Zion HaGadol on Yad Harutzim (EN/HE searches)."
+  },
+  "n4450000357": {
+   "r": "conflict",
+   "note": "Time Out Israel (2023-03) lists Zuni at 15 Yoel Moshe Salomon St, 24/7, price 2/4, tel 02-6257776, site zuni.co.il; catalog address is Aryeh Leib, which doesn't match. Own site fetch was blocked (permission not granted); no 2025-2026 source or Tabit/Ontopo page found; no closure news found."
+  },
+  "n14140330966": {
+   "r": "none",
+   "note": "Only Wolt listings for 'Chick'n Chips' Jerusalem (not an allowed source, address not verified); no news, site or Tabit/Ontopo page found."
+  },
+  "n4056076136": {
+   "r": "none",
+   "note": "No reliable source for a Dubai restaurant on Salah al-Din St (EN/AR searches)."
+  },
+  "n2522364652": {
+   "r": "none",
+   "note": "No reliable source found for 'lunchroom' at route 4240, Mateh Yehuda."
+  },
+  "n13535429751": {
+   "r": "none",
+   "note": "HappyCow lists Rebar at Tiferet Yisrael 8, Jewish Quarter (last update 2023-01, not recent). The rebar.co.il branch list fetch was blocked (permission not granted). enjoyingisrael lists other Jerusalem Rebar branches but none in the Jewish Quarter; no closure news found."
+  },
+  "n4056059382": {
+   "r": "none",
+   "note": "No reliable source for a cafe 'Roma' in Mamilla; Alrov Mamilla site pages checked don't list it; no Tabit/Ontopo page; no closure news."
+  },
+  "n6987300985": {
+   "r": "none",
+   "note": "Only aggregator (wanderlog) mentions Sambooki; no own site, no Tabit/Ontopo page, no news/guide 2025-2026, no closure news."
+  },
+  "w252683906": {
+   "r": "none",
+   "note": "No reliable source found for Shikshak cafe in Beit HaKerem (Hebrew/English searches, Tabit/Ontopo, closure news)."
+  },
+  "n5139678026": {
+   "r": "none",
+   "note": "No reliable source found for cafe 'Vitamin' on Balfour St, Jerusalem; no Tabit/Ontopo; no closure news."
+  },
+  "n6186835185": {
+   "r": "none",
+   "note": "No source found for a bar named 'Nochnoy' on Shlomzion HaMalka; searches return only other bars (Nocturno etc.)."
+  },
+  "n4880282128": {
+   "r": "none",
+   "note": "Adom at David Remez 4 (First Station) confirmed by Calcalist 2014-07 and First Station tenant page (last modified 2022-09, phone 02-6246242); no 2025-2026 source, no Tabit/Ontopo page found, no closure news found. tiuli page fetch failed."
+  },
+  "w1474353240": {
+   "r": "none",
+   "note": "No source for 'Ahavat Torah Halls' on Torat Hesed St; searches return only yeshiva-related pages."
+  },
+  "w893904116": {
+   "r": "none",
+   "note": "Only b144 directory lists 'אולמי אורה' in Ora (address '259, אורה', no Yasmin St); no own site, news or booking page."
+  },
+  "w256285549": {
+   "r": "none",
+   "note": "Event hall, not a restaurant. Only directory listings found: b144 lists Armonot Or at Merkaz Sapir 5, Jerusalem (by appointment, live listing), gokosher listing created 2022-05 with no details. No own site, no Tabit/Ontopo, no news. No closure news found. Directories are not allowed sources."
+  },
+  "w162763910": {
+   "r": "none",
+   "note": "Nothing reliable found for Armonot Volf/Wolf (Kanfei Nesharim). No site, no Tabit/Ontopo, no news, no closure news."
+  },
+  "w277832838": {
+   "r": "none",
+   "note": "Nothing reliable found for Ulamei Beit Yaakov HaYashan. Searches only return neighborhood/seminary pages. No Tabit/Ontopo, no closure news."
+  },
+  "n13508726050": {
+   "r": "none",
+   "note": "Probably the same venue as w263259731 (Beit Yisrael halls, Ezrat Torah). d.co.il directory lists Ulamei Beit Yisrael at Ezrat Torah 18 with site beitisrael.co.il, but fetching the site was blocked (permission not granted). bhol.co.il articles could not be fetched. No Tabit/Ontopo. No closure news found."
+  },
+  "w263259731": {
+   "r": "none",
+   "note": "d.co.il directory lists Ulamei Beit Yisrael at Ezrat Torah 18 (catalog: 20) with site beitisrael.co.il, hours Su-Th 9-22. The own site could not be fetched (permission blocked), so it is unverified. bhol.co.il could not be fetched. No Tabit/Ontopo. No closure news found."
+  },
+  "w279377694": {
+   "r": "none",
+   "note": "Nothing reliable found for Ulamei Bnot Yerushalayim (Shaarei Moshe). No site, no Tabit/Ontopo, no closure news. bhol.co.il results could not be fetched."
+  },
+  "w279371755": {
+   "r": "none",
+   "note": "Nothing reliable found for Ulamei Berger (Chevrat Mishnayot). bhol.co.il results (news/1028419, 1019434) could not be fetched. No Tabit/Ontopo, no closure news."
+  },
+  "w256288522": {
+   "r": "single",
+   "note": "funinjerusalem.com venue page: Colel Chabad Gutnick & Hadar Wedding Hall at Beit HaDfus 11, Jerusalem, so the address matches. The listing is undated but the site is active in 2026-11. It is a subsidized wedding hall, not a restaurant. No own site found, no Tabit/Ontopo, no closure news."
+  },
+  "w263729186": {
+   "r": "single",
+   "note": "Wedding hall, no own site/Tabit/Ontopo found. hm-news 2026-03-02 says a Purim music production was recorded at the 'Jerusalem Flam' hall (implies operating), no street address given, so branch match is judgement. bhol 1667441 (new Jerusalem halls) could not be fetched. No closure news found."
+  },
+  "w280245179": {
+   "r": "none",
+   "note": "Wedding hall; searches found only the Darkei David yeshiva, no site/Tabit/Ontopo/news on the hall. bhol 1667441 could not be fetched. No closure news found."
+  },
+  "w280246862": {
+   "r": "none",
+   "note": "Same as other Darkei David hall entry: nothing reliable found on the hall at David Yellin; only the yeshiva. bhol fetch failed. No closure news found."
+  },
+  "w203021087": {
+   "r": "none",
+   "note": "Kikar 2022-03 reports a fire at the 'HaYahalom ShebeKeter' event hall, HaOman 9, Talpiot (address matches), and weddings went on that night; no 2025-2026 source found, no site/Tabit/Ontopo, no closure news."
+  },
+  "w270573331": {
+   "r": "none",
+   "note": "Only the Yazdim synagogue and events held 'at Yazdim' (JDN gallery, fetch failed); no source about Yazdim event halls at Adoniyahu HaKohen. bhol 1667441 and hamichlol fetch failed. No closure news found."
+  },
+  "w263729193": {
+   "r": "none",
+   "note": "Nothing reliable found on Heichal David halls at Ohaliav; no site/Tabit/Ontopo; bhol fetches failed. No closure news found."
+  },
+  "w260360424": {
+   "r": "none",
+   "note": "Nothing reliable found on Zviel (Zvhil) halls on Shmuel HaNavi; only hasidic-court news. bhol fetch failed. No closure news found."
+  },
+  "n1116288348": {
+   "r": "single",
+   "note": "Kikar HaShabbat 2026-06-29 reports a wedding held at 'Ulamei Kinor David' in its Beit Shemesh news section; street address not given, so branch match is judgement (city matches). JDN tag page for 'Ulamei Kinor David Beit Shemesh' exists but fetch failed. No site/Tabit/Ontopo, no closure news."
   }
  }
 }
