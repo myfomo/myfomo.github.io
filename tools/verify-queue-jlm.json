@@ -1,682 +1,882 @@
 {
-"note": "Verification queue for this region, same rules as verify-queue.json (tools/VERIFY.md).",
-"order": [
-"n13921106901",
-"n9816727658",
-"n11158316451",
-"n9096816417",
-"n11799581639",
-"n10202181343",
-"n3930291532",
-"n4596144192",
-"n13927003771",
-"n10075307017",
-"n14094330378",
-"n11018090086",
-"n3145083504",
-"n14078101401",
-"n6187490293",
-"n6195852402",
-"n9933397079",
-"n1729362042",
-"n671288954",
-"n10964969762",
-"n5003634322",
-"n13324629585",
-"n5297454321",
-"w1446767329",
-"n4323468589",
-"n6754328385",
-"n1683994241",
-"n6800194999",
-"n5297457825",
-"n6653239687",
-"n4580755056",
-"w253468510",
-"n14101830326",
-"n6191909172",
-"n2838914554",
-"n1676316032",
-"n4880259661",
-"w911552477",
-"n9933397084",
-"n571779946",
-"n760044584",
-"n10290950218",
-"n6471737985",
-"n4831604951",
-"n6187490291",
-"n10964969759",
-"n561068650",
-"n12957201142",
-"n4823365521",
-"n10244439955",
-"n1406870393",
-"n7272044286",
-"n7194863877",
-"n8433020920",
-"n10964969760",
-"n11018108036",
-"n13403959131",
-"n6854597174",
-"n3354245035",
-"n9667880180",
-"n8586129553",
-"n1359323663",
-"n1366484534",
-"n7095169085",
-"n2150070637",
-"n2396187856",
-"n10554820206",
-"n1366484536",
-"n6065431486",
-"n4449977403",
-"n1376583866",
-"n5018172023",
-"n10556979851",
-"n9292334863",
-"n2150073665",
-"n5018172022",
-"n2193094674",
-"n566600166",
-"n12604059728",
-"n13436566658",
-"n10693740477",
-"n561068686",
-"n9138891146",
-"n12967017757",
-"w253613069",
-"n2109837717",
-"n729784731",
-"n1370050347",
-"n6274686485",
-"n13535393397",
-"w629013962",
-"n2297496858",
-"n5168993298",
-"n4200042889",
-"n673957208",
-"n6832647387",
-"n7431513885",
-"n560074164",
-"n10694782056",
-"n9292334862",
-"n5139746317",
-"w163934946",
-"n6465228685",
-"n14340223283",
-"n1366466398",
-"n1366515259",
-"n4311168863",
-"n13647668901",
-"n7122942090",
-"n13535438513",
-"n13419278801",
-"n12967033202",
-"n1366515261",
-"n1001175653",
-"n10177901948",
-"n2150060947",
-"n1879370436",
-"n12967008148",
-"n1074977517",
-"n5016724621",
-"n12636593463",
-"n4249293489",
-"n10770455105",
-"n1364819211",
-"n13535418420",
-"n2686925030",
-"n11496885710",
-"n559901753",
-"n12815421941",
-"n5904398556",
-"n4817475223",
-"n4449998906",
-"n10792573370",
-"n1366515273",
-"n9092459917",
-"n7619688191",
-"n13783714633",
-"n7554559985",
-"w873449738",
-"n5038899422",
-"n2150073666",
-"n673087388",
-"n10964969758",
-"n4358273397",
-"n1418089446",
-"n5018172021",
-"n6767547288",
-"n12967026196",
-"n13949950685",
-"n5023240509",
-"n5904398566",
-"w553166981",
-"n929256330",
-"n5823749362",
-"n2611239340",
-"n12967037426",
-"n14071754490",
-"w620317530",
-"n13119779107",
-"n10941350043",
-"n2533310863",
-"n7944723885",
-"n13535438304",
-"n13535392974",
-"n1699388644",
-"n2493256221",
-"n1359328747",
-"n7386323086",
-"n1419590085",
-"n1419595824",
-"n6992255799",
-"n7090301385",
-"n6323333185",
-"n5334510521",
-"n2150073667",
-"n6001264885",
-"n14381288101",
-"n10135897131",
-"n10840069261",
-"n5594866985",
-"n4242714889",
-"n10554099568",
-"n5242882222",
-"n4450000358",
-"n4721062833",
-"n12063184858",
-"n11156440686",
-"n13535415313",
-"n11910527193",
-"n14365785705",
-"n5896809439",
-"n13535438303",
-"n9362751139",
-"n1366483913",
-"n562625361",
-"n13436566655",
-"n12816126409",
-"n9667880579",
-"n1370029068",
-"n4450000357",
-"n14140330966",
-"n4056076136",
-"n2522364652",
-"n13535429751",
-"n4056059382",
-"n6987300985",
-"w252683906",
-"n5139678026",
-"n6186835185",
-"n4880282128",
-"w1474353240",
-"w893904116",
-"w256285549",
-"w162763910",
-"w277832838",
-"n13508726050",
-"w263259731",
-"w279377694",
-"w279371755",
-"w256288522",
-"w263729186",
-"w280245179",
-"w280246862",
-"w203021087",
-"w270573331",
-"w263729193",
-"w260360424",
-"n1116288348",
-"n13265392415",
-"w263260537",
-"w272625376",
-"w270570732",
-"w263415384",
-"w1472243274",
-"n13267635432",
-"w256294475",
-"w263140129",
-"n5174102522",
-"n5245538321",
-"n11106080554",
-"n10690706714",
-"n760046131",
-"n12958839687",
-"n12977805157",
-"n12979554724",
-"n6175639085",
-"n6426669648",
-"n560354901",
-"n2935048038",
-"n560074140",
-"n561093066",
-"n1405933026",
-"n3046208361",
-"n5599588163",
-"n12086682081",
-"n13537071150",
-"n4338262048",
-"n5023240506",
-"n760045185",
-"n12869152501",
-"n13234391625",
-"n11106080555",
-"n560074149",
-"n12958839690",
-"n1703936270",
-"n8812310017",
-"n5488638223",
-"n12977805150",
-"n561176608",
-"n2686910143",
-"n14133779244",
-"n14274612790",
-"w565292432",
-"n12958839688",
-"n12816126411",
-"n536524554",
-"n5938041687",
-"n14077444262",
-"w175425604",
-"n5815978897",
-"n2830888968",
-"n13949932135",
-"n5245552326",
-"n14140335879",
-"n560354903",
-"n563287145",
-"n6247814285",
-"n566600176",
-"n2406673409",
-"n9138891145",
-"n2872794091",
-"w921337131",
-"n1703978185",
-"n560715182",
-"n8990432917",
-"n12957411124",
-"n3278413683",
-"n562827260",
-"n13057613011",
-"n14077448001",
-"n1676315927",
-"n561076327",
-"n5245514221",
-"n636119348",
-"n561076277",
-"n999467482",
-"n4684907543",
-"n5813254156",
-"n1268457739",
-"n12959145642",
-"n7554445485",
-"n4198584289",
-"n3499419263",
-"n4839731005",
-"n5505375299",
-"n4488849290",
-"n1420857347",
-"n14272336293",
-"n7797855586",
-"n6744445285",
-"n10943922605",
-"n1404739176",
-"n9138891142",
-"n12957201140",
-"n4880282129",
-"n12869205701",
-"w435967250",
-"n11910527192",
-"n14107541297",
-"n4839762873",
-"n5163384412",
-"n12958862559",
-"n1703341094",
-"n4580755057",
-"n4825247660",
-"n6088619190",
-"n12232451233",
-"n14091323975",
-"n10799731407",
-"n1703936209",
-"n908842777",
-"n13161962202",
-"n2957619455",
-"n14272336295",
-"n3743833950",
-"n9996556417",
-"n7056388962",
-"n6734584085",
-"n1723672640",
-"n5708558921",
-"n571603041",
-"n4194721691",
-"n5731988222",
-"n7176905659",
-"n560652028",
-"n1110299067",
-"n8330082888",
-"n873785129",
-"n561070478",
-"n14077430626",
-"n561070672",
-"n13431212535",
-"n560074109",
-"n12979554731",
-"n561131599",
-"n561070541",
-"n9138891141",
-"n2423800361",
-"n4409642393",
-"n14140236258",
-"n4393347572",
-"n13057613009",
-"n5155559674",
-"w183963639",
-"n8949019917",
-"n5139674380",
-"w362067901",
-"n5139680133",
-"n673826201",
-"n12957201139",
-"n12958862552",
-"n568723405",
-"n636119362",
-"n13057613010",
-"n13057613033",
-"n2381640591",
-"n8154640064",
-"n13884849098",
-"n1673719876",
-"n12830567215",
-"n6754297391",
-"n2193094673",
-"n14162097469",
-"n4194777689",
-"n10944046005",
-"n12958839691",
-"n4194722889",
-"n12958862553",
-"n4189893193",
-"n8154640063",
-"n13234930517",
-"n5139730863",
-"n12958952654",
-"n14252461485",
-"n561068509",
-"n893962293",
-"n561130763",
-"n6088564487",
-"n7123920185",
-"n14077422316",
-"n2125044805",
-"n2407904637",
-"n5139803375",
-"n4732126618",
-"n5026682822",
-"n2417430526",
-"n1708046683",
-"n3546611753",
-"n12869159701",
-"n12957411128",
-"n13355052636",
-"n14099934655",
-"n563992096",
-"n4684907540",
-"w252684330",
-"n1405933024",
-"n560372942",
-"w230594163",
-"n12967020730",
-"n14360202817",
-"n868246327",
-"n13882750309",
-"n561176393",
-"n14181068680",
-"n14181091320",
-"n5139765279",
-"n895826976",
-"n321743226",
-"n13799211350",
-"n566600162",
-"n14099946404",
-"n4194791489",
-"n7198406034",
-"n9493910517",
-"n14272336296",
-"n2546648241",
-"n4153810789",
-"n13057613032",
-"n1370050861",
-"w539463399",
-"n560715129",
-"n4995235125",
-"n4449974674",
-"n2425255341",
-"n3354245036",
-"n2424000629",
-"n3836310279",
-"n6653239689",
-"n1543984064",
-"n7942516885",
-"n4225072596",
-"n2493577306",
-"n5501774150",
-"n5593444754",
-"n5876621002",
-"n6419196385",
-"n2423800365",
-"n4449974675",
-"n5899838056",
-"n4445534689",
-"n5593444755",
-"n9557096580",
-"n4104487735",
-"n3784277379",
-"n6445185487"
-],
-"done": {
-"n13921106901": {
-"r": "ok",
-"note": "Own site live (2026 copyright, active shop) names coffee roastery + cafe/visitor center at Ashkolot 40, Srigim (Mateh Yehuda); site hours differ from OSM; no Tabit/Ontopo; no closure news"
-},
-"n9816727658": {
-"r": "ok",
-"note": "Own site live, names Barmon cooperative pub at Olei HaGardom 13 (Armon HaNatziv), seasonal schedule (winter: Th 20-01, Sa night 20-24, last Fri/Sat of month varies) so oh omitted; no Tabit/Ontopo; no closure news; no recent press found"
-},
-"n11158316451": {
-"r": "none",
-"note": "business.site URL dead (Google Sites shut down); Time Out page 2017 (23 Hillel); ToI blog 2022-07 says it nearly closed May 2022 then got new owners; no 2025-2026 source, no Tabit/Ontopo, no closure news found"
-},
-"n9096816417": {
-"r": "none",
-"note": "Facebook page blocked to fetch; only TripAdvisor listing found; JPost 2019 view-restaurant article is a different place (Jerusalem Gardens hotel); no Tabit/Ontopo, no recent source, no closure news"
-},
-"n11799581639": {
-"r": "ok",
-"note": "Own site live (Menashe Ben Israel 1, Independence Park) + Ontopo booking page active for same address; Ontopo hours differ slightly from site; no closure news"
-},
-"n10202181343": {
-"r": "none",
-"note": "Own site fadysburger.com unreachable; only Wolt listing (wolt.com/.../fadys-burger, not an allowed source) suggests it exists; no Tabit/Ontopo, no news/guide, no closure news"
-},
-"n3930291532": {
-"r": "none",
-"note": "Facebook not fetchable; Time Out Hebrew 2019-09 and itraveljerusalem (undated) confirm Gatsby at Hillel 18, phone 054-8147143, non-kosher, cocktails 40-60 NIS; no 2025-2026 source, no Tabit/Ontopo, no closure news"
-},
-"n4596144192": {
-"r": "none",
-"note": "Instagram fetch blocked (permission not granted); only aggregator (evendo) listing; no Tabit/Ontopo, no news/guide, no closure news"
-},
-"n13927003771": {
-"r": "none",
-"note": "goldaglida.co.il failed to load, so official branch list not verified; Wolt has a 'golda-mamila' listing (not an allowed source); no Tabit/Ontopo, no news, no closure news"
-},
-"n10075307017": {
-"r": "single",
-"note": "Catalog URL /bistro blocked (permission), but own site notredamecenter.org/allegro is live: Allegro Bistro & Cafe at Notre Dame Guest House, open daily, international menu; page gives no street address (Notre Dame Center is at HaTsanhanim 3); no Tabit/Ontopo; no closure news (downgraded to single: /bistro page not opened, branch match by judgement)"
-},
-"n14094330378": {
-"r": "single",
-"note": "JPost review 2026-09 of Oakberry Acai on Agrippas St, Jerusalem (no street number); oakberry.com/en-IL lists no Israeli locations; no Tabit/Ontopo; no closure news"
-},
-"n11018090086": {
-"r": "ok",
-"note": "Own site live, names Jaffa St 78 Jerusalem; site phone differs from catalog (054-479-9522); no Tabit/Ontopo; no closure news"
-},
-"n3145083504": {
-"r": "none",
-"note": "Facebook page not fetchable; no news/guide, Tabit or Ontopo found for al Liwan in Jerusalem; no closure news"
-},
-"n14078101401": {
-"r": "none",
-"note": "Catalog website is an invalid Instagram handle; no web, Tabit/Ontopo or news results for this food truck"
-},
-"n6187490293": {
-"r": "none",
-"note": "Only Time Out 2017 article (Iraqi market, Mahane Yehuda) found; Wolt listing (not an allowed source) gives Arba'at HaMinim 5, and some Wolt titles show DELETED; no Tabit/Ontopo; no closure news"
-},
-"n6195852402": {
-"r": "ok",
-"note": "Own site live (Washington 4); Ontopo active booking page; site says kosher lemehadrin but no certificate named; menu PDF 2026-01 mains 108-232"
-},
-"n9933397079": {
-"r": "none",
-"note": "Own site atza.co.il failed to load; only undated enjoyingisrael kosher listing (Harel Blvd 8, hours match OSM, phone 02-5791939); no Tabit/Ontopo; no closure news"
-},
-"n1729362042": {
-"r": "none",
-"note": "Israel Hayom 2024-05 says Tel Aviv branch closed but Jerusalem (Mahane Yehuda) branch open; Time Out review 2016 at Agripas 83; no 2025-2026 source, no Tabit/Ontopo"
-},
-"n671288954": {
-"r": "ok",
-"note": "Maariv review 2025-12 (Jaffa St 31, Feingold Courtyard) + GoJerusalem page updated 2025-11; catalog website dead/old; no Tabit/Ontopo; no closure news"
-},
-"n10964969762": {
-"r": "conflict",
-"note": "Official branch list (burgersbar.co.il/סניפים) has 12 branches and no Mevaseret Zion branch; only old enjoyingisrael listing; no closure news found"
-},
-"n5003634322": {
-"r": "ok",
-"note": "Own site live (locations page) lists Mahane Yehuda branch at Etz Haim 3, Jerusalem, kosher, with hours; no Ontopo/Tabit page found for Jerusalem branch; no closure news"
-},
-"n13324629585": {
-"r": "none",
-"note": "Own site goldaglida.co.il failed to load; no reliable source naming a Beit Shemesh (HaHaresh) branch found; no Tabit/Ontopo; no closure news. Only directory/Wolt listings for other branches"
-},
-"n5297454321": {
-"r": "single",
-"note": "Own site dublin-jerusalem.com unreachable; iTravelJerusalem St. Patrick's Day 2026 article (2026-01) names Dublin Irish Pub on Shamai St as a place to celebrate; iTravelJerusalem venue page at 4 Shamai undated; no Tabit/Ontopo; no closure news"
-},
-"w1446767329": {
-"r": "ok",
-"note": "Own site davidlaor.co.il live, lists Jerusalem kiosk at Gan Gideon (Baka) with hours; catalog address 'Menashe' (Baka street) not explicitly confirmed as the garden's street; /jerusalem subpage failed to load; no closure news"
-},
-"n4323468589": {
-"r": "closed",
-"note": "Times of Israel and Ynet (2026-02-26) report chef Moshe Basson closing Eucalyptus after nearly four decades, final service end of Feb 2026; own site still up showing hours"
-},
-"n6754328385": {
-"r": "none",
-"note": "Own site haburganim.com failed to load; no news/guide or Tabit/Ontopo page for a Walter Abels/Moses branch found; only Wolt/easy directory listings (not allowed sources); no closure news"
-},
-"n1683994241": {
-"r": "none",
-"note": "Own site mikvehbar.com blocked (permission not granted, URL http://www.mikvehbar.com/); no news/guide or Tabit/Ontopo for Mikveh bar at Shoshan 4; no closure news found"
-},
-"n6800194999": {
-"r": "none",
-"note": "Catalog website chefchaouenjrs.com blocked (permission not granted) - domain suggests a different restaurant name (Chefchaouen), possible replacement unverified; no reliable recent source for HaKubbeiyah at Hillel 19; Time Out 'HaKubbiya closing' 2020 is a different place (Shuk HaTikva, Tel Aviv)"
-},
-"n5297457825": {
-"r": "none",
-"note": "Own site 1868.co.il blocked (permission not granted); iTravelJerusalem pages (undated) list Zuta at 10 King David St, kosher, phone 02-622-2312, Su-Th from 18:00, Sa from 20:00; JPost 2024-01 mentions chef-owner of 1868 and Zuta; no 2025-2026 source, no Tabit/Ontopo found, no closure news"
-},
-"n6653239687": {
-"r": "none",
-"note": "iTravelJerusalem page (undated) lists Khachapuri/Hachapuria at HaShikma 5, kosher, links to Tabit (Tabit page not found by search); Time Out 2019 lists 6 Eshkol St; no 2025-2026 source; no closure news; bit.ly catalog link not opened"
-},
-"n4580755056": {
-"r": "ok",
-"note": "Own site live naming Talbiye, Chopin 5; Ontopo booking page active (Ontopo hours differ slightly from site; site hours used). No closure news."
-},
-"w253468510": {
-"r": "ok",
-"note": "Own site live naming Karma, Ein Karem St 74; Tabit booking page (orgId 5bbf20b59be8250100be7f69) exists. Site hours internally inconsistent so omitted; phone on site lacks area code so omitted. Israeli-Italian per site. No closure news."
-},
-"n14101830326": {
-"r": "ok",
-"note": "Own site live: cafe in the nursery of the Hebrew University Botanical Garden, Jerusalem (matches Kaplan St area); dairy kosher, Jerusalem Rabbinate; no reservations. Saturday not listed on site. No closure news."
-},
-"n6191909172": {
-"r": "none",
-"note": "moshiko.rest.co.il unreachable (robots error). Only undated listing (enjoyingisrael, Ben Yehuda 5, kosher mehadrin) and 2005 review found; no Tabit/Ontopo; no closure news. Nothing reliable and recent."
-},
-"n2838914554": {
-"r": "ok",
-"note": "Own site live naming Machneyuda, Beit Yaakov 10; Ontopo booking page active. Sat opens 1h after Shabbat (closing time not given, omitted). No closure news."
-},
-"n1676316032": {
-"r": "none",
-"note": "Own site mikesplacebars.com could not be fetched (permission blocked). Time Out page (Jaffa 33) dated 2017; Wikipedia says Jaffa Rd as of 2020; 2026 event found was Tel Aviv branch. No Tabit/Ontopo, no closure news. No recent Jerusalem source."
-},
-"n4880259661": {
-"r": "none",
-"note": "Own site malabistro.co.il could not be fetched (permission blocked). Only undated listings (itraveljerusalem, enjoyingisrael, Wolt) found; no Tabit/Ontopo page; no closure news."
-},
-"w911552477": {
-"r": "ok",
-"note": "Logos Hotel site live describing its restaurant (Luiza Culinary Center, chef Nadav Malin), Yad HaShmona; kosher Chief Rabbinate; public Thu/Fri brunch by reservation (adult 160 NIS), lunch/dinner for guests; hours inconsistent on page so omitted. No closure news."
-},
-"n9933397084": {
-"r": "none",
-"note": "Own site gracia-rest.co.il could not be fetched (permission blocked). No recent dated source for Gracia; no Tabit/Ontopo found; no closure news. Note: Kipa 2023-08 reviews a dairy restaurant 'Luchena' at Sderot HaRel 5 Mevaseret Zion — unclear whether related/replacement."
-},
-"n571779946": {
-"r": "ok",
-"note": "Official McDonald's Israel branch locator lists 'Oriyon Jerusalem' at Shammai 4, Jerusalem (not marked kosher). Hours from locator; WhatsApp only, no phone. (hours dropped: locator summary unreliable)"
-},
-"n760044584": {
-"r": "conflict",
-"note": "Official McDonald's Israel locator (mcdonalds.co.il/איתור_מסעדה, checked 2026-11) lists only one Beit Shemesh branch: 'ביג בית שמש' at BIG Fashion mall, Yigal Alon, Beit Shemesh (store_id=82, kosher); no branch on Route 37/38. Can't confirm a branch at catalog address 'כביש 37'; may be the BIG branch or a closed roadside branch. No closure article found."
-},
-"n10290950218": {
-"r": "none",
-"note": "Own site smokeshuk.co.il unreachable (robots error). Only source is yeahthatskosher 2020-10 article on Tzur David Smokehouse in Machane Yehuda (too old). No Tabit/Ontopo page and no closure news found."
-},
-"n6471737985": {
-"r": "single",
-"note": "Jewish Journal 2025-03 describes Ariel Eskayo as owner of the operating Arais Machane Yehuda restaurant in Jerusalem (no street address given). gokosher listing (undated) gives Agripas 115, Rabbanut Yerushalayim Mehuderet. Catalog website srugim.co.il is a news article, not the place's own site. No Tabit/Ontopo page and no closure news."
-},
-"n4831604951": {
-"r": "none",
-"note": "rest.co.il site unreachable (robots error); no Tabit/Ontopo page; no closure news. Only a Wolt public page appears active, with the same phone (02-643-1840) but address HaMaayan 9 (catalog: 21). Wolt is not an allowed source."
-},
-"n6187490291": {
-"r": "none",
-"note": "Facebook page blocked; only Wolt listings found (not an allowed source); no Tabit/Ontopo page, news or guide; no closure news."
-},
-"n10964969759": {
-"r": "none",
-"note": "Branch page prego.co.il/mevaseret/ returns an error; the prego.co.il/branch/ page says the chain has 21 branches, but its list didn't render, so the Mevaseret branch couldn't be confirmed. No Tabit/Ontopo page, no news, no closure news."
-},
-"n561068650": {
-"r": "none",
-"note": "Own site cielo.rest.co.il was blocked (permission not granted). gojerusalem listing gives 18 Ben Sira, Italian, open on Saturday, page metadata 2025-11 (a directory, not a dated review). No Tabit/Ontopo page; no closure news found."
-},
-"n12957201142": {
-"r": "single",
-"note": "Kipa 2026-02 lists Beit Ha'am cafe among kosher Jerusalem cafes, at Betzalel 11 (the Beit Ha'am building; catalog says Trumpeldor, which is adjacent), Rabbanut Jerusalem, Su-Th 08-23, Fr to 14. Instagram blocked; no second source; no Tabit/Ontopo page; no closure news."
-},
-"n4823365521": {
-"r": "none",
-"note": "Instagram not checked; only aggregator listings (happycow, wanderlog, travelpal) with no dated reliable info; no news or guide; no Tabit/Ontopo page; no closure news."
-},
-"n10244439955": {
-"r": "single",
-"note": "Own branch page gansipur.co.il/Jerusalem was blocked (permission not granted). Kipa 2026-07 recommends the operating Cafe Gan Sipur in Gan Sacher. Kipa 2023-08 review gives Ben Zvi Blvd, inside Sacher Park (catalog: Yitzhak Rabin), with mains around 74 NIS. No Tabit/Ontopo page found; no closure news."
-}
-}
+ "note": "Verification queue for this region, same rules as verify-queue.json (tools/VERIFY.md).",
+ "order": [
+  "n13921106901",
+  "n9816727658",
+  "n11158316451",
+  "n9096816417",
+  "n11799581639",
+  "n10202181343",
+  "n3930291532",
+  "n4596144192",
+  "n13927003771",
+  "n10075307017",
+  "n14094330378",
+  "n11018090086",
+  "n3145083504",
+  "n14078101401",
+  "n6187490293",
+  "n6195852402",
+  "n9933397079",
+  "n1729362042",
+  "n671288954",
+  "n10964969762",
+  "n5003634322",
+  "n13324629585",
+  "n5297454321",
+  "w1446767329",
+  "n4323468589",
+  "n6754328385",
+  "n1683994241",
+  "n6800194999",
+  "n5297457825",
+  "n6653239687",
+  "n4580755056",
+  "w253468510",
+  "n14101830326",
+  "n6191909172",
+  "n2838914554",
+  "n1676316032",
+  "n4880259661",
+  "w911552477",
+  "n9933397084",
+  "n571779946",
+  "n760044584",
+  "n10290950218",
+  "n6471737985",
+  "n4831604951",
+  "n6187490291",
+  "n10964969759",
+  "n561068650",
+  "n12957201142",
+  "n4823365521",
+  "n10244439955",
+  "n1406870393",
+  "n7272044286",
+  "n7194863877",
+  "n8433020920",
+  "n10964969760",
+  "n11018108036",
+  "n13403959131",
+  "n6854597174",
+  "n3354245035",
+  "n9667880180",
+  "n8586129553",
+  "n1359323663",
+  "n1366484534",
+  "n7095169085",
+  "n2150070637",
+  "n2396187856",
+  "n10554820206",
+  "n1366484536",
+  "n6065431486",
+  "n4449977403",
+  "n1376583866",
+  "n5018172023",
+  "n10556979851",
+  "n9292334863",
+  "n2150073665",
+  "n5018172022",
+  "n2193094674",
+  "n566600166",
+  "n12604059728",
+  "n13436566658",
+  "n10693740477",
+  "n561068686",
+  "n9138891146",
+  "n12967017757",
+  "w253613069",
+  "n2109837717",
+  "n729784731",
+  "n1370050347",
+  "n6274686485",
+  "n13535393397",
+  "w629013962",
+  "n2297496858",
+  "n5168993298",
+  "n4200042889",
+  "n673957208",
+  "n6832647387",
+  "n7431513885",
+  "n560074164",
+  "n10694782056",
+  "n9292334862",
+  "n5139746317",
+  "w163934946",
+  "n6465228685",
+  "n14340223283",
+  "n1366466398",
+  "n1366515259",
+  "n4311168863",
+  "n13647668901",
+  "n7122942090",
+  "n13535438513",
+  "n13419278801",
+  "n12967033202",
+  "n1366515261",
+  "n1001175653",
+  "n10177901948",
+  "n2150060947",
+  "n1879370436",
+  "n12967008148",
+  "n1074977517",
+  "n5016724621",
+  "n12636593463",
+  "n4249293489",
+  "n10770455105",
+  "n1364819211",
+  "n13535418420",
+  "n2686925030",
+  "n11496885710",
+  "n559901753",
+  "n12815421941",
+  "n5904398556",
+  "n4817475223",
+  "n4449998906",
+  "n10792573370",
+  "n1366515273",
+  "n9092459917",
+  "n7619688191",
+  "n13783714633",
+  "n7554559985",
+  "w873449738",
+  "n5038899422",
+  "n2150073666",
+  "n673087388",
+  "n10964969758",
+  "n4358273397",
+  "n1418089446",
+  "n5018172021",
+  "n6767547288",
+  "n12967026196",
+  "n13949950685",
+  "n5023240509",
+  "n5904398566",
+  "w553166981",
+  "n929256330",
+  "n5823749362",
+  "n2611239340",
+  "n12967037426",
+  "n14071754490",
+  "w620317530",
+  "n13119779107",
+  "n10941350043",
+  "n2533310863",
+  "n7944723885",
+  "n13535438304",
+  "n13535392974",
+  "n1699388644",
+  "n2493256221",
+  "n1359328747",
+  "n7386323086",
+  "n1419590085",
+  "n1419595824",
+  "n6992255799",
+  "n7090301385",
+  "n6323333185",
+  "n5334510521",
+  "n2150073667",
+  "n6001264885",
+  "n14381288101",
+  "n10135897131",
+  "n10840069261",
+  "n5594866985",
+  "n4242714889",
+  "n10554099568",
+  "n5242882222",
+  "n4450000358",
+  "n4721062833",
+  "n12063184858",
+  "n11156440686",
+  "n13535415313",
+  "n11910527193",
+  "n14365785705",
+  "n5896809439",
+  "n13535438303",
+  "n9362751139",
+  "n1366483913",
+  "n562625361",
+  "n13436566655",
+  "n12816126409",
+  "n9667880579",
+  "n1370029068",
+  "n4450000357",
+  "n14140330966",
+  "n4056076136",
+  "n2522364652",
+  "n13535429751",
+  "n4056059382",
+  "n6987300985",
+  "w252683906",
+  "n5139678026",
+  "n6186835185",
+  "n4880282128",
+  "w1474353240",
+  "w893904116",
+  "w256285549",
+  "w162763910",
+  "w277832838",
+  "n13508726050",
+  "w263259731",
+  "w279377694",
+  "w279371755",
+  "w256288522",
+  "w263729186",
+  "w280245179",
+  "w280246862",
+  "w203021087",
+  "w270573331",
+  "w263729193",
+  "w260360424",
+  "n1116288348",
+  "n13265392415",
+  "w263260537",
+  "w272625376",
+  "w270570732",
+  "w263415384",
+  "w1472243274",
+  "n13267635432",
+  "w256294475",
+  "w263140129",
+  "n5174102522",
+  "n5245538321",
+  "n11106080554",
+  "n10690706714",
+  "n760046131",
+  "n12958839687",
+  "n12977805157",
+  "n12979554724",
+  "n6175639085",
+  "n6426669648",
+  "n560354901",
+  "n2935048038",
+  "n560074140",
+  "n561093066",
+  "n1405933026",
+  "n3046208361",
+  "n5599588163",
+  "n12086682081",
+  "n13537071150",
+  "n4338262048",
+  "n5023240506",
+  "n760045185",
+  "n12869152501",
+  "n13234391625",
+  "n11106080555",
+  "n560074149",
+  "n12958839690",
+  "n1703936270",
+  "n8812310017",
+  "n5488638223",
+  "n12977805150",
+  "n561176608",
+  "n2686910143",
+  "n14133779244",
+  "n14274612790",
+  "w565292432",
+  "n12958839688",
+  "n12816126411",
+  "n536524554",
+  "n5938041687",
+  "n14077444262",
+  "w175425604",
+  "n5815978897",
+  "n2830888968",
+  "n13949932135",
+  "n5245552326",
+  "n14140335879",
+  "n560354903",
+  "n563287145",
+  "n6247814285",
+  "n566600176",
+  "n2406673409",
+  "n9138891145",
+  "n2872794091",
+  "w921337131",
+  "n1703978185",
+  "n560715182",
+  "n8990432917",
+  "n12957411124",
+  "n3278413683",
+  "n562827260",
+  "n13057613011",
+  "n14077448001",
+  "n1676315927",
+  "n561076327",
+  "n5245514221",
+  "n636119348",
+  "n561076277",
+  "n999467482",
+  "n4684907543",
+  "n5813254156",
+  "n1268457739",
+  "n12959145642",
+  "n7554445485",
+  "n4198584289",
+  "n3499419263",
+  "n4839731005",
+  "n5505375299",
+  "n4488849290",
+  "n1420857347",
+  "n14272336293",
+  "n7797855586",
+  "n6744445285",
+  "n10943922605",
+  "n1404739176",
+  "n9138891142",
+  "n12957201140",
+  "n4880282129",
+  "n12869205701",
+  "w435967250",
+  "n11910527192",
+  "n14107541297",
+  "n4839762873",
+  "n5163384412",
+  "n12958862559",
+  "n1703341094",
+  "n4580755057",
+  "n4825247660",
+  "n6088619190",
+  "n12232451233",
+  "n14091323975",
+  "n10799731407",
+  "n1703936209",
+  "n908842777",
+  "n13161962202",
+  "n2957619455",
+  "n14272336295",
+  "n3743833950",
+  "n9996556417",
+  "n7056388962",
+  "n6734584085",
+  "n1723672640",
+  "n5708558921",
+  "n571603041",
+  "n4194721691",
+  "n5731988222",
+  "n7176905659",
+  "n560652028",
+  "n1110299067",
+  "n8330082888",
+  "n873785129",
+  "n561070478",
+  "n14077430626",
+  "n561070672",
+  "n13431212535",
+  "n560074109",
+  "n12979554731",
+  "n561131599",
+  "n561070541",
+  "n9138891141",
+  "n2423800361",
+  "n4409642393",
+  "n14140236258",
+  "n4393347572",
+  "n13057613009",
+  "n5155559674",
+  "w183963639",
+  "n8949019917",
+  "n5139674380",
+  "w362067901",
+  "n5139680133",
+  "n673826201",
+  "n12957201139",
+  "n12958862552",
+  "n568723405",
+  "n636119362",
+  "n13057613010",
+  "n13057613033",
+  "n2381640591",
+  "n8154640064",
+  "n13884849098",
+  "n1673719876",
+  "n12830567215",
+  "n6754297391",
+  "n2193094673",
+  "n14162097469",
+  "n4194777689",
+  "n10944046005",
+  "n12958839691",
+  "n4194722889",
+  "n12958862553",
+  "n4189893193",
+  "n8154640063",
+  "n13234930517",
+  "n5139730863",
+  "n12958952654",
+  "n14252461485",
+  "n561068509",
+  "n893962293",
+  "n561130763",
+  "n6088564487",
+  "n7123920185",
+  "n14077422316",
+  "n2125044805",
+  "n2407904637",
+  "n5139803375",
+  "n4732126618",
+  "n5026682822",
+  "n2417430526",
+  "n1708046683",
+  "n3546611753",
+  "n12869159701",
+  "n12957411128",
+  "n13355052636",
+  "n14099934655",
+  "n563992096",
+  "n4684907540",
+  "w252684330",
+  "n1405933024",
+  "n560372942",
+  "w230594163",
+  "n12967020730",
+  "n14360202817",
+  "n868246327",
+  "n13882750309",
+  "n561176393",
+  "n14181068680",
+  "n14181091320",
+  "n5139765279",
+  "n895826976",
+  "n321743226",
+  "n13799211350",
+  "n566600162",
+  "n14099946404",
+  "n4194791489",
+  "n7198406034",
+  "n9493910517",
+  "n14272336296",
+  "n2546648241",
+  "n4153810789",
+  "n13057613032",
+  "n1370050861",
+  "w539463399",
+  "n560715129",
+  "n4995235125",
+  "n4449974674",
+  "n2425255341",
+  "n3354245036",
+  "n2424000629",
+  "n3836310279",
+  "n6653239689",
+  "n1543984064",
+  "n7942516885",
+  "n4225072596",
+  "n2493577306",
+  "n5501774150",
+  "n5593444754",
+  "n5876621002",
+  "n6419196385",
+  "n2423800365",
+  "n4449974675",
+  "n5899838056",
+  "n4445534689",
+  "n5593444755",
+  "n9557096580",
+  "n4104487735",
+  "n3784277379",
+  "n6445185487"
+ ],
+ "done": {
+  "n13921106901": {
+   "r": "ok",
+   "note": "Own site live (2026 copyright, active shop) names coffee roastery + cafe/visitor center at Ashkolot 40, Srigim (Mateh Yehuda); site hours differ from OSM; no Tabit/Ontopo; no closure news"
+  },
+  "n9816727658": {
+   "r": "ok",
+   "note": "Own site live, names Barmon cooperative pub at Olei HaGardom 13 (Armon HaNatziv), seasonal schedule (winter: Th 20-01, Sa night 20-24, last Fri/Sat of month varies) so oh omitted; no Tabit/Ontopo; no closure news; no recent press found"
+  },
+  "n11158316451": {
+   "r": "none",
+   "note": "business.site URL dead (Google Sites shut down); Time Out page 2017 (23 Hillel); ToI blog 2022-07 says it nearly closed May 2022 then got new owners; no 2025-2026 source, no Tabit/Ontopo, no closure news found"
+  },
+  "n9096816417": {
+   "r": "none",
+   "note": "Facebook page blocked to fetch; only TripAdvisor listing found; JPost 2019 view-restaurant article is a different place (Jerusalem Gardens hotel); no Tabit/Ontopo, no recent source, no closure news"
+  },
+  "n11799581639": {
+   "r": "ok",
+   "note": "Own site live (Menashe Ben Israel 1, Independence Park) + Ontopo booking page active for same address; Ontopo hours differ slightly from site; no closure news"
+  },
+  "n10202181343": {
+   "r": "none",
+   "note": "Own site fadysburger.com unreachable; only Wolt listing (wolt.com/.../fadys-burger, not an allowed source) suggests it exists; no Tabit/Ontopo, no news/guide, no closure news"
+  },
+  "n3930291532": {
+   "r": "none",
+   "note": "Facebook not fetchable; Time Out Hebrew 2019-09 and itraveljerusalem (undated) confirm Gatsby at Hillel 18, phone 054-8147143, non-kosher, cocktails 40-60 NIS; no 2025-2026 source, no Tabit/Ontopo, no closure news"
+  },
+  "n4596144192": {
+   "r": "none",
+   "note": "Instagram fetch blocked (permission not granted); only aggregator (evendo) listing; no Tabit/Ontopo, no news/guide, no closure news"
+  },
+  "n13927003771": {
+   "r": "none",
+   "note": "goldaglida.co.il failed to load, so official branch list not verified; Wolt has a 'golda-mamila' listing (not an allowed source); no Tabit/Ontopo, no news, no closure news"
+  },
+  "n10075307017": {
+   "r": "single",
+   "note": "Catalog URL /bistro blocked (permission), but own site notredamecenter.org/allegro is live: Allegro Bistro & Cafe at Notre Dame Guest House, open daily, international menu; page gives no street address (Notre Dame Center is at HaTsanhanim 3); no Tabit/Ontopo; no closure news (downgraded to single: /bistro page not opened, branch match by judgement)"
+  },
+  "n14094330378": {
+   "r": "single",
+   "note": "JPost review 2026-09 of Oakberry Acai on Agrippas St, Jerusalem (no street number); oakberry.com/en-IL lists no Israeli locations; no Tabit/Ontopo; no closure news"
+  },
+  "n11018090086": {
+   "r": "ok",
+   "note": "Own site live, names Jaffa St 78 Jerusalem; site phone differs from catalog (054-479-9522); no Tabit/Ontopo; no closure news"
+  },
+  "n3145083504": {
+   "r": "none",
+   "note": "Facebook page not fetchable; no news/guide, Tabit or Ontopo found for al Liwan in Jerusalem; no closure news"
+  },
+  "n14078101401": {
+   "r": "none",
+   "note": "Catalog website is an invalid Instagram handle; no web, Tabit/Ontopo or news results for this food truck"
+  },
+  "n6187490293": {
+   "r": "none",
+   "note": "Only Time Out 2017 article (Iraqi market, Mahane Yehuda) found; Wolt listing (not an allowed source) gives Arba'at HaMinim 5, and some Wolt titles show DELETED; no Tabit/Ontopo; no closure news"
+  },
+  "n6195852402": {
+   "r": "ok",
+   "note": "Own site live (Washington 4); Ontopo active booking page; site says kosher lemehadrin but no certificate named; menu PDF 2026-01 mains 108-232"
+  },
+  "n9933397079": {
+   "r": "none",
+   "note": "Own site atza.co.il failed to load; only undated enjoyingisrael kosher listing (Harel Blvd 8, hours match OSM, phone 02-5791939); no Tabit/Ontopo; no closure news"
+  },
+  "n1729362042": {
+   "r": "none",
+   "note": "Israel Hayom 2024-05 says Tel Aviv branch closed but Jerusalem (Mahane Yehuda) branch open; Time Out review 2016 at Agripas 83; no 2025-2026 source, no Tabit/Ontopo"
+  },
+  "n671288954": {
+   "r": "ok",
+   "note": "Maariv review 2025-12 (Jaffa St 31, Feingold Courtyard) + GoJerusalem page updated 2025-11; catalog website dead/old; no Tabit/Ontopo; no closure news"
+  },
+  "n10964969762": {
+   "r": "conflict",
+   "note": "Official branch list (burgersbar.co.il/סניפים) has 12 branches and no Mevaseret Zion branch; only old enjoyingisrael listing; no closure news found"
+  },
+  "n5003634322": {
+   "r": "ok",
+   "note": "Own site live (locations page) lists Mahane Yehuda branch at Etz Haim 3, Jerusalem, kosher, with hours; no Ontopo/Tabit page found for Jerusalem branch; no closure news"
+  },
+  "n13324629585": {
+   "r": "none",
+   "note": "Own site goldaglida.co.il failed to load; no reliable source naming a Beit Shemesh (HaHaresh) branch found; no Tabit/Ontopo; no closure news. Only directory/Wolt listings for other branches"
+  },
+  "n5297454321": {
+   "r": "single",
+   "note": "Own site dublin-jerusalem.com unreachable; iTravelJerusalem St. Patrick's Day 2026 article (2026-01) names Dublin Irish Pub on Shamai St as a place to celebrate; iTravelJerusalem venue page at 4 Shamai undated; no Tabit/Ontopo; no closure news"
+  },
+  "w1446767329": {
+   "r": "ok",
+   "note": "Own site davidlaor.co.il live, lists Jerusalem kiosk at Gan Gideon (Baka) with hours; catalog address 'Menashe' (Baka street) not explicitly confirmed as the garden's street; /jerusalem subpage failed to load; no closure news"
+  },
+  "n4323468589": {
+   "r": "closed",
+   "note": "Times of Israel and Ynet (2026-02-26) report chef Moshe Basson closing Eucalyptus after nearly four decades, final service end of Feb 2026; own site still up showing hours"
+  },
+  "n6754328385": {
+   "r": "none",
+   "note": "Own site haburganim.com failed to load; no news/guide or Tabit/Ontopo page for a Walter Abels/Moses branch found; only Wolt/easy directory listings (not allowed sources); no closure news"
+  },
+  "n1683994241": {
+   "r": "none",
+   "note": "Own site mikvehbar.com blocked (permission not granted, URL http://www.mikvehbar.com/); no news/guide or Tabit/Ontopo for Mikveh bar at Shoshan 4; no closure news found"
+  },
+  "n6800194999": {
+   "r": "none",
+   "note": "Catalog website chefchaouenjrs.com blocked (permission not granted) - domain suggests a different restaurant name (Chefchaouen), possible replacement unverified; no reliable recent source for HaKubbeiyah at Hillel 19; Time Out 'HaKubbiya closing' 2020 is a different place (Shuk HaTikva, Tel Aviv)"
+  },
+  "n5297457825": {
+   "r": "none",
+   "note": "Own site 1868.co.il blocked (permission not granted); iTravelJerusalem pages (undated) list Zuta at 10 King David St, kosher, phone 02-622-2312, Su-Th from 18:00, Sa from 20:00; JPost 2024-01 mentions chef-owner of 1868 and Zuta; no 2025-2026 source, no Tabit/Ontopo found, no closure news"
+  },
+  "n6653239687": {
+   "r": "none",
+   "note": "iTravelJerusalem page (undated) lists Khachapuri/Hachapuria at HaShikma 5, kosher, links to Tabit (Tabit page not found by search); Time Out 2019 lists 6 Eshkol St; no 2025-2026 source; no closure news; bit.ly catalog link not opened"
+  },
+  "n4580755056": {
+   "r": "ok",
+   "note": "Own site live naming Talbiye, Chopin 5; Ontopo booking page active (Ontopo hours differ slightly from site; site hours used). No closure news."
+  },
+  "w253468510": {
+   "r": "ok",
+   "note": "Own site live naming Karma, Ein Karem St 74; Tabit booking page (orgId 5bbf20b59be8250100be7f69) exists. Site hours internally inconsistent so omitted; phone on site lacks area code so omitted. Israeli-Italian per site. No closure news."
+  },
+  "n14101830326": {
+   "r": "ok",
+   "note": "Own site live: cafe in the nursery of the Hebrew University Botanical Garden, Jerusalem (matches Kaplan St area); dairy kosher, Jerusalem Rabbinate; no reservations. Saturday not listed on site. No closure news."
+  },
+  "n6191909172": {
+   "r": "none",
+   "note": "moshiko.rest.co.il unreachable (robots error). Only undated listing (enjoyingisrael, Ben Yehuda 5, kosher mehadrin) and 2005 review found; no Tabit/Ontopo; no closure news. Nothing reliable and recent."
+  },
+  "n2838914554": {
+   "r": "ok",
+   "note": "Own site live naming Machneyuda, Beit Yaakov 10; Ontopo booking page active. Sat opens 1h after Shabbat (closing time not given, omitted). No closure news."
+  },
+  "n1676316032": {
+   "r": "none",
+   "note": "Own site mikesplacebars.com could not be fetched (permission blocked). Time Out page (Jaffa 33) dated 2017; Wikipedia says Jaffa Rd as of 2020; 2026 event found was Tel Aviv branch. No Tabit/Ontopo, no closure news. No recent Jerusalem source."
+  },
+  "n4880259661": {
+   "r": "none",
+   "note": "Own site malabistro.co.il could not be fetched (permission blocked). Only undated listings (itraveljerusalem, enjoyingisrael, Wolt) found; no Tabit/Ontopo page; no closure news."
+  },
+  "w911552477": {
+   "r": "ok",
+   "note": "Logos Hotel site live describing its restaurant (Luiza Culinary Center, chef Nadav Malin), Yad HaShmona; kosher Chief Rabbinate; public Thu/Fri brunch by reservation (adult 160 NIS), lunch/dinner for guests; hours inconsistent on page so omitted. No closure news."
+  },
+  "n9933397084": {
+   "r": "none",
+   "note": "Own site gracia-rest.co.il could not be fetched (permission blocked). No recent dated source for Gracia; no Tabit/Ontopo found; no closure news. Note: Kipa 2023-08 reviews a dairy restaurant 'Luchena' at Sderot HaRel 5 Mevaseret Zion — unclear whether related/replacement."
+  },
+  "n571779946": {
+   "r": "ok",
+   "note": "Official McDonald's Israel branch locator lists 'Oriyon Jerusalem' at Shammai 4, Jerusalem (not marked kosher). Hours from locator; WhatsApp only, no phone. (hours dropped: locator summary unreliable)"
+  },
+  "n760044584": {
+   "r": "conflict",
+   "note": "Official McDonald's Israel locator (mcdonalds.co.il/איתור_מסעדה, checked 2026-11) lists only one Beit Shemesh branch: 'ביג בית שמש' at BIG Fashion mall, Yigal Alon, Beit Shemesh (store_id=82, kosher); no branch on Route 37/38. Can't confirm a branch at catalog address 'כביש 37'; may be the BIG branch or a closed roadside branch. No closure article found."
+  },
+  "n10290950218": {
+   "r": "none",
+   "note": "Own site smokeshuk.co.il unreachable (robots error). Only source is yeahthatskosher 2020-10 article on Tzur David Smokehouse in Machane Yehuda (too old). No Tabit/Ontopo page and no closure news found."
+  },
+  "n6471737985": {
+   "r": "single",
+   "note": "Jewish Journal 2025-03 describes Ariel Eskayo as owner of the operating Arais Machane Yehuda restaurant in Jerusalem (no street address given). gokosher listing (undated) gives Agripas 115, Rabbanut Yerushalayim Mehuderet. Catalog website srugim.co.il is a news article, not the place's own site. No Tabit/Ontopo page and no closure news."
+  },
+  "n4831604951": {
+   "r": "none",
+   "note": "rest.co.il site unreachable (robots error); no Tabit/Ontopo page; no closure news. Only a Wolt public page appears active, with the same phone (02-643-1840) but address HaMaayan 9 (catalog: 21). Wolt is not an allowed source."
+  },
+  "n6187490291": {
+   "r": "none",
+   "note": "Facebook page blocked; only Wolt listings found (not an allowed source); no Tabit/Ontopo page, news or guide; no closure news."
+  },
+  "n10964969759": {
+   "r": "none",
+   "note": "Branch page prego.co.il/mevaseret/ returns an error; the prego.co.il/branch/ page says the chain has 21 branches, but its list didn't render, so the Mevaseret branch couldn't be confirmed. No Tabit/Ontopo page, no news, no closure news."
+  },
+  "n561068650": {
+   "r": "none",
+   "note": "Own site cielo.rest.co.il was blocked (permission not granted). gojerusalem listing gives 18 Ben Sira, Italian, open on Saturday, page metadata 2025-11 (a directory, not a dated review). No Tabit/Ontopo page; no closure news found."
+  },
+  "n12957201142": {
+   "r": "single",
+   "note": "Kipa 2026-02 lists Beit Ha'am cafe among kosher Jerusalem cafes, at Betzalel 11 (the Beit Ha'am building; catalog says Trumpeldor, which is adjacent), Rabbanut Jerusalem, Su-Th 08-23, Fr to 14. Instagram blocked; no second source; no Tabit/Ontopo page; no closure news."
+  },
+  "n4823365521": {
+   "r": "none",
+   "note": "Instagram not checked; only aggregator listings (happycow, wanderlog, travelpal) with no dated reliable info; no news or guide; no Tabit/Ontopo page; no closure news."
+  },
+  "n10244439955": {
+   "r": "single",
+   "note": "Own branch page gansipur.co.il/Jerusalem was blocked (permission not granted). Kipa 2026-07 recommends the operating Cafe Gan Sipur in Gan Sacher. Kipa 2023-08 review gives Ben Zvi Blvd, inside Sacher Park (catalog: Yitzhak Rabin), with mains around 74 NIS. No Tabit/Ontopo page found; no closure news."
+  },
+  "n1406870393": {
+   "r": "ok",
+   "note": "Catalog site yehoshua.rest-e.co.il unreachable (robots). Own site cafeyehoshua.com is live and lists Aza 17, Rehavia. Hours on the site contradict each other, so none recorded. itraveljerusalem guide (undated) says not kosher. No Tabit/Ontopo page and no closure news found."
+  },
+  "n7272044286": {
+   "r": "ok",
+   "note": "Own site cafesira.com is live with Ben Sira 4 (catalog has Ben Sira 1); judged same place, same street. Hours from own site. No Tabit/Ontopo page and no closure news."
+  },
+  "n7194863877": {
+   "r": "none",
+   "note": "Chain. cafecafe.co.il branch locator is a search form only, with no fetchable branch list, so the Ramot / Golda Meir 255 branch could not be confirmed. Only an undated aggregator (enjoyingisrael) lists it. No closure news found."
+  },
+  "n8433020920": {
+   "r": "ok",
+   "note": "Own branch page caferimon.co.il/BenYehuda is live with Lunz 4 corner Ben Yehuda, phone, hours and kosher (Mehadrin Rabbinate Jerusalem, dairy). It links to the Tabit page 'קפה רימון חלבי' (Ben Yehuda). No closure news."
+  },
+  "n10964969760": {
+   "r": "none",
+   "note": "Chain. The visible katsefet.co.il branch list (partial, 'load more') has no Mevaseret Zion / Harel 5 branch. No reliable source found for this branch and no closure news."
+  },
+  "n11018108036": {
+   "r": "ok",
+   "note": "Own site shukaffe.co.il is live and lists HaAfarsek 8, Jerusalem, phone 050-6406400. It is a roastery/coffee shop. Posted hours look reversed, so none recorded. No Tabit/Ontopo page and no closure news."
+  },
+  "n13403959131": {
+   "r": "none",
+   "note": "Instagram fetch (shani_kashtan) not permitted. Searches found no news, guide or booking page for this place in Harel."
+  },
+  "n6854597174": {
+   "r": "none",
+   "note": "Only a 2017 yeahthatskosher opening post (north industrial zone, Beit Shemesh) and undated listings. No official branch list or recent source, and no closure news."
+  },
+  "n3354245035": {
+   "r": "none",
+   "note": "No reliable source found for a '4 seasons' restaurant on Sultan Suleiman St. Searches return the hotel chain and unrelated places."
+  },
+  "n9667880180": {
+   "r": "none",
+   "note": "No reliable source found for 'Abu Ata Zaman' on Les Freres St (Old City)."
+  },
+  "n8586129553": {
+   "r": "none",
+   "note": "No source found for an 'Ahlan' cafe in Mateh Yehuda (address '4240' unclear, likely a road number); Maariv 2026-01 Mateh Yehuda coffee-carts article doesn't list it; no Tabit/Ontopo/site; no closure news"
+  },
+  "n1359323663": {
+   "r": "none",
+   "note": "Akramawi/Ikermawi hummus known from older guides (Vice Munchies topic, undated); no own site, Tabit/Ontopo, or 2025-2026 source confirming it at Ibn Khaldun St; no closure news found"
+  },
+  "n1366484534": {
+   "r": "none",
+   "note": "Possibly 'Al Mihbash' (Lonely Planet listing, East Jerusalem, undated, no address); can't match to Chaldan 6; no site/Tabit/Ontopo/recent source; no closure news"
+  },
+  "n7095169085": {
+   "r": "none",
+   "note": "Al-Mufti Espresso Cafe at 12 Via Dolorosa matches address (Fodor's and mahmiyat.ps listings), but both are undated and it's a cafe, not a bar; no own site/Tabit/Ontopo/2025-2026 source; no closure news found"
+  },
+  "n2150070637": {
+   "r": "none",
+   "note": "Only a Wanderlog stub 'Al Pasha Restaurant Humus' (no details loaded); no own site, Tabit/Ontopo, guide or recent source; no closure news"
+  },
+  "n2396187856": {
+   "r": "none",
+   "note": "Destination Palestine lists 'Shuleh Grill / Al-Sho'leh Grill', Sallah Edin St, phone +972-2-6273768 (undated); no own site/Tabit/Ontopo/2025-2026 source; no closure news"
+  },
+  "n10554820206": {
+   "r": "none",
+   "note": "Likely the Azzahra Restaurant of Azzahra Boutique Hotel, Az-Zahra St (Lonely Planet, gojerusalem, hotel booking listings; undated); match is judgement only; no own site/Tabit/Ontopo or dated 2025-2026 source found"
+  },
+  "n1366484536": {
+   "r": "none",
+   "note": "No source found for an Al-Hamra restaurant on Salah ad-Din St, Jerusalem; no site/Tabit/Ontopo; no closure news"
+  },
+  "n6065431486": {
+   "r": "none",
+   "note": "Aldo chain: Jerusalem branches found (pedestrian mall, Jaffa, Malha, Kiryat Yovel, Central Station, HaMoshava, Hadassah Ein Kerem) but none on HaEgoz St; no official branch list confirming this branch; no Tabit/Ontopo"
+  },
+  "n4449977403": {
+   "r": "none",
+   "note": "All Nations Cafe was a cultural hospitality project near Gethsemane; Wikipedia describes it in past tense, gatherings moved to Ein Hanya from 2006, latest events 2008; no reliable closure article, no current operation source"
+  },
+  "n1376583866": {
+   "r": "none",
+   "note": "Only a d.co.il directory listing (American Pie Pizza, Derech Beit Lechem 51) with template-looking hours, no date; no own site, no Tabit/Ontopo, no news/guide; no closure news found"
+  },
+  "n5018172023": {
+   "r": "none",
+   "note": "Frommers/Lonely Planet guide entries (El Khanka St near Damascus Gate) undated; no own site, no Tabit/Ontopo, no recent sources; no closure news found"
+  },
+  "n10556979851": {
+   "r": "ok",
+   "note": "Own site anthonys.co.il live naming Shoshan 4 (2026 menu files); Ontopo page with booking widget at Shoshan St 4; Tabit order page; gokosher listing; no closure news"
+  },
+  "n9292334863": {
+   "r": "none",
+   "note": "No cafe named Ascension found on Rabaa al-Adawiya / Mount of Olives; search results only about the Chapel of the Ascension; no Tabit/Ontopo"
+  },
+  "n2150073665": {
+   "r": "none",
+   "note": "Askadinya (11 Shimon HaTzadik) only in undated Fodor's/TripExpert guide entries; no own site, no Tabit/Ontopo, no recent source; no closure news found"
+  },
+  "n5018172022": {
+   "r": "single",
+   "note": "Maariv 2025-07 article describes Azura at HaEshkol 4, Mahane Yehuda operating (mains 70-90 NIS); Time Out 2023, iTravelJerusalem undated; no own site or Tabit/Ontopo; no closure news"
+  },
+  "n2193094674": {
+   "r": "conflict",
+   "note": "Only found d.co.il listing 'BBQ events at the Kotel' at HaMekubalim 1 (Old City), not Tiferet Israel; Burgers Bar Old City is at Tiferet Israel 16 (different name); no reliable source for this place"
+  },
+  "n566600166": {
+   "r": "ok",
+   "note": "Official Bagel Cafe branch list names Emek Refaim 54 branch with hours; Time Out 2025-05 on chain"
+  },
+  "n12604059728": {
+   "r": "ok",
+   "note": "Official Bagel Cafe branch list names Rehavia branch at Keren Kayemet LeIsrael 31 with hours; iTravelJerusalem same address"
+  },
+  "n13436566658": {
+   "r": "ok",
+   "note": "Official Bagel Cafe branch list names Ramat Eshkol branch at Paran 7 (Ramot Eshkol mall); Sat opens ~30 min after Shabbat to 21:30 (not encoded)"
+  },
+  "n10693740477": {
+   "r": "conflict",
+   "note": "Catalog street Jaffa (יפו). The official branch list (beerbazaar.co.il/pages/סניפים, checked 2026-11) names only Mahane Yehuda, Etz Chaim 3, for Jerusalem. The older Beer Bazaar 'Reshut HaShidur' venue at Jaffa 161 (itraveljerusalem, undated) is not on the official list. No closure article found. If this entry is the market branch, the official address is Etz Chaim 3, Jerusalem."
+  },
+  "n561068686": {
+   "r": "none",
+   "note": "Only older sources: Time Out (2023-04, 3 Ben Sira St) and itraveljerusalem (2023-05). No 2025-2026 source, no own site, no Tabit/Ontopo page, no closure news found."
+  },
+  "n9138891146": {
+   "r": "none",
+   "note": "Searches for Benny's in Mateh Yehuda (address '3976') found nothing reliable: no site, no Tabit/Ontopo page, no news."
+  },
+  "n12967017757": {
+   "r": "ok",
+   "note": "Own site biratenu.com redirects to 02nightcoop.com, which is live and lists Biratenu among its Jerusalem bars with reservations and events (checked 2026-11). The site gives no address. spinach.guide lists it at Hillel 6, while the catalog has Mevo HaMatmid, an alley by Hillel St, so the branch match is my judgement. No Tabit/Ontopo page and no closure news found."
+  },
+  "w253613069": {
+   "r": "none",
+   "note": "Brasserie Ein Kerem, HaMaayan 15. Only an old Time Out page (2016) and an undated itraveljerusalem page. The own site rol.co.il/sites/brasserie-jerusalem could not be fetched (robots unreachable). No Tabit/Ontopo page and no closure news found."
+  },
+  "n2109837717": {
+   "r": "none",
+   "note": "Buchman's Pizza at Beitar 2 (moved from Hebron Rd 103 per HappyCow, last updated 2023-03; JPost 2023-06 confirms the move). The own site buchmans.co.il fetch was refused (permission not granted). A separate Buchman's Diner on Emek Refaim exists. No recent reliable source for Beitar 2 and no closure news found."
+  },
+  "n729784731": {
+   "r": "conflict",
+   "note": "The official branch list (burgersbar.co.il/branches, checked 2026-11) has 9 Jerusalem branches and none on Shamai. Nearest listed: Ben Yehuda 2 and Jaffa 36. No closure article found."
+  },
+  "n1370050347": {
+   "r": "conflict",
+   "note": "The official branch list (burgersbar.co.il/branches, checked 2026-11) has no HaPersa (Talpiot) branch. No closure article found."
+  },
+  "n6274686485": {
+   "r": "ok",
+   "note": "The official branch list (burgersbar.co.il/branches, checked 2026-11) lists the Ben Yehuda 2 branch. Saturday-night hours vary with Shabbat (opens 1.5h after Shabbat until 23:30), so Sa is omitted from oh."
+  },
+  "n13535393397": {
+   "r": "ok",
+   "note": "The official branch list (burgersbar.co.il/branches, checked 2026-11) lists the Jewish Quarter branch at Tiferet Israel 12. Kosher: Yoreh De'ah Rabbinate (Rabbi Mahpod). Saturday-night hours vary (opens 1.5h after Shabbat until 00:00), so Sa is omitted."
+  },
+  "w629013962": {
+   "r": "none",
+   "note": "Only an undated kosher listing (totallyjewishtravel: 'Cafe Bagina - Garden Cafe', 74 Derech Beit Lechem, Rabbanut). No own site, no Tabit/Ontopo page, no recent news, no closure news found."
+  },
+  "n2297496858": {
+   "r": "none",
+   "note": "Cafe Rimon chain: Wikipedia lists branches at Ben Yehuda/Luntz, Mamilla and Beit Shemesh, not Damascus Gate. No source for a Damascus Gate branch, no Tabit/Ontopo page for it, no closure news."
+  },
+  "n5168993298": {
+   "r": "none",
+   "note": "Generic name 'Cafeteria' and address '396' only. Could not identify the place in any reliable source."
+  },
+  "n4200042889": {
+   "r": "none",
+   "note": "No own site, Tabit/Ontopo page, guide or news found for Caffe Vero on George Washington St. No closure news."
+  },
+  "n673957208": {
+   "r": "none",
+   "note": "Likely the cafe at the Augusta Victoria compound. Only aggregator listings found (wanderlog 'cafe auguste victoria'), no own site, booking page or news. No closure news."
+  },
+  "n6832647387": {
+   "r": "none",
+   "note": "No source found for Cafe Luther on David St (Old City), Lutheran Church of the Redeemer pages included. No closure news."
+  },
+  "n7431513885": {
+   "r": "none",
+   "note": "No own site, booking page or guide found for Celia restaurant in the Aftimos/Muristan market. No closure news."
+  },
+  "n560074164": {
+   "r": "none",
+   "note": "No source found for Chili Pizza on Hillel St. Search found only other pizzerias (Pizza Hallel at Zichron Yaakov 1, Pizza Hut at Ben Hillel 15), neither of which matches. No closure news."
+  },
+  "n10694782056": {
+   "r": "none",
+   "note": "No own site, booking page or news found for Coco Vanille on Nablus Rd (Hebrew, English and Arabic searches). No closure news."
+  },
+  "n9292334862": {
+   "r": "none",
+   "note": "No reliable source found for Coffee Inaam on Rabaa al-Adawiya alley 7 (English and Arabic searches)."
+  }
+ }
 }
