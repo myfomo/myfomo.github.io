@@ -1709,6 +1709,166 @@
   "n5813254156": {
    "r": "none",
    "note": "Own site vaniglia.co.il blocked (permission not granted). First Station page (modified 2022-01) lists Vaniglia at First Station, daily 10:00-23:00; enjoyingisrael (undated) gives David Remez 9; Time Out page is the Tel Aviv Port branch. No recent (2025-2026) allowed source; Wolt pages exist but not used; no closure news"
+  },
+  "n1268457739": {
+   "r": "none",
+   "note": "Found as Zigmund Bistro Bar, Aza 29 at Haari corner, Rechavia. HappyCow listing last updated 2020-12 (take-away only at that time); spinach.guide aggregator has no dated source; Wolt page exists but isn't an allowed source. No own site, no Tabit/Ontopo page, no closure news, no reliable 2025-2026 source."
+  },
+  "n12959145642": {
+   "r": "none",
+   "note": "GoKosher lists Zalman's at Lunz 3 (Rabbanut Yerushalayim Mehuderet), undated. Srugim 2019 review places it on Ben Yehuda mall; JPost 2024-07 mentions the chain (10 locations) but no branch list. No official branch list naming Luntz, no Tabit/Ontopo page, no closure news found."
+  },
+  "n7554445485": {
+   "r": "none",
+   "note": "Hanal'e is the dairy bar in the Khan Theatre courtyard, David Remez 2 (Jerusalem Film Fund listing, undated; phone 02-6719602). No own site, no Tabit/Ontopo page, no recent 2025-2026 source, no closure news."
+  },
+  "n4198584289": {
+   "r": "none",
+   "note": "Generic name 'חדר אוכל' with address '3976' in Mateh Yehuda; couldn't identify a specific venue in web searches. Nothing reliable found."
+  },
+  "n3499419263": {
+   "r": "none",
+   "note": "OSM entry ('free cafe', address 'scări') looks like junk or a description, not a venue name; searches found no identifiable venue. Nothing reliable found."
+  },
+  "n4839731005": {
+   "r": "none",
+   "note": "Searches found an Arbes hummus in Kiryat Tivon (Wolt) but no official branch list and no source for a Jerusalem branch on Shilo St. No Tabit/Ontopo page, no closure news."
+  },
+  "n5505375299": {
+   "r": "single",
+   "note": "GoJerusalem guide listing 'From Gaza to Berlin', 55 Azza St at Rabbi Chaim Berlin corner, Rechavia (falafel/hummus, $15-20). The page only has a last-updated timestamp (2025-11) in its metadata, so treating it as a recent source is my judgement. No own site, no Tabit/Ontopo page, no closure news found."
+  },
+  "n4488849290": {
+   "r": "none",
+   "note": "Time Out Israel listing (Ben Sira 3, kosher, 1/4 price, page dated 2023-04) and itraveljerusalem best-hummus article (2023-05) say it operates, but nothing from 2025-2026. No own site, no Tabit/Ontopo page, no closure news found."
+  },
+  "n1420857347": {
+   "r": "none",
+   "note": "Only an old HappyCow listing (1 HaRav Haim Berlin St, last updated 2022-12). No own site, no Tabit/Ontopo page, no 2025-26 source and no closure news found."
+  },
+  "n14272336293": {
+   "r": "none",
+   "note": "Only an undated kosher listing (totallyjewishtravel: 14 Yad Charuzim, Rabbanut). No own site, no Tabit/Ontopo page, no recent source and no closure news found."
+  },
+  "n7797855586": {
+   "r": "none",
+   "note": "Coffee Mill at Emek Refaim 23 appears in undated listings (itraveljerusalem, gokosher: Tzohar) and is name-checked in a Kipa article from 2023-05. Nothing from 2025-26, no Tabit/Ontopo page, no closure news."
+  },
+  "n6744445285": {
+   "r": "none",
+   "note": "Only a d.co.il directory entry (Ma'aseh Hoshev 6, kosher meat catering/restaurant, FB yafarest). No reliable or recent source, no booking page, no closure news."
+  },
+  "n10943922605": {
+   "r": "none",
+   "note": "Nothing found for this cafe on Kosovsky St: no own site, no booking page, no guide coverage, no closure news."
+  },
+  "n1404739176": {
+   "r": "none",
+   "note": "Time Out Israel listing from 2016 (11 Hebron Rd, Cinematheque lower level, Italian). No recent source, no Tabit/Ontopo page, no closure article found. The tiuli.com page failed to load."
+  },
+  "n9138891142": {
+   "r": "none",
+   "note": "Legenda is a gelato chain. No official branch list found naming a Mateh Yehuda branch on road 3976. The easy.co.il branch list failed to load. No closure news."
+  },
+  "n12957201140": {
+   "r": "none",
+   "note": "No source found for a cafe called Liba at Shatz 2 (the Time Out and Kipa cafe lists checked don't mention it). No own site, no booking page, no closure news."
+  },
+  "n4880282129": {
+   "r": "single",
+   "note": "First Station (David Remez 4) official compound directory lists Landwer (archive page 2, checked 2026-11); its own venue page shows a 'THE BUSINESS IS CLOSED' label with empty hours, which is probably a current-hours indicator, not a closure (judgement). JDN 2023-09 marketing piece confirms the branch at David Remez 4. No Tabit/Ontopo page and no closure news found. Landwer official branch list not checked."
+  },
+  "n12869205701": {
+   "r": "none",
+   "note": "No reliable source found for a Magma cafe/coffee cart in Mateh Yehuda (address 395). Not in the Maariv 2026-01 Mateh Yehuda coffee-cart article or the coffeetrail list."
+  },
+  "w435967250": {
+   "r": "none",
+   "note": "Generic name ('hosting tent'), address 44 only; searches found nothing identifiable."
+  },
+  "n11910527192": {
+   "r": "none",
+   "note": "Only a Ben Yehuda 16 location appears in sources (itraveljerusalem, insiders guide, koshernexus 2016, JPost 2020). Nothing for a Daniel Yanovsky branch. Own site muffinboutique.com fetch blocked (permission). No closure news."
+  },
+  "n14107541297": {
+   "r": "none",
+   "note": "Ben Yehuda 16 is documented only in old sources (koshernexus 2016, JPost 2020-09, Jerusalem insiders guide, kosher Rabbanut mehadrin). No 2025-2026 source. Own site muffinboutique.com fetch blocked (permission). No Tabit/Ontopo page and no closure news found."
+  },
+  "n4839762873": {
+   "r": "none",
+   "note": "Srigim Brewery has listings with no date (weekend.co.il: beer garden Fr-Sa 10:30-17:00; enjoyingisrael: commercial center Srigim, by appointment Su-Th) and an old Kipa article from 2014. No 2025-2026 dated source or own site found. tiuli and hamichlol fetches failed. No closure news."
+  },
+  "n5163384412": {
+   "r": "none",
+   "note": "Muza Bahar (Musa Bahar): enjoyingisrael lists it at Shoresh 20, Moshav Shoresh (kosher, hours given, undated). JPost review is from 2017-01. Catalog street is HaRimon, which doesn't match. No recent source, no Tabit/Ontopo page and no closure news; the tiuli fetch failed."
+  },
+  "n12958862559": {
+   "r": "single",
+   "note": "Time Out Israel (Hebrew) list of Jerusalem restaurants, 2026-01 (modified 2026-04), names Mona at Shmuel HaNagid 12. The English Time Out listing (2023) gives cuisine Mediterranean, price 3/4 and phone 02-622-2283. d.co.il gives the site monarest.co.il, but fetching it was blocked (permission). No Tabit/Ontopo page found."
+  },
+  "n1703341094": {
+   "r": "single",
+   "note": "Jerusalem municipal tourism guide (itraveljerusalem.com) lists Monaco at 18 Ben Sira St, open daily 19:00-04:00, live today but undated; no Tabit/Ontopo, no own site, no closure news found. Counted as current listing on judgement."
+  },
+  "n4580755057": {
+   "r": "none",
+   "note": "Chain Mousseline operating per ynetnews 2025-05 (market branch only); Hanassi 10 branch named only in undated JPost guide (article-748199, ~2023) and ice 2022-05 (4 branches, no addresses). No own site/booking page or recent source for Hanassi branch; no closure news."
+  },
+  "n4825247660": {
+   "r": "none",
+   "note": "No reliable source found for Miznon Kafzuba (Derech Bitachon, Mateh Yehuda); no site, booking page or news."
+  },
+  "n6088619190": {
+   "r": "none",
+   "note": "No reliable source found for 'King of Chips' on King George St; searches return unrelated places (Chick'n Chips etc.)."
+  },
+  "n12232451233": {
+   "r": "none",
+   "note": "No reliable source found for Menash Falafel, Yirmiyahu 34 Beit Shemesh; only directory listing pages, no news or own site."
+  },
+  "n14091323975": {
+   "r": "none",
+   "note": "Shawarma Massov appears on public Wolt page at Yafo 234, Jerusalem (not an allowed source; catalog address only 'Yafo'); no own site, booking page, guide or closure news found."
+  },
+  "n10799731407": {
+   "r": "none",
+   "note": "No reliable source for an Ethiopian restaurant at HaHavatzelet 3; Ethiopian places found elsewhere (Haset, 6 Hadekel St per JPost 2026-02; Habash) do not match address."
+  },
+  "n1703936209": {
+   "r": "none",
+   "note": "No reliable source found for 'Open' restaurant on Shlomo HaMelech St; no site, booking page or news."
+  },
+  "n908842777": {
+   "r": "none",
+   "note": "Only directories, tourist aggregators and an old blog came up (tiuli, happycow, trip.com, wanderlog, 2018 blog). The tiuli page fetch failed. No own site, no Tabit/Ontopo page, no 2025-2026 news or closure report."
+  },
+  "n13161962202": {
+   "r": "none",
+   "note": "Searches for the name plus Mevaseret Zion/Rakefet found no own site, no Tabit/Ontopo page, no guide or news, and no closure report."
+  },
+  "n2957619455": {
+   "r": "none",
+   "note": "Searches for the name plus Jerusalem/Yirmiyahu found nothing relevant (only biblical texts). No own site, no booking page, no news."
+  },
+  "n14272336295": {
+   "r": "none",
+   "note": "Searches for the name plus Jerusalem/HaSadna/Talpiot found no matching restaurant, no booking page, no news and no closure report."
+  },
+  "n3743833950": {
+   "r": "none",
+   "note": "Searches found no own site, booking page or guide naming it. Checked Maariv 2026-01 (Mateh Yehuda coffee carts) and Mako 2020: neither mentions it."
+  },
+  "n9996556417": {
+   "r": "none",
+   "note": "Searches in Hebrew and English found no source for a cafe of this name on Shvil HaKfar in Jerusalem. No own site, no booking page, no closure report."
+  },
+  "n7056388962": {
+   "r": "none",
+   "note": "The official mcdonalds.co.il store locator (whole list read, two parts; checked store pages 178, 209, 230, 246) lists Jerusalem branches at Shamai 4, Avizohar 8, Ben Yehuda 7, Yitzhak Rabin 10, Naomi 1, Malha (Agudat Sport Beitar 1) and HaTnufa 12. None is on HaRakevel street, so the branch is not confirmed. No closure news found either."
+  },
+  "n6734584085": {
+   "r": "none",
+   "note": "The official mcdonalds.co.il store locator shows no branch on HaHaruv or anywhere in Mateh Yehuda. Nearest are Mevaseret Mall (HaHotzvim 10) and BIG Beit Shemesh. Branch not confirmed, and no closure news found."
   }
  }
 }
