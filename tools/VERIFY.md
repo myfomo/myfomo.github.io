@@ -53,6 +53,7 @@ If exactly one recent source supports it, use result `single` (not `none`) and g
   `{"n": catalog name, "ok": "YYYY-MM", "nm"?, "cu"?, "pr"?, "oh"?, "p"?, "w"?, "bk"?, "k"?, "vg"?, "src": [url, ...]}`.
   `ok` is the month of the most recent source that showed the place operating (not just the month of the check).
 - Closed → `tools/closed-tlv.json` under `closed[id]`: `{"n": name, "d": "YYYY or YYYY-MM", "src": [url, ...]}`.
+  If the place **moved** and a reliable source gives the full new address, add `"mv": "street number, city"` — the app then offers groups that saved the old place to update the address.
 - Every checked id → `tools/verify-queue.json` `done[id] = {"r": "ok|closed|single|none|conflict", "note": short English note}`.
 - Validate JSON (`python3 -m json.tool`) before committing.
 

@@ -11,7 +11,9 @@ AC = cat.replace("places-", "address-check-")
 BLOCKED = {i for i, v in (json.load(open(AC))["fix"].items() if os.path.exists(AC) else []) if v.get("status") == "blocked"}
 today = time.strftime("%Y-%m-%d"); nx = nv = 0
 for p in D["places"]:
-    if p["id"] in C: p["x"] = C[p["id"]]["d"]; nx += 1
+    if p["id"] in C:
+        p["x"] = C[p["id"]]["d"]; nx += 1
+        if C[p["id"]].get("mv"): p["mv"] = C[p["id"]]["mv"]   # moved: the app offers the new address to groups that saved the old one
     # a mapper confirmed the place on the ground in the last 18 months (OpenStreetMap check_date / survey:date)
     if not p.get("x") and p.get("cd") and p["cd"] >= time.strftime("%Y-%m-%d", time.gmtime(time.time() - 548*86400)): p["ok"] = p["cd"]; p.setdefault("src", {})["ok"] = "osm-survey"; nv += 1
     V = VER.get(p["id"]) if p["id"] not in BLOCKED else None

@@ -1,419 +1,420 @@
 {
- "note": "Places confirmed closed by reliable news sources (mostly Time Out Tel Aviv closure lists and closure articles). Applied to the catalog by tools/apply_status.py; closed places are hidden in the app.",
- "closed": {
-  "n723220062": {
-   "n": "בנדיקט בן יהודה 171",
-   "d": "2025-07",
-   "src": [
-    "https://timeout.co.il/%d7%91%d7%a0%d7%93%d7%99%d7%a7%d7%98-%d7%a1%d7%92%d7%99%d7%a8%d7%94/"
-   ]
-  },
-  "n721908107": {
-   "n": "בנדיקט רוטשילד",
-   "d": "2025-07",
-   "src": [
-    "https://timeout.co.il/%d7%91%d7%a0%d7%93%d7%99%d7%a7%d7%98-%d7%a1%d7%92%d7%99%d7%a8%d7%94/",
-    "https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
-   ]
-  },
-  "n9866149822": {
-   "n": "אלגריה",
-   "d": "2024-12",
-   "src": [
-    "https://timeout.co.il/סגירות-מלחמה-שנה/",
-    "https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
-   ]
-  },
-  "n4875397221": {
-   "n": "פורטונה דל מאר",
-   "d": "2024",
-   "src": [
-    "https://timeout.co.il/סגירות-מלחמה-שנה/",
-    "https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
-   ]
-  },
-  "n9215660717": {
-   "n": "416 (הארבעה 16)",
-   "d": "2023-10",
-   "src": [
-    "https://timeout.co.il/416-נסגרת/",
-    "https://timeout.co.il/סגירות-מלחמה-שנה/"
-   ]
-  },
-  "n9587310144": {
-   "n": "416",
-   "d": "2023-10",
-   "src": [
-    "https://timeout.co.il/416-נסגרת/"
-   ]
-  },
-  "n2078982726": {
-   "n": "ספוטניק אלנבי 122",
-   "d": "2024",
-   "src": [
-    "https://timeout.co.il/סגירות-מלחמה-שנה/",
-    "https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
-   ]
-  },
-  "n4694933771": {
-   "n": "ספוטניק אלנבי 122",
-   "d": "2024",
-   "src": [
-    "https://timeout.co.il/סגירות-מלחמה-שנה/",
-    "https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
-   ]
-  },
-  "n8862063017": {
-   "n": "מייקר'ס",
-   "d": "2024",
-   "src": [
-    "https://timeout.co.il/סגירות-מלחמה-שנה/",
-    "https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
-   ]
-  },
-  "n1376048247": {
-   "n": "בר הגאולה",
-   "d": "2023",
-   "src": [
-    "https://timeout.co.il/סגירות-מלחמה-שנה/",
-    "https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
-   ]
-  },
-  "n2079006815": {
-   "n": "נחמה וחצי",
-   "d": "2025",
-   "src": [
-    "https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
-   ]
-  },
-  "n2556132735": {
-   "n": "גלבי",
-   "d": "2025",
-   "src": [
-    "https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
-   ]
-  },
-  "n11247029737": {
-   "n": "אורבי",
-   "d": "2025",
-   "src": [
-    "https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
-   ]
-  },
-  "n5273498821": {
-   "n": "סאלוף ובניו",
-   "d": "2025-05",
-   "src": [
-    "https://timeout.co.il/%d7%a1%d7%90%d7%9c%d7%95%d7%a3-%d7%95%d7%91%d7%a0%d7%99%d7%95-%d7%a1%d7%92%d7%99%d7%a8%d7%94/",
-    "https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
-   ]
-  },
-  "n4444435993": {
-   "n": "ווסט סייד",
-   "d": "2026-01",
-   "src": [
-    "https://timeout.co.il/ווסט-סייד-סגירה/",
-    "https://timeout.co.il/5-%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-0126/"
-   ]
-  },
-  "n12184187992": {
-   "n": "בושוויק",
-   "d": "2026-02",
-   "src": [
-    "https://timeout.co.il/בושוויק-מרלוזה-סגירה/"
-   ]
-  },
-  "n2078994157": {
-   "n": "קפה שפירא",
-   "d": "2026-05",
-   "src": [
-    "https://timeout.co.il/%D7%A1%D7%92%D7%99%D7%A8%D7%95%D7%AA-05-06-26/",
-    "https://timeout.co.il/topic/סגירה/"
-   ]
-  },
-  "n6929570285": {
-   "n": "אריא",
-   "d": "2026-05",
-   "src": [
-    "https://timeout.co.il/%D7%A1%D7%92%D7%99%D7%A8%D7%95%D7%AA-05-06-26/",
-    "https://timeout.co.il/%d7%90%d7%95%d7%90%d7%96%d7%99%d7%a1-%d7%a1%d7%92%d7%99%d7%a8%d7%94/"
-   ]
-  },
-  "n5961333787": {
-   "n": "אואזיס",
-   "d": "2026-05",
-   "src": [
-    "https://timeout.co.il/%d7%90%d7%95%d7%90%d7%96%d7%99%d7%a1-%d7%a1%d7%92%d7%99%d7%a8%d7%94/",
-    "https://timeout.co.il/%D7%A1%D7%92%D7%99%D7%A8%D7%95%D7%AA-05-06-26/"
-   ]
-  },
-  "n904541068": {
-   "n": "קיטשן מרקט",
-   "d": "2020",
-   "src": [
-    "https://timeout.co.il/%D7%A9%D7%95%D7%A7-%D7%94%D7%A0%D7%9E%D7%9C/",
-    "https://timeout.co.il/topic/קיטשן-מרקט/"
-   ]
-  },
-  "n1673048858": {
-   "n": "Frame",
-   "d": "2026",
-   "src": [
-    "https://timeout.co.il/theframe/"
-   ]
-  },
-  "n2508732698": {
-   "n": "La Repubblica",
-   "d": "2024-03",
-   "src": [
-    "https://timeout.co.il/לה-רפובליקה-סגירה/"
-   ]
-  },
-  "n10296520757": {
-   "n": "Michelangelo",
-   "d": "2024",
-   "src": [
-    "https://timeout.co.il/%d7%9e%d7%99%d7%9b%d7%90%d7%9c%d7%94/"
-   ]
-  },
-  "n454377089": {
-   "n": "Olive Leaf",
-   "d": "2019",
-   "src": [
-    "https://www.timeout.com/israel/restaurants/olive-leaf"
-   ]
-  },
-  "n5551424422": {
-   "n": "Shishko",
-   "d": "2024-05",
-   "src": [
-    "https://timeout.co.il/%d7%a9%d7%99%d7%a9%d7%a7%d7%95-%d7%9b%d7%a8%d7%9e%d7%9c/",
-    "https://www.ynetnews.com/culture/article/s1cjrdgda"
-   ]
-  },
-  "n4706508216": {
-   "n": "Tiger Lili",
-   "d": "2024",
-   "src": [
-    "https://timeout.co.il/%d7%98%d7%99%d7%99%d7%92%d7%a8-%d7%9c%d7%99%d7%9c%d7%99-%d7%a1%d7%92%d7%99%d7%a8%d7%94/"
-   ]
-  },
-  "n1546447299": {
-   "n": "גרינברג",
-   "d": "2022",
-   "src": [
-    "https://timeout.co.il/שוק-יווני-גרקו/"
-   ]
-  },
-  "n12568199182": {
-   "n": "דדה",
-   "d": "2025-12",
-   "src": [
-    "https://timeout.co.il/דדה-במשביר/"
-   ]
-  },
-  "n1975875693": {
-   "n": "הסינית האדומה",
-   "d": "2017",
-   "src": [
-    "https://timeout.co.il/הסינית-האדומה-טאיזו/"
-   ]
-  },
-  "n972616162": {
-   "n": "השולחן",
-   "d": "2016-04",
-   "src": [
-    "https://timeout.co.il/מפתיע-עומר-מילר-סוגר-את-מסעדת-שולחן/",
-    "https://www.globes.co.il/news/article.aspx?did=1000761096"
-   ]
-  },
-  "n720940493": {
-   "n": "מאסה",
-   "d": "2023-03",
-   "src": [
-    "https://timeout.co.il/מסה-נסגרת/"
-   ]
-  },
-  "n3722560627": {
-   "n": "נורמה ג'ין",
-   "d": "2020-06",
-   "src": [
-    "https://timeout.co.il/נורמה-ג׳ין-נסגר/"
-   ]
-  },
-  "n2678712694": {
-   "n": "סאלם בומביי",
-   "d": "2021-07",
-   "src": [
-    "https://timeout.co.il/סלאם-בומביי-נסגרת/"
-   ]
-  },
-  "n4462556311": {
-   "n": "סינג לונג",
-   "d": "2019-12",
-   "src": [
-    "https://timeout.co.il/%d7%a1%d7%99%d7%a0%d7%92-%d7%9c%d7%95%d7%a0%d7%92-%d7%a0%d7%a1%d7%92%d7%a8%d7%aa/"
-   ]
-  },
-  "n9300661521": {
-   "n": "פקין",
-   "d": "2022-08",
-   "src": [
-    "https://timeout.co.il/פקין-תיסגר/"
-   ]
-  },
-  "n4379249697": {
-   "n": "קופי קלאב",
-   "d": "2025",
-   "src": [
-    "https://timeout.co.il/גרינברג-בורגר-שינקין/"
-   ]
-  },
-  "n1770120429": {
-   "n": "Pussycat Lounge",
-   "d": "2019",
-   "src": [
-    "https://www.jta.org/2019/10/17/israel/how-tel-avivs-pussycat-strip-club-became-a-jewish-values-center",
-    "https://www.ynetnews.com/article/5584079"
-   ]
-  },
-  "n603032087": {
-   "n": "בקי",
-   "d": "2019",
-   "src": [
-    "https://timeout.co.il/קווין-בר-אבן-גבירול/"
-   ]
-  },
-  "n2500253399": {
-   "n": "Bata Ve Gariga",
-   "d": "2025-02",
-   "src": [
-    "https://timeout.co.il/בתה-וגריגה-הסוף/"
-   ]
-  },
-  "n12122755047": {
-   "n": "קליפורניה בר",
-   "d": "2026-04",
-   "src": [
-    "https://timeout.co.il/קליפורניה-הדסטארט/",
-    "https://www.maariv.co.il/culture/theater-art/article-1313390"
-   ]
-  },
-  "n6005408786": {
-   "n": "Cafe Sheleg",
-   "d": "2021-04",
-   "src": [
-    "https://timeout.co.il/קפה-שלג-סוף/"
-   ]
-  },
-  "n12133763256": {
-   "n": "אלוף בצלות",
-   "d": "2025-07",
-   "src": [
-    "https://timeout.co.il/קפה-אלוף-בצלות-סגירה/"
-   ]
-  },
-  "n6515917557": {
-   "n": "Petit",
-   "d": "2022",
-   "src": [
-    "https://timeout.co.il/בתי-הקפה-הכי-טובים-פלורנטין/"
-   ]
-  },
-  "n1643304613": {
-   "n": "The Streets",
-   "d": "2025-11",
-   "src": [
-    "https://timeout.co.il/סטריטס-סגירה/"
-   ]
-  },
-  "n6005408985": {
-   "n": "cafe Bialik",
-   "d": "2021-03",
-   "src": [
-    "https://timeout.co.il/קפה-ביאליק-נסגר/"
-   ]
-  },
-  "n10766084706": {
-   "n": "Niso",
-   "d": "2026-05",
-   "src": [
-    "https://timeout.co.il/%D7%A7%D7%A4%D7%94-%D7%A0%D7%99%D7%A1%D7%95-%D7%A0%D7%A1%D7%92%D7%A8/"
-   ]
-  },
-  "n12568199183": {
-   "n": "דדה",
-   "d": "2025-12",
-   "src": [
-    "https://timeout.co.il/דדה-במשביר/"
-   ]
-  },
-  "n2078999387": {
-   "n": "לוסיה",
-   "d": "2024-08",
-   "src": [
-    "https://timeout.co.il/%d7%a7%d7%a4%d7%94-%d7%91%d7%9c%d7%a4%d7%95%d7%a8/"
-   ]
-  },
-  "n606974128": {
-   "n": "מובינג",
-   "d": "2019-11",
-   "src": [
-    "https://www.ynet.co.il/articles/0,7340,L-5617382,00.html"
-   ]
-  },
-  "n12122788325": {
-   "n": "קפה אלחנן",
-   "d": "2024-12",
-   "src": [
-    "https://timeout.co.il/45-11-קפה/",
-    "https://timeout.co.il/קפה-אלחנן/"
-   ]
-  },
-  "n639265226": {
-   "n": "שיין 38",
-   "d": "2022-08",
-   "src": [
-    "https://timeout.co.il/קפה-שיין-סגירה/",
-    "https://timeout.co.il/קפה-38/"
-   ]
-  },
-  "n2078996678": {
-   "n": "barvazi urban sandwich",
-   "d": "2019-07",
-   "src": [
-    "https://timeout.co.il/שירת-הברווז-סנדוויציית-ברווזי-נסגרת/",
-    "https://timeout.co.il/%d7%91%d7%a8%d7%95%d7%95%d7%96%d7%99-%d7%97%d7%95%d7%96%d7%a8/"
-   ]
-  },
-  "n2079041793": {
-   "n": "BANA",
-   "d": "2026-02",
-   "src": [
-    "https://timeout.co.il/%d7%9e%d7%a1%d7%a2%d7%93%d7%95%d7%aa-%d7%98%d7%91%d7%a2%d7%95%d7%a0%d7%99%d7%95%d7%aa-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/"
-   ]
-  },
-  "n12129104729": {
-   "n": "בינדאז",
-   "d": "2025",
-   "src": [
-    "https://timeout.co.il/%d7%9e%d7%90-%d7%a4%d7%90%d7%95-%d7%96%d7%91%d7%95%d7%9c%d7%95%d7%9f/"
-   ]
-  },
-  "n6023106967": {
-   "n": "עד העצם אקספרס",
-   "d": "2024-11",
-   "src": [
-    "https://www.mako.co.il/food-restaurants/street-food-critics/Article-ac6e976862a4681026.htm",
-    "https://www.ice.co.il/consumerism/news/article/1036715"
-   ]
-  },
-  "n1368786620": {
-   "n": "גלידה מונטנה",
-   "d": "2019",
-   "src": [
-    "https://www.ynet.co.il/food/article/r1iJl11CkS"
-   ]
-  }
- }
+"note": "Places confirmed closed by reliable news sources (mostly Time Out Tel Aviv closure lists and closure articles). Applied to the catalog by tools/apply_status.py; closed places are hidden in the app.",
+"closed": {
+"n723220062": {
+"n": "בנדיקט בן יהודה 171",
+"d": "2025-07",
+"src": [
+"https://timeout.co.il/%d7%91%d7%a0%d7%93%d7%99%d7%a7%d7%98-%d7%a1%d7%92%d7%99%d7%a8%d7%94/"
+]
+},
+"n721908107": {
+"n": "בנדיקט רוטשילד",
+"d": "2025-07",
+"src": [
+"https://timeout.co.il/%d7%91%d7%a0%d7%93%d7%99%d7%a7%d7%98-%d7%a1%d7%92%d7%99%d7%a8%d7%94/",
+"https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
+]
+},
+"n9866149822": {
+"n": "אלגריה",
+"d": "2024-12",
+"src": [
+"https://timeout.co.il/סגירות-מלחמה-שנה/",
+"https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
+]
+},
+"n4875397221": {
+"n": "פורטונה דל מאר",
+"d": "2024",
+"src": [
+"https://timeout.co.il/סגירות-מלחמה-שנה/",
+"https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
+]
+},
+"n9215660717": {
+"n": "416 (הארבעה 16)",
+"d": "2023-10",
+"src": [
+"https://timeout.co.il/416-נסגרת/",
+"https://timeout.co.il/סגירות-מלחמה-שנה/"
+]
+},
+"n9587310144": {
+"n": "416",
+"d": "2023-10",
+"src": [
+"https://timeout.co.il/416-נסגרת/"
+]
+},
+"n2078982726": {
+"n": "ספוטניק אלנבי 122",
+"d": "2024",
+"src": [
+"https://timeout.co.il/סגירות-מלחמה-שנה/",
+"https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
+]
+},
+"n4694933771": {
+"n": "ספוטניק אלנבי 122",
+"d": "2024",
+"src": [
+"https://timeout.co.il/סגירות-מלחמה-שנה/",
+"https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
+]
+},
+"n8862063017": {
+"n": "מייקר'ס",
+"d": "2024",
+"src": [
+"https://timeout.co.il/סגירות-מלחמה-שנה/",
+"https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
+]
+},
+"n1376048247": {
+"n": "בר הגאולה",
+"d": "2023",
+"src": [
+"https://timeout.co.il/סגירות-מלחמה-שנה/",
+"https://timeout.co.il/סגירת-מסעדות-נוב-0811/"
+]
+},
+"n2079006815": {
+"n": "נחמה וחצי",
+"d": "2025",
+"src": [
+"https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
+]
+},
+"n2556132735": {
+"n": "גלבי",
+"d": "2025",
+"src": [
+"https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
+]
+},
+"n11247029737": {
+"n": "אורבי",
+"d": "2025",
+"src": [
+"https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
+]
+},
+"n5273498821": {
+"n": "סאלוף ובניו",
+"d": "2025-05",
+"src": [
+"https://timeout.co.il/%d7%a1%d7%90%d7%9c%d7%95%d7%a3-%d7%95%d7%91%d7%a0%d7%99%d7%95-%d7%a1%d7%92%d7%99%d7%a8%d7%94/",
+"https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
+]
+},
+"n4444435993": {
+"n": "ווסט סייד",
+"d": "2026-01",
+"src": [
+"https://timeout.co.il/ווסט-סייד-סגירה/",
+"https://timeout.co.il/5-%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-0126/"
+]
+},
+"n12184187992": {
+"n": "בושוויק",
+"d": "2026-02",
+"src": [
+"https://timeout.co.il/בושוויק-מרלוזה-סגירה/"
+]
+},
+"n2078994157": {
+"n": "קפה שפירא",
+"d": "2026-05",
+"src": [
+"https://timeout.co.il/%D7%A1%D7%92%D7%99%D7%A8%D7%95%D7%AA-05-06-26/",
+"https://timeout.co.il/topic/סגירה/"
+]
+},
+"n6929570285": {
+"n": "אריא",
+"d": "2026-05",
+"src": [
+"https://timeout.co.il/%D7%A1%D7%92%D7%99%D7%A8%D7%95%D7%AA-05-06-26/",
+"https://timeout.co.il/%d7%90%d7%95%d7%90%d7%96%d7%99%d7%a1-%d7%a1%d7%92%d7%99%d7%a8%d7%94/"
+]
+},
+"n5961333787": {
+"n": "אואזיס",
+"d": "2026-05",
+"src": [
+"https://timeout.co.il/%d7%90%d7%95%d7%90%d7%96%d7%99%d7%a1-%d7%a1%d7%92%d7%99%d7%a8%d7%94/",
+"https://timeout.co.il/%D7%A1%D7%92%D7%99%D7%A8%D7%95%D7%AA-05-06-26/"
+]
+},
+"n904541068": {
+"n": "קיטשן מרקט",
+"d": "2020",
+"src": [
+"https://timeout.co.il/%D7%A9%D7%95%D7%A7-%D7%94%D7%A0%D7%9E%D7%9C/",
+"https://timeout.co.il/topic/קיטשן-מרקט/"
+]
+},
+"n1673048858": {
+"n": "Frame",
+"d": "2026",
+"src": [
+"https://timeout.co.il/theframe/"
+],
+"mv": "הברזל 27, תל אביב"
+},
+"n2508732698": {
+"n": "La Repubblica",
+"d": "2024-03",
+"src": [
+"https://timeout.co.il/לה-רפובליקה-סגירה/"
+]
+},
+"n10296520757": {
+"n": "Michelangelo",
+"d": "2024",
+"src": [
+"https://timeout.co.il/%d7%9e%d7%99%d7%9b%d7%90%d7%9c%d7%94/"
+]
+},
+"n454377089": {
+"n": "Olive Leaf",
+"d": "2019",
+"src": [
+"https://www.timeout.com/israel/restaurants/olive-leaf"
+]
+},
+"n5551424422": {
+"n": "Shishko",
+"d": "2024-05",
+"src": [
+"https://timeout.co.il/%d7%a9%d7%99%d7%a9%d7%a7%d7%95-%d7%9b%d7%a8%d7%9e%d7%9c/",
+"https://www.ynetnews.com/culture/article/s1cjrdgda"
+]
+},
+"n4706508216": {
+"n": "Tiger Lili",
+"d": "2024",
+"src": [
+"https://timeout.co.il/%d7%98%d7%99%d7%99%d7%92%d7%a8-%d7%9c%d7%99%d7%9c%d7%99-%d7%a1%d7%92%d7%99%d7%a8%d7%94/"
+]
+},
+"n1546447299": {
+"n": "גרינברג",
+"d": "2022",
+"src": [
+"https://timeout.co.il/שוק-יווני-גרקו/"
+]
+},
+"n12568199182": {
+"n": "דדה",
+"d": "2025-12",
+"src": [
+"https://timeout.co.il/דדה-במשביר/"
+]
+},
+"n1975875693": {
+"n": "הסינית האדומה",
+"d": "2017",
+"src": [
+"https://timeout.co.il/הסינית-האדומה-טאיזו/"
+]
+},
+"n972616162": {
+"n": "השולחן",
+"d": "2016-04",
+"src": [
+"https://timeout.co.il/מפתיע-עומר-מילר-סוגר-את-מסעדת-שולחן/",
+"https://www.globes.co.il/news/article.aspx?did=1000761096"
+]
+},
+"n720940493": {
+"n": "מאסה",
+"d": "2023-03",
+"src": [
+"https://timeout.co.il/מסה-נסגרת/"
+]
+},
+"n3722560627": {
+"n": "נורמה ג'ין",
+"d": "2020-06",
+"src": [
+"https://timeout.co.il/נורמה-ג׳ין-נסגר/"
+]
+},
+"n2678712694": {
+"n": "סאלם בומביי",
+"d": "2021-07",
+"src": [
+"https://timeout.co.il/סלאם-בומביי-נסגרת/"
+]
+},
+"n4462556311": {
+"n": "סינג לונג",
+"d": "2019-12",
+"src": [
+"https://timeout.co.il/%d7%a1%d7%99%d7%a0%d7%92-%d7%9c%d7%95%d7%a0%d7%92-%d7%a0%d7%a1%d7%92%d7%a8%d7%aa/"
+]
+},
+"n9300661521": {
+"n": "פקין",
+"d": "2022-08",
+"src": [
+"https://timeout.co.il/פקין-תיסגר/"
+]
+},
+"n4379249697": {
+"n": "קופי קלאב",
+"d": "2025",
+"src": [
+"https://timeout.co.il/גרינברג-בורגר-שינקין/"
+]
+},
+"n1770120429": {
+"n": "Pussycat Lounge",
+"d": "2019",
+"src": [
+"https://www.jta.org/2019/10/17/israel/how-tel-avivs-pussycat-strip-club-became-a-jewish-values-center",
+"https://www.ynetnews.com/article/5584079"
+]
+},
+"n603032087": {
+"n": "בקי",
+"d": "2019",
+"src": [
+"https://timeout.co.il/קווין-בר-אבן-גבירול/"
+]
+},
+"n2500253399": {
+"n": "Bata Ve Gariga",
+"d": "2025-02",
+"src": [
+"https://timeout.co.il/בתה-וגריגה-הסוף/"
+]
+},
+"n12122755047": {
+"n": "קליפורניה בר",
+"d": "2026-04",
+"src": [
+"https://timeout.co.il/קליפורניה-הדסטארט/",
+"https://www.maariv.co.il/culture/theater-art/article-1313390"
+]
+},
+"n6005408786": {
+"n": "Cafe Sheleg",
+"d": "2021-04",
+"src": [
+"https://timeout.co.il/קפה-שלג-סוף/"
+]
+},
+"n12133763256": {
+"n": "אלוף בצלות",
+"d": "2025-07",
+"src": [
+"https://timeout.co.il/קפה-אלוף-בצלות-סגירה/"
+]
+},
+"n6515917557": {
+"n": "Petit",
+"d": "2022",
+"src": [
+"https://timeout.co.il/בתי-הקפה-הכי-טובים-פלורנטין/"
+]
+},
+"n1643304613": {
+"n": "The Streets",
+"d": "2025-11",
+"src": [
+"https://timeout.co.il/סטריטס-סגירה/"
+]
+},
+"n6005408985": {
+"n": "cafe Bialik",
+"d": "2021-03",
+"src": [
+"https://timeout.co.il/קפה-ביאליק-נסגר/"
+]
+},
+"n10766084706": {
+"n": "Niso",
+"d": "2026-05",
+"src": [
+"https://timeout.co.il/%D7%A7%D7%A4%D7%94-%D7%A0%D7%99%D7%A1%D7%95-%D7%A0%D7%A1%D7%92%D7%A8/"
+]
+},
+"n12568199183": {
+"n": "דדה",
+"d": "2025-12",
+"src": [
+"https://timeout.co.il/דדה-במשביר/"
+]
+},
+"n2078999387": {
+"n": "לוסיה",
+"d": "2024-08",
+"src": [
+"https://timeout.co.il/%d7%a7%d7%a4%d7%94-%d7%91%d7%9c%d7%a4%d7%95%d7%a8/"
+]
+},
+"n606974128": {
+"n": "מובינג",
+"d": "2019-11",
+"src": [
+"https://www.ynet.co.il/articles/0,7340,L-5617382,00.html"
+]
+},
+"n12122788325": {
+"n": "קפה אלחנן",
+"d": "2024-12",
+"src": [
+"https://timeout.co.il/45-11-קפה/",
+"https://timeout.co.il/קפה-אלחנן/"
+]
+},
+"n639265226": {
+"n": "שיין 38",
+"d": "2022-08",
+"src": [
+"https://timeout.co.il/קפה-שיין-סגירה/",
+"https://timeout.co.il/קפה-38/"
+]
+},
+"n2078996678": {
+"n": "barvazi urban sandwich",
+"d": "2019-07",
+"src": [
+"https://timeout.co.il/שירת-הברווז-סנדוויציית-ברווזי-נסגרת/",
+"https://timeout.co.il/%d7%91%d7%a8%d7%95%d7%95%d7%96%d7%99-%d7%97%d7%95%d7%96%d7%a8/"
+]
+},
+"n2079041793": {
+"n": "BANA",
+"d": "2026-02",
+"src": [
+"https://timeout.co.il/%d7%9e%d7%a1%d7%a2%d7%93%d7%95%d7%aa-%d7%98%d7%91%d7%a2%d7%95%d7%a0%d7%99%d7%95%d7%aa-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/"
+]
+},
+"n12129104729": {
+"n": "בינדאז",
+"d": "2025",
+"src": [
+"https://timeout.co.il/%d7%9e%d7%90-%d7%a4%d7%90%d7%95-%d7%96%d7%91%d7%95%d7%9c%d7%95%d7%9f/"
+]
+},
+"n6023106967": {
+"n": "עד העצם אקספרס",
+"d": "2024-11",
+"src": [
+"https://www.mako.co.il/food-restaurants/street-food-critics/Article-ac6e976862a4681026.htm",
+"https://www.ice.co.il/consumerism/news/article/1036715"
+]
+},
+"n1368786620": {
+"n": "גלידה מונטנה",
+"d": "2019",
+"src": [
+"https://www.ynet.co.il/food/article/r1iJl11CkS"
+]
+}
+}
 }
