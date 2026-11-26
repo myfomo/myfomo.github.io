@@ -32,7 +32,8 @@
    "src": [
     "https://ontopo.com/he/il/page/19084594"
    ],
-   "note": "Albert 1943 per its Ontopo page"
+   "note": "Albert 1943 per its Ontopo page. Address text only, point kept (user approved 2026-11-26; separate from Long Sang)",
+   "keep_coords": true
   },
   "n6312684887": {
    "a": "הגימנסיה העברית 7",
@@ -243,7 +244,8 @@
     "https://porter.co.il",
     "https://ontopo.com/he/il/page/porterandsons"
    ],
-   "note": "Catalog has street only; own site and Ontopo give HaArba'a 14"
+   "note": "Catalog has street only; own site and Ontopo give HaArba'a 14. Address text only, point kept (user approved 2026-11-26; separate from Mike's Place)",
+   "keep_coords": true
   },
   "n705556743": {
    "a": "חבקוק הנביא 1",
@@ -296,7 +298,8 @@
    "src": [
     "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=166"
    ],
-   "note": "Adds house number from official locator"
+   "note": "Adds house number from official locator. Address text only, point kept (user approved 2026-11-26; separate from Vong)",
+   "keep_coords": true
   },
   "n4112078463": {
    "a": "אבן גבירול 30",

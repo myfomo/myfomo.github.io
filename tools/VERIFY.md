@@ -69,8 +69,9 @@ and the names of the places found closed.
 Then a section **"מחכה לאישור שלך"** (user request 2026-11-26). Pull first, so `data/address-check-tlv.json` reflects the latest workflow run.
 List every fix there that is not `applied`, grouped:
 - (a) **shared address**: same street + number as another place (mall, complex). Needs the user's `shared_ok`.
-- (b) **another place within 12 m**: these are separate places with their own addresses. On 2026-11-26 the user declined `shared_ok`
-  for Albert 1943 / Long Sang, Porter & Sons / Mike's Place and McDonald's Rothschild 33 / Vong. Do not list these again; list only new ones.
+- (b) **another place within 12 m**: these are separate places with their own addresses. Never merge them. The user's choice (2026-11-26,
+  for Albert 1943, Porter & Sons, McDonald's Rothschild 33) is to change only the address text and keep the point (`keep_coords`).
+  Propose the same for new cases and ask; do not apply it without approval.
 - (c) **technical blocks** (no coordinates found, geocoded point too far): need manual coordinates (`la`/`lo`).
 - (d) **suspected duplicates**: a fix blocked because an entry with the same name already stands at that address. Propose a `dup` merge.
 
