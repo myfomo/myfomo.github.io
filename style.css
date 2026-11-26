@@ -1198,3 +1198,8 @@ body.sxp-on{overflow:hidden}
 /* splash demo: shorter */
 #splash.fast *{animation-duration:.45s!important;animation-delay:0s!important}
 .plusmenu{left:0;right:0;margin-inline:auto;width:max-content;transform:none}
+/* reinforcement */
+.badges2{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.badge2{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--brass) 18%,var(--card));font:800 12.5px Rubik,sans-serif;color:var(--ink)}
+.badge2.fire{background:color-mix(in srgb,#FF5E4D 16%,var(--card))}.badge2.next{background:none;border:1.5px dashed var(--line);color:var(--mute)}
+.notice.loved{border-inline-start:4px solid #FF3D6E}
