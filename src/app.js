@@ -95,7 +95,7 @@ async function removeRow(r){if(!navigator.onLine){queueOp({t:'del',id:r.id,lid:c
   rows=rows.filter(x=>x.id!==r.id);const paths=(r.photos||[]).flatMap(p=>[p.path,p.thumb]).filter(Boolean);if(paths.length)sb.storage.from('photos').remove(paths).catch(()=>{});render();return true}
 function subscribe(){if(chan)return;chan=sb.channel('restaurants-live').on('postgres_changes',{event:'*',schema:'public',table:'restaurants'},pl=>{
   if(pl.eventType==='DELETE'){const id=pl.old&&pl.old.id;if(!byId(id))return;rows=rows.filter(r=>r.id!==id);if(openId===id&&mode==='view')closeSheet()}
-  else{const n=pl.new;if(!n||!cur||n.list_id!==cur.id)return;const row={...(n.data||{}),id:n.id};if(row._meta){if(!meta.id||meta.id===row.id){meta={id:row.id,special:row.special||[],diets:row.diets||{}};lsSet('rs-meta-'+cur.id,meta);renderNotices();if(mode==='pick')pick(undefined,true)}return}const i=rows.findIndex(r=>r.id===n.id);if(i>=0)rows[i]=row;else rows.unshift(row)}
+  else{const n=pl.new;if(!n||!cur||n.list_id!==cur.id)return;const row={...(n.data||{}),id:n.id};if(row._meta){if(!meta.id||meta.id===row.id){meta={...row,id:row.id,special:Array.isArray(row.special)?row.special:[],diets:row.diets&&typeof row.diets==='object'?row.diets:{}};lsSet('rs-meta-'+cur.id,meta);renderNotices();if(mode==='pick')pick(undefined,true)}return}const i=rows.findIndex(r=>r.id===n.id);if(i>=0)rows[i]=row;else rows.unshift(row)}
   render();if(openId&&mode==='view')renderDetail()})
   .on('postgres_changes',{event:'INSERT',schema:'public',table:'activity'},pl=>{const n=pl.new;if(!n||!cur||n.list_id!==cur.id||acts.some(a=>a.id===n.id))return;acts.unshift(n);renderBell();if(n.user_id!==myId)toast(`${nm(n.user_id)} ${n.text}`)})
   .on('postgres_changes',{event:'*',schema:'public',table:'comments'},pl=>{if(pl.eventType==='DELETE'){const id=pl.old&&pl.old.id;for(const k in cmts)if(cmts[k])cmts[k]=cmts[k].filter(c=>c.id!==id)}else{const n=pl.new;if(!n||!cur||n.list_id!==cur.id)return;if(cmts[n.restaurant_id]&&!cmts[n.restaurant_id].some(c=>c.id===n.id))cmts[n.restaurant_id].push(n)}if(openId&&mode==='view')renderDetail()})
@@ -433,7 +433,7 @@ async function loadActivity(){if(!cur)return;const lid=cur.id;try{const {data}=a
 const seenKey=()=>'rs-seen-'+(cur&&cur.id);
 function unread(){const s=lsGet(seenKey(),0);return acts.filter(a=>a.user_id!==myId&&new Date(a.created_at).getTime()>s).length}
 function renderBell(){const n=unread();document.querySelectorAll('.bell-n').forEach(b=>{b.textContent=n>9?'9+':String(n);b.hidden=!n})}
-const ACT_IC={add:'plus',photo:'cam',comment:'chat',visit:'pin',plan:'cal',match:'heart',poll:'vote'};
+const ACT_IC={loved:'heart',add:'plus',photo:'cam',comment:'chat',visit:'pin',plan:'cal',match:'heart',poll:'vote'};
 function feedSheet(){killFormMap();openId=null;mode='feed';openSheet();lsSet(seenKey(),Date.now());renderBell();
   $('#sb').innerHTML=`<div class="sec dh"><h2>מה חדש</h2><p class="meta" style="margin-top:6px">מה קורה בקבוצה "${esc(cur.name)}"</p></div><div class="sec"><ul class="feed">${acts.length?acts.map(a=>`<li ${a.restaurant_id?`data-act="open" data-id="${esc(a.restaurant_id)}"`:''}><span class="av" style="--h:${hue(a.user_id)}">${esc((nm(a.user_id)||'?').charAt(0))}</span><span class="ft"><b>${esc(nm(a.user_id))}</b> ${esc(a.text)}<small>${relT(a.created_at)}</small></span></li>`).join(''):'<li class="note">עוד לא קרה כלום. ברגע שמישהו יוסיף מקום, תמונה או תגובה, זה יופיע כאן.</li>'}</ul></div>`}
 
@@ -921,12 +921,13 @@ async function pushSync(){if(!pushOK()||Notification.permission!=='granted')retu
 let pushAsk=false;
 async function pushMaybeAsk(){if(lsGet('rs-push-asked',0))return;const st=await pushState();pushAsk=st==='off'||st==='ios';renderNotices()}
 async function fillPushSec(){const el=$('#pushSec');if(!el)return;const st=await pushState();
-  el.innerHTML=st==='on'?'<p class="note" style="margin:0 0 10px">ההתראות פעילות במכשיר הזה 🔔</p><div class="row"><button class="btn pri" type="button" data-act="pushTest">שליחת התראת בדיקה</button><button class="btn" type="button" data-act="pushOff">כיבוי התראות במכשיר הזה</button></div>'
+  el.innerHTML=st==='on'?'<p class="note" style="margin:0 0 10px">ההתראות פעילות במכשיר הזה 🔔</p><div class="row"><button class="btn pri" type="button" data-act="pushTest">שליחת התראת בדיקה</button><button class="btn" type="button" data-act="pushOff">כיבוי התראות במכשיר הזה</button></div>'+`<label class="row" style="margin-top:12px;gap:10px;align-items:center;cursor:pointer"><input type="checkbox" data-lovedpref ${((meta.noLoved||{})[myId])?'':'checked'}> <span>התראה כשמישהו אוהב מקום שהמלצתי עליו <small class="meta">(בקבוצה הזו, עד אחת ביום)</small></span></label>`
   :st==='denied'?'<p class="note" style="margin:0">ההתראות חסומות. כדי להפעיל: הגדרות הטלפון ← Fomo (או הדפדפן) ← התראות.</p>'
   :st==='ios'?'<p class="note" style="margin:0">באייפון התראות עובדות רק מהאפליקציה שבמסך הבית. מוסיפים את Fomo למסך הבית (למטה), פותחים משם ומפעילים כאן.</p>'
   :st==='na'?'<p class="note" style="margin:0">המכשיר או הדפדפן הזה לא תומך בהתראות.</p>'
   :'<p class="note" style="margin:0 0 10px">קבלו התראה כשמישהו מוסיף מקום, מצביע, קובע ערב או מנצח במשחק, ותזכורת בבוקר של יום היציאה.</p><button class="btn pri" type="button" data-act="pushOn">🔔 הפעלת התראות</button>'}
 
+document.addEventListener('change',async e=>{const c=e.target.closest('[data-lovedpref]');if(!c)return;const N={...(meta.noLoved||{})};if(c.checked)delete N[myId];else N[myId]=true;if(await metaSave({noLoved:N}))toast(c.checked?'נפעיל התראה כשאוהבים את ההמלצות שלך 💛':'לא נשלח התראות על לייקים להמלצות')});
 /* ================= auto check-in ================= */
 let ciBusy=false;
 async function autoCheckin(){if(ciBusy||lsGet('rs-checkin','on')==='off'||!navigator.geolocation||!rows.length||$('#cip'))return;
@@ -963,9 +964,9 @@ ${P.some(hasLL)?'<div class="pub-map" id="pubmap"></div>':''}<div class="pub-gri
 
 /* ================= list meta (special days, diets) — stored as a hidden row ================= */
 let meta={id:null,special:[],diets:{},vouchers:[]};
-function takeMeta(lid){const ms=rows.filter(r=>r._meta);if(ms.length){rows=rows.filter(r=>!r._meta);ms.sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));const m=ms[0];meta={id:m.id,special:Array.isArray(m.special)?m.special:[],diets:m.diets&&typeof m.diets==='object'?m.diets:{},vouchers:Array.isArray(m.vouchers)?m.vouchers:[],tastes:m.tastes&&typeof m.tastes==='object'?m.tastes:{}};lsSet('rs-meta-'+lid,meta)}else if(!meta.id){meta={id:null,special:[],diets:{},...lsGet('rs-meta-'+lid,{})}}}
+function takeMeta(lid){const ms=rows.filter(r=>r._meta);if(ms.length){rows=rows.filter(r=>!r._meta);ms.sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));const m=ms[0];meta={...m,id:m.id,special:Array.isArray(m.special)?m.special:[],diets:m.diets&&typeof m.diets==='object'?m.diets:{},vouchers:Array.isArray(m.vouchers)?m.vouchers:[],tastes:m.tastes&&typeof m.tastes==='object'?m.tastes:{}};lsSet('rs-meta-'+lid,meta)}else if(!meta.id){meta={id:null,special:[],diets:{},...lsGet('rs-meta-'+lid,{})}}}
 async function metaSave(patch){if(!cur)return false;const lid=cur.id;Object.assign(meta,patch);lsSet('rs-meta-'+lid,meta);
-  try{if(!meta.id){const id=uuid();const {error}=await sb.from('restaurants').insert({id,list_id:lid,data:{_meta:true,createdAt:Date.now(),special:meta.special||[],diets:meta.diets||{},vouchers:meta.vouchers||[],tastes:meta.tastes||{}}});if(error)throw error;meta.id=id}
+  try{if(!meta.id){const id=uuid();const {id:_mid,...mrest}=meta;const {error}=await sb.from('restaurants').insert({id,list_id:lid,data:{...mrest,_meta:true,createdAt:Date.now(),special:meta.special||[],diets:meta.diets||{},vouchers:meta.vouchers||[],tastes:meta.tastes||{}}});if(error)throw error;meta.id=id}
     else{const {error}=await sb.rpc('patch_restaurant',{rid:meta.id,patch});if(error)throw error}return true}catch(e){toast(errMsg(e));return false}}
 /* ================= dietary preferences ================= */
 const DIET=[['kosher','כשר','✡️'],['veg','צמחוני','🥦'],['vegan','טבעוני','🌱'],['gf','ללא גלוטן','🌾']];
@@ -1135,7 +1136,7 @@ function bindSwipe(){const bar=$('#pollBar');if(!bar||bar.dataset.sw)return;bar.
 /* ---------- events ---------- */
 let popId='';
 function animIn(){const g=$('#grid');if(!g)return;g.classList.remove('anim');void g.offsetWidth;g.classList.add('anim');clearTimeout(animIn.t);animIn.t=setTimeout(()=>g.classList.remove('anim'),1400)}
-async function toggleVote(id){const r=byId(id);if(!r)return;if(!iVoted(r)){popId=id;setTimeout(()=>{popId=''},700);if(voters(r).length>=1&&!isMatch(r))setTimeout(()=>{const x=byId(id);if(x&&isMatch(x)){logAct('match',id,`גם רוצה את ${x.name}! שניכם רוצים ללכת`);confetti(50);buzz([30,60,30]);toast('💞 יש התאמה! שניכם רוצים את '+x.name)}},50)}await save(id,{votes:{[myId]:iVoted(r)?0:Date.now()}})}
+async function toggleVote(id){const r=byId(id);if(!r)return;if(!iVoted(r)){popId=id;setTimeout(()=>{popId=''},700);if(voters(r).length>=1&&!isMatch(r))setTimeout(()=>{const x=byId(id);if(x&&isMatch(x)){logAct('match',id,`גם רוצה את ${x.name}! שניכם רוצים ללכת`);confetti(50);buzz([30,60,30]);toast('💞 יש התאמה! שניכם רוצים את '+x.name)}},50)}const was=iVoted(r);await save(id,{votes:{[myId]:was?0:Date.now()}});if(!was)lovedPing(byId(id),0)}
 async function shareOrCopy(title,text,url){if(navigator.share){try{await navigator.share(url?{title,text,url}:{title,text});return}catch(e){if(e&&e.name==='AbortError')return}}
   try{await navigator.clipboard.writeText(text+(url?'\n'+url:''));toast('הועתק. אפשר להדביק בוואטסאפ.')}catch{toast('לא הצלחנו להעתיק')}}
 function newForm(){killFormMap();openId=null;mode='new';openSheet();$('#sb').innerHTML=formHtml(null);initFormMap();maybeTour('form',1100);$('#placeQ').focus()}
@@ -1349,7 +1350,7 @@ S.addEventListener('click',async e=>{
   if(a==='del'){delWithUndo(r);return}
   if(a==='reallyDel'){if(await removeRow(r)){closeSheet();toast('נמחק')}return}
   if(a==='vote'){await toggleVote(r.id);return}
-  if(a==='rate'){const v=Number(b.dataset.v);const cur=(r.ratings||{})[myId]||0;await save(r.id,{ratings:{[myId]:cur===v?0:v},updatedAt:now});if(cur!==v){buzz(15);toast('⭐ הדירוג שלך עזר לקבוצה להחליט');milestoneCheck()}return}
+  if(a==='rate'){const v=Number(b.dataset.v);const cur=(r.ratings||{})[myId]||0;await save(r.id,{ratings:{[myId]:cur===v?0:v},updatedAt:now});if(cur!==v){buzz(15);toast('⭐ הדירוג שלך עזר לקבוצה להחליט');milestoneCheck();if(v>=4)lovedPing(byId(r.id),v)}return}
   if(a==='fav'){await save(r.id,{fav:!r.fav,updatedAt:now});return}
   if(a==='verd'){const ds=(r.dishes||[]).map(d=>({...d}));if(!ds[i])return;const order=['ok','must','skip'];ds[i].v=order[(order.indexOf(ds[i].v||'ok')+1)%3];await save(r.id,{dishes:ds,updatedAt:now});return}
   if(a==='rmDish'){await save(r.id,{dishes:(r.dishes||[]).filter((_,j)=>j!==i),updatedAt:now});return}
@@ -2140,6 +2141,9 @@ function lovedNotice(){if(!myId)return '';const seen=lsGet('rs-loved',[]);for(co
   for(const [u,v] of Object.entries(r.ratings||{})){if(u===myId||v<4)continue;const k=r.id+'|'+u;if(seen.includes(k))continue;
     return `<div class="notice loved"><span class="ni">❤️</span><span class="nt"><b>${esc(nmA(u))} אהב/ה את ההמלצה שלך</b><small>${esc(r.name)} · ${'★'.repeat(v)}</small></span><span class="nbtns"><button type="button" class="btn sm" data-lovedok="${esc(k)}">💛 יופי!</button></span></div>`}}return ''}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-lovedok]');if(!b)return;const L=lsGet('rs-loved',[]);L.push(b.dataset.lovedok);lsSet('rs-loved',L.slice(-300));buzz(10);renderNotices()});
+/* tell whoever recommended a place that someone loved it (server sends one push a day at most, quiet 22-08, opt-out in settings) */
+function lovedPing(r,stars){if(!r||!myId||r._meta||!r.addedBy||r.addedBy===myId)return;const L=lsGet('rs-lvs',[]);if(L.includes(r.id))return;L.push(r.id);lsSet('rs-lvs',L.slice(-500));
+  logAct('loved',r.id,stars?`אהב/ה את ${r.name} ${'★'.repeat(stars)} · המלצה של ${nm(r.addedBy)}`:`רוצה ללכת ל${r.name} · המלצה של ${nm(r.addedBy)}`)}
 /* everyone voted */
 function allVoted(p){const mem=Object.keys(names||{});return mem.length>=2&&mem.every(u=>(p.votes||{})[u])}
 /* a light tap on toggles, filters and saves (skipped with reduced motion) */
@@ -2155,7 +2159,7 @@ async function visitPatch(rid,i,patch){const r=byId(rid);if(!r)return false;cons
 document.addEventListener('click',async e=>{const b=e.target.closest('[data-rsvp]');if(b){const k=b.dataset.rsvp;await visitPatch(b.dataset.rid,b.dataset.vi,x=>({rsvp:{...(x.rsvp||{}),[myId]:k}}));if(mode==='out')outSheet();renderNotices();return}
   const bk=e.target.closest('[data-booked]');if(bk){await visitPatch(bk.dataset.rid,bk.dataset.vi,()=>({booked:true}));toast('מעולה, השולחן מסומן כמוזמן 🪑');renderNotices();return}
   const bx=e.target.closest('[data-bookx]');if(bx){const d=lsGet('rs-book-x',[]);d.push(bx.dataset.bookx);lsSet('rs-book-x',d.slice(-50));renderNotices();return}
-  const qr=e.target.closest('[data-qrate]');if(qr){const [rid,n]=qr.dataset.qrate.split(':');const r=byId(rid);if(!r)return;await save(rid,{ratings:{[myId]:+n},updatedAt:Date.now()});buzz(15);toast('⭐ הדירוג שלך עזר לקבוצה להחליט');renderNotices();return}
+  const qr=e.target.closest('[data-qrate]');if(qr){const [rid,n]=qr.dataset.qrate.split(':');const r=byId(rid);if(!r)return;await save(rid,{ratings:{[myId]:+n},updatedAt:Date.now()});if(+n>=4)lovedPing(byId(rid),+n);buzz(15);toast('⭐ הדירוג שלך עזר לקבוצה להחליט');renderNotices();return}
   const cr=e.target.closest('[data-closedrep]');if(cr){track('closed:'+cr.dataset.closedrep);cr.disabled=true;cr.textContent='✓ תודה, נבדוק את זה';return}});
 function bookNotice(){const x=nextOuting(3);if(!x||!x.id||x.sur)return '';const r=byId(x.id),v=x.v;if(!r||v.i==null)return '';const vv=(r.visits||[])[v.i]||{};if(vv.booked)return '';const key=r.id+'|'+v.d;if(lsGet('rs-book-x',[]).includes(key))return '';
   return `<div class="notice book"><span class="ni">🪑</span><span class="nt"><b>הזמנתם שולחן ב${esc(r.name)}?</b><small>${esc(whenTxt(v))}</small></span><span class="nbtns"><a class="btn sm pri" href="${esc(bookUrl(r))}" target="_blank" rel="noopener">לבדוק שולחן</a><button type="button" class="btn sm" data-booked="1" data-rid="${esc(r.id)}" data-vi="${v.i}">✓ הוזמן</button><button type="button" class="del" data-bookx="${esc(key)}" aria-label="לא צריך">×</button></span></div>`}
