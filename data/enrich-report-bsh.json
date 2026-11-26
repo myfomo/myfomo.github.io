@@ -1,7 +1,7 @@
 {
- "addr_osm": 10,
- "addr_partial": 125,
- "site_checked": 18,
+ "addr_osm": 0,
+ "addr_partial": 0,
+ "site_checked": 20,
  "site_jsonld": 0,
  "site_match": 0,
  "site_reject": 0,
@@ -10,8 +10,8 @@
  "addr_site": 0,
  "cuisine_site": 0,
  "names_site": 0,
- "web_wd": 2,
- "names_wd": 3,
+ "web_wd": 0,
+ "names_wd": 0,
  "conflicts": [],
  "rejected_sites": [],
  "coverage_after": {
