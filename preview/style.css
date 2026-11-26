@@ -1219,3 +1219,15 @@ body.sxp-on{overflow:hidden}
   #listBtn::before,#setBtn::before{content:'';position:absolute;inset-inline-start:0;top:10px;bottom:10px;width:1px;background:#ffffff59}
   header .hbtns .bell-n{top:1px;inset-inline-start:3px;min-width:16px;height:16px;padding:0 4px;font-size:10px;line-height:16px}
 }
+
+/* v56 "Me" tiles: each action gets its own colour in a soft circle (option 1) */
+.me-grid>*{--c:#FF5E4D;--cd:#D93A2B}
+.me-grid [data-me="out"]{--c:#FF5E4D;--cd:#D93A2B}
+.me-grid a[href="#stats"]{--c:#7C5CFF;--cd:#5B3FD6}
+.me-grid [data-me="vch"]{--c:#E0475B;--cd:#C2334A}
+.me-grid [data-me="lists"]{--c:#2F80ED;--cd:#1F64C4}
+.me-grid [data-me="bell"]{--c:#F59E0B;--cd:#B45309}
+.me-grid [data-me="addr"]{--c:#14B88A;--cd:#0E8A67}
+.me-grid [data-me="set"],.me-grid [data-me="adm"]{--c:#64748B;--cd:#475569}
+.me-grid span{width:52px;height:52px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--c) 13%,transparent)}
+.me-grid span .i2{color:light-dark(var(--cd),var(--c))}
