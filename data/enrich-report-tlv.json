@@ -3,13 +3,13 @@
  "addr_partial": 0,
  "site_checked": 521,
  "site_jsonld": 60,
- "site_match": 17,
- "site_reject": 43,
+ "site_match": 18,
+ "site_reject": 42,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
  "cuisine_site": 2,
- "names_site": 0,
+ "names_site": 1,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -126,6 +126,13 @@
    "site": "0554536125"
   },
   {
+   "id": "n4922283576",
+   "n": "Xo Ho",
+   "field": "hours",
+   "osm": "Su-Th 08:00-16:00; Fr 08:00-15:00; Sa off",
+   "site": "Su 10:00-16:00; Tu 10:00-16:00; We 10:00-16:00; Th 10:00-16:00; Fr 10:00-16:00"
+  },
+  {
    "id": "n5181131266",
    "n": "קפליקס",
    "field": "phone",
@@ -152,6 +159,13 @@
    "field": "hours",
    "osm": "Su-Th 12:00-23:00; Fr 11:00-17:00; Sa 09:15-23:30",
    "site": "Su,Mo,Tu,We,Th 12:00-20:00; Fr 11:00-15:00"
+  },
+  {
+   "id": "n6041389430",
+   "n": "גומבה",
+   "field": "phone",
+   "osm": "+972 3 973 9954‬",
+   "site": "037743330"
   },
   {
    "id": "n6041389431",
@@ -210,6 +224,13 @@
    "site": "035225005"
   },
   {
+   "id": "n9429290715",
+   "n": "המוסד לסנדוויצ'ים מיוחדים",
+   "field": "phone",
+   "osm": "+97235629896",
+   "site": "036038025"
+  },
+  {
    "id": "n10296516877",
    "n": "The Urban Bakery",
    "field": "hours",
@@ -236,6 +257,13 @@
    "field": "phone",
    "osm": "+972 54 223 0223",
    "site": "0537933664"
+  },
+  {
+   "id": "n12588113205",
+   "n": "קנסאי",
+   "field": "hours",
+   "osm": "Su-Th 11:00-23:00; Sa (sunset+01:00)-23:00",
+   "site": "Su,Mo,Tu,We,Th 11:00-23:00"
   },
   {
    "id": "n13532671475",
@@ -310,12 +338,6 @@
    "id": "n4263469840",
    "n": "Breakfast at Riverside",
    "w": "https://www.riverside.co.il/",
-   "why": "branch/name not confirmed"
-  },
-  {
-   "id": "n4922283576",
-   "n": "Xo Ho",
-   "w": "http://www.cafexoho.com",
    "why": "branch/name not confirmed"
   },
   {
@@ -505,15 +527,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 96,
- "phone_multi_skipped": 25,
+ "phone_confirmed": 104,
+ "phone_multi_skipped": 26,
  "coverage_after": {
   "address": "1318 (100%)",
   "hours": "418 (32%)",
   "phone": "441 (33%)",
   "website": "554 (42%)",
   "cuisine": "977 (74%)",
-  "extra_names": "762 (58%)"
+  "extra_names": "763 (58%)"
  },
- "conflicts_n": 33
+ "conflicts_n": 37
 }
