@@ -877,6 +877,38 @@
   "n9292334862": {
    "r": "none",
    "note": "No reliable source found for Coffee Inaam on Rabaa al-Adawiya alley 7 (English and Arabic searches)."
+  },
+  "n13647668901": {
+   "r": "ok",
+   "note": "Ontopo booking page active for Dublin Irish Pub, Shamai St 4; itraveljerusalem lists 4 Shamai St. Ontopo hours (08:00-23:00 daily) differ from OSM, so hours were left out. No closure news found."
+  },
+  "n12967033202": {
+   "r": "conflict",
+   "note": "Only itraveljerusalem.com lists 'Fishnzone' bar at 12 Shamai St (undated, hours 17:00-05:00), not Zeev Raban as in catalog; Ontopo only has Fishnzone Ashdod; no Tabit page; no closure news. Name similarity is my judgement."
+  },
+  "n1879370436": {
+   "r": "ok",
+   "note": "Ontopo active booking page 'Gent Kitchen & Bar' at Yosef Rivlin 5 (Feingold Courtyard area, catalog says Feingold Courtyard - match is my judgement); itraveljerusalem lists same address/phone; no closure news found."
+  },
+  "n5016724621": {
+   "r": "ok",
+   "note": "Ontopo active booking page 'Glen Whisk(e)y bar' at Agron 24 (matches); own site glen.co.il fetch blocked (permission not granted); closure search not done - search budget exhausted."
+  },
+  "n13535418420": {
+   "r": "ok",
+   "note": "Own site holybagel.com lists the Old City branch at 5 Tiferet Israel St with phone and Badatz Rubin kashrut. Hours on the site are a general chain schedule. Search budget ran out before the Tabit/Ontopo and closure searches."
+  },
+  "n4449998906": {
+   "r": "conflict",
+   "note": "Probably Jachnun Bar. GoJerusalem (updated 2025-11) gives 28 Hillel St, not HaEgoz (Mahane Yehuda), and says it opens on Shabbat. No own site. Not checked on Tabit/Ontopo (search budget ran out). Matching it to this entry is a judgement call. https://www.gojerusalem.com/items/593/Jachnun-Bar"
+  },
+  "n7554559985": {
+   "r": "conflict",
+   "note": "Kedma was at Yitzhak Kariv 6, Mamilla Mall (Mako 2015). Tabit's active page is 'kedma-bakikar' (Kedma at Kikar HaMusika, phone 02-5003737, 12:00-22:30) and does not mention Mamilla. EnjoyingIsrael gives Shlomo Hamelech 11. Looks like it moved from Mamilla; no reliable full new address. No closure article found. https://tabitisrael.co.il/site/kedma-bakikar"
+  },
+  "n10964969758": {
+   "r": "single",
+   "note": "Own site luciana.co.il fetch not permitted (blocked). JDN 2026-06-21 marketing article on 'Luciana Mevaseret', Harel 5, Mevaseret Zion, new summer menu (phone 02-5333329 in article). Kipa 2023-08 review: Sderot HaRael 5, kosher Mevaseret Zion Rabbinate Mehadrin + Badatz Beit Yosef, Italian dairy; Srugim 2023-08 sponsored. Tabit/Ontopo searches found no page. No closure news found."
   }
  }
 }
