@@ -1165,3 +1165,36 @@ body.sxp-on{overflow:hidden}
 @keyframes pkTick{from{transform:translateY(-30%);opacity:.3}to{transform:none;opacity:1}}
 @keyframes pkWon{0%{transform:scale(.7);opacity:.4}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
 @media (prefers-reduced-motion:reduce){.pick .nm.tick,.pick .nm.won{animation:none}}
+/* ===== v56 round 4: icons, spacing, emoji, empty states, swipe, + menu, splash demo ===== */
+:root{--s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px}
+.i2{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em;margin-inline-end:.35em}
+.chip .i2,.sxp-sug .i2{width:16px;height:16px}
+.me-grid span .i2{width:26px;height:26px;margin:0;color:var(--red)}
+/* consistent spacing in the new parts */
+.sxp-body,.flt{gap:var(--s3)}.sxp-sec{gap:var(--s2)}.sxp-chips,.sxp-sugs,.flt-pills,.wchips,.accents{gap:var(--s2)}
+.sxp-car{gap:var(--s3)}.sxp-car .sxp-row{padding:var(--s3)}.me-h{margin:var(--s5) var(--s1) var(--s2)}
+/* personal emoji */
+.avpick{display:grid;grid-template-columns:repeat(8,1fr);gap:var(--s2)}
+.avpick button{aspect-ratio:1;border-radius:14px;border:1.5px solid var(--line);background:var(--card);font-size:22px;cursor:pointer;transition:transform .15s var(--spring)}
+.avpick button[aria-pressed="true"]{border-color:transparent;background:var(--grad);transform:scale(1.06)}
+.rsvp-l b{color:var(--ink)}
+/* empty states */
+.empty.ill{text-align:center}.ill-art{color:var(--ink);width:min(240px,70%);margin:0 auto var(--s3)}.ill-art.sm{width:min(180px,55%)}.ill-art svg{width:100%;height:auto;display:block}
+.ideas{display:grid;gap:var(--s2);margin-top:var(--s3);text-align:start}
+.idea{display:grid;gap:2px;border:1.5px solid var(--line);background:var(--card);border-radius:16px;padding:var(--s3) var(--s4);cursor:pointer;color:var(--ink);font:inherit;transition:transform .15s var(--spring),border-color .2s}
+.idea:hover{border-color:var(--red)}.idea:active{transform:scale(.98)}.idea b{font:800 15.5px Rubik,sans-serif;display:flex;align-items:center}.idea small{color:var(--mute)}
+/* swipe a card */
+#grid .card{position:relative}
+#grid .card.swiping{transition:none!important;z-index:2}
+#grid .card:not(.swiping){transition:transform .25s var(--spring)}
+#grid .card[data-sw]::after{content:attr(data-sw);position:absolute;inset:0;border-radius:inherit;display:flex;align-items:center;justify-content:center;font:800 22px Rubik,sans-serif;color:#fff;opacity:var(--swp,0);pointer-events:none}
+#grid .card[data-sw=want]::after{content:"♥ בא לי";background:color-mix(in srgb,#FF3D6E 78%,transparent)}
+#grid .card[data-sw=been]::after{content:"✓ היינו";background:color-mix(in srgb,#14B88A 80%,transparent)}
+/* hold + for shortcuts */
+.plusmenu{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:45;display:grid;gap:4px;min-width:230px;padding:var(--s2);border-radius:20px;background:var(--card);box-shadow:0 20px 60px #2a163055;animation:sxpIn .22s var(--ease)}
+.plusmenu[hidden]{display:none}
+.plusmenu button{display:flex;align-items:center;gap:var(--s2);border:0;background:none;padding:var(--s3);border-radius:14px;font:700 15.5px Assistant,sans-serif;color:var(--ink);cursor:pointer;text-align:start}
+.plusmenu button:hover,.plusmenu button:focus-visible{background:var(--soft)}.plusmenu .i2{color:var(--red);width:20px;height:20px}
+/* splash demo: shorter */
+#splash.fast *{animation-duration:.45s!important;animation-delay:0s!important}
+.plusmenu{left:0;right:0;margin-inline:auto;width:max-content;transform:none}
