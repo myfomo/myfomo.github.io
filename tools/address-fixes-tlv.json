@@ -21,7 +21,11 @@
    "src": [
     "https://live.tickchak.co.il/zappaclub"
    ],
-   "note": "Zappa moved to Midtown (Tickchak 2026)"
+   "note": "Zappa moved to Midtown (Tickchak 2026). Shared address approved by user 2026-11-26",
+   "shared_ok": [
+    "n9946189682",
+    "c-ארקפה-דרךמנחםבגין144"
+   ]
   },
   "n11345119701": {
    "a": "אלנבי 42",
@@ -157,7 +161,10 @@
    "src": [
     "https://arcaffe.co.il/branches/asia-house/"
    ],
-   "note": "Official Arcaffe page (Beit Asia)"
+   "note": "Official Arcaffe page (Beit Asia). Shared address approved by user 2026-11-26",
+   "shared_ok": [
+    "n6179097911"
+   ]
   },
   "n5182249023": {
    "a": "אלנבי 60",
@@ -250,14 +257,22 @@
    "src": [
     "https://timeout.co.il/פסטיבל-גאז-תדר/"
    ],
-   "note": "Catalog address '443' unusable; Time Out 2025-11 gives venue address Derech Yafo 9 (Beit Romano/Teder); catalog point ~100 m away"
+   "note": "Catalog address '443' unusable; Time Out 2025-11 gives venue address Derech Yafo 9 (Beit Romano/Teder); catalog point ~100 m away. Shared address approved by user 2026-11-26",
+   "shared_ok": [
+    "n9514689217",
+    "n12117313515"
+   ]
   },
   "n6469411087": {
    "a": "דרך מנחם בגין 132",
    "src": [
     "https://www.landwercafe.co.il/branch/%d7%a2%d7%96%d7%a8%d7%99%d7%90%d7%9c%d7%99-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/"
    ],
-   "note": "Own site: Azrieli Towers, Derech Menachem Begin 132; catalog has only 'Gesher HaKirya'; coordinates already at Azrieli Mall. Shared mall address - apply only with user approval."
+   "note": "Own site: Azrieli Towers, Derech Menachem Begin 132; catalog has only 'Gesher HaKirya'; coordinates already at Azrieli Mall. Shared mall address - approved by user 2026-11-26.",
+   "shared_ok": [
+    "n6469411088",
+    "c-ארקפה-דרךמנחםבגין132"
+   ]
   },
   "n445977119": {
    "a": "הירקון 81",
@@ -271,7 +286,10 @@
    "src": [
     "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=96"
    ],
-   "note": "Adds house number from official locator (Mikado Center)"
+   "note": "Adds house number from official locator (Mikado Center). Shared address approved by user 2026-11-26",
+   "shared_ok": [
+    "c-ארקפה-אהרוןבקר8"
+   ]
   },
   "n1989338513": {
    "a": "שדרות רוטשילד 33",
@@ -286,14 +304,6 @@
     "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=12"
    ],
    "note": "Official address of London Ministore branch; catalog has only Shaul HaMelech (corner street). Shared mall address"
-  },
-  "n4591383346": {
-   "a": "לבונטין 28",
-   "src": [
-    "https://timeout.co.il/טאקו-בתל-אביב/",
-    "https://timeout.co.il/מיפוי-לבונטין/"
-   ],
-   "note": "Taqueria original branch at Levontin 28 per Time Out 2026-08 and 2022-12"
   },
   "n10951185355": {
    "a": "שדרות בן ציון 2",
@@ -368,6 +378,10 @@
   "n7565262760": {
    "keep": "c-ארקפה-יגאלאלון94",
    "note": "Same Arcaffe branch as the chain entry; merged"
+  },
+  "n4591383346": {
+   "keep": "n4422814389",
+   "note": "Taqueria twice on Levontin (catalog 'Levontin St 15' vs Levontin 28); Time Out 2026-08 gives only Levontin 28; merged on user approval 2026-11-26"
   }
  }
 }
