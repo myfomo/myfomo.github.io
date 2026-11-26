@@ -1389,6 +1389,166 @@
   "n1116288348": {
    "r": "single",
    "note": "Kikar HaShabbat 2026-06-29 reports a wedding held at 'Ulamei Kinor David' in its Beit Shemesh news section; street address not given, so branch match is judgement (city matches). JDN tag page for 'Ulamei Kinor David Beit Shemesh' exists but fetch failed. No site/Tabit/Ontopo, no closure news."
+  },
+  "n13265392415": {
+   "r": "none",
+   "note": "Event hall, not a restaurant. Hebrew and English searches turned up no own site, news or guide for 'Mondial halls' at Beit Hadfus 13; only an aggregator (offpeaktrip), which was not used. Not on Tabit/Ontopo. No closure news."
+  },
+  "w263260537": {
+   "r": "none",
+   "note": "Satmar event hall in Givat Moshe. Searches returned only general Satmar wedding news (bhol/jdn galleries) with no venue address confirmed. jdn gallery fetches failed with a server error and bhol returned a client error. No own site and no Tabit/Ontopo. No closure news."
+  },
+  "w272625376": {
+   "r": "none",
+   "note": "Satmar event hall on Habakuk. Same as w263260537: no reliable source names this venue/address, jdn/bhol fetches failed, no Tabit/Ontopo, no closure news."
+  },
+  "w270570732": {
+   "r": "none",
+   "note": "Sadigura halls on Knesset Mordechai. Searches only found jdn/bhol articles about Sadigura court events, none naming an event-hall business at this address. No own site and no Tabit/Ontopo. No closure news."
+  },
+  "w263415384": {
+   "r": "none",
+   "note": "Sukkat David halls on HaRav Menachem Batzri. bhol articles (1654291, 1667441, 1674707) came up in searches, but bhol fetches fail (client error), so they were not verified. jdn 2300772 is about DCITY halls, not this venue. No own site and no Tabit/Ontopo. No closure news."
+  },
+  "w1472243274": {
+   "r": "none",
+   "note": "Forhand halls on Rashbi, Beit Shemesh. Hebrew and English searches found nothing. The b144 hit was an unrelated catering business in Jerusalem. No Tabit/Ontopo. No closure news."
+  },
+  "n13267635432": {
+   "r": "none",
+   "note": "Pavilion halls on HaOman. The only 'Pavilion Jerusalem' found is a conference/event hall at Jaffa 97 (Clal building), per pavilionjerusalem.com and itraveljerusalem. That address does not match HaOman, so it is not treated as the same branch. Nothing found for a HaOman venue. No Tabit/Ontopo. No closure news."
+  },
+  "w256294475": {
+   "r": "none",
+   "note": "Shirat HaYam halls on Kanfei Nesharim. Searches found only unrelated pages. A bhol report on unlicensed halls (734086) came up but bhol is blocked (client error). No own site and no Tabit/Ontopo. No closure news."
+  },
+  "w263140129": {
+   "r": "none",
+   "note": "Event hall rather than restaurant. bhol.co.il articles titled 'Yad Eliezer took over the mythological Tamir hall' (news/763202, 763201) could not be fetched (site error), so the takeover/status is unverified. jdn article on Shfat Chaim roadworks does not mention it. No Tabit/Ontopo or own site found."
+  },
+  "n5174102522": {
+   "r": "none",
+   "note": "Looks like a Hebrew ulpan (language school), not a restaurant. Search found no restaurant called Ulpan Morasha on Shlomtzion HaMalka, and no site, booking page or news."
+  },
+  "n5245538321": {
+   "r": "conflict",
+   "note": "Catalog phone 02-623-2232 matches O'Connell's (Irish kosher bar/meat restaurant), but GoJerusalem (updated 2025-11) and JPost 'Irish goes kosher' (undated) give 3 Ben Shetach St, not Etz Haim 63 in the shuk. No source found for a shuk branch. No Tabit/Ontopo page and no closure news found."
+  },
+  "n11106080554": {
+   "r": "none",
+   "note": "Searched in Hebrew and English: no reliable source, own site, booking page or closure news found for Iceland ice cream on Baal Shem Tov, Beit Shemesh."
+  },
+  "n10690706714": {
+   "r": "none",
+   "note": "No source found for a restaurant called 'Ikar HaAretz' on HaBrosh, Mateh Yehuda. No site, Tabit/Ontopo page or news found."
+  },
+  "n760046131": {
+   "r": "none",
+   "note": "No reliable source found for Imperyat HaShemesh in Beit Shemesh. Results were only unrelated Pizza/Shawarma Shemesh listings."
+  },
+  "n12958839687": {
+   "r": "conflict",
+   "note": "JPost review 2022-12 (article-724344) and the GoKosher listing (undated, Tzohar kosher) give Hillel 24, Jerusalem: vegetarian Indian, mains NIS 65-75. But en.machne.co.il lists Ichikadana at 4 HaEshkol St, Machane Yehuda, and gives no Hillel branch, so it may have moved or have two branches. No recent (2025-26) source confirms Hillel. No Tabit/Ontopo page and no closure news found."
+  },
+  "n12977805157": {
+   "r": "conflict",
+   "note": "Etrog Man (Uzi Eli) business is active: NLI blog 2024-10 says son Or Hazay runs it, and Gilles Pudlowski 2026-06 describes the shop. But all sources place it in Machane Yehuda (10 HaEgoz / Agrippas), not Ben Yehuda, plus a Carmel Market (Tel Aviv) shop. Founder died around 2022. Own site etrogman.com and walla could not be fetched (permission)."
+  },
+  "n12979554724": {
+   "r": "none",
+   "note": "Only a Wolt storefront 'Etrogman | Mahne Yehuda' found (not an allowed source). JPost 2022-06 reports founder Uzi-Eli Hezi died, but does not say the stall closed. No own site, no Tabit/Ontopo, no 2025-2026 guide/news, no closure news."
+  },
+  "n6175639085": {
+   "r": "single",
+   "note": "JewishLink 2025-03 describes the original Ishtabach in Machane Yehuda as operating (it has a second branch in NJ). Time Out page (2016) gives 1 HaShikma St and phone 02-6232997, which match the catalog, but it is too old to count. itraveljerusalem lists it as kosher (no date, certifier not named) and links to tabitorder.com/ishtabach; that fetch was blocked. No closure news found."
+  },
+  "n6426669648": {
+   "r": "none",
+   "note": "No reliable source found for Eitan and Jonathan at Shlomzion HaMalka 10 (only a Wanderlog listing). No Tabit/Ontopo page, no site, no closure news."
+  },
+  "n560354901": {
+   "r": "none",
+   "note": "Kipa review 2023-05 gives Shmuel Baruch 55, Mehadrin (Rubin) kosher, and hours Su-Th 11:00-21:30. Tiuli listing (no date) gives Shmuel Baruch 55. Neither is from 2025-2026. A Wolt storefront exists (not an allowed source). No own site or Tabit/Ontopo found, and no closure news."
+  },
+  "n2935048038": {
+   "r": "none",
+   "note": "Catalog address is only '3', Mateh Yehuda. No matching restaurant found. 'Asa' in Time Out 2025-10 is in Tel Aviv (Ahad HaAm 54), and 'Pundak Asa' is at Dvira junction in the Negev. Neither matches."
+  },
+  "n560074140": {
+   "r": "none",
+   "note": "Chain branch. Fetches of the official aroma.co.il store page and branch list failed (client_error), so the branch could not be confirmed. No other reliable source checked. Retry via aroma.co.il/find_store."
+  },
+  "n561093066": {
+   "r": "none",
+   "note": "Chain branch on Churchill Blvd (probably the Hebrew University Mt Scopus campus). The official aroma.co.il branch list fetch failed (client_error). No reliable source found."
+  },
+  "n1405933026": {
+   "r": "none",
+   "note": "Chain branch at Yitzhak Kariv 1 (probably Mamilla). The official aroma.co.il branch list fetch failed (client_error). Only a TotallyJewishTravel 'aroma mamilla' listing (not an allowed source)."
+  },
+  "n3046208361": {
+   "r": "none",
+   "note": "Chain branch; official branch list aroma.co.il fetch refused (blocked). No reliable source naming an Aroma at the Chords Bridge (גשר המיתרים) found; no Tabit/Ontopo; no closure news."
+  },
+  "n5599588163": {
+   "r": "none",
+   "note": "aroma.co.il blocked. Only an undated listing, enjoyingisrael.com/restaurants/38977 (Aroma Mahane Yehuda, Mahane Yehuda Market), with no street number and no 2025-26 date, so not counted as recent. Globes article about opening is old. No closure news found."
+  },
+  "n12086682081": {
+   "r": "none",
+   "note": "aroma.co.il blocked. Two undated listings name Aroma Beit Hadfus 12, Givat Shaul: enjoyingisrael.com/restaurants/38945 and totallyjewishtravel TE53122 (Rabbanut). Neither has a 2025-26 date, so not counted as recent. No closure news found. Retry via the official store page."
+  },
+  "n13537071150": {
+   "r": "none",
+   "note": "aroma.co.il blocked. No reliable source found for an Aroma at the Cardo / Jewish Quarter; no Tabit/Ontopo; no closure news."
+  },
+  "n4338262048": {
+   "r": "none",
+   "note": "aroma.co.il blocked. Address '38' may mean Route 38. An undated listing shows Aroma Shimshon Junction, Road 38, Sonol station (enjoyingisrael.com/restaurants/38992), but the branch match is my guess and the listing is undated. No closure news."
+  },
+  "n5023240506": {
+   "r": "none",
+   "note": "aroma.co.il blocked. Could not identify which branch address '3955' (Mate Yehuda) refers to; searching the phone 02-6526780 found nothing reliable. No Tabit/Ontopo; no closure news."
+  },
+  "n760045185": {
+   "r": "none",
+   "note": "aroma.co.il blocked; the search index shows an official store page 'ביג בית שמש' (aroma.co.il/store/ביג-בית-שמש), which was not fetched. Undated listing enjoyingisrael.com/restaurants/38947 (Aroma Beit Shemesh, Big). Not confirmed that BIG is on Sderot Yigal Alon. Retry via the official store page."
+  },
+  "n12869152501": {
+   "r": "none",
+   "note": "No reliable source found for 'אתנחתא ביער' (address '44', Mate Yehuda): searched name and coffee-cart guides (Maariv 2026-01 coffee-cart article and Mako 2020 do not mention it); tiuli fetch failed; no Tabit/Ontopo; no closure news."
+  },
+  "n13234391625": {
+   "r": "none",
+   "note": "Only a Wolt listing 'Babush' (Jerusalem street food) found, which gives the address Derech Hevron 101, not Nahum Shadmi. Wolt is not an allowed source. No own site, no Tabit/Ontopo page, no news or closure reports."
+  },
+  "n11106080555": {
+   "r": "conflict",
+   "note": "Name probably means Burgers Bar (בורגרס בר), a kosher chain. The official site lists Beit Shemesh branches at Derech Yitzhak Rabin 19 and Ramat Beit Shemesh/Helkat Yehoshua 2, neither on Shlomo Zalman Auerbach. Branch match unconfirmed. Sources: burgersbar.co.il/branches/... pages; Tabit page tabitisrael.co.il/site/burgers-bar-רמת-בית-שמש. No source found for 'Buge's Bar'."
+  },
+  "n560074149": {
+   "r": "none",
+   "note": "BBB Jerusalem branch at Hillel 35 opened in Dec 2017 (srugim.co.il/229286). The official site bbb.co.il fetch was blocked (permission). Tabit/Ontopo searches show other BBB branches but no Jerusalem Hillel page. No recent source and no closure news found."
+  },
+  "n12958839690": {
+   "r": "none",
+   "note": "Mako review from 2018-12 gives the address Agripas 44 (mako.co.il Article-4b6901b3397b761006). A Wolt listing shows the same address (not an allowed source). No 2025-2026 reliable source, no Tabit/Ontopo page, no closure news found."
+  },
+  "n1703936270": {
+   "r": "conflict",
+   "note": "The own domain biratenu.com redirects to 02nightcoop.com/02biratenu (nightlife co-op page, no address or hours). spinach.guide (refreshed 2026-11) lists it at Hillel St 6, not Yanai 7, phone +972-544658463. No Tabit/Ontopo page, no closure news. Address mismatch is unresolved."
+  },
+  "n8812310017": {
+   "r": "none",
+   "note": "No reliable source found for 'Beit BaGai' on HaMefaked St (Hebrew and English searches). No Tabit/Ontopo page, no closure news."
+  },
+  "n5488638223": {
+   "r": "none",
+   "note": "The name looks like a generic OSM label (a cafe on Arye Dolchin St). No source names a cafe 'Dolce' at this address. No Tabit/Ontopo page, no closure news."
+  },
+  "n12977805150": {
+   "r": "none",
+   "note": "No source for a Bessarabia bar or pub on Ben Yehuda, Jerusalem. rest.co.il lists only a Romanian restaurant 'Bessarabia' in Nesher (other city). No Tabit/Ontopo page, no closure news."
   }
  }
 }
