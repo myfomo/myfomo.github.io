@@ -1,0 +1,26 @@
+{
+ "addr_osm": 10,
+ "addr_partial": 125,
+ "site_checked": 18,
+ "site_jsonld": 0,
+ "site_match": 0,
+ "site_reject": 0,
+ "phone_site": 0,
+ "hours_site": 0,
+ "addr_site": 0,
+ "cuisine_site": 0,
+ "names_site": 0,
+ "web_wd": 2,
+ "names_wd": 3,
+ "conflicts": [],
+ "rejected_sites": [],
+ "coverage_after": {
+  "address": "158 (100%)",
+  "hours": "27 (17%)",
+  "phone": "23 (15%)",
+  "website": "23 (15%)",
+  "cuisine": "103 (65%)",
+  "extra_names": "95 (60%)"
+ },
+ "conflicts_n": 0
+}

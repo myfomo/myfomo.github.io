@@ -1,0 +1,62 @@
+{
+ "addr_osm": 6,
+ "addr_partial": 357,
+ "site_checked": 46,
+ "site_jsonld": 4,
+ "site_match": 0,
+ "site_reject": 4,
+ "phone_site": 0,
+ "hours_site": 0,
+ "addr_site": 0,
+ "cuisine_site": 0,
+ "names_site": 0,
+ "web_wd": 1,
+ "names_wd": 1,
+ "conflicts": [
+  {
+   "id": "n11018090086",
+   "n": "You Need Coffee",
+   "field": "phone",
+   "osm": "+972 58-444-4359",
+   "site": "0544799522"
+  }
+ ],
+ "rejected_sites": [
+  {
+   "id": "n2838914554",
+   "n": "מחניודה",
+   "w": "https://www.machneyuda.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n4580755056",
+   "n": "טלביה",
+   "w": "https://www.talbiye.com/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n7272044286",
+   "n": "קפה סירא",
+   "w": "https://www.cafesira.com/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n11018090086",
+   "n": "You Need Coffee",
+   "w": "https://www.youneedcoffee.co.il/",
+   "why": "branch/name not confirmed"
+  }
+ ],
+ "phone_confirmed": 1,
+ "phone_multi_skipped": 4,
+ "phone_tel": 1,
+ "coverage_after": {
+  "address": "474 (100%)",
+  "hours": "62 (13%)",
+  "phone": "52 (11%)",
+  "website": "57 (12%)",
+  "cuisine": "270 (57%)",
+  "extra_names": "230 (48%)"
+ },
+ "conflicts_n": 1
+}

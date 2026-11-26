@@ -1,0 +1,64 @@
+{
+ "addr_osm": 31,
+ "addr_partial": 325,
+ "site_checked": 45,
+ "site_jsonld": 5,
+ "site_match": 3,
+ "site_reject": 2,
+ "phone_site": 0,
+ "hours_site": 1,
+ "addr_site": 0,
+ "cuisine_site": 1,
+ "names_site": 1,
+ "web_wd": 0,
+ "names_wd": 4,
+ "conflicts": [
+  {
+   "id": "n1387736522",
+   "n": "ג'ירף",
+   "field": "phone",
+   "osm": "*3067",
+   "site": "097996967"
+  },
+  {
+   "id": "n14163814998",
+   "n": "מסעדת מצה",
+   "field": "hours",
+   "osm": "8:30-21:30",
+   "site": "Su 08:30-21:30; Tu 08:30-21:30; We 08:30-21:30; Th 08:30-21:30; Fr 08:30-21:30; Sa 08:30-21:30"
+  },
+  {
+   "id": "n13722524901",
+   "n": "קפה אסיף",
+   "field": "hours",
+   "osm": "Th-Fr 08:00-14:00; Sa 08:00-16:00",
+   "site": "Th 09:00-14:00; Fr 09:00-14:00; Sa 09:00-14:00"
+  }
+ ],
+ "rejected_sites": [
+  {
+   "id": "n4875501522",
+   "n": "דוברין 7",
+   "w": "https://dovrin7.com",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n12025813254",
+   "n": "וספר",
+   "w": "https://dovrin7.com",
+   "why": "branch/name not confirmed"
+  }
+ ],
+ "phone_confirmed": 3,
+ "phone_tel": 1,
+ "phone_multi_skipped": 2,
+ "coverage_after": {
+  "address": "444 (100%)",
+  "hours": "58 (13%)",
+  "phone": "47 (11%)",
+  "website": "51 (11%)",
+  "cuisine": "286 (64%)",
+  "extra_names": "272 (61%)"
+ },
+ "conflicts_n": 3
+}
