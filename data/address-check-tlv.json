@@ -272,6 +272,48 @@
    "new": "אבן גבירול 30",
    "status": "applied",
    "moved_m": 0
+  },
+  "n4591383346": {
+   "name": "טאקריה",
+   "old": "Levontin St 15",
+   "new": "לבונטין 28",
+   "status": "blocked",
+   "why": "address already used by: Taqueria (n4422814389, לבונטין 28)"
+  },
+  "n10951185355": {
+   "name": "מרלן",
+   "old": "מלכי ישראל 8",
+   "new": "שדרות בן ציון 2",
+   "status": "applied",
+   "moved_m": 785
+  },
+  "n2264923571": {
+   "name": "אנדרי",
+   "old": "נבטים",
+   "new": "יפת 138",
+   "status": "applied",
+   "moved_m": 7
+  },
+  "n11513852130": {
+   "name": "Cafe Chablis",
+   "old": "אבן גבירול",
+   "new": "אבן גבירול 48",
+   "status": "applied",
+   "moved_m": 2
+  },
+  "n2079008750": {
+   "name": "Ada Hanina Cafe",
+   "old": "רבי אדא 2",
+   "new": "רבי חנינא 9",
+   "status": "applied",
+   "moved_m": 12
+  },
+  "n9312382294": {
+   "name": "ג'ונו",
+   "old": "יהודה המכבי",
+   "new": "דה האז 1",
+   "status": "applied",
+   "moved_m": 25
   }
  },
  "dup": {
