@@ -23,6 +23,12 @@ for L in R["localities"]:
          f'nwr(area.a)["amenity"~"{AM}"]["name"];out tags center meta;')
     got = overpass(q)
     if got is None: sys.exit(f"Overpass did not answer for {L['c']}; keeping the current catalog")
+    if not got:  # no administrative area by that name in OSM: take the places around the town's own place point
+        r = L.get("r", 2500)
+        q2 = (f'[out:json][timeout:180];(node["place"~"^(city|town|village|suburb)$"]["name"~"{rx}"];node["place"~"^(city|town|village|suburb)$"]["name:he"~"{rx}"];)->.p;'
+              f'nwr(around.p:{r})["amenity"~"{AM}"]["name"];out tags center meta;')
+        got = overpass(q2) or []
+        print("  (around the town point,", r, "m)", flush=True)
     n = 0
     for e in got:
         k = e["type"][0] + str(e["id"])
