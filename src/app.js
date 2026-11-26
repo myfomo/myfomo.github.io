@@ -50,6 +50,7 @@ const voters=r=>Object.entries(r.votes||{}).filter(([,t])=>Number(t)&&Date.now()
 const iVoted=r=>voters(r).includes(myId);
 const isMatch=r=>voters(r).length>=2;
 const nm=id=>id===myId?'אני':(names[id]||'מישהו');
+const avOf=id=>(((typeof meta!=='undefined'&&meta)||{}).av||{})[id]||'';const nmA=id=>(avOf(id)?avOf(id)+' ':'')+nm(id);
 const hue=s=>{let h=0;for(const c of String(s))h=(h*31+c.charCodeAt(0))%360;return h};
 const uuid=()=>(crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx'.replace(/x/g,()=>(Math.random()*16|0).toString(16)));
 const GRADS=[['#FF9A3C','#FF4E6A'],['#FFC24B','#FF7A2F'],['#2BD9A8','#14B88A'],['#FF8FB8','#FF4E8A'],['#8E7CFF','#5FD3F3'],['#FFD166','#FF8A5C']];
@@ -73,7 +74,7 @@ async function upload(files,id){
   if(!navigator.onLine){for(const f of files){try{await idbAdd({rid:id,blob:await shrink(f),by:myId,at:Date.now()})}catch{}}toast('אין חיבור. התמונות נשמרו במכשיר ויעלו כשהחיבור יחזור.');return true}const st=()=>$('#upst'),added=[];
   for(let i=0;i<files.length;i++){if(st())st().textContent=`מעלה ${i+1} מתוך ${files.length}…`;
     try{const ph=await putPhoto(id,files[i]);added.push({...ph,by:myId,at:Date.now()})}catch(e){toast('העלאת תמונה נכשלה: '+errMsg(e))}}
-  let ok=false;if(added.length){const cur=byId(id);ok=await save(id,{photos:[...((cur&&cur.photos)||[]),...added],updatedAt:Date.now()});if(ok){toast(added.length===1?'התמונה נשמרה':`${added.length} תמונות נשמרו`);logAct('photo',id,`העלה/תה ${added.length===1?'תמונה':added.length+' תמונות'} ב${r.name}`)}}
+  let ok=false;if(added.length){const cur=byId(id);ok=await save(id,{photos:[...((cur&&cur.photos)||[]),...added],updatedAt:Date.now()});if(ok){toast(added.length===1?'📸 תודה! הכרטיס נראה מעולה עכשיו':`📸 ${added.length} תמונות נשמרו, הכרטיס נראה מעולה`);buzz(15);logAct('photo',id,`העלה/תה ${added.length===1?'תמונה':added.length+' תמונות'} ב${r.name}`)}}
   if(st())st().textContent='';return ok}
 
 /* ---------- data ---------- */
@@ -94,7 +95,7 @@ async function removeRow(r){if(!navigator.onLine){queueOp({t:'del',id:r.id,lid:c
   rows=rows.filter(x=>x.id!==r.id);const paths=(r.photos||[]).flatMap(p=>[p.path,p.thumb]).filter(Boolean);if(paths.length)sb.storage.from('photos').remove(paths).catch(()=>{});render();return true}
 function subscribe(){if(chan)return;chan=sb.channel('restaurants-live').on('postgres_changes',{event:'*',schema:'public',table:'restaurants'},pl=>{
   if(pl.eventType==='DELETE'){const id=pl.old&&pl.old.id;if(!byId(id))return;rows=rows.filter(r=>r.id!==id);if(openId===id&&mode==='view')closeSheet()}
-  else{const n=pl.new;if(!n||!cur||n.list_id!==cur.id)return;const row={...(n.data||{}),id:n.id};if(row._meta){if(!meta.id||meta.id===row.id){meta={id:row.id,special:row.special||[],diets:row.diets||{}};lsSet('rs-meta-'+cur.id,meta);renderNotices();if(mode==='pick')pick(undefined,true)}return}const i=rows.findIndex(r=>r.id===n.id);if(i>=0)rows[i]=row;else rows.unshift(row)}
+  else{const n=pl.new;if(!n||!cur||n.list_id!==cur.id)return;const row={...(n.data||{}),id:n.id};if(row._meta){if(!meta.id||meta.id===row.id){meta={...row,id:row.id,special:Array.isArray(row.special)?row.special:[],diets:row.diets&&typeof row.diets==='object'?row.diets:{}};lsSet('rs-meta-'+cur.id,meta);renderNotices();if(mode==='pick')pick(undefined,true)}return}const i=rows.findIndex(r=>r.id===n.id);if(i>=0)rows[i]=row;else rows.unshift(row)}
   render();if(openId&&mode==='view')renderDetail()})
   .on('postgres_changes',{event:'INSERT',schema:'public',table:'activity'},pl=>{const n=pl.new;if(!n||!cur||n.list_id!==cur.id||acts.some(a=>a.id===n.id))return;acts.unshift(n);renderBell();if(n.user_id!==myId)toast(`${nm(n.user_id)} ${n.text}`)})
   .on('postgres_changes',{event:'*',schema:'public',table:'comments'},pl=>{if(pl.eventType==='DELETE'){const id=pl.old&&pl.old.id;for(const k in cmts)if(cmts[k])cmts[k]=cmts[k].filter(c=>c.id!==id)}else{const n=pl.new;if(!n||!cur||n.list_id!==cur.id)return;if(cmts[n.restaurant_id]&&!cmts[n.restaurant_id].some(c=>c.id===n.id))cmts[n.restaurant_id].push(n)}if(openId&&mode==='view')renderDetail()})
@@ -118,16 +119,16 @@ function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!ope
   const s={recent:(a,b)=>(b.updatedAt||0)-(a.updatedAt||0),rating:(a,b)=>avg(b)-avg(a),visit:(a,b)=>lastVisit(b).localeCompare(lastVisit(a)),name:(a,b)=>String(a.name).localeCompare(String(b.name),'he'),near:(a,b)=>(distKm(a)??1e9)-(distKm(b)??1e9)}[sort]||((a,b)=>0);return list.sort(s)}
 function renderHead(){const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,m=rows.filter(isMatch).length;
   $('#stats').innerHTML=loaded?`היינו ב־<b>${been}</b> · רוצים לנסות <b>${want}</b>${m?` · <b>${m}</b> ששנינו רוצים השבוע`:''}`:'טוען…';renderGreet()}
-function renderList(){document.querySelectorAll('.more-sen').forEach(x=>x.remove());setTimeout(fxChk,0);
+function renderList(){if($('#fltBtn'))fltSync();document.querySelectorAll('.more-sen').forEach(x=>x.remove());setTimeout(fxChk,0);
   const cs=[...new Set(rows.map(r=>r.cuisine).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'he'));
   if(cuisF&&!cs.includes(cuisF))cuisF='';
   const hasHours=rows.some(r=>r.hours&&Object.keys(r.hours).length);
   $('#cuis').innerHTML=(hasHours?`<button type="button" class="chip openchip" data-open-f="1" aria-pressed="${openF}">פתוח עכשיו</button>`:'')+`<button type="button" class="chip" data-qf="near" aria-pressed="${nearF}">📍 קרוב אליי</button><button type="button" class="chip" data-qf="like" aria-pressed="${likeF}">♥ בא לי</button><button type="button" class="chip" data-qf="new" aria-pressed="${view==='want'}">✨ עוד לא ביקרנו</button>`+(rows.some(r=>r.hh&&r.hh.f)?`<button type="button" class="chip" data-qf="hh" aria-pressed="${hhF}">🍹 האפי אוור עכשיו</button>`:'')+`<button type="button" class="chip" data-qf="more" aria-pressed="${moreF||tagF.size>0}" aria-expanded="${moreF}">⚙️ עוד${tagF.size?` (${tagF.size})`:''}</button>`+(cs.length>1?'<span class="chip-sep" aria-hidden="true"></span>':'')+(cs.length>1?[`<button type="button" class="chip" data-c="" aria-pressed="${!cuisF}">כל הסוגים</button>`,...cs.map(c=>`<button type="button" class="chip" data-c="${esc(c)}" aria-pressed="${cuisF===c}">${esc(c)}</button>`)].join(''):'');renderNotices();{const fr=$('#featRow');if(fr){fr.hidden=!moreF;fr.innerHTML=PRACT.map(([t,ic])=>`<button type="button" class="chip" data-tf="${esc(t)}" aria-pressed="${tagF.has(t)}">${ic} ${esc(t)}</button>`).join('')}}renderFriendsLoved();
   const g=$('#grid');
   if(!loaded){g.innerHTML=SKEL.repeat(6);return}
-  if(!rows.length){g.innerHTML=`<div class="empty"><h2>עוד אין כאן מסעדות</h2><p>הוסיפו מקום שהייתם בו או מקום שאתם חולמים עליו, והקבוצה תתחיל להתמלא.</p><button class="btn pri" type="button" data-act="add">הוסיפו את הראשונה</button></div>`;return}
+  if(!rows.length){g.innerHTML=`<div class="empty ill"><div class="ill-art" aria-hidden="true">${ILL.plate}</div><h2>הקבוצה עוד ריקה, בואו נמלא אותה</h2><p>שלוש דרכים מהירות להתחיל:</p><div class="ideas"><button class="idea" type="button" data-act="add"><b>${I2.plus}מקום שהייתם בו</b><small>או מקום שאתם חולמים עליו</small></button><button class="idea" type="button" data-idea="search"><b>${I2.search}לחפש מקום</b><small>שם, שכונה, או "בראנץ׳ בשבת"</small></button><button class="idea" type="button" data-idea="import"><b>${I2.clip}להעביר מגוגל מפות</b><small>מדביקים קישורים, וזהו</small></button></div></div>`;return}
   const list=filtered();
-  if(!list.length){g.innerHTML=`<div class="empty"><h2>${view==='match'?'עוד אין מקום ששניכם בחרתם השבוע':'לא נמצא כלום'}</h2><p>${view==='match'?'לחצו "בא לי" על מקומות שבא לכם ללכת אליהם. כששניכם בוחרים אותו מקום, הוא יופיע כאן.':'נסו חיפוש אחר או הסירו סינון.'}</p></div>`;sxListAfter(0);return}
+  if(!list.length){g.innerHTML=`<div class="empty ill"><div class="ill-art sm" aria-hidden="true">${view==='match'?ILL.hearts:ILL.search}</div><h2>${view==='match'?'עוד אין מקום ששניכם בחרתם השבוע':'לא נמצא כלום'}</h2><p>${view==='match'?'לחצו "בא לי" על מקומות שבא לכם ללכת אליהם. כששניכם בוחרים אותו מקום, הוא יופיע כאן.':'נסו להסיר סינון, או לחפש מקום חדש.'}</p>${view==='match'?'':'<button class="btn" type="button" data-idea="search">🔍 לחפש מקום</button>'}</div>`;sxListAfter(0);return}
   const upM=new Map();for(const u of upcoming())if(!upM.has(u.r.id))upM.set(u.r.id,u);
   const card=(r,idx)=>{const p=(r.photos||[]).find(x=>x.path),a=avg(r),mv=iVoted(r),mt=isMatch(r);return `<article class="card" tabindex="0" data-id="${esc(r.id)}" style="--i:${Math.min(idx,12)}"><div class="cover">${p?photoImg(p.thumb?{path:p.thumb}:p,'loading="lazy" decoding="async"'):plate(r.name)}<div class="badges">${q.trim().length>=2?'<span class="badge sx-in-b">✓ בקבוצה</span>':''}<span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${mt?'<span class="badge match">שנינו רוצים!</span>':''}${(()=>{const u=upM.get(r.id);return u?`<span class="badge plan">${esc(whenTxt(u.v))}</span>`:''})()}${(()=>{const h=hhInfo(r);return h?`<span class="badge hh${h.now?'':' soon'}">${esc(h.t)}</span>`:''})()}</div>${r.fav?'<span class="heart" aria-label="מועדף">♥</span>':''}</div><div class="cbody"><h3>${esc(r.name)}</h3><p class="meta">${[r.cuisine,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')||'&nbsp;'}</p><div class="mrow">${a?`<span class="rate"><i>★</i> ${a.toFixed(1)}</span>`:''}${liveSt(r)}${distKm(r)!=null?`<span class="dist">${esc(distTxt(distKm(r)))}</span>`:''}</div><div class="acts"><a class="btn sm" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn sm" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}Waze</a><button type="button" class="btn sm ${mv?'on':''} ${popId===r.id?'pop':''}" data-vote="${esc(r.id)}" aria-pressed="${mv}">${mv?'♥':'♡'} בא לי</button></div></div></article>`};
   const CH=24;let shown=Math.max(CH,renderList.keep||0);g.innerHTML=list.slice(0,shown).map(card).join('');if(renderList.io)renderList.io.disconnect();
@@ -217,7 +218,7 @@ let fmap=null,fmarker=null;
 function killFormMap(){if(fmap){fmap.remove();fmap=null;fmarker=null}}
 function openSheet(){const was=!$('#ov').hidden;$('#ov').hidden=false;document.body.style.overflow='hidden';const fr=flipFrom;flipFrom=null;if(fr&&!was)requestAnimationFrame(()=>requestAnimationFrame(()=>flipIn(fr)))}
 function closeSheet(){if(story){clearTimeout(story.t);story=null}if(typeof evMap!=='undefined'&&evMap){evMap.remove();evMap=null}if(gm&&gm.s)clearTimeout(gm.s.t);$('#ov').classList.remove('story-ov');$('#ov').hidden=true;document.body.style.overflow='';openId=null;mode='view';clearInterval(pickTimer);killFormMap()}
-function openDetail(id){track('detail');killFormMap();openId=id;mode='view';openSheet();renderDetail();$('#ov').scrollTop=0;maybeTour('detail',1000)}
+function openDetail(id){track('detail');killFormMap();openId=id;dOpen=false;mode='view';openSheet();renderDetail();$('#ov').scrollTop=0;maybeTour('detail',1000)}
 
 function formHtml(r){r=r||{status:'want',tags:[]};const tg=r.tags||[];const ll=hasLL(r)?`${r.lat}, ${r.lng}`:'';return `<form id="ef" class="sec dh"><h2 style="margin-bottom:18px">${r.id?'עריכת מקום':'מקום חדש'}</h2>
 <div class="quick"><label class="l">חיפוש המקום (שם ועיר)<div class="addrow" style="margin-top:0"><input class="f" id="placeQ" placeholder="למשל: בל בוי תל אביב" value="${esc(r.id?[r.name,r.city].filter(Boolean).join(' '):'')}"><button class="btn" type="button" data-act="placeSearch">${ICON.search}חיפוש</button>${SR?`<button class="btn mic" type="button" data-act="voice" aria-label="הוספה בקול" aria-pressed="false">🎤</button>`:''}</div></label><ul class="res" id="placeRes"></ul>
@@ -225,15 +226,15 @@ function formHtml(r){r=r||{status:'want',tags:[]};const tg=r.tags||[];const ll=h
 <div class="grid2">
 <label class="l full">שם המקום *<input class="f" name="name" required maxlength="80" value="${esc(r.name)}"></label>
 <label class="l">סוג${cuisSelect(r.cuisine)}</label>
-<label class="l">עיר<input class="f" name="city" maxlength="40" value="${esc(r.city)}"></label>
-<label class="l full">כתובת<input class="f" name="address" maxlength="120" value="${esc(r.address)}" placeholder="רחוב ומספר"></label>
+<label class="l">עיר<input class="f" name="city" maxlength="40" autocomplete="address-level2" enterkeyhint="next" value="${esc(r.city)}"></label>
+<label class="l full">כתובת<input class="f" name="address" maxlength="120" autocomplete="street-address" enterkeyhint="next" value="${esc(r.address)}" placeholder="רחוב ומספר"></label>
 <div class="full"><div class="l">מיקום מדויק במפה</div><p class="note" style="margin:2px 0 0">לחצו על המפה או גררו את הסיכה למקום המדויק.</p><div class="mini" id="fmap"></div>
 <div class="row" style="margin-top:8px"><button class="btn sm" type="button" data-act="fHere">${ICON.me}אני נמצא שם עכשיו</button><input class="f" name="ll" dir="ltr" value="${esc(ll)}" placeholder="32.0853, 34.7818" aria-label="קואורדינטות" style="flex:1 1 180px;width:auto"></div></div>
 <label class="l">מצב<select class="f" name="status"><option value="want" ${r.status!=='been'?'selected':''}>רוצים ללכת</option><option value="been" ${r.status==='been'?'selected':''}>היינו</option></select></label>
 <label class="l">רמת מחיר<select class="f" name="price"><option value="">לא ידוע</option>${[1,2,3,4].map(n=>`<option value="${n}" ${r.price==n?'selected':''}>${'₪'.repeat(n)}</option>`).join('')}</select></label>
 <label class="l full">מי המליץ?<input class="f" name="recBy" maxlength="80" value="${esc(r.recBy)}" placeholder="חבר, כתבה, אינסטגרם…"></label>
 <label class="l">קישור לגוגל מפות<input class="f" name="mapsUrl" type="url" dir="ltr" value="${esc(r.mapsUrl)}" placeholder="https://maps.app.goo.gl/…"></label>
-<label class="l">אתר / הזמנת מקום<input class="f" name="site" type="url" dir="ltr" value="${esc(r.site)}" placeholder="https://…"></label>
+<label class="l">אתר / הזמנת מקום<input class="f" name="site" type="url" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" dir="ltr" value="${esc(r.site)}" placeholder="https://…"></label>
 <label class="l">קישור לוולט (לא חובה)<input class="f" name="woltUrl" type="url" dir="ltr" value="${esc(r.woltUrl||'')}" placeholder="https://wolt.com/…"><small class="meta" style="font-weight:400">באפליקציית וולט: נכנסים למסעדה ← שיתוף ← העתקה, ומדביקים כאן.</small></label>
 <input type="hidden" name="llLevel" value="${esc(r.llLevel||'')}">
 <div class="full"><div class="l" style="margin-bottom:6px">תגיות</div><div class="chips">${TAGS.map(t=>`<label class="chip"><input type="checkbox" name="tags" value="${esc(t)}" ${tg.includes(t)?'checked':''}><span>${esc(t)}</span></label>`).join('')}</div></div>
@@ -266,8 +267,10 @@ function parseMaps(txt){const out={};txt=String(txt||'');const um=txt.match(/htt
   if(lines.length&&!out.name){const parts=lines[0].split(/\s*[,،]\s*/);out.name=parts[0];const rest=[...parts.slice(1),...lines.slice(1)].join(', ').split(/\s*,\s*/).filter(p=>p&&!/^(ישראל|israel|\d{5,7})$/i.test(p));if(rest.length){out.city=rest.length>1?rest.pop().replace(/\d+/g,'').trim():'';out.address=rest.join(', ')}}
   return out}
 
-function visitForm(){return `<p class="note" style="margin:10px 0 0">תאריך עתידי נשמר כיציאה מתוכננת, עם תזכורת ביומן.</p><form class="addrow" id="visitF"><input class="f" type="date" name="d" value="${today()}" aria-label="תאריך" style="flex:0 1 160px"><input class="f" type="time" name="t" aria-label="שעה (לא חובה)" style="flex:0 1 120px"><input class="f" type="number" name="cost" min="0" step="1" inputmode="numeric" placeholder="₪ כמה שילמנו" aria-label="סכום" style="flex:0 1 140px"><select class="f" name="occ" aria-label="סוג הביקור" style="flex:1 1 150px">${Object.entries(OCC).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select><input class="f" name="note" maxlength="100" placeholder="הערה קצרה (לא חובה)" aria-label="הערה"><input class="f" name="with" maxlength="120" list="withList" placeholder="עם מי היינו? (דני, רוני)" aria-label="עם מי היינו" style="flex:1 1 100%"><datalist id="withList">${knownWith().map(n=>`<option value="${esc(n)}">`).join('')}</datalist><label class="btn sm rcpt-b">${ICON.cam}סריקת קבלה<input type="file" accept="image/*" capture="environment" hidden class="rcpt"></label><span class="note" id="rcptSt" style="flex:1 1 100%;grid-column:1/-1;margin:0"></span><div id="rcptRev" style="flex:1 1 100%;grid-column:1/-1;min-width:0"></div><button class="btn pri" type="submit" style="grid-column:1/-1">שמירה</button></form>`}
+function visitForm(){return `<p class="note" style="margin:10px 0 0">תאריך עתידי נשמר כיציאה מתוכננת, עם תזכורת ביומן.</p><form class="addrow" id="visitF"><input class="f" type="date" name="d" value="${today()}" aria-label="תאריך" style="flex:0 1 160px"><input class="f" type="time" name="t" aria-label="שעה (לא חובה)" style="flex:0 1 120px"><input class="f" type="number" name="cost" min="0" step="1" inputmode="numeric" pattern="[0-9]*" enterkeyhint="next" placeholder="₪ כמה שילמנו" aria-label="סכום" style="flex:0 1 140px"><select class="f" name="occ" aria-label="סוג הביקור" style="flex:1 1 150px">${Object.entries(OCC).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select><input class="f" name="note" maxlength="100" enterkeyhint="next" placeholder="הערה קצרה (לא חובה)" aria-label="הערה"><input class="f" name="with" maxlength="120" list="withList" placeholder="עם מי היינו? (דני, רוני)" aria-label="עם מי היינו" style="flex:1 1 100%">${withChips()}<datalist id="withList">${knownWith().map(n=>`<option value="${esc(n)}">`).join('')}</datalist><label class="btn sm rcpt-b">${ICON.cam}סריקת קבלה<input type="file" accept="image/*" capture="environment" hidden class="rcpt"></label><span class="note" id="rcptSt" style="flex:1 1 100%;grid-column:1/-1;margin:0"></span><div id="rcptRev" style="flex:1 1 100%;grid-column:1/-1;min-width:0"></div><button class="btn pri" type="submit" style="grid-column:1/-1">שמירה</button></form>`}
 
+let dOpen=false;document.addEventListener('toggle',e=>{if(e.target.classList&&e.target.classList.contains('dsec'))dOpen=e.target.open},true);
+document.addEventListener('click',e=>{const b=e.target.closest('[data-like]');if(!b)return;closeSheet();sxpOpen('כמו '+b.dataset.like)});
 function renderDetail(){
   const r=byId(openId),box=$('#sb');
   if(!r){if(mode!=='new')closeSheet();return}
@@ -280,19 +283,20 @@ function renderDetail(){
   box.innerHTML=`<div class="sec dh"><div class="row" style="margin-bottom:8px"><span class="badge ${r.status==='been'?'been':''}">${r.status==='been'?'היינו':'רוצים ללכת'}</span>${isMatch(r)?'<span class="badge match">שנינו רוצים השבוע!</span>':''}${(r.tags||[]).map(t=>`<span class="chip" style="cursor:default">${TAG_IC[t]?TAG_IC[t]+' ':''}${esc(t)}</span>`).join('')}</div>
 <h2>${esc(r.name)}</h2><p class="meta" style="margin-top:6px">${[r.cuisine,r.address,r.city,r.price?'₪'.repeat(r.price):''].filter(Boolean).map(esc).join(' · ')}</p>
 ${r.recBy?`<p class="meta" style="margin-top:4px">המליץ/ה: <b style="color:var(--ink)">${esc(r.recBy)}</b></p>`:''}
-<div class="row" style="margin-top:14px">${site&&!BOOKRX.test(site)?`<a class="btn" href="${esc(site)}" target="_blank" rel="noopener">${ICON.link}אתר</a>`:''}<button class="btn" type="button" data-act="evNew" data-id="${esc(r.id)}">${ICON.users}ערב עם חברים</button><button class="btn" type="button" data-act="share">${ICON.share}שליחת מיקום</button><button class="btn" type="button" data-act="shareCard">${ICON.card}כרטיס לשיתוף</button>${exact(r)?`<button class="btn" type="button" data-act="copyLL">${ICON.copy}העתקת קואורדינטות</button>`:''}</div>
+<div class="row" style="margin-top:14px">${site&&!BOOKRX.test(site)?`<a class="btn" href="${esc(site)}" target="_blank" rel="noopener">${ICON.link}אתר</a>`:''}<button class="btn" type="button" data-act="evNew" data-id="${esc(r.id)}">${ICON.users}ערב עם חברים</button><button class="btn" type="button" data-like="${esc(r.name)}">✨ דומים לזה</button><details class="dmore"><summary class="btn">⋯ עוד</summary><div class="row"><button class="btn" type="button" data-act="share">${ICON.share}שליחת מיקום</button><button class="btn" type="button" data-act="shareCard">${ICON.card}כרטיס לשיתוף</button>${exact(r)?`<button class="btn" type="button" data-act="copyLL">${ICON.copy}העתקת קואורדינטות</button>`:''}</div></details></div>
 <div class="mini" id="gwrap"></div>
-<p class="note">${exact(r)?'מיקום מדויק נשמר.':hasLL(r)?'המיקום משוער. אפשר לדייק אותו בעריכה.':'עוד אין מיקום מדויק. בעריכה אפשר לחפש את המקום או לסמן אותו על המפה.'}</p></div>
-${hoursView(r)}<div class="sec"><h4>בא לנו השבוע?</h4><div class="row"><button class="btn ${mv?'on':''}" type="button" data-act="vote" aria-pressed="${mv}">${mv?'♥ בא לי!':'♡ בא לי השבוע'}</button><span class="meta">${vt.length?vt.map(k=>esc(nm(k))).join(', ')+' גם רוצה':'עוד אף אחד אחר לא בחר'}</span></div><p class="note">הבחירה תקפה לשבוע. כששניכם בוחרים, המקום עולה לראש ההגרלה.</p></div>
+${(()=>{const cid=catIdFor(r);return cid?`<button type="button" class="link-btn closedrep" data-closedrep="${esc(cid)}">נסגר? דווחו לנו</button>`:''})()}<p class="note">${exact(r)?'מיקום מדויק נשמר.':hasLL(r)?'המיקום משוער. אפשר לדייק אותו בעריכה.':'עוד אין מיקום מדויק. בעריכה אפשר לחפש את המקום או לסמן אותו על המפה.'}</p></div>
+${hoursView(r)}<div class="sec"><h4>בא לנו השבוע?</h4><div class="row"><button class="btn ${mv?'on':''}" type="button" data-act="vote" aria-pressed="${mv}">${mv?'♥ בא לי!':'♡ בא לי השבוע'}</button><span class="meta">${vt.length?vt.map(k=>esc(nmA(k))).join(', ')+' גם רוצה':'עוד אף אחד אחר לא בחר'}</span></div><p class="note">הבחירה תקפה לשבוע. כששניכם בוחרים, המקום עולה לראש ההגרלה.</p></div>
 <div class="sec"><h4>הדירוג שלנו</h4><div class="rlist"><div class="r"><b style="min-width:56px">אני</b><span class="stars" role="group" aria-label="הדירוג שלי">${[1,2,3,4,5].map(n=>`<button type="button" class="${n<=mine?'on':''}" data-act="rate" data-v="${n}" aria-label="${n} כוכבים">★</button>`).join('')}</span></div>${others.map(k=>`<div class="r"><b>${esc(nm(k))}</b><span class="rate"><i>${'★'.repeat(ratings[k])}</i><span style="color:var(--line)">${'★'.repeat(5-ratings[k])}</span></span></div>`).join('')}</div></div>
 ${commentsHtml(r)}<div class="sec"><h4>תמונות</h4>${photos.length?`<div class="gal">${(r.photos||[]).map((p,i)=>p.path?`<div class="ph">${photoImg(p,`loading="lazy" data-act="zoom" data-i="${i}"`)}${p.src==='google'?`<span class="gattr">Google${p.attr?' · '+esc(p.attr):''}</span>`:''}<button type="button" data-act="rmPhoto" data-i="${i}" aria-label="הסרת תמונה">×</button></div>`:'').join('')}</div>`:`<p class="note">עוד אין תמונות. צלמו את המנות, את הקוקטיילים או את שניכם.</p>${(window.APP_CONFIG||{}).googleKey?'<button class="btn sm" type="button" data-act="gPhotos" style="margin-top:8px">'+ICON.search+'תמונה מגוגל</button>':''}`}
 <div class="row" style="margin-top:12px"><label class="btn pri">${ICON.cam}צלמו עכשיו<input type="file" accept="image/*" capture="environment" hidden class="up"></label><label class="btn">${ICON.img}מהגלריה<input type="file" accept="image/*" multiple hidden class="up"></label><span class="note" id="upst" style="margin:0"></span></div></div>
-<div class="sec"><h4>ביקורים${spent?` · סה"כ ${ils(spent)}`:''}</h4>${visits.length?visits.map(v=>`<div class="vrow ${isPlanV(v)?'plan':''}"><b>${esc(fmtD(v.d))}${v.t?' · '+esc(v.t):''}</b>${isPlanV(v)?`<span class="occ sp">${esc(whenTxt(v))}</span><a class="btn sm" href="${icsData(r,v)}" download="fomo.ics">${ICON.cal}ליומן</a><a class="btn sm" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener">Google</a>`:''}${v.occ?`<span class="occ ${SPECIAL.includes(v.occ)?'sp':''}">${esc(OCC[v.occ]||'')}</span>`:''}${v.note?`<span class="meta">${esc(v.note)}</span>`:''}${withOf(v).length?`<span class="meta">👥 עם ${esc(withOf(v).join(', '))}</span>`:''}<span class="money">${Number(v.cost)?ils(v.cost):''}</span><button type="button" class="del" data-act="rmVisit" data-i="${v.i}" aria-label="הסרת ביקור">×</button></div>`).join(''):'<p class="note">עוד לא רשמתם ביקור.</p>'}
-${visitForm()}</div>
 <div class="sec"><h4>מנות ומשקאות</h4>${dishes.length?dishes.map((d,i)=>`<div class="dish"><span>${esc(d.name)}</span><button type="button" class="v ${d.v||'ok'}" data-act="verd" data-i="${i}" title="לחצו להחלפה">${VERD[d.v]||VERD.ok}</button><button type="button" class="del" data-act="rmDish" data-i="${i}" aria-label="הסרה">×</button></div>`).join(''):'<p class="note">רשמו מה הזמנתם, ומה חובה להזמין בפעם הבאה.</p>'}
 <form class="addrow" id="dishF"><input class="f" name="d" maxlength="80" placeholder="מנה או קוקטייל" aria-label="שם המנה"><button class="btn" type="submit">הוספה</button></form></div>
-${r.notes?`<div class="sec"><h4>הערות</h4><p style="margin:0;white-space:pre-wrap">${esc(r.notes)}</p></div>`:''}
-<div class="sec row"><button class="btn" type="button" data-act="fav">${r.fav?'♥ מועדף':'♡ סמנו כמועדף'}</button><button class="btn" type="button" data-act="edit">עריכה</button><button class="btn" type="button" data-act="del" style="color:var(--bad)">מחיקה</button></div>`;
+<details class="sec dsec" ${dOpen?'open':''}><summary><h4>עוד פרטים</h4><small>ביקורים${visits.length?' ('+visits.length+')':''}${r.notes?' · הערות':''} · מועדף, עריכה ומחיקה</small></summary><div class="sec" style="padding-inline:0"><h4>ביקורים${spent?` · סה"כ ${ils(spent)}`:''}</h4>${visits.length?visits.map(v=>`<div class="vrow ${isPlanV(v)?'plan':''}"><b>${esc(fmtD(v.d))}${v.t?' · '+esc(v.t):''}</b>${isPlanV(v)?`<span class="occ sp">${esc(whenTxt(v))}</span><a class="btn sm" href="${icsData(r,v)}" download="fomo.ics">${ICON.cal}ליומן</a><a class="btn sm" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener">Google</a>`:''}${v.occ?`<span class="occ ${SPECIAL.includes(v.occ)?'sp':''}">${esc(OCC[v.occ]||'')}</span>`:''}${v.note?`<span class="meta">${esc(v.note)}</span>`:''}${withOf(v).length?`<span class="meta">👥 עם ${esc(withOf(v).join(', '))}</span>`:''}<span class="money">${Number(v.cost)?ils(v.cost):''}</span><button type="button" class="del" data-act="rmVisit" data-i="${v.i}" aria-label="הסרת ביקור">×</button></div>`).join(''):'<p class="note">עוד לא רשמתם ביקור.</p>'}
+${visitForm()}</div>
+
+${r.notes?`<div class="sec" style="padding-inline:0"><h4>הערות</h4><p style="margin:0;white-space:pre-wrap">${esc(r.notes)}</p></div>`:''}
+<div class="sec row" style="padding-inline:0"><button class="btn" type="button" data-act="fav">${r.fav?'♥ מועדף':'♡ סמנו כמועדף'}</button><button class="btn" type="button" data-act="edit">עריכה</button><button class="btn" type="button" data-act="del" style="color:var(--bad)">מחיקה</button></div></details>`;
   const gw=$('#gwrap');if(keep)gw.appendChild(keep);else gw.innerHTML=`<iframe id="gframe" data-src="${esc(gEmbed(r))}" src="${esc(gEmbed(r))}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="מפת גוגל"></iframe>`;
   box.insertAdjacentHTML('beforeend',dbarHtml(r));{const vs=vouchersFor(r),dh=box.querySelector('.sec.dh');if(vs.length&&dh)dh.insertAdjacentHTML('beforeend',`<button type="button" class="vban" data-vopen="1">🎁 יש לכם שובר כאן! <b>${esc(vs[0].title)}${vs[0].amount?' · ₪'+esc(String(vs[0].amount)):''}</b> <small>${esc(vExpTxt(vs[0]))}</small></button>`)}
   hydrate();
@@ -317,9 +321,10 @@ async function pick(m,keep){
   s.innerHTML=`<div class="pick"><h2>לאן הולכים הערב?</h2>${seg}${filters}${cuisF?`<p class="note">רק ${esc(cuisF)}</p>`:''}<div class="nm" id="pn" aria-live="polite"></div><p class="meta" id="pm"></p><div class="row" id="pa"></div>${pollB}</div>`;
   const choice=pool[Math.floor(Math.random()*pool.length)];
   const done=()=>{$('#pn').textContent=choice.name;$('#pm').textContent=[choice.cuisine,choice.city,distKm(choice)!=null?distTxt(distKm(choice)):''].filter(Boolean).join(' · ');$('#pa').innerHTML=`<a class="btn pri" href="${esc(wazeUrl(choice))}" target="_blank" rel="noopener">${ICON.nav}יוצאים! Waze</a><button class="btn" type="button" data-act="planNew" data-id="${esc(choice.id)}">${ICON.cal}קביעה + יומן</button><button class="btn" type="button" data-act="open" data-id="${esc(choice.id)}">פרטים</button><button class="btn" type="button" data-act="pickm" data-m="${m}">הגרלה נוספת</button>`};
-  clearInterval(pickTimer);
+  clearInterval(pickTimer);clearTimeout(pickTimer);
   if(matchMedia('(prefers-reduced-motion: reduce)').matches||pool.length<2){done();return}
-  let n=0;pickTimer=setInterval(()=>{const el=$('#pn');if(!el){clearInterval(pickTimer);return}el.textContent=pool[n++%pool.length].name;if(n>14){clearInterval(pickTimer);done()}},80)}
+  let n=0,dl=55;const el0=$('#pn');if(el0)el0.classList.add('spin');
+  const step=()=>{const el=$('#pn');if(!el)return;el.textContent=pool[n++%pool.length].name;el.classList.remove('tick');void el.offsetWidth;el.classList.add('tick');if(n>16){el.classList.remove('spin','tick');el.classList.add('won');done();if(navigator.vibrate)try{navigator.vibrate(30)}catch{}return}dl*=1.17;pickTimer=setTimeout(step,dl)};pickTimer=setTimeout(step,dl)}
 
 /* ---------- phone mode ---------- */
 let camId=null;
@@ -362,7 +367,7 @@ function tasteSecHtml(){const t=(meta.tastes||{})[myId]||{},c=new Set(t.c||[]);r
 function settingsSheet(tab,focus){if(!setTab)setTab=lsGet('rs-set-tab','me');if(typeof tab==='string'&&SETT.some(x=>x[0]===tab)){setTab=tab;lsSet('rs-set-tab',tab)}if(!SETT.some(x=>x[0]===setTab))setTab='me';
   killFormMap();openId=null;mode='settings';openSheet();const own=isOwner();setTimeout(loadPk,0);setTimeout(fillPushSec,0);setTimeout(fillQuotaAdm,0);setTimeout(fillBackups,0);
   const P={
-me:`<div class="sec"><h4>השם שלי</h4><p class="meta" style="margin:0 0 8px">מחובר/ת בתור <span dir="ltr">${esc(me.email)}</span></p><form class="addrow" id="nameF" style="margin-top:0"><input class="f" name="n" maxlength="30" value="${esc(myName)}" placeholder="השם שלי" aria-label="השם שלי"><button class="btn" type="submit">שמירה</button></form></div>
+me:`<div class="sec"><h4>האימוג׳י שלי</h4><p class="meta" style="margin:0 0 8px">יופיע ליד השם שלך בהצבעות, בדירוגים וב"מי בא?".</p><div class="avpick" role="group" aria-label="האימוג׳י שלי">${AVS.map(e=>`<button type="button" data-av="${e}" aria-pressed="${avOf(myId)===e}">${e}</button>`).join('')}</div></div><div class="sec"><h4>השם שלי</h4><p class="meta" style="margin:0 0 8px">מחובר/ת בתור <span dir="ltr">${esc(me.email)}</span></p><form class="addrow" id="nameF" style="margin-top:0"><input class="f" name="n" maxlength="30" autocomplete="given-name" enterkeyhint="done" value="${esc(myName)}" placeholder="השם שלי" aria-label="השם שלי"><button class="btn" type="submit">שמירה</button></form></div>
 ${tasteSecHtml()}${dietSecHtml()}
 ${pkOK()?`<div class="sec"><h4>כניסה עם ${bioName()}</h4><p class="note" style="margin:0 0 10px">מפעילים פעם אחת בכל מכשיר, ומשם נכנסים בלי סיסמה.</p><div id="pkList" class="note">טוען…</div><button class="btn pri" type="button" data-act="pkAdd" style="margin-top:10px">הפעלת ${bioName()} במכשיר הזה</button></div>`:''}
 <div class="sec"><h4>המידע שלי</h4><p class="note" style="margin:0 0 10px">אפשר להוריד את כל המידע שקשור אליך.</p><button class="btn" type="button" data-act="myData">⬇️ הורדת המידע שלי</button></div>
@@ -375,7 +380,7 @@ ${specialSecHtml()}${pubSecHtml()}${backupSecHtml()}
 <div class="set-danger">${own?'<button type="button" data-act="delList">מחיקת הקבוצה</button>':'<button type="button" data-act="leaveList">יציאה מהקבוצה</button>'}</div>`,
 ntf:`<div class="sec" id="setPush"><h4>התראות לטלפון</h4><div id="pushSec"><p class="note">בודק…</p></div></div>
 <div class="sec"><h4>צ׳ק־אין אוטומטי</h4><p class="note" style="margin:0 0 10px">כשאתם פותחים את האפליקציה ליד מקום מהקבוצה, היא שואלת אם לרשום ביקור. צריך לאשר גישה למיקום.</p><div class="seg" role="group" aria-label="צ׳ק־אין אוטומטי"><button type="button" data-act="ciSet" data-v="on" aria-pressed="${lsGet('rs-checkin','on')!=='off'}">פעיל</button><button type="button" data-act="ciSet" data-v="off" aria-pressed="${lsGet('rs-checkin','on')==='off'}">כבוי</button></div></div>`,
-more:`<div class="sec"><h4>מראה</h4><div class="seg" role="group" aria-label="ערכת צבעים">${[['auto','אוטומטי'],['light','בהיר'],['dark','כהה']].map(([k,t])=>`<button type="button" data-act="theme" data-t="${k}" aria-pressed="${curTheme()===k}">${t}</button>`).join('')}</div></div>
+more:`<div class="sec"><h4>מראה</h4><div class="seg" role="group" aria-label="ערכת צבעים">${[['auto','אוטומטי'],['light','בהיר'],['dark','כהה']].map(([k,t])=>`<button type="button" data-act="theme" data-t="${k}" aria-pressed="${curTheme()===k}">${t}</button>`).join('')}</div><p class="l" style="margin:14px 0 8px">צבע האפליקציה</p><div class="accents" role="group" aria-label="צבע האפליקציה">${ACCENTS.map(([k,t,c])=>`<button type="button" class="acc" data-accent="${k}" aria-pressed="${curAccent()===k}" aria-label="${t}" style="--a:${c}"><i></i><span>${t}</span></button>`).join('')}</div></div>
 <div class="sec"><h4>נוחות קריאה</h4>${dispHtml()}</div>
 <div class="sec"><h4>התקנה במסך הבית</h4>${isStandalone()?'<p class="note" style="margin:0">האפליקציה כבר מותקנת במכשיר הזה ✓</p>':isPhone()?instSteps(instPlat())+instBtn(instPlat()).replace('class="btn"','class="btn pri"').replace(BRASS,''):'<p class="note" style="margin:0">פותחים את הקישור בטלפון ומתקינים משם.</p>'}</div>
 <div class="sec"><h4>ייבוא</h4><button class="btn" type="button" data-act="import">${ICON.pin}ייבוא מקומות שמורים מגוגל מפות</button></div>
@@ -428,7 +433,7 @@ async function loadActivity(){if(!cur)return;const lid=cur.id;try{const {data}=a
 const seenKey=()=>'rs-seen-'+(cur&&cur.id);
 function unread(){const s=lsGet(seenKey(),0);return acts.filter(a=>a.user_id!==myId&&new Date(a.created_at).getTime()>s).length}
 function renderBell(){const n=unread();document.querySelectorAll('.bell-n').forEach(b=>{b.textContent=n>9?'9+':String(n);b.hidden=!n})}
-const ACT_IC={add:'plus',photo:'cam',comment:'chat',visit:'pin',plan:'cal',match:'heart',poll:'vote'};
+const ACT_IC={loved:'heart',add:'plus',photo:'cam',comment:'chat',visit:'pin',plan:'cal',match:'heart',poll:'vote'};
 function feedSheet(){killFormMap();openId=null;mode='feed';openSheet();lsSet(seenKey(),Date.now());renderBell();
   $('#sb').innerHTML=`<div class="sec dh"><h2>מה חדש</h2><p class="meta" style="margin-top:6px">מה קורה בקבוצה "${esc(cur.name)}"</p></div><div class="sec"><ul class="feed">${acts.length?acts.map(a=>`<li ${a.restaurant_id?`data-act="open" data-id="${esc(a.restaurant_id)}"`:''}><span class="av" style="--h:${hue(a.user_id)}">${esc((nm(a.user_id)||'?').charAt(0))}</span><span class="ft"><b>${esc(nm(a.user_id))}</b> ${esc(a.text)}<small>${relT(a.created_at)}</small></span></li>`).join(''):'<li class="note">עוד לא קרה כלום. ברגע שמישהו יוסיף מקום, תמונה או תגובה, זה יופיע כאן.</li>'}</ul></div>`}
 
@@ -452,18 +457,22 @@ function confetti(n=90){if(matchMedia('(prefers-reduced-motion: reduce)').matche
 /* ================= polls ================= */
 let polls=[],openPoll=null;
 async function loadPolls(){if(!cur)return;const lid=cur.id;try{const since=new Date(Date.now()-3*864e5).toISOString();const {data}=await sb.from('polls').select('*').eq('list_id',lid).gte('created_at',since).order('created_at',{ascending:false});if(cur&&cur.id===lid){polls=data||[];renderNotices()}}catch{}}
-function pollCounts(p){const c={};for(const v of Object.values(p.votes||{}))c[v]=(c[v]||0)+1;return c}
+const pVotes=p=>Object.fromEntries(Object.entries(p.votes||{}).filter(([k])=>k[0]!=='_'));
+const pEnd=p=>(p.votes||{})._end||'';const pClosed=p=>!!p.closed||(!!pEnd(p)&&Date.now()>new Date(pEnd(p)).getTime());
+function pollLeft(p){const e=pEnd(p);if(!e)return '';const ms=new Date(e).getTime()-Date.now();if(ms<=0)return 'ההצבעה נסגרה';const h=Math.floor(ms/36e5),m=Math.floor(ms%36e5/6e4);return 'נסגרת בעוד '+(h>=24?Math.floor(h/24)+' ימים':h?h+' שע׳ ו־'+m+' דק׳':m+' דק׳')}
+function pollCounts(p){const c={};for(const v of Object.values(pVotes(p)))c[v]=(c[v]||0)+1;return c}
 function pollWinner(p){const c=pollCounts(p);let best=null,bn=-1;for(const o of p.options||[]){if((c[o]||0)>bn){bn=c[o]||0;best=o}}return best}
 function pollSheet(pid){const p=polls.find(x=>x.id===pid);if(!p)return;killFormMap();openId=null;mode='poll';openPoll=pid;openSheet();renderPoll()}
-function renderPoll(){const p=polls.find(x=>x.id===openPoll);if(!p||mode!=='poll')return;const c=pollCounts(p),tot=Object.keys(p.votes||{}).length,mine=(p.votes||{})[myId],canEnd=p.created_by===myId||isOwner();
+function renderPoll(){const p=polls.find(x=>x.id===openPoll);if(!p||mode!=='poll')return;const c=pollCounts(p),tot=Object.keys(pVotes(p)).length,mine=(p.votes||{})[myId],canEnd=p.created_by===myId||isOwner();
   const voters=o=>Object.entries(p.votes||{}).filter(([,v])=>v===o).map(([u])=>nm(u));
-  if(p.closed){const w=byId(pollWinner(p));$('#sb').innerHTML=`<div class="pick"><p class="meta">${esc(p.title)} · ${tot} הצביעו</p><h2 style="margin-top:8px">והמנצח הוא…</h2><div class="nm">${esc(w?w.name:'—')}</div>${w?`<p class="meta">${esc([w.cuisine,w.city].filter(Boolean).join(' · '))}</p><div class="row"><a class="btn pri" href="${esc(wazeUrl(w))}" target="_blank" rel="noopener">${ICON.nav}יוצאים! Waze</a><button class="btn" type="button" data-act="planNew" data-id="${esc(w.id)}">${ICON.cal}קביעה + יומן</button><button class="btn" type="button" data-act="open" data-id="${esc(w.id)}">פרטים</button></div>`:''}${canEnd?'<button class="link-btn" type="button" data-act="pollDel">מחיקת ההצבעה</button>':''}</div>`;return}
-  $('#sb').innerHTML=`<div class="sec dh"><h2>${esc(p.title)}</h2><p class="meta" style="margin-top:6px">${tot} הצביעו · ${mine?'אפשר לשנות את ההצבעה':'בחרו את המקום שהכי בא לכם'}</p></div><div class="sec"><div class="popts">${(p.options||[]).map(o=>{const r=byId(o),n=c[o]||0,pc=tot?Math.round(n/tot*100):0;return `<button type="button" class="popt ${mine===o?'sel':''}" data-act="pollVote" data-o="${esc(o)}"><span class="pb" style="width:${pc}%"></span><span class="pt"><b>${esc(r?r.name:'מקום שנמחק')}</b><small>${esc(r?[r.cuisine,r.city].filter(Boolean).join(' · '):'')}${voters(o).length?' · '+esc(voters(o).join(', ')):''}</small></span><span class="pn">${n}</span></button>`}).join('')}</div>
+  if(pClosed(p)){const w=byId(pollWinner(p));if(w&&!lsGet('rs-pw-'+p.id,0)){lsSet('rs-pw-'+p.id,1);setTimeout(()=>{confetti(90);buzz([30,60,30])},250)}$('#sb').innerHTML=`<div class="pick"><p class="meta">${esc(p.title)} · ${tot} הצביעו</p><h2 style="margin-top:8px">והמנצח הוא…</h2><div class="nm">${esc(w?w.name:'—')}</div>${w?`<p class="meta">${esc([w.cuisine,w.city].filter(Boolean).join(' · '))}</p><div class="row"><a class="btn pri" href="${esc(wazeUrl(w))}" target="_blank" rel="noopener">${ICON.nav}יוצאים! Waze</a><button class="btn" type="button" data-act="planNew" data-id="${esc(w.id)}">${ICON.cal}קביעה + יומן</button><button class="btn" type="button" data-act="open" data-id="${esc(w.id)}">פרטים</button></div>`:''}${canEnd?'<button class="link-btn" type="button" data-act="pollDel">מחיקת ההצבעה</button>':''}</div>`;return}
+  $('#sb').innerHTML=`<div class="sec dh"><h2>${esc(p.title)}</h2><p class="meta" style="margin-top:6px">${tot} הצביעו · ${mine?'אפשר לשנות את ההצבעה':'בחרו את המקום שהכי בא לכם'}</p>${pEnd(p)?`<p class="poll-end">⏰ ${esc(pollLeft(p))}</p>`:''}</div><div class="sec"><div class="popts">${(p.options||[]).map(o=>{const r=byId(o),n=c[o]||0,pc=tot?Math.round(n/tot*100):0;return `<button type="button" class="popt ${mine===o?'sel':''}" data-act="pollVote" data-o="${esc(o)}"><span class="pb" style="width:${pc}%"></span><span class="pt"><b>${esc(r?r.name:'מקום שנמחק')}</b><small>${esc(r?[r.cuisine,r.city].filter(Boolean).join(' · '):'')}${voters(o).length?' · '+esc(voters(o).join(', ')):''}</small></span><span class="pn">${n}</span></button>`}).join('')}</div>
 <div class="row" style="margin-top:16px">${canEnd?'<button class="btn pri" type="button" data-act="pollClose">סיום והכרזה על המנצח</button><button class="btn" type="button" data-act="pollDel" style="color:var(--bad)">מחיקה</button>':''}<button class="btn" type="button" data-act="shareInvite">${ICON.share}הזמנת חברים להצביע</button></div><p class="note">חברים צריכים להיות בקבוצה כדי להצביע. אפשר לשלוח להם את קישור ההזמנה.</p></div>`}
 function pollNewSheet(){killFormMap();openId=null;mode='pollnew';openSheet();const cands=rows.filter(r=>r.status!=='been'||r.fav||avg(r)>=4);
-  $('#sb').innerHTML=`<form id="pollF" class="sec dh"><h2>הצבעה עם חברים</h2><p class="meta" style="margin-top:6px">בחרו 2 עד 4 מקומות, וכל מי שבקבוצה יצביע.</p><label class="l" style="margin-top:14px">כותרת<input class="f" name="t" maxlength="60" value="לאן יוצאים הערב?"></label><div class="chips" style="margin-top:14px">${cands.map(r=>`<label class="chip"><input type="checkbox" name="o" value="${esc(r.id)}"><span>${esc(r.name)}</span></label>`).join('')||'<p class="note">אין עדיין מקומות בקבוצה.</p>'}</div><p class="note" id="pollErr"></p><div class="row" style="margin-top:12px"><button class="btn pri" type="submit">פתיחת הצבעה</button></div></form>`}
+  $('#sb').innerHTML=`<form id="pollF" class="sec dh"><h2>הצבעה עם חברים</h2><p class="meta" style="margin-top:6px">בחרו 2 עד 4 מקומות, וכל מי שבקבוצה יצביע.</p><label class="l" style="margin-top:14px">כותרת<input class="f" name="t" maxlength="60" enterkeyhint="done" value="לאן יוצאים הערב?"></label><label class="l" style="margin-top:12px">ההצבעה נסגרת<select class="f" name="end"><option value="">כשמישהו סוגר אותה</option><option value="2">בעוד שעתיים</option><option value="t18">היום ב־18:00</option><option value="24">בעוד יום</option><option value="72">בעוד 3 ימים</option></select></label><div class="chips" style="margin-top:14px">${cands.map(r=>`<label class="chip"><input type="checkbox" name="o" value="${esc(r.id)}"><span>${esc(r.name)}</span></label>`).join('')||'<p class="note">אין עדיין מקומות בקבוצה.</p>'}</div><p class="note" id="pollErr"></p><div class="row" style="margin-top:12px"><button class="btn pri" type="submit">פתיחת הצבעה</button></div></form>`}
 async function createPoll(fm){const opts=[...fm.querySelectorAll('input[name=o]:checked')].map(i=>i.value);if(opts.length<2||opts.length>4){$('#pollErr').textContent='בחרו בין 2 ל-4 מקומות';return}
-  const title=fm.elements.t.value.trim()||'לאן יוצאים הערב?';const {data,error}=await sb.from('polls').insert({list_id:cur.id,title,options:opts}).select().single();if(error){toast(errMsg(error));return}
+  const title=fm.elements.t.value.trim()||'לאן יוצאים הערב?';const ev=fm.elements.end?fm.elements.end.value:'';let end='';if(ev==='t18'){const d=new Date();d.setHours(18,0,0,0);if(d<=new Date())d.setDate(d.getDate()+1);end=d.toISOString()}else if(ev)end=new Date(Date.now()+(+ev)*36e5).toISOString();
+  const {data,error}=await sb.from('polls').insert({list_id:cur.id,title,options:opts,...(end?{votes:{_end:end}}:{})}).select().single();if(error){toast(errMsg(error));return}
   polls.unshift(data);renderNotices();logAct('poll',null,`פתח/ה הצבעה: ${title}`);pollSheet(data.id)}
 
 /* ================= planned dates ================= */
@@ -491,8 +500,9 @@ function hoursForm(r){const H=r.hours||{},hh=r.hh||{};return `<details class="ho
 <button type="button" class="btn sm" data-act="copyHours">העתקת יום א׳ לכל השבוע</button>
 <div class="hrow hhrow"><span class="hd">🍹 האפי אוור</span><input class="f" type="time" name="hhf" value="${esc(hh.f||'')}" aria-label="האפי אוור מ"><span>עד</span><input class="f" type="time" name="hht" value="${esc(hh.t||'')}" aria-label="האפי אוור עד"></div><div class="hhdays chips" role="group" aria-label="ימי האפי אוור">${DAYS.map((dn,i)=>`<label class="chip sm"><input type="checkbox" name="hhd" value="${i}" ${(hh.d||[]).includes(i)?'checked':''}><span>${dn}</span></label>`).join('')}</div><p class="note" style="margin:4px 0 0">בלי לסמן ימים = כל יום.</p><input class="f" name="hhn" maxlength="60" placeholder="מה המבצע? למשל 1+1 על קוקטיילים" value="${esc(hh.n||'')}" aria-label="מה המבצע"></div></details>`}
 function readHours(fd){const H={};for(let i=0;i<7;i++){if(fd.get('hx'+i)){H[i]=null;continue}const o=fd.get('ho'+i),c=fd.get('hc'+i);if(o&&c)H[i]=[String(o),String(c)]}const f=fd.get('hhf'),t=fd.get('hht'),hd=fd.getAll('hhd').map(Number).filter(n=>n>=0&&n<7),hn=String(fd.get('hhn')||'').trim().slice(0,60);return {hours:H,hh:f&&t?{f:String(f),t:String(t),...(hd.length&&hd.length<7?{d:hd}:{}),...(hn?{n:hn}:{})}:null}}
-function hoursView(r){if(r.permClosed)return `<div class="sec gone-sec"><h4>⛔ נראה שהמקום נסגר לצמיתות</h4><p class="note" style="margin:0">כך כתוב באתר של המקום. אם זו טעות, אפשר לסמן שהוא עדיין פתוח.</p><button class="btn sm" type="button" data-act="notGone">הוא עדיין פתוח</button></div>`;const H=r.hours||{};if(!Object.keys(H).length&&!(r.hh&&r.hh.f))return '';const st=openState(r),d=new Date().getDay();
-  return `<div class="sec"><h4>שעות פתיחה ${st?`<span class="open ${st.open?'on':''}">${st.open?'פתוח עכשיו'+(st.until?' · עד '+esc(st.until):''):'סגור עכשיו'+(st.from?' · נפתח ב-'+esc(st.from):'')}</span>`:''}</h4><div class="htab">${DAYS.map((dn,i)=>H[i]===undefined?'':`<div class="${i===d?'today':''}"><span>${dn}</span><span${H[i]===null?'':' dir="ltr"'}>${H[i]===null?'סגור':esc(H[i][0])+'–'+esc(H[i][1])}</span></div>`).join('')}${r.hh&&r.hh.f?`<div class="hh ${hhNow(r)?'now':''}"><span>האפי אוור</span><span><bdi dir="ltr">${esc(r.hh.f)}–${esc(r.hh.t)}</bdi>${r.hh.d&&r.hh.d.length?' · '+r.hh.d.map(i=>DAYS[i]).join(' '):''}${hhNow(r)?' · עכשיו!':''}${r.hh.n?`<br><small>${esc(r.hh.n)}</small>`:''}</span></div>`:''}</div></div>`}
+function hoursView(r){const gh=goneHtml(r);if(gh)return gh+hoursView0(r);return hoursView0(r)}
+function hoursView0(r){if(r.permClosed)return `<div class="sec gone-sec"><h4>⛔ נראה שהמקום נסגר לצמיתות</h4><p class="note" style="margin:0">כך כתוב באתר של המקום. אם זו טעות, אפשר לסמן שהוא עדיין פתוח.</p><button class="btn sm" type="button" data-act="notGone">הוא עדיין פתוח</button></div>`;const H=r.hours||{};if(!Object.keys(H).length&&!(r.hh&&r.hh.f))return '';const st=openState(r),d=new Date().getDay();
+  return `<div class="sec"><h4>שעות פתיחה ${st?`<span class="open ${st.open?'on':''}">${st.open?'פתוח עכשיו'+(st.until?' · עד '+esc(st.until):''):'סגור עכשיו'+(st.from?' · נפתח ב-'+esc(st.from):'')}</span>`:''}</h4><div class="htab">${DAYS.map((dn,i)=>H[i]===undefined?'':`<div class="${i===d?'today':''}"><span>${dn}</span><span${H[i]===null?'':' dir="ltr"'}>${H[i]===null?'סגור':esc(H[i][0])+'–'+esc(H[i][1])}</span></div>`).join('')}${r.hh&&r.hh.f?`<div class="hh ${hhNow(r)?'now':''}"><span>האפי אוור</span><span><bdi dir="ltr">${esc(r.hh.f)}–${esc(r.hh.t)}</bdi>${r.hh.d&&r.hh.d.length?' · '+r.hh.d.map(i=>DAYS[i]).join(' '):''}${hhNow(r)?' · עכשיו!':''}${r.hh.n?`<br><small>${esc(r.hh.n)}</small>`:''}</span></div>`:''}</div>${provHtml(r)}</div>`}
 
 /* ================= near me ================= */
 let myLoc=null;
@@ -501,11 +511,11 @@ function distKm(r){if(!myLoc||!hasLL(r))return null;const R=6371,t=x=>x*Math.PI/
 const distTxt=d=>d==null?'':(d<1?Math.round(d*1000/10)*10+' מ׳':d.toFixed(d<10?1:0)+' ק״מ')+' · ~'+Math.max(2,Math.round(d*2.2+2))+' דק׳';
 
 /* ================= notices (today plans + polls) ================= */
-function renderNotices(){outBadge();setTimeout(()=>{if($('#cdT')&&!cdTimer)cdTimer=setInterval(cdTick,30000)},0);const el=$('#pollBar');if(!el)return;const tp=upcoming().filter(({v})=>daysTo(v.d)<=1);const op=polls.filter(p=>!p.closed);const ev=(typeof events!=='undefined'?events:[]).filter(e=>e.d>=today()&&daysTo(e.d)<=3);
+function renderNotices(){outBadge();setTimeout(()=>{if($('#cdT')&&!cdTimer)cdTimer=setInterval(cdTick,30000)},0);const el=$('#pollBar');if(!el)return;const tp=upcoming().filter(({v})=>daysTo(v.d)<=1);const op=polls.filter(p=>!pClosed(p));const ev=(typeof events!=='undefined'?events:[]).filter(e=>e.d>=today()&&daysTo(e.d)<=3);
   const rv=pendingReviews(),sp=upcomingSpecial().slice(0,2),sur=surprisesForMe().slice(0,2);
   const cd=nextOuting(),wp=lsGet('rs-wx-x','')===today()?null:wxTypes();
-  el.innerHTML=[...(voucherNotice()?[voucherNotice()]:[]),...(cd?[(()=>{const c=cdText(cd);return `<button type="button" class="notice cdown ${c.now?'now':''}" ${cd.ev?`data-ev="${esc(cd.ev)}"`:cd.id?`data-cdo="${esc(cd.id)}"`:''}><span class="ni">${c.now?'🎉':'⏳'}</span><span class="nt"><b id="cdT">${esc(c.big)}</b><small>${esc(cd.title)} · ${esc(whenTxt(cd.v))}</small></span></button>`})()]:[]),...(wp?[`<div class="notice wx"><span class="ni">${wp.m.e}</span><span class="nt"><b>${esc(wp.m.title)}</b><small>${esc(wp.m.why)}${wp.types.length||wp.tag?'. מתאים היום:':''}</small>${wp.types.length||wp.tag?`<span class="wxchips">${wp.types.map(c=>`<button type="button" class="chip" data-wxc="${esc(c)}" aria-pressed="${cuisF===c}">${esc(c)}</button>`).join('')}${wp.tag?`<button type="button" class="chip" data-wxt="${esc(wp.tag)}">${esc(wp.tag)}</button>`:''}</span>`:''}</span><span class="nbtns"><button type="button" class="del" data-wxx="1" aria-label="להסתיר להיום">×</button></span></div>`]:[]),...sur.map(({v})=>`<div class="notice sur"><span class="ni">🤫</span><span class="nt"><b>יציאת הפתעה ${esc(whenTxt(v))}!</b><small>${esc(nm(v.surprise.by))} מתכנן/ת${v.surprise.dress?' · לבוש: '+esc(v.surprise.dress):''}${v.surprise.hint?' · רמז: '+esc(v.surprise.hint):''} · נחשף ביום עצמו</small></span></div>`),...sp.map((x,i)=>{const r=specialPick(x,spSkip[x.md]);const n=daysTo(x.next);return `<div class="notice spd"><span class="ni">${(SPK[x.kind]||SPK.other)[1]}</span><span class="nt"><b>${n===0?'היום':n===1?'מחר':'בעוד '+n+' ימים'}: ${esc(x.name||(SPK[x.kind]||SPK.other)[0])}</b><small>${r?'הצעה: '+esc(r.name)+(r.city?' · '+esc(r.city):''):'הוסיפו מקומות לקבוצה כדי לקבל הצעה'}</small></span>${r?`<span class="nbtns"><button type="button" class="btn sm pri" data-spplan="${esc(r.id)}">לקבוע</button><button type="button" class="btn sm" data-spnext="${esc(x.md)}" data-rid="${esc(r.id)}">אחר</button></span>`:''}</div>`}),...rv.map(({r,v,key,rated})=>`<div class="notice rev"><span class="ni">⭐</span><span class="nt"><b>איך היה ב${esc(r.name)} ${agoTxt(v.d)}?</b><small>${rated?'הוסיפו תמונות ומנות שאהבתם':'דרגו, הוסיפו תמונות ומנות'}</small></span><span class="nbtns"><button type="button" class="btn sm pri" data-rev="${esc(r.id)}">${rated?'להוסיף':'לדרג'}</button><button type="button" class="del" data-revx="${esc(key)}" aria-label="לא עכשיו">×</button></span></div>`),...(pushAsk?[`<div class="notice push"><span class="ni">🔔</span><span class="nt"><b>לקבל התראות לטלפון?</b><small>כשמישהו מוסיף מקום, קובע ערב או מנצח במשחק, ובבוקר של יום יציאה</small></span><span class="nbtns"><button type="button" class="btn sm pri" data-push="on">הפעלה</button><button type="button" class="del" data-push="no" aria-label="לא תודה">×</button></span></div>`]:[]),...ev.map(e=>{const k=(e.rsvp||{})[myId],y=Object.values(e.rsvp||{}).filter(v=>v==='yes').length;return `<button type="button" class="notice plan" data-ev="${esc(e.id)}"><span class="ni">${ICON.users}</span><span class="nt"><b>${esc(whenTxt({d:e.d,t:e.t||''}))}: ${esc(e.title)}</b><small>${y} מגיעים · ${k==='yes'?'את/ה מגיע/ה':k==='maybe'?'סימנת אולי':k==='no'?'סימנת שלא':'עוד לא ענית'}</small></span><span class="ng">${k?'פרטים':'לענות'}</span></button>`}),...tp.map(({r,v})=>`<button type="button" class="notice plan" data-open="${esc(r.id)}"><span class="ni">${ICON.cal}</span><span class="nt"><b>${esc(whenTxt(v))}: ${esc(r.name)}</b><small>${esc([r.address,r.city].filter(Boolean).join(', ')||'יציאה מתוכננת')}</small></span><span class="ng">פרטים</span></button>`),
-   ...op.map(p=>{const n=Object.keys(p.votes||{}).length,mine=(p.votes||{})[myId];return `<button type="button" class="notice" data-poll="${esc(p.id)}"><span class="ni">${ICON.vote}</span><span class="nt"><b>${esc(p.title)}</b><small>${n} הצביעו · ${mine?'הצבעת':'עוד לא הצבעת'}</small></span><span class="ng">להצבעה</span></button>`})].join('');applyNoticeDis(el)}
+  el.innerHTML=[...(lovedNotice()?[lovedNotice()]:[]),...(nearHit?[nearHtml()]:[]),...(voucherNotice()?[voucherNotice()]:[]),...(bookNotice()?[bookNotice()]:[]),...(cd?[(()=>{const c=cdText(cd);return `<button type="button" class="notice cdown ${c.now?'now':''}" ${cd.ev?`data-ev="${esc(cd.ev)}"`:cd.id?`data-cdo="${esc(cd.id)}"`:''}><span class="ni">${c.now?'🎉':'⏳'}</span><span class="nt"><b id="cdT">${esc(c.big)}</b><small>${esc(cd.title)} · ${esc(whenTxt(cd.v))}</small></span></button>`})()]:[]),...(wp?[`<div class="notice wx"><span class="ni">${wp.m.e}</span><span class="nt"><b>${esc(wp.m.title)}</b><small>${esc(wp.m.why)}${wp.types.length||wp.tag?'. מתאים היום:':''}</small>${wp.types.length||wp.tag?`<span class="wxchips">${wp.types.map(c=>`<button type="button" class="chip" data-wxc="${esc(c)}" aria-pressed="${cuisF===c}">${esc(c)}</button>`).join('')}${wp.tag?`<button type="button" class="chip" data-wxt="${esc(wp.tag)}">${esc(wp.tag)}</button>`:''}</span>`:''}</span><span class="nbtns"><button type="button" class="del" data-wxx="1" aria-label="להסתיר להיום">×</button></span></div>`]:[]),...sur.map(({v})=>`<div class="notice sur"><span class="ni">🤫</span><span class="nt"><b>יציאת הפתעה ${esc(whenTxt(v))}!</b><small>${esc(nm(v.surprise.by))} מתכנן/ת${v.surprise.dress?' · לבוש: '+esc(v.surprise.dress):''}${v.surprise.hint?' · רמז: '+esc(v.surprise.hint):''} · נחשף ביום עצמו</small></span></div>`),...sp.map((x,i)=>{const r=specialPick(x,spSkip[x.md]);const n=daysTo(x.next);return `<div class="notice spd"><span class="ni">${(SPK[x.kind]||SPK.other)[1]}</span><span class="nt"><b>${n===0?'היום':n===1?'מחר':'בעוד '+n+' ימים'}: ${esc(x.name||(SPK[x.kind]||SPK.other)[0])}</b><small>${r?'הצעה: '+esc(r.name)+(r.city?' · '+esc(r.city):''):'הוסיפו מקומות לקבוצה כדי לקבל הצעה'}</small></span>${r?`<span class="nbtns"><button type="button" class="btn sm pri" data-spplan="${esc(r.id)}">לקבוע</button><button type="button" class="btn sm" data-spnext="${esc(x.md)}" data-rid="${esc(r.id)}">אחר</button></span>`:''}</div>`}),...rv.map(({r,v,key,rated})=>`<div class="notice rev"><span class="ni">⭐</span><span class="nt"><b>איך היה ב${esc(r.name)} ${agoTxt(v.d)}?</b>${rated?'<small>הוסיפו תמונות ומנות שאהבתם</small>':`<span class="qstars" role="group" aria-label="דירוג מהיר">${[1,2,3,4,5].map(n=>`<button type="button" data-qrate="${esc(r.id)}:${n}" aria-label="${n} כוכבים">★</button>`).join('')}</span>`}</span><span class="nbtns"><button type="button" class="btn sm pri" data-rev="${esc(r.id)}">${rated?'להוסיף':'לדרג'}</button><button type="button" class="del" data-revx="${esc(key)}" aria-label="לא עכשיו">×</button></span></div>`),...(pushAsk?[`<div class="notice push"><span class="ni">🔔</span><span class="nt"><b>לקבל התראות לטלפון?</b><small>כשמישהו מוסיף מקום, קובע ערב או מנצח במשחק, ובבוקר של יום יציאה</small></span><span class="nbtns"><button type="button" class="btn sm pri" data-push="on">הפעלה</button><button type="button" class="del" data-push="no" aria-label="לא תודה">×</button></span></div>`]:[]),...ev.map(e=>{const k=(e.rsvp||{})[myId],y=Object.values(e.rsvp||{}).filter(v=>v==='yes').length;return `<button type="button" class="notice plan" data-ev="${esc(e.id)}"><span class="ni">${ICON.users}</span><span class="nt"><b>${esc(whenTxt({d:e.d,t:e.t||''}))}: ${esc(e.title)}</b><small>${y} מגיעים · ${k==='yes'?'את/ה מגיע/ה':k==='maybe'?'סימנת אולי':k==='no'?'סימנת שלא':'עוד לא ענית'}</small></span><span class="ng">${k?'פרטים':'לענות'}</span></button>`}),...tp.map(({r,v})=>`<button type="button" class="notice plan" data-open="${esc(r.id)}"><span class="ni">${ICON.cal}</span><span class="nt"><b>${esc(whenTxt(v))}: ${esc(r.name)}</b><small>${esc([r.address,r.city].filter(Boolean).join(', ')||'יציאה מתוכננת')}</small></span><span class="ng">פרטים</span></button>`),
+   ...op.map(p=>{const n=Object.keys(pVotes(p)).length,mine=(p.votes||{})[myId];return `<button type="button" class="notice" data-poll="${esc(p.id)}"><span class="ni">${ICON.vote}</span><span class="nt"><b>${esc(p.title)}</b><small>${n} הצביעו · ${mine?'הצבעת':'עוד לא הצבעת'}${pEnd(p)?' · '+esc(pollLeft(p)):''}</small></span><span class="ng">להצבעה</span></button>`})].join('');applyNoticeDis(el);nzStack(el)}
 
 /* ================= share card ================= */
 async function signed(path){if(urlCache[path])return urlCache[path];try{const {data}=await sb.storage.from('photos').createSignedUrls([path],604800);const u=data&&data[0]&&data[0].signedUrl;if(u)urlCache[path]=u;return u}catch{return null}}
@@ -525,11 +535,23 @@ async function drawCard(r,withPhoto){const W=1080,H=1350,c=document.createElemen
   if(r.recBy&&y<1150){x.font='600 32px Assistant, sans-serif';x.fillStyle='#8B7380';x.fillText('המליץ/ה: '+r.recBy,970,Math.min(y,1150))}
   x.textAlign='center';x.direction='ltr';x.fillStyle='#fff';x.font='italic 800 58px "Playfair Display", Georgia, serif';x.fillText('Fomo',W/2,1278);x.direction='rtl';x.font='700 30px Assistant, sans-serif';x.fillText('המקומות שאסור לפספס',W/2,1322);
   return new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('blob')),'image/jpeg',.9)}catch(e){rej(e)}})}
+/* a 9:16 story around the 4:5 card, for Instagram/WhatsApp status */
+async function drawStory(card,r){const W=1080,H=1920,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
+  const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#2A1630');g.addColorStop(1,'#4A1F3A');x.fillStyle=g;x.fillRect(0,0,W,H);
+  x.globalAlpha=.35;x.fillStyle='#FF5E4D';x.beginPath();x.arc(980,160,280,0,7);x.fill();x.fillStyle='#FFB547';x.beginPath();x.arc(80,1780,320,0,7);x.fill();x.globalAlpha=1;
+  const img=await loadImg(URL.createObjectURL(card));const w=960,h=1200;x.save();x.shadowColor='#00000066';x.shadowBlur=60;x.shadowOffsetY=20;rr(x,60,330,w,h,44);x.fillStyle='#fff';x.fill();x.restore();x.save();rr(x,60,330,w,h,44);x.clip();if(img)x.drawImage(img,60,330,w,h);x.restore();
+  x.direction='rtl';x.textAlign='center';x.fillStyle='#fff';x.font='800 64px Rubik, sans-serif';x.fillText('המלצה מהקבוצה שלנו',W/2,200);x.font='600 40px Assistant, sans-serif';x.fillStyle='#FFD3C7';x.fillText((r.cuisine?r.cuisine+' · ':'')+(r.city||''),W/2,262);
+  x.font='700 42px Assistant, sans-serif';x.fillStyle='#fff';x.fillText('גם אתם רוצים רשימה כזאת? Fomo 🍽️',W/2,1680);
+  return new Promise((res,rej)=>{try{c.toBlob(b=>b?res(b):rej(new Error('blob')),'image/jpeg',.9)}catch(e){rej(e)}})}
 async function shareCard(r,btn){if(btn)btn.disabled=true;try{await document.fonts.ready;let blob;try{blob=await drawCard(r,true)}catch{blob=await drawCard(r,false)}
-  const file=new File([blob],'fomo-'+String(r.name).replace(/[^\w֐-׿]+/g,'-')+'.jpg',{type:'image/jpeg'});
-  if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:r.name,text:shareText(r)});return}catch(e){if(e&&e.name==='AbortError')return}}
-  const u=URL.createObjectURL(blob);mode='card';$('#sb').innerHTML=`<div class="sec dh"><h2>כרטיס לשיתוף</h2><p class="meta" style="margin-top:6px">שמרו את התמונה ושלחו בוואטסאפ או באינסטגרם.</p><img src="${u}" alt="כרטיס של ${esc(r.name)}" style="width:100%;border-radius:20px;margin-top:14px;box-shadow:var(--shadow)"><div class="row" style="margin-top:14px"><a class="btn pri" href="${u}" download="${esc(file.name)}">הורדת התמונה</a><button class="btn" type="button" data-act="open" data-id="${esc(r.id)}">חזרה למקום</button></div></div>`}
+  const base='fomo-'+String(r.name).replace(/[^\w֐-׿]+/g,'-');const file=new File([blob],base+'.jpg',{type:'image/jpeg'});
+  let sb2=null;try{sb2=await drawStory(blob,r)}catch{}const story=sb2?new File([sb2],base+'-story.jpg',{type:'image/jpeg'}):null;
+  const u=URL.createObjectURL(blob),us=sb2?URL.createObjectURL(sb2):'';mode='card';
+  $('#sb').innerHTML=`<div class="sec dh"><h2>כרטיס לשיתוף</h2><p class="meta" style="margin-top:6px">בוחרים פורמט ושולחים בוואטסאפ או באינסטגרם.</p><div class="cardfmt"><figure><img src="${u}" alt="כרטיס של ${esc(r.name)}"><figcaption>פוסט</figcaption><button class="btn pri sm" type="button" data-cshare="post">שיתוף</button><a class="btn sm" href="${u}" download="${esc(file.name)}">הורדה</a></figure>${us?`<figure><img src="${us}" alt="סטורי של ${esc(r.name)}"><figcaption>סטורי</figcaption><button class="btn pri sm" type="button" data-cshare="story">שיתוף</button><a class="btn sm" href="${us}" download="${esc(story.name)}">הורדה</a></figure>`:''}</div><div class="row" style="margin-top:14px"><button class="btn" type="button" data-act="open" data-id="${esc(r.id)}">חזרה למקום</button></div></div>`;
+  shareCard.files={post:file,story,r}}
   catch(e){toast('לא הצלחנו ליצור כרטיס')}finally{if(btn)btn.disabled=false}}
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-cshare]');if(!b||!shareCard.files)return;const F=shareCard.files,f=F[b.dataset.cshare];if(!f)return;
+  if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],title:F.r.name,text:shareText(F.r)})}catch{}}else toast('אפשר להוריד את התמונה ולשלוח אותה')});
 
 /* ================= achievements ================= */
 const ACH=[['first','ההתחלה','ביקור ראשון שנרשם',s=>s.visits>=1,'flag'],['v10','יוצאים קבועים','10 ביקורים',s=>s.visits>=10,'fire'],['v25','אלופי היציאות','25 ביקורים',s=>s.visits>=25,'trophy'],['p5','חוקרים','5 מקומות שונים',s=>s.places>=5,'map'],['p20','מפת טעמים','20 מקומות שונים',s=>s.places>=20,'map'],['c3','סביב העולם','3 סוגי מטבח',s=>s.cuisines>=3,'globe'],['c6','אזרחי העולם','6 סוגי מטבח',s=>s.cuisines>=6,'globe'],['city3','על הדרך','מקומות ב-3 ערים',s=>s.cities>=3,'pin'],['ph10','צלמי אוכל','10 תמונות',s=>s.photos>=10,'cam'],['date','רומנטיקנים','דייט ראשון שנרשם',s=>s.dates>=1,'heart'],['anniv','חוגגים ביחד','יום הולדת או יום נישואין',s=>s.special>=1,'cake'],['must5','יודעים מה להזמין','5 מנות "חובה"',s=>s.must>=5,'star'],['match','באותו ראש','מקום ששניכם רוצים',s=>s.match>=1,'heart'],['loyal','נאמנים','3 ביקורים באותו מקום',s=>s.loyal>=3,'trophy'],['wish10','חולמים בגדול','10 מקומות ברשימת החלומות',s=>s.wish>=10,'star']];
@@ -576,16 +598,31 @@ function fromGeo(j){return (j.features||[]).map(f=>{const p=f.properties||{},loc
 function fromCSV(t){const r=parseCSV(t);if(!r.length)return[];const h=r[0].map(x=>x.trim().toLowerCase());const ix=k=>h.indexOf(k);return r.slice(1).map(c=>{const url=c[ix('url')]||'',pm=parseMaps(url);return {name:c[ix('title')]||pm.name||'',address:'',mapsUrl:url,note:c[ix('note')]||c[ix('comment')]||'',lat:Number.isFinite(pm.lat)?pm.lat:null,lng:Number.isFinite(pm.lng)?pm.lng:null}})}
 function importSheet(){killFormMap();openId=null;mode='import';openSheet();impItems=[];
   $('#sb').innerHTML=`<div class="sec dh"><h2>ייבוא מגוגל מפות</h2><p class="meta" style="margin-top:6px">מעבירים את המקומות השמורים שלכם מגוגל מפות לקבוצה "${esc(cur.name)}".</p></div><div class="sec"><h4>איך מוציאים את הקובץ מגוגל</h4><ol class="steps"><li>נכנסים ל-<a href="https://takeout.google.com" target="_blank" rel="noopener">takeout.google.com</a> עם חשבון הגוגל שלכם.</li><li>לוחצים "ביטול הבחירה" ומסמנים רק את <b>Saved</b> (הרשימות השמורות) ואת <b>Maps (your places)</b>.</li><li>לוחצים "השלב הבא" ← "יצירת ייצוא". גוגל ישלח קישור להורדה במייל.</li><li>מורידים ופותחים את קובץ ה-ZIP, ובוחרים כאן את <b>Saved Places.json</b> או את קבצי ה-CSV של הרשימות.</li></ol>
-<label class="btn pri" style="margin-top:12px">בחירת קבצים<input type="file" accept=".json,.geojson,.csv,application/json,text/csv" multiple hidden id="impFile"></label><div id="impList"></div></div>`}
+<label class="btn pri" style="margin-top:12px">בחירת קבצים<input type="file" accept=".json,.geojson,.csv,application/json,text/csv" multiple hidden id="impFile"></label></div>
+<div class="sec"><h4>או בדרך המהירה: הדבקה</h4><p class="note" style="margin-top:0">מדביקים קישורים מגוגל מפות (שיתוף ← העתקת קישור) או סתם שמות של מקומות, אחד בכל שורה.</p><textarea class="f" id="impPaste" rows="5" autocapitalize="off" autocorrect="off" spellcheck="false" dir="auto" placeholder="https://www.google.com/maps/place/...&#10;בר יין רוזה&#10;אבו חסן יפו"></textarea><button class="btn" type="button" data-act="impPaste" style="margin-top:10px">מציאת המקומות</button><p class="note" id="impPasteSt"></p><div id="impList"></div></div>`}
+/* lines -> places: names from /maps/place/<name>/ links or plain text, matched to our catalog when possible */
+async function impFromPaste(){const t=($('#impPaste')||{}).value||'';const st=$('#impPasteSt');const L=t.split(/\n+/).map(x=>x.trim()).filter(Boolean).slice(0,60);if(!L.length)return;
+  await locLoadAll();const out=[],short=[];
+  for(const l of L){let name='',url='';const m=l.match(/https?:\/\/\S+/);if(m){url=m[0];const pm=url.match(/\/maps\/place\/([^/@?]+)/);if(pm)name=decodeURIComponent(pm[1].replace(/\+/g,' '));else if(/goo\.gl|maps\.app/.test(url)){short.push(url);continue}const q=url.match(/[?&]q=([^&]+)/);if(!name&&q)name=decodeURIComponent(q[1].replace(/\+/g,' '))}else name=l;
+    name=name.replace(/\s+/g,' ').trim();if(!name)continue;let best=null,bs=0;for(const x of sxpCatL()){const sc=sxpNameScore(x._n,name.split(',')[0]);if(sc>bs){bs=sc;best=x}}
+    out.push(bs>=.92?{name:best.name,address:best.address||'',lat:best.lat,lng:best.lng,mapsUrl:url,note:''}:{name:name.split(',')[0].slice(0,80),address:name.split(',').slice(1).join(',').trim(),mapsUrl:url,note:''})}
+  const have=new Set(rows.map(r=>String(r.name).trim().toLowerCase()));impItems=out.map(x=>({...x,dup:have.has(x.name.trim().toLowerCase())}));
+  if(st)st.textContent=short.length?`${short.length} קישורים מקוצרים (maps.app.goo.gl) לא נפתחים מכאן. פתחו אותם ובחרו "העתקת קישור" מהדפדפן, או הדביקו את שם המקום.`:'';
+  impRender()}
 async function readImport(files){let items=[];for(const f of files){try{const t=await f.text();if(/\.csv$/i.test(f.name))items.push(...fromCSV(t));else items.push(...fromGeo(JSON.parse(t)))}catch{toast('לא הצלחנו לקרוא את '+f.name)}}
   const have=new Set(rows.map(r=>String(r.name).trim().toLowerCase()));const seen=new Set();impItems=items.filter(x=>x.name&&!seen.has(x.name.toLowerCase())&&seen.add(x.name.toLowerCase())).map(x=>({...x,dup:have.has(x.name.trim().toLowerCase())}));
-  $('#impList').innerHTML=impItems.length?`<p class="note" style="margin-top:14px">נמצאו ${impItems.length} מקומות. בטלו את הסימון ממה שלא תרצו להעביר.</p><div class="implist">${impItems.map((x,i)=>`<label class="impi"><input type="checkbox" data-i="${i}" ${x.dup?'':'checked'}><span><b>${esc(x.name)}</b><small>${esc(x.dup?'כבר בקבוצה':(x.address||(x.lat?'עם מיקום מדויק':'')))}</small></span></label>`).join('')}</div><button class="btn pri" type="button" data-act="impGo" style="margin-top:14px">ייבוא המקומות המסומנים</button>`:'<p class="note">לא נמצאו מקומות בקבצים האלה.</p>'}
+  impRender()}
+function impRender(){$('#impList').innerHTML=impItems.length?`<p class="note" style="margin-top:14px">נמצאו ${impItems.length} מקומות. בטלו את הסימון ממה שלא תרצו להעביר.</p><div class="implist">${impItems.map((x,i)=>`<label class="impi"><input type="checkbox" data-i="${i}" ${x.dup?'':'checked'}><span><b>${esc(x.name)}</b><small>${esc(x.dup?'כבר בקבוצה':(x.address||(x.lat?'עם מיקום מדויק':'')))}</small></span></label>`).join('')}</div><button class="btn pri" type="button" data-act="impGo" style="margin-top:14px">ייבוא המקומות המסומנים</button>`:'<p class="note">לא נמצאו מקומות בקבצים האלה.</p>'}
 async function doImport(btn){const sel=[...document.querySelectorAll('.implist input:checked')].map(i=>impItems[+i.dataset.i]);if(!sel.length)return;btn.disabled=true;let n=0;
   for(const x of sel){btn.textContent=`מייבא ${++n} מתוך ${sel.length}…`;const d={name:x.name.slice(0,80),address:x.address.slice(0,120),city:'',cuisine:'',status:'want',price:0,mapsUrl:safeUrl(x.mapsUrl),notes:x.note.slice(0,2000),tags:[],fav:false,ratings:{},votes:{},dishes:[],photos:[],visits:[],addedBy:myId,createdAt:Date.now(),updatedAt:Date.now()};if(x.lat!=null){d.lat=x.lat;d.lng=x.lng;d.llLevel='place'}await save(uuid(),d,true)}
   logAct('add',null,`ייבא/ה ${sel.length} מקומות מגוגל מפות`);toast(`${sel.length} מקומות יובאו לקבוצה`);closeSheet()}
 
 /* ================= theme ================= */
 function setTheme(t){try{if(t==='auto')localStorage.removeItem('rs-theme');else localStorage.setItem('rs-theme',t)}catch{}if(t==='auto')delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme=t;const m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='dark'?'#160E13':'#FF5E4D'}
+const ACCENTS=[['sunset','שקיעה','linear-gradient(135deg,#FF9A3C,#FF3D7F)'],['berry','פטל','linear-gradient(135deg,#C04BFF,#FF3D8B)'],['ocean','ים','linear-gradient(135deg,#1FB6FF,#3D5AFE)'],['mint','מנטה','linear-gradient(135deg,#1FD1A0,#0E9F7A)'],['night','לילה','linear-gradient(135deg,#6C63FF,#2A1A6E)']];
+const curAccent=()=>{try{return localStorage.getItem('rs-accent')||'sunset'}catch{return 'sunset'}};
+function setAccent(k){try{if(k==='sunset')localStorage.removeItem('rs-accent');else localStorage.setItem('rs-accent',k)}catch{}if(k==='sunset')delete document.documentElement.dataset.accent;else document.documentElement.dataset.accent=k}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-accent]');if(!b)return;setAccent(b.dataset.accent);document.querySelectorAll('[data-accent]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))});
 const curTheme=()=>{try{return localStorage.getItem('rs-theme')||'auto'}catch{return 'auto'}};
 
 /* ================= place search (Google + fallback) & geocoding ================= */
@@ -682,7 +719,7 @@ function contribute(d){if(!sb||!navigator.onLine||!d||!d.name)return Promise.res
   if(Number.isFinite(d.lat)&&d.llLevel!=='street'){p.lat=d.lat;p.lng=d.lng}
   if(hz&&formSrc.hoursSrc!=='google'){p.hours=hz;p.hours_src=formSrc.hoursSrc||'user'}
   return sb.rpc('contribute_place',{p}).then(({data})=>data||null,()=>null)}
-async function placePick(i){let x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)return;
+async function placePick(i){setTimeout(dupWarn,400);let x=(placeSearch.res||[])[i],f=$('#ef');if(!x||!f)return;
   formSrc={};if(x.cat)formSrc={pid:x.pid,hoursSrc:x.hours?'user':'',phone:x.phone};else if(x.osm)formSrc={osm:x.osm,phone:x.phone,hoursSrc:x.hours?'osm':''};else if(x.g&&!x.pred)formSrc={gpid:x.gpid||'',hoursSrc:'google'};
   if(x.pred){const ul=$('#placeRes');ul.innerHTML=BUSY;let pl=null;try{pl=await gDetails(x.pred)}catch(e){console.warn('google details',e)}
     if(pl){x=gToItem(pl);formSrc={gpid:pl.id||'',hoursSrc:'google'}}else{const o=await osmSearch([x.name,x.full].filter(Boolean).join(' '),true);x=o[0]?Object.assign(o[0],{name:x.name}):{name:x.name}}
@@ -884,12 +921,13 @@ async function pushSync(){if(!pushOK()||Notification.permission!=='granted')retu
 let pushAsk=false;
 async function pushMaybeAsk(){if(lsGet('rs-push-asked',0))return;const st=await pushState();pushAsk=st==='off'||st==='ios';renderNotices()}
 async function fillPushSec(){const el=$('#pushSec');if(!el)return;const st=await pushState();
-  el.innerHTML=st==='on'?'<p class="note" style="margin:0 0 10px">ההתראות פעילות במכשיר הזה 🔔</p><div class="row"><button class="btn pri" type="button" data-act="pushTest">שליחת התראת בדיקה</button><button class="btn" type="button" data-act="pushOff">כיבוי התראות במכשיר הזה</button></div>'
+  el.innerHTML=st==='on'?'<p class="note" style="margin:0 0 10px">ההתראות פעילות במכשיר הזה 🔔</p><div class="row"><button class="btn pri" type="button" data-act="pushTest">שליחת התראת בדיקה</button><button class="btn" type="button" data-act="pushOff">כיבוי התראות במכשיר הזה</button></div>'+`<label class="row" style="margin-top:12px;gap:10px;align-items:center;cursor:pointer"><input type="checkbox" data-lovedpref ${((meta.noLoved||{})[myId])?'':'checked'}> <span>התראה כשמישהו אוהב מקום שהמלצתי עליו <small class="meta">(בקבוצה הזו, עד אחת ביום)</small></span></label>`
   :st==='denied'?'<p class="note" style="margin:0">ההתראות חסומות. כדי להפעיל: הגדרות הטלפון ← Fomo (או הדפדפן) ← התראות.</p>'
   :st==='ios'?'<p class="note" style="margin:0">באייפון התראות עובדות רק מהאפליקציה שבמסך הבית. מוסיפים את Fomo למסך הבית (למטה), פותחים משם ומפעילים כאן.</p>'
   :st==='na'?'<p class="note" style="margin:0">המכשיר או הדפדפן הזה לא תומך בהתראות.</p>'
   :'<p class="note" style="margin:0 0 10px">קבלו התראה כשמישהו מוסיף מקום, מצביע, קובע ערב או מנצח במשחק, ותזכורת בבוקר של יום היציאה.</p><button class="btn pri" type="button" data-act="pushOn">🔔 הפעלת התראות</button>'}
 
+document.addEventListener('change',async e=>{const c=e.target.closest('[data-lovedpref]');if(!c)return;const N={...(meta.noLoved||{})};if(c.checked)delete N[myId];else N[myId]=true;if(await metaSave({noLoved:N}))toast(c.checked?'נפעיל התראה כשאוהבים את ההמלצות שלך 💛':'לא נשלח התראות על לייקים להמלצות')});
 /* ================= auto check-in ================= */
 let ciBusy=false;
 async function autoCheckin(){if(ciBusy||lsGet('rs-checkin','on')==='off'||!navigator.geolocation||!rows.length||$('#cip'))return;
@@ -926,9 +964,9 @@ ${P.some(hasLL)?'<div class="pub-map" id="pubmap"></div>':''}<div class="pub-gri
 
 /* ================= list meta (special days, diets) — stored as a hidden row ================= */
 let meta={id:null,special:[],diets:{},vouchers:[]};
-function takeMeta(lid){const ms=rows.filter(r=>r._meta);if(ms.length){rows=rows.filter(r=>!r._meta);ms.sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));const m=ms[0];meta={id:m.id,special:Array.isArray(m.special)?m.special:[],diets:m.diets&&typeof m.diets==='object'?m.diets:{},vouchers:Array.isArray(m.vouchers)?m.vouchers:[],tastes:m.tastes&&typeof m.tastes==='object'?m.tastes:{}};lsSet('rs-meta-'+lid,meta)}else if(!meta.id){meta={id:null,special:[],diets:{},...lsGet('rs-meta-'+lid,{})}}}
+function takeMeta(lid){const ms=rows.filter(r=>r._meta);if(ms.length){rows=rows.filter(r=>!r._meta);ms.sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));const m=ms[0];meta={...m,id:m.id,special:Array.isArray(m.special)?m.special:[],diets:m.diets&&typeof m.diets==='object'?m.diets:{},vouchers:Array.isArray(m.vouchers)?m.vouchers:[],tastes:m.tastes&&typeof m.tastes==='object'?m.tastes:{}};lsSet('rs-meta-'+lid,meta)}else if(!meta.id){meta={id:null,special:[],diets:{},...lsGet('rs-meta-'+lid,{})}}}
 async function metaSave(patch){if(!cur)return false;const lid=cur.id;Object.assign(meta,patch);lsSet('rs-meta-'+lid,meta);
-  try{if(!meta.id){const id=uuid();const {error}=await sb.from('restaurants').insert({id,list_id:lid,data:{_meta:true,createdAt:Date.now(),special:meta.special||[],diets:meta.diets||{},vouchers:meta.vouchers||[],tastes:meta.tastes||{}}});if(error)throw error;meta.id=id}
+  try{if(!meta.id){const id=uuid();const {id:_mid,...mrest}=meta;const {error}=await sb.from('restaurants').insert({id,list_id:lid,data:{...mrest,_meta:true,createdAt:Date.now(),special:meta.special||[],diets:meta.diets||{},vouchers:meta.vouchers||[],tastes:meta.tastes||{}}});if(error)throw error;meta.id=id}
     else{const {error}=await sb.rpc('patch_restaurant',{rid:meta.id,patch});if(error)throw error}return true}catch(e){toast(errMsg(e));return false}}
 /* ================= dietary preferences ================= */
 const DIET=[['kosher','כשר','✡️'],['veg','צמחוני','🥦'],['vegan','טבעוני','🌱'],['gf','ללא גלוטן','🌾']];
@@ -1098,15 +1136,15 @@ function bindSwipe(){const bar=$('#pollBar');if(!bar||bar.dataset.sw)return;bar.
 /* ---------- events ---------- */
 let popId='';
 function animIn(){const g=$('#grid');if(!g)return;g.classList.remove('anim');void g.offsetWidth;g.classList.add('anim');clearTimeout(animIn.t);animIn.t=setTimeout(()=>g.classList.remove('anim'),1400)}
-async function toggleVote(id){const r=byId(id);if(!r)return;if(!iVoted(r)){popId=id;setTimeout(()=>{popId=''},700);if(voters(r).length>=1&&!isMatch(r))setTimeout(()=>{const x=byId(id);if(x&&isMatch(x)){logAct('match',id,`גם רוצה את ${x.name}! שניכם רוצים ללכת`);confetti(50)}},50)}await save(id,{votes:{[myId]:iVoted(r)?0:Date.now()}})}
+async function toggleVote(id){const r=byId(id);if(!r)return;if(!iVoted(r)){popId=id;setTimeout(()=>{popId=''},700);if(voters(r).length>=1&&!isMatch(r))setTimeout(()=>{const x=byId(id);if(x&&isMatch(x)){logAct('match',id,`גם רוצה את ${x.name}! שניכם רוצים ללכת`);confetti(50);buzz([30,60,30]);toast('💞 יש התאמה! שניכם רוצים את '+x.name)}},50)}const was=iVoted(r);await save(id,{votes:{[myId]:was?0:Date.now()}});if(!was)lovedPing(byId(id),0)}
 async function shareOrCopy(title,text,url){if(navigator.share){try{await navigator.share(url?{title,text,url}:{title,text});return}catch(e){if(e&&e.name==='AbortError')return}}
   try{await navigator.clipboard.writeText(text+(url?'\n'+url:''));toast('הועתק. אפשר להדביק בוואטסאפ.')}catch{toast('לא הצלחנו להעתיק')}}
 function newForm(){killFormMap();openId=null;mode='new';openSheet();$('#sb').innerHTML=formHtml(null);initFormMap();maybeTour('form',1100);$('#placeQ').focus()}
 
 function bindUI(){bindSwipe();$('#v-stats').addEventListener('click',e=>{const b=e.target.closest('[data-act=recap]');if(b)recapSheet(stYear)});
-$('#grid').addEventListener('click',e=>{if(e.target.closest('a'))return;const vb=e.target.closest('[data-vote]');if(vb){toggleVote(vb.dataset.vote);return}if(e.target.closest('[data-act=add]')){newForm();return}const c=e.target.closest('.card');if(c){flipFrom=c.getBoundingClientRect();openDetail(c.dataset.id)}});
+$('#grid').addEventListener('click',e=>{if(e.target.closest('a'))return;const gg=$('#grid');if(gg._sw&&Date.now()-gg._sw<450)return;const vb=e.target.closest('[data-vote]');if(vb){toggleVote(vb.dataset.vote);return}if(e.target.closest('[data-act=add]')){newForm();return}const c=e.target.closest('.card');if(c){flipFrom=c.getBoundingClientRect();openDetail(c.dataset.id)}});
 $('#grid').addEventListener('keydown',e=>{const c=e.target.closest('.card');if(c&&(e.key==='Enter'||e.key===' ')&&e.target===c){e.preventDefault();openDetail(c.dataset.id)}});
-for(const sel of ['#v-timeline','#v-stats'])$(sel).addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o){e.preventDefault();openDetail(o.dataset.open)}});
+for(const sel of ['#v-timeline','#v-stats'])$(sel).addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o){e.preventDefault();flipFrom=o.getBoundingClientRect();openDetail(o.dataset.open)}});
 $('#v-timeline').addEventListener('keydown',e=>{const o=e.target.closest('.tl-item');if(o&&e.key==='Enter')openDetail(o.dataset.open)});
 $('#nomap').addEventListener('click',e=>{const b=e.target.closest('[data-edit]');if(b){killFormMap();openId=b.dataset.edit;mode='edit';openSheet();$('#sb').innerHTML='';renderDetail()}});
 $('#locMe').addEventListener('click',()=>locateMe((la,ln)=>{ensureMap();if(!lmap)return;if(meMarker)meMarker.remove();meMarker=L.circleMarker([la,ln],{radius:9,color:'#fff',weight:3,fillColor:'#2b7bd6',fillOpacity:1}).addTo(lmap).bindPopup('אתם כאן');lmap.setView([la,ln],15)}));
@@ -1116,7 +1154,7 @@ $('#pollBar').addEventListener('click',e=>{const co=e.target.closest('[data-cdo]
 document.querySelectorAll('#v-list .seg button').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;document.querySelectorAll('#v-list .seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderList()}));
 document.querySelectorAll('[data-tl]').forEach(b=>b.addEventListener('click',()=>{tlF=b.dataset.tl;document.querySelectorAll('[data-tl]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderTimeline()}));
 $('#stYear').addEventListener('change',e=>{stYear=e.target.value;renderStats()});
-$('#q').addEventListener('input',e=>{q=e.target.value;renderList()});
+$('#sxBtn').addEventListener('click',()=>sxpOpen());
 $('#sort').addEventListener('change',async e=>{sort=e.target.value;if(sort==='near'){const l=await getLoc();if(!l){toast('צריך הרשאת מיקום כדי למיין לפי מרחק');}}try{localStorage.setItem('rs-sort',sort)}catch{}renderList()});
 $('#cuis').addEventListener('click',async e=>{const qf=e.target.closest('[data-qf]');if(qf){const k=qf.dataset.qf;
     if(k==='like')likeF=!likeF;
@@ -1134,6 +1172,20 @@ $('#listBtn').addEventListener('click',listsSheet);
 $('#app h1').addEventListener('click',listsSheet);
 $('#addBtnM').addEventListener('click',addSheet);
 $('#pickBtnM').addEventListener('click',()=>pick());
+/* v56: view + sort behind one button */
+
+$('#fltBtn').addEventListener('click',()=>{fltSync();$('#fltOv').hidden=false;document.body.classList.add('sxp-on')});
+
+$('#fltOv').addEventListener('click',e=>{const b=e.target.closest('[data-sortv]');if(b){const so=$('#sort');so.value=b.dataset.sortv;so.dispatchEvent(new Event('change'));fltSync();return}if(e.target.closest('.seg button'))setTimeout(fltSync,0);if(e.target.closest('[data-flt-x]'))fltClose()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#fltOv').hidden)fltClose()});
+/* v56: home notices collapse to one line */
+
+$('#pollBar').addEventListener('click',e=>{if(e.target.closest('[data-nz]')){nzOpen=!nzOpen;nzStack($('#pollBar'));return}
+  const no=e.target.closest('[data-nearopen]');if(no){openDetail(no.dataset.nearopen);return}if(e.target.closest('[data-nearx]')){nearHit=null;renderNotices()}});
+/* v56: "you're near a place you want" — only while the app is open, at most once a day, never a push */
+
+
+setTimeout(()=>{nearCheck();locLoadAll()},4000);
 $('#closeBtn').addEventListener('click',()=>closeSheetAnim());
 $('#ov').addEventListener('click',e=>{if(e.target.id==='ov')closeSheet()});
 $('#lb').addEventListener('click',()=>$('#lb').hidden=true);
@@ -1150,12 +1202,12 @@ S.addEventListener('keydown',e=>{const pl=e.target.closest('[data-act=pickList]'
 S.addEventListener('submit',async e=>{
   if(e.target.classList.contains('qrow')){e.preventDefault();quotaSave(e.target);return}
   e.preventDefault();const fm=e.target;
-  if(fm.id==='dishF'){const inp=fm.elements.d,v=inp.value.trim(),r=byId(openId);if(!v||!r)return;inp.value='';inp.blur();await save(r.id,{dishes:[...(r.dishes||[]),{name:v,v:'ok'}],updatedAt:Date.now()});return}
+  if(fm.id==='dishF'){const inp=fm.elements.d,v=inp.value.trim(),r=byId(openId);if(!v||!r)return;inp.value='';inp.blur();await save(r.id,{dishes:[...(r.dishes||[]),{name:v,v:'ok'}],updatedAt:Date.now()});toast('🍽️ תודה! עכשיו כולם יודעים מה להזמין');buzz(12);return}
   if(fm.id==='visitF'){const r=byId(openId);if(!r)return;const d=fm.elements.d.value;if(!/^\d{4}-\d{2}-\d{2}$/.test(d)){toast('בחרו תאריך');return}
     const v={d,cost:Math.max(0,Math.round(Number(fm.elements.cost.value)||0)),occ:OCC[fm.elements.occ.value]!==undefined?fm.elements.occ.value:'',note:fm.elements.note.value.trim().slice(0,100)};const wi=parseWith(fm.elements.with&&fm.elements.with.value);if(wi.length)v.with=wi;
     const rd=receiptDishes(fm),haveD=new Set((r.dishes||[]).map(x=>x.name.replace(/\s/g,''))),newD=rd.filter(n=>!haveD.has(n.replace(/\s/g,''))).map(n=>({name:n,v:'ok'}));
     const t=fm.elements.t&&fm.elements.t.value;if(t)v.t=t;const fut=d>today()||(d===today()&&t&&t>new Date().toTimeString().slice(0,5));
-    document.activeElement&&document.activeElement.blur();await save(r.id,{visits:[...(r.visits||[]),v],...(fut?{}:{status:'been'}),...(newD.length?{dishes:[...(r.dishes||[]),...newD]}:{}),updatedAt:Date.now()});if(newD.length)toast(`נוספו ${newD.length} מנות מהקבלה`);
+    const firstBeen=!fut&&r.status!=='been';document.activeElement&&document.activeElement.blur();if(firstBeen){setTimeout(milestoneCheck,1600);confetti(45);buzz([20,40,20]);toast('🎉 כבר '+(rows.filter(x=>x.status==='been').length+1)+' מקומות שהייתם בהם!')}await save(r.id,{visits:[...(r.visits||[]),v],...(fut?{}:{status:'been'}),...(newD.length?{dishes:[...(r.dishes||[]),...newD]}:{}),updatedAt:Date.now()});if(newD.length)toast(`נוספו ${newD.length} מנות מהקבלה`);
     if(fut){calPrompt(r,v);logAct('plan',r.id,`קבע/ה יציאה ל${r.name} ${whenTxt(v)}`)}else{toast('הביקור נרשם');logAct('visit',r.id,`סימן/ה ביקור ב${r.name}`)}renderNotices();return}
   if(fm.id==='cmtF'){const r=byId(openId);if(!r)return;const v=fm.elements.c.value;fm.elements.c.value='';fm.elements.c.blur();await sendComment(r,v);return}
   if(fm.id==='pollF'){await createPoll(fm);return}
@@ -1235,7 +1287,7 @@ S.addEventListener('click',async e=>{
     if(a==='wheelSpin'){wheelSpin(b);return}
     if(a==='gChoose'){const r=byId(b.dataset.id);if(r){logAct('game',r.id,`${gm.players[gm.w].name} בחר/ה ללכת ל${r.name}`);gameResult(r)}return}
   }
-  if(a==='pollVote'){const p=polls.find(x=>x.id===openPoll);if(!p)return;p.votes={...(p.votes||{}),[myId]:b.dataset.o};renderPoll();renderNotices();const {error}=await sb.rpc('vote_poll',{pid:p.id,choice:b.dataset.o});if(error)toast(errMsg(error));return}
+  if(a==='pollVote'){const p=polls.find(x=>x.id===openPoll);if(!p)return;if(pClosed(p)){toast('ההצבעה כבר נסגרה');renderPoll();return}setTimeout(()=>{const q=polls.find(x=>x.id===openPoll);if(q&&allVoted(q)&&!lsGet('rs-allv-'+q.id,0)){lsSet('rs-allv-'+q.id,1);confetti(60);buzz([20,40,20]);toast('🎉 כולם הצביעו!')}},900);p.votes={...(p.votes||{}),[myId]:b.dataset.o};renderPoll();renderNotices();const {error}=await sb.rpc('vote_poll',{pid:p.id,choice:b.dataset.o});if(error)toast(errMsg(error));return}
   if(a==='pollClose'){const p=polls.find(x=>x.id===openPoll);if(!p)return;const {error}=await sb.from('polls').update({closed:true}).eq('id',p.id);if(error){toast(errMsg(error));return}p.closed=true;renderPoll();renderNotices();confetti();const w=byId(pollWinner(p));if(w)logAct('poll',w.id,`סגר/ה את ההצבעה: יוצאים ל${w.name}!`);return}
   if(a==='pollDel'){if(b.dataset.sure!=='1'){b.dataset.sure='1';b.textContent='בטוח? לחצו שוב';return}await sb.from('polls').delete().eq('id',openPoll);polls=polls.filter(p=>p.id!==openPoll);renderNotices();closeSheet();return}
   if(a==='recap'){recapSheet(stYear);return}
@@ -1243,6 +1295,7 @@ S.addEventListener('click',async e=>{
   if(a==='stPrev'){if(story)stGo(story.i-1);return}
   if(a==='closeStory'){stClose();return}
   if(a==='theme'){setTheme(b.dataset.t);settingsSheet();return}
+  if(a==='impPaste'){impFromPaste();return}
   if(a==='import'){importSheet();return}
   if(a==='impGo'){doImport(b);return}
   if(a==='copyHours'){const f=$('#ef');if(!f)return;for(let j=1;j<7;j++){f.elements['ho'+j].value=f.elements.ho0.value;f.elements['hc'+j].value=f.elements.hc0.value;f.elements['hx'+j].checked=f.elements.hx0.checked}toast('הועתק לכל הימים');return}
@@ -1297,7 +1350,7 @@ S.addEventListener('click',async e=>{
   if(a==='del'){delWithUndo(r);return}
   if(a==='reallyDel'){if(await removeRow(r)){closeSheet();toast('נמחק')}return}
   if(a==='vote'){await toggleVote(r.id);return}
-  if(a==='rate'){const v=Number(b.dataset.v);const cur=(r.ratings||{})[myId]||0;await save(r.id,{ratings:{[myId]:cur===v?0:v},updatedAt:now});return}
+  if(a==='rate'){const v=Number(b.dataset.v);const cur=(r.ratings||{})[myId]||0;await save(r.id,{ratings:{[myId]:cur===v?0:v},updatedAt:now});if(cur!==v){buzz(15);toast('⭐ הדירוג שלך עזר לקבוצה להחליט');milestoneCheck();if(v>=4)lovedPing(byId(r.id),v)}return}
   if(a==='fav'){await save(r.id,{fav:!r.fav,updatedAt:now});return}
   if(a==='verd'){const ds=(r.dishes||[]).map(d=>({...d}));if(!ds[i])return;const order=['ok','must','skip'];ds[i].v=order[(order.indexOf(ds[i].v||'ok')+1)%3];await save(r.id,{dishes:ds,updatedAt:now});return}
   if(a==='rmDish'){await save(r.id,{dishes:(r.dishes||[]).filter((_,j)=>j!==i),updatedAt:now});return}
@@ -1370,7 +1423,17 @@ async function start(){
 }
 
 /* ================= v29: reliability, backups, admin, onboarding, next outing ================= */
-const APPV='55';
+let nzOpen=false,nearHit=null;
+const buzz=ms=>{try{if(navigator.vibrate&&!matchMedia('(prefers-reduced-motion: reduce)').matches)navigator.vibrate(ms)}catch{}};
+const SPLASH_FAST=true;
+function fltSync(){const so=$('#sort').value;document.querySelectorAll('[data-sortv]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sortv===so)));const def=view==='all'&&so==='recent';const fb=$('#fltBtn');if(fb){fb.classList.toggle('on',!def);fb.querySelector('.dot').hidden=def}}
+function nzStack(el){const n=el.querySelectorAll('.notice').length;el.classList.toggle('stack',n>1&&!nzOpen);const o=el.querySelector('.nz-more');if(o)o.remove();if(n>1)el.insertAdjacentHTML('beforeend',`<button type="button" class="nz-more" data-nz aria-expanded="${nzOpen}">${nzOpen?'פחות ▴':'עוד '+(n-1)+(n-1===1?' עדכון':' עדכונים')+' ▾'}</button>`)}
+async function nearCheck(){try{if(lsGet('rs-near-d','')===today()||!navigator.permissions)return;if((await navigator.permissions.query({name:'geolocation'})).state!=='granted')return;const l=await getLoc();if(!l)return;
+  let best=null;for(const r of rows){if(r.status==='been'||!hasLL(r))continue;const d=distKm(r);if(d!=null&&d<=.4&&(!best||d<best.d))best={r,d}}
+  if(best){nearHit=best;lsSet('rs-near-d',today());renderNotices()}}catch{}}
+const nearHtml=()=>nearHit?`<div class="notice near"><span class="ni">📍</span><span class="nt"><b>אתם ממש ליד ${esc(nearHit.r.name)}</b><small>מהרשימה "רוצים ללכת" · ${esc(distTxt(nearHit.d).split(' · ')[0])}</small></span><span class="nbtns"><button type="button" class="btn sm pri" data-nearopen="${esc(nearHit.r.id)}">לפתוח</button><button type="button" class="del" data-nearx aria-label="לא עכשיו">×</button></span></div>`:'';
+const fltClose=()=>{$('#fltOv').hidden=true;document.body.classList.remove('sxp-on')};
+const APPV='56';
 /* ---- error tracking: real errors go to the admin panel ---- */
 let errN=0;const errSeen=new Set();
 function reportErr(msg,src,stack){try{msg=String(msg||'').trim().slice(0,500);if(!msg||!sb||!myId||!navigator.onLine||errN>=8||errSeen.has(msg))return;
@@ -1458,7 +1521,7 @@ function outSheet(){const x=nextOuting(60);killFormMap();openId=null;mode='out';
   $('#sb').innerHTML=`<div class="out"><div class="out-hero">${ph?photoImg(ph):r?plate(r.name):''}<div class="out-shade"></div><div class="out-top"><span class="out-k">${x.sur?'🤫 יציאת הפתעה':ev?'🎉 ערב עם חברים':'🍽️ היציאה הבאה'}</span><h2>${esc(x.title)}</h2><p>${esc(when)}</p></div></div>
 <div class="out-cd" id="outCd" aria-live="off"></div>
 <div class="sec out-info">${r&&(r.address||r.city)?`<p>📍 ${esc([r.address,r.city].filter(Boolean).join(', '))}</p>`:''}${who.length?`<p>👥 עם ${esc(who.join(', '))}</p>`:''}<p id="outWx" hidden></p>${x.sur?'<p>מישהו מתכנן לכם הפתעה. פנו את הערב, והפרטים יתגלו ביום עצמו 😉</p>':''}${ev&&ev.note?`<p>📝 ${esc(ev.note)}</p>`:''}</div>
-${must.length?`<div class="sec"><h4>חובה להזמין</h4><div class="mchips">${must.map(m=>`<span>${esc(m)}</span>`).join('')}</div></div>`:''}
+${r&&!x.sur&&v.i!=null?rsvpHtml(r,v):''}${must.length?`<div class="sec"><h4>חובה להזמין</h4><div class="mchips">${must.map(m=>`<span>${esc(m)}</span>`).join('')}</div></div>`:''}
 <div class="sec out-acts">${r?`<a class="btn pri" href="${esc(wazeUrl(r))}" target="_blank" rel="noopener">${ICON.nav}נסיעה עם Waze</a>${moovitOk(r)?`<button class="btn" type="button" data-act="moovitOut">🚌 מוביט</button>`:''}<a class="btn" href="${esc(mapsUrl(r))}" target="_blank" rel="noopener">${ICON.pin}מפות</a><a class="btn" href="${esc(gcalUrl(r,v))}" target="_blank" rel="noopener">📅 ליומן</a><a class="btn" href="${esc(bookUrl(r))}" target="_blank" rel="noopener">🪑 הזמנת מקום</a><button class="btn" type="button" data-act="outOpen" data-id="${esc(r.id)}">לדף המקום</button>`:''}${ev?`<button class="btn pri" type="button" data-act="outEv" data-id="${esc(ev.id)}">לפרטי הערב</button>`:''}${x.sur?'':`<button class="btn" type="button" data-act="outShare">${ICON.share}שיתוף</button>`}</div></div>`;
   hydrate();outTick();outTimer=setInterval(outTick,1000);if(r&&hasLL(r))outWx(r,v.d)}
 function outTick(){const el=$('#outCd');if(!el||mode!=='out'||$('#ov').hidden){clearInterval(outTimer);outTimer=null;return}const x=nextOuting(60);if(!x)return;const ms=x.at-Date.now();
@@ -1555,10 +1618,12 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-fs]');if(b
 document.addEventListener('change',e=>{if(e.target.matches('[data-hc]'))setHc(e.target.checked)});
 function renderMe(){const el=$('#me');if(!el)return;const nmMe=myName||String((me&&me.email)||'').split('@')[0]||'אני';
   const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,vis=allVisits().length;
-  el.innerHTML=`<div class="me-card"><div class="me-av" aria-hidden="true">${esc(nmMe.trim().charAt(0))}</div><div><h2>${esc(nmMe)}</h2><p class="meta">${esc(cur?cur.name:'')}</p></div></div>
+  el.innerHTML=`<div class="me-card"><div class="me-av" aria-hidden="true">${avOf(myId)||esc(nmMe.trim().charAt(0))}</div><div><h2>${esc(nmMe)}</h2><p class="meta">${esc(cur?cur.name:'')}</p>${meBadges()}</div></div>
 <div class="me-stats"><div><b>${been}</b><small>היינו</small></div><div><b>${want}</b><small>רוצים ללכת</small></div><div><b>${vis}</b><small>ביקורים</small></div></div>
-<div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">🍽️</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">📊</span>הנתונים שלנו</a><button type="button" data-me="lists"><span aria-hidden="true">📋</span>הקבוצות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">🔔</span>מה חדש</button><button type="button" data-me="vch"><span aria-hidden="true">🎁</span>שוברים</button><button type="button" data-me="set"><span aria-hidden="true">⚙️</span>הגדרות</button><button type="button" data-me="adm" id="meAdm" hidden><span aria-hidden="true">🛠️</span>ניהול המערכת</button></div>`;amAdmin().then(v=>{const b=$('#meAdm');if(b)b.hidden=!v})}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='vch')vouchersSheet();else if(k==='app')appShareDlg();else if(k==='onb'){resetTips();onbSheet()}else if(k==='adm')adminSheet()});
+<h3 class="me-h">היציאות שלנו</h3><div class="me-grid"><button type="button" data-me="out"><span aria-hidden="true">${I2.fork}</span>היציאה הבאה</button><a href="#stats"><span aria-hidden="true">${I2.chart}</span>הנתונים שלנו</a><button type="button" data-me="vch"><span aria-hidden="true">${I2.gift}</span>שוברים</button></div>
+<h3 class="me-h">הקבוצה</h3><div class="me-grid"><button type="button" data-me="lists"><span aria-hidden="true">${I2.users}</span>הקבוצות שלי</button><button type="button" data-me="bell"><span aria-hidden="true">${I2.bell}</span>מה חדש</button></div>
+<h3 class="me-h">שלי</h3><div class="me-grid"><button type="button" data-me="addr"><span aria-hidden="true">${I2.pin}</span>הכתובות שלי</button><button type="button" data-me="set"><span aria-hidden="true">${I2.gear}</span>הגדרות</button><button type="button" data-me="adm" id="meAdm" hidden><span aria-hidden="true">${I2.tool}</span>ניהול המערכת</button></div>`;amAdmin().then(v=>{const b=$('#meAdm');if(b)b.hidden=!v})}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-me]');if(!b)return;const k=b.dataset.me;if(k==='out')outSheet();else if(k==='lists')$('#listBtn').click();else if(k==='bell')$('#bellBtn').click();else if(k==='set')settingsSheet();else if(k==='vch')vouchersSheet();else if(k==='app')appShareDlg();else if(k==='onb'){resetTips();onbSheet()}else if(k==='adm')adminSheet();else if(k==='addr'){sxpOpen();locLoadAll().then(()=>setTimeout(()=>{const B=$('#sxpBody');if(B)B.innerHTML=sxpAddrForm('edit')},60))}});
 
 /* ---- map: preview card ---- */
 let mkById={},mcSel=null;
@@ -1608,7 +1673,7 @@ function vouchersSheet(editId){killFormMap();openId=null;mode='vouchers';openShe
 <label><span class="l">סכום (₪)</span><input class="f" name="amount" type="number" min="0" max="100000" inputmode="decimal" value="${esc(ed&&ed.amount?String(ed.amount):'')}"></label>
 <label><span class="l">בתוקף עד</span><input class="f" name="exp" type="date" value="${esc(ed&&ed.exp?ed.exp:'')}"></label>
 <label class="full"><span class="l">למקום מסוים? (אופציונלי)</span><select class="f" name="rid"><option value="">כל מקום / לא משנה</option>${opts}</select></label>
-<label class="full"><span class="l">קוד מימוש (אופציונלי)</span><input class="f" name="code" maxlength="80" dir="ltr" value="${esc(ed&&ed.code?ed.code:'')}"></label>
+<label class="full"><span class="l">קוד מימוש (אופציונלי)</span><input class="f" name="code" maxlength="80" dir="ltr" autocapitalize="characters" autocorrect="off" spellcheck="false" value="${esc(ed&&ed.code?ed.code:'')}"></label>
 <label class="full"><span class="l">הערה</span><input class="f" name="note" maxlength="120" value="${esc(ed&&ed.note?ed.note:'')}"></label></div>${(vouchersTour(),'')}
 <div class="row" style="margin-top:12px"><button class="btn pri" type="submit">${ed?'שמירה':'הוספה לארנק'}</button>${ed?'<button class="btn" type="button" data-vact="cancel">ביטול</button>':''}</div></form>`}
 function vouchersTour(){maybeTour('vouchers',700)}
@@ -1738,7 +1803,7 @@ function coach(name,steps){let i=0;const d=document.createElement('div');d.class
 function resetTips(){lsSet('rs-tips',{});lsSet('rs-tips-off',0)}
 
 /* ---- what's new after an update ---- */
-const WHATSNEW={'55':['⚡ חיפוש מהיר יותר: כ־1,300 מסעדות, ברים ובתי קפה בתל אביב כבר במאגר של FOMO, בלי לחכות ל־AI או לגוגל'],'54':['⚙️ ההגדרות מסודרות ב־4 לשוניות: אני, קבוצה, התראות ועוד','🏠 הלשונית "רשימה" נקראת עכשיו "בית"','👥 "רשימה" הפכה ל"קבוצה" בכל האפליקציה','🌾 אפשר לערוך את "הטעם שלי" מתי שרוצים, בלשונית "אני"'],'53':['👥 "רשימה" נקראת עכשיו "קבוצה", בכל האפליקציה','👋 כניסה ראשונה חדשה: שם, מקומות ראשונים, הטעם שלי, ופתיחת קבוצה עם הזמנה','💌 מי שמוזמן רואה מי הזמין ואילו מקומות מחכים לו','🏠 סיור קצר במסך הבית למשתמשים חדשים','🌾 "הטעם שלי": סגנונות, תזונה, תקציב ועיר'],'46':['✨ חיפוש חכם בדף הקבוצה: מוצא גם מקומות שעוד לא בקבוצה, עם כפתור הוספה','💬 אפשר לתאר במילים, למשל "בר יין שקט בתל אביב"','＋ פותח את אותו חיפוש, עם הוספה ידנית למטה','📝 כרטיס ההוספה מסודר: מה שמולא לבד למעלה, השאר מקופל'],'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר בקבוצה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
+const WHATSNEW={'56':['🔍 חיפוש חדש מאחורי הזכוכית המגדלת: שכונה, שף, מנה, "בראנץ׳ בשבת", "כמו X", גם באנגלית','🎯 אחוז התאמה לכל מקום, "מה כולם רוצים" ו"ליד הבית"','🏙️ עכשיו גם ירושלים, חיפה ובאר שבע','✅ "מי בא?" ביציאה, תזכורת להזמין שולחן ודירוג מהיר בכוכב אחד','⏰ הצבעות עם שעת סגירה','🎨 צבע לאפליקציה לבחירה, וכרטיס שיתוף גם כסטורי','📋 ייבוא מהיר: מדביקים קישורים מגוגל מפות','🧹 בית וכרטיס מקום נקיים יותר, והחיפוש עובד גם בלי אינטרנט'],'55':['⚡ חיפוש מהיר יותר: כ־1,300 מסעדות, ברים ובתי קפה בתל אביב כבר במאגר של FOMO, בלי לחכות ל־AI או לגוגל'],'54':['⚙️ ההגדרות מסודרות ב־4 לשוניות: אני, קבוצה, התראות ועוד','🏠 הלשונית "רשימה" נקראת עכשיו "בית"','👥 "רשימה" הפכה ל"קבוצה" בכל האפליקציה','🌾 אפשר לערוך את "הטעם שלי" מתי שרוצים, בלשונית "אני"'],'53':['👥 "רשימה" נקראת עכשיו "קבוצה", בכל האפליקציה','👋 כניסה ראשונה חדשה: שם, מקומות ראשונים, הטעם שלי, ופתיחת קבוצה עם הזמנה','💌 מי שמוזמן רואה מי הזמין ואילו מקומות מחכים לו','🏠 סיור קצר במסך הבית למשתמשים חדשים','🌾 "הטעם שלי": סגנונות, תזונה, תקציב ועיר'],'46':['✨ חיפוש חכם בדף הקבוצה: מוצא גם מקומות שעוד לא בקבוצה, עם כפתור הוספה','💬 אפשר לתאר במילים, למשל "בר יין שקט בתל אביב"','＋ פותח את אותו חיפוש, עם הוספה ידנית למטה','📝 כרטיס ההוספה מסודר: מה שמולא לבד למעלה, השאר מקופל'],'41':['👋 ברכה אישית למעלה, עם כמה מקומות פתוחים עכשיו','👀 התראה כשמוסיפים מקום שכבר בקבוצה','🔎 החיפוש לומד שמות נוספים של מקומות, גם באנגלית','🕒 שעות הפתיחה מתעדכנות מאתרי המקומות כל שבוע'],'39':['💡 טיפים קצרים בכל מסך בפעם הראשונה','📲 שליחת האפליקציה לחברים מתוך מסך "אני"','✨ עדכונים מעכשיו בלחיצה אחת, בלי לסגור ולפתוח']};
 function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNew,3000);return}const seen=lsGet('rs-seen-ver','');lsSet('rs-seen-ver',APPV);const L=WHATSNEW[APPV];if(!seen||seen===APPV||!L)return;
   const d=document.createElement('div');d.className='calp upd-new';d.setAttribute('role','dialog');d.setAttribute('aria-label','מה חדש');
   d.innerHTML=`<div class="calp-in"><div class="calp-ic" style="font-size:30px">🎁</div><h3>מה חדש ב־FOMO</h3><ul class="wn">${L.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><button class="btn pri" type="button" data-wx>מעולה!</button></div>`;
@@ -1747,7 +1812,7 @@ function whatsNew(){if(document.querySelector('.coach,.onb')){setTimeout(whatsNe
 /* intro splash on every launch */
 {const sp=$('#splash'),t0=Date.now(),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const hide=()=>{if(!sp||sp.classList.contains('out'))return;sp.classList.add('out');document.body.classList.remove('splashing');setTimeout(()=>sp.remove(),800)};
- if(sp){sp.addEventListener('click',hide);setTimeout(hide,reduce?500:2600)}}
+ if(sp){sp.addEventListener('click',hide);if(SPLASH_FAST){sp.classList.add('fast');setTimeout(hide,reduce?250:900)}else setTimeout(hide,reduce?500:2600)}}
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();if(isSamsung())return;installEvt=e;if(installGate.redraw)installGate.redraw()});
 if('serviceWorker' in navigator){let hadCtl=!!navigator.serviceWorker.controller,reloaded=false;
   navigator.serviceWorker.addEventListener('controllerchange',()=>{if(hadCtl&&!reloaded){reloaded=true;location.reload()}});
@@ -1766,7 +1831,8 @@ const FL={'tab:list':'לשונית בית','tab:map':'לשונית מפה','tab:
   'act:planNew':'תכנון יציאה','act:evNew':'ערב עם כמה תחנות','act:pollNew':'סקר','act:wheelSpin':'גלגל הגורל','act:diceRoll':'קוביה','act:gameNew':'משחקים','act:camNear':'צילום בקרבת מקום','act:voice':'הקלטה קולית','act:recap':'סיכום תקופה','act:pubOn':'דף ציבורי','act:import':'ייבוא',
   'act:edit':'עריכת מקום','act:placeSearch':'חיפוש בטופס','act:gSearchNow':'חיפוש מורחב','act:theme':'ערכת צבעים','act:pushOn':'הפעלת התראות','act:install':'התקנה','install-banner':'באנר התקנה','act:dupOpen':'מניעת כפילות','greet:open':'ברכה: פתוחים עכשיו','greet:hh':'ברכה: האפי אוור'};
 async function featHtml(){let L=null;try{const {data}=await sb.rpc('admin_features',{days:30});L=data}catch{}
-  const head='<h4 style="margin-top:18px">מה הכי בשימוש (30 יום)</h4>';if(!L)return '';if(!L.length)return head+'<p class="note" style="margin:0">עוד אין נתונים. הם מתחילים להצטבר מעכשיו.</p>';
+  let rep='';if(L){await locLoadAll();const C=L.filter(x=>/^closed:/.test(x.f));if(C.length){const by=new Map(sxpCatAll().map(x=>[x.osm,x]));rep=`<h4 style="margin-top:18px">🚫 דיווחים: נסגר / עדיין פתוח (30 יום)</h4><div class="qwho">${C.map(x=>{const raw=x.f.slice(7),op=raw.startsWith('open:'),id=op?raw.slice(5):raw,p=by.get(id);return `<span>${op?'✅ עדיין פתוח: ':'🚫 '}${esc(p?p.name:id)}</span><span class="meta">${esc(p?(p.address||p.city||''):'')}</span><b>${x.n}</b>`}).join('')}</div><p class="note" style="margin:6px 0 0">הבדיקה היומית תאמת כל דיווח לפני שמקום מוסתר.</p>`;L=L.filter(x=>!/^closed:/.test(x.f))}}
+  const head=rep+'<h4 style="margin-top:18px">מה הכי בשימוש (30 יום)</h4>';if(!L)return '';if(!L.length)return head+'<p class="note" style="margin:0">עוד אין נתונים. הם מתחילים להצטבר מעכשיו.</p>';
   const lab=f=>FL[f]||f,top=L.slice(0,8),mx=Math.max(1,top[0].n);
   const used=new Set(L.map(x=>x.f)),zero=Object.keys(FL).filter(k=>!used.has(k)&&!/^btn:|^tab:/.test(k)).slice(0,10),low=L.filter(x=>x.n<=2).slice(-6);
   return head+top.map(x=>`<div class="ubar"><div class="ubar-t"><span>${esc(lab(x.f))}</span><b>${x.n} · עד ${x.u} אנשים ביום</b></div><div class="ubar-b"><i style="width:${Math.max(2,Math.round(x.n/mx*100))}%"></i></div></div>`).join('')
@@ -1868,12 +1934,12 @@ function sxWhy(x,I){if(!I)return '';const w=[];if(I.cuisine&&x.cuisine===I.cuisi
   if(I.open_now&&x.hours){const o=openState(x);if(o&&o.open)w.push('פתוח עכשיו')}return w.slice(0,3).join(' · ')}
 /* the search itself: names -> catalog, AI spelling fix, map, Google suggestions; descriptions -> AI intent, catalog by type/city, Google text search */
 /* v55: local catalog from OpenStreetMap (data/places-*.json): searched first, so names are found without AI or Google */
-const LOCAL_CATS=['tlv'];let locCat=null,locLoad=null;
+const LOCAL_CATS=['tlv','jlm','hfa','bsh'];let locCat=null,locLoad=null;
 function locLoadAll(){if(locCat)return Promise.resolve(locCat);if(locLoad)return locLoad;
   locLoad=Promise.all(LOCAL_CATS.map(c=>fetch(`data/places-${c}.json?v=${APPV}`).then(r=>r.ok?r.json():null).catch(()=>null))).then(A=>{locCat=[];for(const d of A)if(d&&Array.isArray(d.places))for(const p of d.places){if(p.x)continue;p._k=[p.n,...(p.al||[])].map(x=>fomoNorm(x).replace(/\s+/g,''));locCat.push(p)}return locCat});return locLoad}
 const LOC_CU=[[/sushi|japan|ramen|יפני|סושי/i,'יפני / סושי'],[/pizza|פיצ/i,'פיצה'],[/ital|pasta|איטלק/i,'איטלקי'],[/burger|המבורגר/i,'המבורגר'],[/steak|meat|grill|bbq|בשר|גריל/i,'בשרים'],[/fish|seafood|דגים/i,'דגים ופירות ים'],[/asian|chinese|thai|vietnam|korean|אסיית|סיני|תאילנד/i,'אסייתי'],[/mexic|מקסיק/i,'מקסיקני'],[/indian|הודי/i,'הודי'],[/hummus|middle.?east|israeli|חומוס|מזרחי|ישראלי/i,'חומוס ומזרחי'],[/mediterr|greek|ים.?תיכונ/i,'ים-תיכוני'],[/vegan|טבעונ/i,'טבעוני'],[/dessert|ice.?cream|pastry|קינוח|גלידה/i,'קינוחים'],[/cafe|coffee|brunch|breakfast|קפה|בראנץ/i,"קפה ובראנץ'"]];
 const locCu=s=>{if(!s)return '';for(const [r,v] of LOC_CU)if(r.test(s))return v;return ''};
-function locToItem(p){const h=p.oh?parseOH(p.oh):null;return {loc:1,osm:p.id,name:p.n,full:[p.n,p.a,p.c].filter(Boolean).join(', '),address:p.a||'',city:/aviv|תל.?אביב/i.test(p.c||'')?'תל אביב':(p.c||''),lat:p.la,lng:p.lo,cuisine:p.cu||locCu(p.cu_site),price:0,hours:h&&okHours(h)?h:null,site:safeUrl(p.w||''),phone:p.p||'',veg:!!(p.v||p.vg),kosher:!!p.k,vegan:!!p.vg,gf:!!p.gf}}
+function locToItem(p){const h=p.oh?parseOH(p.oh):null;return {loc:1,osm:p.id,name:p.n,full:[p.n,p.a,p.c].filter(Boolean).join(', '),address:p.a||'',city:/aviv|תל.?אביב/i.test(p.c||'')?'תל אביב':/jerusalem|ירושלים/i.test(p.c||'')?'ירושלים':/haifa|חיפה/i.test(p.c||'')?'חיפה':/sheva|באר.?שבע/i.test(p.c||'')?'באר שבע':(p.c||''),lat:p.la,lng:p.lo,cuisine:p.cu||locCu(p.cu_site),price:0,hours:h&&okHours(h)?h:null,site:safeUrl(p.w||''),phone:p.p||'',veg:!!(p.v||p.vg),kosher:!!p.k,vegan:!!p.vg,gf:!!p.gf,ok:p.ok||'',ohSrc:(p.src||{}).oh||'',gone:p.x||'',mv:p.mv||''}}
 async function locSearch(v,lim=6){const L=await locLoadAll();const q=fomoNorm(v).replace(/\s+/g,'');if(q.length<2||!L.length)return [];const out=[];
   for(const p of L){let sc=0;for(const k of p._k){if(!k)continue;const d=k===q?1:(k.startsWith(q)&&q.length>=3)?.92:(q.length>=4&&k.includes(q))?.8:sxDice(k,q);if(d>sc)sc=d}if(sc>=.6)out.push([sc,p])}
   out.sort((a,b)=>b[0]-a[0]);return out.slice(0,lim).map(([sc,p])=>Object.assign(locToItem(p),{score:sc}))}
@@ -1955,6 +2021,329 @@ function sxCompact(){const f=$('#ef');if(!f||f.dataset.sx)return;f.dataset.sx='1
   const sum=document.createElement('div');sum.className='sx-sum';sum.innerHTML=`${sxAv({name:E.name.value})}<div class="sx-t"><b>${esc(E.name.value)}</b><p class="meta">${esc(meta)}</p></div><button class="btn sm" type="button" data-sx-edit>עריכה</button>`;
   (st||g).before(sum);
   E.name.addEventListener('input',()=>{const b=sum.querySelector('b');if(b)b.textContent=E.name.value})}
+/* ================= v56: search window (magnifier on the home screen) =================
+   One small window for everything: places in your group + the catalog (+ AI/Google only when needed).
+   Understands names (also English <-> Hebrew), cuisines, neighbourhoods, chefs, days and times, vibes,
+   filters by tap, sorts by distance and by what the group likes, list or map, and never ends empty. */
+/* ---- v56: one icon style for buttons (instead of emoji) ---- */
+const ic=d=>`<svg class="i2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const I2={pin:ic('<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>'),clock:ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),spark:ic('<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>'),
+ leaf:ic('<path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/>'),coin:ic('<circle cx="12" cy="12" r="8"/><path d="M14.5 9.5A3 3 0 0 0 9.5 10c0 3.5 5 1.5 5 5a3 3 0 0 1-5 .5M12 6.5v11"/>'),sun:ic('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'),
+ fork:ic('<path d="M7 3v8a2 2 0 0 0 2 2v8M11 3v6M7 7h4M17 3c-2 2-2 7 0 9v9"/>'),glass:ic('<path d="M7 3h10l-5 8z"/><path d="M12 11v9M8 21h8"/>'),cup:ic('<path d="M5 8h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 10h2a2 2 0 0 1 0 4h-2M8 3v2M11 3v2"/>'),burger:ic('<path d="M4 11a8 6 0 0 1 16 0zM4 15h16M5 18h14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/>'),
+ home:ic('<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>'),bag:ic('<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>'),walk:ic('<circle cx="13" cy="4" r="2"/><path d="M10 21l2-6-3-3 1-5 4 3 3 1M7 12l2-4"/>'),
+ users:ic('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14a5.5 5.5 0 0 1 3 6"/>'),bell:ic('<path d="M6 9a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/>'),gift:ic('<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13M12 8S10 3 7.5 4.5 9 8 12 8zM12 8s2-5 4.5-3.5S15 8 12 8z"/>'),
+ gear:ic('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>'),
+ tool:ic('<path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 0-5-5L14 2z"/>'),chart:ic('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'),cal:ic('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'),
+ list:ic('<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>'),users:ic('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/>'),plus:ic('<path d="M12 5v14M5 12h14"/>'),cam:ic('<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>'),vote:ic('<path d="M4 12l5 5L20 6"/>'),clip:ic('<rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6"/>'),
+ yes:ic('<path d="M5 12l4 4L19 7"/>'),maybe:ic('<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17h.01"/>'),no:ic('<path d="M6 6l12 12M18 6L6 18"/>'),search:ic('<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>')};
+const SXP_RECENT='rs-sx-recent';
+const SXP_TYPES=[['restaurant',I2.fork+'מסעדה',['restaurant']],['bar',I2.glass+'בר',['bar','pub','biergarten']],['cafe',I2.cup+'קפה',['cafe']],['fast',I2.burger+'אוכל מהיר',['fast_food']]];
+const SXP_FLAGS=[['near',I2.pin+'קרוב אליי'],['open',I2.clock+'פתוח עכשיו'],['new',I2.spark+'חדש בעיר'],['kosher','כשר'],['vegan',I2.leaf+'טבעוני'],['cheap',I2.coin+'לא יקר'],['out',I2.sun+'בחוץ']];
+const SXP_IDEAS=['מה כולם רוצים','בראנץ׳ בשבת','בר יין לדייט','פתוח אחרי חצות','סושי קרוב אליי','מקום עם ישיבה בחוץ','מסעדות של אייל שני'];
+const SXP_VIBE={kids:['מתאים לילדים','kd','עם ילדים'],dogs:['ידידותי לכלבים','dg','עם כלבים'],access:['נגיש','wc','נגיש'],out:['ישיבה בחוץ','os','ישיבה בחוץ']};
+let sxp={q:'',f:new Set(),type:'',view:'list',res:null,seq:0,map:null,ml:null,area:null,el:null,t:null};
+/* ---- English <-> Hebrew: compare consonant skeletons ---- */
+const TR_HE={'ב':'B','ג':'G','ד':'D','ז':'Z','ח':'H','ט':'T','ת':'T','כ':'K','ך':'K','ק':'K','ל':'L','מ':'M','ם':'M','נ':'N','ן':'N','ס':'S','ש':'S','צ':'C','ץ':'C','פ':'P','ף':'P','ר':'R'};
+const trHe=s=>[...String(s)].map(c=>TR_HE[c]||'').join('');
+const trEn=s=>String(s).toLowerCase().replace(/[^a-z]/g,'').replace(/sch|sh/g,'S').replace(/tz|ts/g,'C').replace(/ch|kh/g,'H').replace(/ph/g,'P').replace(/ck/g,'K').replace(/c(?=[eiy])/g,'S').replace(/x/g,'KS')
+  .replace(/[aeiouyhvw]/g,'').replace(/[bgdzktlmnsprcfqj]/g,c=>({b:'B',g:'G',j:'G',d:'D',z:'Z',k:'K',q:'K',c:'K',t:'T',l:'L',m:'M',n:'N',s:'S',p:'P',f:'P',r:'R'})[c]).replace(/(.)\1+/g,'$1');
+const isLat=s=>/[a-z]/i.test(s)&&!/[א-ת]/.test(s);
+function sxpNameScore(names,q){const nq=fomoNorm(q).replace(/\s+/g,'');if(nq.length<2)return 0;let sc=0;const lat=isLat(q);const sk=lat?trEn(q):trHe(q).replace(/(.)\1+/g,'$1');
+  for(const n of names){if(!n)continue;const k=fomoNorm(n).replace(/\s+/g,'');if(!k)continue;
+    let d=k===nq?1:(k.startsWith(nq)&&nq.length>=3)?.92:(nq.length>=4&&k.includes(nq))?.8:sxDice(k,nq);
+    if(sk.length>=3&&lat!==isLat(n)){const s2=isLat(n)?trEn(n):trHe(n).replace(/(.)\1+/g,'$1');if(s2.length>=3){const t=s2===sk?(sk.length>=5?.9:.77):(s2.startsWith(sk)&&sk.length>=4)?.76:sxDice(s2,sk)*.8;if(t>d)d=t}}
+    if(d>sc)sc=d}return sc}
+/* ---- when: is a place open on day d (0=Sunday) at minute m? ---- */
+function openAt(H,d,m){if(!H||!Object.keys(H).length)return null;const y=H[(d+6)%7];if(y&&hm(y[1])<hm(y[0])&&m<hm(y[1]))return true;const t=H[d];if(t===undefined)return null;if(t===null)return false;const o=hm(t[0]),c=hm(t[1]);return c>o?(m>=o&&m<c):(m>=o||m<c)}
+/* ---- catalog extras ---- */
+function sxpCat(){return (locCat||[]).map(p=>{const x=locToItem(p);x.t=p.t||'';x.nb=p.nb||'';x.ch=p.ch||'';x.os=!!p.os;x.kd=!!p.kd;x.dg=!!p.dg;x.wc=!!p.wc;x.rs=!!p.rs;x.bk=p.bk||'';x.fs=p.fs||'';x._n=[p.n,...(p.al||[])];return x})}
+let sxpCatC=null,sxpAllC=null;const sxpCatAll=()=>sxpAllC||(sxpAllC=sxpCat());const sxpCatL=()=>sxpCatC||(sxpCatC=sxpCatAll().filter(x=>!x.gone));
+const hoodKey=n=>fomoNorm(n).replace(/וו/g,'ו').replace(/יי/g,'י');
+const SXP_HOOD_ALIAS={'לב העיר':'לב תל-אביב','מרכז העיר':'לב תל-אביב','הנמל':'נמל תל-אביב','נמל תל אביב':'נמל תל-אביב','שוק הכרמל':'כרם התימנים','יפו העתיקה':'יפו העתיקה,נמל יפו','נמל יפו':'יפו העתיקה,נמל יפו','רמת אביב':'רמת-אביב','הצפון הישן':'הצפון הישן','הצפון החדש':'הצפון החדש'};
+/* neighbourhoods from the catalog; "הצפון הישן" also covers its parts ("הצפון הישן - החלק הצפוני") */
+function sxpHoods(){const M=new Map();const put=(n,x)=>{const h=M.get(n)||{n,set:new Set(),la:0,lo:0,c:0};h.set.add(x.nb);h.la+=x.lat;h.lo+=x.lng;h.c++;M.set(n,h)};
+  for(const x of sxpCatL())if(x.nb){const nm=x.nb.split(',')[0];put(nm,x);const pr=x.nb.split(' - ')[0];if(pr!==x.nb)put(pr,x)}
+  return [...M.values()].filter(h=>h.c>=2).map(h=>({n:h.n,set:h.set,la:h.la/h.c,lo:h.lo/h.c,c:h.c,k:hoodKey(h.n)})).sort((a,b)=>b.c-a.c)}
+let sxpHoodC=null;const sxpHoodL=()=>sxpHoodC||(sxpHoodC=sxpHoods());
+const sxpChefs=()=>[...new Set(sxpCatL().map(x=>x.ch).filter(Boolean))];
+const kmB=(a,b,c,d)=>{const R=6371,t=x=>x*Math.PI/180,dl=t(c-a),dg=t(d-b);const s=Math.sin(dl/2)**2+Math.cos(t(a))*Math.cos(t(c))*Math.sin(dg/2)**2;return 2*R*Math.asin(Math.sqrt(s))};
+const rowType=r=>/בר|פאב/.test(r.cuisine||'')?'bar':/קפה/.test(r.cuisine||'')?'cafe':'restaurant';
+function rowItem(r){return {own:1,id:r.id,name:r.name,address:r.address||'',city:r.city||'',lat:r.lat,lng:r.lng,cuisine:r.cuisine||'',price:r.price||0,hours:r.hours||null,t:rowType(r),tags:r.tags||[],kosher:(r.tags||[]).includes('כשר'),vegan:(r.tags||[]).includes('טבעוני-פרנדלי'),_n:[r.name],_x:[r.notes,r.recBy,...(r.dishes||[]).map(d=>d.name)].join(' '),_d:(r.dishes||[]).filter(d=>d.v!=='bad').map(d=>d.name),rating:avg(r),fav:!!r.fav,status:r.status,r}}
+/* ---- what the group likes: cuisine weights (group ratings + favourites + my taste) ---- */
+function sxpProfile(){const W={},best={};const add=(c,w)=>{if(c)W[c]=(W[c]||0)+w};
+  for(const r of rows){const a=avg(r);if(r.status==='been'&&a>=4){add(r.cuisine,a-3);if(!best[r.cuisine]||a>best[r.cuisine].a)best[r.cuisine]={a,n:r.name}}if(r.fav)add(r.cuisine,1);if(r.status!=='been')add(r.cuisine,.3)}
+  const mine=(((meta||{}).tastes||{})[myId]||{}).c||[];for(const c of mine)add(c,1.5);const mx=Math.max(1,...Object.values(W));for(const k in W)W[k]=2*W[k]/mx;return {W,best,mine:new Set(mine)}}
+
+
+/* ---- v56: hours provenance, moved/closed hints, duplicate warning, companions, offline screen ---- */
+const HEB_M=['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+const ymTxt=v=>{const m=String(v||'').match(/^(\d{4})-(\d{2})/);return m?HEB_M[+m[2]-1]+' '+m[1]:''};
+function catOf(r){if(!locCat)return null;return sxpCatAll().find(y=>sameP(y,r))||null}
+function srcName(u){u=String(u||'');if(!u)return '';if(/^osm|survey|openstreetmap/i.test(u))return 'OpenStreetMap';if(/ontopo/.test(u))return 'אונטופו';if(/tabit/.test(u))return 'טאביט';if(/timeout/.test(u))return 'טיים אאוט';if(/^https?:/.test(u)){try{return 'אתר '+new URL(u).hostname.replace(/^www\./,'')}catch{}}return /^web$|site/.test(u)?'אתר המקום':u}
+function provHtml(r){const c=catOf(r);if(!c)return '';const bits=[];if(c.ok)bits.push('✓ אומת כפעיל: '+ymTxt(c.ok));if(c.ohSrc&&r.hours&&Object.keys(r.hours).length)bits.push('שעות לפי '+srcName(c.ohSrc));return bits.length?`<p class="prov">${esc(bits.join(' · '))}</p>`:''}
+function goneHtml(r){const c=catOf(r);if(!c||(!c.gone&&!c.mv)||r.permClosed)return '';
+  if(c.mv)return `<div class="sec gone-sec mv"><h4>📦 נראה שהמקום עבר כתובת</h4><p class="note" style="margin:0">לפי הבדיקות שלנו הוא נמצא עכשיו ב: <b>${esc(c.mv)}</b></p><div class="row" style="margin-top:8px"><button class="btn sm pri" type="button" data-mvto="${esc(c.mv)}">עדכון הכתובת</button></div></div>`;
+  return `<div class="sec gone-sec"><h4>⛔ לפי הבדיקות שלנו המקום נסגר</h4><p class="note" style="margin:0">אם זו טעות, ספרו לנו.</p><button class="btn sm" type="button" data-closedrep="open:${esc(c.osm)}">הוא עדיין פתוח</button></div>`}
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-mvto]');if(!b)return;const r=byId(openId);if(!r)return;b.disabled=true;const a=b.dataset.mvto;const g=await geocode(a,r.city||'');
+  await save(r.id,{address:a,...(g?{lat:g.lat,lng:g.lng,llLevel:'street'}:{}),updatedAt:Date.now()});toast('הכתובת עודכנה')});
+/* adding a place that is already in the group: a gentle warning, never a block */
+function dupWarn(){const f=$('#ef');if(!f||mode!=='new')return;const n=(f.elements.name.value||'').trim();let w=$('#dupW');if(!w){w=document.createElement('div');w.id='dupW';w.className='dupw';f.elements.name.closest('label,.l,div').after(w)}
+  if(n.length<2){w.innerHTML='';return}const x={name:n,address:f.elements.address?f.elements.address.value:'',lat:NaN,lng:NaN};const ll=String(f.elements.ll&&f.elements.ll.value||'').split(',').map(Number);if(ll.length===2&&ll.every(isFinite)){x.lat=ll[0];x.lng=ll[1]}
+  const d=rows.find(r=>sxpNameScore([r.name],n)>=.85||(hasLL(x)&&sameP(r,x)));w.innerHTML=d?`⚠️ נראה שזה כבר בקבוצה: <b>${esc(d.name)}</b>${d.address?' · '+esc(d.address):''} <button type="button" class="linkb" data-act="open" data-id="${esc(d.id)}">לפתוח</button>`:''}
+document.addEventListener('input',e=>{if(e.target.closest&&e.target.closest('#ef')&&e.target.name==='name'){clearTimeout(dupWarn.t);dupWarn.t=setTimeout(dupWarn,250)}});
+/* visit companions: tap the group's people instead of typing */
+function withChips(){const me=myId,P=Object.entries(names||{}).filter(([u])=>u!==me).map(([,n])=>n).filter(Boolean);const K=[...new Set([...P,...knownWith()])].slice(0,10);if(!K.length)return '';
+  return `<div class="wchips" role="group" aria-label="מי היה איתנו">${K.map(n=>`<button type="button" class="chip sm" data-with="${esc(n)}" aria-pressed="false">${esc(n)}</button>`).join('')}</div>`}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-with]');if(!b)return;const f=b.closest('form');const inp=f&&f.elements.with;if(!inp)return;const L=parseWith(inp.value),n=b.dataset.with,i=L.indexOf(n);if(i>=0)L.splice(i,1);else L.push(n);inp.value=L.join(', ');b.setAttribute('aria-pressed',String(i<0))});
+/* a friendly screen when there is no connection */
+function offlineBar(){let el=$('#offBar');if(navigator.onLine){if(el)el.remove();return}if(!el){el=document.createElement('div');el.id='offBar';el.className='offbar';el.setAttribute('role','status');document.body.appendChild(el)}
+  const n=lsGet('rs-outbox',[]).length;el.innerHTML=`<b>📴 אין חיבור לאינטרנט</b><span>אפשר להמשיך: לעיין ברשימה, לחפש במאגר השמור, להוסיף מקומות ודירוגים${n?` · ${n} שינויים ממתינים`:''}. הכול יסונכרן כשהחיבור יחזור.</span>`}
+window.addEventListener('online',offlineBar);window.addEventListener('offline',offlineBar);setTimeout(offlineBar,1500);
+const ILL={
+ plate:'<svg viewBox="0 0 200 140" fill="none"><ellipse cx="100" cy="120" rx="70" ry="10" fill="currentColor" opacity=".08"/><circle cx="100" cy="70" r="46" fill="var(--card)" stroke="currentColor" stroke-opacity=".18" stroke-width="3"/><circle cx="100" cy="70" r="30" stroke="var(--red)" stroke-width="3" stroke-dasharray="4 7" stroke-linecap="round"/><path d="M38 34v26a8 8 0 0 0 8 8v40M46 34v22M54 34v26a8 8 0 0 1-8 8" stroke="currentColor" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/><path d="M160 34c-8 6-10 22-6 34h6v40" stroke="currentColor" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/><path d="M92 66l6 6 12-12" stroke="var(--red)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".0"/><circle cx="150" cy="22" r="5" fill="var(--brass)"/><circle cx="58" cy="16" r="3" fill="var(--red)"/><circle cx="170" cy="60" r="3" fill="var(--red)" opacity=".6"/></svg>',
+ search:'<svg viewBox="0 0 200 120" fill="none"><ellipse cx="100" cy="108" rx="60" ry="8" fill="currentColor" opacity=".08"/><circle cx="88" cy="56" r="32" fill="var(--card)" stroke="currentColor" stroke-opacity=".25" stroke-width="5"/><path d="M112 80l26 22" stroke="var(--red)" stroke-width="9" stroke-linecap="round"/><path d="M76 50c4-6 12-8 18-5" stroke="currentColor" stroke-opacity=".3" stroke-width="4" stroke-linecap="round"/><circle cx="150" cy="30" r="4" fill="var(--brass)"/></svg>',
+ hearts:'<svg viewBox="0 0 200 120" fill="none"><ellipse cx="100" cy="108" rx="60" ry="8" fill="currentColor" opacity=".08"/><path d="M76 92S40 70 40 46a18 18 0 0 1 36-4 18 18 0 0 1 36 4c0 24-36 46-36 46z" fill="var(--red)" opacity=".85"/><path d="M128 84s-26-16-26-34a13 13 0 0 1 26-3 13 13 0 0 1 26 3c0 18-26 34-26 34z" fill="var(--brass)" opacity=".9"/></svg>'};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-idea]');if(!b)return;if(b.dataset.idea==='search')sxpOpen();else if(b.dataset.idea==='import')importSheet()});
+
+/* ---- v56: swipe a home card: right = "בא לי", left = "היינו" (with undo) ---- */
+function bindCardSwipe(){const g=$('#grid');if(!g||g.dataset.csw)return;g.dataset.csw='1';let S=null;
+  g.addEventListener('touchstart',e=>{const c=e.target.closest('.card');if(!c||e.touches.length>1||e.target.closest('a,button'))return;S={c,x:e.touches[0].clientX,y:e.touches[0].clientY,dx:0,on:false}},{passive:true});
+  g.addEventListener('touchmove',e=>{if(!S)return;const dx=e.touches[0].clientX-S.x,dy=e.touches[0].clientY-S.y;if(!S.on){if(Math.abs(dy)>12&&Math.abs(dy)>Math.abs(dx)){S=null;return}if(Math.abs(dx)<14)return;S.on=true;S.c.classList.add('swiping')}
+    S.dx=dx;S.c.style.transform=`translateX(${dx}px) rotate(${dx/40}deg)`;S.c.dataset.sw=dx>0?'want':'been';S.c.style.setProperty('--swp',Math.min(1,Math.abs(dx)/110));if(!S.hit&&Math.abs(dx)>110){S.hit=1;buzz(12)}else if(S.hit&&Math.abs(dx)<110)S.hit=0},{passive:true});
+  const end=async()=>{if(!S)return;const {c,dx,on}=S;S=null;if(!on)return;g._sw=Date.now();c.classList.remove('swiping');c.style.transform='';delete c.dataset.sw;const id=c.dataset.id,r=byId(id);if(!r||Math.abs(dx)<110)return;
+    if(dx>0){if(!iVoted(r)){await toggleVote(id);toast('♥ בא לי! '+r.name)}else toast('כבר סימנת "בא לי" על '+r.name)}
+    else{if(r.status==='been'){toast('כבר סימנתם שהייתם ב'+r.name);return}const prev={status:r.status,visits:r.visits||[]};confetti(35);buzz([20,40,20]);
+      await save(id,{status:'been',visits:[...(r.visits||[]),{d:today()}],updatedAt:Date.now()});setTimeout(milestoneCheck,6500);undoToast(`🎉 סומן: הייתם ב"${r.name}"`,()=>save(id,{...prev,updatedAt:Date.now()}),6000)}};
+  g.addEventListener('touchend',end);g.addEventListener('touchcancel',end)}
+/* ---- v56: hold the + button for shortcuts ---- */
+function bindPlusHold(){const b=$('#addBtnM');if(!b||b.dataset.hold)return;b.dataset.hold='1';let t=null,held=false;
+  const menu=()=>{held=true;buzz(15);let m=$('#plusMenu');if(!m){m=document.createElement('div');m.id='plusMenu';m.className='plusmenu';m.setAttribute('role','menu');document.body.appendChild(m)}
+    m.innerHTML=[['new',I2.plus,'מקום חדש'],['cam',I2.cam,'צילום במקום'],['poll',I2.vote,'הצבעה'],['plan',I2.cal,'קביעת יציאה'],['import',I2.clip,'העברה מגוגל מפות']].map(([k,i,t])=>`<button type="button" role="menuitem" data-plus="${k}">${i}${t}</button>`).join('');m.hidden=false;
+    setTimeout(()=>document.addEventListener('click',function off(e){if(!e.target.closest('#plusMenu')){m.hidden=true;document.removeEventListener('click',off,true)}},true),0)};
+  b.addEventListener('pointerdown',()=>{held=false;t=setTimeout(menu,450)});['pointerup','pointerleave','pointercancel'].forEach(ev=>b.addEventListener(ev,()=>clearTimeout(t)));
+  b.addEventListener('click',e=>{if(held){e.preventDefault();e.stopImmediatePropagation();held=false}},true);b.addEventListener('contextmenu',e=>e.preventDefault());
+  document.addEventListener('click',e=>{const x=e.target.closest('[data-plus]');if(!x)return;$('#plusMenu').hidden=true;const k=x.dataset.plus;if(k==='new')newForm();else if(k==='cam')camSheet();else if(k==='poll')pollNewSheet();else if(k==='plan')outSheet();else if(k==='import')importSheet()})}
+setTimeout(()=>{bindCardSwipe();bindPlusHold()},0);
+
+/* ---- v56: positive reinforcement ---- */
+const MILES=[[5,'🌱','מתחילים לטעום'],[10,'🏅','גורמה מתחיל'],[25,'🥈','מבקרי מסעדות'],[50,'🥇','גורמה אמיתי'],[100,'👑','אגדת אוכל']];
+function beenCount(){return rows.filter(r=>r.status==='been').length}
+function milestone(){const n=beenCount();let m=null;for(const x of MILES)if(n>=x[0])m=x;return m}
+function milestoneCheck(){const m=milestone();if(!m)return;const k='rs-mile-'+(cur&&cur.id);if(lsGet(k,0)>=m[0])return;lsSet(k,m[0]);confetti(80);buzz([30,50,30,50,60]);toast(`${m[1]} הגעתם ל־${m[0]} מקומות! קיבלתם תג "${m[2]}"`)}
+/* weeks in a row with at least one outing; a broken streak is simply not shown */
+function streakWeeks(){const W=new Set();const wk=d=>{const t=new Date(d+'T12:00:00');t.setDate(t.getDate()-t.getDay());return t.toISOString().slice(0,10)};
+  for(const r of rows)for(const v of r.visits||[]){const o=nv(v);if(o&&o.d<=today())W.add(wk(o.d))}let n=0,c=new Date();c.setDate(c.getDate()-c.getDay());
+  if(!W.has(c.toISOString().slice(0,10)))c.setDate(c.getDate()-7);while(W.has(c.toISOString().slice(0,10))){n++;c.setDate(c.getDate()-7)}return n}
+function meBadges(){const m=milestone(),s=streakWeeks(),B=[];if(m)B.push(`<span class="badge2" title="${m[0]} מקומות שהייתם בהם">${m[1]} ${esc(m[2])}</span>`);if(s>=2)B.push(`<span class="badge2 fire">🔥 ${s} שבועות ברצף</span>`);
+  const nx=MILES.find(x=>beenCount()<x[0]);if(nx){const k=nx[0]-beenCount();B.push(`<span class="badge2 next">עוד ${k===1?'מקום אחד':k+' מקומות'} לתג ${nx[1]}</span>`)};return B.length?`<div class="badges2">${B.join('')}</div>`:''}
+/* someone loved what you added: a quiet note at home, once per place & person */
+function lovedNotice(){if(!myId)return '';const seen=lsGet('rs-loved',[]);for(const r of rows){if(r.addedBy!==myId)continue;
+  for(const [u,v] of Object.entries(r.ratings||{})){if(u===myId||v<4)continue;const k=r.id+'|'+u;if(seen.includes(k))continue;
+    return `<div class="notice loved"><span class="ni">❤️</span><span class="nt"><b>${esc(nmA(u))} אהב/ה את ההמלצה שלך</b><small>${esc(r.name)} · ${'★'.repeat(v)}</small></span><span class="nbtns"><button type="button" class="btn sm" data-lovedok="${esc(k)}">💛 יופי!</button></span></div>`}}return ''}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-lovedok]');if(!b)return;const L=lsGet('rs-loved',[]);L.push(b.dataset.lovedok);lsSet('rs-loved',L.slice(-300));buzz(10);renderNotices()});
+/* tell whoever recommended a place that someone loved it (server sends one push a day at most, quiet 22-08, opt-out in settings) */
+function lovedPing(r,stars){if(!r||!myId||r._meta||!r.addedBy||r.addedBy===myId)return;const L=lsGet('rs-lvs',[]);if(L.includes(r.id))return;L.push(r.id);lsSet('rs-lvs',L.slice(-500));
+  logAct('loved',r.id,stars?`אהב/ה את ${r.name} ${'★'.repeat(stars)} · המלצה של ${nm(r.addedBy)}`:`רוצה ללכת ל${r.name} · המלצה של ${nm(r.addedBy)}`)}
+/* everyone voted */
+function allVoted(p){const mem=Object.keys(names||{});return mem.length>=2&&mem.every(u=>(p.votes||{})[u])}
+/* a light tap on toggles, filters and saves (skipped with reduced motion) */
+document.addEventListener('click',e=>{if(e.target.closest('.chip,[aria-pressed],.btn.pri,.seg button,.flt-pills button,.acc,.qstars button'))buzz(8)},true);
+/* ---- v56: who's coming / table booked / quick rating / closed reports ---- */
+const RSVP=[['yes','בא/ה','yes'],['maybe','אולי','maybe'],['no','לא','no']];
+const AVS=['🦊','🐼','🦁','🐙','🦄','🐸','🐝','🦉','🐳','🌶️','🍕','🍣','🥑','🍷','☕','🌮'];
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-av]');if(!b)return;const v=avOf(myId)===b.dataset.av?'':b.dataset.av;const A={...(meta.av||{})};if(v)A[myId]=v;else delete A[myId];await metaSave({av:A});document.querySelectorAll('[data-av]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.av===v)));buzz(15);toast(v?'נשמר '+v:'הוסר')});
+function rsvpOf(r,v){const x=((r.visits||[])[v.i]||{});return x.rsvp||{}}
+function rsvpHtml(r,v){const R=rsvpOf(r,v),mine=R[myId]||'';const by=k=>Object.entries(R).filter(([,a])=>a===k).map(([u])=>nmA(u));
+  return `<div class="sec rsvp"><h4>מי בא?</h4><div class="seg rsvp-seg" role="group" aria-label="מגיע/ה?">${RSVP.map(([k,t,i])=>`<button type="button" data-rsvp="${k}" data-rid="${esc(r.id)}" data-vi="${v.i}" aria-pressed="${mine===k}">${I2[i]}${t}</button>`).join('')}</div>${RSVP.map(([k,t])=>{const L=by(k);return L.length?`<p class="meta rsvp-l" style="margin:6px 0 0"><b>${t}:</b> ${esc(L.join(', '))}</p>`:''}).join('')}${Object.keys(R).length?'':'<p class="note" style="margin:6px 0 0">עוד אף אחד לא ענה.</p>'}</div>`}
+async function visitPatch(rid,i,patch){const r=byId(rid);if(!r)return false;const V=(r.visits||[]).map((x,k)=>{if(k!==+i)return x;const o=typeof x==='string'?{d:x}:x;return {...o,...patch(o)}});return save(rid,{visits:V,updatedAt:Date.now()})}
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-rsvp]');if(b){const k=b.dataset.rsvp;await visitPatch(b.dataset.rid,b.dataset.vi,x=>({rsvp:{...(x.rsvp||{}),[myId]:k}}));if(mode==='out')outSheet();renderNotices();return}
+  const bk=e.target.closest('[data-booked]');if(bk){await visitPatch(bk.dataset.rid,bk.dataset.vi,()=>({booked:true}));toast('מעולה, השולחן מסומן כמוזמן 🪑');renderNotices();return}
+  const bx=e.target.closest('[data-bookx]');if(bx){const d=lsGet('rs-book-x',[]);d.push(bx.dataset.bookx);lsSet('rs-book-x',d.slice(-50));renderNotices();return}
+  const qr=e.target.closest('[data-qrate]');if(qr){const [rid,n]=qr.dataset.qrate.split(':');const r=byId(rid);if(!r)return;await save(rid,{ratings:{[myId]:+n},updatedAt:Date.now()});if(+n>=4)lovedPing(byId(rid),+n);buzz(15);toast('⭐ הדירוג שלך עזר לקבוצה להחליט');renderNotices();return}
+  const cr=e.target.closest('[data-closedrep]');if(cr){track('closed:'+cr.dataset.closedrep);cr.disabled=true;cr.textContent='✓ תודה, נבדוק את זה';return}});
+function bookNotice(){const x=nextOuting(3);if(!x||!x.id||x.sur)return '';const r=byId(x.id),v=x.v;if(!r||v.i==null)return '';const vv=(r.visits||[])[v.i]||{};if(vv.booked)return '';const key=r.id+'|'+v.d;if(lsGet('rs-book-x',[]).includes(key))return '';
+  return `<div class="notice book"><span class="ni">🪑</span><span class="nt"><b>הזמנתם שולחן ב${esc(r.name)}?</b><small>${esc(whenTxt(v))}</small></span><span class="nbtns"><a class="btn sm pri" href="${esc(bookUrl(r))}" target="_blank" rel="noopener">לבדוק שולחן</a><button type="button" class="btn sm" data-booked="1" data-rid="${esc(r.id)}" data-vi="${v.i}">✓ הוזמן</button><button type="button" class="del" data-bookx="${esc(key)}" aria-label="לא צריך">×</button></span></div>`}
+function catIdFor(r){if(!locCat)return '';const x=sxpCatL().find(y=>sameP(y,r));return x?x.osm:''}
+/* ---- v56: "like X", my addresses, match score ---- */
+function sxpFindRef(q){let best=null,bs=0;for(const r of rows){const sc=sxpNameScore([r.name],q);if(sc>bs){bs=sc;best=rowItem(r)}}
+  for(const x of sxpCatL()){const sc=sxpNameScore(x._n,q);if(sc>bs+.02){bs=sc;best=x}}return bs>=.8?best:null}
+const SXP_ADDR='rs-myaddr';const sxpAddr=()=>lsGet(SXP_ADDR,{});
+function sxpMatch(x,P){let s=52;s+=(P.W[x.cuisine]||0)*12;if(P.mine.has(x.cuisine))s+=6;
+  if(x.own){const r=x.r,mem=Math.max(2,Object.keys(names||{}).length);s+=Math.min(1,voters(r).length/mem)*18;const a=avg(r);if(a)s+=(a-3)*7;if(r.fav)s+=5}
+  const o=x.hours?(openState(x)||{}).open:null;if(o===true)s+=4;const dk=distKm(x);if(dk!=null)s-=Math.min(14,Math.max(0,dk-1)*2);
+  return Math.max(10,Math.min(99,Math.round(s)))}
+/* ---- understanding the query ---- */
+const SXP_DAY={'ראשון':0,'שני':1,'שלישי':2,'רביעי':3,'חמישי':4,'שישי':5,'שבת':6};
+const SXP_TIME=[[/(?:^|\s)ב?בוקר(?=\s|$)/,9*60],[/(?:^|\s)(?:ב?צהריים|ב?צהרים)(?=\s|$)/,13*60],[/(?:^|\s)(?:אחה"צ|אחה״צ|אחר הצהריים)(?=\s|$)/,16*60],[/(?:^|\s)ב?ערב(?=\s|$)/,20*60+30],[/(?:^|\s)ב?לילה(?=\s|$)/,23*60+30]];
+function sxpParse(v){const I={text:'',flags:new Set(),types:new Set(),day:null,min:null,cu:'',hood:'',chef:'',vibes:new Set(),soft:new Set(),parts:[]};
+  let s=' '+String(v||'').replace(/[?!.,]/g,' ').replace(/\s+/g,' ')+' ';const cut=re=>{const m=s.match(re);if(!m)return null;s=s.replace(re,' ');return m};
+  {const m=s.match(/^\s*(?:כמו|דומה ל|דומים ל|בסגנון(?: של)?)\s*[־-]?\s*(.+?)\s*$/);if(m){const ref=sxpFindRef(m[1]);if(ref){I.like=ref;return I}}}
+  if(cut(/(?:^|\s)(?:מה\s)?כולם רוצים(?=\s|$)/)||cut(/(?:^|\s)(?:מתאים|הכי מתאים)\s(?:ל)?כולם(?=\s|$)/))I.groupWant=1;
+  {const m=cut(/(?:^|\s)בדרך\s(?:ה)?(בית|הביתה|עבודה|לעבודה|משרד)(?=\s|$)/);if(m)I.route=/בית/.test(m[1])?'home':'work'}
+  {const m=cut(/(?:^|\s)(?:ליד|קרוב ל|קרוב\sל|באזור)\s?(?:ה)?(בית|עבודה|משרד)(?=\s|$)/);if(m)I.anchor=/בית/.test(m[1])?'home':'work'}
+  if(cut(/(?:^|\s)(?:חדש|חדשה|חדשים|חדשות|נפתח לאחרונה|נפתחו לאחרונה)(?:\sבעיר)?(?=\s|$)/))I.flags.add('new');
+  for(const c of sxpChefs()){const re=new RegExp('(?:^|\\s)(?:של\\s|השף\\s|שף\\s)?'+c.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?=\\s|$)');if(cut(re)){I.chef=c;break}}
+  {const rx=k=>k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/ו/g,'ו{1,2}').replace(/י/g,'י{1,2}').replace(/ /g,'[\\s\\-]+');
+   const L=[...Object.entries(SXP_HOOD_ALIAS).map(([a,n])=>[a,n]),...sxpHoodL().map(h=>[h.n,h.n])].sort((a,b)=>b[0].length-a[0].length);
+   for(const [a,n] of L){const re=new RegExp('(?:^|\\s)(?:ב|באזור\\s|בשכונת\\s|ליד\\s)?'+rx(hoodKey(a))+'(?=\\s|$)');const t=' '+fomoNorm(s)+' ';if(re.test(t)){if(!sxpHoodL().some(h=>h.n===n))continue;I.hood=n;s=t.replace(re,' ');break}}}
+  if(cut(/(?:^|\s)ב?תל[\s-]?אביב(?:[\s-]?יפו)?(?=\s|$)/))I.city='תל אביב';if(cut(/(?:^|\s)ב?ירושלים(?=\s|$)/))I.city='ירושלים';if(cut(/(?:^|\s)ב?חיפה(?=\s|$)/))I.city='חיפה';if(cut(/(?:^|\s)ב?באר[\s-]?שבע(?=\s|$)/))I.city='באר שבע';
+  const today=new Date().getDay();
+  if(cut(/(?:^|\s)(?:מוצ"ש|מוצ״ש|מוצאי שבת|במוצאי שבת)(?=\s|$)/)){I.day=6;I.min=21*60}
+  {const m=cut(/(?:^|\s)(?:ב?יום\s)?ב?(ראשון|שני|שלישי|רביעי|חמישי|שישי|שבת)(?=\s|$)/);if(m)I.day=SXP_DAY[m[1]]}
+  if(cut(/(?:^|\s)הערב(?=\s|$)/)){I.day=today;I.min=20*60+30}if(cut(/(?:^|\s)הלילה(?=\s|$)/)){I.day=today;I.min=23*60+30}
+  if(cut(/(?:^|\s)היום(?=\s|$)/))I.day=today;if(cut(/(?:^|\s)מחר(?=\s|$)/))I.day=(today+1)%7;
+  if(cut(/(?:^|\s)(?:אחרי חצות|מאוחר בלילה|אחרי 12 בלילה|עד מאוחר)(?=\s|$)/)){I.day=((I.day??today)+1)%7;I.min=30}
+  {const re=/(?:^|\s)(?:ב-?|בשעה\s)?([01]?\d|2[0-3])(?::([0-5]\d))?(?=\s|$)/,m=s.match(re);if(m&&(m[2]||/ב|שעה/.test(m[0]))){s=s.replace(re,' ');I.min=(+m[1])*60+(+(m[2]||0));if(I.day==null)I.day=today}}
+  for(const [re,mm] of SXP_TIME)if(cut(re)){I.min=mm;if(I.day==null)I.day=today}
+  if(cut(/(?:^|\s)ב?(?:בראנץ['׳]?|ברנץ['׳]?|ארוחת בוקר)(?=\s|$)/)){I.cu='קפה ובראנץ\'';if(I.day!=null&&I.min==null)I.min=11*60}
+  if(cut(/(?:^|\s)(?:פתוח|פתוחה|פתוחים)(?:\s?עכשיו)?(?=\s|$)/)||cut(/(?:^|\s)עכשיו(?=\s|$)/)){if(I.day==null)I.flags.add('open')}
+  if(cut(/(?:^|\s)(?:קרוב|קרובה|קרובים|ליד|לידי|בסביבה|באזור)(?:\s?(?:אליי|אלי|לי|אליו|שלי))?(?=\s|$)/))I.flags.add('near');
+  if(cut(/(?:^|\s)כשר(?:ה|ים|ות)?(?=\s|$)/))I.flags.add('kosher');if(cut(/(?:^|\s)(?:טבעוני|טבעונית|טבעוניים|vegan)(?=\s|$)/i))I.flags.add('vegan');
+  if(cut(/(?:^|\s)(?:זול|זולה|זולים|לא יקר|לא יקרה|בזול)(?=\s|$)/))I.flags.add('cheap');
+  if(cut(/(?:^|\s)(?:עם\s)?(?:ישיבה\s)?בחוץ(?=\s|$)/)||cut(/(?:^|\s)(?:מרפסת|גינה|חצר)(?=\s|$)/))I.vibes.add('out');
+  if(cut(/(?:^|\s)(?:עם\s|ל)?(?:ילדים|ילד|משפחה|משפחות)(?=\s|$)/))I.vibes.add('kids');if(cut(/(?:^|\s)(?:עם\s)?(?:כלבים|כלב)(?=\s|$)/))I.vibes.add('dogs');if(cut(/(?:^|\s)נגיש(?:ה|ות)?(?=\s|$)/))I.vibes.add('access');
+  if(cut(/(?:^|\s)(?:ל?דייט|רומנטי|רומנטית)(?=\s|$)/))I.soft.add('date');if(cut(/(?:^|\s)(?:קבוצה גדולה|ל?קבוצה|חבר׳ה|חברה|עם חברים|חברים)(?=\s|$)/))I.soft.add('group');if(cut(/(?:^|\s)(?:שקט|שקטה|שקטים)(?=\s|$)/))I.soft.add('quiet');
+  if(cut(/(?:^|\s)(?:בר יין|ברי יין|יין)(?=\s|$)/))I.cu='בר יין';if(cut(/(?:^|\s)(?:בר קוקטיילים|קוקטייל|קוקטיילים)(?=\s|$)/))I.cu='בר קוקטיילים';
+  if(cut(/(?:^|\s)(?:אוכל מהיר|פאסט ?פוד)(?=\s|$)/))I.types.add('fast');if(cut(/(?:^|\s)(?:בית קפה|בתי קפה|קפה)(?=\s|$)/))I.types.add('cafe');
+  if(cut(/(?:^|\s)(?:בר|ברים|פאב|פאבים)(?=\s|$)/))I.types.add('bar');if(cut(/(?:^|\s)(?:מסעדה|מסעדות)(?=\s|$)/))I.types.add('restaurant');
+  if(cut(/(?:^|\s)מסעדת שף(?=\s|$)/)||cut(/(?:^|\s)שף(?=\s|$)/))I.cu=I.cu||'מסעדת שף';
+  if(!I.cu){for(const [re,val] of LOC_CU){const w=s.split(' ').find(t=>t&&re.test(t));if(w){I.cu=val;s=s.replace(' '+w+' ',' ');break}}}
+  s=s.replace(/(?:^|\s)(?:משהו|מקום|מקומות|טוב|טובה|טובים|הכי|עם|בלי|איפה|מה|אוכל|לאכול|לשתות|של|את|יש|רוצה|רוצים|בא|לי|לנו|ב|ל|ו|או|גם|ממש|נחמד|מומלץ|מומלצים)(?=\s|$)/g,' ');
+  I.text=s.replace(/\s+/g,' ').trim();return I}
+/* ---- run a search ---- */
+function sxpWhole(v){if(v.length<2)return false;if(isLat(v))return true;const n=fomoNorm(v).replace(/\s+/g,'');const eq=a=>fomoNorm(a).replace(/\s+/g,'')===n;
+  return rows.some(r=>eq(r.name))||sxpCatL().some(x=>x._n.some(eq))}
+async function sxpRun(){const seq=++sxp.seq;const v=sxp.q.trim();await locLoadAll();
+  /* a full place name ("פיצה האט", "בר יין רוזה") is a name, even if it contains a cuisine word */
+  const I=sxpWhole(v)?{text:v,flags:new Set(),types:new Set(),day:null,min:null,cu:'',hood:'',chef:'',vibes:new Set(),soft:new Set()}:sxpParse(v);sxp.f.forEach(f=>I.flags.add(f));if(sxp.type)I.types.add(sxp.type);
+  if(I.flags.delete('out'))I.vibes.add('out');
+  if(I.flags.has('near')&&!(await getLoc()))toast('לא הצלחנו לאתר את המיקום שלך');else if(!myLoc&&navigator.permissions)try{if((await navigator.permissions.query({name:'geolocation'})).state==='granted')await getLoc()}catch{}
+  const P=sxpProfile();const hoods=sxpHoodL();const hood=I.hood&&hoods.find(h=>h.n===I.hood);
+  const own=rows.map(rowItem),cat=sxpCatL().filter(x=>!sxInList(x));
+  const A=sxpAddr();const anc=I.anchor&&A[I.anchor],rto=I.route&&A[I.route];
+  if((I.anchor&&!anc)||(I.route&&!rto)){if(seq!==sxp.seq)return;sxp.res={I,own:[],cat:[],ext:[],P,needAddr:I.anchor||I.route};sxpDraw();return}
+  if(I.route&&!myLoc&&!(await getLoc())){toast('צריך מיקום כדי לחפש בדרך');I.route=null}
+  const segD=(x)=>{if(!hasLL(x)||!myLoc)return 99;const ax=myLoc.lat,ay=myLoc.lng,bx=rto.lat,by=rto.lng,k=Math.cos(ax*Math.PI/180);const dx=(bx-ax),dy=(by-ay)*k,px=(x.lat-ax),py=(x.lng-ay)*k,L=dx*dx+dy*dy||1e-9;const t=Math.max(0,Math.min(1,(px*dx+py*dy)/L));return Math.hypot(px-t*dx,py-t*dy)*111};
+  const newCut=new Date(Date.now()-150*864e5).toISOString().slice(0,7);
+  const tl=I.text&&(I.text.length>=2);const lim=I.text&&!I.cu&&!I.hood&&!I.chef&&!I.types.size&&I.day==null&&!I.flags.size&&!I.vibes.size;
+  const T=t=>(SXP_TYPES.find(x=>x[0]===t)||[0,0,[]])[2];
+  function test(x,drop){const d=drop||new Set();let ns=0;
+    x._dish='';x._like='';
+    if(I.like){const L=I.like;if(x===L||(x.own&&L.own&&x.id===L.id)||sameP(x,L))return -1;let k=0;if(L.cuisine&&x.cuisine===L.cuisine)k+=2;if(L.t&&x.t===L.t)k+=.5;if(L.nb&&x.nb===L.nb)k+=.8;if(hasLL(L)&&hasLL(x)){const dd=kmB(L.lat,L.lng,x.lat,x.lng);k+=Math.max(0,1-dd/3)}if(L.price&&x.price&&Math.abs(L.price-x.price)<=1)k+=.4;if(L.ch&&x.ch===L.ch)k+=1;if(k<2)return -1;x._like=L.name;ns=k/2}
+    if(I.groupWant&&!(x.own&&x.status!=='been'))return -1;
+    if(anc&&!(hasLL(x)&&kmB(x.lat,x.lng,anc.lat,anc.lng)<1.2))return -1;
+    if(rto&&myLoc&&segD(x)>.7)return -1;
+    if(I.flags.has('new')&&!d.has('new')&&!(x.fs&&x.fs>=newCut))return -1;
+    if(tl){ns=sxpNameScore(x._n,I.text);x._ns=ns;if(x.own&&ns<.6&&x._d){const q=fomoNorm(I.text);const dm=x._d.find(n=>fomoNorm(n).includes(q)||(q.length>=4&&sxDice(fomoNorm(n),q)>.7));if(dm){ns=.85;x._ns=.85;x._dish=dm}}if(x.own&&ns<.6&&x._x&&fomoNorm(x._x).includes(fomoNorm(I.text)))ns=.7;if(ns<.6&&!(x.ch&&sxDice(x.ch,I.text)>.7))return -1}
+    if(I.cu&&!d.has('cu')&&x.cuisine!==I.cu&&!(I.cu==='קפה ובראנץ\''&&x.t==='cafe'))return -1;
+    if(I.chef&&x.ch!==I.chef)return -1;
+    if(I.city&&!d.has('city')&&x.city!==I.city&&!(x.own&&String(x.city||'').includes(I.city)))return -1;
+    if(hood&&!d.has('hood')){if(x.nb?!hood.set.has(x.nb):!(hasLL(x)&&kmB(x.lat,x.lng,hood.la,hood.lo)<.8))return -1}
+    if(sxp.area&&!(hasLL(x)&&sxp.area.contains([x.lat,x.lng])))return -1;
+    if(I.types.size&&!I.chef&&!d.has('type')&&![...I.types].some(t=>T(t).includes(x.t)))return -1;
+    if(I.flags.has('kosher')&&!x.kosher)return -1;if(I.flags.has('vegan')&&!x.vegan)return -1;
+    if(I.flags.has('cheap')&&!d.has('cheap')&&!((x.price&&x.price<=2)||x.t==='fast_food'))return -1;
+    for(const k of I.vibes){if(d.has('vibe'))break;const [tag,key]=SXP_VIBE[k];if(!(x[key]||(x.tags||[]).includes(tag)))return -1}
+    if(!d.has('when')){if(I.day!=null&&I.min!=null){const o=openAt(x.hours,I.day,I.min);if(o===false)return -1;if(o===null)x._unk=1;else x._unk=0}else if(I.flags.has('open')){const o=x.hours?(openState(x)||{}).open:null;if(o===false)return -1;if(o==null)x._unk=1;else x._unk=0}else x._unk=0}else x._unk=0;
+    const dk=distKm(x);if(I.flags.has('near')&&!d.has('near')&&(dk==null||dk>2))return -1;
+    let s=ns*3+(P.W[x.cuisine]||0)*.6+(x.hours?.15:0)+(x.site?.1:0)+(x.own?(x.rating||0)*.15+(x.fav?.3:0):0);
+    if(I.soft.has('date')&&((x.tags||[]).includes('דייט')||/בר יין|בר קוקטיילים|מסעדת שף|איטלקי/.test(x.cuisine)))s+=.8;
+    if(I.soft.has('group')&&((x.tags||[]).includes('מתאים לחברים')||x.rs||/פאב|בר$|המבורגר|פיצה/.test(x.cuisine)))s+=.6;
+    if(I.soft.has('quiet')&&(x.t==='cafe'||/בר יין/.test(x.cuisine)))s+=.5;
+    if(I.groupWant&&x.own)s+=voters(x.r).length*1.2;
+    x._pct=sxpMatch(x,P);s+=x._pct/60;
+    if(dk!=null)s-=Math.min(dk,15)*(I.flags.has('near')?.5:.08);if(x._unk)s-=1.5;return s}
+  function pass(drop){const O=[],C=[];for(const x of own){const s=test(x,drop);if(s>-1)O.push([s,x])}for(const x of cat){const s=test(x,drop);if(s>-1)C.push([s,x])}
+    const by=I.flags.has('near')&&!(drop&&drop.has('near'))?((a,b)=>(distKm(a[1])??99)-(distKm(b[1])??99)):((a,b)=>b[0]-a[0]);O.sort(by);C.sort(by);return {own:O.map(z=>z[1]),cat:C.map(z=>z[1])}}
+  let R=pass(),relaxed=null;
+  if(tl){const top=Math.max(0,...R.own.map(x=>x._ns||0),...R.cat.map(x=>x._ns||0));if(top>=.85){R.own=R.own.filter(x=>(x._ns||0)>=.75);R.cat=R.cat.filter(x=>(x._ns||0)>=.75)}}
+  if(!R.own.length&&!R.cat.length){const steps=[['new',I.flags.has('new'),'חדש בעיר'],['when',I.day!=null||I.flags.has('open'),'בשעה הזאת'],['near',I.flags.has('near'),'קרוב אלייך'],['vibe',I.vibes.size>0,'עם '+[...I.vibes].map(k=>SXP_VIBE[k][2]).join(', ')],['hood',!!hood,'ב'+(hood&&hood.n)],['type',I.types.size>0,'מהסוג הזה'],['cheap',I.flags.has('cheap'),'במחיר הזה'],['cu',!!I.cu,I.cu]];
+    const drop=new Set();for(const [k,on,lbl] of steps){if(!on)continue;drop.add(k);const R2=pass(drop);if(R2.own.length||R2.cat.length){R=R2;relaxed=[...drop].map(d=>(steps.find(z=>z[0]===d)||[])[2]).filter(Boolean);break}}}
+  let ext=[];const leftover=!I.like&&I.text&&I.text.split(' ').length>=2&&(I.cu||I.hood||I.vibes.size||I.soft.size);
+  if(seq!==sxp.seq)return;sxp.res={I,own:R.own.slice(0,8),cat:R.cat.slice(0,40),relaxed,ext,P};sxpDraw();
+  if(!navigator.onLine){const b=$('#sxpExt');if(b)b.innerHTML='<p class="sx-note">📴 אין אינטרנט, מחפש רק במאגר השמור בטלפון</p>'}
+  if(v&&!I.like&&!I.groupWant&&!I.anchor&&!I.route&&(R.cat.length+R.own.length<3)&&(lim||leftover||sxIsDesc(v))&&navigator.onLine){const box=$('#sxpExt');if(box)box.innerHTML='<p class="sx-note">מחפש גם מחוץ למאגר…</p>';
+    try{const r=await sxSearch(v,{desc:!lim&&sxIsDesc(v)});if(seq!==sxp.seq)return;ext=(r.items||[]).filter(x=>!sxInList(x)&&!sxp.res.cat.some(y=>sameP(y,x)));sxp.res.ext=ext;sxpDraw()}catch(e){console.warn('sxp ext',e);const b=$('#sxpExt');if(b)b.innerHTML=''}}}
+/* ---- drawing ---- */
+function sxpWhy(x,I,P){const w=[];const dk=distKm(x);if(dk!=null)w.push(distTxt(dk).split(' · ')[0]);
+  if(I&&I.day!=null&&I.min!=null&&x._unk===0)w.push(I.min<300?'פתוח אחרי חצות':'פתוח '+(I.day===new Date().getDay()?'':'ב'+['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'][I.day]+' ')+'ב־'+String(Math.floor(I.min/60)%24).padStart(2,'0')+':'+String(I.min%60).padStart(2,'0'));
+  else{const o=x.hours?openState(x):null;if(o)w.push(o.open?'פתוח עכשיו'+(o.until?' עד '+o.until:''):o.from?'נפתח ב־'+o.from:'סגור עכשיו')}
+  if(x._unk)w.push('אין לנו שעות');if(x.ch)w.push('של השף '+x.ch);if(x.nb&&!(I&&I.hood))w.push(x.nb.split(',')[0]);
+  for(const k of (I?I.vibes:[]))if(x[SXP_VIBE[k][1]]||(x.tags||[]).includes(SXP_VIBE[k][0]))w.push(SXP_VIBE[k][2]);
+  return w.slice(0,4).join(' · ')}
+function sxpLike(x,P){if(x._like)return `דומה ל־${x._like}`;if(x._dish)return `🍽️ ${x._dish} · מנה שאהבתם כאן`;if(x.own)return x.rating?`⭐ ${x.rating.toFixed(1)} אצלכם`:x.status==='been'?'הייתם כאן':'ברשימת "רוצים ללכת"';const b=P.best[x.cuisine];if(b&&b.n)return `דומה ל־${b.n} שאהבתם`;if(P.mine.has(x.cuisine))return 'מתאים לטעם שלך';return ''}
+function sxpRow(x,i,ctx,P,I){const meta=[x.cuisine,x.address||x.city].filter(Boolean).join(' · ');const why=sxpWhy(x,I,P),like=sxpLike(x,P);
+  const right=x.own?`<button class="sx-in" type="button" data-sxp-open="${esc(x.id)}">לפתוח</button>`:`<button class="sx-add" type="button" data-sxp-add="${ctx}:${i}">➕ הוספה</button>`;
+  const pct=x._pct?`<span class="sxp-pct" title="כמה המקום מתאים לכם">${x._pct}%</span>`:'';const nw=x.fs&&x.fs>=new Date(Date.now()-150*864e5).toISOString().slice(0,7)?'<span class="sxp-new">חדש</span>':'';
+  return `<div class="sx-row sxp-row">${sxAv(x)}<div class="sx-t"><b>${esc(x.name)}</b>${pct}${nw}${meta?`<p class="meta">${esc(meta)}</p>`:''}${why?`<div class="sxp-why">${esc(why)}</div>`:''}${like?`<div class="sx-why">✨ ${esc(like)}</div>`:''}${x.bk?`<a class="sxp-bk" href="${esc(safeUrl(x.bk))}" target="_blank" rel="noopener">הזמנת שולחן ↗</a>`:''}</div>${right}</div>`}
+function sxpChips(){const cutN=new Date(Date.now()-150*864e5).toISOString().slice(0,7),hasNew=sxpCatL().some(x=>x.fs&&x.fs>=cutN);return `<div class="sxp-chips" role="toolbar" aria-label="סינון">${SXP_FLAGS.filter(([k])=>k!=='new'||hasNew).map(([k,t])=>`<button type="button" class="chip" data-sxp-f="${k}" aria-pressed="${sxp.f.has(k)}">${t}</button>`).join('')}<span class="chip-sep" aria-hidden="true"></span>${SXP_TYPES.map(([k,t])=>`<button type="button" class="chip" data-sxp-t="${k}" aria-pressed="${sxp.type===k}">${t}</button>`).join('')}</div>`}
+function sxpAddrForm(k){const A=sxpAddr();const row=(key,lbl,ph)=>`<label class="l">${lbl}<input class="f" name="${key}" value="${esc((A[key]||{}).n||'')}" placeholder="${ph}" autocomplete="street-address"></label>`;
+  return `<form class="sxp-addr" id="sxpAddrF"><div class="sx-h">הכתובות שלי</div><p class="note" style="margin:0">כדי לחפש "ליד הבית" או "בדרך לעבודה". נשמר רק בטלפון שלך, לא נשלח לקבוצה.</p>${row('home','🏠 בית','רחוב ומספר, עיר')}${row('work','💼 עבודה','רחוב ומספר, עיר')}<div class="row"><button class="btn pri" type="submit">שמירה</button>${k==='edit'?'':'<button class="btn" type="button" data-sxp-q="">ביטול</button>'}</div><p class="note" id="sxpAddrSt"></p></form>`}
+function sxpIdle(){const R=lsGet(SXP_RECENT,[]);const H=sxpHoodL().slice(0,8);const P=sxpProfile();const A=sxpAddr();
+  const top=rows.filter(r=>r.status!=='been').map(r=>{const x=rowItem(r);x._pct=sxpMatch(x,P);return x}).sort((a,b)=>b._pct-a._pct).slice(0,6);
+  return (top.length?`<div class="sxp-sec"><div class="sx-h">🎯 הכי מתאים לכם עכשיו</div><div class="sxp-car">${top.map((x,i)=>sxpRow(x,i,'sxpo',P,null)).join('')}</div></div>`:'')
+    +`<div class="sxp-sec"><div class="sx-h">הכתובות שלי</div><div class="sxp-sugs">${A.home?`<button type="button" class="sxp-sug" data-sxp-q="ליד הבית">${I2.home}ליד הבית</button><button type="button" class="sxp-sug" data-sxp-q="בדרך הביתה">${I2.walk}בדרך הביתה</button>`:`<button type="button" class="sxp-sug" data-sxp-addr="home">${I2.home}להוסיף כתובת בית</button>`}${A.work?`<button type="button" class="sxp-sug" data-sxp-q="ליד העבודה">${I2.bag}ליד העבודה</button>`:`<button type="button" class="sxp-sug" data-sxp-addr="work">${I2.bag}להוסיף כתובת עבודה</button>`}${A.home||A.work?'<button type="button" class="linkb" data-sxp-addr="edit">עריכה</button>':''}</div><p class="note" style="margin:0">נשמר רק בטלפון שלך.</p></div>`
+    +(R.length?`<div class="sxp-sec"><div class="sx-h">חיפושים אחרונים <button type="button" class="linkb" data-sxp-clr>ניקוי</button></div><div class="sxp-sugs">${R.map(r=>`<button type="button" class="sxp-sug" data-sxp-q="${esc(r)}">${I2.clock}${esc(r)}</button>`).join('')}</div></div>`:'')
+    +`<div class="sxp-sec"><div class="sx-h">רעיונות</div><div class="sxp-sugs">${SXP_IDEAS.map(r=>`<button type="button" class="sxp-sug" data-sxp-q="${esc(r)}">${I2.spark}${esc(r)}</button>`).join('')}</div></div>`
+    +(H.length?`<div class="sxp-sec"><div class="sx-h">לפי שכונה</div><div class="sxp-sugs">${H.map(h=>`<button type="button" class="sxp-sug" data-sxp-q="${esc(h.n)}">${I2.pin}${esc(h.n)}</button>`).join('')}</div></div>`:'')}
+function sxpSuggest(v){const n=fomoNorm(v);if(n.length<2)return '';const out=[];
+  for(const r of rows){if(sxpNameScore([r.name],v)>=.7)out.push(`<button type="button" class="sxp-s" data-sxp-open="${esc(r.id)}"><i>✓</i><span><b>${esc(r.name)}</b><small>בקבוצה שלכם${r.cuisine?' · '+esc(r.cuisine):''}</small></span></button>`);if(out.length>=3)break}
+  const C=[];for(const x of sxpCatL()){if(sxInList(x))continue;const s=sxpNameScore(x._n,v);if(s>=.78)C.push([s,x])}C.sort((a,b)=>b[0]-a[0]);
+  for(const [,x] of C.slice(0,4))out.push(`<button type="button" class="sxp-s" data-sxp-q="${esc(x.name)}"><i>🍽️</i><span><b>${esc(x.name)}</b><small>${esc([x.cuisine,x.nb||x.address].filter(Boolean).join(' · '))}</small></span></button>`);
+  for(const c of CUIS)if(fomoNorm(c).includes(n))out.push(`<button type="button" class="sxp-s" data-sxp-q="${esc(c)}"><i>🍴</i><span><b>${esc(c)}</b><small>סוג מטבח</small></span></button>`);
+  for(const h of sxpHoodL())if(h.k.includes(hoodKey(v)))out.push(`<button type="button" class="sxp-s" data-sxp-q="${esc(h.n)}"><i>📍</i><span><b>${esc(h.n)}</b><small>שכונה · ${h.c} מקומות</small></span></button>`);
+  for(const c of sxpChefs())if(fomoNorm(c).includes(n))out.push(`<button type="button" class="sxp-s" data-sxp-q="${esc(c)}"><i>👨‍🍳</i><span><b>${esc(c)}</b><small>שף · כל המסעדות שלו</small></span></button>`);
+  return out.length?`<div class="sxp-list">${out.slice(0,9).join('')}</div><button type="button" class="sxp-go" data-sxp-go>חיפוש "${esc(v)}" ←</button>`:`<button type="button" class="sxp-go" data-sxp-go>חיפוש "${esc(v)}" ←</button>`}
+function sxpIntentHtml(I){const c=[I.like&&'דומה ל־'+I.like.name,I.groupWant&&'🎯 מה כולם רוצים',I.anchor&&(I.anchor==='home'?'🏠 ליד הבית':'💼 ליד העבודה'),I.route&&(I.route==='home'?'🏠 בדרך הביתה':'💼 בדרך לעבודה'),I.flags&&I.flags.has('new')&&'✨ חדש בעיר',I.city&&I.city!=='תל אביב'&&'🏙️ '+I.city,I.text&&'"'+I.text+'"',I.cu,I.hood&&'📍 '+I.hood,I.chef&&'👨‍🍳 '+I.chef,I.day!=null&&I.min!=null&&I.min<300&&'🕘 אחרי חצות',I.day!=null&&!(I.min!=null&&I.min<300)&&('🕘 '+(I.day===new Date().getDay()?'היום':['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'][I.day])+(I.min!=null?' '+String(Math.floor(I.min/60)%24).padStart(2,'0')+':'+String(I.min%60).padStart(2,'0'):'')),
+  ...[...I.vibes].map(k=>SXP_VIBE[k][2]),I.soft.has('date')&&'לדייט',I.soft.has('group')&&'לקבוצה',I.soft.has('quiet')&&'שקט'].filter(Boolean);return c.length?`<div class="sx-intent">${c.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}
+function sxpDraw(){const B=$('#sxpBody');if(!B)return;const R=sxp.res;if(!R){B.innerHTML=sxpIdle();return}
+  if(R.needAddr){B.innerHTML=sxpAddrForm(R.needAddr);return}
+  const {I,own,cat,relaxed,ext,P}=R;sxRes.sxpo=own;sxRes.sxpc=cat;sxRes.sxpe=ext;
+  const seg=`<div class="seg sxp-view" role="group" aria-label="תצוגה"><button type="button" data-sxp-v="list" aria-pressed="${sxp.view==='list'}">רשימה</button><button type="button" data-sxp-v="map" aria-pressed="${sxp.view==='map'}">מפה</button></div>`;
+  const head=`<div class="sxp-head">${sxpIntentHtml(I)}${seg}</div>`+(relaxed?`<p class="sxp-relax">לא מצאנו בדיוק את זה, אז ויתרנו על: <b>${esc(relaxed.join(', '))}</b>. הנה הכי קרוב:</p>`:'')+(sxp.area?`<p class="sxp-relax">מציג רק את האזור במפה · <button type="button" class="linkb" data-sxp-noarea>כל העיר</button></p>`:'');
+  if(sxp.view==='map'){B.innerHTML=head+`<div class="sxp-mapw"><div id="sxpMap" class="sxp-map"></div><button type="button" class="btn sm pri sxp-area" id="sxpArea" hidden>🔍 חיפוש באזור הזה</button></div><p class="note">${own.length+cat.length} מקומות על המפה</p>`;sxpMapDraw();return}
+  const empty=!own.length&&!cat.length;
+  const car=(L,ctx)=>`<div class="sxp-car" tabindex="0">${L.map((x,i)=>sxpRow(x,i,ctx,P,I)).join('')}</div>`;
+  B.innerHTML=head+(own.length?`<div class="sx-h">בקבוצה שלכם <small>${own.length}</small></div>${car(own,'sxpo')}`:'')
+    +(cat.length?`<div class="sx-h">מקומות נוספים <small>${cat.length>=40?'40+':cat.length}</small><span class="sxp-swipe">החליקו ←</span></div>${car(cat,'sxpc')}`:'')
+    +`<div id="sxpExt">${ext.length?`<div class="sx-h">מחוץ למאגר</div>${car(ext,'sxpe')}`:''}</div>`
+    +(empty&&!ext.length?`<div class="sxp-empty"><p>לא מצאנו מקום שמתאים.</p><button type="button" class="btn" data-sx-manual>✍️ הוספה ידנית</button></div>`:'')+sxAttr(cat.concat(own))}
+async function sxpMapDraw(){let L;try{L=await loadLeaflet()}catch{return}const el=$('#sxpMap');if(!el)return;if(sxp.map){sxp.map.remove();sxp.map=null}
+  const R=sxp.res;const pts=[...R.own.map(x=>[x,1]),...R.cat.slice(0,80).map(x=>[x,0])].filter(([x])=>hasLL(x));
+  const m=L.map(el,{zoomControl:false,attributionControl:true}).setView([32.08,34.78],13);sxp.map=m;L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(m);
+  const g=L.featureGroup().addTo(m);pts.forEach(([x,o],i)=>{const mk=L.circleMarker([x.lat,x.lng],{radius:o?9:7,color:'#fff',weight:2,fillColor:o?'#14B88A':'#FF5A3C',fillOpacity:.95}).addTo(g);
+    mk.bindPopup(`<b>${esc(x.name)}</b><br><small>${esc([x.cuisine,sxpWhy(x,R.I,R.P)].filter(Boolean).join(' · '))}</small><br>${o?`<button type="button" class="btn sm" data-sxp-open="${esc(x.id)}">לפתוח</button>`:`<button type="button" class="sx-add" data-sxp-add="sxpc:${R.cat.indexOf(x)}">➕ הוספה</button>`}`)});
+  if(myLoc)L.circleMarker([myLoc.lat,myLoc.lng],{radius:6,color:'#fff',weight:2,fillColor:'#3B82F6',fillOpacity:1}).addTo(m);
+  if(sxp.area)m.fitBounds(sxp.area);else if(pts.length)m.fitBounds(g.getBounds().pad(.15),{maxZoom:16});
+  setTimeout(()=>m.invalidateSize(),200);setTimeout(()=>m.on('moveend',()=>{const b=$('#sxpArea');if(b)b.hidden=false}),900)}
+/* ---- open / close / events ---- */
+function sxpOpen(q0){track('sxp-open');if(!sxp.el){const d=document.createElement('div');d.id='sxp';d.className='sxp-ov';d.hidden=true;d.innerHTML=`<div class="sxp-bd" data-sxp-x></div><div class="sxp" role="dialog" aria-modal="true" aria-label="חיפוש"><form class="sxp-top" id="sxpF"><span class="sx-qwrap"><span class="sx-spark" aria-hidden="true">✨</span><input class="search" id="sxpQ" type="search" enterkeyhint="search" autocomplete="off" placeholder="שם, מטבח, שכונה, שף, או ״בראנץ׳ בשבת״" aria-label="חיפוש"></span><button type="button" class="sxp-x" data-sxp-x aria-label="סגירה">×</button></form>${sxpChips()}<div class="sxp-body" id="sxpBody"></div></div>`;document.body.appendChild(d);sxp.el=d;sxpWire(d)}
+  sxp.el.hidden=false;document.body.classList.add('sxp-on');const i=$('#sxpQ');if(q0!=null){i.value=q0;sxp.q=q0}locLoadAll().then(()=>{const ch=sxp.el.querySelector('.sxp-chips');if(ch)ch.outerHTML=sxpChips();if(sxp.q.trim()||sxp.f.size||sxp.type)sxpRun();else sxpDraw()});setTimeout(()=>i.focus(),60)}
+function sxpClose(){if(!sxp.el)return;sxp.el.hidden=true;document.body.classList.remove('sxp-on');if(sxp.map){sxp.map.remove();sxp.map=null}}
+function sxpSave(v){v=(v||'').trim();if(v.length<2)return;const R=lsGet(SXP_RECENT,[]).filter(x=>x!==v);R.unshift(v);lsSet(SXP_RECENT,R.slice(0,8))}
+function sxpGo(v){clearTimeout(sxp.t);const i=$('#sxpQ');if(v!=null&&i)i.value=v;sxp.q=i?i.value:'';sxp.area=null;sxp.more=0;sxpSave(sxp.q);if(i)i.blur();if(!sxp.q.trim()&&!sxp.f.size&&!sxp.type){sxp.res=null;sxpDraw();return}sxpRun()}
+function sxpWire(d){d.querySelector('#sxpF').addEventListener('submit',e=>{e.preventDefault();sxpGo()});
+  d.addEventListener('submit',async e=>{if(e.target.id!=='sxpAddrF')return;e.preventDefault();const f=new FormData(e.target),A=sxpAddr(),st=$('#sxpAddrSt');
+    for(const k of ['home','work']){const v=String(f.get(k)||'').trim();if(!v){delete A[k];continue}if(A[k]&&A[k].n===v)continue;if(st)st.textContent='מאתר את הכתובת…';const g=await geocode(v,'');if(!g){if(st)st.textContent='לא מצאנו את הכתובת "'+v+'". נסו עם שם העיר.';return}A[k]={n:v,lat:g.lat,lng:g.lng}}
+    lsSet(SXP_ADDR,A);toast('נשמר');if(sxp.q.trim())sxpRun();else{sxp.res=null;sxpDraw()}});
+  d.querySelector('#sxpQ').addEventListener('input',e=>{const v=e.target.value;sxp.q=v;clearTimeout(sxp.t);const B=$('#sxpBody');if(!v.trim()){if(sxp.f.size||sxp.type)sxpRun();else{sxp.res=null;sxpDraw()}return}sxp.t=setTimeout(()=>{if(B&&sxp.q===v)B.innerHTML=sxpSuggest(v)},120)});
+  d.addEventListener('click',e=>{const t=e.target;let b;
+    if(t.closest('[data-sxp-x]')){sxpClose();return}
+    if((b=t.closest('[data-sxp-f]'))){const k=b.dataset.sxpF;sxp.f.has(k)?sxp.f.delete(k):sxp.f.add(k);b.setAttribute('aria-pressed',sxp.f.has(k));sxp.q=$('#sxpQ').value;sxp.area=null;if(!sxp.q.trim()&&!sxp.f.size&&!sxp.type){sxp.res=null;sxpDraw()}else sxpRun();return}
+    if((b=t.closest('[data-sxp-t]'))){const k=b.dataset.sxpT;sxp.type=sxp.type===k?'':k;d.querySelectorAll('[data-sxp-t]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.sxpT===sxp.type));sxp.q=$('#sxpQ').value;sxp.area=null;if(!sxp.q.trim()&&!sxp.f.size&&!sxp.type){sxp.res=null;sxpDraw()}else sxpRun();return}
+    if((b=t.closest('[data-sxp-q]'))){sxpGo(b.dataset.sxpQ);return}
+    if(t.closest('[data-sxp-go]')){sxpGo();return}
+    if((b=t.closest('[data-sxp-addr]'))){$('#sxpBody').innerHTML=sxpAddrForm(b.dataset.sxpAddr);return}
+    if(t.closest('[data-sxp-clr]')){lsSet(SXP_RECENT,[]);sxpDraw();return}
+    if(t.closest('[data-sxp-more]')){sxp.more=(sxp.more||12)+12;sxpDraw();return}
+    if(t.closest('[data-sxp-noarea]')){sxp.area=null;sxpRun();return}
+    if((b=t.closest('[data-sxp-v]'))){sxp.view=b.dataset.sxpV;sxpDraw();return}
+    if(t.closest('#sxpArea')){if(sxp.map){sxp.area=sxp.map.getBounds();sxpRun()}return}
+    if((b=t.closest('[data-sxp-open]'))){const id=b.dataset.sxpOpen;const c=b.closest('.sxp-row');if(c)flipFrom=c.getBoundingClientRect();sxpClose();if(byId(id))openDetail(id);return}
+    if((b=t.closest('[data-sxp-add]'))){e.stopPropagation();const [c,i]=b.dataset.sxpAdd.split(':');const x=(sxRes[c]||[])[+i];if(x){sxpClose();sxAdd(x)}return}
+    if(t.closest('[data-sx-manual]')){sxpClose()}});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&sxp.el&&!sxp.el.hidden){e.stopImmediatePropagation();sxpClose()}},true)}
+
 /* ---- events ---- */
 document.addEventListener('click',e=>{const t=e.target;
   const ad=t.closest('[data-sx-add]');if(ad){const [c,i]=ad.dataset.sxAdd.split(':');const x=(sxRes[c]||[])[+i];if(x)sxAdd(x);return}
@@ -1984,12 +2373,16 @@ window.addEventListener('appinstalled',()=>{const b=document.querySelector('.ins
 setTimeout(instBanner,8000);
 
 /* 45: personal greeting */
-function greetHtml(){if(!loaded)return '';const h=new Date().getHours();const [g,ic]=h>=5&&h<12?['בוקר טוב','☀️']:h>=12&&h<17?['צהריים טובים','🌤️']:h>=17&&h<22?['ערב טוב','🌆']:['לילה טוב','🌙'];
+function greetLine(){const n=new Date(),h=n.getHours(),d=n.getDay(),who=myName?', '+esc(myName):'';
+  const x=typeof nextOuting==='function'?nextOuting(1):null;if(x&&x.v&&x.v.d===today()&&!x.sur){const r=byId(x.id);if(r)return `היום יוצאים ל${esc(r.name)}${x.v.t?' ב־'+esc(x.v.t):''} 🎉`}
+  if(d===5&&h>=6&&h<12)return `שישי בבוקר${who}! בראנץ׳? 🥐`;if(d===5&&h>=17)return `ערב שישי טוב${who}! מה בא לכם? 🍷`;if(d===6&&h>=19)return `מוצ״ש${who}! יוצאים? 🌃`;if(d===4&&h>=17)return `חמישי בערב${who}, הסופ״ש מתחיל 🍻`;
+  const [g,ic]=h>=5&&h<12?['בוקר טוב','☀️']:h>=12&&h<17?['צהריים טובים','🌤️']:h>=17&&h<22?['ערב טוב','🌆']:['לילה טוב','🌙'];return `${g}${who} ${ic}`}
+function greetHtml(){if(!loaded)return '';
   const op=rows.filter(r=>{if(r.permClosed)return false;const o=openState(r);return o&&o.open});const near=myLoc?op.filter(r=>{const k=distKm(r);return k!=null&&k<=3}).length:0;
   const hh=rows.filter(r=>{if(r.permClosed)return false;const i=hhInfo(r);return i&&i.now}).length,bits=[];
   if(op.length)bits.push(`<button type="button" class="gr-b" data-gr="open">${op.length===1?'מקום אחד פתוח':op.length+' מקומות פתוחים'} עכשיו${near?` · ${near} קרוב אליך`:''}</button>`);
   if(hh)bits.push(`<button type="button" class="gr-b" data-gr="hh">🍹 ${hh===1?'אחד':hh} בהאפי אוור</button>`);
-  return `<span class="gr-h">${g}${myName?', '+esc(myName):''} ${ic}</span>${bits.join('')}`}
+  return `<span class="gr-h">${greetLine()}</span>${bits.join('')}`}
 function renderGreet(){const el=$('#greet');if(!el)return;const h=greetHtml();if(el.innerHTML!==h)el.innerHTML=h;el.hidden=!h}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-gr]');if(!b)return;const k=b.dataset.gr;const go=()=>{const c=k==='open'?$('#cuis [data-open-f]'):$('#cuis [data-qf="hh"]');if(c&&c.getAttribute('aria-pressed')!=='true')c.click();const s=$('#stickyBar');if(s)s.scrollIntoView({behavior:RM()?'auto':'smooth',block:'start'})};
   if(page!=='list'){const t=$('.tabbar [data-v="list"]');if(t)t.click();setTimeout(go,150)}else go()});
@@ -2108,7 +2501,7 @@ function fxTour(){const kind=lsGet('rs-fx-tour','');if(!kind||page!=='list'||doc
   const grp=members.length>1||kind==='Y',has=rows.length>0,taste=dietOf(myId).k.length||(((meta.tastes||{})[myId]||{}).c||[]).length;
   const S=[{s:'header.band .top',t:'זה הבית שלך 🏠',d:grp?`כל המקומות של "${esc(cur.name)}" במקום אחד. מה שמישהו בקבוצה מוסיף, כולם רואים מיד.`:'כל המקומות שלך במקום אחד. למעלה: כמה מקומות יש, ומה פתוח עכשיו.'},
     {s:'#v-list .seg',t:'רוצים ללכת / היינו',d:'"רוצים ללכת" זה מה שעוד לא ניסיתם. אחרי ביקור מסמנים "היינו", מדרגים, והמקום עובר לשם.'+(grp?' ב"שנינו רוצים השבוע" רואים רק מה ששניכם סימנתם "בא לי".':'')},
-    {s:'#v-list .sx-qwrap',t:'✨ חיפוש חכם',d:'כותבים שם או תיאור, כמו "בר יין שקט". מחפש בקבוצה שלכם, וגם מוצא מקומות חדשים להוסיף.'},
+    {s:'#sxBtn',t:'🔍 חיפוש',d:'לוחצים על הזכוכית המגדלת: שם, מטבח, שכונה, שף, או "בראנץ׳ בשבת". מחפש בקבוצה שלכם וגם מוצא מקומות חדשים.'},
     ...(taste?[{s:'#cuis',t:'סינון מהיר',d:'מסננים לפי סוג, פתוח עכשיו, מה שמתאים לך ועוד. ההעדפות שבחרת נשמרות ב"אני".'}]:[]),
     ...(has?[{s:'#grid .card',t:'כרטיס מקום',d:'נגיעה בכרטיס פותחת שעות, כתובת, ניווט והערות. השעות מתמלאות לבד.'}]:[]),
     {s:'.tabbar',t:'הניווט למטה',d:'מפה: איפה כל המקומות. ＋: הוספת מקום. יציאות: מה עשיתם ומה מתוכנן. אני: הפרופיל, ההעדפות וההגדרות.'},

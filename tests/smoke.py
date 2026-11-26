@@ -52,6 +52,12 @@ async def main():
         check("search falls back to open map, food only", "מוזמביק בר" in res and "רחוב" not in res, res[:120])
         await pg.evaluate("closeSheet()"); await pg.wait_for_timeout(300)
 
+        await pg.click("#sxBtn"); await pg.wait_for_timeout(600)
+        check("search window opens", await pg.evaluate("!document.querySelector('#sxp').hidden"))
+        await pg.fill("#sxpQ", "בל בוי"); await pg.press("#sxpQ", "Enter"); await pg.wait_for_timeout(900)
+        check("search window finds group place", "בל בוי" in await pg.inner_text("#sxpBody"))
+        await pg.click("button[data-sxp-x]"); await pg.wait_for_timeout(300)
+
         await pg.click(".tabbar a[data-v=map]"); await pg.wait_for_timeout(2000)
         check("map loads on demand", await pg.evaluate("!!window.L && document.querySelectorAll('#lmap .leaflet-marker-icon').length>0"))
         await pg.click(".tabbar a[data-v=timeline]"); await pg.wait_for_timeout(700)
@@ -62,6 +68,7 @@ async def main():
         await pg.click(".tabbar a[data-v=list]"); await pg.wait_for_timeout(700)
         n0 = await pg.evaluate("document.querySelectorAll('.card').length")
         await pg.click(".card[data-id=b]"); await pg.wait_for_timeout(600)
+        await pg.click("#sb .dsec>summary"); await pg.wait_for_timeout(300)
         await pg.click("#sb [data-act=del]"); await pg.wait_for_timeout(500)
         n1 = await pg.evaluate("document.querySelectorAll('.card').length")
         await pg.click("#utBtn"); await pg.wait_for_timeout(400)

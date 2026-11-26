@@ -1,0 +1,76 @@
+name: osm-check
+# Catalog pipeline. Runs on every change to tools/ on the osm-check branch, on demand, and monthly (full OSM refetch).
+# The result is published to the live site as a data-only update (no app version bump).
+on:
+  push:
+    branches: [osm-check]
+    paths: [tools/*.py, tools/*.json, .github/workflows/osm-check.yml]
+  workflow_dispatch:
+    inputs:
+      refetch: {description: "Refetch from OpenStreetMap", type: boolean, default: false}
+  schedule:
+    - cron: "17 2 1 * *"   # 1st of every month, 04:17 Israel time
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: catalog
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: osm-check, fetch-depth: 0}
+      - name: refetch from OpenStreetMap (no catalog yet / monthly / on request / REFETCH in commit message)
+        if: ${{ hashFiles('data/places-tlv.json') == '' || github.event_name == 'schedule' || inputs.refetch || contains(github.event.head_commit.message, 'REFETCH') }}
+        run: |
+          python3 tools/osm_fetch.py 32.029,34.739,32.147,34.853
+          python3 tools/osm_build.py osm_places.json /tmp/new.json "תל אביב"
+          python3 - <<'PY'
+          import json, os, shutil
+          new = len(json.load(open("/tmp/new.json"))["places"])
+          old = len(json.load(open("data/places-tlv.json"))["places"]) if os.path.exists("data/places-tlv.json") else 0
+          print("refetch: old", old, "new", new)
+          if old and new < 0.85 * old: raise SystemExit("refetch looks incomplete; keeping the current catalog")
+          shutil.copy("/tmp/new.json", "data/places-tlv.json")
+          PY
+      - name: other cities (OSM only; refreshed monthly or when missing)
+        if: ${{ hashFiles('data/places-jlm.json') == '' || github.event_name == 'schedule' || inputs.refetch || contains(github.event.head_commit.message, 'CITIES') }}
+        run: |
+          for c in "jlm|31.72,35.13,31.84,35.26|ירושלים" "hfa|32.76,34.95,32.84,35.07|חיפה" "bsh|31.21,34.74,31.29,34.84|באר שבע"; do
+            IFS='|' read k b n <<< "$c"
+            OSM_MIN=60 python3 tools/osm_fetch.py "$b" && python3 tools/osm_build.py osm_places.json /tmp/new-$k.json "$n" && python3 - "$k" <<'PY'
+          import json, os, shutil, sys
+          k = sys.argv[1]; new = len(json.load(open(f"/tmp/new-{k}.json"))["places"])
+          old = len(json.load(open(f"data/places-{k}.json"))["places"]) if os.path.exists(f"data/places-{k}.json") else 0
+          print(k, "old", old, "new", new)
+          if new >= 50 and (not old or new >= 0.85 * old): shutil.copy(f"/tmp/new-{k}.json", f"data/places-{k}.json")
+          PY
+            sleep 20
+          done
+      - run: python3 tools/manual_add.py data/places-tlv.json tools/manual-tlv.json
+      - run: python3 tools/osm_enrich.py data/places-tlv.json data/enrich-report-tlv.json
+      - run: python3 tools/site_check.py data/places-tlv.json data/site-check-tlv.json
+      - run: python3 tools/osm_attrs.py data/places-tlv.json data/osm-attrs-tlv.json
+      - run: python3 tools/chains.py data/places-tlv.json data/chains-report-tlv.json
+      - run: python3 tools/chefs.py data/places-tlv.json tools/chefs-tlv.json
+      - run: python3 tools/address_fix.py data/places-tlv.json tools/address-fixes-tlv.json data/address-check-tlv.json
+      - run: python3 tools/first_seen.py data/places-tlv.json tools/first-seen-tlv.json tools/chefs-tlv.json
+      - run: python3 tools/apply_status.py data/places-tlv.json tools/closed-tlv.json data/site-check-tlv.json
+      - name: commit to osm-check
+        run: |
+          git config user.name "fomo-bot"; git config user.email "fomo-bot@users.noreply.github.com"
+          git add data/ tools/first-seen-tlv.json && git commit -qm "Catalog: Tel Aviv (enriched)" || echo "no data change"
+          git pull -q --rebase origin osm-check && git push -q origin HEAD:osm-check
+      - name: publish data to the live site (data only, no app update)
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          mkdir -p /tmp/pub && cp data/places-*.json /tmp/pub/
+          for b in main next-release; do
+            git fetch -q origin $b && git checkout -q -B $b origin/$b
+            cp /tmp/pub/places-*.json data/
+            git add data/places-*.json && git commit -qm "Catalog data update (no app update)" && git push -q origin $b || echo "$b: no change"
+          done
+          gh workflow run deploy.yml --ref main
