@@ -68,6 +68,7 @@ async def main():
         await pg.click(".tabbar a[data-v=list]"); await pg.wait_for_timeout(700)
         n0 = await pg.evaluate("document.querySelectorAll('.card').length")
         await pg.click(".card[data-id=b]"); await pg.wait_for_timeout(600)
+        await pg.click("#sb .dsec>summary"); await pg.wait_for_timeout(300)
         await pg.click("#sb [data-act=del]"); await pg.wait_for_timeout(500)
         n1 = await pg.evaluate("document.querySelectorAll('.card').length")
         await pg.click("#utBtn"); await pg.wait_for_timeout(400)
