@@ -50,6 +50,7 @@ jobs:
           PY
             sleep 20
           done
+      - run: python3 tools/manual_add.py data/places-tlv.json tools/manual-tlv.json
       - run: python3 tools/osm_enrich.py data/places-tlv.json data/enrich-report-tlv.json
       - run: python3 tools/site_check.py data/places-tlv.json data/site-check-tlv.json
       - run: python3 tools/osm_attrs.py data/places-tlv.json data/osm-attrs-tlv.json

@@ -1,0 +1,8 @@
+{
+  "_doc": "Places that OpenStreetMap does not have yet, added by hand from reliable sources. tools/manual_add.py inserts each one unless the catalog already has the same place nearby (same name within 80 m).",
+  "places": [
+    {"id": "m-mela-dizengoff", "n": "מלה", "al": ["Mela", "Mela דיזנגוף", "מלה דיזנגוף"], "la": 32.0844, "lo": 34.77450, "c": "תל אביב",
+     "a": "דיזנגוף 164", "cu": "קפה ובראנץ'", "t": "cafe", "v": 1, "vg": 1,
+     "src": {"a": "timeout.co.il (2025 cafe guide; corner of Ben Gurion)", "geo": "approx, from the house number"}, "added": "2026-11-26"}
+  ]
+}
