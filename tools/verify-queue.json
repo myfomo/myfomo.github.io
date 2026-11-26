@@ -2945,7 +2945,10 @@
   },
   "n725462337": {
    "r": "conflict",
-   "note": "Zappa moved to Midtown, Begin 144 (Tickchak 2026); catalog Wallenberg 24"
+   "note": "Zappa moved to Midtown, Begin 144 (Tickchak 2026); catalog Wallenberg 24",
+   "r2": "conflict",
+   "note2": "Zappa moved to Midtown (JPost 2024-12 https://www.jpost.com/consumerism/consumer-news/article-833479; listings 'The New Zappa - Midtown' with 2026 events); no source for Wallenberg 24; address fix Begin 144 already filed (blocked: shared address)",
+   "d2": "2026-11-26"
   },
   "n6507652672": {
    "r": "single",
@@ -3011,7 +3014,10 @@
   },
   "n1626825014": {
    "r": "conflict",
-   "note": "atly: Alcohome is a liquor store at Pinsker 68, not a pub at Ben Yehuda 188"
+   "note": "atly: Alcohome is a liquor store at Pinsker 68, not a pub at Ben Yehuda 188",
+   "r2": "conflict",
+   "note2": "No source for a pub Alcohome at Ben Yehuda 188; atly liquor store at Pinsker 68 stands; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-26"
   },
   "n3404727448": {
    "r": "none",
@@ -3042,7 +3048,10 @@
   },
   "n10549077961": {
    "r": "conflict",
-   "note": "Zoot Allures is in Givatayim (Katznelson), not Weizmann TLV"
+   "note": "Zoot Allures is in Givatayim (Katznelson), not Weizmann TLV",
+   "r2": "conflict",
+   "note2": "Time Out 2016-12 and eatintlv give Zoot Allures at Katznelson 67 Givatayim, not Weizmann; no 2025-26 source; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-26"
   },
   "n454388591": {
    "r": "none",
@@ -3050,7 +3059,10 @@
   },
   "n7222453497": {
    "r": "conflict",
-   "note": "Own site agnespub.com lists only Hod Hasharon; Ibn Gabirol 129 unconfirmed"
+   "note": "Own site agnespub.com lists only Hod Hasharon; Ibn Gabirol 129 unconfirmed",
+   "r2": "conflict",
+   "note2": "Only Time Out EN 2017 lists Agnes at Ibn Gabirol 129; own site Hod Hasharon only; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-26"
   },
   "n12731352352": {
    "r": "none",
@@ -3080,7 +3092,10 @@
   },
   "n12952231237": {
    "r": "single",
-   "note": "Time Out wine bars 2026 Tarsat 6 https://timeout.co.il/%d7%91%d7%a8%d7%99-%d7%99%d7%99%d7%9f-%d7%9e%d7%95%d7%9e%d7%9c%d7%a6%d7%99%d7%9d/"
+   "note": "Time Out wine bars 2026 Tarsat 6 https://timeout.co.il/%d7%91%d7%a8%d7%99-%d7%99%d7%99%d7%9f-%d7%9e%d7%95%d7%9e%d7%9c%d7%a6%d7%99%d7%9d/",
+   "r2": "ok",
+   "note2": "Ontopo page HELENA - WINE BAR, Tarsat 6, phone 03-6536090, live 2026-11; Time Out 2025-12; hours disagree so no oh",
+   "d2": "2026-11-26"
   },
   "n746730905": {
    "r": "none",
@@ -3092,7 +3107,10 @@
   },
   "n12088977870": {
    "r": "single",
-   "note": "Spotted by Locals 2025-04 HaAmal 21 https://spottedbylocals.com/tel-aviv/ala-rampa"
+   "note": "Spotted by Locals 2025-04 HaAmal 21 https://spottedbylocals.com/tel-aviv/ala-rampa",
+   "r2": "ok",
+   "note2": "Two sources HaAmal 21: Time Out My City 2026-05 and 2025-06, Spotted by Locals 2025-04; no own site/Tabit/Ontopo; no closure news",
+   "d2": "2026-11-26"
   },
   "n723211613": {
    "r": "none",
@@ -3244,15 +3262,24 @@
   },
   "n9225296817": {
    "r": "single",
-   "note": "Wolt Frug & Co Arlozorov 29 Ramat Gan, phone matches https://wolt.com/he/Israel/Tel Aviv/restaurant/frug-co"
+   "note": "Wolt Frug & Co Arlozorov 29 Ramat Gan, phone matches https://wolt.com/he/Israel/Tel Aviv/restaurant/frug-co",
+   "r2": "single",
+   "note2": "Still only Wolt Frug & Co Arlozorov 29 Ramat Gan (phone matches); HappyCow 2021 too old; no own site/Tabit/Ontopo/news",
+   "d2": "2026-11-26"
   },
   "n704446949": {
    "r": "single",
-   "note": "spinach.guide 2026-11 Kermeet Bar, Sderot HaYeled 18 Ramat Gan, phone matches https://spinach.guide/venues/kermeet-bar-217614/"
+   "note": "spinach.guide 2026-11 Kermeet Bar, Sderot HaYeled 18 Ramat Gan, phone matches https://spinach.guide/venues/kermeet-bar-217614/",
+   "r2": "ok",
+   "note2": "Ontopo page Kermeet Bar, HaYeled 18 Ramat Gan, phone matches, live 2026-11 https://ontopo.com/en/il/page/15701875 ; HappyCow 2026-03; no closure news",
+   "d2": "2026-11-26"
   },
   "n2943366488": {
    "r": "single",
-   "note": "Wolt: liquor store Tuval 20 Ramat Gan, not a bar https://wolt.com/he/isr/tel-aviv/venue/sar-hamashkaot-ramat-gan"
+   "note": "Wolt: liquor store Tuval 20 Ramat Gan, not a bar https://wolt.com/he/isr/tel-aviv/venue/sar-hamashkaot-ramat-gan",
+   "r2": "single",
+   "note2": "Still only Wolt (liquor store, Tuval 20 Ramat Gan); Maariv 2017 too old; may be a store, not a bar",
+   "d2": "2026-11-26"
   },
   "n5613184679": {
    "r": "none",
@@ -3278,7 +3305,10 @@
   },
   "n11513852130": {
    "r": "single",
-   "note": "spinach.guide 2026-11 Ibn Gabirol 48 https://spinach.guide/venues/cafe-chablis-218462/"
+   "note": "spinach.guide 2026-11 Ibn Gabirol 48 https://spinach.guide/venues/cafe-chablis-218462/",
+   "r2": "ok",
+   "note2": "Ontopo page Cafe Chablis, Ibn Gabirol 48, live 2026-11; spinach.guide 2026-11 agrees; hours disagree so no oh; address number fix filed",
+   "d2": "2026-11-26"
   },
   "n777401069": {
    "r": "ok",
@@ -3286,7 +3316,10 @@
   },
   "n7660826785": {
    "r": "single",
-   "note": "Wolt Marlen Rambam 30 Givatayim, phone matches https://wolt.com/en/isr/tel-aviv/restaurant/marlen"
+   "note": "Wolt Marlen Rambam 30 Givatayim, phone matches https://wolt.com/en/isr/tel-aviv/restaurant/marlen",
+   "r2": "ok",
+   "note2": "Ontopo page Marlen Giv'atayim, Rambam 30, phone matches, live 2026-11; catalog w is an Instagram handle, not a site",
+   "d2": "2026-11-26"
   },
   "n10111562159": {
    "r": "none",
@@ -3306,7 +3339,10 @@
   },
   "n13161349111": {
    "r": "single",
-   "note": "Pulled coffee app lists King George 26, undated https://www.pulled.coffee/shop/annabelle-tel-aviv"
+   "note": "Pulled coffee app lists King George 26, undated https://www.pulled.coffee/shop/annabelle-tel-aviv",
+   "r2": "single",
+   "note2": "Only Pulled coffee app (King George 26, undated); thatch.co no number/date; no own site/Tabit/Ontopo/news",
+   "d2": "2026-11-26"
   },
   "n10812416453": {
    "r": "none",
@@ -3369,11 +3405,17 @@
   },
   "n13374016467": {
    "r": "single",
-   "note": "Tickchak shows Nov-Dec 2026 at HaMerets 5 https://live.tickchak.co.il/stand-up-factory-tel-aviv"
+   "note": "Tickchak shows Nov-Dec 2026 at HaMerets 5 https://live.tickchak.co.il/stand-up-factory-tel-aviv",
+   "r2": "single",
+   "note2": "Tickchak shows Nov-Dec 2026 at HaMerets 5; Time Out 2014 too old; comedy club; no own site/Tabit/Ontopo",
+   "d2": "2026-11-26"
   },
   "n2249328556": {
    "r": "single",
-   "note": "Time Out bars 2025-11 Marmorek 14 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars"
+   "note": "Time Out bars 2025-11 Marmorek 14 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars",
+   "r2": "ok",
+   "note2": "Ontopo page Peacock Bar TLV, Marmorek 14, live 2026-11 https://ontopo.com/en/il/page/68050420 ; Time Out 2025-11 agrees",
+   "d2": "2026-11-26"
   },
   "n12122755047": {
    "r": "closed",
@@ -3381,15 +3423,24 @@
   },
   "n746730885": {
    "r": "single",
-   "note": "Tickchak party 2025-10 Shalvata TLV port (seasonal) https://live.tickchak.co.il/parties/event/evLAzqXJx"
+   "note": "Tickchak party 2025-10 Shalvata TLV port (seasonal) https://live.tickchak.co.il/parties/event/evLAzqXJx",
+   "r2": "single",
+   "note2": "Still only Tickchak party 2025-10 at Shalvata; Time Out EN 2023 seasonal May-Oct; no Tabit/Ontopo; no reliable closure news",
+   "d2": "2026-11-26"
   },
   "n2079008750": {
    "r": "single",
-   "note": "Time Out Jaffa cafes 2025-04 Rabbi Hanina 9 https://timeout.co.il/בתי-קפה-מומלצים-יפו/"
+   "note": "Time Out Jaffa cafes 2025-04 Rabbi Hanina 9 https://timeout.co.il/בתי-קפה-מומלצים-יפו/",
+   "r2": "conflict",
+   "note2": "Time Out 2026-04 flea market guide and 2025-04 Jaffa cafes give Rabbi Hanina 9 (catalog Rabbi Ada 2); address fix filed",
+   "d2": "2026-11-26"
   },
   "n6351946415": {
    "r": "conflict",
-   "note": "Official branch list has no HaNechoshet branch (nearby HaBarzel 20/21)"
+   "note": "Official branch list has no HaNechoshet branch (nearby HaBarzel 20/21)",
+   "r2": "conflict",
+   "note2": "enjoyingisrael (2026) Arcaffe Ramat HaHayal at HaBarzel 21, daily 07-17; no HaNechoshet branch; not certain same entry; no closure news",
+   "d2": "2026-11-26"
   },
   "n2288503759": {
    "r": "ok",
@@ -3397,11 +3448,17 @@
   },
   "n4263469840": {
    "r": "conflict",
-   "note": "riverside.co.il is an events venue, no cafe/breakfast"
+   "note": "riverside.co.il is an events venue, no cafe/breakfast",
+   "r2": "conflict",
+   "note2": "No cafe named Breakfast at Riverside found; riverside.co.il is an events venue; no Tabit/Ontopo; no closure news; entry may be bogus",
+   "d2": "2026-11-26"
   },
   "n1171857553": {
    "r": "conflict",
-   "note": "Own site lists no Tzahal branch; likely closed, no closure source"
+   "note": "Own site lists no Tzahal branch; likely closed, no closure source",
+   "r2": "conflict",
+   "note2": "Time Out EN 2017 and atly list Beta Cafe at Tzahal 71 (matches street) but nothing 2025-26; own site blocked; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-26"
   },
   "n2051085614": {
    "r": "none",
@@ -3433,7 +3490,10 @@
   },
   "n13534284801": {
    "r": "conflict",
-   "note": "eatintlv Yehudit 21, atly King George 48, Pudlowski Shlomo HaMelech; see also n11681494372"
+   "note": "eatintlv Yehudit 21, atly King George 48, Pudlowski Shlomo HaMelech; see also n11681494372",
+   "r2": "conflict",
+   "note2": "Addresses still disagree: eatintlv Yehudit 21, atly King George 48, Pudlowski 2022 Shlomo HaMelech; no 2025-26 source; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-26"
   },
   "n12977182602": {
    "r": "none",
@@ -3453,7 +3513,10 @@
   },
   "n3146954531": {
    "r": "conflict",
-   "note": "Burned 2023 at Yehuda HaYamit; reopened at Jerusalem Blvd 77 (Time Out 2024/2025); address fix added"
+   "note": "Burned 2023 at Yehuda HaYamit; reopened at Jerusalem Blvd 77 (Time Out 2024/2025); address fix added",
+   "r2": "single",
+   "note2": "Time Out 2024-08 Jaffa cafes lists Doublespresso at Jerusalem Blvd 77 (https://timeout.co.il/בתי-קפה-מומלצים-יפו/); atly same address; no own site/Tabit/Ontopo; no closure news; address already applied",
+   "d2": "2026-11-26"
   },
   "n11681467820": {
    "r": "none",
@@ -3595,7 +3658,10 @@
   },
   "n11691761924": {
    "r": "single",
-   "note": "Wolt active HaHashmonaim 88 https://wolt.com/en/isr/tel-aviv/restaurant/green-kitchen1"
+   "note": "Wolt active HaHashmonaim 88 https://wolt.com/en/isr/tel-aviv/restaurant/green-kitchen1",
+   "r2": "single",
+   "note2": "Still only Wolt Green Kitchen HaHashmonaim 88; own site greenkitchen.co.il blocked; no Tabit/Ontopo/news",
+   "d2": "2026-11-26"
   },
   "n13516605829": {
    "r": "none",
@@ -3664,11 +3730,17 @@
   },
   "n5977653886": {
    "r": "single",
-   "note": "Only atly: hummus at Rabbi Meir 21 https://www.atly.com/location/חומוס-אסי-ועדנן-Hummus-Asi-and-Adnan"
+   "note": "Only atly: hummus at Rabbi Meir 21 https://www.atly.com/location/חומוס-אסי-ועדנן-Hummus-Asi-and-Adnan",
+   "r2": "single",
+   "note2": "Still only atly Rabbi Meir 21; no news/Tabit/Ontopo; not on Time Out 2025-09 closures list",
+   "d2": "2026-11-26"
   },
   "n1077311494": {
    "r": "conflict",
-   "note": "Wolt/enjoyingisrael: Aroma Dizengoff-Gordon at Dizengoff 132, catalog 123; official page blocked"
+   "note": "Wolt/enjoyingisrael: Aroma Dizengoff-Gordon at Dizengoff 132, catalog 123; official page blocked",
+   "r2": "conflict",
+   "note2": "Wolt public page and enjoyingisrael give Aroma Dizengoff-Gordon at Dizengoff 132 (catalog 123, likely typo); official aroma.co.il page blocked; no fix filed (no official source); no closure news",
+   "d2": "2026-11-26"
   },
   "n12064670866": {
    "r": "none",
@@ -3757,7 +3829,10 @@
   },
   "n1688194375": {
    "r": "single",
-   "note": "Official Aroma branch page 'Heichal Menora' exists (blocked) https://www.aroma.co.il/store/%D7%94%D7%99%D7%9B%D7%9C-%D7%9E%D7%A0%D7%95%D7%A8%D7%94/"
+   "note": "Official Aroma branch page 'Heichal Menora' exists (blocked) https://www.aroma.co.il/store/%D7%94%D7%99%D7%9B%D7%9C-%D7%9E%D7%A0%D7%95%D7%A8%D7%94/",
+   "r2": "single",
+   "note2": "Official Aroma 'Heichal Menora' page exists but aroma.co.il blocked; d.co.il lists Yigal Alon 88 not 51; no closure news",
+   "d2": "2026-11-26"
   },
   "n10766084706": {
    "r": "closed",
@@ -3876,7 +3951,10 @@
   },
   "n5221386692": {
    "r": "single",
-   "note": "d.co.il Ben Yehuda 21; official page exists but unreadable https://www.d.co.il/80014620"
+   "note": "d.co.il Ben Yehuda 21; official page exists but unreadable https://www.d.co.il/80014620",
+   "r2": "single",
+   "note2": "Official Aroma Ben Yehuda page exists but blocked; d.co.il Ben Yehuda 21; no closure news",
+   "d2": "2026-11-26"
   },
   "n5599780098": {
    "r": "none",
@@ -3884,7 +3962,10 @@
   },
   "n6212721343": {
    "r": "single",
-   "note": "d.co.il Nahalat Yitzhak 18 (undated) https://www.d.co.il/80014620"
+   "note": "d.co.il Nahalat Yitzhak 18 (undated) https://www.d.co.il/80014620",
+   "r2": "single",
+   "note2": "Only d.co.il Nahalat Yitzhak 18 (undated); no official page found; aroma.co.il blocked",
+   "d2": "2026-11-26"
   },
   "n10968175321": {
    "r": "none",
@@ -3896,7 +3977,10 @@
   },
   "n12026384242": {
    "r": "single",
-   "note": "d.co.il Kaufman 2; official page unreadable https://www.d.co.il/80014620"
+   "note": "d.co.il Kaufman 2; official page unreadable https://www.d.co.il/80014620",
+   "r2": "single",
+   "note2": "Official Aroma 'Koifman' page exists but blocked; d.co.il Kaufman 2; no closure news",
+   "d2": "2026-11-26"
   },
   "n12050619149": {
    "r": "ok",
@@ -3904,7 +3988,10 @@
   },
   "n12050619150": {
    "r": "single",
-   "note": "Official page Menachem Begin exists (unreadable); number unconfirmed https://www.aroma.co.il/en/store/menachem-begin-tel-aviv/"
+   "note": "Official page Menachem Begin exists (unreadable); number unconfirmed https://www.aroma.co.il/en/store/menachem-begin-tel-aviv/",
+   "r2": "single",
+   "note2": "Official Aroma Menachem Begin page exists but blocked; d.co.il has Begin 48 and 132, cannot match",
+   "d2": "2026-11-26"
   },
   "n12529707486": {
    "r": "ok",
@@ -3994,7 +4081,10 @@
   },
   "n9312382294": {
    "r": "single",
-   "note": "Spotted by Locals 2025-04 Juno wine bar, De Haas 1 https://spottedbylocals.com/tel-aviv/juno-wine-bar"
+   "note": "Spotted by Locals 2025-04 Juno wine bar, De Haas 1 https://spottedbylocals.com/tel-aviv/juno-wine-bar",
+   "r2": "ok",
+   "note2": "Ontopo page Juno, De Haas 1, live 2026-11 https://ontopo.com/en/il/page/junowine ; Spotted by Locals 2025-04; Time Out; coords at Kikar Milano; address fix filed",
+   "d2": "2026-11-26"
   },
   "n13424384603": {
    "r": "none",
@@ -4028,7 +4118,10 @@
   },
   "n4839734632": {
    "r": "conflict",
-   "note": "Official list: Jaffa branch at Olei Zion 10; catalog Rabbi Aha; maybe same as n13643518346"
+   "note": "Official list: Jaffa branch at Olei Zion 10; catalog Rabbi Aha; maybe same as n13643518346",
+   "r2": "conflict",
+   "note2": "atly: Jaffa Hamalabiya at Olei Zion 10; Time Out 2015 Amiad 11; Spotted by Locals 2025-04 only Allenby 60; no source for Rabbi Aha; maybe same as n13643518346",
+   "d2": "2026-11-26"
   },
   "n5182249023": {
    "r": "ok",
@@ -4067,7 +4160,10 @@
   },
   "n1437321464": {
    "r": "single",
-   "note": "Wolt Tatti Bakery HaShalom 53 Givatayim https://wolt.com/en/isr/tel-aviv/venue/tatti-bakery/items/menucategory-2"
+   "note": "Wolt Tatti Bakery HaShalom 53 Givatayim https://wolt.com/en/isr/tel-aviv/venue/tatti-bakery/items/menucategory-2",
+   "r2": "single",
+   "note2": "Wolt (current) Tatti Bakery HaShalom 53 Givatayim; Walla 2022 too old; no own site/Tabit/Ontopo",
+   "d2": "2026-11-26"
   },
   "n2301194108": {
    "r": "none",
@@ -4091,7 +4187,10 @@
   },
   "n11088945317": {
    "r": "conflict",
-   "note": "Own site lehemerez.co.il/branches lists only one TLV branch, Kikar HaMedina (03-6991143), with no street address; catalog street Tashach cannot be matched to it; no closure news"
+   "note": "Own site lehemerez.co.il/branches lists only one TLV branch, Kikar HaMedina (03-6991143), with no street address; catalog street Tashach cannot be matched to it; no closure news",
+   "r2": "ok",
+   "note2": "Own site live 2026-11 with Kikar HaMedina branch page (phone, hours, no street) https://www.lehemerez.co.il/branches/cicarhmdina ; only TLV-north branch; catalog point on rim of Kikar HaMedina; no closure news",
+   "d2": "2026-11-26"
   },
   "n5704562423": {
    "r": "none",
@@ -4354,11 +4453,17 @@
   },
   "n4821964801": {
    "r": "single",
-   "note": "Only source: Time Out Florentin cafes list 2024-03 (Abarbanel 29, Su-Th 7-19, Fr 7-16) https://timeout.co.il/%D7%91%D7%AA%D7%99-%D7%A7%D7%A4%D7%94-%D7%A4%D7%9C%D7%95%D7%A8%D7%A0%D7%98%D7%99%D7%9F/ ; nothing from 2025-26; Instagram not readable; no Tabit/Ontopo; no closure news."
+   "note": "Only source: Time Out Florentin cafes list 2024-03 (Abarbanel 29, Su-Th 7-19, Fr 7-16) https://timeout.co.il/%D7%91%D7%AA%D7%99-%D7%A7%D7%A4%D7%94-%D7%A4%D7%9C%D7%95%D7%A8%D7%A0%D7%98%D7%99%D7%9F/ ; nothing from 2025-26; Instagram not readable; no Tabit/Ontopo; no closure news.",
+   "r2": "single",
+   "note2": "Still only Time Out Florentin cafes 2024-03 (Abarbanel 29); nothing 2025-26; no closure news",
+   "d2": "2026-11-26"
   },
   "n12723653023": {
    "r": "single",
-   "note": "Latest source: Time Out Florentin cafes list 2024-03 (Frenkel 43) https://timeout.co.il/%D7%91%D7%AA%D7%99-%D7%A7%D7%A4%D7%94-%D7%A4%D7%9C%D7%95%D7%A8%D7%A0%D7%98%D7%99%D7%9F/ ; older Time Out 2022 pieces; nothing 2025-26; no Tabit/Ontopo; no closure news."
+   "note": "Latest source: Time Out Florentin cafes list 2024-03 (Frenkel 43) https://timeout.co.il/%D7%91%D7%AA%D7%99-%D7%A7%D7%A4%D7%94-%D7%A4%D7%9C%D7%95%D7%A8%D7%A0%D7%98%D7%99%D7%9F/ ; older Time Out 2022 pieces; nothing 2025-26; no Tabit/Ontopo; no closure news.",
+   "r2": "single",
+   "note2": "Time Out 2024-03 and 2022-11 (Frenkel 43), atly undated; nothing 2025-26; no closure news",
+   "d2": "2026-11-26"
   },
   "n12509055172": {
    "r": "single",
@@ -4499,7 +4604,10 @@
   },
   "n965950120": {
    "r": "conflict",
-   "note": "Only official Cafe Cafe Ben Gurion branch is Bat Yam promenade 81, but catalog coords (32.096,34.821) are Bnei Brak/Ramat Gan; no match"
+   "note": "Only official Cafe Cafe Ben Gurion branch is Bat Yam promenade 81, but catalog coords (32.096,34.821) are Bnei Brak/Ramat Gan; no match",
+   "r2": "none",
+   "note2": "Official Cafe Cafe branch search 2026-11 lists no branch in Bnei Brak/Ramat Gan/Givatayim or at these coords; maybe closed, unconfirmed; no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-26"
   },
   "n1626824915": {
    "r": "none",
@@ -4559,7 +4667,10 @@
   },
   "n3081263901": {
    "r": "conflict",
-   "note": "Street only; official list has two Sokolov branches: Ramat HaSharon Sokolov 37 (https://www.roladin.co.il/branch/רמת-השרון-סוקולוב/) and Hod HaSharon Sokolov 10 (https://www.roladin.co.il/branch/הוד-השרון-סוקולוב/); none on Sokolov in Tel Aviv/Holon/Herzliya list. Cannot tell which without coordinates.; catalog coords 32.142,34.837 fit Ramat HaSharon (Sokolov 37 branch) - needs confirm"
+   "note": "Street only; official list has two Sokolov branches: Ramat HaSharon Sokolov 37 (https://www.roladin.co.il/branch/רמת-השרון-סוקולוב/) and Hod HaSharon Sokolov 10 (https://www.roladin.co.il/branch/הוד-השרון-סוקולוב/); none on Sokolov in Tel Aviv/Holon/Herzliya list. Cannot tell which without coordinates.; catalog coords 32.142,34.837 fit Ramat HaSharon (Sokolov 37 branch) - needs confirm",
+   "r2": "ok",
+   "note2": "Official Roladin page Ramat HaSharon Sokolov 37 live 2026-11, its map point ~20 m from catalog point; no kosher certificate; no closure news",
+   "d2": "2026-11-26"
   },
   "n3465156312": {
    "r": "none",
@@ -4579,7 +4690,10 @@
   },
   "n10103704022": {
    "r": "conflict",
-   "note": "Street only; the only official branch on a Ben Gurion street is Bnei Brak, Ben Gurion 9 (https://www.roladin.co.il/branch/בני-ברק/), but catalog city/number unknown so match unconfirmed. No Tabit/Ontopo; no closure news.; catalog coords 32.095,34.822 fit Bnei Brak (Ben Gurion 9 branch) - needs confirm"
+   "note": "Street only; the only official branch on a Ben Gurion street is Bnei Brak, Ben Gurion 9 (https://www.roladin.co.il/branch/בני-ברק/), but catalog city/number unknown so match unconfirmed. No Tabit/Ontopo; no closure news.; catalog coords 32.095,34.822 fit Bnei Brak (Ben Gurion 9 branch) - needs confirm",
+   "r2": "ok",
+   "note2": "Official Roladin page Bnei Brak Ben Gurion 9 live 2026-11, map point ~20 m from catalog point; phone 03-5328269; kosher per page (certificate not named, k omitted); no closure news",
+   "d2": "2026-11-26"
   },
   "n11169880831": {
    "r": "ok",
@@ -4587,7 +4701,10 @@
   },
   "n11197441049": {
    "r": "conflict",
-   "note": "Street only; official list has two Dizengoff branches: Dizengoff Center, Dizengoff 50 (https://www.roladin.co.il/branch/דיזינגוף/) and Jabotinsky 24 corner Dizengoff (https://www.roladin.co.il/branch/תל-אביב-זבוטינסקי/); both active. Cannot tell which without coordinates.; catalog coords 32.0750,34.7754 fit Dizengoff Center - needs confirm"
+   "note": "Street only; official list has two Dizengoff branches: Dizengoff Center, Dizengoff 50 (https://www.roladin.co.il/branch/דיזינגוף/) and Jabotinsky 24 corner Dizengoff (https://www.roladin.co.il/branch/תל-אביב-זבוטינסקי/); both active. Cannot tell which without coordinates.; catalog coords 32.0750,34.7754 fit Dizengoff Center - needs confirm",
+   "r2": "ok",
+   "note2": "Official Roladin page Dizengoff Center (Dizengoff 50) live 2026-11, map point ~35 m from catalog point (Jabotinsky 24 branch does not match); no closure news",
+   "d2": "2026-11-26"
   },
   "n11949591511": {
    "r": "none",
@@ -4685,7 +4802,10 @@
   },
   "n14400029008": {
    "r": "conflict",
-   "note": "DIDU pasta: Wolt venue page live but gives address HaMasger 35 (same address as a Chicken Station branch, likely delivery kitchen); atly lists Yitzhak Sadeh 8; catalog street Yitzhak Sadeh - address unclear, no own site/Tabit/Ontopo. https://wolt.com/en/isr/tel-aviv/restaurant/didu"
+   "note": "DIDU pasta: Wolt venue page live but gives address HaMasger 35 (same address as a Chicken Station branch, likely delivery kitchen); atly lists Yitzhak Sadeh 8; catalog street Yitzhak Sadeh - address unclear, no own site/Tabit/Ontopo. https://wolt.com/en/isr/tel-aviv/restaurant/didu",
+   "r2": "conflict",
+   "note2": "atly Yitzhak Sadeh 8 vs Wolt HaMasger 35 (delivery kitchen); no own site/Tabit/Ontopo/news; unresolved",
+   "d2": "2026-11-26"
   },
   "n5700200352": {
    "r": "none",
@@ -5265,7 +5385,10 @@
   },
   "n11345095156": {
    "r": "conflict",
-   "note": "atly lists Holstein at Yom Tov 17, but Time Out 2025-11 (Carmel market roundup) lists San Mai Russian dumplings at Yom Tov 17; Time Out 2025-12 names only the Ibn Gabirol 21 branch. Possibly closed/replaced; no explicit closure source. https://timeout.co.il/%d7%a9%d7%95%d7%a7-%d7%94%d7%9b%d7%a8%d7%9e%d7%9c-2/"
+   "note": "atly lists Holstein at Yom Tov 17, but Time Out 2025-11 (Carmel market roundup) lists San Mai Russian dumplings at Yom Tov 17; Time Out 2025-12 names only the Ibn Gabirol 21 branch. Possibly closed/replaced; no explicit closure source. https://timeout.co.il/%d7%a9%d7%95%d7%a7-%d7%94%d7%9b%d7%a8%d7%9e%d7%9c-2/",
+   "r2": "conflict",
+   "note2": "Time Out Carmel market 2026-05 gives Yom Tov 17 as San Mai, no Holstein; Time Out Holstein tag (2025-12) no Carmel branch; probably replaced, no explicit closure",
+   "d2": "2026-11-26"
   },
   "n12768172727": {
    "r": "ok",
@@ -5397,7 +5520,10 @@
   },
   "n4591383346": {
    "r": "conflict",
-   "note": "Taqueria is active (Time Out taco roundup 2026-08), but sources give the original branch as Levontin 28 (Time Out 2026-08; timeout.com 2023), not Levontin 15 as in the catalog. Delivery branch is at Nirim 1 (Wolt page). No closure news."
+   "note": "Taqueria is active (Time Out taco roundup 2026-08), but sources give the original branch as Levontin 28 (Time Out 2026-08; timeout.com 2023), not Levontin 15 as in the catalog. Delivery branch is at Nirim 1 (Wolt page). No closure news.",
+   "r2": "conflict",
+   "note2": "Active; Time Out taco roundup 2026-08 and Levontin map 2022-12 give Levontin 28 (catalog 15); address fix filed https://timeout.co.il/טאקו-בתל-אביב/",
+   "d2": "2026-11-26"
   },
   "n606974700": {
    "r": "none",
@@ -5469,7 +5595,10 @@
   },
   "n5934127582": {
    "r": "conflict",
-   "note": "Own site miznon.com/locations lists only Ibn Gabirol 23 and Sarona (Kalman Magen 3) in Israel - no Ramat HaHayal/HaNechoshet 1 branch; only old directory listing (enjoyingisrael) shows it; no explicit closure article found (Maariv 2026-05 on Ramat HaHayal decline doesn't name it). Likely closed, unconfirmed"
+   "note": "Own site miznon.com/locations lists only Ibn Gabirol 23 and Sarona (Kalman Magen 3) in Israel - no Ramat HaHayal/HaNechoshet 1 branch; only old directory listing (enjoyingisrael) shows it; no explicit closure article found (Maariv 2026-05 on Ramat HaHayal decline doesn't name it). Likely closed, unconfirmed",
+   "r2": "conflict",
+   "note2": "Mako 2014 confirms HaNechoshet 1 branch existed; own site now lists only Ibn Gabirol 23 and Sarona; no closure article (Israel Hayom 2026-03 on Ramat HaHayal doesn't name it); probably closed, unconfirmed",
+   "d2": "2026-11-26"
   },
   "n10279205409": {
    "r": "none",
@@ -5553,11 +5682,17 @@
   },
   "n10637248245": {
    "r": "conflict",
-   "note": "No official McDonald's branch on Jabotinsky in Tel Aviv; coords are on the Ramat Gan side. Nearest official branch is Bialik Mall Ramat Gan (Bialik 76 cnr Jabotinsky, store 73, kosher) - could not confirm it is this point; check address"
+   "note": "No official McDonald's branch on Jabotinsky in Tel Aviv; coords are on the Ramat Gan side. Nearest official branch is Bialik Mall Ramat Gan (Bialik 76 cnr Jabotinsky, store 73, kosher) - could not confirm it is this point; check address",
+   "r2": "ok",
+   "note2": "Official mcdonalds.co.il store 73 Kanyon Bialik Ramat Gan (kosher), coords ~45 m from catalog point, live 2026-11 with hours; in Ramat Gan",
+   "d2": "2026-11-26"
   },
   "n10976106839": {
    "r": "conflict",
-   "note": "No official branch at Kikar Atzei; point is on the Ramat Gan (Bursa) side. Nearest official branch is Bursa, HaYetzira 3 Ramat Gan (store 61) - match unconfirmed; check address"
+   "note": "No official branch at Kikar Atzei; point is on the Ramat Gan (Bursa) side. Nearest official branch is Bursa, HaYetzira 3 Ramat Gan (store 61) - match unconfirmed; check address",
+   "r2": "ok",
+   "note2": "Official mcdonalds.co.il store 61 Bursa Ramat Gan (kosher), HaYetzira 3, coords ~50 m from catalog point, live 2026-11 with hours",
+   "d2": "2026-11-26"
   },
   "n11178748578": {
    "r": "ok",
@@ -5577,7 +5712,10 @@
   },
   "n10951185355": {
    "r": "conflict",
-   "note": "Time Out (2024-03) says Marlen TLV moved Aug 2023 to King George / Ben Zion corner (atly: Ben Tsiyon Blvd 2), not Malchei Israel 8; Time Out tags active to 2026-02. Catalog site marlen.giv.tlv and phone 051-5008717 belong to Givatayim branch (Wolt: Rambam 30 Givatayim). Address needs fix"
+   "note": "Time Out (2024-03) says Marlen TLV moved Aug 2023 to King George / Ben Zion corner (atly: Ben Tsiyon Blvd 2), not Malchei Israel 8; Time Out tags active to 2026-02. Catalog site marlen.giv.tlv and phone 051-5008717 belong to Givatayim branch (Wolt: Rambam 30 Givatayim). Address needs fix",
+   "r2": "conflict",
+   "note2": "Time Out 2024-03: Marlen TLV moved Aug 2023 to King George/Ben Zion; Time Out 2025-04 Sderot Ben Zion 2; catalog phone/site belong to Givatayim branch; address fix filed",
+   "d2": "2026-11-26"
   },
   "n12140306333": {
    "r": "single",
@@ -5637,7 +5775,10 @@
   },
   "n11681572591": {
    "r": "conflict",
-   "note": "Official Agvania branch list has no Yohanan HaSandlar branch; nearest official branch is Shenkin 19 (Time Out Shenkin guide 2025-03 also lists Shenkin 19). Catalog point is on Yohanan HaSandlar ~150m from Shenkin - either same branch with wrong address/coords or a closed branch. Address check needed"
+   "note": "Official Agvania branch list has no Yohanan HaSandlar branch; nearest official branch is Shenkin 19 (Time Out Shenkin guide 2025-03 also lists Shenkin 19). Catalog point is on Yohanan HaSandlar ~150m from Shenkin - either same branch with wrong address/coords or a closed branch. Address check needed",
+   "r2": "conflict",
+   "note2": "Time Out Shenkin guide 2025-03 lists Agvania at Shenkin 19; no source for Yohanan HaSandlar; own site blocked; unresolved whether point is the Shenkin branch",
+   "d2": "2026-11-26"
   },
   "n6023106967": {
    "r": "closed",
@@ -5985,7 +6126,10 @@
   },
   "n14066191075": {
    "r": "conflict",
-   "note": "Rivareno TLV is at Nahalat Binyamin 3 per Time Out 2025-03 and Time Out list 2026-08 (also ynetnews 2025-05: Nahalat Binyamin); catalog says Washington Blvd 14 with coords ~1.2 km south. Could be a second branch (Time Out 2026 mentions an unaddressed Jerusalem Blvd branch) but no source confirms Was"
+   "note": "Rivareno TLV is at Nahalat Binyamin 3 per Time Out 2025-03 and Time Out list 2026-08 (also ynetnews 2025-05: Nahalat Binyamin); catalog says Washington Blvd 14 with coords ~1.2 km south. Could be a second branch (Time Out 2026 mentions an unaddressed Jerusalem Blvd branch) but no source confirms Was",
+   "r2": "conflict",
+   "note2": "Time Out 2025-03 and atly name only Nahalat Binyamin 3 (phone 054-8289891); no source for Washington 14; catalog phone matches nothing",
+   "d2": "2026-11-26"
   },
   "n5178466608": {
    "r": "none",
@@ -5997,7 +6141,10 @@
   },
   "n6005587385": {
    "r": "conflict",
-   "note": "Official anita-gelato.com lists Tel Aviv branches at Shabazi 40, Shabazi 44, Florentin 3 and Rav Aluf David Elazar 16 - no Shabazi 25. Time Out 2026-08 lists Shabazi 40 and Eliezer 15 (Sarona). Catalog address not confirmed; possibly meant Shabazi 40/44. No closure news for a Shabazi 25 branch."
+   "note": "Official anita-gelato.com lists Tel Aviv branches at Shabazi 40, Shabazi 44, Florentin 3 and Rav Aluf David Elazar 16 - no Shabazi 25. Time Out 2026-08 lists Shabazi 40 and Eliezer 15 (Sarona). Catalog address not confirmed; possibly meant Shabazi 40/44. No closure news for a Shabazi 25 branch.",
+   "r2": "conflict",
+   "note2": "Official anita-gelato.com pages for Shabazi 40 and 44; no source for Shabazi 25; unresolved",
+   "d2": "2026-11-26"
   },
   "n2288503796": {
    "r": "none",
@@ -6029,7 +6176,10 @@
   },
   "n2264923571": {
    "r": "conflict",
-   "note": "Time Out 2026-03 (Jul Abud 'my city') recommends Andrey ice cream at Yefet 138, Jaffa (third-generation Chabbaz family shop) - only source; catalog address is street-only 'Nevatim' - suggested exact address: יפת 138, תל אביב-יפו; no own site, no Tabit/Ontopo, no closure news"
+   "note": "Time Out 2026-03 (Jul Abud 'my city') recommends Andrey ice cream at Yefet 138, Jaffa (third-generation Chabbaz family shop) - only source; catalog address is street-only 'Nevatim' - suggested exact address: יפת 138, תל אביב-יפו; no own site, no Tabit/Ontopo, no closure news",
+   "r2": "single",
+   "note2": "Time Out My City 2026-03 (https://timeout.co.il/העיר-שלי-גול-עבוד/) Andrey ice cream at Yefet 138 Jaffa; atly same; no own site/Tabit/Ontopo; address fix filed (catalog street-only)",
+   "d2": "2026-11-26"
   },
   "n5600793021": {
    "r": "ok",

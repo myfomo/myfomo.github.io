@@ -286,6 +286,53 @@
     "https://www.mcdonalds.co.il/איתור_מסעדה?store_id=12"
    ],
    "note": "Official address of London Ministore branch; catalog has only Shaul HaMelech (corner street). Shared mall address"
+  },
+  "n4591383346": {
+   "a": "לבונטין 28",
+   "src": [
+    "https://timeout.co.il/טאקו-בתל-אביב/",
+    "https://timeout.co.il/מיפוי-לבונטין/"
+   ],
+   "note": "Taqueria original branch at Levontin 28 per Time Out 2026-08 and 2022-12"
+  },
+  "n10951185355": {
+   "a": "שדרות בן ציון 2",
+   "src": [
+    "https://timeout.co.il/3-המבורגרים-אנדרייטד/",
+    "https://timeout.co.il/%d7%9e%d7%a8%d7%9c%d7%9f-%d7%a7%d7%a4%d7%94/"
+   ],
+   "note": "Marlen moved Aug 2023 from Malchei Israel 8 (Time Out 2024-03, 2025-04)"
+  },
+  "n2264923571": {
+   "a": "יפת 138",
+   "src": [
+    "https://timeout.co.il/העיר-שלי-גול-עבוד/"
+   ],
+   "note": "Time Out 2026-03 gives Yefet 138, Jaffa; catalog has only street 'נבטים'"
+  },
+  "n11513852130": {
+   "a": "אבן גבירול 48",
+   "src": [
+    "https://ontopo.com/en/il/page/98327077",
+    "https://spinach.guide/venues/cafe-chablis-218462/"
+   ],
+   "note": "Catalog has no house number; Ontopo gives Ibn Gabirol 48"
+  },
+  "n2079008750": {
+   "a": "רבי חנינא 9",
+   "src": [
+    "https://timeout.co.il/שוק-הפשפשים-מומלצים/",
+    "https://timeout.co.il/בתי-קפה-מומלצים-יפו/"
+   ],
+   "note": "Two Time Out articles (2025-04, 2026-04) give Rabbi Hanina 9, Jaffa"
+  },
+  "n9312382294": {
+   "a": "דה האז 1",
+   "src": [
+    "https://ontopo.com/en/il/page/junowine",
+    "https://timeout.co.il/ברי-היין-הטובים-בתל-אביב/"
+   ],
+   "note": "Catalog address street-only; Ontopo and Time Out give De Haas 1 (Kikar Milano)"
   }
  },
  "dup": {
