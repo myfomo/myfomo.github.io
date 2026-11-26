@@ -48,6 +48,19 @@ If exactly one recent source supports it, use result `single` (not `none`) and g
 - Make sure it is the **same branch** (address matches). If sources disagree → `conflict`, change nothing.
 - Nothing reliable found → `none`, change nothing.
 
+## Regions (user decision 2026-11-26)
+The Tel Aviv queue (`tools/verify-queue.json`) has been fully checked once. When it has no ids left, each run takes its
+places from the regions, **in this order: `jlm` (ירושלים והסביבה) → `hfa` (חיפה והקריות) → `bsh` (באר שבע והנגב)**,
+moving to the next region only when the previous queue is empty. Per region `<k>` the files are:
+catalog `data/places-<k>.json`, queue `tools/verify-queue-<k>.json`, results `tools/verified-<k>.json` and `tools/closed-<k>.json`
+(same formats as the Tel Aviv files). Everything above applies, with these changes:
+- Search with the place's own city (`c`, e.g. "נשר", "מבשרת ציון") instead of "תל אביב". News/guides: also Time Out Jerusalem/Haifa,
+  local news sites (e.g. Kol Hair, Haifa local news, Sheva/Mynet Beer Sheva).
+- Address fixes: the automatic fix tool covers Tel Aviv only. For a region place with a wrong/moved address, use `conflict`
+  and give the reliable new address in `note`; list it for the user.
+- Commit message: `Verification batch (<k>): N ok, N closed, N none, N conflict`. The push runs the `regions` workflow,
+  which applies the results and publishes the region data (data only).
+
 ## Writing results
 - Active / details → `tools/verified-tlv.json` under `places[id]`:
   `{"n": catalog name, "ok": "YYYY-MM", "nm"?, "cu"?, "pr"?, "oh"?, "p"?, "w"?, "bk"?, "k"?, "vg"?, "src": [url, ...]}`.

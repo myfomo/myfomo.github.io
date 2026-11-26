@@ -4,7 +4,7 @@
 The Overpass answer is cached in data/osm-attrs-tlv.json and refreshed weekly; every run re-applies it."""
 import json, sys, os, time, math, urllib.request, urllib.parse
 CAT, CACHE = sys.argv[1], sys.argv[2]
-BBOX = "32.029,34.739,32.147,34.853"
+BBOX = os.environ.get("OSM_BBOX", "32.029,34.739,32.147,34.853")
 MIRRORS = ["https://overpass-api.de/api/interpreter", "https://overpass.private.coffee/api/interpreter",
            "https://maps.mail.ru/osm/tools/overpass/api/interpreter", "https://overpass.kumi.systems/api/interpreter"]
 def overpass(q):

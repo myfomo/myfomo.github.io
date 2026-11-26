@@ -1,0 +1,59 @@
+name: regions
+# Region catalogs (Jerusalem area, Haifa & the Krayot, Beer Sheva & the Negev): whole regions from OpenStreetMap,
+# enriched like Tel Aviv, published as a data-only update (no app version bump).
+on:
+  push:
+    branches: [osm-check]
+    paths: [tools/regions.json, tools/region_*.py, "tools/*-jlm.json", "tools/*-hfa.json", "tools/*-bsh.json", tools/manual_add.py, .github/workflows/regions.yml]
+  workflow_dispatch:
+    inputs:
+      refetch: {description: "Refetch the regions from OpenStreetMap", type: boolean, default: false}
+  schedule:
+    - cron: "47 3 2 * *"   # 2nd of every month, 05:47 Israel time
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: catalog
+  cancel-in-progress: false
+jobs:
+  regions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: osm-check, fetch-depth: 0}
+      - name: build / refresh each region
+        env:
+          REFETCH: ${{ github.event_name == 'schedule' || inputs.refetch || contains(github.event.head_commit.message, 'REFETCH') || contains(github.event.head_commit.message, 'regions.json') }}
+        run: |
+          for k in jlm hfa bsh; do
+            echo "::group::$k"
+            BB=$(python3 -c "import json;print(json.load(open('tools/regions.json'))['$k']['bbox'])")
+            if [ "$REFETCH" = "true" ] || ! python3 -c "import json,sys;d=json.load(open('data/places-$k.json'));sys.exit(0 if d.get('region') else 1)"; then
+              python3 tools/region_fetch.py $k || echo "$k: fetch kept the old catalog"
+            fi
+            [ -f tools/manual-$k.json ] && python3 tools/manual_add.py data/places-$k.json tools/manual-$k.json
+            python3 tools/osm_enrich.py data/places-$k.json data/enrich-report-$k.json || echo "$k: enrich failed"
+            python3 tools/site_check.py data/places-$k.json data/site-check-$k.json || echo "$k: site check failed"
+            OSM_BBOX="$BB" python3 tools/osm_attrs.py data/places-$k.json data/osm-attrs-$k.json || echo "$k: attrs failed"
+            python3 tools/first_seen.py data/places-$k.json tools/first-seen-$k.json tools/chefs-$k.json
+            python3 tools/apply_status.py data/places-$k.json tools/closed-$k.json data/site-check-$k.json
+            python3 tools/region_queue.py $k
+            echo "::endgroup::"
+          done
+      - name: commit to osm-check
+        run: |
+          git config user.name "fomo-bot"; git config user.email "fomo-bot@users.noreply.github.com"
+          git add data/ tools/ && git commit -qm "Catalog: regions (Jerusalem, Haifa, Beer Sheva)" || echo "no data change"
+          git pull -q --rebase origin osm-check && git push -q origin HEAD:osm-check
+      - name: publish data to the live site (data only, no app update)
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          mkdir -p /tmp/pub && cp data/places-jlm.json data/places-hfa.json data/places-bsh.json /tmp/pub/
+          for b in main next-release; do
+            git fetch -q origin $b && git checkout -q -B $b origin/$b
+            cp /tmp/pub/*.json data/
+            git add data/places-jlm.json data/places-hfa.json data/places-bsh.json && git commit -qm "Catalog data update: regions (no app update)" && git push -q origin $b || echo "$b: no change"
+          done
+          gh workflow run deploy.yml --ref main
