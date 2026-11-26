@@ -41,7 +41,7 @@ jobs:
         run: |
           for c in "jlm|31.72,35.13,31.84,35.26|ירושלים" "hfa|32.76,34.95,32.84,35.07|חיפה" "bsh|31.21,34.74,31.29,34.84|באר שבע"; do
             IFS='|' read k b n <<< "$c"
-            python3 tools/osm_fetch.py "$b" && python3 tools/osm_build.py osm_places.json /tmp/new-$k.json "$n" && python3 - "$k" <<'PY'
+            OSM_MIN=60 python3 tools/osm_fetch.py "$b" && python3 tools/osm_build.py osm_places.json /tmp/new-$k.json "$n" && python3 - "$k" <<'PY'
           import json, os, shutil, sys
           k = sys.argv[1]; new = len(json.load(open(f"/tmp/new-{k}.json"))["places"])
           old = len(json.load(open(f"data/places-{k}.json"))["places"]) if os.path.exists(f"data/places-{k}.json") else 0
