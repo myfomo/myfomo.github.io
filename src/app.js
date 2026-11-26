@@ -2100,9 +2100,10 @@ function sxpDraw(){const B=$('#sxpBody');if(!B)return;const R=sxp.res;if(!R){B.i
   const head=`<div class="sxp-head">${sxpIntentHtml(I)}${seg}</div>`+(relaxed?`<p class="sxp-relax">לא מצאנו בדיוק את זה, אז ויתרנו על: <b>${esc(relaxed.join(', '))}</b>. הנה הכי קרוב:</p>`:'')+(sxp.area?`<p class="sxp-relax">מציג רק את האזור במפה · <button type="button" class="linkb" data-sxp-noarea>כל העיר</button></p>`:'');
   if(sxp.view==='map'){B.innerHTML=head+`<div class="sxp-mapw"><div id="sxpMap" class="sxp-map"></div><button type="button" class="btn sm pri sxp-area" id="sxpArea" hidden>🔍 חיפוש באזור הזה</button></div><p class="note">${own.length+cat.length} מקומות על המפה</p>`;sxpMapDraw();return}
   const empty=!own.length&&!cat.length;
-  B.innerHTML=head+(own.length?`<div class="sx-h">בקבוצה שלכם <small>${own.length}</small></div><div class="sx-list">${own.map((x,i)=>sxpRow(x,i,'sxpo',P,I)).join('')}</div>`:'')
-    +(cat.length?`<div class="sx-h">מקומות נוספים <small>${cat.length>=40?'40+':cat.length}</small></div><div class="sx-list">${cat.slice(0,sxp.more||12).map((x,i)=>sxpRow(x,i,'sxpc',P,I)).join('')}</div>${cat.length>(sxp.more||12)?'<button type="button" class="btn sxp-more" data-sxp-more>עוד מקומות</button>':''}`:'')
-    +`<div id="sxpExt">${ext.length?`<div class="sx-h">מחוץ למאגר</div><div class="sx-list">${ext.map((x,i)=>sxpRow(x,i,'sxpe',P,I)).join('')}</div>`:''}</div>`
+  const car=(L,ctx)=>`<div class="sxp-car" tabindex="0">${L.map((x,i)=>sxpRow(x,i,ctx,P,I)).join('')}</div>`;
+  B.innerHTML=head+(own.length?`<div class="sx-h">בקבוצה שלכם <small>${own.length}</small></div>${car(own,'sxpo')}`:'')
+    +(cat.length?`<div class="sx-h">מקומות נוספים <small>${cat.length>=40?'40+':cat.length}</small><span class="sxp-swipe">החליקו ←</span></div>${car(cat,'sxpc')}`:'')
+    +`<div id="sxpExt">${ext.length?`<div class="sx-h">מחוץ למאגר</div>${car(ext,'sxpe')}`:''}</div>`
     +(empty&&!ext.length?`<div class="sxp-empty"><p>לא מצאנו מקום שמתאים.</p><button type="button" class="btn" data-sx-manual>✍️ הוספה ידנית</button></div>`:'')+sxAttr(cat.concat(own))}
 async function sxpMapDraw(){let L;try{L=await loadLeaflet()}catch{return}const el=$('#sxpMap');if(!el)return;if(sxp.map){sxp.map.remove();sxp.map=null}
   const R=sxp.res;const pts=[...R.own.map(x=>[x,1]),...R.cat.slice(0,80).map(x=>[x,0])].filter(([x])=>hasLL(x));
