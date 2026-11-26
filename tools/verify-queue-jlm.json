@@ -1069,6 +1069,166 @@
   "n12967026196": {
    "r": "none",
    "note": "Chain; official site new-deli.co.il blocked, easy.co.il failed. GoKosher lists branches at Agripas 62, Sarei Israel 15, Moshe Dayan 164; d.co.il lists Yafo 34. No source naming a Ben Yehuda branch."
+  },
+  "n13949950685": {
+   "r": "single",
+   "note": "Wolt brand page lists 'New Deli | Emek Refaim' venue at Emek Refaim 44, accepting orders (checked 2026-11); official site new-deli.co.il fetch not permitted; no Tabit/Ontopo; no closure news found. Street matches catalog (no number in catalog)."
+  },
+  "n5023240509": {
+   "r": "none",
+   "note": "No source found naming a New Deli branch on road 3955 / Mateh Yehuda; Wolt Jerusalem brand list has only city branches; official site new-deli.co.il fetch not permitted."
+  },
+  "n5904398566": {
+   "r": "none",
+   "note": "No reliable source found for a 'Nutella' eatery at Herod's Gate (Sha'ar HaPrachim); only 2016 NPR feature on Nutella cafes generally."
+  },
+  "w553166981": {
+   "r": "none",
+   "note": "No reliable source found for 'Nutella Pizza' on Ibn Jubeir St; no site, Tabit/Ontopo or news."
+  },
+  "n929256330": {
+   "r": "none",
+   "note": "Only a 2006 blog mention of Old City internet cafes; nothing recent for Old City Net Cafe on Greek Patriarchate Rd."
+  },
+  "n5823749362": {
+   "r": "none",
+   "note": "No reliable source found for 'Olive' restaurant on Antara Ben Shadad St (only undated aggregator pages)."
+  },
+  "n2611239340": {
+   "r": "none",
+   "note": "P2 Pizza at Keren HaYesod 36 appears in undated directories (itraveljerusalem, enjoyingisrael); own site p2pizza.co.il fetch not permitted; not found on Wolt/Tabit/Ontopo; no closure news found."
+  },
+  "n12967037426": {
+   "r": "conflict",
+   "note": "Wolt venue at Shamai 1 is now named 'Terracina & Son Bistro | Shamai' under the PAKINO IL brand (kosher mehadrin Badatz Jerusalem Rabbinate, active 2026-11); unclear whether Pakino Pizza was rebranded/replaced. Other Pakino branch is Agripas."
+  },
+  "n14071754490": {
+   "r": "none",
+   "note": "No source found that names a 'Panoramic Golden City' rooftop restaurant/cafe in the Aftimos market. Searches only turned up other rooftops (Mamilla Rooftop, Notre Dame). No Tabit/Ontopo page, no closure news."
+  },
+  "w620317530": {
+   "r": "none",
+   "note": "Frommer's lists Papa Andreas at 64 Aftimos St, Muristan, daily 9am-9pm, Middle Eastern (https://www.frommers.com/destinations/jerusalem/restaurants/papa-andreas), but the listing is undated, so it does not count as a recent source. No own site, no Tabit/Ontopo page, no 2025-2026 source, no closure news."
+  },
+  "n13119779107": {
+   "r": "none",
+   "note": "No source names a Papa John's on Keren Hayesod. The only Jerusalem item found was a new Papa John's on Yeshayahu St near Hebrew University/Givat Ram (yeahthatskosher, 2026-05, https://yeahthatskosher.com/?p=47709), a different location. Could not get an official branch list. No closure news for Keren Hayesod."
+  },
+  "n10941350043": {
+   "r": "none",
+   "note": "No reliable source for Pasha's at Shimon HaTzadik (Sheikh Jarrah). Fodor's lists an East Jerusalem bistro at 11 Shimon Hatzadik but does not name it Pasha's. JPost 'Turkish nobility' covers a different Pasha (Turkish, kosher, 28 Pierre Koenig, Talpiot). No booking page or closure news found."
+  },
+  "n2533310863": {
+   "r": "none",
+   "note": "itraveljerusalem lists Pasta Basta at Mahane Yehuda market ('Mahane Yehuda 8'), kosher label but no certificate named, and links the own site https://pastabasta.co.il/jerusalem/ (undated: https://www.itraveljerusalem.com/eat-drink/pasta-basta). Fetching the own site was refused (permission not answered), so it could not be checked. No Tabit/Ontopo page, no dated 2025-2026 source, no closure news found."
+  },
+  "n7944723885": {
+   "r": "none",
+   "note": "enjoyingisrael lists 'Pizza Hut - Ben Halell' at Mordechai Ben Hillel 15, kosher dairy (https://www.enjoyingisrael.com/restaurants/49239/pizza-hut-ben-halell). That is a directory, not an official branch list, and the street is Ben Hillel, not Shamai, though it may be the corner. Fetching the official site pizzahut.co.il was refused, so no official branch list. No closure news found."
+  },
+  "n13535438304": {
+   "r": "none",
+   "note": "Hebrew and English searches found nothing on a Pizza Mozzarella on Mishmarot HaKehuna (Geula/Mea Shearim area). No own site, no booking page, no closure news."
+  },
+  "n13535392974": {
+   "r": "none",
+   "note": "Searches (English plus the Hebrew spellings פיצהדליק and 'פיצה דליק') found nothing on Pizzadélic on HaMekubalim Rd. No own site, no booking page, no closure news."
+  },
+  "n1699388644": {
+   "r": "none",
+   "note": "Only a Wolt delivery listing 'Q's wings & burger' at HaHagana 21, Jerusalem (phone +972-2-560-6095, 11:00-24:00), and Wolt is not an allowed source. No own site, no Tabit/Ontopo page, no news or guide coverage, and no closure news found."
+  },
+  "n2493256221": {
+   "r": "none",
+   "note": "Re Bar is a juice-bar chain. The chain site rebar.co.il was blocked (permission not answered) and easy.co.il failed to load, so no branch list confirms the Luntz St Jerusalem branch. Time Out 2016 lists only the Tel Aviv branch. No closure news found."
+  },
+  "n1359328747": {
+   "r": "none",
+   "note": "No reliable source found for a 'Rockefeller Restaurant' on Al-Hariri St (English and Arabic searches). No site, no Tabit/Ontopo page, no closure news."
+  },
+  "n7386323086": {
+   "r": "none",
+   "note": "itraveljerusalem (undated) lists Rossini at 32 Latin Patriarchate Rd: Italian/French, non-kosher. Lonely Planet (undated) also lists it near Jaffa Gate. No recent dated source, no own site, no Tabit/Ontopo page, no closure news."
+  },
+  "n1419590085": {
+   "r": "none",
+   "note": "Roza is a kosher restaurant in the German Colony at Rachel Imenu 2, at the corner of the Emek Refaim area (a judgement match to the catalog's Emek Refaim). Sources are old: koshernexus 2014, kikar.co.il 2018-03, JPost 2019, plus undated itraveljerusalem. Nothing from 2025-2026. rest.co.il was blocked and tiuli failed to load. No Tabit/Ontopo page, no closure news."
+  },
+  "n1419595824": {
+   "r": "none",
+   "note": "No source links Roza to Hatzer Feingold (Feingold Courtyard). The only Roza found is at Rachel Imenu 2 in the German Colony (old sources), so this may be a duplicate or an old location. No closure news."
+  },
+  "n6992255799": {
+   "r": "none",
+   "note": "No cafe found at the St Francis ad Coenaculum monastery on Mount Zion. Pro Terra Sancta (2013) covers the monastery reopening and mentions no cafe."
+  },
+  "n7090301385": {
+   "r": "none",
+   "note": "No reliable source found for 'Samara Restaurant Cafe' at Omar Ibn al-Khattab Square / Jaffa Gate (English and Arabic searches). No site, no Tabit/Ontopo page, no closure news."
+  },
+  "n6323333185": {
+   "r": "single",
+   "note": "newcomersguide.co.il listing (modified 2025-07) names a branch at 31 Ben Yehuda St among 4 Jerusalem branches; own site sams-bagels.com fetch blocked; koshernexus 2011 says Rabbanut on Ben Yehuda midrachov (old). No Tabit/Ontopo, no closure news found."
+  },
+  "n5334510521": {
+   "r": "none",
+   "note": "Only undated guides (Frommer's, Lonely Planet) and HappyCow 2023 listing, all giving 42 Salah ad-Din St, not catalog street Ali Ibn Abi Talib; no recent source, no Tabit/Ontopo, no closure news."
+  },
+  "n2150073667": {
+   "r": "none",
+   "note": "No source found for 'Shalazar' in Jerusalem (Shimon HaTsadik St) in English or Hebrew searches; no Tabit/Ontopo; no closure news."
+  },
+  "n6001264885": {
+   "r": "closed",
+   "note": "JPost 2023-11-11: Shanty (Nahalat Shiva) served its final service on 2023-11-03 after 31 years. Time Out gives address 4 Ma'alot Nahalat Shiva; catalog street differs, branch match is my judgement (same Nahalat Shiva lane area)."
+  },
+  "n14381288101": {
+   "r": "none",
+   "note": "No source found for Star Baguette at Elmaliach Avraham 1, Jerusalem (English/Hebrew searches); no Tabit/Ontopo; no closure news."
+  },
+  "n10135897131": {
+   "r": "none",
+   "note": "Own site sites.google.com/view/taboonandwine (found via travelpal aggregator, which lists New Gate 31, Armenian, 054-6468204) - fetch blocked; no news/guide or Tabit/Ontopo source; no closure news."
+  },
+  "n10840069261": {
+   "r": "conflict",
+   "note": "Time Out Israel 2025-11 (31 places to eat in Jerusalem) lists Tacos Luis at 11 Shlomtzion HaMalka; catalog address is Uzi Hasson St - address mismatch, no source for an Uzi Hasson branch. ElFinanciero 2024-02 confirms operating since 2018. No Tabit/Ontopo found. Src: https://timeout.co.il/31-places-to-eat-really-well-in-jerusalem/"
+  },
+  "n5594866985": {
+   "r": "none",
+   "note": "Hummus shel Tehina, Nisim Bachar 23: undated listings (itraveljerusalem, enjoyingisrael); Mako 2023-11 mentions a Jerusalem branch exists; HappyCow user report says closed 2026-01 (crowd source, not reliable). Own site hummustchina.co.il fetch blocked; no news of closure found."
+  },
+  "n4242714889": {
+   "r": "none",
+   "note": "Only aggregator listings (wanderlog, trip.com) and a 2023 travel blog (psimonmyway.com, updated 2025-09, no address) mention 'Tala Hummus and Falafel'; no own site, no Tabit/Ontopo page, no news, no closure news found"
+  },
+  "n10554099568": {
+   "r": "none",
+   "note": "Only a 2023 travel blog (psimonmyway.com/jerusalem-old-city-restaurants-israel, updated 2025-09, no address) mentions 'Teta Cafe'; no own site, Tabit/Ontopo or news found; no closure news"
+  },
+  "n5242882222": {
+   "r": "none",
+   "note": "Only wanderlog listing for 'Thailandi'; no own site, Tabit/Ontopo, guide or news on Jaffa St Jerusalem; no closure news found"
+  },
+  "n4450000358": {
+   "r": "none",
+   "note": "Time Out 'The Barrel & The Tap' (33 Hillel St, listing dated 2017-01) and undated itraveljerusalem listing only; no recent source, no Tabit/Ontopo, no own site; no closure news found"
+  },
+  "n4721062833": {
+   "r": "none",
+   "note": "itraveljerusalem (undated) lists Coffee Bean at Jaffa 34 with site coffee-bean.co.il; own site fetch was blocked (permission not granted). Globes 2010-08 reports original Israeli franchise ordered to close all branches, so status uncertain; no recent source found"
+  },
+  "n12063184858": {
+   "r": "none",
+   "note": "No source found for a Coffee Bean branch on Heleni HaMalka; own site coffee-bean.co.il fetch blocked (permission not granted); Globes 2010-08 reports earlier franchise closure in Israel"
+  },
+  "n11156440686": {
+   "r": "none",
+   "note": "d.co.il directory lists 'Grill Bar' in Mevaseret Zion (no street address, phone 050-9000003) - directory only, branch/name not matched; no own site, Tabit/Ontopo or news; no closure news found"
+  },
+  "n13535415313": {
+   "r": "none",
+   "note": "No source found for 'The Message Café' in Jerusalem (catalog address only '14'); 2026 news about a Jews-for-Jesus-run cafe in Nahlaot names it Cafe Basimta, not this place"
   }
  }
 }
