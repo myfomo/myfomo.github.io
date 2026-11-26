@@ -1549,6 +1549,166 @@
   "n12977805150": {
    "r": "none",
    "note": "No source for a Bessarabia bar or pub on Ben Yehuda, Jerusalem. rest.co.il lists only a Romanian restaurant 'Bessarabia' in Nesher (other city). No Tabit/Ontopo page, no closure news."
+  },
+  "n561176608": {
+   "r": "none",
+   "note": "Only old/undated sources: Time Out 2017 (18 Hillel St, daily 18:00-03:00), itraveljerusalem undated listing citing gatsby.co.il. Own site gatsby.co.il fetch blocked (permission not granted). No Tabit/Ontopo page found; no closure news found."
+  },
+  "n2686910143": {
+   "r": "none",
+   "note": "Only old/undated sources: Time Out 2017 and itraveljerusalem list Hashchena at Beit Ya'akov 11 (catalog says 9). No own site, no Tabit/Ontopo page, no 2025-2026 source, no closure news found."
+  },
+  "n14133779244": {
+   "r": "closed",
+   "note": "Israel Hayom 2025-12-15: Barbahar at KKL park by Nes Harim junction closes on 2025-12-31 for ~1 year KKL renovation; owners to open 'Barbahar Yad Kennedy' at KKL Yad Kennedy around mid-Feb 2026 (no street address given). Match to catalog road 3877 near Nes Harim is my judgement. No confirmation found of the Yad Kennedy opening."
+  },
+  "n14274612790": {
+   "r": "none",
+   "note": "Undated listings only: d.co.il and gokosher name Bardak pizza bar at Keren HaYesod 38 (gokosher says Rabbanut Jerusalem kosher); itraveljerusalem undated; Time Out 2017 lists a different address (4 Beit Ya'akov). Own site habardak.co.il fetch blocked (permission not granted). No Tabit/Ontopo page found, no dated 2025-2026 source, no closure news."
+  },
+  "w565292432": {
+   "r": "none",
+   "note": "No reliable source found for a bar named Bar-Tuv in Har Tuv industrial zone; no own site, no Tabit/Ontopo, no news."
+  },
+  "n12958839688": {
+   "r": "none",
+   "note": "itraveljerusalem undated listing 'Georgie Pitta' at Hillel 8 (kosher without certificate, closed Shabbat); catalog address Mevo HaMatmid, so the branch match is unclear. Linked site cmsoftware.co.il/#/cards/georgie fetch blocked. No dated source, no Tabit/Ontopo page, no closure news."
+  },
+  "n12816126411": {
+   "r": "single",
+   "note": "ynetnews 2025-05-19 ice-cream article features Gelato Variegato in Jerusalem, with no address given. An aggregator (spinach.guide) lists it at Azza 29, which matches the catalog, but that is not an allowed source. Facebook page blocked by robots. No own site, no Tabit/Ontopo page, no closure news found."
+  },
+  "n536524554": {
+   "r": "none",
+   "note": "No source names a Japanika branch on Shlomtzion HaMalka. Jerusalem branches found in listings: Cinema City (itraveljerusalem) and 34 Derech Beit Lechem (Janglo, undated). Official branch list not found; easy.co.il fetch failed. No closure news for this branch."
+  },
+  "n5938041687": {
+   "r": "single",
+   "note": "GoJerusalem listing (updated 2025-11) shows Grand Cafe at Beit Lechem Rd 70, kosher; iTravelJerusalem listing undated. Catalog address Zerubavel differs (likely the corner, same Baka spot - judgement). Own site grand-cafe.ussl.co.il fetch blocked. No Tabit/Ontopo or closure news found."
+  },
+  "n14077444262": {
+   "r": "none",
+   "note": "Only directory listings (easy.co.il, failed to fetch) found; no own site, Tabit/Ontopo, guide or news confirming the Jaffa St branch."
+  },
+  "w175425604": {
+   "r": "none",
+   "note": "Domino's chain; official branch list dominos.co.il fetch blocked (permission). Searches found only Beit HaKerem/French Hill branch listings, nothing for Rivka St."
+  },
+  "n5815978897": {
+   "r": "none",
+   "note": "No reliable recent source for Doron falafel on Rachel Imenu; Kan article fetch failed; Mako article irrelevant. No closure news found."
+  },
+  "n2830888968": {
+   "r": "none",
+   "note": "No reliable source found for Oliver Twist bar at HaNevi'im 59 (searches returned only unrelated Oliver Twist results)."
+  },
+  "n13949932135": {
+   "r": "single",
+   "note": "EnjoyingIsrael lists Aldo German Colony at Emek Refaim 46 (kosher, dairy) with hours, no date (copyright 2018-2026). Wolt page shows 'Aldo HaMoshava' at Rachel Imenu 1 (corner of Emek Refaim) - not an allowed source, address variance judged same branch. Own site aldo.co.il not fetched."
+  },
+  "n5245552326": {
+   "r": "none",
+   "note": "Only a Wanderlog entry 'bar zabotinski' found; no own site, Tabit/Ontopo, guide or news."
+  },
+  "n14140335879": {
+   "r": "single",
+   "note": "GoJerusalem listing (updated 2025-11): HaTagine, 15 Yad Harutzim, Talpiot, Moroccan, kosher (no certificate named), $15-20. No own site/Tabit/Ontopo; no closure news found."
+  },
+  "n560354903": {
+   "r": "none",
+   "note": "Only Time Out Israel listing from 2017-07 (2 HaDekel St, off Mahane Yehuda); no recent sources, no Tabit/Ontopo, no closure news found"
+  },
+  "n563287145": {
+   "r": "none",
+   "note": "No Lebanese restaurant in Ein Karem found in guides/news; no Tabit/Ontopo; no closure news"
+  },
+  "n6247814285": {
+   "r": "none",
+   "note": "itraveljerusalem.com listing (undated) shows The Lebanese Restaurant, Kvish HaShalom 86 Abu Ghosh, 02-570-2397, non-kosher, opens 08:00; no dated 2025-2026 source, no Tabit/Ontopo, no closure news. Catalog says no. 88. tiuli page failed to load"
+  },
+  "n566600176": {
+   "r": "none",
+   "note": "Cafe Hillel chain; could not confirm a branch on Simcha Gafni St. Official site cafehillel.co.il fetch blocked (permission); no Tabit/Ontopo or news naming this branch"
+  },
+  "n2406673409": {
+   "r": "none",
+   "note": "No source found for a restaurant 'HaMotzi' at Mashiach Borochov 4 (Mekor Baruch); no Tabit/Ontopo, no closure news"
+  },
+  "n9138891145": {
+   "r": "none",
+   "note": "Generic name 'HaMazon' at road 3976 Mateh Yehuda; no identifiable source found"
+  },
+  "n2872794091": {
+   "r": "ok",
+   "note": "Own site ramakitchen.co.il live (about page, last modified 2024-05) naming Rama's Kitchen in Nataf; catalog only gives road 3978 Mateh Yehuda, Nataf match is judgement. Homepage fetch blocked; no hours/prices found; no Tabit/Ontopo; no closure news (only 2016 fire, reopened 2019 per ynet)"
+  },
+  "w921337131": {
+   "r": "none",
+   "note": "Likely the same Abu Ghosh Lebanese Restaurant as n6247814285 (itraveljerusalem gives Kvish HaShalom 86, not HaTamar); no dated recent source, no Tabit/Ontopo, no closure news"
+  },
+  "n1703978185": {
+   "r": "none",
+   "note": "Only an aggregator listing (evendo, Google-derived hours) names 'Trumpeldor Bar' at Shim'on Ben Shatakh 3; no own site, Tabit/Ontopo, news or closure report found."
+  },
+  "n560715182": {
+   "r": "none",
+   "note": "itraveljerusalem lists Hamarakia at Koresh 4 (undated, Facebook only); JPost soup articles are old; no Tabit/Ontopo, no recent dated source, no closure news found."
+  },
+  "n8990432917": {
+   "r": "none",
+   "note": "Sources give HaSadna at Hebron Rd 28 (adjacent to First Station; branch match is judgement). Time Out page dated 2016; enjoyingisrael lists site sdnrest.com, but fetching it was blocked (permission). Not on First Station's own restaurant list page 1. No Tabit/Ontopo found, no closure news found."
+  },
+  "n12957411124": {
+   "r": "none",
+   "note": "gokosher lists a kosher sushi place at Yoel Salomon 5 (Rabbanut Yerushalayim, undated); itraveljerusalem Sushiya/Hasushia pages point to Trumpeldor 1 (Bezalel branch), a different address. No own site for this branch, no Tabit/Ontopo, no dated recent source, no closure news."
+  },
+  "n3278413683": {
+   "r": "none",
+   "note": "Time Out 'Sira' at Ben Sira 7 dated 2017; itraveljerusalem lists Sira at Ben Sira 4 (undated, Facebook only). No recent source, no booking page, no closure news found."
+  },
+  "n562827260": {
+   "r": "none",
+   "note": "HappyCow (user-sourced, not an allowed source) says 'reported closed Feb 2023' at New Sport Center, Givat Ram; own site haivrit.co.il fetch blocked (permission). No news closure article found; worth retrying the site."
+  },
+  "n13057613011": {
+   "r": "none",
+   "note": "Shalom Falafel chain: enjoyingisrael lists branches (Bezalel 34, Shlomzion Hamalka 14, Haoman 16, Hebron 124, etc.) but none on Jaffa St; own site shalomfalafel.com fetch blocked, so the official branch list couldn't be checked."
+  },
+  "n14077448001": {
+   "r": "none",
+   "note": "Duplicate of n13057613011 (same name/address). Shalom Falafel branch list on enjoyingisrael shows no Jaffa St branch; own site shalomfalafel.com fetch blocked."
+  },
+  "n1676315927": {
+   "r": "none",
+   "note": "No source found for a Black Pearl bar at Jaffa 31; searches only returned a hotel of that name and unrelated bars; no Tabit/Ontopo page; no closure news"
+  },
+  "n561076327": {
+   "r": "none",
+   "note": "itraveljerusalem lists Hakaseta at 1 Yohanan Horkanos (undated, no status); Time Out Hebrew 2014 article on Horkanos street; Times of Israel 2026-07 says owner Goldberger has 3 pubs but names only HaTaklit; no recent source names Hakaseta; no Tabit/Ontopo; no closure news"
+  },
+  "n5245514221": {
+   "r": "none",
+   "note": "Time Out Israel listing (2017, 17 HaEgoz, tel 050-7247030, differs from catalog phone) and Time Out 2019 Mahane Yehuda bars list; itraveljerusalem undated; nothing from 2025-2026; no Tabit/Ontopo; no closure news"
+  },
+  "n636119348": {
+   "r": "none",
+   "note": "HaShamen is a shawarma chain (Wikipedia; official site hashamen.co.il). Official branch list hashamen.co.il/snifim/ blocked (permission not granted), easy.co.il failed; no source found confirming a Mevaseret Zion / HaHotzvim branch"
+  },
+  "n561076277": {
+   "r": "single",
+   "note": "Times of Israel 2026-07-18 profile of co-owner Avi Goldberger says HaTaklit was open on 2026-06-08, located in the Russian Compound (no street number; Heleni HaMalka is in the Russian Compound, so branch match is judgement). itraveljerusalem (undated) gives 7 Heleni Hamalka, daily 16:30-05:00 (single source, not used for oh). No own site, no Tabit/Ontopo, no closure news"
+  },
+  "n999467482": {
+   "r": "none",
+   "note": "No source found for a Vitamin cafe on Mazar Binyamin, Jerusalem (Hebrew and English searches); no Tabit/Ontopo; no closure news"
+  },
+  "n4684907543": {
+   "r": "none",
+   "note": "No source found for a Vitamin cafe on Shomrei HaHar, Jerusalem; no Tabit/Ontopo; no closure news"
+  },
+  "n5813254156": {
+   "r": "none",
+   "note": "Own site vaniglia.co.il blocked (permission not granted). First Station page (modified 2022-01) lists Vaniglia at First Station, daily 10:00-23:00; enjoyingisrael (undated) gives David Remez 9; Time Out page is the Tel Aviv Port branch. No recent (2025-2026) allowed source; Wolt pages exist but not used; no closure news"
   }
  }
 }
