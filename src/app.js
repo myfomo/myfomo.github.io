@@ -114,11 +114,11 @@ async function switchList(id){const l=lists.find(x=>x.id===id)||lists[0];if(!l)r
   acts=[];polls=[];events=[];gameActs=null;meta={id:null,special:[],diets:{}};renderBell();renderNotices();sb.rpc('touch_list',{lid:l.id}).then(()=>{},()=>{});await loadMembers();await loadAll();if(page==='list')animIn();loadActivity();loadPolls();loadEvents();loadGameActs()}
 
 /* ---------- list ---------- */
-function filtered(){const t=q.trim().toLowerCase();let list=rows.filter(r=>(!openF||(openState(r)||{}).open)&&(!likeF||iVoted(r))&&(!hhF||(hhInfo(r)||{}).now)&&(!tagF.size||[...tagF].every(t=>(r.tags||[]).includes(t)))&&(!nearF||(distKm(r)??99)<=3)&&(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||(sxIntent&&sxIntent.q===q.trim()?sxOwnFilter(r,sxIntent):[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t))));
+function filtered(){const t=q.trim().toLowerCase();const dF=drwF&&DRW[drwF];let list=rows.filter(r=>(!dF||dF[2](r))&&(!openF||(openState(r)||{}).open)&&(!likeF||iVoted(r))&&(!hhF||(hhInfo(r)||{}).now)&&(!tagF.size||[...tagF].every(t=>(r.tags||[]).includes(t)))&&(!nearF||(distKm(r)??99)<=3)&&(view==='all'||(view==='match'?isMatch(r):r.status===view))&&(!cuisF||r.cuisine===cuisF)&&(!t||(sxIntent&&sxIntent.q===q.trim()?sxOwnFilter(r,sxIntent):[r.name,r.city,r.address,r.cuisine,r.notes,r.recBy,...(r.tags||[]),...(r.dishes||[]).map(d=>d.name)].join(' ').toLowerCase().includes(t))));
   const s={recent:(a,b)=>(b.updatedAt||0)-(a.updatedAt||0),rating:(a,b)=>avg(b)-avg(a),visit:(a,b)=>lastVisit(b).localeCompare(lastVisit(a)),name:(a,b)=>String(a.name).localeCompare(String(b.name),'he'),near:(a,b)=>(distKm(a)??1e9)-(distKm(b)??1e9)}[sort]||((a,b)=>0);return list.sort(s)}
 function renderHead(){const been=rows.filter(r=>r.status==='been').length,want=rows.length-been,m=rows.filter(isMatch).length;
   $('#stats').innerHTML=loaded?`היינו ב־<b>${been}</b> · רוצים לנסות <b>${want}</b>${m?` · <b>${m}</b> ששנינו רוצים השבוע`:''}`:'טוען…';renderGreet()}
-function renderList(){if($('#fltBtn'))fltSync();document.querySelectorAll('.more-sen').forEach(x=>x.remove());setTimeout(fxChk,0);
+function renderList(){if($('#fltBtn'))fltSync();renderDrawers();document.querySelectorAll('.more-sen').forEach(x=>x.remove());setTimeout(fxChk,0);
   const cs=[...new Set(rows.map(r=>r.cuisine).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'he'));
   if(cuisF&&!cs.includes(cuisF))cuisF='';
   const hasHours=rows.some(r=>r.hours&&Object.keys(r.hours).length);
@@ -2057,6 +2057,21 @@ function sxpProfile(){const W={},best={};const add=(c,w)=>{if(c)W[c]=(W[c]||0)+w
   for(const r of rows){const a=avg(r);if(r.status==='been'&&a>=4){add(r.cuisine,a-3);if(!best[r.cuisine]||a>best[r.cuisine].a)best[r.cuisine]={a,n:r.name}}if(r.fav)add(r.cuisine,1);if(r.status!=='been')add(r.cuisine,.3)}
   const mine=(((meta||{}).tastes||{})[myId]||{}).c||[];for(const c of mine)add(c,1.5);const mx=Math.max(1,...Object.values(W));for(const k in W)W[k]=2*W[k]/mx;return {W,best,mine:new Set(mine)}}
 
+/* ---- v56 demo: theme drawers on the home screen (only at /preview-drawers/ or with rs-drw) ---- */
+let drwF='';
+const DRW_ON=()=>/preview-drawers/.test(location.pathname)||!!lsGet('rs-drw',0);
+const DRW={
+  fri:['🥐','בראנץ׳ לשישי',r=>openAt(r.hours,5,630)===true||/בראנץ|קפה/.test(r.cuisine||'')],
+  now:['🟢','פתוח עכשיו וקרוב',r=>(openState(r)||{}).open===true&&(!myLoc||(distKm(r)??99)<=2.5)],
+  date:['🍷','לדייט',r=>(r.tags||[]).includes('דייט')||/בר יין|בר קוקטיילים|מסעדת שף/.test(r.cuisine||'')],
+  all:['🎯','כולם רוצים',r=>r.status!=='been'&&voters(r).length>=Math.max(2,Math.ceil(Object.keys(names||{}).length/2))],
+  top:['⭐','הכי אהבנו',r=>r.status==='been'&&avg(r)>=4.5],
+  wait:['⏳','מחכים הכי הרבה',r=>r.status!=='been'&&Date.now()-(r.createdAt||r.updatedAt||Date.now())>90*864e5]};
+function renderDrawers(){const el=$('#drw');if(!el)return;if(!DRW_ON()||!rows.length){el.hidden=true;return}
+  const L=Object.entries(DRW).map(([k,[i,t,f]])=>[k,i,t,rows.filter(f).length]).filter(x=>x[3]>=2||x[0]===drwF);
+  if(!L.length){el.hidden=true;return}el.hidden=false;
+  el.innerHTML=L.map(([k,i,t,n])=>`<button type="button" class="drw-c" data-drw="${k}" aria-pressed="${drwF===k}"><span class="drw-i" aria-hidden="true">${i}</span><b>${t}</b><small>${n} מקומות</small></button>`).join('')}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-drw]');if(!b)return;drwF=drwF===b.dataset.drw?'':b.dataset.drw;renderList();if(drwF)$('#grid').scrollIntoView({behavior:'smooth',block:'start'})});
 /* ---- v56: who's coming / table booked / quick rating / closed reports ---- */
 const RSVP=[['yes','✅ בא/ה'],['maybe','🤔 אולי'],['no','❌ לא']];
 function rsvpOf(r,v){const x=((r.visits||[])[v.i]||{});return x.rsvp||{}}

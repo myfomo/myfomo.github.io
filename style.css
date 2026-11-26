@@ -1151,3 +1151,9 @@ body.sxp-on{overflow:hidden}
 .rsvp .rsvp-seg button{min-height:42px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);font:700 14.5px Assistant,sans-serif;color:var(--ink)}
 .rsvp .rsvp-seg button[aria-pressed="true"]{background:var(--grad);color:#fff;border-color:transparent}
 .notice.book{flex-wrap:wrap}.notice.book .nbtns{flex-basis:100%;justify-content:flex-start;padding-inline-start:52px}
+/* theme drawers (demo) */
+.drw{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(128px,36%);gap:10px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory;margin:0 -16px 14px;padding:2px 16px 6px}
+.drw::-webkit-scrollbar{display:none}.drw[hidden]{display:none}
+.drw-c{scroll-snap-align:start;display:grid;gap:2px;justify-items:start;text-align:start;border:0;border-radius:18px;padding:12px;background:var(--card);box-shadow:var(--shadow-sm);cursor:pointer;color:var(--ink);font:inherit;transition:transform .2s var(--spring)}
+.drw-c:active{transform:scale(.96)}.drw-i{font-size:24px;line-height:1}.drw-c b{font:800 15px Rubik,sans-serif}.drw-c small{color:var(--mute);font-size:12.5px;font-weight:700}
+.drw-c[aria-pressed="true"]{background:var(--grad);color:#fff;box-shadow:0 8px 20px #ff3d6e33}.drw-c[aria-pressed="true"] small{color:#fff}
