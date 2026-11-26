@@ -36,6 +36,20 @@ jobs:
           if old and new < 0.85 * old: raise SystemExit("refetch looks incomplete; keeping the current catalog")
           shutil.copy("/tmp/new.json", "data/places-tlv.json")
           PY
+      - name: other cities (OSM only; refreshed monthly or when missing)
+        if: ${{ hashFiles('data/places-jlm.json') == '' || github.event_name == 'schedule' || inputs.refetch || contains(github.event.head_commit.message, 'CITIES') }}
+        run: |
+          for c in "jlm|31.72,35.13,31.84,35.26|ירושלים" "hfa|32.76,34.95,32.84,35.07|חיפה" "bsh|31.21,34.74,31.29,34.84|באר שבע"; do
+            IFS='|' read k b n <<< "$c"
+            python3 tools/osm_fetch.py "$b" && python3 tools/osm_build.py osm_places.json /tmp/new-$k.json "$n" && python3 - "$k" <<'PY'
+          import json, os, shutil, sys
+          k = sys.argv[1]; new = len(json.load(open(f"/tmp/new-{k}.json"))["places"])
+          old = len(json.load(open(f"data/places-{k}.json"))["places"]) if os.path.exists(f"data/places-{k}.json") else 0
+          print(k, "old", old, "new", new)
+          if new >= 50 and (not old or new >= 0.85 * old): shutil.copy(f"/tmp/new-{k}.json", f"data/places-{k}.json")
+          PY
+            sleep 20
+          done
       - run: python3 tools/osm_enrich.py data/places-tlv.json data/enrich-report-tlv.json
       - run: python3 tools/site_check.py data/places-tlv.json data/site-check-tlv.json
       - run: python3 tools/osm_attrs.py data/places-tlv.json data/osm-attrs-tlv.json
@@ -52,10 +66,10 @@ jobs:
       - name: publish data to the live site (data only, no app update)
         env: {GH_TOKEN: "${{ github.token }}"}
         run: |
-          cp data/places-tlv.json /tmp/places.json
+          mkdir -p /tmp/pub && cp data/places-*.json /tmp/pub/
           for b in main next-release; do
             git fetch -q origin $b && git checkout -q -B $b origin/$b
-            cp /tmp/places.json data/places-tlv.json
-            git add data/places-tlv.json && git commit -qm "Catalog data update (no app update)" && git push -q origin $b || echo "$b: no change"
+            cp /tmp/pub/places-*.json data/
+            git add data/places-*.json && git commit -qm "Catalog data update (no app update)" && git push -q origin $b || echo "$b: no change"
           done
           gh workflow run deploy.yml --ref main
