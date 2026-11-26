@@ -36,10 +36,13 @@ jobs:
           if old and new < 0.85 * old: raise SystemExit("refetch looks incomplete; keeping the current catalog")
           shutil.copy("/tmp/new.json", "data/places-tlv.json")
           PY
+      - run: python3 tools/manual_add.py data/places-tlv.json tools/manual-tlv.json
       - run: python3 tools/osm_enrich.py data/places-tlv.json data/enrich-report-tlv.json
       - run: python3 tools/site_check.py data/places-tlv.json data/site-check-tlv.json
+      - run: python3 tools/osm_attrs.py data/places-tlv.json data/osm-attrs-tlv.json
       - run: python3 tools/chains.py data/places-tlv.json data/chains-report-tlv.json
       - run: python3 tools/chefs.py data/places-tlv.json tools/chefs-tlv.json
+      - run: python3 tools/address_fix.py data/places-tlv.json tools/address-fixes-tlv.json data/address-check-tlv.json
       - run: python3 tools/apply_status.py data/places-tlv.json tools/closed-tlv.json data/site-check-tlv.json
       - name: commit to osm-check
         run: |
