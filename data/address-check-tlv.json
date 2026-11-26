@@ -25,8 +25,8 @@
    "name": "אלברט 1943",
    "old": "מל\"ן",
    "new": "אלנבי 42",
-   "status": "blocked",
-   "why": "another place is within 12 m: מסעדת לונג סנג (n6759353882)"
+   "status": "applied",
+   "moved_m": 0
   },
   "n6312684887": {
    "name": "Ramesses",
@@ -149,10 +149,10 @@
   },
   "n10784964980": {
    "name": "ארקפה",
-   "old": "ויצמן",
+   "old": "ויצמן 4",
    "new": "ויצמן 4",
    "status": "applied",
-   "moved_m": 5
+   "moved_m": 0
   },
   "n5182249023": {
    "name": "המלביה",
@@ -221,8 +221,8 @@
    "name": "Porter & Sons",
    "old": "הארבעה",
    "new": "הארבעה 14",
-   "status": "blocked",
-   "why": "another place is within 12 m: Mike's Place (n5703238537)"
+   "status": "applied",
+   "moved_m": 0
   },
   "n705556743": {
    "name": "מציצים",
@@ -233,17 +233,17 @@
   },
   "n12116648772": {
    "name": "ג'אז קיסה",
-   "old": "443",
+   "old": "דרך יפו 9",
    "new": "דרך יפו 9",
    "status": "applied",
-   "moved_m": 1009
+   "moved_m": 0
   },
   "n6469411087": {
-   "name": "לנדוור",
-   "old": "גשר הקריה",
+   "name": "לנדוור עזריאלי תל אביב",
+   "old": "דרך מנחם בגין 132",
    "new": "דרך מנחם בגין 132",
    "status": "applied",
-   "moved_m": 1257
+   "moved_m": 0
   },
   "n445977119": {
    "name": "מקדונלד'ס",
@@ -263,8 +263,8 @@
    "name": "מקדונלד'ס",
    "old": "שדרות רוטשילד",
    "new": "שדרות רוטשילד 33",
-   "status": "blocked",
-   "why": "another place is within 12 m: Vong (n4088125065)"
+   "status": "applied",
+   "moved_m": 0
   },
   "n4112078463": {
    "name": "מקדונלד'ס",
@@ -343,9 +343,8 @@
    "why": "id not in catalog"
   },
   "n4591383346": {
-   "status": "merged",
-   "into": "n4422814389",
-   "name": "טאקריה"
+   "status": "skipped",
+   "why": "id not in catalog"
   }
  }
 }
