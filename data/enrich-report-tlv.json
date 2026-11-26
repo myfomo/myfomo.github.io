@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 511,
- "site_jsonld": 58,
+ "site_checked": 518,
+ "site_jsonld": 59,
  "site_match": 17,
- "site_reject": 41,
+ "site_reject": 42,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -337,6 +337,12 @@
    "why": "branch/name not confirmed"
   },
   {
+   "id": "n9312382294",
+   "n": "ג'ונו",
+   "w": "https://junowine.co.il",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n9889139101",
    "n": "Lily Rose",
    "w": "https://www.lilyrosebar.com/",
@@ -493,15 +499,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 93,
+ "phone_confirmed": 94,
  "phone_multi_skipped": 25,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "408 (31%)",
-  "phone": "433 (33%)",
-  "website": "543 (41%)",
+  "hours": "414 (31%)",
+  "phone": "437 (33%)",
+  "website": "551 (42%)",
   "cuisine": "977 (74%)",
-  "extra_names": "760 (58%)"
+  "extra_names": "762 (58%)"
  },
  "conflicts_n": 33
 }

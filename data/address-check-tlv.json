@@ -19,7 +19,7 @@
    "old": "ראול ולנברג 24",
    "new": "דרך מנחם בגין 144",
    "status": "blocked",
-   "why": "address already used by: מוזס (n9946189682, מנחם בגין 144א), ארקפה (c-ארקפה-דרךמנחםבגין144, דרך מנחם בגין 144)"
+   "why": "geocoded point [32.060498, 34.775367] is 8274 m from the old point"
   },
   "n11345119701": {
    "name": "אלברט 1943",
@@ -50,7 +50,7 @@
    "moved_m": 0
   },
   "n2249328556": {
-   "name": "פיקוק",
+   "name": "Peacock Bar TLV",
    "old": "מרמורק 14",
    "new": "מרמורק 14",
    "status": "applied",
@@ -151,8 +151,8 @@
    "name": "ארקפה",
    "old": "ויצמן",
    "new": "ויצמן 4",
-   "status": "blocked",
-   "why": "address already used by: סוסו ובניו (n6179097911, שדרות ויצמן 4)"
+   "status": "applied",
+   "moved_m": 5
   },
   "n5182249023": {
    "name": "המלביה",
@@ -235,15 +235,15 @@
    "name": "ג'אז קיסה",
    "old": "443",
    "new": "דרך יפו 9",
-   "status": "blocked",
-   "why": "address already used by: תדר (n9514689217, יפו 9), מיראז' (n12117313515, יפו 9)"
+   "status": "applied",
+   "moved_m": 1009
   },
   "n6469411087": {
    "name": "לנדוור",
    "old": "גשר הקריה",
    "new": "דרך מנחם בגין 132",
-   "status": "blocked",
-   "why": "address already used by: קפה קפה (n6469411088, מנחם בגין 132), ארקפה (c-ארקפה-דרךמנחםבגין132, דרך מנחם בגין 132)"
+   "status": "applied",
+   "moved_m": 1257
   },
   "n445977119": {
    "name": "מקדונלד'ס",
@@ -257,7 +257,7 @@
    "old": "אהרון בקר",
    "new": "אהרון בקר 8",
    "status": "blocked",
-   "why": "address already used by: ארקפה (c-ארקפה-אהרוןבקר8, אהרון בקר 8)"
+   "why": "another place is within 12 m: ארומה (n1102234655)"
   },
   "n1989338513": {
    "name": "מקדונלד'ס",
@@ -273,47 +273,40 @@
    "status": "applied",
    "moved_m": 0
   },
-  "n4591383346": {
-   "name": "טאקריה",
-   "old": "Levontin St 15",
-   "new": "לבונטין 28",
-   "status": "blocked",
-   "why": "address already used by: Taqueria (n4422814389, לבונטין 28)"
-  },
   "n10951185355": {
    "name": "מרלן",
-   "old": "מלכי ישראל 8",
+   "old": "שדרות בן ציון 2",
    "new": "שדרות בן ציון 2",
    "status": "applied",
-   "moved_m": 785
+   "moved_m": 0
   },
   "n2264923571": {
    "name": "אנדרי",
-   "old": "נבטים",
+   "old": "יפת 138",
    "new": "יפת 138",
    "status": "applied",
-   "moved_m": 7
+   "moved_m": 0
   },
   "n11513852130": {
-   "name": "Cafe Chablis",
-   "old": "אבן גבירול",
+   "name": "קפה שאבלי",
+   "old": "אבן גבירול 48",
    "new": "אבן גבירול 48",
    "status": "applied",
-   "moved_m": 2
+   "moved_m": 0
   },
   "n2079008750": {
    "name": "Ada Hanina Cafe",
-   "old": "רבי אדא 2",
+   "old": "רבי חנינא 9",
    "new": "רבי חנינא 9",
    "status": "applied",
-   "moved_m": 12
+   "moved_m": 0
   },
   "n9312382294": {
    "name": "ג'ונו",
-   "old": "יהודה המכבי",
+   "old": "דה האז 1",
    "new": "דה האז 1",
    "status": "applied",
-   "moved_m": 25
+   "moved_m": 0
   }
  },
  "dup": {
@@ -348,6 +341,11 @@
   "n7565262760": {
    "status": "skipped",
    "why": "id not in catalog"
+  },
+  "n4591383346": {
+   "status": "merged",
+   "into": "n4422814389",
+   "name": "טאקריה"
   }
  }
 }
