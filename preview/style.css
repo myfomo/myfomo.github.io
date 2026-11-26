@@ -1151,3 +1151,17 @@ body.sxp-on{overflow:hidden}
 .rsvp .rsvp-seg button{min-height:42px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);font:700 14.5px Assistant,sans-serif;color:var(--ink)}
 .rsvp .rsvp-seg button[aria-pressed="true"]{background:var(--grad);color:#fff;border-color:transparent}
 .notice.book{flex-wrap:wrap}.notice.book .nbtns{flex-basis:100%;justify-content:flex-start;padding-inline-start:52px}
+/* v56: provenance, moved, duplicates, companions, offline, pick */
+.prov{margin:8px 0 0;font-size:12.5px;color:var(--mute);font-weight:700}
+.gone-sec.mv{background:color-mix(in srgb,var(--brass) 12%,var(--card))}
+.dupw:empty{display:none}.dupw{margin:6px 0 2px;padding:8px 12px;border-radius:12px;background:#FFF4D6;color:#5a4300;font-size:14px}
+@media (prefers-color-scheme:dark){.dupw{background:#3a2e14;color:#ffe3a3}}
+.wchips{display:flex;flex-wrap:wrap;gap:6px;flex:1 1 100%;grid-column:1/-1}
+.offbar{position:fixed;inset-inline:12px;bottom:calc(92px + env(safe-area-inset-bottom));z-index:30;display:grid;gap:2px;padding:12px 14px;border-radius:16px;background:#2A1630;color:#fff;box-shadow:0 12px 30px #2a163055;font-size:13.5px;animation:sxpIn .3s var(--ease)}
+.offbar b{font:800 15px Rubik,sans-serif}.offbar span{opacity:.88}
+.pick .nm.spin{filter:blur(.4px);opacity:.85}
+.pick .nm.tick{animation:pkTick .12s ease-out}
+.pick .nm.won{animation:pkWon .6s var(--spring)}
+@keyframes pkTick{from{transform:translateY(-30%);opacity:.3}to{transform:none;opacity:1}}
+@keyframes pkWon{0%{transform:scale(.7);opacity:.4}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.pick .nm.tick,.pick .nm.won{animation:none}}
