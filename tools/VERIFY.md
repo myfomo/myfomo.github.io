@@ -66,6 +66,18 @@ The push runs the `osm-check` workflow, which applies the results and publishes 
 Short summary to the user: how many checked / ok / closed / no source / conflict, places left in the queue,
 and the names of the places found closed.
 
+Then a section **"מחכה לאישור שלך"** (user request 2026-11-26). Pull first, so `data/address-check-tlv.json` reflects the latest workflow run.
+List every fix there that is not `applied`, grouped:
+- (a) **shared address**: same street + number as another place (mall, complex). Needs the user's `shared_ok`.
+- (b) **another place within 12 m**: these are separate places with their own addresses. On 2026-11-26 the user declined `shared_ok`
+  for Albert 1943 / Long Sang, Porter & Sons / Mike's Place and McDonald's Rothschild 33 / Vong. Do not list these again; list only new ones.
+- (c) **technical blocks** (no coordinates found, geocoded point too far): need manual coordinates (`la`/`lo`).
+- (d) **suspected duplicates**: a fix blocked because an entry with the same name already stands at that address. Propose a `dup` merge.
+
+Also list places from this run whose branch match rests on judgement rather than a source, and places that could not be checked
+because a site was blocked. For each item give the name, old → new address and the reason.
+Never add `shared_ok` or a `dup` merge without the user's explicit approval in a live reply.
+
 ## Phase 2 — when `order` is used up
 Re-check, 50 per run, the ids in `done` with `r` = `conflict` or `single` (then `none`), and catalog places that are
 active but missing hours (`oh`), phone (`p`) or website (`w`). Look only for what is missing and resolve conflicts by
