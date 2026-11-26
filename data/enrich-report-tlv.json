@@ -493,14 +493,14 @@
   }
  ],
  "phone_confirmed": 92,
- "phone_multi_skipped": 21,
+ "phone_multi_skipped": 20,
  "coverage_after": {
-  "address": "1318 (100%)",
+  "address": "1319 (100%)",
   "hours": "418 (32%)",
   "phone": "441 (33%)",
   "website": "554 (42%)",
-  "cuisine": "977 (74%)",
-  "extra_names": "763 (58%)"
+  "cuisine": "978 (74%)",
+  "extra_names": "764 (58%)"
  },
  "conflicts_n": 32
 }
