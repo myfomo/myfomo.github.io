@@ -2379,15 +2379,13 @@
   },
   "n12825521124": {
    "n": "ריבה רנו",
-   "ok": "2026-08",
+   "ok": "2026-11",
    "cu": "קינוחים",
    "pr": 1,
    "src": [
-    "https://timeout.co.il/%d7%94%d7%92%d7%9c%d7%99%d7%93%d7%a8%d7%99%d7%95%d7%aa-%d7%94%d7%9b%d7%99-%d7%98%d7%95%d7%91%d7%95%d7%aa/",
-    "https://timeout.co.il/rivareno/",
-    "https://www.mako.co.il/news-money/consumer/Article-28a2845a0724691027.htm",
-    "https://www.ynetnews.com/food/article/rjjhok00zxx"
-   ]
+    "https://www.rivareno.com/gelaterie"
+   ],
+   "w": "https://www.rivareno.com/gelaterie"
   },
   "n11088945317": {
    "n": "לחם ארז",
@@ -2573,16 +2571,24 @@
    "ok": "2026-11",
    "cu": "המבורגר",
    "src": [
-    "https://wolt.com/en/isr/tel-aviv/restaurant/burgeranch-azrieli-tlv"
-   ]
+    "https://app.burgeranch.co.il/en/branch/%D7%94%D7%A9%D7%9C%D7%95%D7%9D"
+   ],
+   "nm": "בורגראנץ' קניון עזריאלי",
+   "oh": "Su-Th 11:00-22:00; Fr 11:00-16:00; Sa off",
+   "p": "1-700-700-600",
+   "w": "https://app.burgeranch.co.il/en/branch/%D7%94%D7%A9%D7%9C%D7%95%D7%9D"
   },
   "n5596945445": {
    "n": "בורגראנץ׳",
    "ok": "2026-11",
    "cu": "המבורגר",
    "src": [
-    "https://wolt.com/en/isr/tel-aviv/restaurant/burgeranch-menora"
-   ]
+    "https://app.burgeranch.co.il/en/branch/%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91-%D7%94%D7%99%D7%9B%D7%9C-%D7%9E%D7%A0%D7%95%D7%A8%D7%94"
+   ],
+   "nm": "בורגראנץ' היכל מנורה",
+   "oh": "Su-Th 11:00-22:00; Fr 11:00-15:00",
+   "p": "1-700-700-600",
+   "w": "https://app.burgeranch.co.il/en/branch/%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91-%D7%94%D7%99%D7%9B%D7%9C-%D7%9E%D7%A0%D7%95%D7%A8%D7%94"
   },
   "n9190133517": {
    "n": "בורגרים",
@@ -2927,8 +2933,8 @@
    "cu": "בשרים",
    "k": 1,
    "src": [
-    "https://timeout.co.il/the-best-kosher-restaurants-in-tel-aviv",
-    "https://timeout.co.il/מיתוס-ביקורת/"
+    "https://timeout.co.il/the-best-kosher-restaurants-in-tel-aviv/",
+    "https://www.isrotel.com/main/kosher-restaurants-tel-aviv"
    ]
   },
   "n6507147923": {
@@ -3027,11 +3033,12 @@
   },
   "n1207157736": {
    "n": "פיש מרקט מבית מיטוס",
-   "ok": "2025-11",
+   "ok": "2026-01",
    "k": 1,
    "src": [
-    "https://timeout.co.il/the-best-kosher-restaurants-in-tel-aviv/"
-   ]
+    "https://timeout.co.il/the-best-kosher-restaurants-in-tel-aviv"
+   ],
+   "cu": "דגים ופירות ים"
   },
   "n12104156451": {
    "n": "שמעיה",
@@ -3325,6 +3332,35 @@
    "bk": "https://ontopo.co.il/parderriere",
    "src": [
     "https://parderriere.co.il"
+   ]
+  },
+  "n11085880105": {
+   "n": "Keton",
+   "ok": "2026-11",
+   "oh": "Su-Fr 12:00-21:30; Sa 12:00-17:00",
+   "p": "03-5233679",
+   "w": "https://keton.co.il",
+   "cu": "אחר",
+   "src": [
+    "https://keton.co.il"
+   ]
+  },
+  "n777401729": {
+   "n": "תוצרת הארץ",
+   "ok": "2025-03",
+   "cu": "קפה ובראנץ'",
+   "src": [
+    "https://timeout.co.il/העיר-שלנו-בתי-קפה-1811/"
+   ]
+  },
+  "n14066191075": {
+   "n": "Riva Reno",
+   "ok": "2026-11",
+   "cu": "קינוחים",
+   "p": "+972 53-385-7955",
+   "w": "https://www.rivareno.com/gelaterie",
+   "src": [
+    "https://www.rivareno.com/gelaterie"
    ]
   }
  }

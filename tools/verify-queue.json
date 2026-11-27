@@ -1417,7 +1417,7 @@
    "note": "only an aggregator says closed",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Only undated listings confirm the address: 2eat.co.il (106 Hayarkon at Frishman, 03-5246837) and itraveltelaviv. No recent dated source, no Tabit/Ontopo page, no own site, and no dated closure article."
+   "note2": "Re-check: 2eat.co.il now opened, page eng/buccaccio lists 106 Hayarkon & Frishman, 03-5246837, hours, no date stamps, no booking link (undated listing, does not count). No Tabit/Ontopo, no own site, no dated news, no closure article found."
   },
   "n2078990448": {
    "r": "none",
@@ -1765,9 +1765,9 @@
   },
   "n11085880105": {
    "r": "none",
-   "r2": "none",
+   "r2": "ok",
    "d2": "2026-11-27",
-   "note2": "Own site keton.co.il fetch blocked again (permission not answered). Only Time Out (2017), asif.org, Tablet, undated listings; no Tabit/Ontopo; no closure news; no 2025-2026 source."
+   "note2": "Own site keton.co.il now opens and is live: Keton, Dizengoff 145, Tel Aviv, 03-523-3679, hours Su-Fr 12:00-21:30, Sa 12:00-17:00 (site lists Sa twice), nav has a Rosh Hashanah '26 menu link. Catalog has only 'Dizengoff', matched. No Tabit/Ontopo; no closure news."
   },
   "n5181530015": {
    "r": "none",
@@ -1840,7 +1840,7 @@
    "r": "none",
    "r2": "single",
    "d2": "2026-11-27",
-   "note2": "Official address is Weizmann 2 (Amot Investments Tower, at the corner of Shaul HaMelech), catalog has only 'Shaul HaMelech', so the branch match is my judgement. Time Out kosher list 2025-11 (updated 2026-01) names Mythos Grill Bar, Weizmann 2, Tel Aviv Rabbinate kosher. Time Out review 2022-02 (main course e.g. sirloin 189). gokosher directory updated 2025-03 (does not count). No Tabit/Ontopo found; no closure news."
+   "note2": "Time Out best kosher restaurants in TLV (published 2025-11-04, modified 2026-01-01) lists Mythos Grill Bar, Weizmann 2, Tel Aviv Rabbinate kosher. Isrotel '5 Best Kosher Restaurants in Tel Aviv - 2025 Guide' lists Meatos first (no address; date only in title). gokosher (now opened) lists Weizmann 2, Amot Investments Tower, undated. Branch match is my judgement: catalog says Shaul HaMelech, official address is Weizmann 2 at the corner. Ok depends on the Isrotel page as the second source. No Tabit/Ontopo; no closure news. (single: branch match by judgement)"
   },
   "n7167094871": {
    "r": "conflict",
@@ -1982,9 +1982,9 @@
   },
   "n12840680501": {
    "r": "none",
-   "r2": "none",
+   "r2": "conflict",
    "d2": "2026-11-27",
-   "note2": "Port 19 is a burger chain; Time Out EN (2017) lists Shlomo HaMelech 2, and atly lists Hashmonaim and Shlomo HaMelech branches. No source names a Weizmann Blvd branch. Time Out HE 2024-08 confirms the chain operates and links port-19.co.il, but that fetch was refused, so the branch list is unverified. No closure news."
+   "note2": "Official branch list on port19.co.il (now opened) names TA branches Herzl 20, HaHashmonaim 95, Shlomo HaMelech 2 (kosher), plus Rishon, and Ramat HaSharon Weizmann 4 + Sokolov 111. No Weizmann Blvd Tel Aviv branch: the catalog location may be a confusion with Weizmann 4 in Ramat HaSharon. The chain operates (Time Out 2024-08). No closure news for a TA Weizmann branch."
   },
   "n2672314363": {
    "r": "none",
@@ -2243,13 +2243,13 @@
    "r": "none",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "No own site, booking page or dated source found for Continental halls at HaRav Ben Yaakov 17; only b144 directories and a gokosher 'Concord Events Center' listing (undated)"
+   "note2": "Re-check: searches for Continental halls at HaRav Ben Yaakov 17 return only unrelated venues (Heichal HaTarbut etc.). The gokosher 'Concord Events Center' listing is in Bnei Brak, so it does not match. No own site, booking page, dated source or closure news."
   },
   "n13265255753": {
    "r": "none",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Only 'Concord Tower' real-estate news and an undated gokosher listing; no dated source on the hall operating or closing; bhol article fetch failed"
+   "note2": "Re-check: gokosher (now opened) 'Concord Events Center' s98668 is located in Bnei Brak (address hidden, updated 2025-06, directory, does not count), not Tel Aviv/Portzei Kele Akko. No own site, no dated news on the hall operating or closing."
   },
   "n12301597873": {
    "r": "none",
@@ -2969,7 +2969,7 @@
    "note": "Only undated directories (gokosher, eatintlv)",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Re-check: still only undated directories/aggregators (gokosher, wanderlog, itraveltelaviv, totallyjewishtravel); no Tabit/Ontopo page, no dated news either operating or closed."
+   "note2": "Re-check: gokosher (now opened) lists Maganda, Rabbi Meir 26, kosher, but gives no certifier and no date. Otherwise only undated listings (wanderlog, airbnb, totallyjewishtravel, itraveltelaviv) and a 2007 blog. No Tabit/Ontopo, no dated news either way."
   },
   "n381410923": {
    "r": "none",
@@ -3089,7 +3089,7 @@
    "note": "Only undated directories HaYarkon 83",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Re-check: Cafe Masada HaYarkon 83 only in 2021 blog (telavivarchitecture.com) and undated 2eat listing (03-5103353); no 2025-26 source, no Tabit/Ontopo, no closure news"
+   "note2": "Re-check: 2eat.co.il (now opened) cafe-metzada lists 83 Hayarkon, 03-5103353, open 24h, reservation form, no date stamps (undated listing). Also the 2021 telavivarchitecture blog and an undated enjoyingisrael listing. Not in the Time Out kosher list 2025-11. No Tabit/Ontopo, no closure news."
   },
   "n705556743": {
    "r": "ok",
@@ -3311,7 +3311,7 @@
    "note": "Own site failed; 2eat undated; Time Out 2015 only",
    "r2": "single",
    "d2": "2026-11-27",
-   "note2": "Own site fishmarket-tlv.co.il fetch not permitted (blocked). Time Out 'best kosher restaurants in Tel Aviv' 2025-11-04 (updated 2026-01) lists Fish Market, Shaul HaMelech 33, Tel Aviv Rabbinate kosher, described as veteran meat-kosher restaurant with fish name. No Tabit/Ontopo found; no closure news."
+   "note2": "Own site fishmarket-tlv.co.il still fails to load (client error). Time Out 'best kosher restaurants in Tel Aviv' (2025-11-04, updated 2026-01) lists Fish Market, Shaul HaMelech 33, kosher under the Tel Aviv Rabbinate, with a meat menu. The 2eat listing is undated and Time Out 2015 is old. No Tabit/Ontopo page, no closure news."
   },
   "n10549077967": {
    "r": "none",
@@ -3987,7 +3987,7 @@
    "note": "Time Out 2016 only",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Own site breakfast-milk.com fetch blocked (permission not answered). Tickchak 2026-06 event is on Rothschild Blvd with no number; it mentions Breakfast Club only in the artist's bio. ra.co was blocked. Time Out 2026-08 says Clavis Club at Rothschild 6 closed and doesn't mention Breakfast. No 2025-2026 source shows Breakfast Club operating."
+   "note2": "Own site breakfast-milk.com could not be read (robots.txt unreachable). The only listing found is Time Out English (2017, Rothschild 6). No 2025-2026 source shows it operating. No dated closure article (Time Out 2026-08 mentions only that Clavis at Rothschild 6 closed)."
   },
   "n721910276": {
    "r": "none",
@@ -5327,7 +5327,10 @@
   },
   "n9667740517": {
    "r": "none",
-   "note": "Own site yonita.click2eat.co.il unreachable; only Time Out 2017 (HaShomer 7) and undated 2eat listing; no Tabit/Ontopo, no closure news; no recent source"
+   "note": "Own site yonita.click2eat.co.il unreachable; only Time Out 2017 (HaShomer 7) and undated 2eat listing; no Tabit/Ontopo, no closure news; no recent source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Own site yonita.click2eat.co.il still fails (client error). Searches found no recent source, no Tabit/Ontopo page and no closure news. Only Time Out 2017 and an undated 2eat listing."
   },
   "n10118353954": {
    "r": "none",
@@ -5929,8 +5932,8 @@
    "r": "single",
    "note": "https://timeout.co.il/העיר-שלנו-בתי-קפה-1811/ (Time Out 2024-11, mod 2025-03: legendary cafe run by Michel Garcia, listed at Kikar Masaryk 12 - next to catalog coords on Mane St). No second recent source, no Tabit/Ontopo, no closure news.",
    "r2": "single",
-   "note2": "Re-check: still only https://timeout.co.il/העיר-שלנו-בתי-קפה-1811/ (Time Out 2024-11, mod 2025-03, Kikar Masaryk 12 near catalog point). Searches found no own site, no Tabit/Ontopo, no second recent source (Time Out 2025-09 cafe guide does not list it), no closure news.",
-   "d2": "2026-11-25"
+   "note2": "Still only Time Out 2024-11 (modified 2025-03): https://timeout.co.il/העיר-שלנו-בתי-קפה-1811/ . The other Time Out pages found are 2014 and 2017/2019. No own site, no Tabit/Ontopo, no closure news.",
+   "d2": "2026-11-27"
   },
   "n5325561830": {
    "r": "none",
@@ -6148,7 +6151,10 @@
   },
   "n6469411085": {
    "r": "none",
-   "note": "New Deli official site new-deli.co.il now redirects to an unrelated page; Wolt brand lists only Jerusalem branches; no source for a Gesher HaKirya branch and no closure news (absence not proof of closure)."
+   "note": "New Deli official site new-deli.co.il now redirects to an unrelated page; Wolt brand lists only Jerusalem branches; no source for a Gesher HaKirya branch and no closure news (absence not proof of closure).",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No source for a New Deli branch at Gesher HaKirya. The easy.co.il list failed to load, and the Wolt brand page (not an allowed source) shows Jerusalem only. No Tabit/Ontopo, no closure news."
   },
   "n11711437812": {
    "r": "none",
@@ -6186,7 +6192,7 @@
    "r": "single",
    "note": "Time Out 2025-08-20 says chain holds branches on Herzl St and Givatayim: https://timeout.co.il/%D7%A4%D7%A8%D7%99%D7%96-%D7%98%D7%A7%D7%A1%D7%A1-%D7%94%D7%99%D7%9B%D7%9C-%D7%9E%D7%A0%D7%95%D7%A8%D7%94/ ; Time Out 2023-04 opening at Herzl 4; own site fetch blocked; no Tabit/Ontopo; no closure news",
    "r2": "conflict",
-   "note2": "Own site paristexasil.co.il (both /תל-אביב and branches page) permission not answered again, so not re-checked; earlier check of branches page listed no Tel Aviv/Herzl 4 branch while Time Out 2025-08-20 said chain holds Herzl branch; no closure article found",
+   "note2": "Own site paristexasil.co.il/תל-אביב fails (client error). The homepage loaded but shows no branch list, only phone 03-7506070. Time Out topic page lists articles through 2025-08-27 (Menora arena kiosk) and says nothing about a Herzl closure. An earlier check of the branches page did not list Herzl 4, while Time Out 2025-08-20 said the chain has a Herzl branch. Not resolved.",
    "d2": "2026-11-27"
   },
   "n1308842264": {
@@ -6295,7 +6301,10 @@
   },
   "n8230966362": {
    "r": "none",
-   "note": "Bnei Brak branch (Ben Gurion 65). Only an undated gokosher.com listing (https://www.gokosher.com/en/f97963); no own site, no Tabit/Ontopo, no news, no closure news found."
+   "note": "Bnei Brak branch (Ben Gurion 65). Only an undated gokosher.com listing (https://www.gokosher.com/en/f97963); no own site, no Tabit/Ontopo, no news, no closure news found.",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Bnei Brak, Ben Gurion 65. Only the undated gokosher listing (Su-Th 12-24, meat, no certificate named), which is not a recent source. No own site, no Tabit/Ontopo, no news, no closure news."
   },
   "n13270023931": {
    "r": "single",
@@ -6477,25 +6486,31 @@
   },
   "n1388903440": {
    "r": "none",
-   "note": "Burgeranch site branch locator is dynamic (no data readable); Wolt brand lists only Azrieli, Menora, Ramat Gan (Landau Haim 7), Herzliya, Rehovot - none matches Ben Gurion at these coords; no Tabit/Ontopo; no closure news"
+   "note": "Burgeranch site branch locator is dynamic (no data readable); Wolt brand lists only Azrieli, Menora, Ramat Gan (Landau Haim 7), Herzliya, Rehovot - none matches Ben Gurion at these coords; no Tabit/Ontopo; no closure news",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "app.burgeranch.co.il homepage has no branch list. Its branch directory at ranch.foodbox.co.il was blocked (different host). Searches found no Ben Gurion Tel Aviv branch (only d.co.il/b144 directories), no Tabit/Ontopo, no closure news."
   },
   "n1851267416": {
    "r": "none",
-   "note": "No current source for an Allenby Burgeranch branch: not on Wolt brand page, branch locator unreadable, no Tabit/Ontopo, no closure article found"
+   "note": "No current source for an Allenby Burgeranch branch: not on Wolt brand page, branch locator unreadable, no Tabit/Ontopo, no closure article found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: the own site app.burgeranch.co.il has branch pages for only two Tel Aviv branches (Menora Arena and Azrieli), neither on Allenby. The full branch list ranch.foodbox.co.il/branch/ is still SITE_BLOCKED. No Tabit/Ontopo, no closure news. Not proof of closure."
   },
   "n4159749096": {
    "r": "single",
    "note": "Wolt page Burgeranch Azrieli TLV, Begin 132 (matches coords): https://wolt.com/en/isr/tel-aviv/restaurant/burgeranch-azrieli-tlv ; d.co.il listing (undated) https://www.d.co.il/64405150/30455 ; own site locator unreadable; no Tabit/Ontopo",
-   "r2": "none",
+   "r2": "single",
    "d2": "2026-11-27",
-   "note2": "Official branch list ranch.foodbox.co.il/branch/ (linked from app.burgeranch.co.il) still blocked (site-blocked redirect). Prior support was Wolt only (not allowed) plus undated d.co.il/enjoyingisrael listings. No Tabit/Ontopo, no closure news."
+   "note2": "Own site branch page 'Tel Aviv - Azrieli Mall' is live with hours, phone and Beit Yosef kosher. It says 'Azrieli Mall' with no street; Azrieli Center is at Menachem Begin 132, so matching it to the catalog's Begin is my judgement. (single: branch match by judgement)"
   },
   "n5596945445": {
    "r": "single",
    "note": "Wolt page Burgeranch Menora, Yigal Alon 51, kosher Tel Aviv Rabbinate: https://wolt.com/en/isr/tel-aviv/restaurant/burgeranch-menora ; no other source; no Tabit/Ontopo; no closure news",
-   "r2": "single",
+   "r2": "ok",
    "d2": "2026-11-27",
-   "note2": "Official branch list ranch.foodbox.co.il/branch/ fetch not permitted (blocked); no new source beyond Wolt Burgeranch Menora (Yigal Alon 51, kosher Tel Aviv Rabbinate). No Tabit/Ontopo; no closure news."
+   "note2": "Own site branch page 'Tel Aviv - Menora Arena', Yigal Alon 51, is live (modified 2026-11-26) with hours, phone and Rabbinate kosher. The kosher authority is not named beyond 'Rabbinate', so k is not set."
   },
   "n9190133517": {
    "r": "single",
@@ -6513,7 +6528,10 @@
   },
   "n4742670231": {
    "r": "none",
-   "note": "No source for a Burgeranch on Yohanan HaSandlar; not on Wolt brand list; locator unreadable; no Tabit/Ontopo; OSM entry from 2017"
+   "note": "No source for a Burgeranch on Yohanan HaSandlar; not on Wolt brand list; locator unreadable; no Tabit/Ontopo; OSM entry from 2017",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no own-site branch page for Yohanan HaSandlar; the site has pages for only Menora and Azrieli in Tel Aviv. The full list ranch.foodbox.co.il is still blocked. No Tabit/Ontopo, no closure news."
   },
   "n2577660818": {
    "r": "single",
@@ -6786,7 +6804,10 @@
   },
   "n3346678358": {
    "r": "none",
-   "note": "No Tel Aviv/Lilienblum source found; only a Humusim branch in Netanya (gokosher). No Tabit/Ontopo page, no closure news."
+   "note": "No Tel Aviv/Lilienblum source found; only a Humusim branch in Netanya (gokosher). No Tabit/Ontopo page, no closure news.",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: searches, including on gokosher.co.il, found no Humusim on Lilienblum in Tel Aviv. No Tabit/Ontopo, no closure news."
   },
   "n11401082665": {
    "r": "none",
@@ -6819,7 +6840,10 @@
   },
   "n6756022495": {
    "r": "none",
-   "note": "Own site tonys.co.il now redirects to gokosher.co.il (site down); only an aggregator (spinach.guide) lists Rashi 21 Ramat Gan as kosher dairy. No Tabit/Ontopo, no news, no closure news."
+   "note": "Own site tonys.co.il now redirects to gokosher.co.il (site down); only an aggregator (spinach.guide) lists Rashi 21 Ramat Gan as kosher dairy. No Tabit/Ontopo, no news, no closure news.",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: tonys.co.il still redirects to gokosher.co.il. The gokosher Ramat Gan list has 'Pizza Tony's', Rashi 21, Ramat Gan Rabbinate kosher, 03-642-6212, but was last updated 2018-11 (not recent). Only undated easy.co.il listings otherwise. No Tabit/Ontopo, no closure news."
   },
   "n12187697477": {
    "r": "none",
@@ -7507,9 +7531,9 @@
   "n14066191075": {
    "r": "conflict",
    "note": "Rivareno TLV is at Nahalat Binyamin 3 per Time Out 2025-03 and Time Out list 2026-08 (also ynetnews 2025-05: Nahalat Binyamin); catalog says Washington Blvd 14 with coords ~1.2 km south. Could be a second branch (Time Out 2026 mentions an unaddressed Jerusalem Blvd branch) but no source confirms Was",
-   "r2": "conflict",
-   "note2": "Time Out 2025-03 and atly name only Nahalat Binyamin 3 (phone 054-8289891); no source for Washington 14; catalog phone matches nothing",
-   "d2": "2026-11-26"
+   "r2": "ok",
+   "note2": "Conflict resolved: the own site rivareno.com/gelaterie lists two Tel Aviv stores, Nahalat Binyamin 3 and Washington Street 14 (phone +972 53-385-7955, matches the catalog). No hours listed.",
+   "d2": "2026-11-27"
   },
   "n5178466608": {
    "r": "none",
@@ -7652,9 +7676,9 @@
    "note": "Rivareno at Nahalat Binyamin 3: Time Out list 2026-08, Time Out review 2025-03 (scoop 22-26 NIS), Mako 2025-04, ynetnews 2025-05. Time Out hours garbled, not used; no own site/phone found; no Tabit/Ontopo; no closure news.",
    "det": "2026-11-27",
    "note3": "timeout.co.il/rivareno fetch blocked; no own site or reliable source with phone found.",
-   "r2": "none",
+   "r2": "ok",
    "d2": "2026-11-27",
-   "note2": "Re-check: still no own site found (rivareno.com fetch permission timed out); timeout.co.il/rivareno now fetched: Nahalat Binyamin 3, 2025-03, hours garbled, no phone/site. Nothing new; stays active from earlier sources."
+   "note2": "Own site rivareno.com/gelaterie lists Nahalat Binyamin 3, Tel Aviv (no phone or hours). Earlier: Time Out 2025-03 and 2026-08 lists, Mako, ynetnews."
   },
   "n4900327064": {
    "r": "none",
