@@ -1086,6 +1086,166 @@
 "n651512231": {
 "r": "none",
 "note": "Agadir chain; findmeglutenfree (undated) gives David Pinski 6, Haifa. Fetching the official site agadir.co.il (branch list) was refused because the permission request wasn't answered. Time Out 2025-12 mentions 11 more branches but doesn't name them. No Tabit/Ontopo page or closure news found."
+},
+"n2883007012": {
+"r": "conflict",
+"note": "Globes 2025-12-18 review of Zigo (Ma'ale HaRishonim 8, Givat Zamarin) says restaurant Adama operated in that stone building for 16 years (from 2008); Zigo opened there May 2025. Closure date inferred (~2024-2025); catalog street 'HaYayin' differs from Globes address, so branch match is judgement. No Tabit/Ontopo found. Kept as conflict: closure inferred, address differs (judgement only)."
+},
+"n9441720437": {
+"r": "none",
+"note": "No reliable source found for Uzbekacha in Haifa (searches Hebrew/English, closure search, no Tabit/Ontopo)."
+},
+"w191445308": {
+"r": "none",
+"note": "No reliable source found for Kala halls on Yigal Yadin, Haifa; no own site, no Tabit/Ontopo."
+},
+"n5347075039": {
+"r": "none",
+"note": "Only undated aggregators (trip.com, wanderlog, enjoyingisrael 'Uma Sushi Bar'); no own site, no Tabit/Ontopo, no dated news."
+},
+"n11506153080": {
+"r": "none",
+"note": "Only directory listings (d.co.il, b144); no own site, booking page or dated news for Oria in Nesher."
+},
+"n6259827532": {
+"r": "none",
+"note": "Only an undated kosher listing (totallyjewishtravel: Oskar Schindler 7, Rabbanut) found; no own site, no Tabit/Ontopo, no dated news or closure report."
+},
+"n2226309931": {
+"r": "none",
+"note": "Nothing found for Joseph Brothers at Sderot HaMeginim 19, Haifa (searches returned real estate/other restaurants); no own site or booking page."
+},
+"n6259827531": {
+"r": "ok",
+"note": "Mako 2025-04 article lists Eissalon at Oskar Schindler 7, Savyonei Denia, with hours, not kosher; asif.org guide (modified 2025-04) gives same address/hours and own site eissalon.co.il. Own site fetch blocked (permission not granted). No closure news."
+},
+"n1431830609": {
+"r": "none",
+"note": "Mako 2009-09 listed new El Babour branch at Yokneam junction (phone 04-9891619), original in Umm al-Fahm; ynet 2026-10 feature describes El Babor as operating but gives no location/branch; no Tabit/Ontopo or own site found; no closure news. Branch status in Yokneam unconfirmed."
+},
+"n4826861983": {
+"r": "none",
+"note": "Searches (Hebrew/English) found only directory listings; no own site, Tabit/Ontopo, news or closure report."
+},
+"n3691498177": {
+"r": "none",
+"note": "No source found for American Pizza in Daliyat al-Karmel; American Pizza seems to be an independent/Sharon-area brand with no official branch list found."
+},
+"n2912911051": {
+"r": "none",
+"note": "Only undated directories (easy, d.co.il, wanderlog); gokosher lists a Pizza Hut on HaNadiv St, Zichron Yaakov (possible confusion, undated); no own site, booking page, news or closure report found."
+},
+"n2226309930": {
+"r": "none",
+"note": "Time Out Israel 2016-11 lists Angus, Sderot HaMeginim 27, Haifa, phone 04-8626603, site angushaifa.rest.co.il (fetch not permitted); Maariv 2015-07 review; not in Time Out Haifa lists 2025-11 / 2026-01; no recent source and no closure news found."
+},
+"n3691498178": {
+"r": "none",
+"note": "Andarin appears only in undated Lonely Planet listing; no own site, Tabit/Ontopo, recent news or closure report found."
+},
+"n13943267715": {
+"r": "none",
+"note": "No source for Entrecote Burger at Russell Berry promenade Haifa; Time Out burger list 2021 and Haifa searches did not mention it; no closure news."
+},
+"n14152962023": {
+"r": "none",
+"note": "No source found for 'ארוחה בטבע' on Nahal Rakefet road, Daliyat al-Karmel; only generic Druze hospitality articles."
+},
+"n615949119": {
+"r": "none",
+"note": "No Aroma branch on a Megiddo street in Haifa found on the official site, in news or in directories (the official site has a 'Megido Junction' branch, which is a different place, not in Haifa). The branch list pages on aroma.co.il (find_store, the-cafes, sitemap) failed to load, so the branch list could not be checked."
+},
+"n2345870103": {
+"r": "none",
+"note": "Probably the Haifa University branch (the university is at Abba Hushi Blvd 199). Search shows an official page for it (aroma.co.il/en/store/haifa-university/), but it failed to load twice, so the address and operation could not be confirmed."
+},
+"n2709761989": {
+"r": "none",
+"note": "Only an undated directory (d.co.il) lists an Aroma at Sderot HaHagana, Haifa. No official store page, booking page or news found. The aroma.co.il branch list failed to load."
+},
+"n9221799932": {
+"r": "none",
+"note": "No source names an Aroma on Tvuot HaAretz, Haifa. Official Haifa branches found: Grand Canyon (Simcha Golan 64), Azrieli/Haifa Mall, German Colony, University, Rambam, Hof HaCarmel and Lev HaMifratz, but none could be matched to this street. The aroma.co.il branch list failed to load."
+},
+"n4660390989": {
+"r": "ok",
+"note": "Official store page is live: Nesher Tel Hanan, 147 Bar Yehuda Road, Nesher, which matches the catalog address. No closure news found."
+},
+"n2910323810": {
+"r": "ok",
+"note": "Official store page is live: Zikhron Yaakov, Mall Zikhron, West Industrial Park. The catalog says the old coastal road (Route 4), which borders the west industrial park, so the branch match is my judgement. No closure news found."
+},
+"n6183467085": {
+"r": "none",
+"note": "The own site (arcaffe.co.il) fetch was refused because permission was not granted. Searches found only undated aggregators (enjoyingisrael, wanderlog, easy). No Tabit/Ontopo page and no closure news found."
+},
+"n4783333744": {
+"r": "none",
+"note": "The own site (arcaffe.co.il) fetch was refused because permission was not granted. No source found for an Arcaffe on HaRakia, Hof HaCarmel. No Tabit/Ontopo page and no closure news found."
+},
+"n4609369294": {
+"r": "none",
+"note": "Searches by Hebrew/English name and Zevulun/Kiryat Bialik area found no own site, Tabit/Ontopo page, news or closure report."
+},
+"n5649179121": {
+"r": "none",
+"note": "Searches found only Tel Aviv/Haifa Buddha Burgers listings (HappyCow, undated); HappyCow Yokneam page doesn't list it; no Yokneam branch on an official list, no news, no closure article."
+},
+"n9221965536": {
+"r": "none",
+"note": "Chain; no official branch list found (burgersaloon site not found in search; easy.co.il fetch failed). Only undated directories (d.co.il, wanderlog Romema Haifa). Israel Hayom 2016 and Maariv 2025-12 cover other branches. No Tabit/Ontopo page, no closure news."
+},
+"n4409268983": {
+"r": "none",
+"note": "Chain; no official branch list naming a Zichron Yaakov branch. Only undated directory d.co.il/80273603. No Tabit/Ontopo page, no closure news."
+},
+"n4784939818": {
+"r": "none",
+"note": "Chain; fetching the official site burgerim.co.il was blocked (no permission), so no branch list. Only undated aggregators (enjoyingisrael Daliyat al-Karmel, d.co.il). No news, no closure report."
+},
+"n4783373262": {
+"r": "none",
+"note": "Chain; fetching burgerim.co.il was blocked. Searches for a Hof HaCarmel/HaRakia branch found only undated directories. No news, no closure report."
+},
+"n1814809047": {
+"r": "none",
+"note": "Mako 2013 names Moriah Blvd 52 as the central branch; ynet 2020-01 lists Haatzmaut 37, Haifa. No recent (2025-26) source, no own site, no Tabit/Ontopo, no closure news."
+},
+"n6354069185": {
+"r": "none",
+"note": "d.co.il directory lists Biga at Sholom Aleichem 5, Neve Sha'anan, Haifa, with site bigahaifa.rest.co.il; fetching rest.co.il was blocked (biga.rest.co.il and bigahaifa.rest.co.il). No Tabit/Ontopo page, no recent news, no closure news."
+},
+"n11542534410": {
+"r": "none",
+"note": "Biga is a chain; d.co.il lists a Biga at Hutzot HaMifratz Outlet, Haifa (undated directory, no street given), and I could not confirm that it is on HaKitor St. No official branch list, Tabit/Ontopo page, dated article or closure news found."
+},
+"n1381090666": {
+"r": "none",
+"note": "Searches for Bis&Stop, Ahi Eilat 21, Haifa returned nothing relevant: no site, no Tabit/Ontopo page, no news, no closure."
+},
+"w988634709": {
+"r": "none",
+"note": "No source found for a cafe at Beit HaBad Makura (Makura farm, Hof HaCarmel). The Time Out olive-press cafe article is about Sarona, Tel Aviv (2014), so it does not apply."
+},
+"n1452648413": {
+"r": "none",
+"note": "Generic name; nothing found for Beit Kafe HaPina on Uriel Shalon St, Haifa. No Tabit/Ontopo page or news."
+},
+"n12252522601": {
+"r": "none",
+"note": "Nothing found for Cafe Samuna on the Nahal Tzippori promenade (Zevulun); the tiuli article fetch failed. No booking page or news."
+},
+"n3741391092": {
+"r": "none",
+"note": "Nothing found for Beit Rozmarin on Etgar St, Tirat Carmel. The results were a Croatian Ruzmarin and Zigo in Zichron, both unrelated. No Tabit/Ontopo page or news."
+},
+"n2958455390": {
+"r": "none",
+"note": "Nothing found for Ben Ezra Hadayag on HaHardof St, Hof HaCarmel. The Ein Hod village restaurant list does not include it. No Tabit/Ontopo page or closure news."
+},
+"n9221965534": {
+"r": "conflict",
+"note": "Official site benedict.co.il was blocked (permission). Wolt's Haifa brand page lists one area branch, 'Benedict Krayot', at Histadrut Blvd 248, Kiryat Ata; that does not match the catalog address (Tvuot HaAretz, Haifa). No Tabit/Ontopo page or Haifa-branch news found. Re-check against the official branch list."
 }
 }
 }
