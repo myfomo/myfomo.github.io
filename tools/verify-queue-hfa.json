@@ -1406,6 +1406,166 @@
 "n2924385335": {
 "r": "none",
 "note": "Only undated aggregator (trip.com 'Hanadiv Restaurant and Coffee Shop'); no own site, no Tabit/Ontopo, no recent source, no closure news"
+},
+"n5438185458": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page, or dated recent source found for HaNeshika/The Kiss, HaMeyasdim 37 Zichron Yaakov. Only an undated kosher listing (totallyjewishtravel 'haneshika') and a 2008 JPost review that doesn't clearly name it. No closure news found."
+},
+"n11911667134": {
+"r": "none",
+"note": "Syrup Haifa appears in Time Out 2015 (opened ~2011). Viberate lists hours Tu-Sa 20:00-03:00 with undated past events (undated, so it doesn't count). No own site, booking page, 2025-26 source, or closure news found."
+},
+"n1425461393": {
+"r": "none",
+"note": "HaOgen/Anchor pub, Shaar Palmer 3: described as operating in Maariv 2017, ynet 2018 and Time Out 2020 (phone 053-7014302). No 2025-2026 source, booking page, own site, or closure news found."
+},
+"n5159043820": {
+"r": "none",
+"note": "Cafe Hapina on Masada St, Haifa: only undated aggregators (wanderlog, tripadvisor, airbnb). No own site, booking page, recent dated source, or closure news found."
+},
+"n1437554051": {
+"r": "none",
+"note": "No reliable source found for Shaby's Falafel, HaIrisim, Yokneam (only directory pages). No closure news."
+},
+"n1113039011": {
+"r": "none",
+"note": "No source found for 'HaTzalbanim' at road 6511, Hof HaCarmel. A 'Crusaders' Restaurant' by Caesarea old port appears in an undated Fodor's review, but the city differs (Caesarea, not Hof HaCarmel) and nothing recent was found, so the branch match is unconfirmed."
+},
+"n1368001261": {
+"r": "none",
+"note": "No source found for Harefet Shel David, HaCarmel 1, Yokneam (Moshava). No own site, booking page, or news."
+},
+"n4969176155": {
+"r": "none",
+"note": "No source found for HaShnitzelia, Derech HaYam, Hof HaCarmel. No own site, booking page, or news."
+},
+"n3893101964": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page or dated news found for 'The Old Station' cafe on the old coastal road; searches returned only Hof HaCarmel railway station and unrelated cafes (Maariv 2026-01 piece is about Sea Cafe Geash, not this place). Tiuli fetch failed."
+},
+"n3523102681": {
+"r": "none",
+"note": "Fodor's (undated) review of Hatemaniya shel Santo at HaMeyasdim 52 has an editor's note saying it is no longer in operation, but it is undated and not a news article, so it is not enough for 'closed'. No own site, Tabit/Ontopo page or recent source showing it operating. Likely closed; needs a dated source. https://fodors.fodors.com/world/africa-and-middle-east/israel/haifa-and-the-northern-coast/restaurants/reviews/hatemaniya-shel-santo-460330"
+},
+"n5347075041": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page, guide or closure news found for Wabi Sabi in Zichron Yaakov (Hebrew and English searches). Israel Hayom and Mako Zichron reviews checked are about other restaurants."
+},
+"n1387673792": {
+"r": "none",
+"note": "Only an undated Tiuli listing 'וואלה VOILA' turned up, and its fetch failed with a client error. A Walla news item (973928) that came up in searches was blocked by a permission timeout. Not mentioned in the Time Out Haifa lists (2025-11, 2026-01) or Mako's Haifa best-of (2024-12). No own site, Tabit/Ontopo page or closure news found."
+},
+"n651512361": {
+"r": "none",
+"note": "No source found for a 'Wok' fast-food place on Mahanayim St, Haifa; searches return only unrelated chains (Wok Republic, Panda Wok Kiryat Motzkin)."
+},
+"n2905397340": {
+"r": "none",
+"note": "No own site, booking page, guide or news found for the bar Verre (וור) on HaShmura, Zichron Yaakov (Hebrew and English searches). Mako (2025-03) and Israel Hayom (2021) Zichron articles checked do not mention it."
+},
+"n12697421386": {
+"r": "none",
+"note": "No source found for 'ושבעת' on Homa uMigdal, Haifa. Not in the Time Out Haifa lists (2025-11, 2026-01) or Mako's best-of (2024-12)."
+},
+"n911129830": {
+"r": "none",
+"note": "No own site, booking page or dated guide found for Khaled Adawi restaurant on Yaakov Dori, Haifa. Only b144 directory hits (not counted). Ynet 2018 culinary tour names an Abbad Adawi at Garden, Ben Gurion 43, which is a different name and address."
+},
+"n4589774707": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo or dated source for a Tirat Carmel branch; only directories. Time Out 2017 lists a Hummus Eliyahu in Haifa Lower City (different place/city). No closure news."
+},
+"n6354069186": {
+"r": "conflict",
+"note": "Sources place Hummus Berdichev/Bardicef at Wedgewood Blvd 1, Haifa (Time Out 2023-03, phone 04-6574132), plus a branch at Shivat Tzion 34 (Time Out). Nothing names a Trumpeldor branch. No Tabit/Ontopo; no closure news found."
+},
+"n4969176158": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo, news or guide found for Hummus HaShlishiya at Hof HaCarmel; only directories. No closure news."
+},
+"n13689867103": {
+"r": "conflict",
+"note": "Health Ministry administrative closure order on Hummus Ziv, Trumpeldor 54 Haifa, 2025-02-03 (ice.co.il/consumerism/news/article/1049807; kipa.co.il 1197510). Temporary until defects fixed; no source found confirming reopening or permanent closure. Time Out 2017 page matches address/phone 04-8123336."
+},
+"n4784939799": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo, news or guide found for Nagwa Hummus in Daliyat al-Karmel; no closure news."
+},
+"n2365906271": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo, news or guide found for Hummus Saed, Nahum Het St, Tirat Carmel; only directories. No closure news."
+},
+"n4370726298": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo, news or guide found for Abu Yazan hummus, HaNadiv St, Zichron Yaakov; no closure news."
+},
+"n12876970181": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo, news or guide found for Taboon HaKfar in Daliyat al-Karmel (ynet 2022 village articles don't mention it); no closure news."
+},
+"n4784939784": {
+"r": "none",
+"note": "No reliable source for Top Shawarma in Daliyat al-Karmel; ynet 2025-08 and Maariv 2025-05 shawarma guides to Daliyat don't name it; no Tabit/Ontopo; no closure news"
+},
+"n12707525939": {
+"r": "none",
+"note": "Nothing found for 'Taam Acher' in Daliyat al-Karmel (only directories/unrelated results); no Tabit/Ontopo; no closure news"
+},
+"n4589774709": {
+"r": "none",
+"note": "Nothing found for 'Teamim Al HaEsh' in Tirat Carmel; no site, Tabit/Ontopo or news"
+},
+"w367010923": {
+"r": "none",
+"note": "Only a Maariv 2017-03 review of a Greek 'Yamas' at M HaDerech mall near Beit Yanai, which doesn't match the catalog location (Hof HaCarmel, road 7011) and is too old; no Tabit/Ontopo; no closure news"
+},
+"w189599169": {
+"r": "none",
+"note": "d.co.il directory (undated) lists Yan-Yan at Derech Yafo 26, Haifa, with site yanyan.co.il; the site fetch was refused (permission timeout). A Wolt page exists but isn't an allowed source; no news, Tabit/Ontopo or closure found. Catalog street Kiat vs Derech Yafo 26 is unverified"
+},
+"n4563462605": {
+"r": "none",
+"note": "No reliable source for a restaurant 'Yosef/Joseph' on HaNadiv, Zichron Yaakov; only aggregators found; no Tabit/Ontopo; no closure news"
+},
+"n13953414139": {
+"r": "none",
+"note": "Nothing found for 'Yosef Alechem Shawarma & Schnitzel' on HaTichon, Haifa; no site, booking page or news"
+},
+"n5525743125": {
+"r": "none",
+"note": "Nothing found for 'Yaakov Kebab' at Moshe Aharon (Machlis) 10, Haifa; searches returned unrelated results; no closure news"
+},
+"w1213037663": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page or dated news found for Kamel/Camel on Carmel Beach promenade; only undated aggregators (restaurantguru, evendo, instahop). No closure news found."
+},
+"n4035972298": {
+"r": "none",
+"note": "Searches (Hebrew/English) for Kimat Chinam, Hohit 16 Zichron Yaakov returned nothing relevant; no site, booking page or news."
+},
+"n4449120511": {
+"r": "none",
+"note": "No restaurant named Lev HaKfar found in Daliyat al-Carmel; ynet 2022 and kipa 2026-05 only use the phrase 'heart of the village' generically (kipa article is about Shefik knafeh cafe). No Tabit/Ontopo, no closure news."
+},
+"n9221965541": {
+"r": "none",
+"note": "Leggenda ice cream chain; official site leggenda.co.il (from Time Out 2017) fetch blocked (permission not granted). Only undated directories (easy, d.co.il, wanderlog, spinach) for Haifa; no dated source confirming the Tvuot HaAretz branch. No closure news."
+},
+"n1387686020": {
+"r": "none",
+"note": "Leggenda ice cream chain; official site leggenda.co.il fetch blocked. No dated source naming a Sderot HaNassi 129 Haifa branch; only undated directories. No closure news."
+},
+"n1387675858": {
+"r": "none",
+"note": "La Goffre waffle chain; official site lagoffre.co.il fetch blocked. Undated enjoyingisrael listing gives Haifa branch at Ben Gurion 25, not Sderot HaNassi - possible branch mismatch/move, unverified. No closure news found."
+},
+"n3162564023": {
+"r": "none",
+"note": "La Goffre waffle chain; official site lagoffre.co.il fetch blocked. Undated enjoyingisrael listing shows HaMeyasdim 56 Zichron Yaakov (matches street) but undated, so does not count. No dated source, no closure news."
+},
+"n1994284028": {
+"r": "none",
+"note": "Only a La Vita Bella Caesarea on Wolt and undated aggregators (wanderlog, trip.com); location on road 6511 / Hof HaCarmel not confirmed as same place. No own site, Tabit/Ontopo or news; no closure news."
 }
 }
 }
