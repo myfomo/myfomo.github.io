@@ -1726,6 +1726,166 @@
 "n5295451832": {
 "r": "conflict",
 "note": "Official Sinta Bar group site lists Sinta Bar Express at Einstein Commercial Center, Einstein 139, Haifa (phone 04-666-1829, Su-We 12:00-23:30, Th-Sa 12:00-00:00); no Moriah 131 address on the site (only Mambo Milano at Moriah 127). Wolt brand page lists 'Sinta Bar Express | Carmel'. Catalog address Moriah 131 does not match; likely moved/new location Einstein 139, Haifa."
+},
+"n5295451833": {
+"r": "conflict",
+"note": "Own site sinta-bar.co.il live (checked 2026-11), Tabit booking orgId=5c72a8d9a242dc5208701edc, but site lists address Netiv HaOr 1, Haifa (same phone 04-6661829); catalog Sderot Moriah 127 matches only Time Out 2018 article. Likely moved to Netiv HaOr 1, Haifa (no source explicitly states the move). Sources: https://www.sinta-bar.co.il/en ; https://timeout.co.il/שווה-להתארח-סינטה-בר/"
+},
+"n1990343504": {
+"r": "none",
+"note": "Only Time Out Israel listing from 2017 (5 Khayat St, Lower City) https://www.timeout.com/israel/bars/syncopa; no own site, no Tabit/Ontopo, no recent sources, no closure news found."
+},
+"n2365910614": {
+"r": "none",
+"note": "No reliable source found for a restaurant Semiramis/Sameramis on HaHagana, Haifa (searches return only the historic Semiramis Hotel); no Tabit/Ontopo, no closure news."
+},
+"n9123115217": {
+"r": "none",
+"note": "Found 'Sangria Tapas Bar' at Moshe Aharon 4 near the Turkish Market (undated foodswinesfromspain listing https://www.foodswinesfromspain.com/en/certified-restaurants-from-spain/restaurants/s/sangria-tapas-bar) - near HaBankim but undated and address differs; no recent sources, no Tabit/Ontopo, no closure news."
+},
+"n6017296886": {
+"r": "none",
+"note": "No source found for Gabi Sandwich at HaAtzmaut 78, Haifa; no Tabit/Ontopo; no closure news."
+},
+"n1387646714": {
+"r": "none",
+"note": "Only a 2013 Mako article on 'Sandwich Bar Carmel' at Sderot HaNasi 128 (https://www.mako.co.il/special-small-business/articles/Article-680fa1ea11c4f31006.htm); possibly the same place but old; no recent sources, no closure news."
+},
+"n5263701321": {
+"r": "none",
+"note": "Time Out Hebrew street-food article 2020-01 confirms Shabtai Levi 12, phone 04-8524394, hours Su-Th 8-18, Fr 8-15 (https://timeout.co.il/%D7%90%D7%95%D7%9B%D7%9C-%D7%94%D7%A8%D7%97%D7%95%D7%91-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91-%D7%91%D7%97%D7%99%D7%A4%D7%94/) but no 2025-2026 source; hamichlol/kan pages could not be fetched; no closure news found."
+},
+"n12653330701": {
+"r": "none",
+"note": "No source found for Sandwisha in Daliyat al-Karmel (Hebrew and Arabic searches); no Tabit/Ontopo; no closure news."
+},
+"n12691168379": {
+"r": "none",
+"note": "4 searches (HE/EN, tabit/ontopo, closure): no own site, Tabit/Ontopo page or news mentioning Sindiana in Daliyat al-Karmel"
+},
+"n2021939962": {
+"r": "none",
+"note": "Only directory listing d.co.il/7284100 'Abu Yosef and Sons' at Paris Square 1, Haifa (directory, not counted). No own site, Tabit/Ontopo or dated news found; no closure news found"
+},
+"n4966260743": {
+"r": "none",
+"note": "Likely the Ad HaEtzem Express chain (drushim lists a Haifa branch). Official site adhaetzemex.co.il fetch blocked (permission not granted), so the branch list could not be checked; no Tabit/Ontopo or news naming the Histadrut Blvd branch"
+},
+"n5613842523": {
+"r": "none",
+"note": "Searches by name, street and phone 04-8550555 found nothing reliable for 'Onot/Seasons' on Yochai Ben Nun, Haifa; no closure news"
+},
+"n4482707194": {
+"r": "none",
+"note": "No source for 'Idan HaKafe' in Kiryat Yam; directory hits were other cafes (Cafe Cafe Iris 1). No own site, booking page or news"
+},
+"n1365680922": {
+"r": "none",
+"note": "Catalog name is just the village name ('Ein Hod', on road 7111), so no specific business could be identified. Ein Hod cafes in recent sources: grocery store cafe at entrance (ein-hod.org, mod. 2026-05; JPost 2026-11-09) and Lev Hashvil 26 (JPost 2026-11-09). None can be matched to this entry"
+},
+"n3204173624": {
+"r": "none",
+"note": "Only a public Wolt page (wolt.com/he/isr/haifa/restaurant/atika, not an allowed source) lists Atika, kosher, at HaEmakim 1, Kiryat Bialik, tel 04-8402025. Catalog address is a Metronit blue-line stop, so branch match is unconfirmed. No own site, Tabit/Ontopo or news found"
+},
+"n4449120516": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo or news for Atika on Sheikh Amin Tarif St, Daliyat al-Karmel; only the Wolt Atika page appeared, and it is in Kiryat Bialik"
+},
+"n5255480219": {
+"r": "none",
+"note": "No source found naming Junta pub on Russell Berry promenade; ynet 2018 Haifa pubs article and Time Out Haifa 2026-01 list don't mention it; no Tabit/Ontopo page; no closure news."
+},
+"n7368736374": {
+"r": "none",
+"note": "Only an undated directory (d.co.il) lists 'Patio' as a kosher catering business at Etgar 5, Tirat Carmel (newest review 2018); no own site, no Tabit/Ontopo, no news."
+},
+"n4969176157": {
+"r": "none",
+"note": "Pizza Fadael is a multi-branch chain (Kiryat Ata, Nesher, Atlit, Haifa, Yokneam per undated listings); own site pizza-fadael.co.il fetch not permitted, so no branch list to confirm a Derech HaYam/Hof HaCarmel branch; no news."
+},
+"n894089972": {
+"r": "none",
+"note": "Fattoush, 38 Ben Gurion Blvd: Time Out 2016, Mako 2020, Times of Israel 2023-08 describe it operating, but no 2025-2026 source; no own site/Tabit/Ontopo found; no closure news. Possible Wolt page exists (not used)."
+},
+"n3691499200": {
+"r": "none",
+"note": "No reliable source found for this fast food corner in Daliyat al-Karmel (only an unrelated/undated tiuli 'פינת האוכל' listing); no booking page, no news."
+},
+"n3741391098": {
+"r": "none",
+"note": "No source found for Pizza Bonitta on Herzl, Tirat Carmel; no booking page, no news."
+},
+"n2400980136": {
+"r": "none",
+"note": "No source found for Pizza Bella on Derech HaShalom, Nesher; no booking page, no news."
+},
+"n3584056029": {
+"r": "none",
+"note": "No source names Pizza Dalal at Horev 16; directory shows a different pizzeria (Pizza Agvania) at Horev 15 (undated) - possible replacement, unconfirmed; no news."
+},
+"n5255495084": {
+"r": "none",
+"note": "Official pizzahut.co.il fetch refused (permission timeout), so no branch-list check possible; searches found only directories (d.co.il) and Wolt pages, no dated news or Tabit/Ontopo; no closure news found"
+},
+"w284563918": {
+"r": "none",
+"note": "pizzahut.co.il fetch refused; gokosher.com lists Pizza Hut on HaNadiv St, Zichron (Chelkas Hakashrus Zichron Yaakov) but undated, so not counted; no dated news, no Tabit/Ontopo, no closure news"
+},
+"n4449119982": {
+"r": "none",
+"note": "pizzahut.co.il fetch refused; search found only directories, no dated source for a Daliyat al-Karmel branch; no closure news"
+},
+"n4908229922": {
+"r": "none",
+"note": "No official site found; easy.co.il branch list fetch failed (client error) and is undated anyway; no dated news for a Nesher branch; no Tabit/Ontopo; no closure news"
+},
+"n1387601687": {
+"r": "none",
+"note": "No official site found; only easy.co.il / d.co.il directories (undated); no Tabit/Ontopo; no dated news or closure news for Mahanayim 3 Haifa"
+},
+"n1431830647": {
+"r": "none",
+"note": "Only enjoyingisrael and b144/d.co.il directory listings (undated); no own site, Tabit/Ontopo or dated news; no closure news"
+},
+"n1213243798": {
+"r": "none",
+"note": "Searches (Hebrew and English) returned only d.co.il directory pages; no own site, Tabit/Ontopo, news or closure report"
+},
+"n5599993406": {
+"r": "none",
+"note": "Pizza Fix is a chain, but no official branch list found; only easy.co.il/Wolt listings, nothing naming a Zichron Yaakov HaNadiv branch; no closure news"
+},
+"n3691499202": {
+"r": "none",
+"note": "Generic name 'Druze Pitta'; searches (name+city, Tabit/Ontopo/Wolt, closure) found only undated easy.co.il category listings; no Tabit/Ontopo page, no dated source for this stand on Al-Karmel st."
+},
+"n3691498210": {
+"r": "none",
+"note": "No web presence found for Fakhr El Deen restaurant (Hebrew/English searches, closure search); no Tabit/Ontopo page, no news/guide mention."
+},
+"n9221799927": {
+"r": "none",
+"note": "Unnamed generic 'Falafel' on HaSolel st, Haifa; search found nothing identifying this stand; no reliable source."
+},
+"n14152962009": {
+"r": "none",
+"note": "No source found for Falafel Abu Yosef in Daliyat al-Karmel (Hebrew searches, closure search); only generic directory pages."
+},
+"n14381375486": {
+"r": "ok",
+"note": "Maariv food article 2025-07 (Herzliya 14, Hadar, operating since 1947, under 30 NIS) + Ynetnews best-falafel list 2025-08 (14 Herzliya St.); no closure news found; no own site/Tabit/Ontopo."
+},
+"n4513280290": {
+"r": "ok",
+"note": "Ynetnews best-falafel list 2025-08 (18 Wadi St., Haifa) + Israel Hayom 2026-08 listing it as participant in Haifa food festival; no closure news found; no own site/Tabit/Ontopo."
+},
+"n5347075040": {
+"r": "none",
+"note": "No source found for Falafel HaMoshava on HaNadiv st, Zichron Yaakov; checked Mako 2025-05 and INN 2026-02 Zichron articles (not mentioned); no Tabit/Ontopo, no closure news."
+},
+"n1273489059": {
+"r": "none",
+"note": "No source found for Falafel HaTichon on HaTichon st, Haifa (name search, closure search); not in Time Out/Ynet Haifa falafel guides checked."
 }
 }
 }
