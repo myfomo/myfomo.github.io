@@ -2046,6 +2046,166 @@
 "n3815028806": {
 "r": "none",
 "note": "No own site, Tabit/Ontopo or news found for Lior's cafe Yokneam; Israel Hayom/Time Out hits are about Lior Kuka cafe in Tel Aviv (unrelated); no closure news"
+},
+"n4386516124": {
+"r": "none",
+"note": "Searched name+Masada St Haifa, Time Out Haifa cafes list (2020) and closure news: no reliable source for Cafe Masada at Masada 16; no own site, no Tabit/Ontopo page found."
+},
+"w294522867": {
+"r": "none",
+"note": "Searched Hebrew/English names + Kiryat Yam promenade, closure news, Mako beach guide 2023 (not mentioned): no own site, booking page or news source found."
+},
+"n12208598222": {
+"r": "none",
+"note": "Searched name + Yochai Ben Nun St Haifa: only directory (d.co.il) hits, no reliable source; 24/7 hours suggest possibly a kiosk/vending point. No own site/Tabit/Ontopo."
+},
+"n4386522954": {
+"r": "none",
+"note": "Searched name + Masada 21 Haifa and closure news: only undated aggregators (wanderlog); Wolt 'caf-puzzle' result is Ashdod, not this place. Nothing reliable."
+},
+"n10874147925": {
+"r": "none",
+"note": "Searched Hebrew/English name + Hof HaCarmel/Atlit area: no own site, booking page or news; address '7111' is unclear."
+},
+"n1870341640": {
+"r": "conflict",
+"note": "Official cafecafe.co.il still has a branch page 'Haifa - German Colony' at Ben Gurion Blvd 2 (https://www.cafecafe.co.il/he/company/snifim/view/?ContentID=249), but the chain's current branch search lists only 5 Haifa branches (Kiryat Haim, Lev HaMifrats, Dado promenade, Technion, Grand Canyon) without German Colony (https://cafecafe.co.il/he/company/snifim/search/?area=-1&q=). Likely closed but no closure article found."
+},
+"n13943267714": {
+"r": "none",
+"note": "Searched 'קפה=שווה'/'קפה שווה' + Russell Berry promenade Haifa; Mako Haifa guide 2026-04 does not mention it. Only directory hits; nothing reliable."
+},
+"n1387626436": {
+"r": "none",
+"note": "Searched קפהנטו/Cafeneto + Moriah Blvd Haifa and closure news: only undated aggregator (wanderlog); no own site, booking page or news."
+},
+"n2013742788": {
+"r": "none",
+"note": "Generic unnamed 'cafeteria' on road 7213, Zevulun regional council; no identifiable business, website, Tabit/Ontopo page or news found"
+},
+"n2013743082": {
+"r": "none",
+"note": "Duplicate generic unnamed 'cafeteria' on road 7213, Zevulun; nothing identifiable or reliable found"
+},
+"n3691499194": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page, news or closure report found for Crunch - Sweet Story, Kikar HaShoter, Daliyat al-Karmel (kipa 2026-05 article is about a different cafe, Shefik)"
+},
+"n2121807248": {
+"r": "none",
+"note": "Ruben is a kosher sandwich chain; Wolt brand page lists a 'Ruben | Neve Shaanan' Haifa venue (HaGalil 100 is in Neve Shaanan) but the venue page fetch was blocked and no official branch list or news naming HaGalil 100 found. Wolt not an allowed source"
+},
+"n1387736536": {
+"r": "none",
+"note": "Likely Ruben chain 'Carmel' branch (Wolt brand page lists 'Ruben | Carmel'), but venue page fetch blocked and no official branch list/news names Sderot HaNasi 131; address search turned up giraffe Haifa on Wolt, so possible replacement - unverified"
+},
+"n14107936588": {
+"r": "single",
+"note": "allevents.in listing of a live concert at Rodeo Haifa, Balfour 23, on 2026-04-11; no own site, Tabit/Ontopo or closure news found; other hits undated aggregators"
+},
+"n806298507": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page, news or closure report found for Rodi's Toast, Shalom Aleichem St, Haifa; only b144 directory hits"
+},
+"n7389258877": {
+"r": "none",
+"note": "Roladin official site (roladin.co.il) fetch blocked, so branch list for Horev 18 could not be checked; only undated easy.co.il/d.co.il/enjoyingisrael directory hits; no closure news found"
+},
+"n9221799924": {
+"r": "none",
+"note": "Rebar chain; no official branch list found naming a HaSolel St Haifa branch; only undated aggregators (enjoyingisrael, easy, d.co.il) for other Haifa mall branches; no closure news found."
+},
+"w998824070": {
+"r": "single",
+"note": "JPost review 2025-07 of Raffaello Castra Center, 8 Fliman St Haifa (non-kosher branch; dishes NIS 44-99). Catalog street Tevuot HaAretz judged same Castra complex (not source-confirmed). Own site raffaellocc.co.il fetch blocked (permission). No Tabit/Ontopo page found; no closure news."
+},
+"n4449119983": {
+"r": "none",
+"note": "No reliable source found for Rakwi/רקוה in Daliyat al-Karmel; no own site, Tabit/Ontopo or news."
+},
+"n410656910": {
+"r": "none",
+"note": "Shawatina found only on undated listings (Fodor's mentions a beach second location, wanderlog, trip.com); no dated 2025-2026 source, own site or Tabit/Ontopo page; no closure news."
+},
+"n12618986263": {
+"r": "ok",
+"note": "Shawarma 11 Daliyat al-Karmel named in ynetnews 2025-08 (Route 672 shawarma strip, owner Adam Hasson), ynetnews 2025-09 and Maariv 2025-05. No street address in sources; branch match judged by town/strip. No own site/booking page."
+},
+"n3691499206": {
+"r": "single",
+"note": "Shawarma Al Amal Daliyat al-Karmel described in ynetnews 2025-08 (founded 29 yrs ago by Amal Marih, run by son Ihab) on Route 672 strip; no street address, branch match judged by town. No other recent source."
+},
+"n5589707021": {
+"r": "conflict",
+"note": "Shawarma Emil operating per ynetnews 2025-09, which says it recently relocated to 68 HaMeginim St, Haifa (earlier Time Out 2020 gave 33 Allenby Rd). Catalog location Emil Habibi Square may be the old spot; Maariv 2025-06 feature also shows it operating. New address per ynetnews: 68 HaMeginim, Haifa."
+},
+"n4809033960": {
+"r": "none",
+"note": "No reliable source found for Shawarma Billy on Sderot HaNasi Haifa; no own site, booking page, news or closure report."
+},
+"n4966260785": {
+"r": "none",
+"note": "Searches (name+Haifa, Time Out Haifa street food, closure) found only undated directories (b144/d.co.il); no own site, no Tabit/Ontopo, no news."
+},
+"n3691499156": {
+"r": "none",
+"note": "Not named in ynetnews Daliyat shawarma guides (2025-08, 2025-09); only undated directory hits; no site, Tabit/Ontopo or closure news."
+},
+"n13943267716": {
+"r": "none",
+"note": "No reliable source found for Ninio Shwarma on Russell Berry promenade; no site, Tabit/Ontopo or news."
+},
+"n1785854620": {
+"r": "none",
+"note": "Not named in ynetnews Daliyat shawarma guides (2025); no site, Tabit/Ontopo or closure news found."
+},
+"n12620611456": {
+"r": "none",
+"note": "Nothing reliable found for Shawarma Fadi in Daliyat al-Carmel; not in 2025 ynet guides; no Tabit/Ontopo."
+},
+"n3239451450": {
+"r": "none",
+"note": "No source for the Checkpost/Histadrut 58 branch. Maariv 2025-08 (https://www.maariv.co.il/food/article-1222288) says the original Hazan family has only Derech Yafo and Haifa Mall branches and other 'Hazan' places are unaffiliated. Israel Hayom/Maariv 2026-01-29 closure order concerns the Ford (Yafo) branch, not this one (https://www.israelhayom.co.il/food/food-news/article/19784551)."
+},
+"n5295451831": {
+"r": "none",
+"note": "No reliable source found for Little Tasty Shawarma at Gat 4, Haifa; only directory hits."
+},
+"n4784939789": {
+"r": "none",
+"note": "Shawarma Retro not found in news/guides (ynet 2025 Daliyat guides don't list it); no site, Tabit/Ontopo or closure news."
+},
+"w467930255": {
+"r": "conflict",
+"note": "Israel Hayom 2026-06-11 profile of Shauli: his base is the single Hadera branch (police junction), he refuses to open more branches; Zichron Yaakov mentioned only as a past career stop. That suggests the Zichron branch (Hameyasdim 68) no longer operates, but there is no explicit closure statement. No own site, Tabit/Ontopo or other sources found. https://www.israelhayom.co.il/food/food-news/article/20543324"
+},
+"n1543975621": {
+"r": "none",
+"note": "Only a d.co.il directory listing (Derech HaAtzmaut 80, Haifa; reviews 2011/2016, undated). No own site, Tabit/Ontopo, news or closure report found. A Shokolata in Rosh Pinna is unrelated."
+},
+"n4966260788": {
+"r": "none",
+"note": "No reliable source found for Shipudei HaCheckpost (Mordechai Maklef, Haifa); no Tabit/Ontopo or closure news. Searches returned only unrelated Haifa skewer places."
+},
+"n2400979779": {
+"r": "none",
+"note": "No reliable source found for Shipudei HaTzafon (Derech HaShalom, Nesher); no Tabit/Ontopo or closure news."
+},
+"n815493107": {
+"r": "none",
+"note": "No reliable source found for cafe Shani (Yaakov Dori, Haifa); no own site, Tabit/Ontopo or closure news."
+},
+"n3121654879": {
+"r": "none",
+"note": "No reliable source found for Snitz (HaNadiv, Zichron Yaakov); no own site, Tabit/Ontopo or closure news. It may be the same spot as Shnitzel 20 Teamim (also on HaNadiv), but that is unconfirmed."
+},
+"n3310626203": {
+"r": "none",
+"note": "Chain site shnitzel20teamim.co.il (found via d.co.il) could not be fetched because the permission was not granted. Only the undated enjoyingisrael/easy listings name a Zichron Yaakov branch; no Tabit/Ontopo or closure news."
+},
+"n3691499208": {
+"r": "ok",
+"note": "Kipa 2026-05-24: 'Shafik - House of Knafeh' kosher visitor center/cafe at the entrance to Daliyat al-Carmel (Dalia St). Maariv 2026-06-15 also covers Shafik's visitor center in Daliyat. The match to catalog address '672' (probably route 672 at the village entrance) is my own judgement. Kipa gives hours Su-Th 9-17, Fr 9-14 and Atlit Rabbinate kashrut (single source, not recorded). A separate 'Shefik confectionery' at the Isfiya entrance appears in d.co.il."
 }
 }
 }
