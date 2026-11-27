@@ -26,6 +26,13 @@
    "field": "phone",
    "osm": "+972 2 628 0081",
    "site": "026720844"
+  },
+  {
+   "id": "w911552477",
+   "n": "Luiza Culinary Center - Logos Hotel",
+   "field": "phone",
+   "osm": "02-594-2000",
+   "site": "025942014"
   }
  ],
  "rejected_sites": [
@@ -106,5 +113,5 @@
   "cuisine": "291 (61%)",
   "extra_names": "235 (49%)"
  },
- "conflicts_n": 2
+ "conflicts_n": 3
 }

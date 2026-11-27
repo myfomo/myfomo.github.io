@@ -2,9 +2,9 @@
  "addr_osm": 0,
  "addr_partial": 0,
  "site_checked": 48,
- "site_jsonld": 3,
+ "site_jsonld": 4,
  "site_match": 3,
- "site_reject": 0,
+ "site_reject": 1,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -21,13 +21,6 @@
    "site": "097996967"
   },
   {
-   "id": "n10053934339",
-   "n": "Wok Street",
-   "field": "phone",
-   "osm": "+972 53-433-7303",
-   "site": "048332211"
-  },
-  {
    "id": "n14163814998",
    "n": "מסעדת מצה",
    "field": "hours",
@@ -42,8 +35,15 @@
    "site": "Th 09:00-14:00; Fr 09:00-14:00; Sa 09:00-14:00"
   }
  ],
- "rejected_sites": [],
- "phone_confirmed": 6,
+ "rejected_sites": [
+  {
+   "id": "n4875501522",
+   "n": "דוברין 7",
+   "w": "https://dovrin7.com",
+   "why": "branch/name not confirmed"
+  }
+ ],
+ "phone_confirmed": 7,
  "phone_multi_skipped": 2,
  "coverage_after": {
   "address": "444 (100%)",
@@ -53,5 +53,5 @@
   "cuisine": "300 (68%)",
   "extra_names": "274 (62%)"
  },
- "conflicts_n": 4
+ "conflicts_n": 3
 }
