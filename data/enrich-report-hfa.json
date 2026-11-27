@@ -1,15 +1,15 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 59,
- "site_jsonld": 9,
- "site_match": 4,
- "site_reject": 5,
+ "site_checked": 68,
+ "site_jsonld": 15,
+ "site_match": 5,
+ "site_reject": 10,
  "phone_site": 0,
- "hours_site": 0,
+ "hours_site": 1,
  "addr_site": 0,
  "cuisine_site": 1,
- "names_site": 0,
+ "names_site": 1,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -26,13 +26,6 @@
    "field": "hours",
    "osm": "Mo-Su 12:00-03:00",
    "site": "Su,Mo,Tu,We,Fr,Sa 12:00-02:00; Th 12:00-01:00"
-  },
-  {
-   "id": "n10053934339",
-   "n": "Wok Street",
-   "field": "phone",
-   "osm": "+972 53-433-7303",
-   "site": "048332211"
   },
   {
    "id": "n14163814998",
@@ -75,21 +68,51 @@
    "why": "branch/name not confirmed"
   },
   {
+   "id": "n6183467085",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n6259827531",
+   "n": "אייססלון",
+   "w": "https://eissalon.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n4449119982",
    "n": "פיצה האת",
    "w": "https://www.pizzahut.co.il/branch/%d7%93%d7%90%d7%9c%d7%99%d7%aa-%d7%90%d7%9c-%d7%9b%d7%a8%d7%9e%d7%9c/",
    "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n6239725890",
+   "n": "פיצה האט",
+   "w": "https://www.pizzahut.co.il/branch/yokneam/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "w260173971",
+   "n": "דוריס קצבים - סניף זכרון יעקב",
+   "w": "https://www.doris-k.co.il",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "w284563918",
+   "n": "פיצה האט",
+   "w": "https://www.pizzahut.co.il/branch/zichron-yaakov/",
+   "why": "branch/name not confirmed"
   }
  ],
  "phone_confirmed": 11,
- "phone_multi_skipped": 3,
+ "phone_multi_skipped": 4,
  "coverage_after": {
   "address": "444 (100%)",
-  "hours": "69 (16%)",
-  "phone": "61 (14%)",
-  "website": "65 (15%)",
+  "hours": "75 (17%)",
+  "phone": "70 (16%)",
+  "website": "74 (17%)",
   "cuisine": "301 (68%)",
-  "extra_names": "276 (62%)"
+  "extra_names": "277 (62%)"
  },
- "conflicts_n": 5
+ "conflicts_n": 4
 }
