@@ -1886,6 +1886,166 @@
 "n1273489059": {
 "r": "none",
 "note": "No source found for Falafel HaTichon on HaTichon st, Haifa (name search, closure search); not in Time Out/Ynet Haifa falafel guides checked."
+},
+"n2021940022": {
+"r": "none",
+"note": "Searches (Hebrew/English, closure, booking) found no own site, no Tabit/Ontopo page, no dated news/guide naming Abu Hani falafel on Eliyahu HaNavi, Haifa; only directories."
+},
+"n1165765481": {
+"r": "none",
+"note": "Only undated aggregators (happycow, spinach.guide, wanderlog) list Falafel Zohar Haifa; no own site, no Tabit/Ontopo, no dated news; catalog address is only '51'."
+},
+"n2882883291": {
+"r": "none",
+"note": "Own site falafelzichron.co.il found via spinach.guide (aggregator lists HaMeyasdim 60, Zichron Yaakov) but fetch was blocked by permission; otherwise only undated aggregators (trip.com, totallyjewishtravel, spinach). No dated news, no Tabit/Ontopo, no closure news."
+},
+"n2021940021": {
+"r": "none",
+"note": "Only undated aggregator (spinach.guide) lists Falafel Kikar Paris; no own site, no Tabit/Ontopo, no dated news or closure news found."
+},
+"n6575333385": {
+"r": "none",
+"note": "Falafel Mishel, HaWadi 21 Haifa (Wadi Nisnas) appears in Time Out Israel 2017 (timeout.com/israel/restaurants/falafel-mishel), Time Out Hebrew 2020-01 and ynet 2020-05 (ynet.co.il/food/article/5733317) - all older than 2025; recent ynetnews 2025-08 Haifa falafel list does not mention it. No own site, no Tabit/Ontopo, no closure news."
+},
+"n5649196921": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page, dated news or closure news found for Neto Falafel & Shawarma, HaTamar, Yokneam; only directory listings."
+},
+"n3691498179": {
+"r": "none",
+"note": "No reliable source found for Anoob Falafel, Daliya St, Daliyat al-Carmel; ynetnews 2025-08 Daliyat food article covers only shawarma places, not this one."
+},
+"n3691499139": {
+"r": "none",
+"note": "No reliable source found for Ramzi's Falafel, Daliya St, Daliyat al-Carmel; ynetnews 2025-08 Daliyat article does not mention it; no closure news."
+},
+"n1387626443": {
+"r": "none",
+"note": "Only undated aggregator (enjoyingisrael: Moriah Blvd 12, links pastabasta.co.il branch page). Own site pastabasta.co.il fetch blocked (permission). No Tabit/Ontopo page, no dated news; Time Out Haifa 2026-01 list doesn't mention it. No closure news found."
+},
+"n3691498213": {
+"r": "none",
+"note": "Two searches (Hebrew/English) found nothing about Fero Pizza & Baguette in Daliyat al-Carmel; no site, no Tabit/Ontopo, no news."
+},
+"n10768540511": {
+"r": "none",
+"note": "Searches found only a restaurantguru listing (fetch failed, aggregator anyway); no own site, booking page or news."
+},
+"n3601915992": {
+"r": "none",
+"note": "Frangelico is a sushi/bar chain (frangelicobar.com); enjoyingisrael (undated) lists Zichron branch at Mall Zichron, which may not match catalog 'old coastal road' address. Own site fetch blocked (permission). Only easy.co.il listings; no Tabit/Ontopo page or dated news; no closure news."
+},
+"n9221965537": {
+"r": "none",
+"note": "Fresh Kitchen chain; freshkitchen.co.il fetch blocked (permission). enjoyingisrael (undated) lists a Haifa branch at Zamir Promenade/Nirvana Beach, not Tvuot HaAretz - branch unverified. No Tabit/Ontopo or dated news; no closure news."
+},
+"n1387675857": {
+"r": "none",
+"note": "Searches only found a Jerusalem Chocolata on Wolt and directories; nothing reliable for a Haifa Hanassi Blvd cafe; no closure news."
+},
+"n1431830654": {
+"r": "none",
+"note": "No trace of Chuky Sushi in Yokneam in searches (only Chooka chain elsewhere and other Yokneam sushi places); no site, booking or news."
+},
+"n2021939963": {
+"r": "none",
+"note": "Searches for Chief Sandwich Haifa (Hameginim Blvd) found nothing reliable; no site, booking or news."
+},
+"n4196782637": {
+"r": "none",
+"note": "Searches (Hebrew/English name + Zichron Yaakov, closure, HaMeyasdim) found nothing about Chip Chuck; no site, no Tabit/Ontopo page found"
+},
+"n2086161912": {
+"r": "ok",
+"note": "Two independent recent guides list Tzfririm 1 at Tzfririm 1, Haifa: Time Out Israel Haifa list 2026-01 (bistro-bar, fusion) and Maariv review 2025-07; Mako 2024-12 also. Catalog type cafe but it is a restaurant-bar. No Tabit/Ontopo page found; tiuli fetch failed"
+},
+"n4616625768": {
+"r": "none",
+"note": "No source found for Casa/Kaza Barone at Tzahal 4 Zichron Yaakov (results only Baronita, a different restaurant); no Tabit/Ontopo page"
+},
+"n860428913": {
+"r": "none",
+"note": "No source found for Cat Ballou on Carmel coast road 721 (Hebrew/English searches); no site, no Tabit/Ontopo page"
+},
+"n2702800241": {
+"r": "none",
+"note": "Only undated directories (easy.co.il chain list, fetch failed; b144) for Pai confectionery; no own site, news or booking page confirming Liberia 2 branch"
+},
+"n4966260787": {
+"r": "none",
+"note": "Generic name 'Coffee Shop'; no source found for a cafe of that name on Sderot HaHistadrut, Haifa"
+},
+"w183773484": {
+"r": "none",
+"note": "Only a Wolt public page ('Kioscafe Noosh', Shalom Aleichem 3, Haifa, tel 04-8229911) and undated directories (wanderlog, airbnb, b144); no dated news/guide or own site found"
+},
+"n4875929621": {
+"r": "none",
+"note": "Maariv 2023-07 mentions 'veteran Kalamaris' in Haifa (not recent, no address); otherwise only undated aggregators (wanderlog, evendo, instahop); no Tabit/Ontopo page or closure news found"
+},
+"n4196782641": {
+"r": "none",
+"note": "Hebrew/English name+city searches, Tabit/Ontopo and closure searches found nothing about a Kilimanjaro cafe at HaMeyasdim 36 Zichron Yaakov; no own site found."
+},
+"n2112121028": {
+"r": "none",
+"note": "Only undated aggregator (enjoyingisrael: Kanibar, hamburger/fast food, Moriya 110 Haifa, site kanibar.co.il). Fetch of kanibar.co.il was blocked (permission not answered). No dated news, no Tabit/Ontopo page, no closure news found."
+},
+"n618559918": {
+"r": "none",
+"note": "Only undated aggregators (spinach.guide, pulled.coffee: Cafein, HaNassi Blvd 125 Haifa, phone +972-48682167, Facebook cafeinmerkaz). Facebook fetch refused (robots). No dated guide/news, no Tabit/Ontopo, no closure news."
+},
+"n1425183685": {
+"r": "none",
+"note": "Time Out Israel page for Cafe Ava (51 Atzmaut St, Haifa, tel 04-8640192) dates from 2017, so it is not recent. Alt name 'Cremerie de l'eclair' is a different Tel Aviv shop (King George 53). No 2025-2026 source, no Tabit/Ontopo page, no closure news."
+},
+"n3741391104": {
+"r": "none",
+"note": "Searches in Hebrew and English found nothing for Itzik coffee on Herzl, Tirat Carmel; no own site, Tabit/Ontopo or closure news."
+},
+"n9318661493": {
+"r": "single",
+"note": "Maariv 2025-04-15 describes Cafe Etztrubal, a coffee cart that opened Oct 2023 under the pines on the forest trail in HaPele Park, Yokneam Illit, with prices of about NIS 12-55. Catalog address 'KKL promenade' is assumed to be this same trail (judgement). tiuli.com page fetch failed. No Tabit/Ontopo page, no closure news."
+},
+"n5997932989": {
+"r": "none",
+"note": "Joe (Paz/Menta) branches appear only on an undated aggregator (enjoyingisrael), and no Wadi Milk branch was found there or anywhere else. No official branch list was reachable, and no news or closure items were found."
+},
+"n1387668379": {
+"r": "none",
+"note": "Searches found nothing for a cafe at Gan HaEm / HaNassi Blvd 122 Haifa (Time Out Haifa Jan 2026 list and Calcalist 2024 do not mention it); no Tabit/Ontopo, no closure news."
+},
+"n618250999": {
+"r": "none",
+"note": "Own site cafegreg.co.il fetch refused (permission); searches found only directories (d.co.il) and Wolt (Atlit branch), no Tabit/Ontopo page, no news naming Derech HaYam Haifa branch; no closure news"
+},
+"n2345858193": {
+"r": "none",
+"note": "Own site cafegreg.co.il fetch refused; no reliable source naming a Hatter Bridge Haifa branch; only directories/Wolt; no closure news"
+},
+"n6267886678": {
+"r": "none",
+"note": "Own site cafegreg.co.il fetch refused; no reliable source for Sderot Ahi Eilat 20 Haifa branch; only directories; no closure news"
+},
+"n4969176159": {
+"r": "none",
+"note": "Own site cafegreg.co.il fetch refused; only Wolt listing 'caf greg atlit' (not an allowed source) and directories; no Tabit/Ontopo, no news; no closure news"
+},
+"n2910323811": {
+"r": "none",
+"note": "Own site cafegreg.co.il fetch refused; only undated enjoyingisrael/directory listings for Zikhron Yaakov; no Tabit/Ontopo, no news; no closure news"
+},
+"n12871733101": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page or news found for Cafe Tov Ein Carmel; only a d.co.il directory hit; no closure news"
+},
+"n1814809046": {
+"r": "none",
+"note": "No recent source. HappyCow (user-reported, undated-ish, updated 2019) marks 'Cafe Louise' at Moria 58 Haifa closed, reported shut down Nov 2017 - not news and address differs from Rachel 1; no closure news article found; Time Out/greenprophet old (2010)"
+},
+"n3815028806": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo or news found for Lior's cafe Yokneam; Israel Hayom/Time Out hits are about Lior Kuka cafe in Tel Aviv (unrelated); no closure news"
 }
 }
 }
