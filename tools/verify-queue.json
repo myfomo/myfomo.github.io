@@ -2234,7 +2234,10 @@
   },
   "n2540433561": {
    "r": "none",
-   "note": "No source for Bar Basar on Ben Gurion; no Tabit/Ontopo"
+   "note": "No source for Bar Basar on Ben Gurion; no Tabit/Ontopo",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: searches find only Bar Gurion (Wolt, not allowed) and d.co.il directory; no source names Bar Basar on Ben Gurion; no Tabit/Ontopo page; no closure news"
   },
   "n4033655490": {
    "r": "single",
@@ -2255,11 +2258,17 @@
   },
   "n4706508224": {
    "r": "none",
-   "note": "Ontopo HaBarzel 4 shows all days closed; Wolt branch offline; status unclear"
+   "note": "Ontopo HaBarzel 4 shows all days closed; Wolt branch offline; status unclear",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: d.co.il directory lists Joya Ramat HaHayal at HaBarzel 4 with hours (undated directory, does not count); earlier Ontopo showed all days closed; no own site, guide or closure news found; status still unclear"
   },
   "n11843060618": {
    "r": "none",
-   "note": "Nothing relevant found"
+   "note": "Nothing relevant found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: name and phone 03-5402788 searches return nothing relevant; no Tabit/Ontopo; no closure news"
   },
   "n4706508223": {
    "r": "single",
@@ -2287,7 +2296,10 @@
   },
   "n11459910986": {
    "r": "none",
-   "note": "Only 'Grill Of' Ramat HaSharon found; no match"
+   "note": "Only 'Grill Of' Ramat HaSharon found; no match",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for a 'Grill Of' on Sokolov, Tel Aviv; only generic rotisserie guides; no Tabit/Ontopo; no closure news"
   },
   "n10931741105": {
    "r": "ok",
@@ -2302,11 +2314,17 @@
   },
   "n4679825296": {
    "r": "none",
-   "note": "Ontopo pages exist but booking disabled; N12 2026-02 Greco chain shrinking (branch not named)"
+   "note": "Ontopo pages exist but booking disabled; N12 2026-02 Greco chain shrinking (branch not named)",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out (2016) gives Greco at 25 Uri Zvi Greenberg St; N12/Mako 2026-02-26 says Greco chain shrinking, Tel Aviv promenade branch closed and Rishon closed for renovation, but does not name this branch; own site greco.co.il fetch not permitted; no Ontopo booking found"
   },
   "n12050619161": {
    "r": "none",
-   "note": "Daboush known at Ibn Gabirol 64; no source for Lincoln branch"
+   "note": "Daboush known at Ibn Gabirol 64; no source for Lincoln branch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for a Daboush branch on Lincoln St; only Wolt (not allowed) and Time Out shawarma pieces without this address; no Tabit/Ontopo; no closure news"
   },
   "n1177264748": {
    "r": "none",
@@ -2332,11 +2350,17 @@
   },
   "n8544693910": {
    "r": "none",
-   "note": "Only 2016 JPost review, no address"
+   "note": "Only 2016 JPost review, no address",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: d.co.il directory lists Dominik cafe/patisserie at Tuval 11, Ramat Gan (Bursa complex), phone 03-7511144, likely the same place (catalog city Tel Aviv, Tuval St is in Ramat Gan); undated directory only, no recent news/guide, no Tabit/Ontopo, no closure news"
   },
   "n528946268": {
    "r": "none",
-   "note": "Only Don Vito in Or Yehuda found; no Derech Lod source"
+   "note": "Only Don Vito in Or Yehuda found; no Derech Lod source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only Don Vito in Or Yehuda (Tel HaShomer South junction) on d.co.il with reviews up to 2014; nothing for Derech Lod, Tel Aviv; no Tabit/Ontopo; no closure news"
   },
   "n3315453277": {
    "r": "none",
@@ -2347,11 +2371,17 @@
   },
   "w126469106": {
    "r": "none",
-   "note": "Nothing found for D-Mall Jabotinsky 1"
+   "note": "Nothing found for D-Mall Jabotinsky 1",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: searches (name+city, English alt, Tabit/Ontopo) found no restaurant 'D-Mall' at Jabotinsky 1; no closure news"
   },
   "n636947192": {
    "r": "none",
-   "note": "Nothing found for Ashtori HaParchi 14"
+   "note": "Nothing found for Ashtori HaParchi 14",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for Divinna at Ashtori HaParchi 14; only unrelated 'Divinio' (Rosh Pina) found; no Tabit/Ontopo, no closure news"
   },
   "n3928116060": {
    "r": "ok",
@@ -2359,11 +2389,17 @@
   },
   "n704446925": {
    "r": "none",
-   "note": "Nothing found on Sderot HaYeled"
+   "note": "Nothing found on Sderot HaYeled",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for Shoshana's blintzes on Sderot HaYeled; Time Out results unrelated; no closure news"
   },
   "n1718632812": {
    "r": "none",
-   "note": "Jaffa Port branch: only 2018 sources; own site lists only Kedem 85; possibly closed/moved, no closure source"
+   "note": "Jaffa Port branch: only 2018 sources; own site lists only Kedem 85; possibly closed/moved, no closure source",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "ice 2026-10-09 places Hazaken VeHayam on HaAliya HaShniya St, Jaffa (matches catalog); 30-day admin closure order to Nov 3 2026 (temporary, police); ice 2026-10-26 follow-up says owners seek to cancel order, ~100 employees. Same outlet for both. Earlier note: own site lists Kedem 85; branch match judged from ice street name. walla fetch blocked"
   },
   "n2264923580": {
    "r": "conflict",
@@ -2374,15 +2410,24 @@
   },
   "n5876238032": {
    "r": "none",
-   "note": "Nothing found on HaRav Goren"
+   "note": "Nothing found on HaRav Goren",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for Hummus shel Erez on HaRav Goren; hummus guides don't list it; no closure news"
   },
   "n10549077959": {
    "r": "none",
-   "note": "Chain active but no source for Katznelson branch"
+   "note": "Chain active but no source for Katznelson branch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: chain active (Time Out on Rothschild/Florentin branches) but no official branch list or article naming a Katznelson branch; easy.co.il undated (not counted)"
   },
   "n904510030": {
    "r": "none",
-   "note": "d.co.il shows White Sukka at TLV Port Hangar 4, not Lipkin-Shahak; branch mismatch"
+   "note": "d.co.il shows White Sukka at TLV Port Hangar 4, not Lipkin-Shahak; branch mismatch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no Tabit/Ontopo page; only old articles (makorrishon/nrg) and d.co.il at TLV Port Hangar 4, not Lipkin-Shahak; no recent source, no closure news"
   },
   "n1975875693": {
    "r": "closed",
@@ -2390,7 +2435,10 @@
   },
   "n6507097213": {
    "r": "none",
-   "note": "Only unrelated 'Professor' burger truck/dish; no Tchernichovsky source"
+   "note": "Only unrelated 'Professor' burger truck/dish; no Tchernichovsky source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for 'HaProfessor' on Tchernichovsky; Time Out Tchernichovsky guides don't list it; no closure news"
   },
   "n10812430078": {
    "r": "single",
@@ -2426,7 +2474,10 @@
   },
   "n12588072063": {
    "r": "none",
-   "note": "Nothing found for Zoko Yigal Alon 94b"
+   "note": "Nothing found for Zoko Yigal Alon 94b",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Zoko Yigal Alon appears in a Tel Aviv religious council (rabanut.co.il) kosher listing and a rest.co.il listing (phone 03-5745033, bulk-updated 2025-12, no address). The rabanut page could not be fetched. No own site (catalog URL invalid), no Tabit/Ontopo page, no dated recent source."
   },
   "w539690342": {
    "r": "none",
@@ -2437,19 +2488,31 @@
   },
   "n12270410088": {
    "r": "none",
-   "note": "Chain branches elsewhere; nothing for HaMetsuda"
+   "note": "Chain branches elsewhere; nothing for HaMetsuda",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "Hummus Eliyahu chain branch found at HaMetsuda 8, Azor (only undated directories: easy, t.co.il, rest), not in Tel Aviv as the catalog says. No official branch list, no Tabit/Ontopo page, no recent dated source. The max.co.il benefit page failed to load."
   },
   "n10171136188": {
    "r": "none",
-   "note": "Nothing found for Tsvi 2"
+   "note": "Nothing found for Tsvi 2",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site humus-hamaayan.co.il is live and names Tzvi 2 corner HaMaayan 10, Ramat Gan (catalog city is Tel Aviv, street and number match; probably the OSM city is wrong). ynet 2024-11 and Walla reviews. Kosher: Ramat Gan Rabbinate, per own site."
   },
   "n6316049188": {
    "r": "none",
-   "note": "Nothing found on Wolfson"
+   "note": "Nothing found on Wolfson",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Tel Aviv religious council kosher listing for Hummus Hason at Herzl 68, certificate valid until 2027-04. humus101 (2011) places Herzl 68 at the corner of Wolfson, which is how it matches the catalog. No own site, no Tabit/Ontopo page, no closure news."
   },
   "n6247147868": {
    "r": "none",
-   "note": "Wolt listing at Kiryat Shaul 7, not HaBreicha; address unconfirmed"
+   "note": "Wolt listing at Kiryat Shaul 7, not HaBreicha; address unconfirmed",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "Hummus Refael listings give Kiryat Shaul 7, Ramat HaSharon (rest.co.il, bulk-updated 2025-12, phone 053-6321455), Kiryat Shaul 12, Tel Aviv (b144) and HaBreicha 5, Ramat HaSharon (easy). The address and city differ from the catalog (HaBreicha, Tel Aviv). No dated recent source, no own site, no Tabit/Ontopo page."
   },
   "n11405083079": {
    "r": "none",
@@ -2484,7 +2547,10 @@
   },
   "n10549077965": {
    "r": "none",
-   "note": "No source for a Feinberg branch of Tony Vespa"
+   "note": "No source for a Feinberg branch of Tony Vespa",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "The Tony Vespa Feinberg branch is at Ya'akov Feinberg 2 corner Katzenelson, Givatayim (givatayimplus page, last modified 2019; easy; d.co.il), not in Tel Aviv. Own site tonyvespa.co.il was unreachable (robots), and a Facebook page tonygivatayim exists. No recent dated source, no closure news."
   },
   "n672150097": {
    "r": "none",
@@ -2503,7 +2569,10 @@
   },
   "n2079039190": {
    "r": "none",
-   "note": "Only Yavne resto-bar Yavne 31 (2017); no match"
+   "note": "Only Yavne resto-bar Yavne 31 (2017); no match",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Only Yavne resto-bar at Yavne 31 (Time Out 2017). Nothing found for Montefiore 33: no Tabit/Ontopo page, no news, no closure article."
   },
   "n5754868832": {
    "r": "none",
@@ -2521,11 +2590,17 @@
   },
   "n13619434567": {
    "r": "none",
-   "note": "Nothing found for Arlozorov 81"
+   "note": "Nothing found for Arlozorov 81",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Falafel Yaki's at Arlozorov 81, Ramat Gan (catalog city is Tel Aviv, street and number match). ynetnews 2025-08 best-falafel list; Mako 2018 (kosher, falafel pita 22 NIS). No own site or Tabit/Ontopo page."
   },
   "n6644460539": {
    "r": "none",
-   "note": "No Kaspi source at Kikar HaAtzmaut"
+   "note": "No Kaspi source at Kikar HaAtzmaut",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hummus Kaspi branches found only at Ben Yehuda 172 (Time Out 2017) and Ben Yehuda/Arlozorov (Time Out 2015); no source names a Kikar HaAtzmaut branch. Own site kaspishuk.co.il fetch blocked. No closure news."
   },
   "n9879110650": {
    "r": "none",
@@ -2536,7 +2611,10 @@
   },
   "n11091229844": {
    "r": "none",
-   "note": "Generic name; place not identifiable on Allenby"
+   "note": "Generic name; place not identifiable on Allenby",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: generic name; Time Out kosher TA guide 2025-08 lists no Italian kosher place on Allenby (only Gogi's Grill Bar, Allenby 47). Not identifiable."
   },
   "n12434574007": {
    "r": "single",
@@ -2554,7 +2632,10 @@
   },
   "n5876238030": {
    "r": "none",
-   "note": "Only La Pizzelia Rishon LeZion found"
+   "note": "Only La Pizzelia Rishon LeZion found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: La Pizzelia found only in Rishon LeZion (d.co.il, HaRav Chaim David HaLevi 5); nothing for HaRav Goren, Tel Aviv. No Tabit/Ontopo."
   },
   "n11849335669": {
    "r": "ok",
@@ -2591,7 +2672,10 @@
   },
   "n6470389885": {
    "r": "none",
-   "note": "Only undated directories (gokosher, eatintlv)"
+   "note": "Only undated directories (gokosher, eatintlv)",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: still only undated directories/aggregators (gokosher, wanderlog, itraveltelaviv, totallyjewishtravel); no Tabit/Ontopo page, no dated news either operating or closed."
   },
   "n381410923": {
    "r": "none",
@@ -2609,7 +2693,10 @@
   },
   "n711326192": {
    "r": "none",
-   "note": "No source for Moses Station Dizengoff 293"
+   "note": "No source for Moses Station Dizengoff 293",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Moses chain down to 2 branches under BBB (Mako/ice 2024-03, Rothschild closed), branches not named; only undated enjoyingisrael listing for a Dizengoff branch. mosesrest.co.il fetch blocked. No source for Dizengoff 293 or 'Moses Station'."
   },
   "n12588129401": {
    "r": "none",
@@ -2620,7 +2707,10 @@
   },
   "n5018171922": {
    "r": "none",
-   "note": "Identity ambiguous; only 2018 Miznon listing"
+   "note": "Identity ambiguous; only 2018 Miznon listing",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Miznon Ibn Gvirol at Ibn Gvirol 21 exists per Time Out Israel (2023-03), but no 2025-2026 source; catalog alt name 'Beer Cafe' leaves identity uncertain. hashulchan.co.il fetch blocked."
   },
   "n10034263918": {
    "r": "none",
@@ -2642,11 +2732,17 @@
   },
   "n13711728405": {
    "r": "none",
-   "note": "Nothing found at HaMetzuda 6"
+   "note": "Nothing found at HaMetzuda 6",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Tunisian sandwich guides (Time Out 2019, ynet 2026-08) name other places (Hapatish 9, Lilienblum 21, Ibn Gabirol); nothing at HaMetzuda 6 or under this name."
   },
   "n3159444237": {
    "r": "none",
-   "note": "Nothing for Yehuda HaYamit 5 (Monka at 15 is different)"
+   "note": "Nothing for Yehuda HaYamit 5 (Monka at 15 is different)",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only Monka at Yehuda HaYamit 15 found (Time Out 2026-06: temporary closure from 2026-06-28, reopening planned under new operator); nothing at number 5 - different address, not matched."
   },
   "n6759353882": {
    "r": "single",
@@ -2656,7 +2752,10 @@
   },
   "n2264923661": {
    "r": "none",
-   "note": "Nothing found for Abu el-Abed on Yefet"
+   "note": "Nothing found for Abu el-Abed on Yefet",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only Time Out 2014 article mentions Abu el-Abed (no address, not Yefet); no own site, Tabit/Ontopo or 2025-26 source, no closure news"
   },
   "n1185083191": {
    "r": "single",
@@ -2667,19 +2766,31 @@
   },
   "n4845766323": {
    "r": "none",
-   "note": "Undated atly + 2013 d.co.il only"
+   "note": "Undated atly + 2013 d.co.il only",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only d.co.il 2013 article (Uzeri brothers 'HaBayit', Kerem HaTeimanim) and undated atly; no Tabit/Ontopo, no recent source, no closure news"
   },
   "n2266143485": {
    "r": "none",
-   "note": "Nothing found on Aza St"
+   "note": "Nothing found on Aza St",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source found for Sara restaurant on Aza St (Hebrew/English searches, Tabit/Ontopo, closure)"
   },
   "n1309308421": {
    "r": "none",
-   "note": "Nothing found on Namir Rd"
+   "note": "Nothing found on Namir Rd",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source found for Mifgash HaYarkon on Namir Rd; search hits were unrelated businesses"
   },
   "n4380700192": {
    "r": "none",
-   "note": "Only undated directories HaYarkon 83"
+   "note": "Only undated directories HaYarkon 83",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Cafe Masada HaYarkon 83 only in 2021 blog (telavivarchitecture.com) and undated 2eat listing (03-5103353); no 2025-26 source, no Tabit/Ontopo, no closure news"
   },
   "n705556743": {
    "r": "ok",
@@ -2698,7 +2809,10 @@
   },
   "n4362814192": {
    "r": "none",
-   "note": "Only Nooch Ramat HaSharon found"
+   "note": "Only Nooch Ramat HaSharon found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only Nooch at Hasayfan 31 Ramat HaSharon (weekend.co.il, happycow); nothing on Shoshan St Tel Aviv"
   },
   "n12159945050": {
    "r": "none",
@@ -2713,11 +2827,17 @@
   },
   "n14179978225": {
    "r": "none",
-   "note": "Nothing found on Nahalat Yitzhak"
+   "note": "Nothing found on Nahalat Yitzhak",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for Nahala Israeli eatery on Nahalat Yitzhak; Time Out Nahalat Yitzhak topic page has no mention"
   },
   "n8544796029": {
    "r": "none",
-   "note": "Nothing found on HaHilazon"
+   "note": "Nothing found on HaHilazon",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for Nemesh on HaHilazon (Hebrew/English, Tabit/Ontopo searches)"
   },
   "n2678712694": {
    "r": "closed",
