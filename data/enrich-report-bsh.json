@@ -14,6 +14,7 @@
  "names_wd": 0,
  "conflicts": [],
  "rejected_sites": [],
+ "phone_confirmed": 1,
  "coverage_after": {
   "address": "158 (100%)",
   "hours": "27 (17%)",

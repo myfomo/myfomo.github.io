@@ -49,7 +49,7 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 4,
+ "phone_confirmed": 5,
  "phone_multi_skipped": 2,
  "coverage_after": {
   "address": "444 (100%)",
