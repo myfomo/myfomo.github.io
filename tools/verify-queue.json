@@ -1368,9 +1368,9 @@
   },
   "n12981671701": {
    "r": "none",
-   "r2": "none",
+   "r2": "single",
    "d2": "2026-11-27",
-   "note2": "Time Out Israel page (2023-09) gives 5 Herbert Samuel, site beachclub.co.il, phone 03-797-7966. Time Out post (2020-02) puts it at Dolphinarium beach. Own site fetch was blocked by a permission timeout (https://beachclub.co.il/he). No 2025-2026 source, no Tabit/Ontopo page, no closure news."
+   "note2": "Own site beachclub.co.il live (Beach Club TLV, beachfront by Dolphinarium beach, promotes bookings); contact page: Herbert Samuel 5 Tel Aviv, 03-7977966, daily 08:00-24:00; Tabit booking page linked. Catalog address is the Shlomo Lahat promenade; Herbert Samuel 5 is on the promenade by Dolphinarium, match by judgement. Cuisine mixed (Asian fusion/Mediterranean/seafood), cu not set. (single: branch match by judgement)"
   },
   "n440854174": {
    "r": "none",
@@ -1653,8 +1653,8 @@
    "r": "none",
    "note": "Time Out 2026-04 only; own FB not fetched",
    "r2": "single",
-   "note2": "Only Time Out (same outlet twice): https://timeout.co.il/%D7%97%D7%95%D7%9E%D7%95%D7%A1-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91 (2026-04) and 3-מנות-חומוס (2025-06), both Ibn Gabirol 8; own Facebook blocked; no Tabit/Ontopo/Wolt found; no closure news",
-   "d2": "2026-11-25"
+   "note2": "Own Facebook not fetchable (robots disallowed); still only Time Out (2026-04 hummus list, 2025-06, 2022-05 reopening at Ibn Gabirol 8, phone 03-6878635); no Tabit/Ontopo; no closure news",
+   "d2": "2026-11-27"
   },
   "n6050037671": {
    "r": "none",
@@ -1767,7 +1767,7 @@
    "r": "none",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Keton is at Dizengoff 145 per Time Out (2017) and asif.org (modified 2024-04). Own site keton.co.il fetch was blocked. No Tabit/Ontopo page, no closure news, no 2025-2026 source."
+   "note2": "Own site keton.co.il fetch blocked again (permission not answered). Only Time Out (2017), asif.org, Tablet, undated listings; no Tabit/Ontopo; no closure news; no 2025-2026 source."
   },
   "n5181530015": {
    "r": "none",
@@ -1945,15 +1945,15 @@
   },
   "n11428462560": {
    "r": "none",
-   "r2": "none",
+   "r2": "single",
    "d2": "2026-11-27",
-   "note2": "Re-check: official pizzahut.co.il blocked; directories list a 'Ramat Gan - Marom Nave' branch (Marom Naveh square is in Ramat Gan, catalog city says Tel Aviv); no dated source."
+   "note2": "Official branch page live 2026-11: Pizza Hut Ramat Gan - Marom Nave, Landau 7, Ramat Gan; phone 1-700-50-60-70; kosher lemehadrin Badatz Beit Yosef; no closure notice. Marom Nave square is in Ramat Gan (catalog city Tel Aviv) - branch match by judgement. Hours on page garbled, so oh not set. (single: branch match by judgement)"
   },
   "n12047583620": {
    "r": "none",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Re-check: catalog website pizzahut.co.il/branch/תל-אביב-רמת-אביב blocked (permission not granted); only undated directories (enjoyingisrael, d.co.il) name the Ramat Aviv branch; no closure news."
+   "note2": "Catalog branch URL pizzahut.co.il/branch/תל-אביב-רמת-אביב/ now errors; official branch list and Tel Aviv page show no Ramat Aviv/Brodetsky branch (only King George, Totzeret HaAretz, Yigal Alon, HaNechoshet). Only undated directories name it. No closure news, so not marked closed."
   },
   "n5605064591": {
    "r": "none",
@@ -2112,8 +2112,8 @@
    "r": "ok",
    "note": "Time Out 2025-11 and Asians in Israel 2025-06",
    "r2": "ok",
-   "note2": "Time Out 2025-11 and Asians in Israel 2025-06; Time Out/Israel Hayom 2023-11 confirm HaRakevet 12; no own site/Ontopo/Tabit found; no closure news",
-   "d2": "2026-11-25",
+   "note2": "Own site watsangsushi.co.il live: Wat Sang Sushi, Harakevet 12 Tel Aviv, phone 077-980-0443, hours 'Monday-Saturday 12:00-22:00' (Sunday not stated), Tabit booking link.",
+   "d2": "2026-11-27",
    "det": "2026-11-27",
    "note3": "Directory asiansinisrael lists site watsangsushi.co.il, phone 077-980-0443, hours Mo-Sa 12:00-22:00 but it is an aggregator; own site fetch permission timed out. Time Out 2023 gave trial hours 12:00-20:00 (disagree). Nothing set."
   },
@@ -2271,7 +2271,10 @@
    "r": "ok",
    "note": "chain branch page, Azrieli Mall",
    "det": "2026-11-27",
-   "note3": "Own branch page oshioshi.co.il fetch permission timed out; only directories (d.co.il, easy) found for phone, not used."
+   "note3": "Own branch page oshioshi.co.il fetch permission timed out; only directories (d.co.il, easy) found for phone, not used.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own branch page oshioshi.co.il now opens (2026-11): Oshi Oshi Tel Aviv Azrieli (kosher), Azrieli Mall 3rd floor, Menachem Begin 132, phone *6054, Su-Th 10-22, Fr 11-15, Sat from end of Shabbat to 22:00 (not encoded); kosher certificate not named so k not set; sushi/Asian"
   },
   "n5604815956": {
    "r": "ok",
@@ -2750,7 +2753,7 @@
    "note": "Nothing found for Zoko Yigal Alon 94b",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Zoko Yigal Alon appears in a Tel Aviv religious council (rabanut.co.il) kosher listing and a rest.co.il listing (phone 03-5745033, bulk-updated 2025-12, no address). The rabanut page could not be fetched. No own site (catalog URL invalid), no Tabit/Ontopo page, no dated recent source."
+   "note2": "Catalog website invalid (https://Zoko_tlv), no own site found; searches found no Tabit/Ontopo page and no dated recent source for Zoko Yigal Alon 94b; no closure news"
   },
   "w539690342": {
    "r": "none",
@@ -2769,9 +2772,9 @@
   "n10171136188": {
    "r": "none",
    "note": "Nothing found for Tsvi 2",
-   "r2": "ok",
+   "r2": "single",
    "d2": "2026-11-27",
-   "note2": "Own site humus-hamaayan.co.il is live and names Tzvi 2 corner HaMaayan 10, Ramat Gan (catalog city is Tel Aviv, street and number match; probably the OSM city is wrong). ynet 2024-11 and Walla reviews. Kosher: Ramat Gan Rabbinate, per own site.",
+   "note2": "Own site humus-hamaayan.co.il live (2026-11), names Tzvi 2, Ramat Gan; catalog city Tel Aviv but street/number/phone match, so same place (OSM city likely wrong). No hours on site; kosher menu link but no certificate named. (single: branch match by judgement)",
    "det": "2026-11-27",
    "note3": "Own site humus-hamaayan.co.il was blocked (permission). The ynet 2024-11 article has no hours and places it at Tzvi/HaMaayan, Ramat Gan (catalog city Tel Aviv; check the city). No hours found."
   },
@@ -2899,8 +2902,8 @@
    "r": "single",
    "note": "Time Out 2026-01 Italian list: Tometomato/Lava, Beit HaBad 7 https://timeout.co.il/the-most-recommended-italian-restaurants-in-tel-aviv/",
    "r2": "single",
-   "d2": "2026-11-25",
-   "note2": "Re-check: Time Out only (2026-01 Italian list, 2026-10 pasta list https://timeout.co.il/%d7%a4%d7%a1%d7%98%d7%94-%d7%a9%d7%95%d7%95%d7%94-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/ , 2023 opening review), Beit HaBad 7; Instagram blocked; no Tabit/Ontopo; atly aggregator not used"
+   "d2": "2026-11-27",
+   "note2": "Instagram lavatelaviv permission not answered; still only Time Out (2026-01 Italian list, 2026-10 pasta list, 2023-07 opening review at Simtat Beit HaBad 5 vs catalog 7, pastas 49-86 NIS); no Tabit/Ontopo; atly/wanderlog aggregators not used"
   },
   "n2322594230": {
    "r": "ok",
@@ -3271,14 +3274,14 @@
    "note": "Official branch list has no Weissburg branch; no closure news",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Re-check: official branch list pizzahut.co.il/branches.php fetch refused (permission); no news/guide naming a Weissburg branch; no closure news found"
+   "note2": "Official branch list (pizzahut.co.il/branch/ and Tel Aviv city page) shows only King George 79, Totzeret HaAretz 9, Yigal Alon 51, HaNechoshet 1; no Weissburg branch. No closure news."
   },
   "n10951337911": {
    "r": "none",
    "note": "Official branch list has no Jabotinsky branch; no closure news",
    "r2": "none",
    "d2": "2026-11-27",
-   "note2": "Re-check: official branch list pizzahut.co.il/branches.php fetch refused (permission); no news/guide naming a Jabotinsky Tel Aviv branch; no closure news found"
+   "note2": "Phase 2: official Pizza Hut branch directory pizzahut.co.il/branch/ now opened (2026-11): Tel Aviv/Ramat Gan branches are Tozeret HaAretz 9, Yigal Alon 51, HaNechoshet 1, King George 79, Landau 7 Ramat Gan; no Jabotinsky branch. No closure news, no other source for a Jabotinsky branch."
   },
   "n12270410086": {
    "r": "none",
@@ -3831,7 +3834,10 @@
    "r": "ok",
    "note": "Own site live names HaHalutzim 8",
    "det": "2026-11-27",
-   "note3": "Own site opatlv.co.il fetch not permitted; Time Out English page (undated) says Mon-Fri 19:00-24:00 - single undated source, not used"
+   "note3": "Own site opatlv.co.il fetch not permitted; Time Out English page (undated) says Mon-Fri 19:00-24:00 - single undated source, not used",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site opatlv.co.il live: Chef Shiraz Berger's plant-based 11-course tasting menu at HaHalutzim 8; Mon pantry 12-18, Tu-We from 19:30, Th from 19:00, Fr-Su closed; Tabit booking link on site. Not stated fully vegan; it is a restaurant rather than a bar."
   },
   "n2479682972": {
    "r": "none",
@@ -3993,8 +3999,8 @@
    "r": "none",
    "note": "Time Out 2024-08 only (Florentin 7)",
    "r2": "ok",
-   "note2": "Own site bluefox-telaviv.com live, Florentin 7, events Aug/Nov 2026; Time Out 2024-08 and 2024-11",
-   "d2": "2026-11-25",
+   "note2": "Own site bluefox-telaviv.com live (fetched 2026-11): The Blue Fox, Florentine 7, board game & cocktail bar, hours Mo-We 18-24, Th 18-01, Fr-Sa 19-01, Catan events 19.08/18.11; no phone on site; booking via tinyurl (not Tabit/Ontopo); no closure news",
+   "d2": "2026-11-27",
    "det": "2026-11-27",
    "note3": "Own site bluefox-telaviv.com fetch not permitted; Time Out 2024-08 page shows no phone"
   },
@@ -4272,7 +4278,10 @@
    "r": "ok",
    "note": "Own site live, Vital corner Florentin",
    "det": "2026-11-27",
-   "note3": "Own site nightshift.rest.co.il fetch blocked; no other hours source found."
+   "note3": "Own site nightshift.rest.co.il fetch blocked; no other hours source found.",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Catalog site nightshift.rest.co.il now just shows the generic rest.co.il homepage (no Night Shift listing), so own site no longer confirms it. No Tabit/Ontopo, no dated guide naming Night Shift at Vital 9 (only undated atly listing); no closure news."
   },
   "n2821371241": {
    "r": "none",
@@ -4791,8 +4800,8 @@
    "r": "ok",
    "note": "Own site live, Tchernichovsky 21; Time Out 2024 prices",
    "r2": "ok",
-   "note2": "Own site live 2026-11: Tchernichovsky 21, phone 03-6799788, Tabit/Wolt ordering links; Time Out 2024 prices",
-   "d2": "2026-11-25",
+   "note2": "Own site stefanbakery.com live: Tchernichovsky 21 Tel Aviv, 03-6799788; contact page hours Sunday-Saturday 10:00-22:00; Tabit pickup/delivery ordering link.",
+   "d2": "2026-11-27",
    "det": "2026-11-27",
    "note3": "Own site stefanbakery.com fetch refused and it did not come up in search; only directories (atly, wanderlog). No hours found."
   },
@@ -4808,7 +4817,10 @@
    "r": "ok",
    "note": "Own site lists Sarona branch David Elazar 17",
    "det": "2026-11-27",
-   "note3": "maecafe.com fetch refused (permission). Time Out IL page lists Sharona hours Su-Th 08:00-17:00, Fr 08:00-14:00 but no second agreeing source (timeout.com EN page is Montefiore branch, 2023); no phone found."
+   "note3": "maecafe.com fetch refused (permission). Time Out IL page lists Sharona hours Su-Th 08:00-17:00, Fr 08:00-14:00 but no second agreeing source (timeout.com EN page is Montefiore branch, 2023); no phone found.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site maecafe.com live today, lists Sarona branch at Rav Aluf David Elazar 17 (separate OKOKO at no. 16). No phone/hours/prices per branch on site."
   },
   "n759498364": {
    "r": "none",
@@ -4825,8 +4837,8 @@
    "r": "conflict",
    "note": "Wolt/enjoyingisrael: Aroma Dizengoff-Gordon at Dizengoff 132, catalog 123; official page blocked",
    "r2": "conflict",
-   "note2": "Wolt public page and enjoyingisrael give Aroma Dizengoff-Gordon at Dizengoff 132 (catalog 123, likely typo); official aroma.co.il page blocked; no fix filed (no official source); no closure news",
-   "d2": "2026-11-26"
+   "note2": "aroma.co.il store page and home pages (en/he) failed with client_error again; only Wolt/aggregators give Dizengoff-Gordon at Dizengoff 132 vs catalog 123; no official branch list obtained; no closure news.",
+   "d2": "2026-11-27"
   },
   "n12064670866": {
    "r": "none",
@@ -4976,7 +4988,10 @@
    "r": "ok",
    "note": "Own site + Ontopo active: Kikar Tzina Dizengoff 3 (address fix added)",
    "det": "2026-11-27",
-   "note3": "plazacafe.co.il fetch refused (permission). Israel Hayom 2023-11 opening article gives daily 09:00-23:00, but it's a single, old source, so hours not set."
+   "note3": "plazacafe.co.il fetch refused (permission). Israel Hayom 2023-11 opening article gives daily 09:00-23:00, but it's a single, old source, so hours not set.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site plazacafe.co.il live: Kikar Tzina Dizengoff 3, 073-331-9415, links Ontopo booking; Ontopo page 'Plaza Tel Aviv' shows booking form. No hours on site."
   },
   "n6760821216": {
    "r": "none",
@@ -5080,7 +5095,10 @@
    "r": "ok",
    "note": "Official page Karlibach 1",
    "det": "2026-11-27",
-   "note3": "aroma.co.il store page fetch refused (permission); no phone from allowed source."
+   "note3": "aroma.co.il store page fetch refused (permission); no phone from allowed source.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Official Aroma store page live today: Karlibach 1, Tel Aviv; hours Su-Th 06:00-20:00, Fr 07:00-14:00, Sa closed; 'kosher dairy/meat' without named certificate; no phone."
   },
   "n12050619150": {
    "r": "single",
@@ -5422,7 +5440,10 @@
    "r": "ok",
    "note": "Givatayim (Katznelson 33). Active Ontopo page 'נלסון החדש' (New Nelson) at Katznelson 33, described as bar-restaurant under new concept; cafenelson.co.il is a WordPress placeholder; enjoyingisrael hours differ so no oh; no closure news",
    "det": "2026-11-27",
-   "note3": "Ontopo page live (Nelson HaHadash, Katznelson 33, Givatayim - catalog city Tel Aviv, address on booking page is Givatayim); website cafenelson.co.il linked from Ontopo page (own site fetch refused); hours from Ontopo only, not recorded (dropped: branch match judgement)"
+   "note3": "Ontopo page live (Nelson HaHadash, Katznelson 33, Givatayim - catalog city Tel Aviv, address on booking page is Givatayim); website cafenelson.co.il linked from Ontopo page (own site fetch refused); hours from Ontopo only, not recorded (dropped: branch match judgement)",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: cafenelson.co.il now fetched but is still a WordPress placeholder ('Hello world', 2026-02) with no details; Ontopo page not resurfaced in search. Nothing new; stays active per earlier Ontopo finding."
   },
   "n1319999667": {
    "r": "ok",
@@ -5461,8 +5482,8 @@
    "r": "conflict",
    "note": "Own site fika.co.il (last modified 2023-04) lists TA branches Gordon 36, Yirmiyahu 27, Shlomo 43 with catalog phone 03-5229505 but no Dov Hoz branch; cannot confirm catalog point on Dov Hoz is the Gordon 36 branch; Time Out 2020 Gordon opening; no closure news; no Tabit/Ontopo.",
    "r2": "conflict",
-   "note2": "Re-check: own site fika.co.il now opened live: lists TA branches Gordon 36, Yirmiyahu 27, Shlomo 43 (phone 03-5229505) but no Dov Hoz branch; catalog point on Dov Hoz cannot be matched to Gordon 36 (one block north); Time Out 2020 Gordon opening; no closure news; no Tabit/Ontopo. https://www.fika.co.il/",
-   "d2": "2026-11-25"
+   "note2": "Phase 2: own site fika.co.il live 2026-11 lists TA branches Gordon 36, Yirmiyahu 27, Shlomo 43 (phone 03-5229505), no Dov Hoz branch; search found no source for Fika on Dov Hoz; catalog point cannot be matched to Gordon 36. No closure news; no Tabit/Ontopo.",
+   "d2": "2026-11-27"
   },
   "n12768123437": {
    "r": "none",
@@ -5489,8 +5510,8 @@
    "r": "single",
    "note": "Only Time Out (one outlet, 4 articles: 2025-03 review with hours Su-Th 7:30-18 Fr 7:30-15 Sa 9-16 and prices, 2025-04, 2026-04 laptop cafes, 2026-10 Saturday-open list) at Frenkel 56; no independent 2nd source; no Tabit/Ontopo; no closure news. https://timeout.co.il/%d7%91%d7%aa%d7%99-%d7%a7%d7%a4%d7%94-%d7%a4%d7%aa%d7%95%d7%97%d7%99%d7%9d-%d7%91%d7%a9%d7%91%d7%aa-49/",
    "r2": "single",
-   "note2": "Re-check: Instagram (own handle) blocked by robots; still only Time Out (one outlet, several articles 2025-03 to 2026-10) at Frenkel 56; no independent 2nd source; no Tabit/Ontopo; no closure news. https://timeout.co.il/%d7%91%d7%aa%d7%99-%d7%a7%d7%a4%d7%94-%d7%a4%d7%aa%d7%95%d7%97%d7%99%d7%9d-%d7%91%d7%a9%d7%91%d7%aa-49/",
-   "d2": "2026-11-25"
+   "note2": "Re-check: still only Time Out (several articles 2025-03 to 2026-10) at Frenkel 56; ynetnews Florentin 2026-04 roundup does not mention it; only aggregators (atly) otherwise; no Tabit/Ontopo; no closure news.",
+   "d2": "2026-11-27"
   },
   "n1724608444": {
    "r": "none",
@@ -5781,7 +5802,10 @@
    "r": "ok",
    "note": "Official roladin.co.il branch page 'Givatayim Sheinkin', Shenkin 49 Givatayim (matched as Givatayim, not TA Sheinkin); hours from own site; page says no kosher certificate",
    "det": "2026-11-27",
-   "note3": "Details: roladin.co.il branch page fetch blocked (permission not granted); no booking page found; phone not found from allowed source."
+   "note3": "Details: roladin.co.il branch page fetch blocked (permission not granted); no booking page found; phone not found from allowed source.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Official roladin.co.il branch page now fetched: Givatayim Shenkin, Shenkin 49 Givatayim; hours Su-Fr 06:30-21:00, Sa 07:30-21:00 (same as catalog); no branch phone (only general WhatsApp); no kosher certificate."
   },
   "n1546447298": {
    "r": "ok",
@@ -5833,8 +5857,8 @@
    "r": "conflict",
    "note": "Street only; official list has two Dizengoff branches: Dizengoff Center, Dizengoff 50 (https://www.roladin.co.il/branch/דיזינגוף/) and Jabotinsky 24 corner Dizengoff (https://www.roladin.co.il/branch/תל-אביב-זבוטינסקי/); both active. Cannot tell which without coordinates.; catalog coords 32.0750,34.7754 fit Dizengoff Center - needs confirm",
    "r2": "ok",
-   "note2": "Official Roladin page Dizengoff Center (Dizengoff 50) live 2026-11, map point ~35 m from catalog point (Jabotinsky 24 branch does not match); no closure news",
-   "d2": "2026-11-26",
+   "note2": "Official Roladin branch page opened 2026-11: Tel Aviv Dizengoff Center, Dizengoff 50; hours Su-Th 07:00-20:00, Fr 07:00-16:00, Sa closed; no kosher certificate; no branch phone (only chain WhatsApp 054-9543497). Matches catalog point per earlier coordinate check.",
+   "d2": "2026-11-27",
    "det": "2026-11-27",
    "note3": "Details: roladin.co.il branch page fetch blocked (permission not granted); phone not found from allowed source."
   },
@@ -6030,7 +6054,10 @@
    "r": "ok",
    "note": "Own site kfc.co.il lists 'KFC Allenby', Magen David Sq, Allenby 1 with hours; Walla 2026-10 says Tel Aviv branch still operating, but the franchisee is in insolvency and Calcalist 2026-11 says the trustees keep all 12 branches open until 2026-11-30. Re-check soon.; KFC Israel franchisee insolvent, trustees keep open until 2026-11-30 - RECHECK after",
    "det": "2026-11-27",
-   "note3": "Details: kfc.co.il fetch blocked (permission not granted); news articles give no branch phone. Nothing new."
+   "note3": "Details: kfc.co.il fetch blocked (permission not granted); news articles give no branch phone. Nothing new.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site kfc.co.il live 2026-11 lists KFC Allenby, Kikar Magen David, Allenby 1, Su-Fr 11:00-00:00, Sa 11:00-23:00, no closure notice. ice 2026-11-16: franchisee insolvent, trustees asked to keep all 12 branches open until 2026-11-30 pending sale - RECHECK after 2026-11-30."
   },
   "n12553667469": {
    "r": "ok",
@@ -6112,22 +6139,22 @@
    "r": "ok",
    "note": "Own site papajohns.co.il live (2026-11) lists a 'Ramat HaSharon' branch in its branch menu; branch page itself blocked so street number/hours not confirmed; Tabit/Ontopo none (delivery chain); no closure news",
    "r2": "ok",
-   "note2": "Re-check: own branch page now opens (2026-11): Papa John's Ramat HaSharon, Sokolov 40, Ramat HaSharon, phone *6699, Su-Sa 12:00-00:00, delivery/order online; matches coordinates (outside TLV); no kosher info; Tabit/Ontopo none (delivery chain); no closure news",
-   "d2": "2026-11-25"
+   "note2": "Own branch page live 2026-11: Papa John's Ramat HaSharon, Sokolov 40, Ramat HaSharon; phone *6699; Su-Sa 12:00-00:00; delivery/pickup; no kosher info. Branch is in Ramat HaSharon, not Tel Aviv (catalog city wrong; matches coordinates per earlier check).",
+   "d2": "2026-11-27"
   },
   "n12802963142": {
    "r": "ok",
    "note": "Own site papajohns.co.il live (2026-11) lists 'Tel Aviv Levontin' branch; branch page fetch blocked so hours/phone not re-confirmed; Tabit/Ontopo none; no closure news",
    "r2": "ok",
-   "note2": "Re-check: own branch page now opens (2026-11): Papa John's Tel Aviv Levontin, Levontin 30, phone *6699, Su-Sa 12:00-00:00, online ordering; no kosher info; Tabit/Ontopo none; no closure news",
-   "d2": "2026-11-25"
+   "note2": "Own branch page live (2026-11): Papa John's Tel Aviv Levontin, Levontin 30, *6699, Su-Sa 12:00-00:00; no kosher info; no Tabit/Ontopo",
+   "d2": "2026-11-27"
   },
   "n12117172967": {
    "r": "single",
    "note": "Time Out 2025-08-20 says chain holds branches on Herzl St and Givatayim: https://timeout.co.il/%D7%A4%D7%A8%D7%99%D7%96-%D7%98%D7%A7%D7%A1%D7%A1-%D7%94%D7%99%D7%9B%D7%9C-%D7%9E%D7%A0%D7%95%D7%A8%D7%94/ ; Time Out 2023-04 opening at Herzl 4; own site fetch blocked; no Tabit/Ontopo; no closure news",
    "r2": "conflict",
-   "note2": "Own site branches page (2026-11) https://www.paristexasil.co.il/%D7%9E%D7%A1%D7%A2%D7%93%D7%95%D7%AA lists only Eilat, Hod HaSharon, Rishon LeZion, Givatayim (Katznelson 59), Netanya - no Tel Aviv/Herzl 4 branch; catalog w page /תל-אביב fails to load; but Time Out 2025-08-20 said chain holds Herzl branch: https://timeout.co.il/%D7%A4%D7%A8%D7%99%D7%96-%D7%98%D7%A7%D7%A1%D7%A1-%D7%94%D7%99%D7%9B%D7%9C-%D7%9E%D7%A0%D7%95%D7%A8%D7%94/ (opened Herzl 4 April 2023 per Time Out); possibly closed but no closure article found; no Tabit/Ontopo",
-   "d2": "2026-11-25"
+   "note2": "Own site paristexasil.co.il (both /תל-אביב and branches page) permission not answered again, so not re-checked; earlier check of branches page listed no Tel Aviv/Herzl 4 branch while Time Out 2025-08-20 said chain holds Herzl branch; no closure article found",
+   "d2": "2026-11-27"
   },
   "n1308842264": {
    "r": "none",
@@ -6271,8 +6298,8 @@
    "r": "single",
    "note": "Spinach.guide listing (Kalman Magen 3, hours, links woktowalk.com/he) only; Tabit 'wok-to-walk-שרונה' page exists in search but failed to load; own site not fetchable; no closure news.",
    "r2": "ok",
-   "note2": "Own site restaurants page lists 'Tel Aviv-Yafo, Sarona Market, Aluf Kalman Magen 3', marked kosher (no certificate named, so k is not set here); earlier spinach.guide listing agrees. Hours/phone not on own site; Tabit page not opened.",
-   "d2": "2026-11-25",
+   "note2": "Own site woktowalk.com/he/restaurants lists Sarona Market, 3 Aluf Kalman Magen St, Tel Aviv-Yafo, marked kosher (no certificate named); no hours/phone on own site.",
+   "d2": "2026-11-27",
    "det": "2026-11-27",
    "note3": "Fetch of woktowalk.com/he/restaurants refused. No reliable hours or phone for the Alof Kalman Magen 3 (Sarona) branch found. Spinach 217848 actually lists Hahashmonaim 86, not this address."
   },
@@ -6280,8 +6307,8 @@
    "r": "single",
    "note": "Spinach.guide listing Hahashmonaim 86 (https://spinach.guide/venues/wok-to-walk-217848/) only; own site woktowalk.com/he not fetchable; Tabit branch pages failed to load; no closure news.",
    "r2": "ok",
-   "note2": "Own site restaurants page lists 'Tel Aviv-Yafo, Hashmonaim 86', marked kosher (no certificate named); earlier spinach.guide listing (https://spinach.guide/venues/wok-to-walk-217848/) agrees. No hours/phone on own site.",
-   "d2": "2026-11-25",
+   "note2": "Own site woktowalk.com/he/restaurants lists 86 HaHashmonaim St, Tel Aviv-Yafo, kosher (no certificate named); no hours/phone on own site.",
+   "d2": "2026-11-27",
    "det": "2026-11-27",
    "note3": "Fetch of woktowalk.com refused. Spinach.guide (aggregator) lists Hahashmonaim 86, phone 03-7331299, hours Su-We 11-00, Th 11-01, Fr-Sa 12-00. Single non-own source, so nothing recorded."
   },
@@ -6473,7 +6500,10 @@
    "r": "ok",
    "note": "Own site live naming Sharit Israel 23 (menu page modified 2026-10); Time Out/Israel Hayom articles; no Tabit/Ontopo; hours on site ambiguous, not taken",
    "det": "2026-11-27",
-   "note3": "Fetch of own site burgersstation23.com refused. Only Time Out 2020-01 gives hours (daily 11:00-23:00): a single old source, so not recorded."
+   "note3": "Fetch of own site burgersstation23.com refused. Only Time Out 2020-01 gives hours (daily 11:00-23:00): a single old source, so not recorded.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site burgersstation23.com live, names Sharit Israel 23 and phone 03-743-6353; hours text ambiguous (Su-We 10:00-02:00, Th-Fr until 06:00, Sa until 04:00, opening times missing), so not set."
   },
   "n12281652113": {
    "r": "none",
@@ -6483,7 +6513,10 @@
    "r": "ok",
    "note": "Maariv 2025-06 (Levinsky 43, borekas 37 NIS) + asif.org 2025-04; no own site; not on Tabit/Ontopo; no closure news",
    "det": "2026-11-27",
-   "note3": "Maariv fetch refused. asif.org (2025-04) gives hours Su-We 07-15, Th 07-16, Fr 07 until 1h before sunset, phone 054-5866366, and no website (Instagram only). Single source, so hours not recorded; no own website exists."
+   "note3": "Maariv fetch refused. asif.org (2025-04) gives hours Su-We 07-15, Th 07-16, Fr 07 until 1h before sunset, phone 054-5866366, and no website (Instagram only). Single source, so hours not recorded; no own website exists.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "No new sources: Maariv 2025-06 (Levinsky 43) + asif.org 2025-04; Time Out 2022-06 cheap borekas list confirms Levinsky 43, phone 054-5866366, 22 NIS, no hours; no own site exists (Instagram only); hours still single-source so not recorded"
   },
   "n6469415931": {
    "r": "none",
@@ -6553,7 +6586,10 @@
    "r": "ok",
    "note": "Own site has live Domino's Ramat Aviv branch page; directory lists Ramat Aviv branch at Tagore 30 (matches coords); no closure news",
    "det": "2026-11-27",
-   "note3": "Phone needed. The dominos.co.il branch page fetch was refused (permission timeout). No other allowed source gives the phone."
+   "note3": "Phone needed. The dominos.co.il branch page fetch was refused (permission timeout). No other allowed source gives the phone.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site branch page live today: 'Domino's Pizza Ramat Aviv' (North Tel Aviv, open Saturdays); page shows no address, phone or hours. No new fields."
   },
   "n2862959848": {
    "r": "ok",
@@ -6837,7 +6873,10 @@
    "r": "ok",
    "note": "Sarona Market official site has Manal page (Kalman Magen 3, Arabic food) 2026-11; Time Out review 2023-06 at same address (dishes ~60 NIS); no Tabit/Ontopo; no closure news",
    "det": "2026-11-27",
-   "note3": "Details mode (oh,w). saronamarket.co.il fetch blocked. Time Out review (2023-06-21) gives 'Su-Sa 12:00-22:00' but it is a single old source, so hours not set; no own website found."
+   "note3": "Details mode (oh,w). saronamarket.co.il fetch blocked. Time Out review (2023-06-21) gives 'Su-Sa 12:00-22:00' but it is a single old source, so hours not set; no own website found.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Sarona Market official stall page live (2026-11): Arab home cooking, phone 054-3421956, own Instagram manal._ismail. Market page hours Su-We 10-22, Th 10-23, Fr 9-15, Sa 10-22 disagree with Time Out 2023 (daily 12-22), so hours not set."
   },
   "n10955696002": {
    "r": "none",
@@ -6995,7 +7034,10 @@
    "r": "ok",
    "note": "Own site suduch.co.il (modified 2026-04) lists Karlibach branch at Karlibach 20, Tel Aviv. Late-night toast/sausage chain; toast 37-43 NIS. Hours text on site ambiguous (shown as 04:00-09:00, likely night hours) so oh not set; Fri closed, Sat night after Shabbat to 04:00. Site says all branches kosh",
    "det": "2026-11-27",
-   "note3": "Own site suduch.co.il fetch permission not granted (blocked); only easy.co.il aggregator found for hours/phone, which doesn't count; no new fields."
+   "note3": "Own site suduch.co.il fetch permission not granted (blocked); only easy.co.il aggregator found for hours/phone, which doesn't count; no new fields.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site suduch.co.il opened 2026-11: Karlibach branch, Karlibach 20 Tel Aviv; chain phone 03-6096638 (no phone orders). Hours shown without AM/PM as 'Su-We 04:00-09:00, Th 05:00-09:00, Fr closed, Sat night after Shabbat to 04:00' - ambiguous so oh not set. Site says branches kosher but names no certificate, so k not set."
   },
   "n6226538104": {
    "r": "none",
@@ -7050,7 +7092,7 @@
    "note": "Only Time Out (2025-03 Shenkin guide and 2025-04 chicken sandwiches list, same outlet) shows Aharoni's 'עוף בשינקין' rotisserie at Shenkin 55 operating; Time Out/Mako 2021 opening coverage. No own site, no Tabit/Ontopo, no closure news. Hours only from one outlet - not set.",
    "r2": "single",
    "d2": "2026-11-27",
-   "note2": "Re-check: Time Out 2025-03/2025-04 remain the only recent source (Aharoni's chicken at Shenkin 55); Mako 2021-06 opening article (Rotisserie BaShenkin, Shenkin 55) and Time Out 2021-06 are old. Possible own site katsavia.co.il fetch was blocked (permission). No closure news, no Tabit/Ontopo."
+   "note2": "Own site katsavia.co.il (Chef Israel Aharoni's meat shop) live, lists 'עוף בשינקין' rotisserie; shop address Shenkin 56 corner Fishberg (Time Out 2025 said 55; Time Out 2023 also says Shenkin 56), so branch match is a judgement. Site hours/phone are the meat shop's (Su-Th 08-21, Fr 08-16; 03-5455656), not clearly the rotisserie's, so not set. (single: branch match by judgement)"
   },
   "n5890281795": {
    "r": "none",
@@ -7277,9 +7319,9 @@
   "n10814448811": {
    "r": "single",
    "note": "Sarona Market official site still lists the stall (page https://saronamarket.co.il/%d7%a8%d7%97%d7%9c-%d7%91%d7%a9%d7%93%d7%a8%d7%94/ ; Su-We 10-22, Th 10-23, Fr 9-15 per market page, phone shown is market's general line); Time Out review only 2020; no Tabit/Ontopo; no closure news. Hours/phone not ",
-   "r2": "single",
+   "r2": "ok",
    "d2": "2026-11-27",
-   "note2": "Re-check: Sarona Market pages (saronamarket.co.il) fetch refused this run; new source Time Out 2025-03 article on Rachel BaSdera mentions the Tel Aviv branch operating (tagged Sarona Market), branch not named explicitly in text; no Tabit/Ontopo; no closure news (only unrelated Ashdod 'Rachel' restaurant closure 2025). Still one dated source."
+   "note2": "Sarona Market official site stall page live (Kalman Magen 3; sandwiches; Su-We 10-22, Th 10-23, Fr 9-15, Sa closed; phone is the market's general line); plus Time Out 2025-03 article. Hours only from market page, not set."
   },
   "n4159749101": {
    "r": "none",
@@ -7352,7 +7394,10 @@
    "r": "ok",
    "note": "Own site schnitzelcompany-bsr.co.il live (modified 2026-05) for branch at Derech Ben Gurion 1, Bnei Brak (catalog city says Tel Aviv); kosher claimed without named certificate; no hours/prices on site; ynet 2022 sponsored piece agrees.",
    "det": "2026-11-27",
-   "note3": "Own site schnitzelcompany-bsr.co.il fetch blocked (permission not answered); no other source with hours."
+   "note3": "Own site schnitzelcompany-bsr.co.il fetch blocked (permission not answered); no other source with hours.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site live today: Derech Ben Gurion 1, Bnei Brak (catalog city Tel Aviv), phone 03-578-1655; calls itself kosher but no certificate named; no hours or prices on site."
   },
   "n8691409564": {
    "r": "none",
@@ -7564,7 +7609,10 @@
    "r": "ok",
    "note": "Rivareno at Nahalat Binyamin 3: Time Out list 2026-08, Time Out review 2025-03 (scoop 22-26 NIS), Mako 2025-04, ynetnews 2025-05. Time Out hours garbled, not used; no own site/phone found; no Tabit/Ontopo; no closure news.",
    "det": "2026-11-27",
-   "note3": "timeout.co.il/rivareno fetch blocked; no own site or reliable source with phone found."
+   "note3": "timeout.co.il/rivareno fetch blocked; no own site or reliable source with phone found.",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: still no own site found (rivareno.com fetch permission timed out); timeout.co.il/rivareno now fetched: Nahalat Binyamin 3, 2025-03, hours garbled, no phone/site. Nothing new; stays active from earlier sources."
   },
   "n4900327064": {
    "r": "none",
