@@ -2542,6 +2542,275 @@
     "https://spottedbylocals.com/tel-aviv/juno-wine-bar",
     "https://timeout.co.il/ברי-היין-הטובים-בתל-אביב/"
    ]
+  },
+  "n12509055172": {
+   "n": "קפה בלו",
+   "ok": "2025-10",
+   "cu": "קפה ובראנץ'",
+   "src": [
+    "https://timeout.co.il/קפה-ספיישלטי-תל-אביב/",
+    "https://timeout.co.il/בתי-קפה-מומלצים-יפו/"
+   ]
+  },
+  "n10279175910": {
+   "n": "קפה פוינט",
+   "ok": "2026-11",
+   "p": "+972 52-862-8229",
+   "bk": "https://tabitisrael.co.il/site/coffee-point",
+   "cu": "קפה ובראנץ'",
+   "src": [
+    "https://tabitisrael.co.il/site/coffee-point",
+    "https://www.israelhayom.co.il/food/food-news/article/15409357"
+   ]
+  },
+  "n9786819303": {
+   "n": "B-Fresh",
+   "ok": "2026-11",
+   "src": [
+    "https://enjoyingisrael.com/restaurants/43484/b-fresh-azrieli-mall-tel-aviv"
+   ]
+  },
+  "n12105823468": {
+   "n": "אליס בר בשר",
+   "ok": "2026-11",
+   "src": [
+    "https://wolt.com/en/isr/tel-aviv/restaurant/bar-basar"
+   ]
+  },
+  "n4159749096": {
+   "n": "בורגראנץ'",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "src": [
+    "https://wolt.com/en/isr/tel-aviv/restaurant/burgeranch-azrieli-tlv"
+   ]
+  },
+  "n5596945445": {
+   "n": "בורגראנץ׳",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "src": [
+    "https://wolt.com/en/isr/tel-aviv/restaurant/burgeranch-menora"
+   ]
+  },
+  "n9190133517": {
+   "n": "בורגרים",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "src": [
+    "https://wolt.com/en/isr/tel-aviv/restaurant/burgerim-bsr"
+   ]
+  },
+  "n11405068715": {
+   "n": "בורגרים",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "src": [
+    "https://wolt.com/en/isr/tel-aviv/restaurant/burgerim-carlebach"
+   ]
+  },
+  "n2577660818": {
+   "n": "בורגרס בר",
+   "ok": "2026-11",
+   "src": [
+    "https://wolt.com/en/isr/tel-aviv/restaurant/burgers-bar"
+   ]
+  },
+  "n6469411086": {
+   "n": "בורגרס בר",
+   "ok": "2026-11",
+   "src": [
+    "https://wolt.com/en/isr/tel-aviv/restaurant/burgers-bar-azrieli"
+   ]
+  },
+  "n12087608626": {
+   "n": "ג'אנקי בורגר",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "src": [
+    "https://wolt.com/en/isr/tel-aviv/restaurant/junky-burger"
+   ]
+  },
+  "n12505246771": {
+   "n": "ג'סמינו",
+   "ok": "2026-09",
+   "cu": "בשרים",
+   "src": [
+    "https://timeout.co.il/topic/גסמינו/"
+   ]
+  },
+  "n9429290715": {
+   "n": "המוסד לסנדוויצ'ים מיוחדים",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "pr": 2,
+   "src": [
+    "https://wolt.com/fr/Israel/Tel Aviv/restaurant/hamosad",
+    "https://timeout.co.il/מה-מזמינים-היום-151224/"
+   ]
+  },
+  "n9597836917": {
+   "n": "ויטרינה",
+   "ok": "2025-12",
+   "cu": "המבורגר",
+   "pr": 2,
+   "src": [
+    "https://timeout.co.il/theres-nothing-better-than-this-the-15-best-burgers-in-all-of-tel-aviv/",
+    "https://www.maariv.co.il/food/article-1167967",
+    "https://wolt.com/ar/isr/tel-aviv/brand/vitrina"
+   ]
+  },
+  "n2264923573": {
+   "n": "חומוס חג'",
+   "ok": "2026-06",
+   "cu": "חומוס ומזרחי",
+   "src": [
+    "https://timeout.co.il/החומוס-הכי-טוב-בתל-אביב-יפו/"
+   ]
+  },
+  "n12106426945": {
+   "n": "טורק לחמג'ון",
+   "ok": "2026-04",
+   "src": [
+    "https://timeout.co.il/חדשות-האוכל-101/",
+    "https://timeout.co.il/מה-מזמינים-היום-181224/"
+   ]
+  },
+  "n12956744483": {
+   "n": "מוב דלי",
+   "ok": "2026-07",
+   "cu": "אחר",
+   "src": [
+    "https://www.mako.co.il/news-tip12/2026_q3/Article-247eb5c2613bf91027.htm"
+   ]
+  },
+  "n12140306333": {
+   "n": "ניבו גריל בר",
+   "ok": "2025-07",
+   "cu": "בשרים",
+   "pr": 2,
+   "src": [
+    "https://timeout.co.il/המסעדות-הכי-טובות-פלורנטין/"
+   ]
+  },
+  "n12187684500": {
+   "n": "סביח פרישמן",
+   "ok": "2024-12",
+   "cu": "חומוס ומזרחי",
+   "pr": 1,
+   "src": [
+    "https://timeout.co.il/מה-מזמינים-היום-111224/"
+   ]
+  },
+  "n11681593604": {
+   "n": "סילי קיד",
+   "ok": "2026-07",
+   "cu": "אחר",
+   "pr": 2,
+   "src": [
+    "https://timeout.co.il/קריספי-ציקן-בתל-אביב/"
+   ]
+  },
+  "n11681515163": {
+   "n": "עוף בשינקין",
+   "ok": "2025-04",
+   "cu": "אחר",
+   "src": [
+    "https://timeout.co.il/3-כריכי-עוף-מומלצים/"
+   ]
+  },
+  "n10829562649": {
+   "n": "פיתה בסטה",
+   "ok": "2025-02",
+   "cu": "אחר",
+   "pr": 1,
+   "src": [
+    "https://timeout.co.il/פיתות-הכי-טובות/"
+   ]
+  },
+  "n12135747445": {
+   "n": "קרנל",
+   "ok": "2026-08",
+   "cu": "מקסיקני",
+   "pr": 1,
+   "src": [
+    "https://timeout.co.il/%d7%98%d7%90%d7%a7%d7%95-%d7%91%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/"
+   ]
+  },
+  "n10814448811": {
+   "n": "רחל בשדרה",
+   "ok": "2025-03",
+   "src": [
+    "https://timeout.co.il/%d7%90%d7%95%d7%9b%d7%9c-%d7%a8%d7%97%d7%95%d7%91-%d7%a8%d7%97%d7%9c-%d7%91%d7%a9%d7%93%d7%a8%d7%94/"
+   ]
+  },
+  "n10272767909": {
+   "n": "רק מרק",
+   "ok": "2025-04",
+   "cu": "טבעוני",
+   "pr": 1,
+   "src": [
+    "https://www.jpost.com/food-recipes/article-848725"
+   ]
+  },
+  "n10829552505": {
+   "n": "Anita Gellato",
+   "ok": "2026-08",
+   "cu": "קינוחים",
+   "src": [
+    "https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/"
+   ]
+  },
+  "n13530045249": {
+   "n": "Ortello",
+   "ok": "2026-08",
+   "nm": "Otello",
+   "cu": "קינוחים",
+   "src": [
+    "https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/",
+    "https://timeout.co.il/%D7%92%D7%9C%D7%99%D7%93%D7%94-%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/"
+   ]
+  },
+  "n12295905111": {
+   "n": "Otello",
+   "ok": "2026-08",
+   "cu": "קינוחים",
+   "src": [
+    "https://timeout.co.il/קולינריה-קניון-רמת-אביב/",
+    "https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/"
+   ]
+  },
+  "n12064652432": {
+   "n": "אוטלו",
+   "ok": "2026-08",
+   "cu": "קינוחים",
+   "src": [
+    "https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/"
+   ]
+  },
+  "n10812430077": {
+   "n": "אוטלו ג'לטו",
+   "ok": "2026-08",
+   "cu": "קינוחים",
+   "src": [
+    "https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/"
+   ]
+  },
+  "n10825042749": {
+   "n": "אוטלו ג'לטו",
+   "ok": "2026-08",
+   "cu": "קינוחים",
+   "src": [
+    "https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/"
+   ]
+  },
+  "n11602031662": {
+   "n": "בוזה",
+   "ok": "2026-08",
+   "cu": "קינוחים",
+   "src": [
+    "https://timeout.co.il/%D7%94%D7%92%D7%9C%D7%99%D7%93%D7%A8%D7%99%D7%95%D7%AA-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91%D7%95%D7%AA/"
+   ]
   }
  }
 }
