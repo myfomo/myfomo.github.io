@@ -1,38 +1,24 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 82,
- "site_jsonld": 13,
+ "site_checked": 92,
+ "site_jsonld": 14,
  "site_match": 2,
- "site_reject": 11,
+ "site_reject": 12,
  "phone_site": 0,
  "hours_site": 1,
- "addr_site": 0,
+ "addr_site": 1,
  "cuisine_site": 0,
  "names_site": 1,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
   {
-   "id": "n560652028",
-   "n": "נוקטורנו בית וקפה",
-   "field": "phone",
-   "osm": "077-700-8510",
-   "site": "0543886531"
-  },
-  {
    "id": "n13535418420",
    "n": "Holy Bagel",
    "field": "phone",
    "osm": "+972 2 628 0081",
    "site": "026720844"
-  },
-  {
-   "id": "w911552477",
-   "n": "Luiza Culinary Center - Logos Hotel",
-   "field": "phone",
-   "osm": "02-594-2000",
-   "site": "025942014"
   }
  ],
  "rejected_sites": [
@@ -64,6 +50,12 @@
    "id": "n7272044286",
    "n": "קפה סירא",
    "w": "https://www.cafesira.com/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n8990432917",
+   "n": "הסדנא",
+   "w": "https://sdnrest.com",
    "why": "branch/name not confirmed"
   },
   {
@@ -104,14 +96,14 @@
   }
  ],
  "phone_multi_skipped": 11,
- "phone_confirmed": 13,
+ "phone_confirmed": 14,
  "coverage_after": {
   "address": "474 (100%)",
-  "hours": "88 (19%)",
-  "phone": "87 (18%)",
-  "website": "92 (19%)",
-  "cuisine": "294 (62%)",
-  "extra_names": "238 (50%)"
+  "hours": "92 (19%)",
+  "phone": "93 (20%)",
+  "website": "102 (21%)",
+  "cuisine": "296 (62%)",
+  "extra_names": "239 (50%)"
  },
- "conflicts_n": 3
+ "conflicts_n": 1
 }

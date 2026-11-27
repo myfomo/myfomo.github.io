@@ -2,14 +2,14 @@
  "addr_osm": 0,
  "addr_partial": 0,
  "site_checked": 68,
- "site_jsonld": 16,
- "site_match": 6,
+ "site_jsonld": 14,
+ "site_match": 4,
  "site_reject": 10,
  "phone_site": 0,
- "hours_site": 1,
+ "hours_site": 0,
  "addr_site": 0,
  "cuisine_site": 1,
- "names_site": 1,
+ "names_site": 0,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -33,13 +33,6 @@
    "field": "hours",
    "osm": "Mo-Su 08:30-21:30",
    "site": "Su 08:30-21:30; Tu 08:30-21:30; We 08:30-21:30; Th 08:30-21:30; Fr 08:30-21:30; Sa 08:30-21:30"
-  },
-  {
-   "id": "n13722524901",
-   "n": "קפה אסיף",
-   "field": "hours",
-   "osm": "Th-Fr 08:00-14:00; Sa 08:00-16:00",
-   "site": "Th 09:00-14:00; Fr 09:00-14:00; Sa 09:00-14:00"
   }
  ],
  "rejected_sites": [
@@ -104,7 +97,7 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 13,
+ "phone_confirmed": 10,
  "phone_multi_skipped": 4,
  "coverage_after": {
   "address": "444 (100%)",
@@ -114,5 +107,5 @@
   "cuisine": "301 (68%)",
   "extra_names": "277 (62%)"
  },
- "conflicts_n": 4
+ "conflicts_n": 3
 }
