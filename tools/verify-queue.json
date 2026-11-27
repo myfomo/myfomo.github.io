@@ -1484,30 +1484,51 @@
    "note2": "Joz ve Loz left Gvulot St (building slated for demolition) per Time Out 2021-06; reopened at HaTnufa 7, Tel Aviv per Time Out 2021-08"
   },
   "n9996989783": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Gilles Pudlowski 2026-08-12 article places Jusa at Dizengoff 101 (matches catalog street) and lists site jusa.co.il and phone +972 3 730 5599. Own site fetch was blocked. No Tabit/Ontopo page, no closure news. Time Out pieces (2016, 2023) only mention the Ibn Gabirol branch."
   },
   "n10727399152": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Kaful (Persian) is at Nahalat Binyamin 2 per undated atly listing. Own site kaful.co.il fetch was blocked. Not in Time Out Nahalat Binyamin lists (2025-11). No Tabit/Ontopo page, no closure news, no dated recent source."
   },
   "n7796226294": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Time Out Tel Aviv (Hebrew) 2025-05 sea-view article and 2025-07 article (modified 2026-01) both list Kalamata at Kikar Kedumim 10, Old Jaffa, as a Greek restaurant. Same outlet, so counted as one source. Own site kalamata.co.il fetch was blocked. No Tabit/Ontopo page found, no closure news."
   },
   "n2079211935": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Only HappyCow (last updated 2024-01, Herzl 77, not shown as closed) and old blog/aggregator pages. No own site, no Tabit/Ontopo page, no closure news, no dated 2025-2026 source."
   },
   "n10932046652": {
    "r": "none",
-   "note": "Pudlowski 2026-08 only"
+   "note": "Pudlowski 2026-08 only",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Two independent recent sources at King George 105: Time Out Tel Aviv Italian list 2026-01 ('Capara Mio', chef Bentsi Arbel, Neapolitan pasta) and Gilles Pudlowski 2026-08-13 (105a). Pudlowski gives phone 054-428-9765, which differs from the catalog phone. No Tabit/Ontopo page, no closure news."
   },
   "n2079186417": {
    "r": "ok",
    "note": "Pudlowski 2026-06 and Spotted by Locals 2025-04"
   },
   "n11085880105": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Keton is at Dizengoff 145 per Time Out (2017) and asif.org (modified 2024-04). Own site keton.co.il fetch was blocked. No Tabit/Ontopo page, no closure news, no 2025-2026 source."
   },
   "n5181530015": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Kitchen by Greg (a Cafe Greg brand) shows up only on Wolt (not allowed) for Haifa, Jerusalem and Eilat. No official branch list naming Kalman Magen, Tel Aviv. No Tabit/Ontopo page, no news."
   },
   "n12524361966": {
    "r": "ok",
@@ -1517,7 +1538,10 @@
    "d2": "2026-11-25"
   },
   "n905252043": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Catalog address '3028' is unusable. Searches found only unrelated places (Mama Kuka, Cafe Cucu). No reliable source for Kuka in Tel Aviv."
   },
   "n2508732698": {
    "r": "closed",
@@ -1528,20 +1552,35 @@
    "note": "own site branch page"
   },
   "n6276832186": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Hostel at Yehuda HaLevi 51 (has bar, no restaurant). Only Time Out listing dated 2016 and booking/OTA listings (Hostelworld, Expedia, undated). No own site, Tabit/Ontopo or closure news found."
   },
   "n12071342256": {
    "r": "none",
-   "note": "Givatayim; aggregator says closed"
+   "note": "Givatayim; aggregator says closed",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Catalog address Katzenelson 109 is in Givatayim, not Tel Aviv. Only spinach.guide aggregator says 'permanently closed' (undated, not usable for closure). srugim 2023-08 covers a different Luciana in Mevaseret Zion; Luciana Jerusalem is also a separate place. No dated closure news, own site or booking page."
   },
   "n12647212009": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Time Out 2015-02 reports opening of vegan Market branch at Dizengoff 140. No 2024-2026 source: absent from Time Out vegan list 2026-02 and vegan roundup 2024-12. Facebook page blocked by robots. Only aggregators (spinach.guide, happycow, atly), undated. No closure news found."
   },
   "n13530087821": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Catalog address is only '98'. atly (undated directory) lists 'Cafe Mayer' at Dizengoff 98; Time Out 2021 'Cafe Meir' is a different place (Tchernichovsky 22). No reliable recent source or closure news."
   },
   "n777400974": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Own site meatbar.co.il fetch not permitted (blocked). Time Out Tel Aviv hot dog ranking 2025-01 lists MeatBar/Next Door at Sderot Chen 52. No Tabit/Ontopo page found; no closure news."
   },
   "n2078969784": {
    "r": "conflict",
@@ -1551,7 +1590,10 @@
    "note2": "Still conflict: timeout.com lists Meat Kitchen (CLOSED) at Yigal Alon 65; HaTaasia 10 is Deca (kosher dairy, timeout.com 2020); no 2025-26 source for either at this address; no own site/Ontopo/Tabit found"
   },
   "n10795083145": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Official address is Weizmann 2 (Amot Investments Tower, at the corner of Shaul HaMelech), catalog has only 'Shaul HaMelech', so the branch match is my judgement. Time Out kosher list 2025-11 (updated 2026-01) names Mythos Grill Bar, Weizmann 2, Tel Aviv Rabbinate kosher. Time Out review 2022-02 (main course e.g. sirloin 189). gokosher directory updated 2025-03 (does not count). No Tabit/Ontopo found; no closure news."
   },
   "n7167094871": {
    "r": "conflict",
@@ -1560,10 +1602,16 @@
    "d2": "2026-11"
   },
   "n6507147923": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Secret Tel Aviv 'Best Mexican Restaurants 2026' (updated 2026-09) lists Mexicana at Bograshov 7. Own site mexicana.co.il fetch not permitted (blocked). Time Out topic has 2025 items but none that name the Bograshov branch. No Tabit/Ontopo found; no closure news."
   },
   "n6578862205": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Secret Tel Aviv Mexican list (updated 2026-09) lists Mezcalito at Herzl 77, Florentin. Time Out 2022-01 piece puts it at Herzl 77 too (dishes 52-58 NIS). Catalog has no house number, so the match is my judgement. Alt name Arepa's not confirmed. No Tabit/Ontopo found; no closure news."
   },
   "n10296520757": {
    "r": "closed",
@@ -1571,22 +1619,40 @@
   },
   "n5703238537": {
    "r": "none",
-   "note": "address unmatched; own site lists Herbert Samuel 90"
+   "note": "address unmatched; own site lists Herbert Samuel 90",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Catalog address '1099' has no street so can't be matched to a branch. Time Out EN page (2017) gives Herbert Samuel 90; enjoyingisrael (undated) lists Promenade and Sarona branches. Found no recent dated source and no official branch list."
   },
   "n6932290785": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Time Out TLV Rothschild mapping (2025-04) recommends 'מלגו מלבר' (chef Moti Titman) at Rothschild 142. Found no Tabit/Ontopo page and no closure news. 50 Best page redirect was blocked."
   },
   "n7194893595": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No reliable source found for Mommy's Place at Bnei Brak 10, Tel Aviv. Found no Tabit/Ontopo page and no closure news."
   },
   "n7678249905": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Nagisa Sushi is a kosher chain, but found no official branch list naming a Ben Gurion, Tel Aviv branch. Only easy.co.il/wanderlog (undated) and Wolt (not allowed). Mako sushi guide 2024-03 doesn't list it."
   },
   "n12165391488": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Appears to be Nuchi Sushi Bar (kosher), but only Wolt (not allowed) and undated aggregators (wanderlog, atly). Found no own site, no Tabit/Ontopo page and no dated news."
   },
   "n11217646701": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No source found for Olio on Ibn Gabirol. Searches returned only Oliveri/Olivery (a different place; Time Out 2016)."
   },
   "n454377089": {
    "r": "closed",
@@ -1594,7 +1660,10 @@
   },
   "n6172884785": {
    "r": "none",
-   "note": "moved to Bat Ami 7; one recent source"
+   "note": "moved to Bat Ami 7; one recent source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: it did not move. Time Out 2015-12 gives the address as Puria 2 corner Bat Ami (Jaffa), which matches the catalog's פוריה and Time Out EN's 'Bat Ami 7' (2020). Latest Time Out mentions are 2024-03 (14th anniversary), with no 2025-26 source. Own site parderriere.co.il fetch was blocked, and found no Tabit/Ontopo page."
   },
   "n10759261454": {
    "r": "none",
@@ -1604,31 +1673,58 @@
    "d2": "2026-11-25"
   },
   "n3465151092": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Own site rustico.co.il fetch was blocked. Time Out 2014-04 covers the opening of Piazza Rustico in Sarona (third Rustico branch, mains 45-75 NIS), but found no recent source, no Tabit/Ontopo page and no closure news."
   },
   "n9997001453": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only undated aggregator (atly, Yehuda Margoza 4) and no Tabit/Ontopo, news or own site found; no closure news. Previous none stands."
   },
   "n512887205": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: official pizzahut.co.il branch pages blocked (permission not granted), so branch list for Derech Namir unverifiable; only directories (d.co.il, enjoyingisrael) found; no closure news."
   },
   "n4118545632": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: official pizzahut.co.il blocked; no news/guide naming a Sokolov branch; only directories."
   },
   "n11428462560": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: official pizzahut.co.il blocked; directories list a 'Ramat Gan - Marom Nave' branch (Marom Naveh square is in Ramat Gan, catalog city says Tel Aviv); no dated source."
   },
   "n12047583620": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: catalog website pizzahut.co.il/branch/תל-אביב-רמת-אביב blocked (permission not granted); only undated directories (enjoyingisrael, d.co.il) name the Ramat Aviv branch; no closure news."
   },
   "n5605064591": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: own site pizzapeople.co.il blocked (permission not granted); searches found no news/guide or booking page for Pizza People at Mesilat Yesharim 92; no closure news."
   },
   "n5766607711": {
-   "r": "none"
+   "r": "none",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "Time Out Tel Aviv 2021-01-03: Pizzaron pizzeria/cafe in Bitzaron closed after ten years (owner Facebook announcement). Article gives no street; Sderot HaHaskala is in Bitzaron, so branch match is judgement. Kept as conflict: closure branch match by judgement."
   },
   "n2837962901": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: PokeShop chain has Ibn Gvirol 62 (Time Out 2017), Rothschild and other branches, but no source names a Zeitlin branch; no closure news found."
   },
   "n6340271885": {
    "r": "conflict",
@@ -1638,7 +1734,10 @@
    "note2": "Own site polybar.co.il live (modified 2025-12) names Rothschild 60; Ontopo page active (Rothschild 60). Ontopo hours differ from site; site hours kept"
   },
   "n12840680501": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Port 19 is a burger chain; Time Out EN (2017) lists Shlomo HaMelech 2, and atly lists Hashmonaim and Shlomo HaMelech branches. No source names a Weizmann Blvd branch. Time Out HE 2024-08 confirms the chain operates and links port-19.co.il, but that fetch was refused, so the branch list is unverified. No closure news."
   },
   "n2672314363": {
    "r": "none",
@@ -1648,34 +1747,52 @@
    "d2": "2026-11-25"
   },
   "n904544177": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No Porto found on Lipkin-Shahak. Only unrelated Portos: a wine bar at Tchernichovsky 6 (Time Out 2018) and an Italian place in Sarona (JPost 2016). No Tabit/Ontopo page or closure news."
   },
   "n6312684887": {
    "r": "ok",
    "note": "own site; address given as HaGymnasia HaIvrit 7 (flea market corner)"
   },
   "n10020598395": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Alt name Agadir Burger (chain). The only Metzada-street branch seen is Agadir BSR, which is probably at the BSR towers on Metzada St, Bnei Brak, not Tel Aviv (my judgement). It appears only on Wolt/easy, which are not allowed sources. The official branch list was not found."
   },
   "n4118545631": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "River noodle chain. Time Out lists the Jabotinsky 7, Ramat Gan branch (2020); other branches appear only on Wolt. No reliable source names a Sokolov St branch. No closure news found."
   },
   "n4427835291": {
-   "r": "none"
+   "r": "none",
+   "r2": "closed",
+   "d2": "2026-11-27",
+   "note2": "Viking Russian restaurant, Ben Yehuda 6 (Time Out 2018, Calcalist 2022-03). Time Out 2025-07-07: badly damaged ('completely destroyed') by an Iranian missile in June 2025 and not operating at Ben Yehuda. The owner hopes to reopen; no reopening news found as of the Time Out topic page."
   },
   "n13530068022": {
    "r": "ok",
    "note": "active Ontopo page, Dizengoff 98"
   },
   "n5249884926": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Time Out EN 2023-04 lists Saffe (Syrian home cooking) at Simtat Beit Habad 3, behind Beit Romano, phone 03-9134414, Su-Th 12-23 / Fr 12-17 / Sa 18-23. No 2025-2026 source found. The Facebook page could not be fetched (robots), and no Tabit/Ontopo page or closure news was found."
   },
   "n5765067454": {
    "r": "ok",
    "note": "own site"
   },
   "n12020436964": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No 'Salt' found on Yoezer St. Closest match: Solt Burger at Marzuk veAzar 2, Jaffa, near Clock Square (Time Out 2023-06). That is a different street, and the source is not recent. No closure news."
   },
   "n6344546585": {
    "r": "none",
@@ -1696,7 +1813,10 @@
    "d2": "2026-11-25"
   },
   "n5483139421": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Suzanna, Shabazi 9, Neve Tzedek. Only old sources found: Time Out EN 2016 (phone 03-5161480) and Time Out HE 2016 (rooftop bar). No 2025-2026 source, Tabit/Ontopo page or closure news found."
   },
   "n2079027451": {
    "r": "ok",
