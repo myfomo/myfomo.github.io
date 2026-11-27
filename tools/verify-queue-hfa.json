@@ -456,7 +456,10 @@
 },
 "n6565475400": {
 "r": "ok",
-"note": "Active Tabit booking page 'BBB Yokneam Yokneam Illit'; rest.co.il listing at HaTamar 2, Derech Yokneam mall; own burgus.co.il branch page fetch refused; Tabit hours 14:00-01:00 (single source, not used); no closure news"
+"note": "Active Tabit booking page 'BBB Yokneam Yokneam Illit'; rest.co.il listing at HaTamar 2, Derech Yokneam mall; own burgus.co.il branch page fetch refused; Tabit hours 14:00-01:00 (single source, not used); no closure news",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Active Tabit page 'BBB Yokneam' (Yokneam Illit, phone 04-9590098, booking + delivery, hours 14:00-01:00 Tabit only, not used); rest.co.il listing at Derech Yokneam mall per prev. Own burgus.co.il still fails (client error) both www and non-www."
 },
 "n11061493323": {
 "r": "single",
@@ -561,7 +564,10 @@
 },
 "n6677075304": {
 "r": "none",
-"note": "Own site humongous.co.il fetch refused (permission not granted). Only an aggregator (wanderlog) lists Humongous at Bar Yehuda 147 Nesher, which is not a reliable source. No Tabit/Ontopo page and no closure news found."
+"note": "Own site humongous.co.il fetch refused (permission not granted). Only an aggregator (wanderlog) lists Humongous at Bar Yehuda 147 Nesher, which is not a reliable source. No Tabit/Ontopo page and no closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site humongous.co.il/branches lists Nesher; branch page gives Derech Bar Yehuda 147, Nesher, hours and Tabit booking link. Site hours differ from catalog OSM hours (site: noon-midnight/02:00)."
 },
 "n13828231472": {
 "r": "none",
@@ -622,7 +628,10 @@
 },
 "n6239725890": {
 "r": "none",
-"note": "pizzahut.co.il fetch was blocked (permission not granted). Searches found no reliable page naming a Yokneam / Hatamar 2 branch, and no closure news."
+"note": "pizzahut.co.il fetch was blocked (permission not granted). Searches found no reliable page naming a Yokneam / Hatamar 2 branch, and no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official branch list (pizzahut.co.il/all-branches/צפון) and branch page pizzahut.co.il/branch/yokneam/ name G Mall, Hatamar 2, Yokneam; hours from own site (Saturday opens after Shabbat, time varies by season; site said ~17:44); described as kosher mehadrin but certifier not named."
 },
 "n1388111395": {
 "r": "none",
@@ -825,7 +834,10 @@
 },
 "w470332609": {
 "r": "none",
-"note": "enjoyingisrael lists Domino's Zichron Yaakov at Hanadiv 26 (the catalog says 28), not kosher, hours Su-We/Sa 12:15-23:50, Th-Fr 12:15-00:50. Treated as the same branch despite the one-number difference. The official dominos.co.il site could not be fetched (permission not answered). The listing is undated. Downgraded to none: source undated/aggregator."
+"note": "enjoyingisrael lists Domino's Zichron Yaakov at Hanadiv 26 (the catalog says 28), not kosher, hours Su-We/Sa 12:15-23:50, Th-Fr 12:15-00:50. Treated as the same branch despite the one-number difference. The official dominos.co.il site could not be fetched (permission not answered). The listing is undated. Downgraded to none: source undated/aggregator.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Official dominos.co.il has a live Zichron Yaakov branch page (Zichron-Yaakov-City/Zichron-Yaakov), meta says open on Shabbat; address not rendered on page (JS map), so match to catalog Hanadiv 28 rests on it being the town's only branch (undated enjoyingisrael says Hanadiv 26). Hours not on own site. (single: branch match by judgement)"
 },
 "n614226519": {
 "r": "none",
@@ -1139,7 +1151,10 @@
 },
 "n651512231": {
 "r": "none",
-"note": "Agadir chain; findmeglutenfree (undated) gives David Pinski 6, Haifa. Fetching the official site agadir.co.il (branch list) was refused because the permission request wasn't answered. Time Out 2025-12 mentions 11 more branches but doesn't name them. No Tabit/Ontopo page or closure news found."
+"note": "Agadir chain; findmeglutenfree (undated) gives David Pinski 6, Haifa. Fetching the official site agadir.co.il (branch list) was refused because the permission request wasn't answered. Time Out 2025-12 mentions 11 more branches but doesn't name them. No Tabit/Ontopo page or closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official branch list agadir.co.il/branches names Haifa, David Pinski 6 (only Haifa branch); branch page gives daily 12:00-24:00 and a Tabit booking link. Kosher not stated."
 },
 "n2883007012": {
 "r": "conflict",
@@ -1171,7 +1186,10 @@
 },
 "n6259827531": {
 "r": "ok",
-"note": "Mako 2025-04 article lists Eissalon at Oskar Schindler 7, Savyonei Denia, with hours, not kosher; asif.org guide (modified 2025-04) gives same address/hours and own site eissalon.co.il. Own site fetch blocked (permission not granted). No closure news."
+"note": "Mako 2025-04 article lists Eissalon at Oskar Schindler 7, Savyonei Denia, with hours, not kosher; asif.org guide (modified 2025-04) gives same address/hours and own site eissalon.co.il. Own site fetch blocked (permission not granted). No closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site eissalon.co.il live: main branch Oskar Schindler 7, 4th floor, Haifa, hours Su-Th 13:00-22:30, Fr-Sa 12:00-20:00 (match catalog), phone. Also Mako 2025-04 per prev check."
 },
 "n1431830609": {
 "r": "none",
@@ -1228,7 +1246,10 @@
 },
 "n9221799932": {
 "r": "none",
-"note": "No source names an Aroma on Tvuot HaAretz, Haifa. Official Haifa branches found: Grand Canyon (Simcha Golan 64), Azrieli/Haifa Mall, German Colony, University, Rambam, Hof HaCarmel and Lev HaMifratz, but none could be matched to this street. The aroma.co.il branch list failed to load."
+"note": "No source names an Aroma on Tvuot HaAretz, Haifa. Official Haifa branches found: Grand Canyon (Simcha Golan 64), Azrieli/Haifa Mall, German Colony, University, Rambam, Hof HaCarmel and Lev HaMifratz, but none could be matched to this street. The aroma.co.il branch list failed to load.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: the aroma.co.il home page shows no branch text and /branches failed (client_error). The enjoyingisrael listing (undated) puts Aroma Cinemall Chek Post at HaHistadrut 55, not Tvuot HaAretz. No official source names a branch on Tvuot HaAretz, and no closure news found."
 },
 "n4660390989": {
 "r": "ok",
@@ -1240,7 +1261,10 @@
 },
 "n6183467085": {
 "r": "none",
-"note": "The own site (arcaffe.co.il) fetch was refused because permission was not granted. Searches found only undated aggregators (enjoyingisrael, wanderlog, easy). No Tabit/Ontopo page and no closure news found."
+"note": "The own site (arcaffe.co.il) fetch was refused because permission was not granted. Searches found only undated aggregators (enjoyingisrael, wanderlog, easy). No Tabit/Ontopo page and no closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site arcaffe.co.il/branches live, lists 'Arcaffe Savyonei Denia', Oskar Schindler 7 Haifa, phone and hours (tagged meat; kosher cert not named). Supersedes prev 'none' (site was blocked)."
 },
 "n4783333744": {
 "r": "none",
@@ -1279,7 +1303,10 @@
 },
 "n6354069185": {
 "r": "none",
-"note": "d.co.il directory lists Biga at Sholom Aleichem 5, Neve Sha'anan, Haifa, with site bigahaifa.rest.co.il; fetching rest.co.il was blocked (biga.rest.co.il and bigahaifa.rest.co.il). No Tabit/Ontopo page, no recent news, no closure news."
+"note": "d.co.il directory lists Biga at Sholom Aleichem 5, Neve Sha'anan, Haifa, with site bigahaifa.rest.co.il; fetching rest.co.il was blocked (biga.rest.co.il and bigahaifa.rest.co.il). No Tabit/Ontopo page, no recent news, no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Biga cafe chain. Only undated directory d.co.il lists Biga at Sholom Aleichem 5, Neve Sha'anan, Haifa (04-8105305, bigahaifa.rest.co.il). rest.co.il sites (bigahaifa/biga.rest.co.il) failed again (robots.txt unreachable); biga.co.il is a benefits-club site with no branch list. No Tabit/Ontopo page, no recent news, no closure news."
 },
 "n11542534410": {
 "r": "none",
@@ -1311,7 +1338,10 @@
 },
 "n9221965534": {
 "r": "conflict",
-"note": "Official site benedict.co.il was blocked (permission). Wolt's Haifa brand page lists one area branch, 'Benedict Krayot', at Histadrut Blvd 248, Kiryat Ata; that does not match the catalog address (Tvuot HaAretz, Haifa). No Tabit/Ontopo page or Haifa-branch news found. Re-check against the official branch list."
+"note": "Official site benedict.co.il was blocked (permission). Wolt's Haifa brand page lists one area branch, 'Benedict Krayot', at Histadrut Blvd 248, Kiryat Ata; that does not match the catalog address (Tvuot HaAretz, Haifa). No Tabit/Ontopo page or Haifa-branch news found. Re-check against the official branch list.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Re-check: the official benedict.co.il branch list names Nahariya, Karmiel, Krayot, Kfar Saba, Beitan Aharon, Petah Tikva, Modiin, Herzliya, Sharona, Rishon, Bilu, Ashdod, Beer Sheva and Picnic Park. It has NO Haifa branch. The nearest is Krayot (per the earlier finding, Histadrut Blvd 248, Kiryat Ata). This is likely closed or never at the catalog address, but no closure news was found, so it can't be marked closed."
 },
 "w815847058": {
 "r": "none",
@@ -1334,7 +1364,10 @@
 },
 "n9221942584": {
 "r": "none",
-"note": "Japanika chain; the official branch list at japanika.net was refused. Only undated aggregators (enjoyingisrael 'Check Post, Haifa') were found, so the branch could not be confirmed and no Tabit/Ontopo page was found."
+"note": "Japanika chain; the official branch list at japanika.net was refused. Only undated aggregators (enjoyingisrael 'Check Post, Haifa') were found, so the branch could not be confirmed and no Tabit/Ontopo page was found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: japanika.net loads but the branch list is dynamic with no branch text (site says ~50 kosher branches). The enjoyingisrael listing (undated) gives Japanika Check Post at Israel Bar Yehuda 111, Haifa, which doesn't match Tvuot HaAretz. No Tabit/Ontopo page or closure news found."
 },
 "n1387594255": {
 "r": "none",
@@ -1377,7 +1410,10 @@
 },
 "n8575646317": {
 "r": "none",
-"note": "Chain; dominos.co.il fetch refused (permission); no official branch list naming Sderot Yerushalayim Kiryat Bialik found; only directories"
+"note": "Chain; dominos.co.il fetch refused (permission); no official branch list naming Sderot Yerushalayim Kiryat Bialik found; only directories",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: dominos.co.il home page loads, but its city list has no Kiryat Bialik/Krayot entry. /branches loads only a dynamic map with no branch text; the kiryat-bialik branch URL failed. Search found only directories (d.co.il, easy). No branch confirmation and no closure news."
 },
 "n3735433855": {
 "r": "none",
@@ -1389,7 +1425,10 @@
 },
 "w260173971": {
 "r": "single",
-"note": "Mako article (2025-02-26) describes Doris Katzavim at the foot of Ramat HaNadiv as an operating meat restaurant/butcher. Directory d.co.il gives Hanadiv 1 and lists doris-k.co.il, but fetching the own site was refused (permission). Time Out page is from 2016. No Tabit/Ontopo page and no closure news found. Catalog address '652' is presumably Route 652 at Ramat HaNadiv, so the branch match is my judgement."
+"note": "Mako article (2025-02-26) describes Doris Katzavim at the foot of Ramat HaNadiv as an operating meat restaurant/butcher. Directory d.co.il gives Hanadiv 1 and lists doris-k.co.il, but fetching the own site was refused (permission). Time Out page is from 2016. No Tabit/Ontopo page and no closure news found. Catalog address '652' is presumably Route 652 at Ramat HaNadiv, so the branch match is my judgement.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site doris-k.co.il is live: Doris Katzavim Zichron Yaakov, non-kosher meat restaurant plus butcher shop, with a Tabit reservation link. The site has no street address; the earlier d.co.il listing gives Hanadiv 1. Catalog '652' is presumably Route 652, so the branch match is my judgement. Hours are restaurant hours from the own site. Mako 2025-02 also describes it operating. (single: branch match by judgement)"
 },
 "n3691499179": {
 "r": "none",
@@ -1473,7 +1512,10 @@
 },
 "w467930193": {
 "r": "none",
-"note": "tishbi.com fetch not permitted; searches found only general Tishbi winery guides, nothing naming a cellar at HaMeyasdim 33; no closure news"
+"note": "tishbi.com fetch not permitted; searches found only general Tishbi winery guides, nothing naming a cellar at HaMeyasdim 33; no closure news",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site tishbi.com is live and links a separate 'Zichron Yaakov restaurant' (Tabit order page 'Tishbi זכרון'), besides the winery restaurant. No street address is given, so the match to HaMeyasdim 33 (the Zichron midrachov) is my judgement. No closure news found. (single: branch match by judgement)"
 },
 "n2924385335": {
 "r": "none",
@@ -1593,7 +1635,10 @@
 },
 "w189599169": {
 "r": "none",
-"note": "d.co.il directory (undated) lists Yan-Yan at Derech Yafo 26, Haifa, with site yanyan.co.il; the site fetch was refused (permission timeout). A Wolt page exists but isn't an allowed source; no news, Tabit/Ontopo or closure found. Catalog street Kiat vs Derech Yafo 26 is unverified"
+"note": "d.co.il directory (undated) lists Yan-Yan at Derech Yafo 26, Haifa, with site yanyan.co.il; the site fetch was refused (permission timeout). A Wolt page exists but isn't an allowed source; no news, Tabit/Ontopo or closure found. Catalog street Kiat vs Derech Yafo 26 is unverified",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site yanyan.co.il is live: Yan Yan, family Chinese restaurant since 1984, Derech Yafo 26 Haifa, phone 04-8660022, hours on site. The catalog street is Kiat; the site gives Derech Yafo 26. Same restaurant by name and city, but the street match is my judgement. (single: branch match by judgement)"
 },
 "n4563462605": {
 "r": "none",
@@ -1928,7 +1973,10 @@
 },
 "w284563918": {
 "r": "none",
-"note": "pizzahut.co.il fetch refused; gokosher.com lists Pizza Hut on HaNadiv St, Zichron (Chelkas Hakashrus Zichron Yaakov) but undated, so not counted; no dated news, no Tabit/Ontopo, no closure news"
+"note": "pizzahut.co.il fetch refused; gokosher.com lists Pizza Hut on HaNadiv St, Zichron (Chelkas Hakashrus Zichron Yaakov) but undated, so not counted; no dated news, no Tabit/Ontopo, no closure news",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official pizzahut.co.il branch list names the Zichron Yaakov branch at Hanadiv 26, listed as kosher mehadrin (no certificate body named, so k not set). The branch page hours are garbled, so they're omitted. Phone shown is only the national line 1-700-50-60-70."
 },
 "n4449119982": {
 "r": "none",
@@ -2214,7 +2262,10 @@
 },
 "n7389258877": {
 "r": "none",
-"note": "Roladin official site (roladin.co.il) fetch blocked, so branch list for Horev 18 could not be checked; only undated easy.co.il/d.co.il/enjoyingisrael directory hits; no closure news found"
+"note": "Roladin official site (roladin.co.il) fetch blocked, so branch list for Horev 18 could not be checked; only undated easy.co.il/d.co.il/enjoyingisrael directory hits; no closure news found",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site branch page roladin.co.il/branch/חורב: Horev 18, Haifa, phone 04-8111445 (matches catalog), hours Su-Th 06-21, Fr 06-15; tagged kosher but certifier not named; no closure notice."
 },
 "n9221799924": {
 "r": "none",
@@ -2222,7 +2273,10 @@
 },
 "w998824070": {
 "r": "single",
-"note": "JPost review 2025-07 of Raffaello Castra Center, 8 Fliman St Haifa (non-kosher branch; dishes NIS 44-99). Catalog street Tevuot HaAretz judged same Castra complex (not source-confirmed). Own site raffaellocc.co.il fetch blocked (permission). No Tabit/Ontopo page found; no closure news."
+"note": "JPost review 2025-07 of Raffaello Castra Center, 8 Fliman St Haifa (non-kosher branch; dishes NIS 44-99). Catalog street Tevuot HaAretz judged same Castra complex (not source-confirmed). Own site raffaellocc.co.il fetch blocked (permission). No Tabit/Ontopo page found; no closure news.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site raffaellocc.co.il now loads but is JS-rendered: branch selector empty, only 'coming soon Kiryat Anavim / Ein Shemer' text, Haifa branch not named. JPost 2025-07 review of Raffaello Castra Center, 8 Fliman St Haifa (non-kosher, dishes NIS 44-99). Mako 2024-12 and Time Out (2016) also list 8 Fliman, older. Catalog street Tevuot HaAretz judged same Castra/Matam complex. No Tabit/Ontopo page; no closure news."
 },
 "n4449119983": {
 "r": "none",
@@ -2282,7 +2336,10 @@
 },
 "w467930255": {
 "r": "conflict",
-"note": "Israel Hayom 2026-06-11 profile of Shauli: his base is the single Hadera branch (police junction), he refuses to open more branches; Zichron Yaakov mentioned only as a past career stop. That suggests the Zichron branch (Hameyasdim 68) no longer operates, but there is no explicit closure statement. No own site, Tabit/Ontopo or other sources found. https://www.israelhayom.co.il/food/food-news/article/20543324"
+"note": "Israel Hayom 2026-06-11 profile of Shauli: his base is the single Hadera branch (police junction), he refuses to open more branches; Zichron Yaakov mentioned only as a past career stop. That suggests the Zichron branch (Hameyasdim 68) no longer operates, but there is no explicit closure statement. No own site, Tabit/Ontopo or other sources found. https://www.israelhayom.co.il/food/food-news/article/20543324",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "No own site/Tabit/Ontopo found for Shauli. Israel Hayom 2026-06 profile: Shauli insists on one strong location (Hadera), says delegated branches failed; Zichron Yaakov only a past career stop. Ynetnews 2025-09 shawarma guide lists Shauli only at 49 David Shimoni St, Hadera. No explicit closure of Hameyasdim 68 Zichron branch found; no source confirms it operating."
 },
 "n1543975621": {
 "r": "none",
