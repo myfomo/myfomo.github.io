@@ -657,11 +657,17 @@
 },
 "n6471737985": {
 "r": "single",
-"note": "Jewish Journal 2025-03 describes Ariel Eskayo as owner of the operating Arais Machane Yehuda restaurant in Jerusalem (no street address given). gokosher listing (undated) gives Agripas 115, Rabbanut Yerushalayim Mehuderet. Catalog website srugim.co.il is a news article, not the place's own site. No Tabit/Ontopo page and no closure news."
+"note": "Jewish Journal 2025-03 describes Ariel Eskayo as owner of the operating Arais Machane Yehuda restaurant in Jerusalem (no street address given). gokosher listing (undated) gives Agripas 115, Rabbanut Yerushalayim Mehuderet. Catalog website srugim.co.il is a news article, not the place's own site. No Tabit/Ontopo page and no closure news.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Re-check: still only Jewish Journal 2025-03 (owner Ariel Eskayo's operating Arais Machane Yehuda in Jerusalem, no street address). gokosher.com/en/f93156 (undated) gives Agripas 115, Rabbanut Yerushalayim Mehuderet, hours listed but not from own site. No own site found (srugim is a news article; only Wolt pages for other-city branches, not used). No Tabit/Ontopo, no closure news."
 },
 "n4831604951": {
 "r": "none",
-"note": "rest.co.il site unreachable (robots error); no Tabit/Ontopo page; no closure news. Only a Wolt public page appears active, with the same phone (02-643-1840) but address HaMaayan 9 (catalog: 21). Wolt is not an allowed source."
+"note": "rest.co.il site unreachable (robots error); no Tabit/Ontopo page; no closure news. Only a Wolt public page appears active, with the same phone (02-643-1840) but address HaMaayan 9 (catalog: 21). Wolt is not an allowed source.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: 2eat.co.il page (now open) lists Ein Kerem Inn at 9 HaMaayan (catalog says 21), phone 02-6431840 matches, Italian, chef Oren Hemo, hours Su-Th 9:30-late, open Shabbat; page undated, so not a recent source. GoJerusalem article (2014) mentions it only by name. No Tabit/Ontopo page, no closure news found. rest.co.il own page still not checked."
 },
 "n6187490291": {
 "r": "none",
@@ -831,7 +837,7 @@
 "note": "Brasserie Ein Kerem, HaMaayan 15. Only an old Time Out page (2016) and an undated itraveljerusalem page. The own site rol.co.il/sites/brasserie-jerusalem could not be fetched (robots unreachable). No Tabit/Ontopo page and no closure news found.",
 "r2": "none",
 "d2": "2026-11-27",
-"note2": "Own site rol.co.il/sites/brasserie-jerusalem still not fetchable (robots unreachable). 2eat.co.il page for Brasserie, 15 HaMaayan is undated (2015 images); Time Out page old; itraveljerusalem/wanderlog undated. No Tabit/Ontopo page. No closure news found (Mako/Israel Hayom hits were about other places)."
+"note2": "Re-check: 2eat.co.il brasseriejer page (now open) gives Brasserie Ein Kerem, 15 HaMaayan, hours, no closure notice, undated. d.co.il directory (undated) gives HaMaayan 15, 02-5665000. GoJerusalem article from 2014. rol.co.il own site not retried (blocked before). No Tabit/Ontopo, no closure news (Mako 2026-07 closure article is about a different place)."
 },
 "n2109837717": {
 "r": "none",
@@ -1095,15 +1101,24 @@
 },
 "n12967026196": {
 "r": "none",
-"note": "Chain; official site new-deli.co.il blocked, easy.co.il failed. GoKosher lists branches at Agripas 62, Sarei Israel 15, Moshe Dayan 164; d.co.il lists Yafo 34. No source naming a Ben Yehuda branch."
+"note": "Chain; official site new-deli.co.il blocked, easy.co.il failed. GoKosher lists branches at Agripas 62, Sarei Israel 15, Moshe Dayan 164; d.co.il lists Yafo 34. No source naming a Ben Yehuda branch.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: official site new-deli.co.il not in the approved list, so not retried. GoKosher branch pages found: Agripas 62, Sarei Israel 15, Moshe Dayan 164; Efrat municipality page covers the Efrat branch. Still no source naming a Ben Yehuda branch. No Tabit/Ontopo, no closure news."
 },
 "n13949950685": {
 "r": "single",
-"note": "Wolt brand page lists 'New Deli | Emek Refaim' venue at Emek Refaim 44, accepting orders (checked 2026-11); official site new-deli.co.il fetch not permitted; no Tabit/Ontopo; no closure news found. Street matches catalog (no number in catalog)."
+"note": "Wolt brand page lists 'New Deli | Emek Refaim' venue at Emek Refaim 44, accepting orders (checked 2026-11); official site new-deli.co.il fetch not permitted; no Tabit/Ontopo; no closure news found. Street matches catalog (no number in catalog).",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: earlier 'single' rested only on Wolt, which is not an allowed source, so downgraded. No allowed source names an Emek Refaim branch (GoKosher lists Agripas 62, Sarei Israel 15, Moshe Dayan 164). Official site new-deli.co.il not approved/fetched. No Tabit/Ontopo, no closure news."
 },
 "n5023240509": {
 "r": "none",
-"note": "No source found naming a New Deli branch on road 3955 / Mateh Yehuda; Wolt Jerusalem brand list has only city branches; official site new-deli.co.il fetch not permitted."
+"note": "No source found naming a New Deli branch on road 3955 / Mateh Yehuda; Wolt Jerusalem brand list has only city branches; official site new-deli.co.il fetch not permitted.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: no source names a New Deli on road 3955 / Mateh Yehuda. Known branches are Jerusalem city ones (GoKosher) and Efrat (municipality page). Official site not fetched (not approved). No closure news."
 },
 "n5904398566": {
 "r": "none",
@@ -1379,7 +1394,10 @@
 },
 "w256285549": {
 "r": "none",
-"note": "Event hall, not a restaurant. Only directory listings found: b144 lists Armonot Or at Merkaz Sapir 5, Jerusalem (by appointment, live listing), gokosher listing created 2022-05 with no details. No own site, no Tabit/Ontopo, no news. No closure news found. Directories are not allowed sources."
+"note": "Event hall, not a restaurant. Only directory listings found: b144 lists Armonot Or at Merkaz Sapir 5, Jerusalem (by appointment, live listing), gokosher listing created 2022-05 with no details. No own site, no Tabit/Ontopo, no news. No closure news found. Directories are not allowed sources.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: event hall, not a restaurant. Search found only the b144 directory listing; no own site, no news, no Tabit/Ontopo, no closure news."
 },
 "w162763910": {
 "r": "none",
@@ -1505,7 +1523,10 @@
 },
 "n12958839687": {
 "r": "conflict",
-"note": "JPost review 2022-12 (article-724344) and the GoKosher listing (undated, Tzohar kosher) give Hillel 24, Jerusalem: vegetarian Indian, mains NIS 65-75. But en.machne.co.il lists Ichikadana at 4 HaEshkol St, Machane Yehuda, and gives no Hillel branch, so it may have moved or have two branches. No recent (2025-26) source confirms Hillel. No Tabit/Ontopo page and no closure news found."
+"note": "JPost review 2022-12 (article-724344) and the GoKosher listing (undated, Tzohar kosher) give Hillel 24, Jerusalem: vegetarian Indian, mains NIS 65-75. But en.machne.co.il lists Ichikadana at 4 HaEshkol St, Machane Yehuda, and gives no Hillel branch, so it may have moved or have two branches. No recent (2025-26) source confirms Hillel. No Tabit/Ontopo page and no closure news found.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Re-check: gokosher.com/en/f93232 (undated) still gives Hillel 24 (Tzohar). JPost review 2022-12 also gives Hillel 24. en.machne.co.il lists Ichikadana only at 4 HaEshkol, Machane Yehuda (est. 2007, WhatsApp +972-52-473-4028). No 2025-26 source for Hillel, no Tabit/Ontopo, no closure or move news. Branch or address still unresolved."
 },
 "n12977805157": {
 "r": "conflict",
@@ -1532,7 +1553,10 @@
 },
 "n2935048038": {
 "r": "none",
-"note": "Catalog address is only '3', Mateh Yehuda. No matching restaurant found. 'Asa' in Time Out 2025-10 is in Tel Aviv (Ahad HaAm 54), and 'Pundak Asa' is at Dvira junction in the Negev. Neither matches."
+"note": "Catalog address is only '3', Mateh Yehuda. No matching restaurant found. 'Asa' in Time Out 2025-10 is in Tel Aviv (Ahad HaAm 54), and 'Pundak Asa' is at Dvira junction in the Negev. Neither matches.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: no restaurant 'Asa' matching Mateh Yehuda (catalog address only '3'). Searches find Asa Tel Aviv (Time Out), Pundak Asa at Dvira junction (Negev), Mahane Asada (Mahane Yehuda/Modiin, Maariv 2024-02) - none match."
 },
 "n560074140": {
 "r": "none",
@@ -1654,7 +1678,10 @@
 },
 "n14274612790": {
 "r": "none",
-"note": "Undated listings only: d.co.il and gokosher name Bardak pizza bar at Keren HaYesod 38 (gokosher says Rabbanut Jerusalem kosher); itraveljerusalem undated; Time Out 2017 lists a different address (4 Beit Ya'akov). Own site habardak.co.il fetch blocked (permission not granted). No Tabit/Ontopo page found, no dated 2025-2026 source, no closure news."
+"note": "Undated listings only: d.co.il and gokosher name Bardak pizza bar at Keren HaYesod 38 (gokosher says Rabbanut Jerusalem kosher); itraveljerusalem undated; Time Out 2017 lists a different address (4 Beit Ya'akov). Own site habardak.co.il fetch blocked (permission not granted). No Tabit/Ontopo page found, no dated 2025-2026 source, no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: gokosher still lists Bardak at Keren HaYesod 38 (Rabbanut Jerusalem), undated; Time Out page dated 2017-07 gives 4 Beit Ya'akov. Own site habardak.co.il not in approved list, not retried. No Tabit/Ontopo page, no 2025-26 dated source, no closure news."
 },
 "w565292432": {
 "r": "none",
@@ -1768,7 +1795,10 @@
 },
 "n12957411124": {
 "r": "none",
-"note": "gokosher lists a kosher sushi place at Yoel Salomon 5 (Rabbanut Yerushalayim, undated); itraveljerusalem Sushiya/Hasushia pages point to Trumpeldor 1 (Bezalel branch), a different address. No own site for this branch, no Tabit/Ontopo, no dated recent source, no closure news."
+"note": "gokosher lists a kosher sushi place at Yoel Salomon 5 (Rabbanut Yerushalayim, undated); itraveljerusalem Sushiya/Hasushia pages point to Trumpeldor 1 (Bezalel branch), a different address. No own site for this branch, no Tabit/Ontopo, no dated recent source, no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: no source found for Hasushia at Yoel Moshe Salomon; easy.co.il branch list fetch failed; no own site, no Tabit/Ontopo, no dated recent source, no closure news."
 },
 "n3278413683": {
 "r": "none",
@@ -1780,11 +1810,17 @@
 },
 "n13057613011": {
 "r": "none",
-"note": "Shalom Falafel chain: enjoyingisrael lists branches (Bezalel 34, Shlomzion Hamalka 14, Haoman 16, Hebron 124, etc.) but none on Jaffa St; own site shalomfalafel.com fetch blocked, so the official branch list couldn't be checked."
+"note": "Shalom Falafel chain: enjoyingisrael lists branches (Bezalel 34, Shlomzion Hamalka 14, Haoman 16, Hebron 124, etc.) but none on Jaffa St; own site shalomfalafel.com fetch blocked, so the official branch list couldn't be checked.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Official branch list (shalomfalafel.co.il/סניפים) now checked: 12 branches (Bezalel 34, Meir Gershon 30, Herzl 122, Dehomi 3, HaGanenet 124, Hevron 124, HaUman 16, Shai Agnon 20, Eliyahu Koren 31, Yanovsky 15, Modiin Ishpro, Shimshon junction) - no Jaffa St branch. No closure article found, so not marked closed; likely closed/moved."
 },
 "n14077448001": {
 "r": "none",
-"note": "Duplicate of n13057613011 (same name/address). Shalom Falafel branch list on enjoyingisrael shows no Jaffa St branch; own site shalomfalafel.com fetch blocked."
+"note": "Duplicate of n13057613011 (same name/address). Shalom Falafel branch list on enjoyingisrael shows no Jaffa St branch; own site shalomfalafel.com fetch blocked.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Duplicate of n13057613011. Official Shalom Falafel branch list (shalomfalafel.co.il) has no Jaffa St branch; no closure article found."
 },
 "n1676315927": {
 "r": "none",
@@ -1830,7 +1866,10 @@
 },
 "n12959145642": {
 "r": "none",
-"note": "GoKosher lists Zalman's at Lunz 3 (Rabbanut Yerushalayim Mehuderet), undated. Srugim 2019 review places it on Ben Yehuda mall; JPost 2024-07 mentions the chain (10 locations) but no branch list. No official branch list naming Luntz, no Tabit/Ontopo page, no closure news found."
+"note": "GoKosher lists Zalman's at Lunz 3 (Rabbanut Yerushalayim Mehuderet), undated. Srugim 2019 review places it on Ben Yehuda mall; JPost 2024-07 mentions the chain (10 locations) but no branch list. No official branch list naming Luntz, no Tabit/Ontopo page, no closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: eluna lists Zalman's at 3 Luntz St (reviews 2019); JPost (~2025, undated) says chain has 10 Israeli locations incl. Malha Mall, no branch list naming Luntz. No own site/official branch list found, no Tabit/Ontopo, no closure news."
 },
 "n7554445485": {
 "r": "none",
@@ -1866,7 +1905,10 @@
 },
 "n7797855586": {
 "r": "none",
-"note": "Coffee Mill at Emek Refaim 23 appears in undated listings (itraveljerusalem, gokosher: Tzohar) and is name-checked in a Kipa article from 2023-05. Nothing from 2025-26, no Tabit/Ontopo page, no closure news."
+"note": "Coffee Mill at Emek Refaim 23 appears in undated listings (itraveljerusalem, gokosher: Tzohar) and is name-checked in a Kipa article from 2023-05. Nothing from 2025-26, no Tabit/Ontopo page, no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site thecoffeemill.co.il live, names Emek Refaim 23 Jerusalem, hours and phone; Tzohar kashrut logo on site; gokosher agrees on hours/phone."
 },
 "n6744445285": {
 "r": "none",
@@ -1882,7 +1924,10 @@
 },
 "n9138891142": {
 "r": "none",
-"note": "Legenda is a gelato chain. No official branch list found naming a Mateh Yehuda branch on road 3976. The easy.co.il branch list failed to load. No closure news."
+"note": "Legenda is a gelato chain. No official branch list found naming a Mateh Yehuda branch on road 3976. The easy.co.il branch list failed to load. No closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Official branch list legenda.co.il/branches now checked: 24 branches (Haifa/north, Modiin, Rishon, Be'er Sheva, Tel Aviv, etc.) - none in Mateh Yehuda / road 3976. No closure article found, so not marked closed."
 },
 "n12957201140": {
 "r": "none",
@@ -2044,7 +2089,10 @@
 },
 "n561070478": {
 "r": "single",
-"note": "Israel Hayom 2026-07-30 article on Chatzot: seating hall at Agripas 121, original near Mahane Yehuda, Modi'in branch too. gokosher listing: Agripas St 121, Rabbanut Yerushalayim supervision (undated). Time Out 2017 only. No Tabit/Ontopo, no own site, no closure news."
+"note": "Israel Hayom 2026-07-30 article on Chatzot: seating hall at Agripas 121, original near Mahane Yehuda, Modi'in branch too. gokosher listing: Agripas St 121, Rabbanut Yerushalayim supervision (undated). Time Out 2017 only. No Tabit/Ontopo, no own site, no closure news.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Re-check: still only one dated recent source. Israel Hayom 2026-07-30 (owner interview: seated restaurant at Agripas 121, Modi'in branch at Dam HaMaccabim 53). gokosher.com page opened: Hatzot, Agripas St 121, Rabbanut Yerushalayim, undated, so it doesn't count as recent. No own site found, no Tabit/Ontopo page, no closure news. Wolt results ignored."
 },
 "n14077430626": {
 "r": "none",
