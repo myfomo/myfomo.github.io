@@ -3,12 +3,15 @@
  "places": {
   "n13527216676": {
    "n": "בר ורמיני",
-   "ok": "2025-09",
+   "ok": "2026-11",
    "src": [
-    "https://timeout.co.il/בר-ורמיני-bar-vermini/"
+    "https://ontopo.com/en/il/page/65353233",
+    "https://tabitisrael.co.il/site/bar-vermini"
    ],
    "cu": "בר",
-   "pr": 2
+   "pr": 2,
+   "p": "053-490-0434",
+   "bk": "https://ontopo.com/en/il/page/65353233"
   },
   "n13527219782": {
    "n": "Benjamin",
@@ -26,15 +29,13 @@
   },
   "n13541796405": {
    "n": "Chacoli",
-   "ok": "2026-08",
+   "ok": "2026-11",
    "cu": "דגים ופירות ים",
    "pr": 3,
    "src": [
-    "https://www.i24news.co.il/news/food/artc-9aa24a8e",
-    "https://www.calcalist.co.il/style/article/s1jgfrrqlx",
-    "https://timeout.co.il/a-tingle-on-our-tongue-the-18-most-recommended-fish-restaurants-in-tel-aviv",
-    "https://timeout.co.il/%D7%A6%D7%90%D7%A7%D7%95%D7%9C%D7%99/"
-   ]
+    "https://ontopo.com/en/il/page/32802656"
+   ],
+   "p": "+972-3-656-4740"
   },
   "n10949049896": {
    "n": "El Mano",

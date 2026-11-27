@@ -1120,7 +1120,9 @@
    "note2": "No Tel Aviv-Jaffa Baku restaurant on Yefet found in guides, own site or Tabit/Ontopo (only an undated atly 'Baku courtyard' listing). No closure news."
   },
   "n13527216676": {
-   "r": "ok"
+   "r": "ok",
+   "det": "2026-11-27",
+   "note3": "Ontopo active booking page BAR VERMINI, Nahalat Binyamin 20 (matches Time Out). Hours from Ontopo; Friday taken from the 'Today' line (page fetched on a Friday, list then starts Saturday). Tabit site page also exists but lists a different phone 03-6152232 and hours 18:00-00:00; Ontopo phone used. Instagram listed, no own website. (hours dropped: booking page only)"
   },
   "n2079041793": {
    "r": "conflict",
@@ -1152,7 +1154,9 @@
    "note": "Time Out and Maariv Jul 2026",
    "r2": "ok",
    "note2": "Ontopo page active (Nahalat Binyamin 31, booking widget, no closure); Time Out and Maariv Jul 2026; no closure news; Ontopo hours not stored (single source, Wednesday missing)",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Ontopo page (Nahalat Binyamin 31) lists hours; Wednesday taken from the 'Today' line (list starts Today then Thursday). No own website, only Instagram/Facebook, so w not set. (hours dropped: booking page only)"
   },
   "n5997844471": {
    "r": "none",
@@ -1223,7 +1227,9 @@
    "note": "Calcalist 2025-06 and Time Out 2025-12",
    "r2": "ok",
    "note2": "i24news review 2026-08 (operating, beachfront); Time Out 2024-11 opening review; Calcalist 2025-06 and Time Out 2025-12 earlier; no own site/Tabit/Ontopo found; no closure news",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Ontopo page Chacoli, Herbert Samuel 3: phone and hours 08:00-23:00 (Sat-Thu plus a 'Today' line taken as Friday). Page shows giftcard only, no visible booking widget, so bk not set. No website URL shown. (hours dropped: booking page only)"
   },
   "n6926507885": {
    "r": "none",
@@ -1264,7 +1270,11 @@
   },
   "n10949049896": {
    "r": "ok",
-   "note": "ynetnews 2025-11 and Secret Tel Aviv 2026-10"
+   "note": "ynetnews 2025-11 and Secret Tel Aviv 2026-10",
+   "det": "2026-11-27",
+   "note3": "Time Out 2026-09-10: El Mano at Yesod HaMa'ala 46 closes after 24.10 because the building is being demolished. Time Out 2026-11-10: it reopened 12.11 at Eiger (איגר) 24, Tel Aviv, about 100m away.",
+   "r2": "closed",
+   "d2": "2026-11-27"
   },
   "n450524210": {
    "r": "none",
@@ -1337,7 +1347,9 @@
    "note": "one 2025 source",
    "r2": "ok",
    "d2": "2026-11-27",
-   "note2": "Time Out 2025-06-17 lists Garger HaZahav at Levinsky 30 (and Dizengoff 93); spottedbylocals 2025-04 at Levinsky 30. English Time Out 2017 gives phone 03-6777456 and a price level of 1. No closure news. No own site or Tabit/Ontopo page found."
+   "note2": "Time Out 2025-06-17 lists Garger HaZahav at Levinsky 30 (and Dizengoff 93); spottedbylocals 2025-04 at Levinsky 30. English Time Out 2017 gives phone 03-6777456 and a price level of 1. No closure news. No own site or Tabit/Ontopo page found.",
+   "det": "2026-11-27",
+   "note3": "Time Out (2017 listing) names website https://www.gargerhazahav.com, but the fetch was blocked (permission not granted), so it is unverified. No Tabit/Ontopo page found."
   },
   "n11330876273": {
    "r": "none",
@@ -1445,7 +1457,9 @@
    "note": "Time Out 2025-12 only",
    "r2": "ok",
    "note2": "Own site italkiya.co.il live naming Olei Zion 16 (Tabit link); Time Out flea-market list 2026-04 names Olei Zion 16; Tabit page did not load; no closure news. Site hours look garbled, not used",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Own site fetch blocked. Ontopo page Italkiya, Olei Zion 16: hours 08:00-23:00 for Sat-Thu plus a 'Today' line taken as Friday. The Ontopo phone (+972 51-553-1525) differs from the known phone. (hours dropped: booking page only)"
   },
   "n2078996725": {
    "r": "none",
@@ -1516,7 +1530,9 @@
   },
   "n2079186417": {
    "r": "ok",
-   "note": "Pudlowski 2026-06 and Spotted by Locals 2025-04"
+   "note": "Pudlowski 2026-06 and Spotted by Locals 2025-04",
+   "det": "2026-11-27",
+   "note3": "Only Time Out English (2023) lists phone 03-5185228, hours Su-Th 10-23, Fr 9-17, and a Facebook page. That is not an own site or booking page, and there is no second source for the hours. No Tabit/Ontopo page found."
   },
   "n11085880105": {
    "r": "none",
@@ -1535,7 +1551,9 @@
    "note": "Time Out 2025-01 and Asian in Israel 2025; hours agree",
    "r2": "ok",
    "note2": "Time Out 2025-01 and Asian in Israel 2025-06; Time Out 2026-06 (new Pil Junction branch) says Florentin original stays open; no own site/Ontopo/Tabit found; no closure news",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "No Tabit/Ontopo page found. The eatintlv listing has no phone. Own website not found. Time Out 2026-06 reports a planned second branch at Tzomet HaPil."
   },
   "n905252043": {
    "r": "none",
@@ -1754,7 +1772,9 @@
   },
   "n6312684887": {
    "r": "ok",
-   "note": "own site; address given as HaGymnasia HaIvrit 7 (flea market corner)"
+   "note": "own site; address given as HaGymnasia HaIvrit 7 (flea market corner)",
+   "det": "2026-11-27",
+   "note3": "Own site ramessesjaffa.com fetch permission timed out; no Tabit/Ontopo page found; only hours source is Time Out EN 2023 (Su-Th 18:30-03:00; Fr 12:30-03:00; Sa 13:30-03:00), single and old, not used."
   },
   "n10020598395": {
    "r": "none",
@@ -1776,7 +1796,9 @@
   },
   "n13530068022": {
    "r": "ok",
-   "note": "active Ontopo page, Dizengoff 98"
+   "note": "active Ontopo page, Dizengoff 98",
+   "det": "2026-11-27",
+   "note3": "Ontopo page active (Dizengoff 98) lists activity hours; no website URL shown on Ontopo, w not found. (hours dropped: booking page only)"
   },
   "n5249884926": {
    "r": "none",
@@ -1823,11 +1845,15 @@
    "note": "Spotted by Locals 2025-08 and Time Out 2025-11",
    "r2": "ok",
    "note2": "Spotted by Locals 2025-08 (Chlenov 27) and Time Out 2025-11; no own site/Ontopo/Tabit found; no closure news",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "No own site, social page or booking page found. Phone sources disagree (Time Out EN 2016: 054-7499538; Spotted by Locals 2025: 03-5222829), so p not set; no website."
   },
   "n2078991188": {
    "r": "ok",
-   "note": "JPost 2025-06 and Secret Tel Aviv 2026-10"
+   "note": "JPost 2025-06 and Secret Tel Aviv 2026-10",
+   "det": "2026-11-27",
+   "note3": "No own site or Tabit/Ontopo page found; Time Out 2024 and Israel Hayom 2024 review list no phone/website."
   },
   "n4486515206": {
    "r": "ok",
@@ -1858,7 +1884,9 @@
    "note": "Time Out 2025-11 and Asians in Israel 2025-06",
    "r2": "ok",
    "note2": "Time Out 2025-11 and Asians in Israel 2025-06; Time Out/Israel Hayom 2023-11 confirm HaRakevet 12; no own site/Ontopo/Tabit found; no closure news",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Directory asiansinisrael lists site watsangsushi.co.il, phone 077-980-0443, hours Mo-Sa 12:00-22:00 but it is an aggregator; own site fetch permission timed out. Time Out 2023 gave trial hours 12:00-20:00 (disagree). Nothing set."
   },
   "n6808110446": {
    "r": "none",
@@ -1885,7 +1913,9 @@
   },
   "n8638095777": {
    "r": "ok",
-   "note": "chain branch page, Ashtori HaParhi 14"
+   "note": "chain branch page, Ashtori HaParhi 14",
+   "det": "2026-11-27",
+   "note3": "Own site zesushi.co.il/basel fetch permission timed out; Tabit page (ZE SUSHI | Basel) live but shows no hours."
   },
   "n8558425245": {
    "r": "none",
@@ -1916,7 +1946,9 @@
    "r": "none",
    "r2": "ok",
    "d2": "2026-11-27",
-   "note2": "Ontopo booking page active for Beit Kandinof, HaTsorfim 14, Tel Aviv-Yafo (the catalog gives only the street, so the house number is my judgement). Own site beitkandinof.com fetch was blocked. Time Out 2018 and Maariv 2022 reviews. Hours on Ontopo were unclear, so they are not given."
+   "note2": "Ontopo booking page active for Beit Kandinof, HaTsorfim 14, Tel Aviv-Yafo (the catalog gives only the street, so the house number is my judgement). Own site beitkandinof.com fetch was blocked. Time Out 2018 and Maariv 2022 reviews. Hours on Ontopo were unclear, so they are not given.",
+   "det": "2026-11-27",
+   "note3": "Ontopo page active (HaTsorfim 14) with hours; happy hour 18-19 included in evening opening. (hours dropped: booking page only)"
   },
   "n6979817592": {
    "r": "none",
@@ -2008,7 +2040,9 @@
   },
   "n12635329114": {
    "r": "ok",
-   "note": "chain branch page, Azrieli Mall"
+   "note": "chain branch page, Azrieli Mall",
+   "det": "2026-11-27",
+   "note3": "Own branch page oshioshi.co.il fetch permission timed out; only directories (d.co.il, easy) found for phone, not used."
   },
   "n5604815956": {
    "r": "ok",
@@ -2149,7 +2183,9 @@
    "note": "Time Out/Mako 2022 + 2026 blog: Nahalat Binyamin 107; atly: Ben Yehuda 188 (possible move)",
    "r2": "ok",
    "d2": "2026-11-25",
-   "note2": "Time Out 2025-05 Levinsky market article + 2026 blog both at Nahalat Binyamin 107 (matches catalog); atly aggregator (Google-based) says Ben Yehuda 188, not reliable; no Tabit/Ontopo; no closure news"
+   "note2": "Time Out 2025-05 Levinsky market article + 2026 blog both at Nahalat Binyamin 107 (matches catalog); atly aggregator (Google-based) says Ben Yehuda 188, not reliable; no Tabit/Ontopo; no closure news",
+   "det": "2026-11-27",
+   "note3": "Only hours found are Time Out 2022-08 trial-run hours (11:00-18:00), too old to use. No own site or Ontopo/Tabit page found. No closure news."
   },
   "n1308842241": {
    "r": "none",
@@ -2306,7 +2342,9 @@
    "note": "Ontopo booking active Ahad Ha'am 15; own site fetch failed; no closure news",
    "r2": "ok",
    "note2": "Recheck: Ontopo page live today, Ahad Ha'am 15, phone +97235245731, vegan sushi; own site fetch failed; no closure news",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Ontopo hours (daily 12:00-23:00, with variations) disagree with the atly listing (12:00-22:30 / Th-Fr to 23:30). The own site thegreenroll.co.il (listed on Ontopo) was blocked, so hours are unconfirmed. Ontopo active today."
   },
   "n1546447299": {
    "r": "closed",
@@ -2448,14 +2486,18 @@
   },
   "n10971402605": {
    "r": "ok",
-   "note": "Ontopo booking active Levinski 46; Ontopo magazine article"
+   "note": "Ontopo booking active Levinski 46; Ontopo magazine article",
+   "det": "2026-11-27",
+   "note3": "Ontopo active (46 Levinski). It shows only booking slots (Su,Mo,We,Th 17:00-23:00; Fr 12:00-16:00,18:00-23:00; Sa closed; Tu unclear) and no website. The Mako review fetch was blocked. Only one source for hours, so not recorded."
   },
   "n5872689085": {
    "r": "ok",
    "note": "Ontopo booking active Dam HaMaccabim 26; Time Out 2022 same address",
    "r2": "ok",
    "note2": "Recheck: Ontopo page live today, HaShovach, Dam HaMaccabim 26, cafe-deli by chef Shahar Levy; Time Out 2022 same address",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Ontopo active (Dam HaMaccabim 26). It shows daily 08:00-23:00 with no second source, and its website field is only a malformed Facebook link. No own site found."
   },
   "n972616162": {
    "r": "closed",
@@ -2463,7 +2505,9 @@
   },
   "n4683691389": {
    "r": "ok",
-   "note": "Ontopo booking active Har Sinai 1; Tabit listing exists"
+   "note": "Ontopo booking active Har Sinai 1; Tabit listing exists",
+   "det": "2026-11-27",
+   "note3": "Ontopo active. Its booking slots are partial and inconsistent (Tu missing; Th 17:00-00:00 overlap). Website: none, only Instagram/Facebook. The Time Out review fetch was blocked."
   },
   "n1989338568": {
    "r": "single",
@@ -2498,7 +2542,9 @@
    "note": "Nothing found for Tsvi 2",
    "r2": "ok",
    "d2": "2026-11-27",
-   "note2": "Own site humus-hamaayan.co.il is live and names Tzvi 2 corner HaMaayan 10, Ramat Gan (catalog city is Tel Aviv, street and number match; probably the OSM city is wrong). ynet 2024-11 and Walla reviews. Kosher: Ramat Gan Rabbinate, per own site."
+   "note2": "Own site humus-hamaayan.co.il is live and names Tzvi 2 corner HaMaayan 10, Ramat Gan (catalog city is Tel Aviv, street and number match; probably the OSM city is wrong). ynet 2024-11 and Walla reviews. Kosher: Ramat Gan Rabbinate, per own site.",
+   "det": "2026-11-27",
+   "note3": "Own site humus-hamaayan.co.il was blocked (permission). The ynet 2024-11 article has no hours and places it at Tzvi/HaMaayan, Ramat Gan (catalog city Tel Aviv; check the city). No hours found."
   },
   "n6316049188": {
    "r": "none",
@@ -2523,7 +2569,9 @@
   },
   "n12944761385": {
    "r": "ok",
-   "note": "Ontopo booking active Eliezer Kaplan 8; no closure news"
+   "note": "Ontopo booking active Eliezer Kaplan 8; no closure news",
+   "det": "2026-11-27",
+   "note3": "Ontopo active (Kaplan 8). It shows 12:00-23:00 (Sa to 23:30; We not listed) with no second source; no website, only Instagram. The Mako 2024-06 article has no hours."
   },
   "n13339000845": {
    "r": "none",
@@ -2543,7 +2591,9 @@
    "note": "Ontopo booking active (Levinski 39, Levinsky market); Time Out 2025: back to cafe-only format at same spot",
    "r2": "ok",
    "note2": "Re-check: Ontopo page opened, active booking, Levinski 39; Time Out 2025 cafe format; Ontopo hours 08-23 daily not stored (single source)",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Ontopo active (Levinski 39). It shows 08:00-23:00, no phone and no website. The Time Out Israel 2017 listing gives Su-Fr 08:00-00:30 and phone 03-5281843: old and disagreeing, so not used. The timeout.co.il review fetch was blocked."
   },
   "n10549077965": {
    "r": "none",
@@ -2628,7 +2678,9 @@
    "note": "Own site branches page lists Rothschild; Time Out 2025-04 Rothschild 45",
    "r2": "ok",
    "note2": "Re-check: own site branches page opened, lists 'Tel Aviv - Rothschild' branch (details not expanded); Time Out 2025-04 Rothschild 45",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Own site legenda.co.il fetch not permitted (blocked); searches gave only Time Out articles without hours/phone; nothing new"
   },
   "n5876238030": {
    "r": "none",
@@ -2646,7 +2698,9 @@
    "note": "Opened 2026-03 Levontin 13; Time Out + Mako 2026-04 agree operating",
    "r2": "ok",
    "note2": "Kept ok: Time Out 2026-04-15 + Mako 2026-04-23 both Levontin 13, Italian tavola calda; hours disagree (Fr) so no oh; no Tabit/Ontopo page found",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Time Out 2026-04 gives Levontin 13, trial hours Su-Th 08:00-17:00 (single guide, trial-run, not used); no phone/website/booking page found"
   },
   "n454907312": {
    "r": "none",
@@ -2657,7 +2711,9 @@
   },
   "n12516314407": {
    "r": "ok",
-   "note": "Ontopo active, phone matches catalog; Ontopo address HaMerets 5 same Kiryat HaMelacha complex"
+   "note": "Ontopo active, phone matches catalog; Ontopo address HaMerets 5 same Kiryat HaMelacha complex",
+   "det": "2026-11-27",
+   "note3": "Ontopo page active with hours (row 'Today' = Tuesday by order); Ontopo lists address Hamarats 5 vs catalog Shvil HaMif'al 6 (likely same corner building, note only) (hours dropped: booking page only)"
   },
   "n720940493": {
    "r": "closed",
@@ -2721,7 +2777,9 @@
   },
   "n4958503425": {
    "r": "ok",
-   "note": "Own site live lists HaArba'a 17; Wolt same address"
+   "note": "Own site live lists HaArba'a 17; Wolt same address",
+   "det": "2026-11-27",
+   "note3": "Own site minna-tomei.co.il fetch not permitted (blocked); Time Out guide (2019) lists chain number *2750 but not from own site; nothing new"
   },
   "n12117313515": {
    "r": "none",
@@ -2797,7 +2855,9 @@
    "note": "Ontopo active Mezizim Beach; Time Out 2025-08 relaunch",
    "r2": "ok",
    "note2": "Ontopo page opened, active booking form, Mezizim Beach, Havakuk HaNavi 1, phone matches; bayz own page live (Mediterranean); Time Out 2025-08 relaunch",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Ontopo page active, hours 08:00-22:00 every day (row 'Today' = Tuesday by order), address Havakuk HaNavi 1 matches (hours dropped: booking page only)"
   },
   "n2079202591": {
    "r": "ok",
@@ -2866,7 +2926,9 @@
   },
   "n8868656017": {
    "r": "ok",
-   "note": "Ontopo active Nissim Aloni 10, phone matches; Wolt same"
+   "note": "Ontopo active Nissim Aloni 10, phone matches; Wolt same",
+   "det": "2026-11-27",
+   "note3": "Ontopo page active with hours (row 'Today' = Tuesday by order), address Nissim Aloni 10 matches (hours dropped: booking page only)"
   },
   "n4462556311": {
    "r": "closed",
@@ -3046,7 +3108,9 @@
    "note": "Time Out 2025-02 + Maariv 2026-06 agree Givatayim branch operates",
    "r2": "ok",
    "note2": "Kept prev ok: Maariv 2026-06 re-opened, confirms Givatayim flagship branch operates; Time Out 2025-02; search budget exhausted, no Tabit/Ontopo check",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Only Time Out 2022 opening article (Katzenelson 59 Givatayim, phone 03-7506070, outdated hours); no own site/booking page found, so not used"
   },
   "n10161946945": {
    "r": "none",
@@ -3092,14 +3156,18 @@
    "note": "Moved: Time Out 2026-06 reopened at Ben Zion 1 (Ontopo active); catalog King George 29 outdated",
    "r2": "ok",
    "d2": "2026-11-25",
-   "note2": "Ontopo page live at 1 Ben Tsiyon Blvd with booking widget; Mako 2026-04 relaunch at King George/Ben Zion corner; Time Out 2026-06 (address fix already approved)"
+   "note2": "Ontopo page live at 1 Ben Tsiyon Blvd with booking widget; Mako 2026-04 relaunch at King George/Ben Zion corner; Time Out 2026-06 (address fix already approved)",
+   "det": "2026-11-27",
+   "note3": "Ontopo page active, address Ben Tsiyon 1 matches, hours 17:00-23:00 all listed days incl. Today; no general phone (only events/WhatsApp numbers) (hours dropped: booking page only)"
   },
   "n12244120937": {
    "r": "ok",
    "note": "Ontopo booking active Rothschild 9, phone matches; Time Out 2026-01",
    "r2": "ok",
    "note2": "Ontopo page live at 9 Rothschild, booking widget, phone matches; hours only on Ontopo (not stored); Time Out 2026-01",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Ontopo page checked today lists hours (only source for hours is the Ontopo booking page; Fri inferred as 'Today' entry since Friday not listed separately, same as Sat) (hours dropped: booking page only)"
   },
   "n5195799584": {
    "r": "ok",
@@ -3139,7 +3207,9 @@
   },
   "n2079181976": {
    "r": "ok",
-   "note": "Ontopo booking active Rustico Basel 42"
+   "note": "Ontopo booking active Rustico Basel 42",
+   "det": "2026-11-27",
+   "note3": "Hours from Ontopo booking page only (own site rustico.co.il/basel fetch not permitted). Fri taken from 'Today' entry (Friday not listed separately) (hours dropped: booking page only)"
   },
   "n12106439305": {
    "r": "none",
@@ -3217,7 +3287,9 @@
   },
   "n6473212377": {
    "r": "ok",
-   "note": "Own site branches page lists HaArba'a 16"
+   "note": "Own site branches page lists HaArba'a 16",
+   "det": "2026-11-27",
+   "note3": "scompany.co.il branches page fetch not permitted; searches found only undated directories (easy, atly); no hours from allowed sources"
   },
   "n12505246770": {
    "r": "none",
@@ -3432,14 +3504,18 @@
    "note": "Time Out bars list 2025-11 Mikveh Israel 26 https://timeout.co.il/drinking-tel-aviv-these-are-the-citys-most-recommended-bars",
    "r2": "ok",
    "d2": "2026-11-25",
-   "note2": "Ontopo booking page active for Guest Room, Mikve Israel 26 (phone, booking widget); plus Time Out bars list 2025-11; Ontopo hours incomplete so oh not set"
+   "note2": "Ontopo booking page active for Guest Room, Mikve Israel 26 (phone, booking widget); plus Time Out bars list 2025-11; Ontopo hours incomplete so oh not set",
+   "det": "2026-11-27",
+   "note3": "Ontopo page (26 Mikve Israel) shows no website, only Instagram/Facebook; Time Out pages found but no own website. Ontopo hours available if wanted: Su-We 18:00-01:00; Th 18:00-03:00; Fr 21:30-03:00; Sa 19:00-01:00"
   },
   "n6538359142": {
    "r": "none",
    "note": "Time Out 2017/2019 only",
    "r2": "ok",
    "note2": "Ontopo booking page active for HaMezeg, Ibn Gabirol 151 (bar, phone); Time Out 2017 page old; Ontopo hours incomplete so oh not set",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Hours from Ontopo booking page only ('Today' entry taken as Wednesday, the unlisted day). No own website found; Ontopo shows only Instagram/Facebook (hours dropped: booking page only)"
   },
   "n10176062633": {
    "r": "none",
@@ -3493,7 +3569,9 @@
    "note": "Maariv 2025-05 + Time Out 2025-10 agree Dizengoff 98 operates",
    "r2": "ok",
    "note2": "Kept prev ok: Maariv 2025-05 + Time Out + JPost agree Mayer House (Dizengoff 98) operates; Time Out 2024-04 shows rooftop now 'Rooftop 98' restaurant; hotel own site/Tabit/Ontopo not checked (search budget used up)",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Only Time Out 2024-04 article on 'Rooftop 98' at the Mayer House hotel roof (Dizengoff 98): phone 058-731-3101, hours Su-Sa 19:00-23:30, no website (Facebook mayerhouse.tlv). Single old guide is not enough for oh/p; Time Out rooftop page fetch not permitted; no Tabit/Ontopo found"
   },
   "n725456792": {
    "r": "none",
@@ -3522,7 +3600,9 @@
   },
   "n10175901222": {
    "r": "ok",
-   "note": "Own site live names HaHalutzim 8"
+   "note": "Own site live names HaHalutzim 8",
+   "det": "2026-11-27",
+   "note3": "Own site opatlv.co.il fetch not permitted; Time Out English page (undated) says Mon-Fri 19:00-24:00 - single undated source, not used"
   },
   "n2479682972": {
    "r": "none",
@@ -3685,7 +3765,9 @@
    "note": "Time Out 2024-08 only (Florentin 7)",
    "r2": "ok",
    "note2": "Own site bluefox-telaviv.com live, Florentin 7, events Aug/Nov 2026; Time Out 2024-08 and 2024-11",
-   "d2": "2026-11-25"
+   "d2": "2026-11-25",
+   "det": "2026-11-27",
+   "note3": "Own site bluefox-telaviv.com fetch not permitted; Time Out 2024-08 page shows no phone"
   },
   "n1717768352": {
    "r": "none",
