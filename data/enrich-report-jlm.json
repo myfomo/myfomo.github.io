@@ -6,8 +6,8 @@
  "site_match": 1,
  "site_reject": 11,
  "phone_site": 0,
- "hours_site": 1,
- "addr_site": 1,
+ "hours_site": 0,
+ "addr_site": 0,
  "cuisine_site": 0,
  "names_site": 0,
  "web_wd": 0,
@@ -96,9 +96,8 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_multi_skipped": 5,
- "phone_tel": 4,
- "phone_confirmed": 8,
+ "phone_multi_skipped": 4,
+ "phone_confirmed": 12,
  "coverage_after": {
   "address": "474 (100%)",
   "hours": "77 (16%)",
