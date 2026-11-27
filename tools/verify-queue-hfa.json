@@ -766,6 +766,166 @@
 "n13704786479": {
 "r": "single",
 "note": "Mako 2025-11 article on Culina at Rothschild 100, Caesarea commercial center (Israeli seasonal menu, not kosher, mains ~76-147 NIS). Catalog city is Hof HaCarmel with 'commercial center' address; match to Caesarea commercial center is judgement. Tiuli page exists but fetch failed; no Tabit/Ontopo found; no closure news."
+},
+"n3691498200": {
+"r": "none",
+"note": "No reliable source found for a cafe named Dalce in Daliyat al-Karmel (Hebrew/English searches, no own site, no Tabit/Ontopo page, no closure news)."
+},
+"n6939601527": {
+"r": "none",
+"note": "No source found for Dali Pizza on Sderot HaMeginim, Haifa (Hebrew/English searches); no own site, no Tabit/Ontopo, no closure news."
+},
+"w305504026": {
+"r": "none",
+"note": "Only Del Mar found is the seafood restaurant at 99 Yefe Nof, Haifa (Times of Israel blog 2023-06, site del-mar.co.il), which is not this Kiryat Yam address. del-mar.co.il fetch refused (permission not answered), so its branch list could not be checked. Nothing found for Kiryat Yam, Sderot Pinchas Sapir."
+},
+"n1941821217": {
+"r": "conflict",
+"note": "Official dominos.co.il fetch refused (permission not answered), so the branch list was not checked. enjoyingisrael lists Domino's Haifa Neve Sha'anan at Shalom Aleichem 1 (Ziv Center), hours 12:15-02:45. That is not Trumpeldor and does not match the catalog's 24/7 hours. No branch found at Trumpeldor."
+},
+"n2112121039": {
+"r": "none",
+"note": "enjoyingisrael (an undated listing, (c)2018-2026) lists Domino's Pizza Carmel Haifa at Sderot Moria 108, hours 12:00-03:00, matching the catalog. The official dominos.co.il branch list could not be fetched (permission not answered). This rests on one aggregator, and the listing date is unknown. Downgraded to none: source undated/aggregator."
+},
+"w470332609": {
+"r": "none",
+"note": "enjoyingisrael lists Domino's Zichron Yaakov at Hanadiv 26 (the catalog says 28), not kosher, hours Su-We/Sa 12:15-23:50, Th-Fr 12:15-00:50. Treated as the same branch despite the one-number difference. The official dominos.co.il site could not be fetched (permission not answered). The listing is undated. Downgraded to none: source undated/aggregator."
+},
+"n614226519": {
+"r": "none",
+"note": "No source found for a restaurant named EVENT on HaKitor St, Haifa (Hebrew/English searches); no own site, no Tabit/Ontopo, no closure news."
+},
+"n9221965535": {
+"r": "none",
+"note": "Eat Vinny is probably Fat Vinny (an Italian-American diner). The only dated source is an Israel Hayom review from 2016-09 placing it at HaSolelim 8, Big Kiryat Ata, not Tevuot HaAretz, Haifa. Instahop shows one Fat Vinny in Haifa with no address or date. easy.co.il fetch failed. No recent reliable source and no closure news."
+},
+"n6575249486": {
+"r": "none",
+"note": "Only old/unreliable sources: Time Out 2016 listing (26 Wadi St, Lebanese, 04-8553353); aggregator enjoyingisrael gives Ha'atzmaut 140. No site, no Tabit/Ontopo, no closure news, no 2025-26 source."
+},
+"n1447013829": {
+"r": "none",
+"note": "No source found for an Elite Coffee branch on Abba Hushi, Haifa; only directory/aggregator pages for other Elite Coffee branches. No closure news specific to branch."
+},
+"n5018171925": {
+"r": "conflict",
+"note": "Time Out listing (2023-04) places Elkheir at 139 HaNassi Blvd, Haifa (site 2eat.co.il/elhir), not Moriah Blvd as in catalog; no recent 2025-26 source, no Tabit/Ontopo, no closure news."
+},
+"n4449119974": {
+"r": "none",
+"note": "Nothing reliable found for Espresso Club in Daliyat al-Carmel (only generic directories)."
+},
+"n1870358982": {
+"r": "none",
+"note": "Only trip.com/vymaps aggregator entries for Faces, Haifa; no own site, booking page, news or closure info."
+},
+"n13811144302": {
+"r": "single",
+"note": "Maariv 2026-06 article on Flavio Pasta, small pasta food truck in the community garden on Sirkin St (Talpiot market), Haifa. No own site or Tabit/Ontopo found."
+},
+"n9907387424": {
+"r": "none",
+"note": "Nothing reliable found for Good Baguette on Oudeh Nada, Haifa (name and phone searches returned nothing relevant)."
+},
+"n1490211253": {
+"r": "none",
+"note": "Greg cafe chain site gregcafe.co.il branch list loads dynamically, could not confirm a Moriah 105 branch. Aggregator enjoyingisrael lists 'Cafe Greg Kitchen' at Moriah 110 (not reliable); Wolt has 'Kitchen by Greg' Haifa. No closure news."
+},
+"n1870350647": {
+"r": "none",
+"note": "Searches (Hebrew/English, name+Haifa+Metronit) found no reliable source, no own site, no Tabit/Ontopo page, no closure news."
+},
+"n6303727185": {
+"r": "none",
+"note": "No reliable source for a bar 'Heine' at Hecht Square/Reuven, Haifa. Found only aggregator hits (wanderlog) and an israeldiaries.com link whose page no longer mentions it. No Tabit/Ontopo page, no closure news."
+},
+"n3069770550": {
+"r": "none",
+"note": "Only aggregators (trip.com, wanderlog) list IZ Cafe in Zichron Yaakov, so nothing reliable. The Time Out 'Izi bistro' hit is a different place (Arlozorov 76, Tel Aviv, 2016). No own site, no Tabit/Ontopo page, no closure news."
+},
+"n894090971": {
+"r": "none",
+"note": "Only source is enjoyingisrael.com, an undated directory (Ben Gurion 36, Haifa; page shows (c)2018-2026; phone looks malformed), so it does not count as a recent source. Its Facebook page was blocked (permission not granted). No Tabit/Ontopo page, no closure news."
+},
+"n13351353085": {
+"r": "single",
+"note": "The ynetnews article of 2026-10-30 on the operator (Smart Service K&K) filing for court protection says the chain runs 12 restaurants, including three in Haifa, and reports no closures from the filing. It does not name the Palmer Gate branch. The Wolt public page shows 'KFC Downtown' at HaNamal 43, Haifa, near Sha'ar Palmer, so the branch match is my judgement. Israel Hayom 2025-03 lists the 8 branches that closed: Haifa downtown is not among them and is named as open. The official branch list (kfc.co.il) was blocked (permission not granted)."
+},
+"n14368680532": {
+"r": "none",
+"note": "Searches for Kiss at Oskar Schindler 7, Haifa (Hebrew/English, Tabit/Ontopo) found nothing reliable. The b144 hit was a different business (Angus Dabach, HaMaginim 27). No closure news."
+},
+"n12707525937": {
+"r": "none",
+"note": "Hebrew and English searches for La Nocciola, Daliyat al-Karmel found no own site, guide, Tabit/Ontopo page or closure news."
+},
+"n10053934341": {
+"r": "none",
+"note": "Only source is enjoyingisrael.com, an undated directory: Leggenda Haifa at Sderot HaNasi 129, 10:00-00:00, 04-8100771, leggenda.co.il, page shows (c)2018-2026. The own site leggenda.co.il and easy.co.il were blocked or failed. The Time Out 'Leggenda' page is the Tel Aviv branches (2017). No Tabit/Ontopo page, no closure news. Worth retrying via the own branch list."
+},
+"n13689867104": {
+"r": "none",
+"note": "No source names a Leggenda branch on Trumpeldor, Haifa. The own site leggenda.co.il fetch was refused. Directory listings found only other Haifa branches (Hanasi 129, Ahi Eilat 10, Big Krayot). Time Out 2017 lists Tel Aviv branches only. No closure news found."
+},
+"n2940072267": {
+"r": "none",
+"note": "Nothing found for 'Leggenderia' in Zichron Yaakov. enjoyingisrael lists a Leggenda Zichron Yaakov at a 'commercial center opposite Zichron' with no date. That may be the same place, but no reliable source links it to this name."
+},
+"w124781184": {
+"r": "none",
+"note": "Cafe Mandarin is a Haifa chain (Hanasi 129, Azrieli, Technion, Carmelia and others), but no source names a branch on Yitzhak Elhanan. The own site mandarin.org.il fetch was refused. No closure news found."
+},
+"n1387736525": {
+"r": "none",
+"note": "'Meat' (מיט) at Sderot HaNasi 129 appears only in the d.co.il directory and an undated enjoyingisrael listing (phone 04-8373222, site meat.rest.co.il). The rest.co.il and meat.rest.co.il fetches were refused. Not on the allowed source list. No closure news found. The Time Out 'Meat Kitchen (CLOSED)' is a different place in Tel Aviv."
+},
+"n4682539689": {
+"r": "conflict",
+"note": "Falafel Mishel/Michel, Haifa. Time Out English (2017) gives 39 Yaffo St. Time Out Hebrew (2020-01) gives HaWadi 21, Wadi Nisnas (04-6444139). Mako 2024-12 mentions it by name with no address. The address doesn't match reliably and there's no 2025-2026 source."
+},
+"w853952525": {
+"r": "single",
+"note": "Mako 2026-04 guide lists Millhouse at Sderot Bat Galim 14 (historic kiosk, light meals, not kosher). Time Out 2020-02 also lists it at the same address, but that's older. No own site, Tabit or Ontopo page found. No closure news found."
+},
+"n4859371921": {
+"r": "none",
+"note": "No source found for Mimino on Arlozorov in Haifa, in Hebrew or English searches. No closure news found."
+},
+"n1387673789": {
+"r": "none",
+"note": "No source found for a 'New York Style' pizza on Megiddo St in Haifa. Haifa pizza guides (Mako 2024, Maariv 2026) don't list it."
+},
+"n5807204208": {
+"r": "conflict",
+"note": "Only Haifa 'Nuna' found is Nuna Talpiot at Sirkin 21 (Talpiot market), not Chicago Blvd as in the catalog. HappyCow (a user-edited listing, not reliable news) says 'confirmed closed Nov 2026': https://stats.happycow.net/reviews/nuna-talpiot-haifa-261534 ; spinach.guide lists it at Sirkin 21. No own site, Tabit or Ontopo page, and no news on a closure."
+},
+"n13943267718": {
+"r": "none",
+"note": "No source for a Panda Wok on the Haifa promenade. The only Panda Wok found is a Kiryat Motzkin listing on Wolt (not used as a source). No Tabit/Ontopo page, no news."
+},
+"n6266150496": {
+"r": "single",
+"note": "Very likely 'Cinema Paradiso' (סינמה פרדיסו), a beach restaurant-bar on Zamir Beach near the Dado promenade, Haifa. Maariv 2025-07-03 says it operates (summer menu). Mako 2021-11 covers the opening (phone 077-7242093). The branch match is my judgement: the name and the promenade location fit, and 'בר פרדיסו' in Time Out is a different place in Tel Aviv. No own site, Tabit or Ontopo page found."
+},
+"n779115346": {
+"r": "none",
+"note": "A tiuli.com listing exists ('פסטו חיפה - pasto', Italian/meat/fish), but the page failed to load (client_error), so I could not check the address or date. No Tabit/Ontopo page, no own site, no closure news found."
+},
+"n2291847987": {
+"r": "none",
+"note": "Nothing found for a Pavo pub on HaYayin St, Zichron Yaakov. The only hit is an unrelated 'Pavo Brewery' on barnivore. No Tabit/Ontopo page, no news."
+},
+"n2921646961": {
+"r": "none",
+"note": "The catalog name is just 'Pizza', so the business can't be identified. A d.co.il directory lists Crunch Pizza at Derech Tzarfat 63, Haifa (https://www.d.co.il/80323838/39460/), but I can't tell if that is this place. Not verified."
+},
+"n1387801851": {
+"r": "none",
+"note": "The official site pizzahut.co.il was blocked (permission not granted), so there is no official branch list. The d.co.il directory branch list includes 'Haifa: Moriah Blvd 13' (https://www.d.co.il/80174525/39460/), but that is an undated directory. No news on a closure."
+},
+"n4966260746": {
+"r": "conflict",
+"note": "Not on the d.co.il Haifa branch list (Moriah 13, HaNasi Blvd, Ben Gurion 53). A 'Tnuat/Tvuot HaAretz 9' branch is listed under Tel Aviv, so the catalog city or location may be wrong (my judgement). The official pizzahut.co.il was blocked."
 }
 }
 }
