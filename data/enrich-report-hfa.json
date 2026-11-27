@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 48,
- "site_jsonld": 4,
- "site_match": 3,
- "site_reject": 1,
+ "site_checked": 59,
+ "site_jsonld": 9,
+ "site_match": 4,
+ "site_reject": 5,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -21,10 +21,24 @@
    "site": "097996967"
   },
   {
+   "id": "n2112121039",
+   "n": "Domino's Pizza Moriah",
+   "field": "hours",
+   "osm": "Mo-Su 12:00-03:00",
+   "site": "Su,Mo,Tu,We,Fr,Sa 12:00-02:00; Th 12:00-01:00"
+  },
+  {
+   "id": "n10053934339",
+   "n": "Wok Street",
+   "field": "phone",
+   "osm": "+972 53-433-7303",
+   "site": "048332211"
+  },
+  {
    "id": "n14163814998",
    "n": "מסעדת מצה",
    "field": "hours",
-   "osm": "8:30-21:30",
+   "osm": "Mo-Su 08:30-21:30",
    "site": "Su 08:30-21:30; Tu 08:30-21:30; We 08:30-21:30; Th 08:30-21:30; Fr 08:30-21:30; Sa 08:30-21:30"
   },
   {
@@ -37,21 +51,45 @@
  ],
  "rejected_sites": [
   {
+   "id": "n553502885",
+   "n": "לה פצ'ינה",
+   "w": "https://lapachina.co.il",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n1387801851",
+   "n": "Pizza Hut",
+   "w": "https://www.pizzahut.co.il/branch/haifa-moriya/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n4513287189",
+   "n": "PizzaHut",
+   "w": "https://www.pizzahut.co.il/branch/haifa-moshava/",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n4875501522",
    "n": "דוברין 7",
    "w": "https://dovrin7.com",
    "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n4449119982",
+   "n": "פיצה האת",
+   "w": "https://www.pizzahut.co.il/branch/%d7%93%d7%90%d7%9c%d7%99%d7%aa-%d7%90%d7%9c-%d7%9b%d7%a8%d7%9e%d7%9c/",
+   "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 7,
- "phone_multi_skipped": 2,
+ "phone_confirmed": 11,
+ "phone_multi_skipped": 3,
  "coverage_after": {
   "address": "444 (100%)",
-  "hours": "63 (14%)",
-  "phone": "51 (11%)",
-  "website": "54 (12%)",
-  "cuisine": "300 (68%)",
-  "extra_names": "274 (62%)"
+  "hours": "69 (16%)",
+  "phone": "61 (14%)",
+  "website": "65 (15%)",
+  "cuisine": "301 (68%)",
+  "extra_names": "276 (62%)"
  },
- "conflicts_n": 3
+ "conflicts_n": 5
 }
