@@ -1246,6 +1246,166 @@
 "n9221965534": {
 "r": "conflict",
 "note": "Official site benedict.co.il was blocked (permission). Wolt's Haifa brand page lists one area branch, 'Benedict Krayot', at Histadrut Blvd 248, Kiryat Ata; that does not match the catalog address (Tvuot HaAretz, Haifa). No Tabit/Ontopo page or Haifa-branch news found. Re-check against the official branch list."
+},
+"w815847058": {
+"r": "none",
+"note": "Generic name 'study building' cafe in Zevulun with no website; search found nothing relevant. Tabit/Ontopo and closure checks were skipped to save the search budget (nothing to match)."
+},
+"n6726830691": {
+"r": "single",
+"note": "Mako Haifa guide (2026-04-30) describes Bar Galim, a cooperative bar run by Achvat Galim since 2013, in the present tense. The Achvat Galim IsraelGives campaign page (undated, 2026 footer) says the building is slated for demolition and the bar may close. Neither source gives the address, so the Yehonatan 3 match is judged from the neighbourhood. No Tabit/Ontopo page found."
+},
+"n4554225229": {
+"r": "none",
+"note": "Searches for Yaara bar-cafe at Masada 1, Haifa returned only aggregators and real-estate listings; no own site, booking page or news found."
+},
+"n2912911050": {
+"r": "none",
+"note": "d.co.il directory lists Baronita at Hanadiv 27 with phone 052-6631881, site baronita.co.il and a review dated 2026-04 (a directory, so it does not count). The own site fetch was refused. JPost 2019 calls it kosher meat (too old). No Tabit/Ontopo or closure news found."
+},
+"n9221942584": {
+"r": "none",
+"note": "Japanika chain; the official branch list at japanika.net was refused. Only undated aggregators (enjoyingisrael 'Check Post, Haifa') were found, so the branch could not be confirmed and no Tabit/Ontopo page was found."
+},
+"n1387594255": {
+"r": "none",
+"note": "Japanika chain; the official branch list at japanika.net was refused. Only undated aggregators (enjoyingisrael 'Carmel, Haifa') were found, so the Nasi Blvd 122 branch could not be confirmed."
+},
+"n4534088090": {
+"r": "none",
+"note": "No source found for Hofit ice cream on the Bat Galim promenade. The Mako 2026-04 Bat Galim guide lists a different shop ('Glida Bat Galim', next to Mifgash Batgalim) and does not mention Hofit."
+},
+"n2905397370": {
+"r": "none",
+"note": "No source found for Mimi ice cream in Zichron Yaakov; results were other shops (Aldo) and Wolt pages for unrelated places."
+},
+"n2842265122": {
+"r": "none",
+"note": "Searches (name+city, closure) gave only directories (easy, d.co.il) and brand news (ynet/ice) not naming a Zichron Topaz branch; no own branch list found; no Tabit/Ontopo"
+},
+"n3202959590": {
+"r": "none",
+"note": "Hebrew/English searches found no source for Galeria Bakfar in Zevulun; no site, no Tabit/Ontopo, no closure news"
+},
+"n3757202256": {
+"r": "none",
+"note": "Cafe Greg chain; official site cafegreg.co.il fetch refused (permission), hamichlol fetch failed; only directories (d.co.il, easy, enjoyingisrael) found, no branch list naming Moshe Flimann Haifa"
+},
+"n5236209021": {
+"r": "none",
+"note": "Cafe Greg chain; official site cafegreg.co.il fetch refused; no reliable source naming a Litanis St Haifa branch; only directories"
+},
+"n5438185457": {
+"r": "none",
+"note": "Only aggregators (spinach.guide lists HaMeyasdim 43, phone 04-6555735, instagram gringos_grill_bar; enjoyingisrael, wanderlog) - undated, not counted; no Tabit/Ontopo, no news, no closure news"
+},
+"n6939092687": {
+"r": "none",
+"note": "Time Out Israel review 2016-11 (35 Ben Gurion Blvd, 04-8525444, douzan.rest.co.il) is old; otherwise only aggregators (trip.com, wanderlog, tiuli fetch failed); Time Out Haifa list 2026-01 does not mention it; no closure news found"
+},
+"n8575646317": {
+"r": "none",
+"note": "Chain; dominos.co.il fetch refused (permission); no official branch list naming Sderot Yerushalayim Kiryat Bialik found; only directories"
+},
+"n3735433855": {
+"r": "none",
+"note": "Searches (Hebrew spellings, English) found nothing for Donna Gracia in Zichron Yaakov; Maariv 2026-08 Zichron food article and Israel Hayom article do not mention it; no Tabit/Ontopo, no closure news"
+},
+"n1365680925": {
+"r": "single",
+"note": "Ein Hod village official site (ein-hod.org, last modified 2026-05) lists Dona Rosa as an Argentinian meat restaurant (not kosher), so this rests on one recent source. No Tabit/Ontopo page or own website found, and no closure news. tiuli page failed to load. Catalog address '7111' is taken to be the Ein Hod access road, so the branch match is my judgement."
+},
+"w260173971": {
+"r": "single",
+"note": "Mako article (2025-02-26) describes Doris Katzavim at the foot of Ramat HaNadiv as an operating meat restaurant/butcher. Directory d.co.il gives Hanadiv 1 and lists doris-k.co.il, but fetching the own site was refused (permission). Time Out page is from 2016. No Tabit/Ontopo page and no closure news found. Catalog address '652' is presumably Route 652 at Ramat HaNadiv, so the branch match is my judgement."
+},
+"n3691499179": {
+"r": "none",
+"note": "Only easy.co.il / d.co.il directory listings for a Deli Cream chain, and the easy.co.il fetch failed. Nothing dated or reliable confirms a Daliyat al-Carmel branch. No closure news."
+},
+"n3741391106": {
+"r": "none",
+"note": "Hebrew and English searches found nothing for Dr' Biss in Tirat Carmel. No own site, Tabit/Ontopo page or news found."
+},
+"n12653328500": {
+"r": "none",
+"note": "Searches found nothing for Dr. Burger in Daliyat al-Carmel; the only match was a Burgerim branch, which is a different business. No own site, booking page or news found."
+},
+"n4375364692": {
+"r": "none",
+"note": "Only the d.co.il directory (Hanadiv 20, Zichron Yaakov, daytime hours, possibly a wine shop rather than a restaurant). Not mentioned in the Mako 2025 or Maariv 2026-08 Zichron food articles. No own site, Tabit/Ontopo page or closure news found."
+},
+"n14152962010": {
+"r": "none",
+"note": "Searches only return the Derech Nof Carmel scenic road (tiuli point of interest); no restaurant by this name was found in Daliyat al-Carmel. No booking page or news found."
+},
+"n4966260786": {
+"r": "none",
+"note": "Nothing found for 'Ha'ochel shel Mama' on Sderot HaHistadrut, Haifa. HappyCow's 'Mama's' is an Ethiopian place at HaNeviim 20 (different address, 2020 data). A Mako 'Mama' article (2009) is unrelated."
+},
+"n4491269447": {
+"r": "none",
+"note": "Searches (HE/EN, Tabit/Ontopo, closure) found no own site, booking page or dated news for The Stable pub at HaNadiv 29; Mako 2025-05 Zichron guide does not mention it"
+},
+"n2700025098": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page or news found for 'האיטלקיה החמה' at Arlozorov 80 Haifa; not in Time Out Haifa list 2026-01"
+},
+"n13554685819": {
+"r": "none",
+"note": "No sources found for pub 'האסם' at Harutiya / Zevulun; searches returned only unrelated directories"
+},
+"n9221799929": {
+"r": "none",
+"note": "Only Wolt/easy chain listings for 'Borekas HaBulgari' (Kiryat Ata branch), nothing naming a HaSolel Haifa branch; no dated source"
+},
+"n280680121": {
+"r": "none",
+"note": "Only old/undated sources: ynet review 2004, tiuli/weekend/d.co.il listings (undated, phone 04-8397350). No own site, booking page or recent news; no closure news found"
+},
+"n1387673787": {
+"r": "none",
+"note": "Only undated tiuli listing (page fetch failed); no own site, Tabit/Ontopo page or recent news; not in Time Out Haifa list 2026-01; no closure news found"
+},
+"n6149586380": {
+"r": "none",
+"note": "No sources found for 'הבקתה' in Sha'ar HaAmakim (results were unrelated places with same name)"
+},
+"n2918499197": {
+"r": "none",
+"note": "Only undated tiuli listing (fetch failed); no own site, booking page or recent news; Mako 2025-05 Zichron guide does not mention it"
+},
+"n2917392559": {
+"r": "none",
+"note": "Only Time Out 2016 interview (HaMeyasdim 54, 04-6392530); no own site, no Tabit/Ontopo, no 2025-26 source, no closure news found"
+},
+"n11693183128": {
+"r": "none",
+"note": "No reliable source found for HaHavit on Carmel beach promenade; no Tabit/Ontopo; no closure news"
+},
+"n2883158777": {
+"r": "none",
+"note": "Only undated kosher directory (totallyjewishtravel); no own site, no Tabit/Ontopo, no recent news or closure news"
+},
+"n6004507163": {
+"r": "none",
+"note": "No reliable source found for Ha'chenvania (HaMishmesh St, Hof HaCarmel); no Tabit/Ontopo; no closure news"
+},
+"n1113039302": {
+"r": "single",
+"note": "Calcalist 2025-06 recommends Helena (chef Amos Sion) at Caesarea ancient harbour, operating; Calcalist 2022 review too. Catalog city Hof HaCarmel vs Caesarea port (road 6511) - matched by judgement. No own site/Tabit/Ontopo found; no closure news"
+},
+"n5240747441": {
+"r": "none",
+"note": "Only old sources: Time Out IL 2020-02 and Time Out 2017 list HaMachvasa at HeHalutz 45 (catalog says 51); no recent source, no Tabit/Ontopo, no closure news"
+},
+"w467930193": {
+"r": "none",
+"note": "tishbi.com fetch not permitted; searches found only general Tishbi winery guides, nothing naming a cellar at HaMeyasdim 33; no closure news"
+},
+"n2924385335": {
+"r": "none",
+"note": "Only undated aggregator (trip.com 'Hanadiv Restaurant and Coffee Shop'); no own site, no Tabit/Ontopo, no recent source, no closure news"
 }
 }
 }
