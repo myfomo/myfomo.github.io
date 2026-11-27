@@ -320,6 +320,166 @@
 "n10101027485": {
 "r": "none",
 "note": "No trace of JEMS BAR at HaEnergia 77 (Gav-Yam/hi-tech park) in searches; no own site, Tabit/Ontopo or news"
+},
+"n1705751749": {
+"r": "none",
+"note": "Searches (Hebrew/English, Bnei Shimon/Shoval/Lehavim) found nothing for Ja Ja; no site, no Tabit/Ontopo, no closure news"
+},
+"n13301719023": {
+"r": "none",
+"note": "Only undated aggregators (wanderlog, easy.co.il) list Japan Japan Mitzpe Ramon; ynetnews Mitzpe Ramon guide 2025-12 does not mention it; no own site, Tabit/Ontopo or closure news found"
+},
+"n6746004100": {
+"r": "none",
+"note": "Likely = Cafe Lola, Smilansky 13 (Mako guide 2024-10, not recent enough); own site lolacoffee.rol.co.il fetch blocked (permission); no 2025-2026 source, no Tabit/Ontopo, no closure news. 'Lola's friends' name not found"
+},
+"n9585027178": {
+"r": "none",
+"note": "Oh La La cafe-deli at Reuven Rubin 3 covered by ynet 2022-11 (not recent); Wolt listing exists (undated platform, not counted); no own site, Tabit/Ontopo or closure news"
+},
+"n990011868": {
+"r": "none",
+"note": "No reliable source found for Panda/Panda Express on KKL Blvd Beer Sheva; no closure news"
+},
+"n7233357060": {
+"r": "none",
+"note": "Generic name 'Pizza' with address '162' only; cannot identify; nothing reliable found"
+},
+"n7233484439": {
+"r": "none",
+"note": "Only d.co.il directory (undated) listing Pizza HaGesher at Sderot Ya'alim 14 Beer Sheva, not Kikar Vardimon; no news, Tabit/Ontopo or closure news"
+},
+"n4209029827": {
+"r": "none",
+"note": "Official pizzahut.co.il fetch blocked (permission); d.co.il directories list Beer Sheva branches at Rager 53 and HaAl 24, none at Te'ena 24; no news or closure found"
+},
+"n13301771329": {
+"r": "none",
+"note": "Searches found no dated source for a Mitzpe Ramon Pizza Hut branch, only Wolt pages and directories for other branches. Fetching the own site pizzahut.co.il was refused, so its branch list could not be checked. No closure news found."
+},
+"n7233474633": {
+"r": "none",
+"note": "Hebrew and English searches found nothing for a 'Rose' restaurant on Shimon Bar Giora in Beer Sheva. Time Out hits are for other places called Rose (Golan, Trigger). No Tabit/Ontopo page and no closure news found."
+},
+"n7845566303": {
+"r": "none",
+"note": "The only Roasters source found is a Time Out 2018 page for the Jerusalem Machane Yehuda branch, not Beer Sheva. The Beer Sheva hits are undated aggregators only (restaurantguru, wanderlog). No Tabit/Ontopo page and no closure news found."
+},
+"n7167784312": {
+"r": "none",
+"note": "Searches found nothing for a 'Rooster' fast food place on Yosef Ben Matityahu in Beer Sheva. No Tabit/Ontopo page and no closure news found."
+},
+"n7064678717": {
+"r": "none",
+"note": "Searches found nothing reliable for a Roots pub on Ringelblum. The only hit is an undated aggregator (evendo, 'Roots Bar Kitchen', Negev). Mako 2010 covers Ringelblum bars but not Roots. No Tabit/Ontopo page and no closure news found."
+},
+"n2520703024": {
+"r": "none",
+"note": "Ynet 2022-11 (https://www.ynet.co.il/article/bygpda74j) lists 'Saba Jebeto' at Rasco Center, HaTikva 8, Beer Sheva. That address is not the catalog's Henrietta Szold, and the article is too old to count. Fodor's (undated) gives 109 Rasco St. No recent source, no Tabit/Ontopo page, no closure news found."
+},
+"n1011094136": {
+"r": "none",
+"note": "Searches found nothing for a Zigi bar on HaGefen in Beer Sheva. Mako 2010 mentions a different bar, Zigouta, on Ringelblum. No Tabit/Ontopo page and no closure news found."
+},
+"n13301677692": {
+"r": "none",
+"note": "Rebar is a chain. Undated listings (enjoyingisrael, easy) show other branches, but no source names a Mitzpe Ramon branch on Sderot KKL. Fetching the own site rebar.co.il was refused, so its branch list could not be checked. No closure news found."
+},
+"n2847514496": {
+"r": "none",
+"note": "Searches (name+city, Tabit/Ontopo, closure) found no reliable source for an Abu Dhabi restaurant at Alexander Yanai 14, Beer Sheva; ynet 2022 and Mako 2024 Beer Sheva guides do not mention it; no own site, no booking page."
+},
+"n10101116017": {
+"r": "none",
+"note": "Agadir is a chain; the official site agadir.co.il fetch was refused (permission timeout), so the branch list could not be checked. Time Out 2023 names only Tel Aviv branches. Only undated aggregators (wanderlog, happycow, trip.com) mention a Beer Sheva branch. No closure news found."
+},
+"n1012420812": {
+"r": "none",
+"note": "Only undated aggregators/directories (wanderlog, enjoyingisrael 'Avaze Hazahav', opengreenmap, totallyjewishtravel) found; no own site, no Tabit/Ontopo page, no dated news, no closure news."
+},
+"n1705751730": {
+"r": "none",
+"note": "Aldo ice cream chain branch at Bnei Shimon (address only '31', possibly Route 31); only easy.co.il and d.co.il directories found; no official branch list reached, no dated source, no closure news."
+},
+"n1004459671": {
+"r": "none",
+"note": "d.co.il directory (undated) lists 'Atza - Sushi Bar', Ha'al 30, Beer Sheva (opposite 7 Mall), phone 08-6298051, kosher, site atza.co.il, Facebook atza.beer7. Address and phone differ slightly from catalog (Yitzhak Nafcha, 086298081). Own site atza.co.il fetch failed (client error). No Tabit/Ontopo page, no dated news, no closure news."
+},
+"n1012420823": {
+"r": "none",
+"note": "Aroma chain; aroma.co.il homepage is live but renders no branch list, and the branches page fetch was refused (permission timeout). Only undated aggregators (enjoyingisrael, totallyjewishtravel, easy) list Beer Sheva branches; Eliyahu Navi branch not confirmed. No closure news found."
+},
+"n1667986371": {
+"r": "none",
+"note": "Aroma chain; the official branch list could not be fetched (aroma.co.il branches page refused). No dated source names a Yitzhak Rager Blvd branch. No closure news found."
+},
+"n2969105800": {
+"r": "none",
+"note": "Aroma chain; the official branch list could not be fetched (aroma.co.il branches page refused). No dated source names a Ben Gurion Blvd 22 branch (possibly near the BGU campus, unverified). No closure news found."
+},
+"n3810651261": {
+"r": "none",
+"note": "Official aroma.co.il branch list fetch timed out (permission not answered); searches returned only undated directories (d.co.il, easy, enjoyingisrael); no closure news found"
+},
+"n12086685125": {
+"r": "none",
+"note": "Official aroma.co.il branch list blocked; Hanani St branch found only in undated directories; no closure news"
+},
+"n13301664082": {
+"r": "none",
+"note": "Official aroma.co.il branch list blocked; Mitzpe Ramon branch found only in undated directory d.co.il; no news of opening or closure"
+},
+"n5254303622": {
+"r": "none",
+"note": "Searches (name, Tabit/Ontopo, closure) found no bar at Arlozorov 54 Beer Sheva, only real-estate and planning results"
+},
+"n4645271291": {
+"r": "none",
+"note": "Generic name 'Beer Sheva' on Masada St; could not identify a specific cafe in any source"
+},
+"n5981044017": {
+"r": "none",
+"note": "No source found for 'Buni' fast food in Beit Kama; no Tabit/Ontopo page"
+},
+"n1004424634": {
+"r": "none",
+"note": "No reliable source found for Beit HaEgel restaurant, Yitzhak Nafcha St; only unidentified b144 directory hits"
+},
+"n992036508": {
+"r": "none",
+"note": "Only an old Mako article (2013-08) describing Beit HaFul Beer Sheva (est. 1952); no recent source and no closure news"
+},
+"n9792255371": {
+"r": "none",
+"note": "No source for a Beit HaFul on Shlomo HaMelech. Ynet 2019 (https://www.ynet.co.il/food/article/r1U2gMcer) lists two unrelated places with this name, at Hevron 66 and Herzl 55 (old, address mismatch). No Tabit/Ontopo, no closure news, no own site."
+},
+"n989114108": {
+"r": "none",
+"note": "Generic name. Search found nothing on Sderot Yerushalayim: no own site, no Tabit/Ontopo, no news, no closure report."
+},
+"n1004459406": {
+"r": "none",
+"note": "Only directory results (d.co.il/b144, undated). No own site, Tabit/Ontopo, news or closure report."
+},
+"n7064678709": {
+"r": "none",
+"note": "Nothing found for a Bar Ilan pub on Ringelblum: no own site, Tabit/Ontopo, news or closure report."
+},
+"w416588609": {
+"r": "none",
+"note": "Only undated aggregator evendo.com lists Bar Giora at Shim'on Bar Giyora 29 (not counted). Time Out and 2eat pages are about the Tel Aviv Bar Giyora, a different place. No Tabit/Ontopo, no closure news."
+},
+"n4739264921": {
+"r": "none",
+"note": "Likely Jumaa (ג'ומעה) bar-restaurant in Midreshet Ben Gurion (Ramat Negev), listed on tiuli.com, but the tiuli page fetch failed (client_error). No dated source, own site or Tabit/Ontopo found. No closure news."
+},
+"n8902064519": {
+"r": "none",
+"note": "Only undated aggregators (enjoyingisrael: Negev Center and Mevne branches; easy.co.il). No official branch list naming a Reuven Rubin branch, no news, no closure report."
+},
+"n13301718420": {
+"r": "none",
+"note": "Golda chain. Official site goldaglida.co.il failed to fetch (client_error), so its branch list could not be checked. No news or other source found for a Mitzpe Ramon branch (catalog address '40', probably Route 40)."
 }
 }
 }
