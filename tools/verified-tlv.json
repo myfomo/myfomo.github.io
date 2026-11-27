@@ -85,10 +85,9 @@
    "ok": "2026-11",
    "w": "https://ramessesjaffa.com",
    "src": [
-    "https://ramessesjaffa.com",
-    "https://timeout.co.il/the-most-recommended-restaurants-bars-and-cafes-in-the-flea-market/"
+    "https://ramessesjaffa.com"
    ],
-   "cu": "מסעדת שף",
+   "cu": "ים-תיכוני",
    "p": "+972 53-487-0861"
   },
   "n13530068022": {
@@ -398,10 +397,7 @@
    "ok": "2026-11",
    "bk": "https://ontopo.com/en/il/page/45568743",
    "cu": "קפה ובראנץ'",
-   "src": [
-    "https://ontopo.com/en/il/page/45568743",
-    "https://timeout.co.il/%D7%98%D7%95%D7%A0%D7%99-%D7%95%D7%90%D7%A1%D7%AA%D7%A8-%D7%A7%D7%A4%D7%94/"
-   ]
+   "src": []
   },
   "n6578423186": {
    "n": "טורי סושי בר",
@@ -436,8 +432,7 @@
    "w": "https://www.legenda.co.il",
    "cu": "קינוחים",
    "src": [
-    "https://www.legenda.co.il/branches/",
-    "https://timeout.co.il/מיפוי-שדרות-רוטשילד-ב/"
+    "https://www.legenda.co.il/branches/"
    ]
   },
   "n11849335669": {
@@ -483,12 +478,13 @@
    "ok": "2026-11",
    "w": "http://www.minna-tomei.co.il/",
    "src": [
-    "http://www.minna-tomei.co.il/",
-    "https://wolt.com/he/isr/tel-aviv/restaurant/minna-tomei-tel-aviv",
-    "https://www.minna-tomei.co.il/wp-content/uploads/2026/11/MT_Reshet_hebrew1154_TelAviv_3_WEB.pdf"
+    "https://www.minna-tomei.co.il/branches/tel-aviv/"
    ],
    "cu": "אסייתי",
-   "pr": 2
+   "pr": 2,
+   "oh": "Su-Sa 12:00-23:00",
+   "p": "*2750",
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation"
   },
   "n705556743": {
    "n": "מציצים",
@@ -646,12 +642,14 @@
    "n": "רוסטיקו",
    "ok": "2026-11",
    "p": "+972 3-602-6969",
-   "bk": "https://ontopo.com/en/il/page/37905695",
+   "bk": "https://ontopo.com/he/il/page/37905695",
    "src": [
-    "https://ontopo.com/en/il/page/37905695"
+    "https://rustico.co.il/",
+    "https://ontopo.com/he/il/page/37905695?source=homepage"
    ],
    "cu": "איטלקי",
-   "w": "https://rustico.co.il/basel"
+   "w": "https://rustico.co.il/",
+   "oh": "Su 18:00-22:30; Mo-Sa 12:00-22:30"
   },
   "n6473212377": {
    "n": "שניצל קומפני",
@@ -1011,14 +1009,16 @@
   "n606978719": {
    "n": "רוזה פארקס",
    "ok": "2026-11",
-   "cu": "פאב",
+   "cu": "בר",
    "pr": 2,
    "p": "+972 77 980 0456",
    "w": "https://rosaparksbar.co.il",
-   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ae849ab44be5d1200a17abe&locale=en-US&source=website",
+   "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ae849ab44be5d1200a17abe&locale=he-IL&source=website",
    "src": [
-    "https://rosaparksbar.co.il/en"
-   ]
+    "https://rosaparksbar.co.il",
+    "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ae849ab44be5d1200a17abe&locale=he-IL&source=website"
+   ],
+   "oh": "Su-Th 19:00-02:00; Fr 20:00-02:00; Sa 19:00-02:00"
   },
   "n11534655277": {
    "n": "Amita Pastry House at Bialik",
@@ -1234,7 +1234,8 @@
    "w": "https://www.aroma.co.il/en/store/ramat-hahayal/",
    "src": [
     "https://www.aroma.co.il/en/store/ramat-hahayal/"
-   ]
+   ],
+   "oh": "Su-Th 06:30-19:00; Fr 06:30-14:00; Sa off"
   },
   "n11169886012": {
    "n": "ארומה",
@@ -1486,8 +1487,7 @@
    "oh": "Su-Th 07:15-20:00; Fr 07:15-15:00",
    "w": "https://www.roladin.co.il/branch/אזורי-חן/",
    "src": [
-    "https://www.roladin.co.il/branch/אזורי-חן/",
-    "https://www.d.co.il/80071833/43740/"
+    "https://www.roladin.co.il/branch/אזורי-חן/"
    ]
   },
   "n4706508217": {
@@ -1658,9 +1658,7 @@
    "p": "03-5610564",
    "w": "https://tal-bagels.co.il",
    "src": [
-    "https://tal-bagels.co.il",
-    "https://timeout.co.il/בייגל-תל-אביב/",
-    "https://wolt.com/en/isr/tel-aviv/restaurant/tal-bagels/items/menucategory-3"
+    "https://tal-bagels.co.il"
    ]
   },
   "n746730771": {
@@ -1672,12 +1670,7 @@
    "w": "https://agadir.co.il/branch/tel-aviv-port/",
    "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ad5d4275b0cca12003c9509",
    "src": [
-    "https://agadir.co.il/branch/tel-aviv-port/",
-    "https://agadir.co.il/branches/",
-    "https://timeout.co.il/%D7%A4%D7%95%D7%A8%D7%98-%D7%A9%D7%A3-2026/",
-    "https://www.ias.co.il/?p=188582",
-    "https://timeout.co.il/ppost/select-agadir/",
-    "https://www.israelhayom.co.il/food/food-news/article/19367252"
+    "https://agadir.co.il/branch/tel-aviv-port/"
    ]
   },
   "n12588050745": {
@@ -1923,8 +1916,7 @@
    "cu": "קפה ובראנץ'",
    "w": "https://theshowroom.co.il",
    "src": [
-    "https://theshowroom.co.il/branches",
-    "https://www.spottedbylocals.com/telaviv/showroom-bakehouse"
+    "https://theshowroom.co.il/branches"
    ]
   },
   "n10812430080": {
@@ -1955,9 +1947,7 @@
    "w": "https://agadir.co.il/branch/nahalat-binyamin/",
    "bk": "https://tabitisrael.co.il/online-reservations/create-reservation?step=search&orgId=5ac0babe14876d1700414536",
    "src": [
-    "https://agadir.co.il/branch/nahalat-binyamin/",
-    "https://agadir.co.il/branches/",
-    "https://timeout.co.il/ppost/select-agadir/"
+    "https://agadir.co.il/branch/nahalat-binyamin/"
    ]
   },
   "n13809202206": {
@@ -2044,8 +2034,9 @@
    "w": "https://www.dominos.co.il/branches/Tel-Aviv-City/Florentine",
    "src": [
     "https://www.dominos.co.il/branches/Tel-Aviv-City/Florentine",
-    "https://www.d.co.il/80279981/39460/"
-   ]
+    "https://www.dominos.co.il/"
+   ],
+   "p": "1-700-70-70-70"
   },
   "n12768172727": {
    "n": "הולשטיין בורגר",
@@ -2098,10 +2089,9 @@
    "p": "+972 3-505-7632",
    "w": "https://www.yashka.co.il/",
    "src": [
-    "https://www.yashka.co.il/",
-    "https://wolt.com/he/isr/tel-aviv/restaurant/yashka-ramat-hasharon",
-    "https://timeout.co.il/ppost/יאשקה/"
-   ]
+    "https://www.yashka.co.il/יאשקה-רמת-השרון"
+   ],
+   "oh": "Su-Th 11:00-20:30; Fr 11:00-14:30"
   },
   "n10946223402": {
    "n": "מיט בר בורגר",
@@ -2838,12 +2828,16 @@
   },
   "n7623739085": {
    "n": "House of Dallal",
-   "ok": "2025-04",
+   "ok": "2026-11",
    "cu": "ים-תיכוני",
    "src": [
-    "https://spottedbylocals.com/tel-aviv/dallal",
-    "https://www.timeout.com/israel/news/dallal-041023"
-   ]
+    "https://www.dallal.co.il/restaurant",
+    "https://dallal.co.il"
+   ],
+   "nm": "דלאל",
+   "p": "03-5109292",
+   "w": "https://www.dallal.co.il/restaurant",
+   "bk": "https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=65d1bcf6e0d70742d082af5d&locale=he-IL&source=website&type=future_reservation"
   },
   "n2078989769": {
    "n": "Hummus Eliyahu",
@@ -2892,12 +2886,15 @@
   },
   "n7796226294": {
    "n": "Kalamata",
-   "ok": "2025-07",
+   "ok": "2026-11",
    "cu": "ים-תיכוני",
    "src": [
-    "https://timeout.co.il/מסעדות-מול-הים/",
-    "https://timeout.co.il/3-%D7%9E%D7%95%D7%9E%D7%9C%D7%A6%D7%99%D7%9D-%D7%A2%D7%9D-%D7%A0%D7%95%D7%A3-%D7%9C%D7%99%D7%9D/"
-   ]
+    "https://kalamata.co.il",
+    "https://ontopo.com/he/il/page/78440986?source=homepage"
+   ],
+   "p": "03-6819998",
+   "w": "https://www.kalamata.co.il",
+   "bk": "https://ontopo.com/he/il/page/78440986"
   },
   "n10932046652": {
    "n": "Kapara Mio",
@@ -2910,11 +2907,16 @@
   },
   "n777400974": {
    "n": "Meat Bar",
-   "ok": "2025-01",
+   "ok": "2026-11",
    "cu": "בשרים",
    "src": [
-    "https://timeout.co.il/%D7%94%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%AA-%D7%94%D7%98%D7%95%D7%91%D7%95%D7%AA-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/"
-   ]
+    "https://meatbar.co.il/מיטבר-תל-אביב/",
+    "https://tabitisrael.co.il/site/meatbar-%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91"
+   ],
+   "oh": "Su-We,Sa 12:00-23:00; Th 12:00-24:00; Fr 12:00-23:30",
+   "p": "03-6956276",
+   "w": "https://meatbar.co.il/מיטבר-תל-אביב/",
+   "bk": "https://tabitisrael.co.il/site/meatbar-%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91"
   },
   "n10795083145": {
    "n": "Meatos Grill & Bar",
@@ -3268,6 +3270,58 @@
     "https://www.shufflebar.co.il/%D7%A6%D7%95%D7%A8-%D7%A7%D7%A9%D7%A8/",
     "https://www.shufflebar.co.il/%D7%AA%D7%A4%D7%A8%D7%99%D7%98/",
     "https://ontopo.com/en/il/page/54682985"
+   ]
+  },
+  "n1688194375": {
+   "n": "ארומה",
+   "ok": "2026-11",
+   "src": [
+    "https://www.aroma.co.il/store/%D7%94%D7%99%D7%9B%D7%9C-%D7%9E%D7%A0%D7%95%D7%A8%D7%94/"
+   ]
+  },
+  "n1717768356": {
+   "n": "קפה טימותי",
+   "ok": "2025-09",
+   "src": [
+    "https://timeout.co.il/קפה-ספיישלטי-תל-אביב/"
+   ]
+  },
+  "n2488604312": {
+   "n": "ספסל",
+   "ok": "2026-01",
+   "src": [
+    "https://timeout.co.il/העיר-שלי-יוסי-ירום/"
+   ]
+  },
+  "n4118545632": {
+   "n": "Pizza Hut",
+   "ok": "2026-11",
+   "cu": "פיצה",
+   "k": 1,
+   "p": "1-700-50-60-70",
+   "w": "https://www.pizzahut.co.il/branch/ramat-hasharon/",
+   "src": [
+    "https://www.pizzahut.co.il/all-branches/שרון",
+    "https://www.pizzahut.co.il/branch/ramat-hasharon/"
+   ]
+  },
+  "n4679825296": {
+   "n": "גרקו",
+   "ok": "2026-11",
+   "cu": "ים-תיכוני",
+   "w": "https://www.greco.co.il/",
+   "src": [
+    "https://www.greco.co.il/"
+   ]
+  },
+  "n6172884785": {
+   "n": "Par Derriere",
+   "ok": "2026-11",
+   "cu": "בר יין",
+   "w": "https://parderriere.co.il",
+   "bk": "https://ontopo.co.il/parderriere",
+   "src": [
+    "https://parderriere.co.il"
    ]
   }
  }
