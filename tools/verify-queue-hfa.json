@@ -494,7 +494,10 @@
 },
 "n1359803433": {
 "r": "none",
-"note": "Catalog site 2eat.co.il/zanzara fetch refused (permission). Only source found is Time Out Israel listing dated 2016-11 (103 HaGalil St, Italian), too old. Not in Time Out Haifa recommended list 2026-01. No closure news found."
+"note": "Catalog site 2eat.co.il/zanzara fetch refused (permission). Only source found is Time Out Israel listing dated 2016-11 (103 HaGalil St, Italian), too old. Not in Time Out Haifa recommended list 2026-01. No closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "The catalog link 2eat.co.il/zanzara opened now, but it is an undated directory listing (Hagalil 103, Neve Sha'anan, Italian, 04-8325555, opened 2003), not the own site. No Tabit/Ontopo page and no 2025-26 news. Not in the Time Out Haifa list (2026-01). No closure news."
 },
 "n267236088": {
 "r": "ok",
@@ -578,7 +581,10 @@
 },
 "n1437554015": {
 "r": "none",
-"note": "Own site leggenda.co.il fetch refused; easy.co.il failed to load. enjoyingisrael.com (undated) lists Leggenda ice cream at G Mall, Tamar 2, Yokneam Illit, phone 04-9590914, so the branch probably exists but there is no dated recent source. It is an ice cream shop, not fast food."
+"note": "Own site leggenda.co.il fetch refused; easy.co.il failed to load. enjoyingisrael.com (undated) lists Leggenda ice cream at G Mall, Tamar 2, Yokneam Illit, phone 04-9590914, so the branch probably exists but there is no dated recent source. It is an ice cream shop, not fast food.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own branch list legenda.co.il/branches (live 2026-11) names the Yokneam branch at G Mall, Yokneam Illit; phone 04-9590914 matches catalog. Catalog address HaTamar 2 is taken to be G Mall by judgement. It is an ice cream shop."
 },
 "n14163814998": {
 "r": "none",
@@ -857,7 +863,10 @@
 },
 "n5018171925": {
 "r": "conflict",
-"note": "Time Out listing (2023-04) places Elkheir at 139 HaNassi Blvd, Haifa (site 2eat.co.il/elhir), not Moriah Blvd as in catalog; no recent 2025-26 source, no Tabit/Ontopo, no closure news."
+"note": "Time Out listing (2023-04) places Elkheir at 139 HaNassi Blvd, Haifa (site 2eat.co.il/elhir), not Moriah Blvd as in catalog; no recent 2025-26 source, no Tabit/Ontopo, no closure news.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "2eat.co.il/elhir (undated directory, newly open) now puts Elhir/Elkheir in Daliyat al-Karmel (David Elazar 10, Meridian Hotel, 04-8500090, Fri-Sat 12-22). Time Out 2023-04 gave 139 HaNassi Blvd, Haifa. Neither matches the catalog's Moriah Blvd. No 2025-26 source, no Tabit/Ontopo, no closure news."
 },
 "n4449119974": {
 "r": "none",
@@ -912,15 +921,24 @@
 },
 "n10053934341": {
 "r": "none",
-"note": "Only source is enjoyingisrael.com, an undated directory: Leggenda Haifa at Sderot HaNasi 129, 10:00-00:00, 04-8100771, leggenda.co.il, page shows (c)2018-2026. The own site leggenda.co.il and easy.co.il were blocked or failed. The Time Out 'Leggenda' page is the Tel Aviv branches (2017). No Tabit/Ontopo page, no closure news. Worth retrying via the own branch list."
+"note": "Only source is enjoyingisrael.com, an undated directory: Leggenda Haifa at Sderot HaNasi 129, 10:00-00:00, 04-8100771, leggenda.co.il, page shows (c)2018-2026. The own site leggenda.co.il and easy.co.il were blocked or failed. The Time Out 'Leggenda' page is the Tel Aviv branches (2017). No Tabit/Ontopo page, no closure news. Worth retrying via the own branch list.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own branch list legenda.co.il/branches (live 2026-11) names the Haifa branch 'Carmel Haifa' at Sderot HaNasi 129, phone 04-8100771, with hours."
 },
 "n13689867104": {
 "r": "none",
-"note": "No source names a Leggenda branch on Trumpeldor, Haifa. The own site leggenda.co.il fetch was refused. Directory listings found only other Haifa branches (Hanasi 129, Ahi Eilat 10, Big Krayot). Time Out 2017 lists Tel Aviv branches only. No closure news found."
+"note": "No source names a Leggenda branch on Trumpeldor, Haifa. The own site leggenda.co.il fetch was refused. Directory listings found only other Haifa branches (Hanasi 129, Ahi Eilat 10, Big Krayot). Time Out 2017 lists Tel Aviv branches only. No closure news found.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own branch list legenda.co.il/branches (live 2026-11) names a 'Neve Shaanan Haifa' branch with no address or phone. Trumpeldor Ave is Neve Sha'anan's main street, so the match is by judgement. Catalog phone 04-8880144 not confirmed."
 },
 "n2940072267": {
 "r": "none",
-"note": "Nothing found for 'Leggenderia' in Zichron Yaakov. enjoyingisrael lists a Leggenda Zichron Yaakov at a 'commercial center opposite Zichron' with no date. That may be the same place, but no reliable source links it to this name."
+"note": "Nothing found for 'Leggenderia' in Zichron Yaakov. enjoyingisrael lists a Leggenda Zichron Yaakov at a 'commercial center opposite Zichron' with no date. That may be the same place, but no reliable source links it to this name.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own branch list legenda.co.il/branches (live 2026-11) has a Zichron Yaakov branch at 'complex opposite Zichron'. Its Waze coordinates (32.5693,34.9334) are by the old coast road below Zichron. The match to the catalog name 'Leggenderia' is by judgement."
 },
 "w124781184": {
 "r": "none",
@@ -1068,7 +1086,10 @@
 },
 "n1387736538": {
 "r": "none",
-"note": "Probably Pundak HaDov (The Bear Inn), Sderot HaNasi 135 near Wedgwood; matched by judgement, not by a source. Only older sources: Mako 2013, Time Out 2016, Time Out 2020 (tel 053-9441064). No 2025-2026 source, no Tabit/Ontopo, no closure news."
+"note": "Probably Pundak HaDov (The Bear Inn), Sderot HaNasi 135 near Wedgwood; matched by judgement, not by a source. Only older sources: Mako 2013, Time Out 2016, Time Out 2020 (tel 053-9441064). No 2025-2026 source, no Tabit/Ontopo, no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Pundak HaDov (Bear Inn), Sderot HaNasi 135. Sources are old: Mako 2013-07 and Time Out 2020-03 (053-9441064). Not in the Time Out Haifa list (2026-01). No 2025-26 source, no Tabit/Ontopo, no closure news. Branch match by judgement (near Wedgwood)."
 },
 "n12620624619": {
 "r": "none",
@@ -1205,7 +1226,10 @@
 },
 "n2912911051": {
 "r": "none",
-"note": "Only undated directories (easy, d.co.il, wanderlog); gokosher lists a Pizza Hut on HaNadiv St, Zichron Yaakov (possible confusion, undated); no own site, booking page, news or closure report found."
+"note": "Only undated directories (easy, d.co.il, wanderlog); gokosher lists a Pizza Hut on HaNadiv St, Zichron Yaakov (possible confusion, undated); no own site, booking page, news or closure report found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Searches found only undated directories (d.co.il) and Wolt (not allowed). No own site, booking page, news or closure report for American Pizza on HaNadiv, Zichron Yaakov."
 },
 "n2226309930": {
 "r": "none",
@@ -1666,11 +1690,17 @@
 },
 "n9221965541": {
 "r": "none",
-"note": "Leggenda ice cream chain; official site leggenda.co.il (from Time Out 2017) fetch blocked (permission not granted). Only undated directories (easy, d.co.il, wanderlog, spinach) for Haifa; no dated source confirming the Tvuot HaAretz branch. No closure news."
+"note": "Leggenda ice cream chain; official site leggenda.co.il (from Time Out 2017) fetch blocked (permission not granted). Only undated directories (easy, d.co.il, wanderlog, spinach) for Haifa; no dated source confirming the Tvuot HaAretz branch. No closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Own site legenda.co.il/branches now open: shows 10 of 26 branches in detail; Haifa branches named are Carmel (Sderot HaNassi 129), Lev HaMifraz (Sinimol), Neve Sha'anan (no details) and Ir Tahtit (temporarily closed for renovation). No branch named Tvuot HaAretz; remaining branches behind JS 'show more' not visible. Searches found only undated directories; no closure news."
 },
 "n1387686020": {
 "r": "none",
-"note": "Leggenda ice cream chain; official site leggenda.co.il fetch blocked. No dated source naming a Sderot HaNassi 129 Haifa branch; only undated directories. No closure news."
+"note": "Leggenda ice cream chain; official site leggenda.co.il fetch blocked. No dated source naming a Sderot HaNassi 129 Haifa branch; only undated directories. No closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site legenda.co.il/branches live, lists 'Carmel Haifa Gelato' at Sderot HaNassi 129, Haifa with phone and hours (site notes hours may change due to security situation)."
 },
 "n1387675858": {
 "r": "none",
@@ -2090,7 +2120,10 @@
 },
 "n9221965537": {
 "r": "none",
-"note": "Fresh Kitchen chain; freshkitchen.co.il fetch blocked (permission). enjoyingisrael (undated) lists a Haifa branch at Zamir Promenade/Nirvana Beach, not Tvuot HaAretz - branch unverified. No Tabit/Ontopo or dated news; no closure news."
+"note": "Fresh Kitchen chain; freshkitchen.co.il fetch blocked (permission). enjoyingisrael (undated) lists a Haifa branch at Zamir Promenade/Nirvana Beach, not Tvuot HaAretz - branch unverified. No Tabit/Ontopo or dated news; no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "freshkitchen.co.il now redirects to freshthemarket.co.il (Fresh The Market, kosher Italian); its branch list (7 branches: Kiryat Gat, Rosh HaAyin, Ramat Gan, Kfar Saba, Hadera, Kiryat Ata, Rishon LeZion) has no Haifa / Tvuot HaAretz branch. No explicit closure statement or dated news for this branch, so not marked closed; likely gone. No Tabit/Ontopo found."
 },
 "n1387675857": {
 "r": "none",
