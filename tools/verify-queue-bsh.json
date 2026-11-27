@@ -167,7 +167,10 @@
 },
 "n12949025656": {
 "r": "conflict",
-"note": "Own site keeboots-cafe.com fetch not permitted (blocked). Israel Hayom 2026-01 (israelhayom.co.il/food/food-news/article/19769654) says cafe 'Kafe Kibbutz' operates next to BOTZ at Har Oded 5 and BOTZ chefs joined it, building a new menu. Mako 2026-04 (Article-6f6f13cbb793d91027) reports new cafe TZIN opened at Har Oded 5 by BOTZ chefs (kosher, Su-Th 08:00-16:00, Fr 08:00-15:00) - likely a rebrand/replacement of Keeboots, but no source states Keeboots closed. See also timeout.co.il/cafe-tzin/."
+"note": "Own site keeboots-cafe.com fetch not permitted (blocked). Israel Hayom 2026-01 (israelhayom.co.il/food/food-news/article/19769654) says cafe 'Kafe Kibbutz' operates next to BOTZ at Har Oded 5 and BOTZ chefs joined it, building a new menu. Mako 2026-04 (Article-6f6f13cbb793d91027) reports new cafe TZIN opened at Har Oded 5 by BOTZ chefs (kosher, Su-Th 08:00-16:00, Fr 08:00-15:00) - likely a rebrand/replacement of Keeboots, but no source states Keeboots closed. See also timeout.co.il/cafe-tzin/.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Own domain keeboots-cafe.com now 302-redirects to an unrelated Irish shop (outstyle.ie), i.e. the site has lapsed. Mako 2025-11 review says 'Kafe Kibbutz' runs next to BOTZ with menu to change; Time Out 2026-03 (timeout.co.il/cafe-tzin/) lists Cafe Tzin at Har Oded 5 (kosher dairy; Su-Th 08:00-15:30, Fr 08:00-14:00); Mako 2026-04 reports TZIN opened there by BOTZ chefs. Likely rebranded to Cafe Tzin but no source says Keeboots closed."
 },
 "n7239247185": {
 "r": "none",
@@ -183,7 +186,10 @@
 },
 "n1095683957": {
 "r": "none",
-"note": "Catalog address '40' (route 40, Ramat Negev). Likely the Aroma Ovdat branch at Paz station on Hwy 40 opposite Avdat National Park (aroma.co.il/en/store/you-worked/ exists in search but fetch failed with client error). Paz site confirms a Paz station with restaurants on road 40 near Avdat but doesn't name Aroma. HappyCow 2022 only. Not verified."
+"note": "Catalog address '40' (route 40, Ramat Negev). Likely the Aroma Ovdat branch at Paz station on Hwy 40 opposite Avdat National Park (aroma.co.il/en/store/you-worked/ exists in search but fetch failed with client error). Paz site confirms a Paz station with restaurants on road 40 near Avdat but doesn't name Aroma. HappyCow 2022 only. Not verified.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il store page /en/store/you-worked/ (Avdat/route 40) and all branch pages fail with client_error; homepage has no branch list. Searches give only undated directories (spinach.guide, d.co.il, happycow). No closure news."
 },
 "n1705751737": {
 "r": "ok",
@@ -203,7 +209,10 @@
 },
 "n7527123356": {
 "r": "none",
-"note": "The fetch of the own site dominos.co.il was blocked (permission), so the branch list could not be checked. Searches returned only directories (d.co.il, b144, easy). A jdn article from 2025-02 lists the Mehadrin branches without Beer Sheva, which does not settle anything. No closure news found."
+"note": "The fetch of the own site dominos.co.il was blocked (permission), so the branch list could not be checked. Searches returned only directories (d.co.il, b144, easy). A jdn article from 2025-02 lists the Mehadrin branches without Beer Sheva, which does not settle anything. No closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: dominos.co.il/branches/Beer-Sheva-City fetched, but the page is JS-rendered with no addresses (the meta says 2 Beer Sheva branches). Could not confirm HaEnergia 77. Search found only directories (d.co.il, easy, enjoyingisrael). No closure news."
 },
 "n7242429186": {
 "r": "none",
@@ -227,11 +236,17 @@
 },
 "n1799607969": {
 "r": "ok",
-"note": "Catalog site siespresso.co.il fetch blocked; chain's live own site sicafe.co.il (Si Cafe) lists a Dvira (Tzomet Dvira) branch on its branch list. Judged same place (Si Espresso = Si Cafe chain, Route 6 Dvira). Branch page fetch blocked, so no hours/phone."
+"note": "Catalog site siespresso.co.il fetch blocked; chain's live own site sicafe.co.il (Si Cafe) lists a Dvira (Tzomet Dvira) branch on its branch list. Judged same place (Si Espresso = Si Cafe chain, Route 6 Dvira). Branch page fetch blocked, so no hours/phone.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site sicafe.co.il is live and has a Dvira branch page (near Kibbutz Dvira) with hours and phone 08-9917233, which matches the catalog."
 },
 "n11009821837": {
 "r": "none",
-"note": "Guides place it at Ringelblum 2 (ynet 2022-11, mako 2023-04, merged with Sipuro shel Falafel), but no 2025-2026 source; Facebook and mynet Beer Sheva fetch refused; rest.co.il listing is a directory only. No closure news found."
+"note": "Guides place it at Ringelblum 2 (ynet 2022-11, mako 2023-04, merged with Sipuro shel Falafel), but no 2025-2026 source; Facebook and mynet Beer Sheva fetch refused; rest.co.il listing is a directory only. No closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Only older guides: mako 2023-04 lists 'Sipuro shel Falafel/Schnitzel' at Ringelblum 2; ynet 2022. No 2025-2026 source found; Facebook blocked by robots; no Tabit/Ontopo. No closure news."
 },
 "n6160121685": {
 "r": "none",
@@ -239,7 +254,10 @@
 },
 "n4356825189": {
 "r": "none",
-"note": "Own site kiparis.co.il fetch refused; only rest.co.il directory listing (Herzl 1, Eastern European, updated 2026-02, status not stated); no Tabit/Ontopo, no news, no closure news."
+"note": "Own site kiparis.co.il fetch refused; only rest.co.il directory listing (Herzl 1, Eastern European, updated 2026-02, status not stated); no Tabit/Ontopo, no news, no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: own site kiparis.co.il (http and https) not fetched (robots.txt unreachable). Searches found only wanderlog/b144 directories; Israel Hayom 2015, ynet 2022 and Mako 2024 Beer Sheva articles do not mention Kiparis. No Tabit/Ontopo, no closure news."
 },
 "n5774749101": {
 "r": "ok",
@@ -283,7 +301,10 @@
 },
 "n3313104112": {
 "r": "none",
-"note": "spinach.guide (aggregator, not counted) lists 'Caldo Gourmet Pizza Bar', Derech Metsada 47, Beer Sheva, phone 08-8668006, site caldo.co.il, hours Su-Th 17:00-23:30, Sa 21:00-23:30 - address matches. Own site caldo.co.il fetch blocked (permission). No Tabit/Ontopo or dated news found; no closure news."
+"note": "spinach.guide (aggregator, not counted) lists 'Caldo Gourmet Pizza Bar', Derech Metsada 47, Beer Sheva, phone 08-8668006, site caldo.co.il, hours Su-Th 17:00-23:30, Sa 21:00-23:30 - address matches. Own site caldo.co.il fetch blocked (permission). No Tabit/Ontopo or dated news found; no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site caldo.co.il is live: Caldo Beer Sheva, Derech Metzada 47, phone 08-8668006, hours listed. Table booking goes through Tabit (tbit.be redirects to a Tabit reservation page for Caldo Pizza, Beer Sheva). Catalog hours (Mo-Su 12-24) differ from the own site."
 },
 "n13301780874": {
 "r": "none",
@@ -351,11 +372,17 @@
 },
 "n4209029827": {
 "r": "none",
-"note": "Official pizzahut.co.il fetch blocked (permission); d.co.il directories list Beer Sheva branches at Rager 53 and HaAl 24, none at Te'ena 24; no news or closure found"
+"note": "Official pizzahut.co.il fetch blocked (permission); d.co.il directories list Beer Sheva branches at Rager 53 and HaAl 24, none at Te'ena 24; no news or closure found",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Own site pizzahut.co.il branch list names only three Beer Sheva branches: Ramot (HaArim HaTeomim 26), Avisror (Rager 53) and Mall-7 (HaAl). None is at Te'ena 24. The branch is missing from the official list, but no closure news was found. It may be an old or closed location, or a mis-mapped Mall-7."
 },
 "n13301771329": {
 "r": "none",
-"note": "Searches found no dated source for a Mitzpe Ramon Pizza Hut branch, only Wolt pages and directories for other branches. Fetching the own site pizzahut.co.il was refused, so its branch list could not be checked. No closure news found."
+"note": "Searches found no dated source for a Mitzpe Ramon Pizza Hut branch, only Wolt pages and directories for other branches. Fetching the own site pizzahut.co.il was refused, so its branch list could not be checked. No closure news found.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site pizzahut.co.il (southern region and branch list) lists a Mitzpe Ramon branch at Sderot Ben Gurion 1, kosher lemehadrin. Catalog address '40' probably means Route 40, which is Ben Gurion Blvd. It is the only branch in town, so treated as the same place by judgement. No hours or branch phone on the page. (single: branch match by judgement)"
 },
 "n7233474633": {
 "r": "none",
@@ -391,7 +418,10 @@
 },
 "n10101116017": {
 "r": "none",
-"note": "Agadir is a chain; the official site agadir.co.il fetch was refused (permission timeout), so the branch list could not be checked. Time Out 2023 names only Tel Aviv branches. Only undated aggregators (wanderlog, happycow, trip.com) mention a Beer Sheva branch. No closure news found."
+"note": "Agadir is a chain; the official site agadir.co.il fetch was refused (permission timeout), so the branch list could not be checked. Time Out 2023 names only Tel Aviv branches. Only undated aggregators (wanderlog, happycow, trip.com) mention a Beer Sheva branch. No closure news found.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Official branch list agadir.co.il/branches/ (fetched 2026-11) lists 12 branches (Dead Sea, Haifa, Drorim, Hod HaSharon, Herzliya, TA Port, Bnei Brak, Nahalat Binyamin, Petah Tikva, Rishon, Bilu, Eilat) and no Beer Sheva branch. Only undated aggregators mention one. No closure article found, so not marked closed; likely closed or never official."
 },
 "n1012420812": {
 "r": "none",
@@ -407,27 +437,45 @@
 },
 "n1012420823": {
 "r": "none",
-"note": "Aroma chain; aroma.co.il homepage is live but renders no branch list, and the branches page fetch was refused (permission timeout). Only undated aggregators (enjoyingisrael, totallyjewishtravel, easy) list Beer Sheva branches; Eliyahu Navi branch not confirmed. No closure news found."
+"note": "Aroma chain; aroma.co.il homepage is live but renders no branch list, and the branches page fetch was refused (permission timeout). Only undated aggregators (enjoyingisrael, totallyjewishtravel, easy) list Beer Sheva branches; Eliyahu Navi branch not confirmed. No closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il renders no branch list; /branches, /he/stores/, /en/store/..., sitemap all failed (client_error). Searches give only undated directories (d.co.il, easy, enjoyingisrael) for Beer Sheva branches; nothing names Eliyahu Navi St. No closure news."
 },
 "n1667986371": {
 "r": "none",
-"note": "Aroma chain; the official branch list could not be fetched (aroma.co.il branches page refused). No dated source names a Yitzhak Rager Blvd branch. No closure news found."
+"note": "Aroma chain; the official branch list could not be fetched (aroma.co.il branches page refused). No dated source names a Yitzhak Rager Blvd branch. No closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il fails (client_error) on all pages, including the store/reger-beer-sheva page that search shows exists. So the Rager branch's existence is suggested but not confirmed from page content. No dated source and no closure news."
 },
 "n2969105800": {
 "r": "none",
-"note": "Aroma chain; the official branch list could not be fetched (aroma.co.il branches page refused). No dated source names a Ben Gurion Blvd 22 branch (possibly near the BGU campus, unverified). No closure news found."
+"note": "Aroma chain; the official branch list could not be fetched (aroma.co.il branches page refused). No dated source names a Ben Gurion Blvd 22 branch (possibly near the BGU campus, unverified). No closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il fails (client_error). Search shows aroma.co.il store pages for BGU library building and BGU kiosk branches, which may be near Ben Gurion Blvd 22, but they couldn't be fetched and the address isn't confirmed. No closure news."
 },
 "n3810651261": {
 "r": "none",
-"note": "Official aroma.co.il branch list fetch timed out (permission not answered); searches returned only undated directories (d.co.il, easy, enjoyingisrael); no closure news found"
+"note": "Official aroma.co.il branch list fetch timed out (permission not answered); searches returned only undated directories (d.co.il, easy, enjoyingisrael); no closure news found",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Same as n1667986371 (Aroma, Rager Blvd; possible duplicate). aroma.co.il fails (client_error). Search shows a store/reger-beer-sheva page exists but it couldn't be read. No dated source, no closure news."
 },
 "n12086685125": {
 "r": "none",
-"note": "Official aroma.co.il branch list blocked; Hanani St branch found only in undated directories; no closure news"
+"note": "Official aroma.co.il branch list blocked; Hanani St branch found only in undated directories; no closure news",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il branch pages all fail (client_error); homepage has no branch list. Hanani St branch only in undated directories (d.co.il). No closure news."
 },
 "n13301664082": {
 "r": "none",
-"note": "Official aroma.co.il branch list blocked; Mitzpe Ramon branch found only in undated directory d.co.il; no news of opening or closure"
+"note": "Official aroma.co.il branch list blocked; Mitzpe Ramon branch found only in undated directory d.co.il; no news of opening or closure",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il still fails on every page (home, branches, find_store, store pages: client_error), so the branch list couldn't be checked. Searches found only undated directories and aggregators (d.co.il, enjoyingisrael, wanderlog) for Mitzpe Ramon. No closure news."
 },
 "n5254303622": {
 "r": "none",
@@ -527,11 +575,17 @@
 },
 "n5168590129": {
 "r": "none",
-"note": "HaMexicani chain is active: Israel Hayom 2026-08 lists 10 Be'er Sheva branches by name (Old City, Central Station, BIG, Grand Canyon, Ishpro Planet, University, Ramot, Palach 7, Negev Mall, HaPark), but none could be matched to Kikar Stashover. Own site mexicani.co.il fetch was not permitted. No Tabit/Ontopo. No closure news."
+"note": "HaMexicani chain is active: Israel Hayom 2026-08 lists 10 Be'er Sheva branches by name (Old City, Central Station, BIG, Grand Canyon, Ishpro Planet, University, Ramot, Palach 7, Negev Mall, HaPark), but none could be matched to Kikar Stashover. Own site mexicani.co.il fetch was not permitted. No Tabit/Ontopo. No closure news.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Official branch page mexicani.co.il/location lists 10 Beer Sheva branches (Keren Kayemet 43 Old City, Ben Tzvi 4, Big Hel Handasa, Grand Canyon Tuviyahu 125, Yes Planet Katzinka 2, University, Ramot Schindler 53, Peretz Center Laron 112, Negev Mall Sderot Rager 2, Park Nahal Perat 20); none is at Kikar Stashover. The chain is active, but no official branch matches the catalog location."
 },
 "n10136244480": {
 "r": "none",
-"note": "HaMexicani chain is active in Be'er Sheva (Israel Hayom 2026-08, 10 branches named), but no source ties a branch to Sderot HaArim HaTeumot. Own site mexicani.co.il was blocked. No Tabit/Ontopo. No closure news."
+"note": "HaMexicani chain is active in Be'er Sheva (Israel Hayom 2026-08, 10 branches named), but no source ties a branch to Sderot HaArim HaTeumot. Own site mexicani.co.il was blocked. No Tabit/Ontopo. No closure news.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Israel Hayom 2026-08 lists HaMexicani's 10 Beer Sheva branches incl. 'Ramot' (no street addresses). Sderot HaArim HaTeumot is Ramot's main avenue (Pizza Hut Ramot is at no. 26), so branch match is judgement. Own site mexicani.co.il unreachable (robots error). No closure news."
 },
 "n13152302287": {
 "r": "conflict",
@@ -555,7 +609,10 @@
 },
 "n679183969": {
 "r": "none",
-"note": "Only undated aggregators (spinach.guide, vymaps) list Hakatze, and they give Har Oded St, not Har Ardon. The local listing mitzpe-ramon.co.il/listing/hakaze was blocked (permission). No dated news, no Tabit/Ontopo, no closure news."
+"note": "Only undated aggregators (spinach.guide, vymaps) list Hakatze, and they give Har Oded St, not Har Ardon. The local listing mitzpe-ramon.co.il/listing/hakaze was blocked (permission). No dated news, no Tabit/Ontopo, no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: mitzpe-ramon.co.il/listing/hakaze failed (client error). Calcalist 2025-12 and Mako/Time Out 2026 Mitzpe Ramon articles do not mention Hakatze. Note: Time Out 2026-03 and Mako 2026-04 place Cafe Tzin at Har Oded 5, the street the aggregators gave for Hakatze, so it may have been replaced (unconfirmed). No closure news."
 },
 "n5071586248": {
 "r": "ok",
@@ -583,7 +640,10 @@
 },
 "n6680120385": {
 "r": "none",
-"note": "Lola Coffee, Smilansky 13 (Old City): Mako travel 2024-10 and Time Out Israel 2019 describe it (address matches), but no 2025-2026 source found. Own site lolab7.co.il fetch was blocked (permission). No closure news. No Tabit/Ontopo page."
+"note": "Lola Coffee, Smilansky 13 (Old City): Mako travel 2024-10 and Time Out Israel 2019 describe it (address matches), but no 2025-2026 source found. Own site lolab7.co.il fetch was blocked (permission). No closure news. No Tabit/Ontopo page.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: own domain lolab7.co.il now loads 'Lola's Blog' (generic articles), not the cafe, which is a weak sign but not closure proof. Newest source found is still Mako travel 2024-10 (Smilansky 13). No 2025-2026 source, no Tabit/Ontopo, no closure news."
 },
 "n2720468085": {
 "r": "none",
@@ -699,11 +759,17 @@
 },
 "n4956762727": {
 "r": "none",
-"note": "Chain: official site pizzahut.co.il fetch was refused (permission), so branch list could not be checked; other results only directories/Wolt/enjoyingisrael (Mall 7 branch) - no source naming Sderot Yitzhak Rager branch."
+"note": "Chain: official site pizzahut.co.il fetch was refused (permission), so branch list could not be checked; other results only directories/Wolt/enjoyingisrael (Mall 7 branch) - no source naming Sderot Yitzhak Rager branch.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Official branch list pizzahut.co.il (Beer Sheva) lists 3 branches; the only one on Rager is Avisror, Migdalei Avisror, Sderot Rager 53. Its branch page is live, with no closure notice. Catalog has no house number, so the match rests on judgement. Branch hours on the page look garbled (e.g. 23:30-11:00), so they were not used. (single: branch match by judgement)"
 },
 "n10136244487": {
 "r": "none",
-"note": "Chain: official site pizzahut.co.il fetch was refused (permission), branch list not checked; only directories found, no source naming Sderot HaArim HaTeumot branch."
+"note": "Chain: official site pizzahut.co.il fetch was refused (permission), branch list not checked; only directories found, no source naming Sderot HaArim HaTeumot branch.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official branch list names 'Beer Sheva - Ramot' at Sderot HaArim HaTeumot 26; branch page live, says kosher lemehadrin (certificate not named). Hours on page appear garbled/reversed (e.g. Su 23:00-11:00), so not used."
 },
 "n945971139": {
 "r": "none",
