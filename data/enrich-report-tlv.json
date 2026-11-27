@@ -21,13 +21,6 @@
    "site": "035175179"
   },
   {
-   "id": "n904508667",
-   "n": "בני הדייג",
-   "field": "phone",
-   "osm": "03-5440518",
-   "site": "0737585695"
-  },
-  {
    "id": "n950284108",
    "n": "שצ'ופק",
    "field": "hours",
@@ -222,13 +215,6 @@
    "field": "hours",
    "osm": "Su-Th 07:00-19:00; Fr-Sa 07:00-16:00",
    "site": "Su,Mo,Tu,We,Th 07:00-19:00; Fr,Sa 07:00-16:00"
-  },
-  {
-   "id": "n10969247136",
-   "n": "הלבנטיני",
-   "field": "phone",
-   "osm": "+972 36324444",
-   "site": "0778048601"
   },
   {
    "id": "n11534655277",
@@ -506,8 +492,8 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 96,
- "phone_multi_skipped": 25,
+ "phone_confirmed": 92,
+ "phone_multi_skipped": 20,
  "coverage_after": {
   "address": "1319 (100%)",
   "hours": "418 (32%)",
@@ -516,5 +502,5 @@
   "cuisine": "978 (74%)",
   "extra_names": "764 (58%)"
  },
- "conflicts_n": 34
+ "conflicts_n": 32
 }
