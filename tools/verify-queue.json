@@ -3299,7 +3299,10 @@
   },
   "n10199585614": {
    "r": "none",
-   "note": "Olei Zion branch not on own site branch list; likely gone, no closure source"
+   "note": "Olei Zion branch not on own site branch list; likely gone, no closure source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: own site branch page (beerbazaar.co.il/pages/סניפים) lists only Yeshkon 36 Carmel, Rothschild 142, Mahane Yehuda, Kfar Daniel brewery; no Jaffa/Olei Zion branch. No closure article found; search turned up only undated aggregators (wanderlog)."
   },
   "n10693747873": {
    "r": "ok",
@@ -3324,7 +3327,10 @@
   },
   "n6345786744": {
    "r": "none",
-   "note": "Levinsky branch not on own site branch list; likely closed, no closure source"
+   "note": "Levinsky branch not on own site branch list; likely closed, no closure source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: catalog site URL anchor #levinsky is gone; current own branch page lists no Levinsky/Zevulun 13 branch. Time Out article on opening exists (old); no closure news found."
   },
   "n12102940425": {
    "r": "ok",
@@ -3336,15 +3342,24 @@
   },
   "n608523518": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hebrew/English searches found no source for BubaMara on HaArba'a St; no closure news."
   },
   "n445977127": {
    "r": "none",
-   "note": "Nothing found on Herbert Samuel"
+   "note": "Nothing found on Herbert Samuel",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hebrew/English searches found nothing for Buzz Stop on Herbert Samuel; no closure news."
   },
   "n12190029401": {
    "r": "none",
-   "note": "Nothing found on Dizengoff"
+   "note": "Nothing found on Dizengoff",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hebrew/English searches found nothing for Cafeteria & Wine on Dizengoff (only unrelated Dizengoff Cafe on Wolt, not usable)."
   },
   "n3715337068": {
    "r": "none",
@@ -3359,7 +3374,10 @@
   },
   "n2006107427": {
    "r": "none",
-   "note": "Only old JPost review"
+   "note": "Only old JPost review",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: still only old JPost Cafe Scene review and undated aggregators (atly, airbnb); no recent source or closure news."
   },
   "n11398452853": {
    "r": "none",
@@ -3370,7 +3388,10 @@
   },
   "n6005551786": {
    "r": "none",
-   "note": "Nothing found for Bograshov 18"
+   "note": "Nothing found for Bograshov 18",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hebrew/English searches for Deus bar at Bograshov 18 returned only real-estate listings; nothing reliable."
   },
   "n609718254": {
    "r": "single",
@@ -3380,11 +3401,17 @@
   },
   "n2862959840": {
    "r": "none",
-   "note": "Atly lists Rebel Bar at Frenkel 13; unconfirmed"
+   "note": "Atly lists Rebel Bar at Frenkel 13; unconfirmed",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Facebook page fetch blocked (robots). Atly (undated aggregator) lists Rebel Bar Rock & Metal at Frenkel 13; no news/guide confirms either Frenkel 13 bar or Rebel Bar; no closure news."
   },
   "n11345051748": {
    "r": "none",
-   "note": "Only undated atly Rabbi Meir 36"
+   "note": "Only undated atly Rabbi Meir 36",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: still only undated atly listing (Rabbi Meir 36); no own site, Tabit/Ontopo, news or closure source found"
   },
   "n7619688407": {
    "r": "none",
@@ -3395,7 +3422,10 @@
   },
   "n1851422057": {
    "r": "none",
-   "note": "Nothing found for HaYarkon 52"
+   "note": "Nothing found for HaYarkon 52",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: own Facebook page refused fetch (robots); searches return only Molly Bloom's/other Irish pubs, nothing for Grace O'Malley at HaYarkon 52, no closure news"
   },
   "n5859517185": {
    "r": "single",
@@ -3420,11 +3450,17 @@
   },
   "n6578840786": {
    "r": "none",
-   "note": "Undated listings only"
+   "note": "Undated listings only",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Secret Tel Aviv listing (Nahalat Binyamin 3, cafe/bar) undated; Fodor's/spinach undated; no dated 2025-26 source, no closure news"
   },
   "n11163227764": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: nothing found for Jooceme on Arlozorov (English/Hebrew searches); Time Out 2016 juice-bar article does not mention it"
   },
   "n13484994517": {
    "r": "single",
@@ -3440,11 +3476,17 @@
   },
   "n13516614991": {
    "r": "none",
-   "note": "Frishman 39 was Johnny Boy; atly Leny at Dizengoff 105; mismatch"
+   "note": "Frishman 39 was Johnny Boy; atly Leny at Dizengoff 105; mismatch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: atly page (URL JohnnyBoy, FB JohnnyBoyPhoneBooth) names Leny Bar at Dizengoff 105, near Frishman/Dizengoff corner so possibly the same spot as Frishman 39 (my judgement), but undated; no dated source or closure news"
   },
   "n9967204618": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: searches only return Beit Lessin theatre/other Frishman venues; nothing for Lesin Bar"
   },
   "n4430683196": {
    "r": "ok",
@@ -3455,7 +3497,10 @@
   },
   "n725456792": {
    "r": "none",
-   "note": "Own site lists only Herbert Samuel 90; Wallenberg branch absent, no closure source"
+   "note": "Own site lists only Herbert Samuel 90; Wallenberg branch absent, no closure source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out (2017) and Wikipedia list only Herbert Samuel 90 in Tel Aviv; JPost 2016 kosher branch was HaArbaa; no source for a Wallenberg 24 branch and no closure news"
   },
   "n347264446": {
    "r": "ok",
@@ -3470,7 +3515,10 @@
   },
   "n5796680566": {
    "r": "none",
-   "note": "Nothing at Kedumim Square"
+   "note": "Nothing at Kedumim Square",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: generic name; Jaffa bar guides don't list a bar named Old Jaffa at Kedumim Square"
   },
   "n10175901222": {
    "r": "ok",
@@ -3492,7 +3540,10 @@
   },
   "n8518696077": {
    "r": "none",
-   "note": "Nothing on Sderot HaYeled"
+   "note": "Nothing on Sderot HaYeled",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: searches for Plaza bar on Sderot HaYeled turned up no source naming it; no booking page, no closure news"
   },
   "n2659433567": {
    "r": "none",
@@ -3521,7 +3572,10 @@
   },
   "n12114474901": {
    "r": "none",
-   "note": "No source names Sid & Nancy"
+   "note": "No source names Sid & Nancy",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: catalog site sid.and.nancy.aka is not a real domain. Nahalat Binyamin 44 is AKA44 (David Tour complex with Jungle Bird bar, wine bar and food bar; Time Out 2022-08 https://timeout.co.il/aka44/), but no source names Sid & Nancy and nothing recent confirms the address"
   },
   "n13760565674": {
    "r": "conflict",
@@ -3531,7 +3585,10 @@
   },
   "n4118545638": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source names Soko 77 on Sokolov; searches only returned unrelated '77' businesses"
   },
   "n8977950106": {
    "r": "ok",
@@ -3543,7 +3600,10 @@
   },
   "n478054223": {
    "r": "none",
-   "note": "Nothing found on Derech Tel Aviv"
+   "note": "Nothing found on Derech Tel Aviv",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Temple Bar is a pub chain (Time Out 2016 topic page; Haifa branch). No branch list or source places a branch on Derech Tel Aviv; the catalog phone 03-6995536 gives no results"
   },
   "n12505208002": {
    "r": "single",
@@ -3580,7 +3640,10 @@
   },
   "n4944915822": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out lists 'Apolo Club' at Allenby 46 (2016, not marked closed: https://www.timeout.com/israel/nightlife/apolo-club). A TravelGay listing headed 'Apollo - CLOSED' failed to load and is undated. No dated closure news and no recent source showing it open"
   },
   "n12129104729": {
    "r": "none",
@@ -3591,11 +3654,17 @@
   },
   "n711677517": {
    "r": "none",
-   "note": "Time Out 2016 only"
+   "note": "Time Out 2016 only",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: newest Breakfast Club listing is Time Out 2017 (Rothschild 6, daily 22-08). Time Out reported a temporary closure after a police raid in 2017-11. Time Out 2026-08 says Clavis Club at Rothschild 6 closed (https://timeout.co.il/קלאביס-קלאב-סוגר/), but doesn't mention Breakfast Club. No 2025-2026 source shows Breakfast Club operating. A Time Out 2026-06 column on owner Dudi Tour was blocked (no reply to permission request)"
   },
   "n721910276": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source names a Galina bar at Tel Aviv Port hangar 19. The Time Out 2022 'Galina' piece is about a drag performer. A Globes 2005 article covers an unnamed port cafe"
   },
   "n12857340068": {
    "r": "single",
@@ -3606,7 +3675,10 @@
   },
   "n720987299": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: a Maariv review (old, undated) names HaMaoz as a lively pub on King George, with no street number (https://www.maariv.co.il/sanedrink/reviews-reviews-and-opinions/article-644344). No recent source shows it operating and no closure news"
   },
   "n12104186199": {
    "r": "none",
@@ -3624,7 +3696,10 @@
   },
   "n1697433601": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: name+city, English, Tabit/Ontopo and closure searches found no source for a Vicenza pub on Menachem Begin; no site or booking page."
   },
   "n2821426609": {
    "r": "ok",
@@ -3642,11 +3717,17 @@
   },
   "n3404727448": {
    "r": "none",
-   "note": "Time Out 2016/2017 only"
+   "note": "Time Out 2016/2017 only",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: still only old sources. Time Out HE topic page (latest 2016-12), renovation article 2016-09-25 (reopened 2016-09-28), and Time Out EN listing (2017-03, not marked closed, 31 Rothschild). No 2025-2026 source, no site, no booking page, no closure news."
   },
   "n2821371240": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hebrew/English, Tabit/Ontopo searches found nothing. Time Out 2024-12 and Maariv 2024-03 Jerusalem Blvd food guides don't mention Barbara."
   },
   "n12190005452": {
    "r": "ok",
@@ -3654,11 +3735,17 @@
   },
   "n608522161": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: nothing found. Time Out HaArbaa street topic lists only Shiboya (2022), not this pub; only undated directory hits."
   },
   "n721926492": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hebrew/English searches found nothing. Not in Time Out bar guide 2025-11; Calcalist hit was about a different bar."
   },
   "n2079001406": {
    "r": "single",
@@ -3676,7 +3763,10 @@
   },
   "n454388591": {
    "r": "none",
-   "note": "Only Foursquare 'closed' (unreliable)"
+   "note": "Only Foursquare 'closed' (unreliable)",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only Foursquare (unreliable). Not in Time Out wine bars list 2025-11; no closure news, no site or booking page."
   },
   "n7222453497": {
    "r": "conflict",
@@ -3701,15 +3791,24 @@
   },
   "n723198061": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only undated aggregators (atly: Vital 1, FB link; untappd; Airbnb). Not in the Time Out Florentin bars list; no dated source, no closure news."
   },
   "n720962976": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: nothing reliable. The ellgeebe 'gilda bar' page redirects to a gambling site (hijacked, skipped). Not in Time Out bar guide 2025-11; no Tabit/Ontopo page."
   },
   "n5030836322": {
    "r": "none",
-   "note": "Time Out 2017/2024 only"
+   "note": "Time Out 2017/2024 only",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out IL topic page has only Hoodna Orchestra items (newest 2023-02); timeout.com Florentin bars list is undated; no Tabit/Ontopo; no closure news; no 2025-2026 source"
   },
   "n12952231237": {
    "r": "single",
@@ -3720,11 +3819,17 @@
   },
   "n746730905": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for a pub 'HaKibuts' at Tel Aviv port; searches only returned Green Pub (Nir Am) at Herods hotel (Calcalist 2024-01), unrelated; no Tabit/Ontopo; no closure news"
   },
   "n12695211352": {
    "r": "none",
-   "note": "Own site unreachable; undated atly only"
+   "note": "Own site unreachable; undated atly only",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: own site zetztlv.co.il fetch blocked (permission not granted); only undated atly listing; Time Out Levontin mapping 2022-12 does not list it; no Tabit/Ontopo; no closure news"
   },
   "n12088977870": {
    "r": "single",
@@ -3735,19 +3840,31 @@
   },
   "n723211613": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for pub 'Eliezer' at Ben Yehuda 186 (only Time Out 'pizza Eliezer' unrelated hits, directories); no Tabit/Ontopo; no closure news"
   },
   "n4706508228": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for pub 'Eretz Ir' on HaBarzel; no Tabit/Ontopo; no closure news"
   },
   "n5678912821": {
    "r": "none",
-   "note": "Own site unreachable; nothing else"
+   "note": "Own site unreachable; nothing else",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: own site bar911.co.il fetch blocked (permission not granted); no news/guide mention of Bar 911 at Shevach 11; no closure news"
   },
   "n11063318698": {
    "r": "none",
-   "note": "Time Out 2017 at Frishman 39, not Gordon"
+   "note": "Time Out 2017 at Frishman 39, not Gordon",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only Time Out listing dated 2017-01 at Frishman 39 (not Gordon); undated atly; Instagram not fetchable; no Tabit/Ontopo; no closure news"
   },
   "n1731091553": {
    "r": "ok",
@@ -3758,7 +3875,10 @@
   },
   "n11607497249": {
    "r": "none",
-   "note": "Time Out 2015 only"
+   "note": "Time Out 2015 only",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Mako 2015-03 article describes opening of HaChug HaTzfoni bar at Antin Square (TAU entrance); nothing recent (2025-2026) found; no Tabit/Ontopo; no closure news"
   },
   "n947440457": {
    "r": "none",
