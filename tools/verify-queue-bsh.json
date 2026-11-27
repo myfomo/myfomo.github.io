@@ -160,5 +160,166 @@
 "n5746423221",
 "n7167752749"
 ],
-"done": {}
+"done": {
+"n3059078344": {
+"r": "none",
+"note": "Catalog website henrysushiebar.co.il fetch not permitted (blocked). Only undated aggregators (evendo, wanderlog, restaurantguru) list HaHavit at Nahal Tzihor 10; no Tabit/Ontopo page, no dated news, no closure news found."
+},
+"n12949025656": {
+"r": "conflict",
+"note": "Own site keeboots-cafe.com fetch not permitted (blocked). Israel Hayom 2026-01 (israelhayom.co.il/food/food-news/article/19769654) says cafe 'Kafe Kibbutz' operates next to BOTZ at Har Oded 5 and BOTZ chefs joined it, building a new menu. Mako 2026-04 (Article-6f6f13cbb793d91027) reports new cafe TZIN opened at Har Oded 5 by BOTZ chefs (kosher, Su-Th 08:00-16:00, Fr 08:00-15:00) - likely a rebrand/replacement of Keeboots, but no source states Keeboots closed. See also timeout.co.il/cafe-tzin/."
+},
+"n7239247185": {
+"r": "none",
+"note": "Facebook page not fetchable (robots). HappyCow (aggregator) marks Mauna 'reported closed April 2025' at 2 Ben Gurion St - not a reliable closure source. No news, Tabit/Ontopo or closure article found."
+},
+"n5981044014": {
+"r": "ok",
+"note": "Paz (Yellow operator) own site page on charging stations to Eilat lists the Paz Beit Kama station including a Yellow store; page undated but live 2026-11. Catalog address '2938' is a road number; branch match by location (Beit Kama junction) is judgement."
+},
+"n2685565232": {
+"r": "ok",
+"note": "Aroma official site has live branch page 'Beit Kama Junction' at Paz station, hours Su-Th 07:00-21:00, Fr 07:00-15:00, Sa 07:00-21:00 (differs from OSM). Hebrew URL failed, English page OK."
+},
+"n1095683957": {
+"r": "none",
+"note": "Catalog address '40' (route 40, Ramat Negev). Likely the Aroma Ovdat branch at Paz station on Hwy 40 opposite Avdat National Park (aroma.co.il/en/store/you-worked/ exists in search but fetch failed with client error). Paz site confirms a Paz station with restaurants on road 40 near Avdat but doesn't name Aroma. HappyCow 2022 only. Not verified."
+},
+"n1705751737": {
+"r": "ok",
+"note": "Aroma official site live branch page 'Shoket Junction' at Paz station; hours Su-Th 07:00-22:00, Fr 07:00-17:00, Sa 07:00-22:00."
+},
+"n8902064518": {
+"r": "none",
+"note": "goldaglida.co.il fetch failed (client error); no official branch list obtained naming a Reuven Rubin St, Beer Sheva branch; searches found only directories (d.co.il, easy). No closure news found."
+},
+"n13152302286": {
+"r": "none",
+"note": "Golda official site goldaglida.co.il failed to load (client error). Searches found no news, guide or branch list naming a Golda branch at '293', Bnei Shimon, only Wolt and easy directory pages. Tabit/Ontopo not applicable (ice cream chain). No closure news found."
+},
+"n992964866": {
+"r": "none",
+"note": "The fetch of the own site glidabeersheva.com was blocked (permission). Guides confirm Hadassah 50 as the main branch, but they are old: ynet 2020-06, mako 2013, Israel Hayom 2017. No source from 2025-2026 and no closure news found."
+},
+"n7527123356": {
+"r": "none",
+"note": "The fetch of the own site dominos.co.il was blocked (permission), so the branch list could not be checked. Searches returned only directories (d.co.il, b144, easy). A jdn article from 2025-02 lists the Mehadrin branches without Beer Sheva, which does not settle anything. No closure news found."
+},
+"n7242429186": {
+"r": "none",
+"note": "The fetch of the own site daromacafe.com was blocked (permission). Searches found only wanderlog (undated) and the Daroma by Isrotel hotel; the Calcalist 2025-12 and mako 2026-04 Mitzpe Ramon articles do not mention it. No closure news found."
+},
+"n1004424481": {
+"r": "conflict",
+"note": "The official McDonald's locator (mcdonalds.co.il/איתור_מסעדה, read in full) lists Beer Sheva branches at David Tuviyahu 125, Derech Hevron 21, Yitzhak Nafcha 25, Baruch Katinka 2, HaChita 1, Shmaryahu Levin 4 and Azrieli Negev. None is on Eliyahu HaNavi street. No closure news found. Possibly an outdated node; Derech Hevron 21 (BIG) may be the nearest match, but that is unconfirmed."
+},
+"n1012407989": {
+"r": "conflict",
+"note": "Duplicate of n1004424481 (same Eliyahu HaNavi address). The official McDonald's locator has no branch on Eliyahu HaNavi in Beer Sheva. No closure news found."
+},
+"n5070040922": {
+"r": "ok",
+"note": "The official McDonald's locator lists 'GRAND Be'er Sheva' (kosher) at Shderot David Tuviyahu 125: dine-in, McDelivery. Only partial hours are shown (Sat 18:15-23:00; Sun-Wed 10:30-22:00), so oh was omitted. Kosher certificate is not named, so k was not set."
+},
+"n1705751753": {
+"r": "ok",
+"note": "The official McDonald's locator lists the Tel Shoket / Shoket Junction branch (drive-through, dine-in). The catalog address is only '31', Bnei Shimon. Matching it to Shoket Junction (on Route 31/40, in Bnei Shimon council) is my judgement. The locator also lists Beit Kama Junction, which is likewise in Bnei Shimon but on Route 40/264. Only partial hours are shown, so oh was omitted."
+},
+"n1799607969": {
+"r": "ok",
+"note": "Catalog site siespresso.co.il fetch blocked; chain's live own site sicafe.co.il (Si Cafe) lists a Dvira (Tzomet Dvira) branch on its branch list. Judged same place (Si Espresso = Si Cafe chain, Route 6 Dvira). Branch page fetch blocked, so no hours/phone."
+},
+"n11009821837": {
+"r": "none",
+"note": "Guides place it at Ringelblum 2 (ynet 2022-11, mako 2023-04, merged with Sipuro shel Falafel), but no 2025-2026 source; Facebook and mynet Beer Sheva fetch refused; rest.co.il listing is a directory only. No closure news found."
+},
+"n6160121685": {
+"r": "none",
+"note": "Own site pacovenany.com unreachable (robots/timeout); only rest.co.il directory listing (Nahal Tzihor 10, 055-9868362, updated 2025-12) which doesn't count; no Tabit/Ontopo, no news, no closure news."
+},
+"n4356825189": {
+"r": "none",
+"note": "Own site kiparis.co.il fetch refused; only rest.co.il directory listing (Herzl 1, Eastern European, updated 2026-02, status not stated); no Tabit/Ontopo, no news, no closure news."
+},
+"n5774749101": {
+"r": "ok",
+"note": "Own site kepasa.co.il live (Chel HaHandasa 6, Max Amot center, modified 2026-11), links Tabit reservations; Tabit and Ontopo pages exist; ynet 2022 guide calls it Mediterranean tapas. Business-lunch mains 79-119 NIS. Site hours garbled so omitted."
+},
+"n1004424715": {
+"r": "conflict",
+"note": "Official Cafe Cafe branch list for Beer Sheva: ONE PLAZA (Derech Hebron 133), Kiryat HaMemshala (Hatikva 4, temporarily closed for renovation), Yes Planet (Baruch Katinka 2, Ishpro Planet, 'temporarily closed'), Grand Canyon (Tuviyahu 125). None on Eliyahu Navi; catalog evening hours suggest the Yes Planet branch, which the site marks temporarily closed - branch match is judgement."
+},
+"n9529156843": {
+"r": "conflict",
+"note": "Own site shakti-br7.co.il fetch refused. Sources place Shakti (vegan Indian) at Ringelblum 86 (ynet 2022-11); HappyCow lists Ringelblum 86 as CLOSED (reported 2024-03, crowd-sourced, not a closure source). No source for catalog address Rabbi Akiva 9 - possibly moved; unverified."
+},
+"n999813627": {
+"r": "none",
+"note": "Own site arabica-rest.co.il unreachable; enjoyingisrael (undated) gives Herzl 12, kosher. Mynet Beer Sheva headlines 'the restaurant that will replace Arabica at Merkaz HaTze'irim' suggest closure but articles could not be fetched (no date/branch confirmation): https://beersheva.mynet.co.il/food_leisure/article/sk5lulb0p"
+},
+"n4765517313": {
+"r": "conflict",
+"note": "Only source: d.co.il directory listing 'אצה - סושי בר' at Ha'Al 30 (הע\"ל 30), Beer Sheva, opposite 7 Mall - address differs from catalog 'תאנה'. Own site atza.co.il fetch failed; no Tabit/Ontopo page found; no dated news; no closure news. Branch match unclear."
+},
+"n7064678713": {
+"r": "none",
+"note": "No source for a BBB branch on Eliyahu Navi St. d.co.il lists BBB Beer Sheva at Chel Handasa 1 (B7 / MAX Amot center) - different address. ice 2026-10 article is about BBB's Rapidos opening at Gav-Yam park, not this branch. bbb.co.il branch list fetch blocked (permission). No closure news found."
+},
+"n2520703021": {
+"r": "none",
+"note": "Likely 'BarBaSaba Beer Garden' (ברבסבא), Ha-Tikva 8, Beer Sheva per trip.com (undated aggregator, phone +972 50 721 0959). No own site, Tabit/Ontopo or dated news found; no closure news."
+},
+"n2847514497": {
+"r": "none",
+"note": "wanderlog (undated) lists 'בנג׳י - bengi' at Alexander Yannai 14, Beer Sheva, site bengimanager.wixsite.com/bengi, phone +972 54-897-2858. Own wix site fetch blocked (permission). No Tabit/Ontopo, no dated news, no closure news."
+},
+"n1636212072": {
+"r": "none",
+"note": "Searches (Hebrew/English) found no reliable source for a Black & White pub on HaNitzav St, Beer Sheva; no Tabit/Ontopo; no closure news."
+},
+"n1004459559": {
+"r": "none",
+"note": "No source for a Cafe Hillel branch on Yitzhak Nafcha St. d.co.il lists Cafe Hillel Beer Sheva at Derech Hebron 105 (Max Ahuma / ONE Plaza) - different branch. cafe-hillel.co.il branch list fetch blocked (permission). No closure news found."
+},
+"n3313104112": {
+"r": "none",
+"note": "spinach.guide (aggregator, not counted) lists 'Caldo Gourmet Pizza Bar', Derech Metsada 47, Beer Sheva, phone 08-8668006, site caldo.co.il, hours Su-Th 17:00-23:30, Sa 21:00-23:30 - address matches. Own site caldo.co.il fetch blocked (permission). No Tabit/Ontopo or dated news found; no closure news."
+},
+"n13301780874": {
+"r": "none",
+"note": "No reliable source found for 'Chicken Grill-Bar' in Mitzpe Ramon (ynetnews 2025-12 Mitzpe Ramon food guide does not mention it); no Tabit/Ontopo; no closure news."
+},
+"n1636212069": {
+"r": "none",
+"note": "Only undated Fodor's review of 'Coca Bar' at 50 Arlozorov St (behind BGU dorms), which doesn't match catalog street HaNitzav; no own site, Tabit/Ontopo or dated news found; no closure news"
+},
+"n4148553090": {
+"r": "none",
+"note": "Generic name 'Falafel' with no identifiable business; nothing reliable found"
+},
+"n3748119755": {
+"r": "none",
+"note": "Generic name 'Falafel' at Saleit, Ramat Negev; search found nothing specific"
+},
+"n9904578931": {
+"r": "none",
+"note": "Searches (Hebrew/English) found only directories; no own site, Tabit/Ontopo, news or closure news"
+},
+"n1004459324": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo, guide or closure news found; only undated aggregators"
+},
+"n5062543925": {
+"r": "none",
+"note": "Name 'Go' too generic; only directory listings found; no reliable source"
+},
+"n4724765310": {
+"r": "none",
+"note": "InnSense is a B&B/hotel in Mitzpe Ramon (Secret Tel Aviv undated listing says it features a restaurant; hotel booking sites); no own site, Tabit/Ontopo, dated source or closure news for the restaurant"
+},
+"n10101027485": {
+"r": "none",
+"note": "No trace of JEMS BAR at HaEnergia 77 (Gav-Yam/hi-tech park) in searches; no own site, Tabit/Ontopo or news"
+}
+}
 }
