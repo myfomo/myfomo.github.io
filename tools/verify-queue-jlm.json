@@ -575,7 +575,10 @@
 },
 "w1446767329": {
 "r": "ok",
-"note": "Own site davidlaor.co.il live, lists Jerusalem kiosk at Gan Gideon (Baka) with hours; catalog address 'Menashe' (Baka street) not explicitly confirmed as the garden's street; /jerusalem subpage failed to load; no closure news"
+"note": "Own site davidlaor.co.il live, lists Jerusalem kiosk at Gan Gideon (Baka) with hours; catalog address 'Menashe' (Baka street) not explicitly confirmed as the garden's street; /jerusalem subpage failed to load; no closure news",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site davidlaor.co.il live, lists the Jerusalem kiosk at Gan Gidon with hours Su-Th 07:30-17:00, Fr 07:30-15:00 and general phone 02-579-3311. No street given; that Menashe St (Baka) is the Gan Gidon location is my judgement. /jerusalem/ subpage fails at site. No closure news. (single: branch match by judgement)"
 },
 "n4323468589": {
 "r": "closed",
@@ -825,7 +828,10 @@
 },
 "w253613069": {
 "r": "none",
-"note": "Brasserie Ein Kerem, HaMaayan 15. Only an old Time Out page (2016) and an undated itraveljerusalem page. The own site rol.co.il/sites/brasserie-jerusalem could not be fetched (robots unreachable). No Tabit/Ontopo page and no closure news found."
+"note": "Brasserie Ein Kerem, HaMaayan 15. Only an old Time Out page (2016) and an undated itraveljerusalem page. The own site rol.co.il/sites/brasserie-jerusalem could not be fetched (robots unreachable). No Tabit/Ontopo page and no closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Own site rol.co.il/sites/brasserie-jerusalem still not fetchable (robots unreachable). 2eat.co.il page for Brasserie, 15 HaMaayan is undated (2015 images); Time Out page old; itraveljerusalem/wanderlog undated. No Tabit/Ontopo page. No closure news found (Mako/Israel Hayom hits were about other places)."
 },
 "n2109837717": {
 "r": "none",
@@ -1148,7 +1154,10 @@
 },
 "n7944723885": {
 "r": "none",
-"note": "enjoyingisrael lists 'Pizza Hut - Ben Halell' at Mordechai Ben Hillel 15, kosher dairy (https://www.enjoyingisrael.com/restaurants/49239/pizza-hut-ben-halell). That is a directory, not an official branch list, and the street is Ben Hillel, not Shamai, though it may be the corner. Fetching the official site pizzahut.co.il was refused, so no official branch list. No closure news found."
+"note": "enjoyingisrael lists 'Pizza Hut - Ben Halell' at Mordechai Ben Hillel 15, kosher dairy (https://www.enjoyingisrael.com/restaurants/49239/pizza-hut-ben-halell). That is a directory, not an official branch list, and the street is Ben Hillel, not Shamai, though it may be the corner. Fetching the official site pizzahut.co.il was refused, so no official branch list. No closure news found.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Official Pizza Hut Jerusalem branch list (live) names 'Jerusalem - Ben Hillel' at Mordechai Ben Hillel 15, kosher Badatz Rabbi Rubin; no branch on Shamai. Probably the same downtown branch (Shamai/Ben Hillel area), but the address differs from catalog. Reliable address: Mordechai Ben Hillel 15, Jerusalem."
 },
 "n13535438304": {
 "r": "none",
@@ -1292,7 +1301,10 @@
 },
 "n562625361": {
 "r": "single",
-"note": "Own site tzidkiyahu.co.il fetch blocked (permission not granted). Maariv 2025-03 reviews it as operating (skewer meals 98-120 NIS). Kipa 2023 and d.co.il list it at Yad Harutzim 21, Talpiot. The catalog says HaTnufa, a nearby cross street in the same Talpiot block, so the branch match is my judgement. No Tabit/Ontopo page and no closure news found."
+"note": "Own site tzidkiyahu.co.il fetch blocked (permission not granted). Maariv 2025-03 reviews it as operating (skewer meals 98-120 NIS). Kipa 2023 and d.co.il list it at Yad Harutzim 21, Talpiot. The catalog says HaTnufa, a nearby cross street in the same Talpiot block, so the branch match is my judgement. No Tabit/Ontopo page and no closure news found.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site tzidkiyahu.co.il live: main branch Yad Harutzim 21 Talpiot, 02-6733379, Su-Th 12:00-23:00 plus Motzei Shabbat; second outlet 'Tzidkiyahu To Go' at Yad Harutzim 22. The site also points to parking at HaTnufa 12. The catalog says HaTnufa, a cross street in the same Talpiot block, so the branch match is my judgement. Maariv 2025-03 review (skewers 98-120 NIS). No closure news. (single: branch match by judgement)"
 },
 "n13436566655": {
 "r": "none",
@@ -1386,7 +1398,10 @@
 },
 "w263259731": {
 "r": "none",
-"note": "d.co.il directory lists Ulamei Beit Yisrael at Ezrat Torah 18 (catalog: 20) with site beitisrael.co.il, hours Su-Th 9-22. The own site could not be fetched (permission blocked), so it is unverified. bhol.co.il could not be fetched. No Tabit/Ontopo. No closure news found."
+"note": "d.co.il directory lists Ulamei Beit Yisrael at Ezrat Torah 18 (catalog: 20) with site beitisrael.co.il, hours Su-Th 9-22. The own site could not be fetched (permission blocked), so it is unverified. bhol.co.il could not be fetched. No Tabit/Ontopo. No closure news found.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site beitisrael.co.il live: Beit Israel event hall (halls Gefen and Zayit) at Ezrat Torah 18, Jerusalem (catalog says 20; treated as the same place by judgement). It is an event hall with catering, not a restaurant. Kashrut: Badatz Edah Haredit. No Tabit/Ontopo page. No closure news. (single: branch match by judgement)"
 },
 "w279377694": {
 "r": "none",
@@ -1581,7 +1596,10 @@
 },
 "n760045185": {
 "r": "none",
-"note": "aroma.co.il blocked; the search index shows an official store page 'ביג בית שמש' (aroma.co.il/store/ביג-בית-שמש), which was not fetched. Undated listing enjoyingisrael.com/restaurants/38947 (Aroma Beit Shemesh, Big). Not confirmed that BIG is on Sderot Yigal Alon. Retry via the official store page."
+"note": "aroma.co.il blocked; the search index shows an official store page 'ביג בית שמש' (aroma.co.il/store/ביג-בית-שמש), which was not fetched. Undated listing enjoyingisrael.com/restaurants/38947 (Aroma Beit Shemesh, Big). Not confirmed that BIG is on Sderot Yigal Alon. Retry via the official store page.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official Aroma store page (EN) 'Big Center Beit Shemesh', Yigal Alon 1, Big Center, phone 02-9921674; notes cafe under renovation, coffee and pastry only. Kosher Mehadrin, certifying body not named, so k not set. Hebrew store page fetch failed at site."
 },
 "n12869152501": {
 "r": "none",
@@ -1664,7 +1682,10 @@
 },
 "w175425604": {
 "r": "none",
-"note": "Domino's chain; official branch list dominos.co.il fetch blocked (permission). Searches found only Beit HaKerem/French Hill branch listings, nothing for Rivka St."
+"note": "Domino's chain; official branch list dominos.co.il fetch blocked (permission). Searches found only Beit HaKerem/French Hill branch listings, nothing for Rivka St.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Official dominos.co.il lists Jerusalem branches including a live Talpiot branch page (open on Shabbat), but the official pages give no street. Aggregator spinach.guide places Domino's Talpiot at Rivka St 25, so the branch match is my judgement. (single: branch match by judgement)"
 },
 "n5815978897": {
 "r": "none",
@@ -1699,11 +1720,17 @@
 },
 "n6247814285": {
 "r": "none",
-"note": "itraveljerusalem.com listing (undated) shows The Lebanese Restaurant, Kvish HaShalom 86 Abu Ghosh, 02-570-2397, non-kosher, opens 08:00; no dated 2025-2026 source, no Tabit/Ontopo, no closure news. Catalog says no. 88. tiuli page failed to load"
+"note": "itraveljerusalem.com listing (undated) shows The Lebanese Restaurant, Kvish HaShalom 86 Abu Ghosh, 02-570-2397, non-kosher, opens 08:00; no dated 2025-2026 source, no Tabit/Ontopo, no closure news. Catalog says no. 88. tiuli page failed to load",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "No own site. Only undated listings found (itraveljerusalem, wanderlog, enjoyingisrael, d.co.il). tiuli page failed again. No Tabit/Ontopo page, no dated 2025-2026 source and no closure news."
 },
 "n566600176": {
 "r": "none",
-"note": "Cafe Hillel chain; could not confirm a branch on Simcha Gafni St. Official site cafehillel.co.il fetch blocked (permission); no Tabit/Ontopo or news naming this branch"
+"note": "Cafe Hillel chain; could not confirm a branch on Simcha Gafni St. Official site cafehillel.co.il fetch blocked (permission); no Tabit/Ontopo or news naming this branch",
+"r2": "closed",
+"d2": "2026-11-27",
+"note2": "Own site cafehillel.co.il says the Cafe Hillel chain closed ('הרשת נסגרה') and was rebranded Cafe Heleni, with a single location at Yafo 36. No Simcha Gafni branch is listed. No exact closure date is given (the page was modified 2025-08-31). This is a chain-wide closure, so the branch match is my judgement."
 },
 "n2406673409": {
 "r": "none",
@@ -1734,7 +1761,10 @@
 },
 "n8990432917": {
 "r": "none",
-"note": "Sources give HaSadna at Hebron Rd 28 (adjacent to First Station; branch match is judgement). Time Out page dated 2016; enjoyingisrael lists site sdnrest.com, but fetching it was blocked (permission). Not on First Station's own restaurant list page 1. No Tabit/Ontopo found, no closure news found."
+"note": "Sources give HaSadna at Hebron Rd 28 (adjacent to First Station; branch match is judgement). Time Out page dated 2016; enjoyingisrael lists site sdnrest.com, but fetching it was blocked (permission). Not on First Station's own restaurant list page 1. No Tabit/Ontopo found, no closure news found.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site sdnrest.com live (Machneyuda group): HaSadna, Derech Hebron 28, phone 02-567-2265, open on Shabbat; meat, seafood, house pastas. Hebron Rd 28 is beside First Station compound, so the branch match is my judgement. Site lists Tu-Th 18:30-23:00, Fr 18:00-23:00, Sa 12:30-16:30 & 18:30-23:00, but Su/Mo aren't stated, so oh is left out. (single: branch match by judgement)"
 },
 "n12957411124": {
 "r": "none",
@@ -1770,7 +1800,10 @@
 },
 "n636119348": {
 "r": "none",
-"note": "HaShamen is a shawarma chain (Wikipedia; official site hashamen.co.il). Official branch list hashamen.co.il/snifim/ blocked (permission not granted), easy.co.il failed; no source found confirming a Mevaseret Zion / HaHotzvim branch"
+"note": "HaShamen is a shawarma chain (Wikipedia; official site hashamen.co.il). Official branch list hashamen.co.il/snifim/ blocked (permission not granted), easy.co.il failed; no source found confirming a Mevaseret Zion / HaHotzvim branch",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official branch list hashamen.co.il/snifim/ names 'HaShamen Kastel' at Sderot HaHotzvim 11, Mevaseret Zion. It gives no phone or hours."
 },
 "n561076277": {
 "r": "single",
@@ -1786,7 +1819,10 @@
 },
 "n5813254156": {
 "r": "none",
-"note": "Own site vaniglia.co.il blocked (permission not granted). First Station page (modified 2022-01) lists Vaniglia at First Station, daily 10:00-23:00; enjoyingisrael (undated) gives David Remez 9; Time Out page is the Tel Aviv Port branch. No recent (2025-2026) allowed source; Wolt pages exist but not used; no closure news"
+"note": "Own site vaniglia.co.il blocked (permission not granted). First Station page (modified 2022-01) lists Vaniglia at First Station, daily 10:00-23:00; enjoyingisrael (undated) gives David Remez 9; Time Out page is the Tel Aviv Port branch. No recent (2025-2026) allowed source; Wolt pages exist but not used; no closure news",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site branch page live: Jerusalem branch at the First Station complex, David Remez 7, 050-453-9999, Su-Sa 9:00-23:00. Not marked kosher."
 },
 "n1268457739": {
 "r": "none",
@@ -1975,11 +2011,17 @@
 },
 "n5731988222": {
 "r": "ok",
-"note": "Tabit site page live for 'Naya - Beit Nekupa' (phone 02-990-0070); Ontopo listing 'Na-ya Restaurant, Beit Nekofa' exists but not bookable via Ontopo; Kipa 2025-07 mentions Naya group as active; Srugim reviews 2020/2022 (Asian, kosher Mateh Yehuda rabbinate). Own site na-ya.com fetch blocked. Tabit/Ontopo hours disagree, so hours omitted."
+"note": "Tabit site page live for 'Naya - Beit Nekupa' (phone 02-990-0070); Ontopo listing 'Na-ya Restaurant, Beit Nekofa' exists but not bookable via Ontopo; Kipa 2025-07 mentions Naya group as active; Srugim reviews 2020/2022 (Asian, kosher Mateh Yehuda rabbinate). Own site na-ya.com fetch blocked. Tabit/Ontopo hours disagree, so hours omitted.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site na-ya.com live: 'mountain Asian' restaurant, Beit Nekofa is the main location, 02-990-0070, Tabit reservation links, kosher symbol and certificate link (Srugim names the Mateh Yehuda rabbinate). No hours on the site; Fridays are private events only."
 },
 "n7176905659": {
 "r": "none",
-"note": "Ontopo listing exists (Generali Building, Shlomtzion HaMalka 3, +972 2-625-7311, site noya-jerusalem.co.il) but says not available for reservations; own site fetch blocked; itraveljerusalem undated listing (mehadrin); no 2025-2026 source and no closure news found."
+"note": "Ontopo listing exists (Generali Building, Shlomtzion HaMalka 3, +972 2-625-7311, site noya-jerusalem.co.il) but says not available for reservations; own site fetch blocked; itraveljerusalem undated listing (mehadrin); no 2025-2026 source and no closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site noya-jerusalem.co.il live (modified 2026-06): Shlomtzion HaMalka 3, phone 077-2307590 (catalog has 02-625-7311), Su-Th 13:00-23:00, Fri closed, Motzei Shabbat by reservation only. Meat chef restaurant (French/Mediterranean). Kosher mehadrin, Badatz Kehillot. Booking by WhatsApp or the site form; Ontopo is not bookable."
 },
 "n560652028": {
 "r": "ok",
@@ -1995,7 +2037,10 @@
 },
 "n873785129": {
 "r": "none",
-"note": "Own site sushirehavia.co.il fetch refused (permission). itraveljerusalem (undated) lists Azza 31, kosher; d.co.il directory lists Gaza 31 tel 02-5667477 (undated); Mako/Globes 2009 review Aza 29. No recent dated source, no Tabit/Ontopo found, no closure news. Wolt shows an Emek Refaim branch, so Aza branch status unclear."
+"note": "Own site sushirehavia.co.il fetch refused (permission). itraveljerusalem (undated) lists Azza 31, kosher; d.co.il directory lists Gaza 31 tel 02-5667477 (undated); Mako/Globes 2009 review Aza 29. No recent dated source, no Tabit/Ontopo found, no closure news. Wolt shows an Emek Refaim branch, so Aza branch status unclear.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site sushirehavia.co.il live, lists Rehavia branch at Gaza (Aza) 31, phone 02-5667477; also other branches (Emek Refaim, Rachel Imenu w/ Ontopo, City Center closed for renovation). Kosher certificate section exists but body not named in fetched text; hours not listed."
 },
 "n561070478": {
 "r": "single",
@@ -2133,7 +2178,10 @@
 },
 "n6754297391": {
 "r": "none",
-"note": "Chain (Pizza Agvania); official branch list needed but agvania.co.il fetch not permitted; no source naming a Derech Hevron Jerusalem branch; no closure news found"
+"note": "Chain (Pizza Agvania); official branch list needed but agvania.co.il fetch not permitted; no source naming a Derech Hevron Jerusalem branch; no closure news found",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official site agvania.co.il lists the Beit HaNatziv branch at Derech Hevron 101, Jerusalem, 02-5479090. It is the only Derech Hevron branch. No hours given."
 },
 "n2193094673": {
 "r": "none",
@@ -2275,7 +2323,10 @@
 },
 "w252684330": {
 "r": "single",
-"note": "Meshek Offaim (Offaim Farm cafe/deli). Time Out 2024-12-01 says Jerusalem branches in Beit HaKerem and Israel Museum still operating; Wolt venue page live now at Yaakov Saskin 17, Jerusalem (Beit HaKerem match is my judgement; listed as deli). Own site ofaimme.com fetch blocked. Mako 2021 covers Israel Museum branch (different branch). No 2025-26 guide/news found."
+"note": "Meshek Offaim (Offaim Farm cafe/deli). Time Out 2024-12-01 says Jerusalem branches in Beit HaKerem and Israel Museum still operating; Wolt venue page live now at Yaakov Saskin 17, Jerusalem (Beit HaKerem match is my judgement; listed as deli). Own site ofaimme.com fetch blocked. Mako 2021 covers Israel Museum branch (different branch). No 2025-26 guide/news found.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site ofaimme.com live, lists the 'shop and cafe in Beit HaKerem' (no street); earlier Time Out 2024-12 says the Beit HaKerem branch operates; Wolt showed Yaakov Saskin 17 (not used). The Beit HaKerem match is my judgement; general phone only. (single: branch match by judgement)"
 },
 "n1405933024": {
 "r": "none",
@@ -2290,7 +2341,10 @@
 },
 "w230594163": {
 "r": "none",
-"note": "No source found for a Caffit on Betzalel Bezek. Wolt brand page lists only Caffit HaMoshava (Emek Refaim 36) and Botanical Garden (Yehuda Burla 1, Givat Ram) in Jerusalem. Official branches page caffit.co.il/branches blocked."
+"note": "No source found for a Caffit on Betzalel Bezek. Wolt brand page lists only Caffit HaMoshava (Emek Refaim 36) and Botanical Garden (Yehuda Burla 1, Givat Ram) in Jerusalem. Official branches page caffit.co.il/branches blocked.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Official caffit.co.il (live) lists only 4 branches: German Colony and Botanical Garden (Jerusalem), Adumim Lake, Park Enava Modiin. No Betzalel Bezek branch is listed, and no closure news was found, so the catalog entry is not an official current branch. /branches page failed at site."
 },
 "n12967020730": {
 "r": "conflict",
