@@ -1298,7 +1298,8 @@
    "pr": 2,
    "src": [
     "https://arcaffe.co.il/branches/"
-   ]
+   ],
+   "w": "https://arcaffe.co.il/branches/"
   },
   "n12110687259": {
    "n": "בית רדיקל",
@@ -2009,14 +2010,13 @@
   },
   "n9392521640": {
    "n": "ברוקלין קינג גיורגי",
-   "ok": "2026-05",
+   "ok": "2026-11",
    "cu": "פיצה",
    "pr": 1,
    "src": [
-    "https://www.ynetnews.com/food/article/hktmei3awl",
-    "https://www.gillespudlowski.com/?p=396338",
-    "https://wolt.com/en/isr/tel-aviv/restaurant/brooklyn-pizzatlv"
-   ]
+    "https://brooklynpizza.co.il"
+   ],
+   "w": "https://brooklynpizza.co.il"
   },
   "n1150925905": {
    "n": "דומינוז פיצה",
@@ -2878,11 +2878,14 @@
   },
   "n9996989783": {
    "n": "Jusa",
-   "ok": "2026-08",
-   "cu": "קפה ובראנץ'",
+   "ok": "2026-11",
+   "cu": "אחר",
    "src": [
-    "https://www.gillespudlowski.com/432989/rendez-vous/tel-aviv-jusa-le-bon-gout-du-bien-etre"
-   ]
+    "https://jusa.co.il"
+   ],
+   "nm": "JUSA Cold Pressed",
+   "p": "03-7305599",
+   "w": "https://jusa.co.il"
   },
   "n7796226294": {
    "n": "Kalamata",

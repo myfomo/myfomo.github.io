@@ -1728,9 +1728,9 @@
   },
   "n9996989783": {
    "r": "none",
-   "r2": "single",
+   "r2": "ok",
    "d2": "2026-11-27",
-   "note2": "Gilles Pudlowski 2026-08-12 article places Jusa at Dizengoff 101 (matches catalog street) and lists site jusa.co.il and phone +972 3 730 5599. Own site fetch was blocked. No Tabit/Ontopo page, no closure news. Time Out pieces (2016, 2023) only mention the Ibn Gabirol branch."
+   "note2": "Own site jusa.co.il live: JUSA Cold Pressed juice bar, Dizengoff 101 Tel Aviv (only branch), phone 03-7305599, Tabit order link. Hours on site garbled (shown as 21:00-07:00), not used. Gilles Pudlowski 2026-08 also matches."
   },
   "n10727399152": {
    "r": "none",
@@ -2147,7 +2147,10 @@
    "r": "ok",
    "note": "chain branch page, Ashtori HaParhi 14",
    "det": "2026-11-27",
-   "note3": "Own site zesushi.co.il/basel fetch permission timed out; Tabit page (ZE SUSHI | Basel) live but shows no hours."
+   "note3": "Own site zesushi.co.il/basel fetch permission timed out; Tabit page (ZE SUSHI | Basel) live but shows no hours.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site zesushi.co.il/basel live, names Tel Aviv Basel branch at Ashtori HaParhi 14 with phone 1-700-70-89-89 and Tabit reservation link; no hours or kosher info on page"
   },
   "n8558425245": {
    "r": "none",
@@ -5163,7 +5166,10 @@
    "r": "ok",
    "note": "Official list has HaBarzel 20 and 21; which one unclear",
    "det": "2026-11-27",
-   "note3": "arcaffe.co.il fetch refused (permission); searches found only directories (d.co.il, easy) and Wolt, not allowed."
+   "note3": "arcaffe.co.il fetch refused (permission); searches found only directories (d.co.il, easy) and Wolt, not allowed.",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Official branch list arcaffe.co.il/branches live with two HaBarzel branches: Assuta at HaBarzel 20 (03-9204189, Su-Th 07-22, Fr 07-14:30, Sa closed, kosher dairy) and Ramat HaChayal at HaBarzel 21 (074-7014126, Su-Th 07-22, Fr-Sa 07-16). Catalog has no house number so the branch can't be pinned; details left out."
   },
   "n1626825015": {
    "r": "none",
@@ -6577,7 +6583,10 @@
    "r": "ok",
    "note": "ynetnews 2026-05 lists Brooklyn at 88 King George; gillespudlowski.com 2025-04 King George 88; public Wolt page active listing; no own site; not on Tabit/Ontopo",
    "det": "2026-11-27",
-   "note3": "Hours and website needed. gillespudlowski 2025-04 gives website brooklynpizza.co.il, phone 03-902-5040 and hours (daily 16:00-23:30, Th until 24:00, Sa 15:00-23:00, Fr closed). The own site fetch was refused, so the website can't be confirmed and the hours have only one source. ynetnews 2026-05 lists King George 88 but gives no hours."
+   "note3": "Hours and website needed. gillespudlowski 2025-04 gives website brooklynpizza.co.il, phone 03-902-5040 and hours (daily 16:00-23:30, Th until 24:00, Sa 15:00-23:00, Fr closed). The own site fetch was refused, so the website can't be confirmed and the hours have only one source. ynetnews 2026-05 lists King George 88 but gives no hours.",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site brooklynpizza.co.il live, lists King George 88 among pickup branches (with Dizengoff 276, Yehuda Halevi 45); confirms website. No hours on own site; hours only from gillespudlowski 2025-04 (single source, not used). ynetnews 2026-05 also lists it."
   },
   "n12087608626": {
    "r": "single",
