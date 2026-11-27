@@ -3362,6 +3362,147 @@
    "src": [
     "https://www.rivareno.com/gelaterie"
    ]
+  },
+  "n4798363423": {
+   "n": "בצ'יקלטה",
+   "ok": "2026-11",
+   "cu": "בר",
+   "p": "+972-3-643-3097",
+   "bk": "https://ontopo.com/en/il/page/41915466",
+   "src": [
+    "https://ontopo.com/en/il/page/41915466"
+   ]
+  },
+  "n4706508221": {
+   "n": "ארקפה",
+   "ok": "2026-11",
+   "nm": "ארקפה רמת החייל",
+   "cu": "קפה ובראנץ'",
+   "oh": "Su-Th 07:00-22:00; Fr 07:00-16:00; Sa 07:00-16:00",
+   "p": "074-7014126",
+   "w": "https://arcaffe.co.il/branches/ramat-hachayal/",
+   "bk": "https://tabitisrael.co.il/tabit-order?siteName=arcafferamathahayal&step=enter",
+   "src": [
+    "https://arcaffe.co.il/branches/ramat-hachayal/"
+   ]
+  },
+  "n4209265800": {
+   "n": "ארנולד",
+   "ok": "2025-11",
+   "cu": "בר",
+   "pr": 2,
+   "src": [
+    "https://www.ynetnews.com/food/article/ry002l5ojze",
+    "https://www.maariv.co.il/food/foodnews/article-1251980"
+   ]
+  },
+  "n6106433727": {
+   "n": "פרוזדור",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "pr": 2,
+   "oh": "Mo-Su 12:00-24:00",
+   "p": "03-5233223",
+   "w": "https://www.prozdor.co.il/",
+   "bk": "https://ontopo.com/en/il/page/prozdor",
+   "src": [
+    "https://www.prozdor.co.il/en/",
+    "https://ontopo.com/en/il/page/prozdor"
+   ]
+  },
+  "n5772924454": {
+   "n": "חוות צוק",
+   "ok": "2026-11",
+   "cu": "בשרים",
+   "pr": 2,
+   "p": "077-5155905",
+   "w": "https://zuk-farm.co.il/",
+   "bk": "https://ontopo.com/en/il/page/zukfarm",
+   "src": [
+    "https://ontopo.com/en/il/page/zukfarm",
+    "https://zuk-farm.co.il/%D7%A6%D7%95%D7%A8-%D7%A7%D7%A9%D7%A8/",
+    "https://zuk-farm.co.il/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%9E%D7%A1%D7%A2%D7%93%D7%94/"
+   ]
+  },
+  "n6005282986": {
+   "n": "Balinjera",
+   "ok": "2026-11",
+   "cu": "אחר",
+   "pr": 2,
+   "oh": "Su-Th 12:00-20:00; Fr 11:00-15:00",
+   "p": "03-525-2527",
+   "w": "https://www.balinjera.com/",
+   "bk": "https://ontopo.com/en/il/page/74030443",
+   "k": 1,
+   "src": [
+    "https://www.balinjera.com/?lang=en",
+    "https://ontopo.com/en/il/page/74030443",
+    "https://www.ynetnews.com/food/article/hkyzloj1bg",
+    "https://timeout.co.il/מסעדות-אתיופיות-רשימה/"
+   ]
+  },
+  "n3398907778": {
+   "n": "לבונטין 7",
+   "ok": "2026-06",
+   "cu": "בר",
+   "w": "https://levontin7.com",
+   "src": [
+    "https://levontin7.com/timetable-event/",
+    "https://levontin7.com/events/tangerine-sunrise-3",
+    "https://timeout.co.il/%D7%9C%D7%91%D7%95%D7%A0%D7%98%D7%99%D7%9F-7-%D7%A2%D7%A9%D7%A8%D7%99%D7%9D/"
+   ]
+  },
+  "n4401778788": {
+   "n": "Puaa",
+   "ok": "2025-12",
+   "cu": "קפה ובראנץ'",
+   "src": [
+    "https://timeout.co.il/the-most-recommended-restaurants-bars-and-cafes-in-the-flea-market/",
+    "https://spottedbylocals.com/telaviv/puaa"
+   ]
+  },
+  "n5109147536": {
+   "n": "רביבה וסיליה",
+   "ok": "2026-11",
+   "oh": "Su-Th 08:00-23:00; Fr 08:00-15:30,17:30-22:00; Sa off",
+   "p": "03-5466090",
+   "w": "https://www.revivaandcelia.co.il/tlv/",
+   "bk": "https://ontopo.com/he/il/page/75006441",
+   "src": [
+    "https://www.revivaandcelia.co.il/tlv/",
+    "https://ontopo.com/en/il/page/75006441"
+   ]
+  },
+  "n6041389430": {
+   "n": "גומבה",
+   "ok": "2026-11",
+   "nm": "גומבה תל אביב",
+   "cu": "איטלקי",
+   "p": "03-9739954",
+   "bk": "https://ontopo.com/he/il/page/67610654",
+   "src": [
+    "https://ontopo.com/he/il/page/67610654"
+   ]
+  },
+  "n6185676733": {
+   "n": "המלביה",
+   "ok": "2026-11",
+   "cu": "קינוחים",
+   "p": "077-320-6293",
+   "w": "https://www.hamalabiya.co.il/",
+   "src": [
+    "https://www.hamalabiya.co.il/homepage/"
+   ]
+  },
+  "n6041389431": {
+   "n": "שניצל קומפני",
+   "ok": "2026-11",
+   "cu": "אחר",
+   "p": "03-6222291",
+   "w": "https://www.scompany.co.il/",
+   "src": [
+    "https://www.scompany.co.il/branches"
+   ]
   }
  }
 }

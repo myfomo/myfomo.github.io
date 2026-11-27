@@ -7851,6 +7851,102 @@
   "n2862959846": {
    "r": "ok",
    "note": "Own site contact page names Florentin 19 with hours and phone; menu has a vegan section; cocktails 49, beer 26-35, snacks 36; Ontopo page also exists"
+  },
+  "n5273498821": {
+   "r": "closed",
+   "note": "Time Out 2025-05-25: Saluf & Sons at Nahalat Binyamin 80 closing Fri 30.5.2025; owners focus on Levinsky bar, HaTikva bakery stays; own site salufandsons.co.il blocked"
+  },
+  "n5961333787": {
+   "r": "closed",
+   "note": "Time Out Tel Aviv 2026-05-11: chef Rima Olvera closing Oasis (Montefiore 17), restaurant listed for sale, marked temporarily closed. Own site fetch not permitted (blocked)."
+  },
+  "n4798363423": {
+   "r": "ok",
+   "note": "Ontopo booking page active for Bicicletta, Nahalat Binyamin 29 ('local food bar', brunch + cocktails); own site biciclettatlv.co.il blocked (fetch permission not granted); Time Out coverage only to 2023; hours not set (Ontopo only)"
+  },
+  "n6023053936": {
+   "r": "conflict",
+   "note": "Sokolov 72 appears to be the Karnaf Ramat HaSharon branch (d.co.il directory: Sokolov 72, Ramat HaSharon, 03-7440062; karnaf.com has a /ramat-hasharon/ page), not Tel Aviv. karnaf.com unreachable (client error) so could not confirm on own site. Karnaf's Tel Aviv branch is on Ibn Gabirol per own-site page title. Source: https://www.d.co.il/80075938/35790/"
+  },
+  "n4706508221": {
+   "r": "ok",
+   "note": "Arcaffe own branch page lists Ramat HaChayal branch at HaBarzel 21 with phone and hours; marked meat (no certificate named)"
+  },
+  "n5501828121": {
+   "r": "none",
+   "note": "Could not identify this branch (Arie Elhanani plaza) in any reliable source. The McDonald's Israel site did not show up in searches. Nothing reliable found."
+  },
+  "n4209265800": {
+   "r": "ok",
+   "note": "Two independent recent sources: ynetnews 2025-11 (Arnold's, Shitrit St, Hadar Yosef sports complex, 70 years, not kosher, no longer opens Saturdays since Oct 7 - catalog Sa hours may be wrong) and Maariv 2025-11 (not kosher, bar-style menu, items 39-71 NIS). Own site arnoldrest.co.il not fetched (blocked)."
+  },
+  "n6106433727": {
+   "r": "ok",
+   "note": "Own site live with Mendele Mocher Sforim 6, daily 12:00-24:00; Ontopo booking page active. Burgers 56-88 NIS."
+  },
+  "n4666623690": {
+   "r": "conflict",
+   "note": "Operating: Ontopo booking page active and Time Out 2026-08 article (ownership change, restaurant continues). But Ontopo lists address HaArba'a 23, not 30 as in catalog. Own site clarotlv.com blocked (fetch permission not granted). Ontopo phone +972-3-601-7777 matches catalog; bk https://ontopo.com/en/il/page/24489442"
+  },
+  "n4694933771": {
+   "r": "closed",
+   "note": "Time Out 2024-07-30: Sputnik bar at Allenby 122 closing that Saturday (building renovation), no new location; no reopening found"
+  },
+  "n5772924454": {
+   "r": "ok",
+   "note": "Ontopo booking page active for Zuk Farm, Perlok Moshe 5; own site live (contact page gives Zritsky 4 Ramat Aviv HaHadasha, same complex; hours on own site self-contradictory, not used). Time Out 2021 review / Globes 2018 older."
+  },
+  "n6005282986": {
+   "r": "ok",
+   "note": "Own site live, lists Malan 4 / HaKovshim 39, kosher Rabanut Tel Aviv (meat); Ontopo page exists; ynetnews 2025-11 article. Saturday hours not given on own site."
+  },
+  "n5604815954": {
+   "r": "conflict",
+   "note": "Own site coffeeorg.co could not be fetched (permission not granted). Time Out 2025-09 (specialty coffee guide) and Time Out 2024-01 both give Cafe Barzilay's address as Barzilay 1, Tel Aviv, not Mikve Israel 12. It may be the same corner building, but the sources name a different street address. Sources: https://timeout.co.il/קפה-ספיישלטי-תל-אביב/ ; https://timeout.co.il/בתי-קפה-אוכל-טוב/"
+  },
+  "n4875397221": {
+   "r": "none",
+   "note": "Only Time Out English listing from 2016 (address given as Eliezer Peri 14, Marina; phone 03-5236730); no Tabit/Ontopo page, no recent source, no closure news found"
+  },
+  "n6227660300": {
+   "r": "conflict",
+   "note": "Own site (dallal.co.il contact/bakery) lists only Neve Tzedek restaurant, bakery (Kol Israel Haverim 7), Marina and Villa - no Jabotinsky 110 branch. Time Out 2017 reported Cafe Dallal opening at Remez/Jabotinsky corner; no closure article found. Branch likely no longer operating but unconfirmed."
+  },
+  "n3398907778": {
+   "r": "ok",
+   "note": "Own site live, describes 'Levontin 7, bar and performance venue' at Levontin St. 7, Tel Aviv, with 2026 events (Pianofest 2026); Time Out 2026-06 article on 20th anniversary describes club as active. No hours or phone on own site."
+  },
+  "n5920233936": {
+   "r": "none",
+   "note": "sumesa.co.il is now a generic cooking/content blog, not a restaurant site; no Tabit/Ontopo page, no news/guide listing found for a restaurant Sumesa at Jabotinsky 1."
+  },
+  "n5288387221": {
+   "r": "none",
+   "note": "Time Out 2024-01 reported the Tel Aviv branch opening at Shaul HaMelech Blvd 4 (inside London Ministore). Israel Hayom 2024-01 mentions only the chain/Rishon branch. No 2025-2026 source and no closure news found."
+  },
+  "n4444435993": {
+   "r": "closed",
+   "note": "Time Out 2026-01-19: West Side restaurant at Royal Beach hotel (Isrotel) closed for business reasons; hotel to serve guest breakfasts only. Isrotel hotel page no longer lists West Side."
+  },
+  "n4401778788": {
+   "r": "ok",
+   "note": "Time Out Tel Aviv 2025-12 flea-market guide lists Puaa at Rabbi Yohanan 8 (operating 25 years); Spotted by Locals page 2025-02 at same address. No closure news. Own site not fetched."
+  },
+  "n5109147536": {
+   "r": "ok",
+   "note": "Own site TLV branch page lists Nissim Aloni 10 with hours/phones and links Ontopo; Ontopo booking page active (also Tabit pages exist)"
+  },
+  "n6041389430": {
+   "r": "ok",
+   "note": "Ontopo booking page active for Goomba Tel Aviv, Yigal Alon 94, phone 03-9739954 (modern Italian, self-service). goomba.co.il unreachable (client error); hours only on Ontopo, not used."
+  },
+  "n6185676733": {
+   "r": "ok",
+   "note": "Own site branch list includes Washington 15 corner Florentin 28, Tel Aviv (malabi shop). Only general phone given; no hours/prices."
+  },
+  "n6041389431": {
+   "r": "ok",
+   "note": "Own site branch list includes Yigal Alon branch, Yigal Alon 94 Tel Aviv, 03-6222291. No hours or prices on own site."
   }
  }
 }
