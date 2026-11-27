@@ -2,9 +2,9 @@
  "addr_osm": 0,
  "addr_partial": 0,
  "site_checked": 521,
- "site_jsonld": 60,
+ "site_jsonld": 58,
  "site_match": 18,
- "site_reject": 42,
+ "site_reject": 40,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -21,6 +21,13 @@
    "site": "035175179"
   },
   {
+   "id": "n904508667",
+   "n": "בני הדייג",
+   "field": "phone",
+   "osm": "03-5440518",
+   "site": "0737585695"
+  },
+  {
    "id": "n950284108",
    "n": "שצ'ופק",
    "field": "hours",
@@ -28,25 +35,11 @@
    "site": "Mo,Tu,We 12:00-22:30; Th,Fr 12:00-23:00; Sa 12:00-22:00"
   },
   {
-   "id": "n1950416514",
-   "n": "איטלקיה בתחנה",
-   "field": "phone",
-   "osm": "+972723945751",
-   "site": "039331922"
-  },
-  {
    "id": "n2079034257",
    "n": "Neroli",
    "field": "hours",
    "osm": "Su-Th 08:30-20:00; Fr 08:30-16:00; Sa off",
    "site": "Su 08:30-21:00; Tu 08:30-21:00; We 08:30-21:00; Th 08:30-21:00; Fr 08:30-16:00"
-  },
-  {
-   "id": "n2079180765",
-   "n": "אניטה",
-   "field": "phone",
-   "osm": "+972 3 624 6383",
-   "site": "039585573"
   },
   {
    "id": "n2079208883",
@@ -82,13 +75,6 @@
    "field": "phone",
    "osm": "+972 3-560-4570",
    "site": "039256605"
-  },
-  {
-   "id": "n2862959844",
-   "n": "פרלה",
-   "field": "phone",
-   "osm": "+972 3 682 3823",
-   "site": "0549902099"
   },
   {
    "id": "n4209265800",
@@ -203,18 +189,18 @@
    "site": "036868657"
   },
   {
-   "id": "n7769735969",
-   "n": "Taizu",
-   "field": "phone",
-   "osm": "+972 035225005",
-   "site": "035225005"
-  },
-  {
    "id": "n10296516877",
    "n": "The Urban Bakery",
    "field": "hours",
    "osm": "Su-Th 07:00-19:00; Fr-Sa 07:00-16:00",
    "site": "Su,Mo,Tu,We,Th 07:00-19:00; Fr,Sa 07:00-16:00"
+  },
+  {
+   "id": "n10969247136",
+   "n": "הלבנטיני",
+   "field": "phone",
+   "osm": "+972 36324444",
+   "site": "0778048601"
   },
   {
    "id": "n11534655277",
@@ -240,12 +226,6 @@
  ],
  "rejected_sites": [
   {
-   "id": "n705556743",
-   "n": "מציצים",
-   "w": "https://bayz.co.il/en/mezizim-beach",
-   "why": "branch/name not confirmed"
-  },
-  {
    "id": "n715207462",
    "n": "ארקפה",
    "w": "https://arcaffe.co.il/branches/harel/",
@@ -267,12 +247,6 @@
    "id": "n1419068446",
    "n": "ארקפה",
    "w": "https://www.arcaffe.co.il/",
-   "why": "branch/name not confirmed"
-  },
-  {
-   "id": "n2079180765",
-   "n": "אניטה",
-   "w": "https://www.anita-gelato.com/our-locations/tel-aviv-neve-tsedek-40-shabazi-st/",
    "why": "branch/name not confirmed"
   },
   {
@@ -492,15 +466,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 92,
- "phone_multi_skipped": 20,
+ "phone_confirmed": 89,
+ "phone_multi_skipped": 24,
  "coverage_after": {
   "address": "1319 (100%)",
   "hours": "418 (32%)",
   "phone": "441 (33%)",
   "website": "554 (42%)",
-  "cuisine": "978 (74%)",
-  "extra_names": "764 (58%)"
+  "cuisine": "984 (75%)",
+  "extra_names": "765 (58%)"
  },
- "conflicts_n": 32
+ "conflicts_n": 30
 }
