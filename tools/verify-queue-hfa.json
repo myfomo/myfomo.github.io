@@ -926,6 +926,166 @@
 "n4966260746": {
 "r": "conflict",
 "note": "Not on the d.co.il Haifa branch list (Moriah 13, HaNasi Blvd, Ben Gurion 53). A 'Tnuat/Tvuot HaAretz 9' branch is listed under Tel Aviv, so the catalog city or location may be wrong (my judgement). The official pizzahut.co.il was blocked."
+},
+"n4513287189": {
+"r": "none",
+"note": "Pizza Hut Haifa, Ha-Knesiya alley (German Colony). Official site pizzahut.co.il fetch refused (permission timeout), so no official branch list. Only undated directories (enjoyingisrael 'Haifa-Hamoshava Hgermanit', d.co.il). No closure news found."
+},
+"n1113039312": {
+"r": "none",
+"note": "'Port' at Hof HaCarmel, address '6511'. Searches turned up only unrelated 'Port' places (Tel Aviv Port Tower, Port Cafe). No own site, Tabit/Ontopo page or news for this place. No closure news."
+},
+"w491745261": {
+"r": "none",
+"note": "'Potato' fast food in Daliyat al-Karmel. Searches in Hebrew and English found no own site, booking page or news. No closure news."
+},
+"n3691499138": {
+"r": "none",
+"note": "'Pure' cafe on Al-Karmel street, Daliyat al-Karmel. Only directory listings (b144, d.co.il) came up, none naming it. No own site, Tabit/Ontopo or news. No closure news."
+},
+"n9221799931": {
+"r": "none",
+"note": "Ruben (kosher deli chain), HaHistadrut Blvd, Haifa. No official site or branch list found. Wolt brand page and easy.co.il are not accepted sources. totallyjewishtravel is undated and gives HaNassi 131, which doesn't match. No Tabit/Ontopo page and no closure news."
+},
+"n14152962024": {
+"r": "none",
+"note": "'Remeen' cafe on Nahal Rakefet road, Daliyat al-Karmel. Nothing found under the name. Kipa 2026-05 covers a different new cafe (Shefik, Dalia St). No closure news."
+},
+"n5018171924": {
+"r": "conflict",
+"note": "Rola (Moin Halabi and Rola Dib) operates, but sources disagree on the address. Time Out 2016 listed 11 Moriya Blvd. Time Out Haifa guide 2026-01 lists Rola at HaNamal 33, Haifa (Lower City/port street), and Maariv 2026-08 reviews it in the Lower City. So it probably moved and no longer matches the Moriya catalog address. New address per Time Out: HaNamal 33, Haifa. Sources: https://timeout.co.il/%d7%9e%d7%a1%d7%a2%d7%93%d7%95%d7%aa-%d7%95%d7%91%d7%a8%d7%99%d7%9d-%d7%91%d7%97%d7%99%d7%a4%d7%94/ , https://www.maariv.co.il/food/foodnews/article-1355738"
+},
+"n6225743085": {
+"r": "none",
+"note": "Falafel & Sabich Eyal, Moriya Blvd 58, Haifa. Time Out listing dated 2023-03 matches the address (Su-Th 10-20, Fr 10-16, phone 052-5312333), but it isn't recent (before 2025). No 2025-2026 source, no Tabit/Ontopo page and no closure news. https://www.timeout.com/israel/restaurants/falafel-vsabich-eyal"
+},
+"n2493229067": {
+"r": "none",
+"note": "Searches for Sachuka / סחוקה at Natanzon 19 Haifa returned only planning/real-estate pages; no site, no Tabit/Ontopo, no news, no closure news"
+},
+"n4784939779": {
+"r": "none",
+"note": "Searches for Sambosic in Daliyat al-Karmel found only unrelated 'sambusak' directory pages; no site, booking page or news"
+},
+"n2089885936": {
+"r": "none",
+"note": "Only undated directories/aggregators (d.co.il, wanderlog, evendo, airbnb); no own site, no Tabit/Ontopo, not in Time Out Haifa 2026-01 list; no closure news found"
+},
+"n1990934805": {
+"r": "none",
+"note": "Searches for Segal Kiosk on HaRav Maimon Haifa returned only generic b144/d.co.il directory pages; nothing reliable"
+},
+"n6711005385": {
+"r": "none",
+"note": "Generic unnamed 'Shawarma' on Yafo st Haifa; no identifiable name to search, no reliable source found"
+},
+"n1387668381": {
+"r": "none",
+"note": "Only undated aggregators (enjoyingisrael, airbnb); no own site, no Tabit/Ontopo, not in Time Out Haifa 2026-01 list; no closure news found"
+},
+"n1490190744": {
+"r": "none",
+"note": "Only undated aggregators (spinach.guide, instahop, menuweb); no own site, no Tabit/Ontopo, no dated news; no closure news found"
+},
+"n12653328498": {
+"r": "none",
+"note": "Searches for Stop & Eat Daliyat al-Karmel returned only generic b144 directories and other venues; nothing reliable"
+},
+"n3691498195": {
+"r": "none",
+"note": "Searches (name+city, Hebrew 'סוויט', directories b144) found no café named Sweet in Daliyat al-Karmel; kipa 2026-05 article on Dalia St is a different café (Shafik knafeh house). No Tabit/Ontopo, no closure news."
+},
+"n1396604466": {
+"r": "none",
+"note": "No source found for 'Taboon in the Garden' on Sderot HaNasi (likely Gan HaEm kiosk); English/Hebrew searches only returned unrelated pages. No Tabit/Ontopo, no closure news."
+},
+"n1870369906": {
+"r": "conflict",
+"note": "Taipei Chinese restaurant: Time Out 2015 placed it in the German Colony (Ben Gurion Blvd). Undated d.co.il listing gives a new address, Yafe Nof 108 corner Sha'ar HaLevanon, Haifa, tel 04-8383800, so the catalog address doesn't match. Own zapweb site fetch was blocked (permission not granted). No recent dated source, no closure news, no Tabit/Ontopo page."
+},
+"n1387736538": {
+"r": "none",
+"note": "Probably Pundak HaDov (The Bear Inn), Sderot HaNasi 135 near Wedgwood; matched by judgement, not by a source. Only older sources: Mako 2013, Time Out 2016, Time Out 2020 (tel 053-9441064). No 2025-2026 source, no Tabit/Ontopo, no closure news."
+},
+"n12620624619": {
+"r": "none",
+"note": "No source found for 'The Burger Spot' in Daliyat al-Karmel (English and Hebrew searches); only Burgerim Daliyat appears, which is a different place. No Tabit/Ontopo, no closure news."
+},
+"n12618986261": {
+"r": "none",
+"note": "No source found for café 'The X' in Wadi al-Fash, Daliyat al-Karmel; not in the b144 cafés list. No Tabit/Ontopo, no closure news."
+},
+"n10266142942": {
+"r": "none",
+"note": "The Wild gay bar Haifa: only a GayOut listing (fetch failed) and an undated Wanderlog entry. No dated news, own site, Tabit/Ontopo or closure news found."
+},
+"n8572764318": {
+"r": "none",
+"note": "Umm Kulthum, Sderot Moriya: only an undated Wanderlog listing. Not in Time Out Haifa 2026-01 list or ynet 2025-12; no Tabit/Ontopo, no closure news."
+},
+"n3691499181": {
+"r": "none",
+"note": "Searches (Hebrew/English) for Vanilla ice cream in Daliyat al-Karmel found only unrelated Vaniglia chain branches elsewhere; no own site, no Tabit/Ontopo, no news or closure report."
+},
+"n5016276019": {
+"r": "none",
+"note": "No source names a Wine & Steak at Kehilat Saloniki, Haifa; no own site, no Tabit/Ontopo page, no closure news."
+},
+"n10589430541": {
+"r": "none",
+"note": "No source for a Wonderland cafe at Emile Habibi square (Wadi Nisnas); Time Out cafe guides don't list it; no booking page or closure news."
+},
+"n10053934343": {
+"r": "none",
+"note": "No source for Zetsy Burger at Sderot HaNassi 129 in Haifa, only aggregator listings (wanderlog) that don't count; catalog phone is incomplete; no booking page or closure news."
+},
+"n6266150495": {
+"r": "none",
+"note": "Could not find an official Cafe Cafe branch list naming a Haifa Carmel Beach promenade branch; only directories (d.co.il, enjoyingisrael lists other Haifa branches); no closure news."
+},
+"n14124770610": {
+"r": "none",
+"note": "Generic name 'untitled Cafe' on Menachem St; no identifiable source, site, booking page or closure news."
+},
+"n10257740361": {
+"r": "none",
+"note": "No source for villacoola bar on Margolin St, Haifa; exact-name search gave only unrelated rental results; no booking page or closure news."
+},
+"n13798454401": {
+"r": "none",
+"note": "Generic name 'Кафе' (Russian for cafe) on Nordau St, Haifa; no identifiable source found."
+},
+"n13798454001": {
+"r": "none",
+"note": "Searches (Russian/Hebrew) for a varenyky cafe on Balfour, Haifa found only undated aggregators; no own site, no Tabit/Ontopo, no news."
+},
+"n13798454002": {
+"r": "none",
+"note": "Searches for a 'Fiddler on the Roof' restaurant at Haim Weizmann 5, Haifa returned only material about the musical; nothing reliable."
+},
+"n13801008001": {
+"r": "none",
+"note": "Nothing found for a sandwich bar at Nordau 18, Haifa. Sandwich Bracha is at Shabtai Levi 12 (Time Out 2020-01), which doesn't match; Mako 2013 lists Sandwich Bar Carmel at HaNasi 128, which doesn't match either."
+},
+"n13801007801": {
+"r": "none",
+"note": "Probably a duplicate of n13801008001 (same Nordau 18 address). Nothing reliable found; Sandwich Bracha is at Shabtai Levi 12, which doesn't match."
+},
+"n5460213992": {
+"r": "none",
+"note": "Only wanderlog (undated aggregator) gives 'Outback PUB', HaMeyasdim 49, a Facebook page and phone 053-5549889. No dated source, no Tabit/Ontopo, no closure news."
+},
+"n3691498167": {
+"r": "none",
+"note": "Hebrew, English and Arabic searches for Abu Antar in Daliyat al-Karmel found nothing reliable."
+},
+"n4589773562": {
+"r": "none",
+"note": "d.co.il (undated directory) lists 'Avrada - Sushi Bar Burger', Derech HaYam 1, Atlit (Paz station at the Atlit entrance), phone 053-9417539. Fetching its rest.co.il page was refused because the permission request wasn't answered. No dated source found."
+},
+"n651512231": {
+"r": "none",
+"note": "Agadir chain; findmeglutenfree (undated) gives David Pinski 6, Haifa. Fetching the official site agadir.co.il (branch list) was refused because the permission request wasn't answered. Time Out 2025-12 mentions 11 more branches but doesn't name them. No Tabit/Ontopo page or closure news found."
 }
 }
 }
