@@ -2,8 +2,8 @@
  "addr_osm": 0,
  "addr_partial": 0,
  "site_checked": 68,
- "site_jsonld": 15,
- "site_match": 5,
+ "site_jsonld": 16,
+ "site_match": 6,
  "site_reject": 10,
  "phone_site": 0,
  "hours_site": 1,
@@ -104,11 +104,11 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 11,
+ "phone_confirmed": 13,
  "phone_multi_skipped": 4,
  "coverage_after": {
   "address": "444 (100%)",
-  "hours": "75 (17%)",
+  "hours": "76 (17%)",
   "phone": "70 (16%)",
   "website": "74 (17%)",
   "cuisine": "301 (68%)",
