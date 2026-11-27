@@ -1,10 +1,10 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 524,
- "site_jsonld": 60,
+ "site_checked": 527,
+ "site_jsonld": 62,
  "site_match": 18,
- "site_reject": 42,
+ "site_reject": 44,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -368,6 +368,12 @@
    "why": "branch/name not confirmed"
   },
   {
+   "id": "n11428462560",
+   "n": "פיצה האט רמת גן - מרום נווה",
+   "w": "https://www.pizzahut.co.il/branch/ramat-gan-marom-nave/",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n11459880747",
    "n": "Panetti",
    "w": "https://www.panetti.co.il/",
@@ -389,6 +395,12 @@
    "id": "n12593361312",
    "n": "Yan",
    "w": "https://www.yansushi.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n12946465879",
+   "n": "Wat Sang",
+   "w": "https://watsangsushi.co.il/",
    "why": "branch/name not confirmed"
   },
   {
@@ -506,15 +518,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 96,
+ "phone_confirmed": 101,
  "phone_multi_skipped": 25,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "418 (32%)",
-  "phone": "446 (34%)",
-  "website": "559 (42%)",
+  "hours": "421 (32%)",
+  "phone": "451 (34%)",
+  "website": "563 (43%)",
   "cuisine": "996 (76%)",
-  "extra_names": "766 (58%)"
+  "extra_names": "769 (58%)"
  },
  "conflicts_n": 34
 }
