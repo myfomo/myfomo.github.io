@@ -1,27 +1,34 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 22,
- "site_jsonld": 0,
- "site_match": 0,
- "site_reject": 0,
+ "site_checked": 25,
+ "site_jsonld": 2,
+ "site_match": 1,
+ "site_reject": 1,
  "phone_site": 0,
  "hours_site": 0,
- "addr_site": 0,
+ "addr_site": 1,
  "cuisine_site": 0,
- "names_site": 0,
+ "names_site": 1,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [],
- "rejected_sites": [],
+ "rejected_sites": [
+  {
+   "id": "n4956762727",
+   "n": "פיצה האט",
+   "w": "https://www.pizzahut.co.il/branch/avisror-beer-sheva/",
+   "why": "branch/name not confirmed"
+  }
+ ],
  "phone_confirmed": 1,
  "coverage_after": {
   "address": "158 (100%)",
-  "hours": "27 (17%)",
-  "phone": "24 (15%)",
-  "website": "25 (16%)",
-  "cuisine": "103 (65%)",
-  "extra_names": "95 (60%)"
+  "hours": "28 (18%)",
+  "phone": "27 (17%)",
+  "website": "28 (18%)",
+  "cuisine": "104 (66%)",
+  "extra_names": "96 (61%)"
  },
  "conflicts_n": 0
 }
