@@ -2029,6 +2029,166 @@
   "n13884849098": {
    "r": "none",
    "note": "Searches by name and by the catalog phone numbers found nothing reliable for Pizza Kikar HaShabbat at Mea Shearim 2: no own site, booking page, guide or closure news."
+  },
+  "n1673719876": {
+   "r": "none",
+   "note": "Searches (Hebrew/English, kosher, closure) found no reliable source for May Pizza on HaPortzim; no Tabit/Ontopo page; no own site found"
+  },
+  "n12830567215": {
+   "r": "none",
+   "note": "No reliable source for Pizza Nani at Michael Halperin Sq; no Tabit/Ontopo; no closure news found"
+  },
+  "n6754297391": {
+   "r": "none",
+   "note": "Chain (Pizza Agvania); official branch list needed but agvania.co.il fetch not permitted; no source naming a Derech Hevron Jerusalem branch; no closure news found"
+  },
+  "n2193094673": {
+   "r": "none",
+   "note": "itraveljerusalem.com lists Pizza Cardo (kosher, Jewish Quarter, 'El Wad Hagai St') but it is undated and the address differs from catalog HaMalach; no recent source, no Tabit/Ontopo, no closure news"
+  },
+  "n14162097469": {
+   "r": "none",
+   "note": "Chain (Pizza Shemesh); pizzashemesh.co.il fetch not permitted; no source naming an Agripas Jerusalem branch; no closure news found"
+  },
+  "n4194777689": {
+   "r": "none",
+   "note": "No reliable source for Falafel Strauss (searches by name and phone 050-2777404); no closure news found"
+  },
+  "n10944046005": {
+   "r": "none",
+   "note": "Generic name 'Falafel' at Bar-Oshar Sq; no identifiable reliable source"
+  },
+  "n12958839691": {
+   "r": "ok",
+   "note": "Maariv 2025-05 review (25 NIS portion, Mahane Yehuda); Srugim 2026-05 market guide lists it at covered-market entrance from Agripas (25/12 NIS). A reader comment on Srugim claims it closed long ago (unverified, not a reliable source). No own site, no Tabit/Ontopo"
+  },
+  "n4194722889": {
+   "r": "none",
+   "note": "Searches (name+city, Yaavetz alley, closure) found no reliable source for a falafel stall named Jerusalem Falafel on Simtat Yaavetz; no site, Tabit/Ontopo or news hits."
+  },
+  "n12958862553": {
+   "r": "single",
+   "note": "Israel Hayom magazine review 2026-07-29 places Falafel Maoz on King George St, central Jerusalem, kosher, falafel in pita 25 NIS; no own site, Tabit/Ontopo or closure news found."
+  },
+  "n4189893193": {
+   "r": "none",
+   "note": "Only old JPost/Times of Israel guides and aggregator listings (HappyCow, Spinach) for Felafel Oved; no recent (2025-2026) reliable source, no closure news found."
+  },
+  "n8154640063": {
+   "r": "none",
+   "note": "No reliable source found for this Beit Shemesh falafel/shawarma shop (only d.co.il directory listing pages); no closure news."
+  },
+  "n13234930517": {
+   "r": "none",
+   "note": "Pastateria (pastatria.co.il) found only in Israel Hayom 2021-06 as a fresh-pasta factory/delivery in Givat Shaul, not Ruppin; no recent source for a Ruppin location."
+  },
+  "n5139730863": {
+   "r": "single",
+   "note": "Jewish Voice and Opinion 2026-02 article on 'Pepa Cafe' at 43 Aza Road, Rehavia (kosher, Shomer Shabbat, Spanish-Israeli dishes). Name match Pepe/Pepa is my judgement (Hebrew פפה). No Tabit/Ontopo or second source."
+  },
+  "n12958952654": {
+   "r": "ok",
+   "note": "Tabit reservation page for Chakra Jerusalem live; Ontopo page (King George 41, hours listed, but not bookable via Ontopo); Time Out Israel list 2025-11 (King George 41). Own site chakrarest.com fetch blocked. Hours differ between Tabit and Ontopo so not given."
+  },
+  "n14252461485": {
+   "r": "none",
+   "note": "Tziga ice cream, Beit Lehem Rd 31 (Baka): JPost 2023-07 guide only (not recent); own site tziga.co.il fetch blocked; no Tabit/Ontopo or closure news found."
+  },
+  "n561068509": {
+   "r": "closed",
+   "note": "Mako restaurant news (2016-01-28) names Cavalier (Roshfeld & Ben Arush) among Jerusalem businesses that closed; no own site or Tabit/Ontopo page found; no later sources showing it open. Exact closing month not given, so the article month is used."
+  },
+  "n893962293": {
+   "r": "none",
+   "note": "No own site and no Tabit/Ontopo page found. Time Out Israel listing (2018, Shlomzion Hamalka 6, kosher, hours given) and Makor Rishon 2018 are old. Latest is Time Out topic page with a Dec 2024 doughnut pop-up article (not 2025-26). No closure news. Probably operating, but no 2025-26 source."
+  },
+  "n561130763": {
+   "r": "none",
+   "note": "Only an old JPost 2006 article (Colony, Derech Beit Lechem 7, old train station). No own site, no Tabit/Ontopo, no recent sources, no closure article found."
+  },
+  "n6088564487": {
+   "r": "none",
+   "note": "Chain: the official cofix.co.il branch list was blocked (permission not granted). No reliable source naming a Salah a-Din branch; only directory listings (d.co.il)."
+  },
+  "n7123920185": {
+   "r": "none",
+   "note": "Chain: cofix.co.il was blocked. enjoyingisrael.com lists 'Cofix - The Jewish Quarter', 66 Habbad St (kosher, hours), but it is undated and not an official list. Only one undated source."
+  },
+  "n14077422316": {
+   "r": "none",
+   "note": "Chain: cofix.co.il was blocked. enjoyingisrael lists Yafo 17 and Yafo 97 branches (undated), and the catalog address has no number, so the branch can't be matched."
+  },
+  "n2125044805": {
+   "r": "none",
+   "note": "Searches in Hebrew and English found no own site, no Tabit/Ontopo page, no guide or news coverage, and no closure news."
+  },
+  "n2407904637": {
+   "r": "none",
+   "note": "Searches found no own site, no Tabit/Ontopo page, no guide or news coverage, and no closure news."
+  },
+  "n5139803375": {
+   "r": "none",
+   "note": "Only old sources: Kipa 2015 list (Herzog 69) and d.co.il directory listing (no date, not a reliable source). No Tabit/Ontopo page, no own site, no closure news found."
+  },
+  "n4732126618": {
+   "r": "single",
+   "note": "Mako 2026-08 interview (Basimta owner) refers to Cafe Bezalel as the nearby cafe open on Shabbat, implying it operates. Time Out page (8 Bezalel St) is from 2018 only. No Tabit/Ontopo page, no closure news."
+  },
+  "n5026682822": {
+   "r": "none",
+   "note": "Official site joe.co.il fetch was refused (permission) and easy.co.il failed, so the branch list could not be checked. The enjoyingisrael kosher listing (undated) shows a Cafe Joe Jerusalem branch at Keren Hayesod 38, not Jabotinsky. Could not confirm a Jabotinsky branch."
+  },
+  "n2417430526": {
+   "r": "single",
+   "note": "Mako 2025-03 article on the Derech Hagefen group mentions 'דרך הגפן בבית זית'. The d.co.il directory gives Derech HaGefen 1, Beit Zayit, which matches the catalog (I judged the branch match from that). The rest.co.il page d-hagefen.rest.co.il was blocked (permission). Makor Rishon 2022 is older. No Tabit/Ontopo page, no closure news."
+  },
+  "n1708046683": {
+   "r": "none",
+   "note": "English Wikipedia says the Cafe Hillel chain closed, but Wikipedia is not an allowed source. A Hebrew closure search only found a Tel Aviv branch closing. Nothing found about a Heleni HaMalka branch; Wikipedia says the former URL is now used by a separate 'Cafe Hileni'. Needs a recheck."
+  },
+  "n3546611753": {
+   "r": "none",
+   "note": "enjoyingisrael listing 'Coffee and Story in Motza' (undated; Fri 09-15, Sa 10:30-18:30; phone 050-8386830; Facebook cafetale) is the only hit, with no recent dated source. The shimur.org Yellin House page does not mention a cafe. No Tabit/Ontopo page, no closure news."
+  },
+  "n12869159701": {
+   "r": "none",
+   "note": "The name is too generic; searches found no source naming 'קפה ועוד' on Highway 1. A karamel.co.il page uses the phrase only as an article title."
+  },
+  "n12957411128": {
+   "r": "none",
+   "note": "Only an old source: a bagels.tv video from 2022-03 about Yolo Bakery on Kiach St (owner Sasha Gelfund). Menu aggregators are not reliable. No Tabit/Ontopo page, no recent news, no closure news."
+  },
+  "n13355052636": {
+   "r": "single",
+   "note": "Only source: Wolt public venue page live, address Yafo 119 Jerusalem (matches), lists Kosher Mehadrin (no certificate named). No own site, no Tabit/Ontopo page, no guide coverage, no closure news found. Wolt is not on the preferred source list, judged as single."
+  },
+  "n14099934655": {
+   "r": "none",
+   "note": "No own site, Tabit/Ontopo or news/guide mention of a Cafe Malka at HaNasi 13 found (searches returned unrelated Malha/Cafe Greg results)."
+  },
+  "n563992096": {
+   "r": "none",
+   "note": "Only HappyCow listing (Hayehudim 37, opposite Golden Menorah) which says 'Reported closed, Mar 2019' by a user report; not a reliable news/own source, so not marked closed. No own site, Tabit/Ontopo or recent operating source found. Likely closed. https://happycow.net/reviews/menora-cafe-jerusalem-6144"
+  },
+  "n4684907540": {
+   "r": "none",
+   "note": "No source found for an Elite Coffee/Cafe Elite at Kikar Yigal Arnon, Jerusalem; enjoyingisrael lists Elite Coffee kiosks only at other cities' train stations."
+  },
+  "w252684330": {
+   "r": "single",
+   "note": "Meshek Offaim (Offaim Farm cafe/deli). Time Out 2024-12-01 says Jerusalem branches in Beit HaKerem and Israel Museum still operating; Wolt venue page live now at Yaakov Saskin 17, Jerusalem (Beit HaKerem match is my judgement; listed as deli). Own site ofaimme.com fetch blocked. Mako 2021 covers Israel Museum branch (different branch). No 2025-26 guide/news found."
+  },
+  "n1405933024": {
+   "r": "none",
+   "note": "Cafe Cafe official branch search page (cafecafe.co.il) loads without branch entries. enjoyingisrael lists 'Cafe Cafe Jerusalem - Jaffa Gate - GO' (address only 'Jaffa Gate', undated) which may correspond to Yitzhak Kariv/Mamilla but cannot confirm branch. No closure news found."
+  },
+  "n560372942": {
+   "r": "single",
+   "note": "Wolt venue 'Caffit | HaMoshava' live at Emek Refaim 36 (matches), Jerusalem Rabbinate kosher, phone 02-563-5284, links to caffit.co.il/branches (fetch blocked). No Tabit/Ontopo page found; no closure news."
+  },
+  "w230594163": {
+   "r": "none",
+   "note": "No source found for a Caffit on Betzalel Bezek. Wolt brand page lists only Caffit HaMoshava (Emek Refaim 36) and Botanical Garden (Yehuda Burla 1, Givat Ram) in Jerusalem. Official branches page caffit.co.il/branches blocked."
   }
  }
 }
