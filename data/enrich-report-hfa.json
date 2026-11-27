@@ -21,13 +21,6 @@
    "site": "097996967"
   },
   {
-   "id": "n10053934339",
-   "n": "Wok Street",
-   "field": "phone",
-   "osm": "+972 53-433-7303",
-   "site": "048332211"
-  },
-  {
    "id": "n14163814998",
    "n": "מסעדת מצה",
    "field": "hours",
@@ -50,7 +43,7 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 8,
+ "phone_confirmed": 7,
  "phone_multi_skipped": 2,
  "coverage_after": {
   "address": "444 (100%)",
@@ -60,5 +53,5 @@
   "cuisine": "300 (68%)",
   "extra_names": "274 (62%)"
  },
- "conflicts_n": 4
+ "conflicts_n": 3
 }
