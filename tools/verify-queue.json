@@ -1168,17 +1168,29 @@
   },
   "n4501920591": {
    "r": "none",
-   "note": "no source"
+   "note": "no source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No source for 'Bistro 60'. d.co.il directory lists 'Kedem 60' (bistro tag) at Sha'arei Nikanor 25, Jaffa, corner Kedem 1, tel 03-6812765. It may be the same place, but that is a guess and the listing is undated. No Tabit/Ontopo page and no closure news found."
   },
   "n6339319685": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No Bocca Bocca found on Shefer St. Mako 2018 reviewed a kosher focaccia-sandwich 'Bocca Bocca' at HaCarmel 40 (Carmel Market), which is a different address and too old to count. No Tabit/Ontopo page and no closure news found."
   },
   "n347264416": {
    "r": "none",
-   "note": "only an aggregator says closed"
+   "note": "only an aggregator says closed",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Only undated listings confirm the address: 2eat.co.il (106 Hayarkon at Frishman, 03-5246837) and itraveltelaviv. No recent dated source, no Tabit/Ontopo page, no own site, and no dated closure article."
   },
   "n2078990448": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Fetching the own site bodega.co.il was refused (blocked). Time Out reviewed the place at Carlebach 14 on its opening in 2019-08 (kosher smash burgers, burgers from 45 NIS), which is too old to count. atly.com (undated) says it is kosher under the Tel Aviv rabbinate. No Tabit/Ontopo page, no 2025-2026 source, and no closure news found."
   },
   "n5604815955": {
    "r": "none",
@@ -1188,10 +1200,16 @@
    "d2": "2026-11-25"
   },
   "n4706508222": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "atly.com (undated) gives HaBarzel 19A and links the own site burgus.co.il/ramat-hahayal/, but fetching that site was refused (blocked). Otherwise only undated aggregators (wanderlog, enjoyingisrael). No Tabit/Ontopo page and no closure news found. An Israel Hayom 2024-06 closure article is about a different place (Berger in Ramat Aviv)."
   },
   "n2500253394": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Time Out 2022-05 reports a Pastel-group cafe opening at Beit Ariela (Shaul HaMelech). The article gives it no separate name and is too old to count. Fetching a second Time Out article (Rafi Cohen at Beit Ariela) was refused (blocked). No 2025-2026 source, no Tabit/Ontopo page, and no closure news found. Shaula (Time Out 2025-09) is a different cafe at Shaul HaMelech 39."
   },
   "n11681467287": {
    "r": "none",
@@ -1215,19 +1233,34 @@
    "d2": "2026-11-25"
   },
   "n904548242": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No restaurant named Come Il Faut found on Lipkin-Shahak, or anywhere in Tel Aviv. No Tabit/Ontopo page and no closure news found."
   },
   "n7035111585": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Time Out covered Cuckoo's Nest, the Jaffa bar and gallery inside an antique shop, in 2017, 2018 and 2021, and Mako in 2018. A Time Out English guide also lists it but is undated. No source gives the Noam 2 address, none is from 2025-2026, there is no Tabit/Ontopo page and no closure news."
   },
   "n9996976416": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: searches for Davi on Komfort St (EN/HE) only returned unrelated results (David & Yossef, etc.). No own site, Tabit/Ontopo page or news found."
   },
   "n4989545303": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only old sources found for Donkey Tex-Mex on Herzl (blog 2012, JPost older pieces). No own site, Tabit/Ontopo page or recent source. No closure news found. Time Out 2017 says Tapachula opened in the Herzl-Allenby complex in the former Rio Grande space; it does not mention Donkey."
   },
   "n2079003726": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out EN listing (2023-03) gives Ben Yehuda 188 and site dosabar.co.il, but the site fetch was blocked (permission). HappyCow listing says 'reported closed August 2024' (user-reported, not news, so not used for a closure). No recent 2025-2026 operating source and no closure news article found. Likely closed; needs a news or own-site confirmation."
   },
   "n10949049896": {
    "r": "ok",
@@ -1241,13 +1274,22 @@
    "d2": "2026-11-25"
   },
   "n1185083224": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: generic name with no street number. Time Out lists of Ethiopian restaurants (2021) and other searches show none on Allenby. Can't identify the place."
   },
   "n6979647864": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: HaDayagim (Fishermen's), Jaffa Port. Sources found are only old or undated: Mako 2015 (opening of a kosher sister branch in Hangar 1) and itraveltelaviv (undated, phone 03-6824115). Not in Time Out's fish restaurant list (2025-11). No Tabit/Ontopo page and no closure news found."
   },
   "n12949125680": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out review (2022-10/12) confirms Flatbush, a Caribbean/Afro-Latin place at Yehuda HaLevi 52. The catalog website is the Instagram handle flatbushtlv. No recent 2025-2026 source, no Tabit/Ontopo page and no closure news found."
   },
   "n4453724157": {
    "r": "none",
@@ -1257,30 +1299,51 @@
    "d2": "2026-11-25"
   },
   "n6953819390": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Fleishman Deli (kosher sandwiches), Herzl 12. Found Maariv 2022-03 (no address) and atly (undated directory). The Beecomm ordering page fetch was blocked (permission). No recent source, no Tabit/Ontopo page and no closure news found."
   },
   "n14179987673": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out 2022-09/10 describes Food Terminal Midtown (Zeh Sushi group food hall) at Menachem Begin 150. The catalog address '1118' can't be matched, so the branch match is my judgement. No recent 2025-2026 source, no own site, no Tabit/Ontopo page and no closure news found."
   },
   "n1673048858": {
    "r": "closed",
    "note": "moved from Raoul Wallenberg to HaBarzel 27 (Time Out 2026-11)"
   },
   "n11951484374": {
-   "r": "none"
+   "r": "none",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "Only Fresh de Market group news found: Maariv 2026-04-27, Israel Hayom 2026-04-27 and JPost 2026-05-05 report a new kosher Italian-Mediterranean branch at Azrieli Ayalon mall (Ramat Gan), described as the group's first Gush Dan location. No source names a Tel Aviv branch at Derech Sheshet HaYamim 301, so the branch does not match. No Tabit or Ontopo page found."
   },
   "n9996938457": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Frischman Beach restaurant at Shlomo Lahat Promenade 17: Time Out 2023-08 reported the opening and ynetnews 2023-08 also mentions it. No 2025-2026 source, own site or Tabit/Ontopo page found. No closure news found. Beach Craft and Melach Mayim opened nearby in 2026."
   },
   "n13410795001": {
-   "r": "none"
+   "r": "none",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "GDB Burger appears only at Ibn Gabirol 22 (Time Out 2020-02; JPost 2026-06 ranks it first at Ibn Gabirol 22). No source names a branch on Bnei Efraim, so the catalog address does not match the known branch."
   },
   "n2079035760": {
    "r": "none",
-   "note": "one 2025 source"
+   "note": "one 2025 source",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Time Out 2025-06-17 lists Garger HaZahav at Levinsky 30 (and Dizengoff 93); spottedbylocals 2025-04 at Levinsky 30. English Time Out 2017 gives phone 03-6777456 and a price level of 1. No closure news. No own site or Tabit/Ontopo page found."
   },
   "n11330876273": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Go Noodles is documented only at Ibn Gabirol 54 (Israel Hayom 2020) and at Azrieli, where it was renamed Go Asian Canteen per an undated aggregator. No source for a Derech Sheshet HaYamim branch, no own site, no Tabit/Ontopo page and no closure news."
   },
   "n5018171923": {
    "r": "none",
@@ -1290,33 +1353,60 @@
    "d2": "2026-11-25"
   },
   "n2454668203": {
-   "r": "none"
+   "r": "none",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "Time Out 2021-08-18 (Loulie) says Loulie took over the Gordon Beach spot that was Gordo for 13 years. Time Out 2025-09 refers to Gordo in the past tense. The catalog address is the generic promenade, so the branch match is judged. Kept as conflict: closure branch match by judgement."
   },
   "n10923443264": {
    "r": "none",
-   "note": "one 2025 source"
+   "note": "one 2025 source",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Time Out 2025-01-15: the original Gorkha Kitchen stays in Neve Shaanan while a new branch (Himalaya Kitchen) opens at Herzl 79, Florentin. The asianinisrael blog (post URL dated 2025-08) gives Rosh Pina 16, Neve Shaanan, Indian-Nepali, phone 053-8851222. That blog is the weaker source. Time Out does not give the street, so the Rosh Pina match is judged. No closure news and no Tabit/Ontopo page. Kept single: branch match judgement, weaker 2nd source."
   },
   "n12488502474": {
-   "r": "none"
+   "r": "none",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "Greco Beach on the promenade was still listed by Time Out in 2025-07 and 2025-09. Mako 2026-02-26 reports the Greco Tel Aviv promenade branch closed and a grill restaurant will replace it. Mako 2026-06-16 says Greco Beach closed unexpectedly in Feb 2026 and Melach Mayim and Beach Craft opened in its place. Earlier sources put Greco Beach at Shlomo Lahat 17, while Mako 2026-06 places it at the former Cafe London spot at Gordon Beach, so the exact spot is unclear. The closure of the promenade branch is clear. Kept as conflict: closure branch match by judgement."
   },
   "n1207157824": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Cafe Greg chain; only undated directories (enjoyingisrael 'Amot Investments' branch = Weizmann 2?, totallyjewishtravel 'Weizman'); no official branch list, no Tabit/Ontopo, no dated news or closure found"
   },
   "n9996971310": {
-   "r": "none"
+   "r": "none",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "Time Out 2025-05-11 (timeout.co.il/3-מומלצים-שדרות-ירושלים/) describes Guetta Tripolitan restaurant operating, renovated late 2024, at Sderot Yerushalayim 8, Jaffa (Mako 2015: Sderot Yerushalayim 6, kosher). Catalog address Ibn Khaldun not confirmed by any source; may be a corner/side entrance. No closure news."
   },
   "n13808720559": {
    "r": "none",
-   "note": "2025-26 press covers Studio Gursha at Salame 13, not this address"
+   "note": "2025-26 press covers Studio Gursha at Salame 13, not this address",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out 2025-11-20 Ethiopian list and Gursha topic page (2025-2026) only cover Studio Gursha at Salame 13; nothing on a Gursha at Sderot Har Zion, no closure news found"
   },
   "n904511192": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No source found for a restaurant named HaLigah on Lipkin-Shahak; no Tabit/Ontopo, no news"
   },
   "n7623739085": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Own site dallal.co.il blocked (permission). Spotted by Locals 2025-04-05 describes Dallal at Shabazi 10 operating; Time Out 2023-04 article gives site/phone; Time Out 2025 covers Dallal group expansion (Marina Dallal) without closure. No Tabit/Ontopo found."
   },
   "n2078989769": {
-   "r": "none"
+   "r": "none",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Own site humus-eli-yahoo.com/restaurants lists Jaffa flea market branch at Amiad 14 with hours and phone (site modified 2026-03); listed as Mehadrin but certifier not named"
   },
   "n12647744238": {
    "r": "none",
@@ -1326,17 +1416,29 @@
    "d2": "2026-11-25"
   },
   "n6050037671": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "rest.co.il site fetch blocked (permission). Time Out 'My city' 2025-04-04 recommends HaBlintzes HaHungari at Yirmiyahu 35 as operating; no closure news found"
   },
   "n4439622598": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "La Mer beach restaurant (Herbert Samuel 91 per spinach.guide aggregator, site lamerbeach.co.il) - own site fetch blocked; only undated aggregators; no Tabit/Ontopo, no dated news or closure found"
   },
   "n6932283385": {
    "r": "none",
-   "note": "one 2026 source"
+   "note": "one 2026 source",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Gilles Pudlowski food blog 2026-08 describes Isla Cafe at 27 Montefiore operating (tel +972 3 774 0222); Time Out 2020 listing old; only hostel booking sites otherwise; no Tabit/Ontopo; no closure news"
   },
   "n10142636076": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Generic name 'Israel' at Yigal Alon 51; searches found nothing identifying this venue; no Tabit/Ontopo, no closure news"
   },
   "n6317085485": {
    "r": "none",
@@ -1346,22 +1448,40 @@
    "d2": "2026-11-25"
   },
   "n2078996725": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Time Out TLV vegan list dated 2026-01-04 lists J17 at Yirmiyahu 17 in present tense; Time Out 2022-11 reported financial trouble/risk of closure but no closure article found; Facebook not checked"
   },
   "n4706508215": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Japanika chain, catalog branch HaBarzel (Ramat HaHayal); official site japanika.co.il fetch not permitted so branch list unverified; only undated aggregators (enjoyingisrael, easy) and Wolt (not allowed); no Tabit/Ontopo found"
   },
   "n6213272685": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No source found for a 'Jonas' restaurant at She'erit Yisrael 23, Jaffa; searches returned unrelated Jaffa restaurants; no Tabit/Ontopo or closure news"
   },
   "n11228802046": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Joseph 'N' Sons, Malchei Israel 10: Time Out 2023-04 and Jerusalem Post review 2024-07 show it operating, but no 2025-2026 source; own site josephnsons.co fetch not permitted; no Tabit/Ontopo; no closure news"
   },
   "w695823546": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Joy Garden: only an undated d.co.il directory entry (lists it in Park Leumi Ramat Gan, Italian cafe, review 2019) and wanderlog; no recent source; location vs catalog (Naomi Shemer path, Tel Aviv) unclear"
   },
   "n6513769256": {
-   "r": "none"
+   "r": "none",
+   "r2": "closed",
+   "d2": "2026-11-27",
+   "note2": "Joz ve Loz left Gvulot St (building slated for demolition) per Time Out 2021-06; reopened at HaTnufa 7, Tel Aviv per Time Out 2021-08"
   },
   "n9996989783": {
    "r": "none"
