@@ -1566,6 +1566,166 @@
 "n1994284028": {
 "r": "none",
 "note": "Only a La Vita Bella Caesarea on Wolt and undated aggregators (wanderlog, trip.com); location on road 6511 / Hof HaCarmel not confirmed as same place. No own site, Tabit/Ontopo or news; no closure news."
+},
+"n553502885": {
+"r": "none",
+"note": "Only undated d.co.il directory listing (La Pachina pizzeria, HaGalil 100, site lapachina.co.il); own site fetch refused/blocked; no Tabit/Ontopo page, no news or closure article found"
+},
+"n6177021185": {
+"r": "ok",
+"note": "Time Out Israel Haifa list 2026-01 (#21 'Lux & Crudo', HaNamal 13/15); Maariv 2026-02-22 says chef Alaa Mousa continues to run Lux and Crudo; JPost 2026-03-15 also refers to Lux as existing. No Tabit/Ontopo page found; no closure news"
+},
+"n4100370470": {
+"r": "none",
+"note": "Only old sources (Time Out 2017: HaNamal 26, site libira.co.il) and undated aggregators; own site fetch refused/blocked; no Tabit/Ontopo page; no closure news found"
+},
+"n3815028802": {
+"r": "conflict",
+"note": "Search index shows an official landwercafe.co.il branch URL slug 'ביג-יקנעם', but the fetched official branch list (~50 branches) does not include any Yokneam branch; no closure news found. Branch-not-listed is my judgement, not a closure source"
+},
+"n4784939801": {
+"r": "none",
+"note": "No web, Tabit/Ontopo, news or closure source found for this place in Daliyat al-Karmel"
+},
+"n4198887308": {
+"r": "none",
+"note": "No source found for a restaurant 'מול הים' on Sderot Pinchas Sapir, Kiryat Yam (results only about Mul Yam Eilat / real estate); no closure news"
+},
+"n14124770612": {
+"r": "none",
+"note": "No source found for 'מוסב חבשה' at HaSaraya, Haifa (searched Hebrew and English Habesha Ethiopian); no closure news"
+},
+"n6018891088": {
+"r": "none",
+"note": "No source found for 'מזלות וטעמים' in Zichron Yaakov (results only astrology articles); catalog address is just '67'"
+},
+"n2747114856": {
+"r": "none",
+"note": "Searched for the name plus Haifa, Hof HaShaket and Bat Galim. No own site, Tabit/Ontopo page, closure news or guide mention found. Maariv 2025-07 and mako 2026-04 Haifa beach/Bat Galim articles do not mention it."
+},
+"n3140191136": {
+"r": "none",
+"note": "Own site batshlomowinery.co.il is live and names Schwartzman Dairy in Bat Shlomo (Hof HaCarmel) with a restaurant, store and museum, hours 08:00-22:00 daily and phones. But the site's newest dated post is 2016-12, so it may be stale. The site gives no street; matching it to catalog address HaMeyasdim is my judgement. No Tabit/Ontopo page, no recent news and no closure news found. Downgraded to none: own site stale (newest post 2016)."
+},
+"n6259863935": {
+"r": "none",
+"note": "Only undated aggregators found (tiuli, easy, enjoyingisrael). No chain branch list, Tabit/Ontopo page or closure news for the Haifa (HaSportaim) branch. The easy.co.il fetch failed."
+},
+"n6301615185": {
+"r": "none",
+"note": "Hebrew and English searches for Malabeer/מלביר Haifa found nothing relevant: no site, booking page, news or closure."
+},
+"n2086161910": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page or news found for Cafe Mandarin Haifa. Wolt lists 'Azrieli Haifa' and 'Beach' (David Elazar 10) branches, but Wolt is not an allowed source and the Azrieli page fetch failed. b144 and d.co.il are directories only. No branch match at Tsfririm 1 confirmed."
+},
+"n3757202271": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page or news found for Cafe Mandarin at Castra. Wolt shows only Azrieli and Beach (David Elazar 10) branches, and Wolt is not an allowed source. No closure news."
+},
+"n3879795061": {
+"r": "none",
+"note": "No own site, Tabit/Ontopo page or news found for Cafe Mandarin on Sderot Chicago. A Wolt 'Beach' branch at David Elazar 10, Haifa exists, but Wolt is not an allowed source and the branch match is unconfirmed. No closure news."
+},
+"n5460213991": {
+"r": "none",
+"note": "Only an old nrg/Makor Rishon review (fetch failed) and undated directories (d.co.il lists HaMeyasdim 41, tel 04-6290249, plus a 'Cucina' Facebook link). No own site, Tabit/Ontopo page, recent guide or closure news found."
+},
+"n10016172743": {
+"r": "none",
+"note": "No source found for 'מסעדג' on Bat Galim promenade; no site, no Tabit/Ontopo page, no closure news."
+},
+"n1425393999": {
+"r": "none",
+"note": "Likely Shani confectionery/cafe, 53 Derech HaAtzmaut (Time Out Israel listing dated 2017-04, kosher listing undated); no recent (2025-2026) source, no site, no Tabit/Ontopo, no closure news."
+},
+"n4960942121": {
+"r": "none",
+"note": "Only undated Lonely Planet listing 'HaMis'ada Shel Ima' found; no recent source, own site, Tabit/Ontopo page or closure news."
+},
+"n3691498217": {
+"r": "none",
+"note": "Fodor's undated review 'Halabi Brothers', 14 Commercial Center St., Daliyat el Carmel; no recent dated source, site, Tabit/Ontopo page or closure news."
+},
+"n3691498172": {
+"r": "none",
+"note": "Nothing found for Al-Razi in Daliyat al-Carmel beyond directories; no Tabit/Ontopo, no closure news."
+},
+"n750855518": {
+"r": "none",
+"note": "Nothing reliable found for HaTabun in Daliyat al-Carmel (only directory hits); no closure news."
+},
+"n4838478365": {
+"r": "none",
+"note": "Nothing reliable found for 'מסעדת הכבש' in Daliyat al-Carmel; no closure news."
+},
+"n4449119986": {
+"r": "none",
+"note": "Nothing reliable found for The Druze Mansaf restaurant (Sheikh Amin Tarif St.); no site, Tabit/Ontopo, or closure news."
+},
+"n3691499163": {
+"r": "none",
+"note": "Searches (Hebrew/English, closure, Tabit/Ontopo) found no reliable source for Morad restaurant in Daliyat al-Carmel; only undated directories."
+},
+"n4589773533": {
+"r": "none",
+"note": "Searches by name and phone found only directories/aggregators; no news, own site, or booking page for Suliman/Alroee."
+},
+"n4960942221": {
+"r": "single",
+"note": "Maariv food article 2025-08-15 reviews it at Natanzon 4, Lower City, as still operating; no Tabit/Ontopo page or own site found; no closure news."
+},
+"n6939154686": {
+"r": "ok",
+"note": "Official McDonald's branch locator lists the Sha'ar Palmer branch at Derech HaAtzmaut 41, Haifa (not marked kosher). Catalog gives only the street, so the branch match is my judgement. Hours only partly shown, so omitted."
+},
+"n4809033959": {
+"r": "none",
+"note": "No reliable source found for Makom Me'urav on Sderot HaNasi, Haifa; no booking page or closure news."
+},
+"w1575941568": {
+"r": "none",
+"note": "Searches (Hebrew/English, closure, Tabit/Ontopo) found only an old JTA archive item and directories; no recent source on status of Maxim at HaTsedef 2."
+},
+"n13551428801": {
+"r": "single",
+"note": "Time Out Haifa list (2026-01-09) names Marva at Michal 1, Haifa, a kosher dairy chef's restaurant in the Carmel Boutique Hotel with a Mediterranean fish-based menu (kosher certificate not named, so k not set). No Tabit/Ontopo or own site found."
+},
+"n4969176163": {
+"r": "none",
+"note": "No reliable source found for Marcella Ice-Cream on Derech HaYam, Hof HaCarmel."
+},
+"n6357595542": {
+"r": "none",
+"note": "Searches for name+Haifa/HaGalil 100 returned only real-estate/plan results; no own site, no Tabit/Ontopo, no news or closure report found."
+},
+"n6354069285": {
+"r": "none",
+"note": "Only wanderlog (undated aggregator) lists 'nola socks pub'; not in ynet 2018 or Time Out 2020 Haifa pub guides, not on d.co.il bars page 2; no own site, Tabit/Ontopo or closure news found."
+},
+"n6021874435": {
+"r": "none",
+"note": "No Zichron Yaakov restaurant named Nachman found; JPost 2019 'Nachman Smokehouse BBQ Grill' review gives no location (other hits are a Jerusalem Nahman); no own site, Tabit/Ontopo or closure news."
+},
+"w1067697571": {
+"r": "single",
+"note": "Maariv 2026-07-04 food article praises pizzeria 'סאנפלאוור' on a small street in Bat Galim, Haifa (no street address); HaAliya HaShniya is a Bat Galim street, so branch match is judgement. It is a pizzeria, not a cafe. No own site/Tabit/Ontopo found."
+},
+"n6177167185": {
+"r": "conflict",
+"note": "Mako 2024-06-04 article on owner Kobi Shenan's new Kimiko (Hativ 4) refers to 'the excellent Roku restaurant, may it rest in peace' in Haifa's lower city, implying closure before 2024-06; no address given, so match to HaNamal st. (lower city) is judgement. No Tabit/Ontopo/own site found. Kept as conflict: closure implied only, branch match by judgement."
+},
+"n12864909109": {
+"r": "none",
+"note": "Searches for 'סטודיו שמואלי' Hof HaCarmel/Carmel returned only unrelated photo/art studios; no own site, Tabit/Ontopo or news found."
+},
+"n572537175": {
+"r": "conflict",
+"note": "d.co.il listing (dated ratings 2026-03..2026-08, no closure notice) gives address Kedoshei Yasi 1, Haifa, next to Paz station opposite the Congress Center, phone 053-4294059, site habokrim.rest.co.il, hours Su-We,Sa 12-22, Th 12-22:30, Fr 12-24. Address differs from catalog 'Moshe Flimann' (may be same corner, unverified). habokrim.rest.co.il fetch blocked (permission); tiuli page failed. No Tabit/Ontopo or closure news found; not in Time Out Haifa 2026-01 list."
+},
+"n5295451832": {
+"r": "conflict",
+"note": "Official Sinta Bar group site lists Sinta Bar Express at Einstein Commercial Center, Einstein 139, Haifa (phone 04-666-1829, Su-We 12:00-23:30, Th-Sa 12:00-00:00); no Moriah 131 address on the site (only Mambo Milano at Moriah 127). Wolt brand page lists 'Sinta Bar Express | Carmel'. Catalog address Moriah 131 does not match; likely moved/new location Einstein 139, Haifa."
 }
 }
 }
