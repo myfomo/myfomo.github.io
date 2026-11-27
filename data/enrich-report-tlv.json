@@ -1,15 +1,15 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 537,
- "site_jsonld": 66,
+ "site_checked": 540,
+ "site_jsonld": 67,
  "site_match": 19,
- "site_reject": 47,
+ "site_reject": 48,
  "phone_site": 0,
- "hours_site": 1,
+ "hours_site": 0,
  "addr_site": 0,
  "cuisine_site": 2,
- "names_site": 1,
+ "names_site": 0,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -366,6 +366,12 @@
    "why": "branch/name not confirmed"
   },
   {
+   "id": "n11085880105",
+   "n": "Keton",
+   "w": "https://keton.co.il",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n11428462560",
    "n": "פיצה האט רמת גן - מרום נווה",
    "w": "https://www.pizzahut.co.il/branch/ramat-gan-marom-nave/",
@@ -522,15 +528,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 107,
- "phone_multi_skipped": 27,
+ "phone_confirmed": 108,
+ "phone_multi_skipped": 28,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "426 (32%)",
-  "phone": "456 (35%)",
-  "website": "573 (43%)",
-  "cuisine": "999 (76%)",
-  "extra_names": "771 (58%)"
+  "hours": "429 (33%)",
+  "phone": "459 (35%)",
+  "website": "576 (44%)",
+  "cuisine": "1000 (76%)",
+  "extra_names": "772 (59%)"
  },
  "conflicts_n": 32
 }
