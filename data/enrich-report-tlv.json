@@ -1,15 +1,15 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 534,
- "site_jsonld": 64,
+ "site_checked": 537,
+ "site_jsonld": 66,
  "site_match": 19,
- "site_reject": 45,
+ "site_reject": 47,
  "phone_site": 0,
- "hours_site": 0,
+ "hours_site": 1,
  "addr_site": 0,
  "cuisine_site": 2,
- "names_site": 0,
+ "names_site": 1,
  "web_wd": 0,
  "names_wd": 0,
  "conflicts": [
@@ -26,6 +26,13 @@
    "field": "hours",
    "osm": "Mo-We 12:00-22:30; Th-Fr 12:00-23:00; Sa 12:00-22:00; Su off",
    "site": "Mo,Tu,We 12:00-22:30; Th,Fr 12:00-23:00; Sa 12:00-22:00"
+  },
+  {
+   "id": "n1950416514",
+   "n": "איטלקיה בתחנה",
+   "field": "phone",
+   "osm": "+972723945751",
+   "site": "039331922"
   },
   {
    "id": "n2079034257",
@@ -140,13 +147,6 @@
    "site": "Su,Mo,Tu,We,Th 12:00-20:00; Fr 11:00-15:00"
   },
   {
-   "id": "n6041389430",
-   "n": "גומבה",
-   "field": "phone",
-   "osm": "+972 3 973 9954‬",
-   "site": "037743330"
-  },
-  {
    "id": "n6041389431",
    "n": "שניצל קומפני",
    "field": "phone",
@@ -196,11 +196,11 @@
    "site": "036868657"
   },
   {
-   "id": "n9429290715",
-   "n": "המוסד לסנדוויצ'ים מיוחדים",
+   "id": "n7769735969",
+   "n": "Taizu",
    "field": "phone",
-   "osm": "+97235629896",
-   "site": "036038025"
+   "osm": "+972 035225005",
+   "site": "035225005"
   },
   {
    "id": "n10296516877",
@@ -231,13 +231,6 @@
    "site": "0537933664"
   },
   {
-   "id": "n12588113205",
-   "n": "קנסאי",
-   "field": "hours",
-   "osm": "Su-Th 11:00-23:00; Sa (sunset+01:00)-23:00",
-   "site": "Su,Mo,Tu,We,Th 11:00-23:00"
-  },
-  {
    "id": "n13532671475",
    "n": "Buti & Co",
    "field": "hours",
@@ -246,6 +239,12 @@
   }
  ],
  "rejected_sites": [
+  {
+   "id": "n705556743",
+   "n": "מציצים",
+   "w": "https://bayz.co.il/en/mezizim-beach",
+   "why": "branch/name not confirmed"
+  },
   {
    "id": "n715207462",
    "n": "ארקפה",
@@ -415,6 +414,12 @@
    "why": "branch/name not confirmed"
   },
   {
+   "id": "w97523440",
+   "n": "ארקפה",
+   "w": "https://arcaffe.co.il/branches/",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "c-ארקפה-יגאלאלון94",
    "n": "ארקפה",
    "w": "https://arcaffe.co.il/branches/alon-towers/",
@@ -517,15 +522,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 103,
+ "phone_confirmed": 107,
  "phone_multi_skipped": 27,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "425 (32%)",
-  "phone": "455 (34%)",
-  "website": "570 (43%)",
+  "hours": "426 (32%)",
+  "phone": "456 (35%)",
+  "website": "573 (43%)",
   "cuisine": "999 (76%)",
-  "extra_names": "770 (58%)"
+  "extra_names": "771 (58%)"
  },
- "conflicts_n": 33
+ "conflicts_n": 32
 }
