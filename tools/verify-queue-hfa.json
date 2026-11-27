@@ -449,7 +449,10 @@
 "done": {
 "n5807204207": {
 "r": "none",
-"note": "Own Facebook page (arribanesher, 'Arriba Mexican bar') exists in search but fetch refused (robots); not found on rest.co.il Nesher page 1, Tabit or Ontopo; no closure news found"
+"note": "Own Facebook page (arribanesher, 'Arriba Mexican bar') exists in search but fetch refused (robots); not found on rest.co.il Nesher page 1, Tabit or Ontopo; no closure news found",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "The own Facebook page facebook.com/arribanesher still refuses fetches (robots). Searches found no Nesher Arriba on news, Tabit or Ontopo; the only 'Bar Arriba' ad result is a London venue. No closure news."
 },
 "n6565475400": {
 "r": "ok",
@@ -461,7 +464,10 @@
 },
 "n5649177522": {
 "r": "none",
-"note": "Own landing page lp.vp4.me fetch refused; no Yokneam Patrick's found on rest.co.il northern/Haamakim pub lists or Ontopo (other Patrick's branches only); no closure news found"
+"note": "Own landing page lp.vp4.me fetch refused; no Yokneam Patrick's found on rest.co.il northern/Haamakim pub lists or Ontopo (other Patrick's branches only); no closure news found",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "The own landing page lp.vp4.me/f75z now loads. It describes an unnamed 'new bar in Yokneam - G complex' (phone 052-7327823) and never names Patrick's, so it does not confirm this place. The catalog address HaTamar 2 is the G Mall. No Patrick's Yokneam found in JPost, Israel Hayom or Time Out; no Tabit/Ontopo; no closure news."
 },
 "n13205560310": {
 "r": "ok",
@@ -505,7 +511,10 @@
 },
 "n1063805125": {
 "r": "conflict",
-"note": "Fodor's review of Danny and Analia's ArtBar (Ein Hod, homemade beer) carries editor's note 'This location is no longer in operation' - no closure date given. ein-hod.info page could not be fetched (robots unreachable). No news article found. Kept as conflict: only an undated guide note, no news/own-site closure source."
+"note": "Fodor's review of Danny and Analia's ArtBar (Ein Hod, homemade beer) carries editor's note 'This location is no longer in operation' - no closure date given. ein-hod.info page could not be fetched (robots unreachable). No news article found. Kept as conflict: only an undated guide note, no news/own-site closure source.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Own page ein-hod.info/rest/artbar/ now fetched: undated, present tense ('Home Made Danny's beer is here!!', open from 10am), no phone, no closure note. Fodor's says 'no longer in operation' (undated). No dated news either way; still conflict."
 },
 "n7198405511": {
 "r": "conflict",
@@ -513,7 +522,10 @@
 },
 "n5221052475": {
 "r": "none",
-"note": "Catalog branch page blackbarburger.co.il/portfolio/zichron-yaakov refused (permission not granted); homepage live but lists no branches (says 10 branches); no Tabit/Ontopo or news found for a Zichron Yaakov branch; no closure news found"
+"note": "Catalog branch page blackbarburger.co.il/portfolio/zichron-yaakov refused (permission not granted); homepage live but lists no branches (says 10 branches); no Tabit/Ontopo or news found for a Zichron Yaakov branch; no closure news found",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site live: blackbarburger.co.il accessibility table (accessibility-arrangements2) names a 'מול זכרון יעקב' (Zichron Yaakov Mall) branch among the 12 branches. No street address on that page; matching it to the catalog's 'old coastal road' rests on judgement. Catalog branch page, /branches/ and /war-hours/ returned client errors. No closure news found. (single: branch match by judgement)"
 },
 "n1387736522": {
 "r": "ok",
@@ -553,7 +565,10 @@
 },
 "n13828231472": {
 "r": "none",
-"note": "Own site kivsashora.com fetch refused. Searches for Black Sheep / כבשה שחורה Haifa found nothing reliable; Mako 2026-04 Bat Galim article does not mention it. No Tabit/Ontopo page and no closure news."
+"note": "Own site kivsashora.com fetch refused. Searches for Black Sheep / כבשה שחורה Haifa found nothing reliable; Mako 2026-04 Bat Galim article does not mention it. No Tabit/Ontopo page and no closure news.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site kivsashora.com now live: Black Sheep / כבשה שחורה bar (beers, cocktails, food, part of Donia Rosa group), Student House, Technion, Haifa; phone 055-433-9930 matches catalog; hours Su-Th 12-24. Catalog 'טיילת ראסל ברי' taken as the Technion campus promenade near Student House (judgement). Kashrut page exists but names no certifier; no prices listed. (single: branch match by judgement)"
 },
 "n1437554015": {
 "r": "none",
@@ -561,7 +576,10 @@
 },
 "n14163814998": {
 "r": "none",
-"note": "Own site mazarestaurant.net fetch refused; tiuli.com listing exists but failed to load. ynet 2012 gas station article does not mention it. No Tabit/Ontopo page and no closure news found."
+"note": "Own site mazarestaurant.net fetch refused; tiuli.com listing exists but failed to load. ynet 2012 gas station article does not mention it. No Tabit/Ontopo page and no closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site mazarestaurant.net is live and names Mazza (מצה) in the gas station complex on Derech Rupin, Haifa. It gives daily hours 08:30-21:30, phone 04-8247399, Mizrahi cuisine and delivery within Haifa. No menu prices and no kosher statement. No closure news found."
 },
 "n410766719": {
 "r": "ok",
@@ -597,7 +615,10 @@
 },
 "n2926991423": {
 "r": "none",
-"note": "Own site nili-rest.co.il fetch was blocked (permission not granted) and tiuli.com failed. Only an Oct-2018 Srugim review was found (HaMeyasdim 43, kosher dairy mehadrin, Zichron rabbinate). No recent source, no Tabit/Ontopo page, no closure news."
+"note": "Own site nili-rest.co.il fetch was blocked (permission not granted) and tiuli.com failed. Only an Oct-2018 Srugim review was found (HaMeyasdim 43, kosher dairy mehadrin, Zichron rabbinate). No recent source, no Tabit/Ontopo page, no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site nili-rest.co.il is live: Nili Bayit Yayin, HaMeyasdim 43 Zichron Yaakov, dairy restaurant 'kosher lemehadrin' (certificate issuer not shown in the text), phone 04-6292899, with hours. No closure news."
 },
 "n6239725890": {
 "r": "none",
@@ -605,7 +626,10 @@
 },
 "n1388111395": {
 "r": "none",
-"note": "rest.co.il fetch was blocked (permission not granted). Searches found nothing reliable on Pizza Fadal, Yigal Alon 29, Haifa, and no closure news."
+"note": "rest.co.il fetch was blocked (permission not granted). Searches found nothing reliable on Pizza Fadal, Yigal Alon 29, Haifa, and no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "The catalog's own link (rest.co.il RecordPage RestID=1058) failed to load (client error). Searches found only d.co.il directory listings, and no guide, news, Tabit/Ontopo page or closure news for Pizza Fadal at Yigal Alon 29, Haifa."
 },
 "n2074762882": {
 "r": "none",
@@ -629,7 +653,10 @@
 },
 "n14104818716": {
 "r": "none",
-"note": "Own site cafetov.org.il fetch not permitted (blocked); searches found no guide/news or closure source naming Cafe Tov at Bat Hen 7 Haifa."
+"note": "Own site cafetov.org.il fetch not permitted (blocked); searches found no guide/news or closure source naming Cafe Tov at Bat Hen 7 Haifa.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site cafetov.org.il is live and its branches page lists a Haifa branch at Bat Hen 64 (not 7) with phone 052-9619526, the same as the catalog phone. The branch match rests on the phone match; the house number differs (7 vs 64). The branches page gives Su-Th 8:00-16:00; Fr 8:00-13:00, but the page header shows other hours (8:30-18:00) and another phone (04-8877276), so oh is not set. It is a social café chain. (single: branch match by judgement)"
 },
 "n5273830221": {
 "r": "none",
@@ -717,7 +744,10 @@
 },
 "n1496264066": {
 "r": "single",
-"note": "JPost review 2025-08-24: Brooklyn 17 pizza bar at 29 Moriah Blvd, Carmel, Haifa. Pizzas about NIS 68-72, dairy with no kashrut certificate, open daily 17:00-00:30 except Fri (single source, so no oh). Own site brooklyn17.com was blocked (permission timed out). No Tabit/Ontopo page and no closure news found."
+"note": "JPost review 2025-08-24: Brooklyn 17 pizza bar at 29 Moriah Blvd, Carmel, Haifa. Pizzas about NIS 68-72, dairy with no kashrut certificate, open daily 17:00-00:30 except Fri (single source, so no oh). Own site brooklyn17.com was blocked (permission timed out). No Tabit/Ontopo page and no closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site brooklyn17.com is live: Moriah Blvd 29, Haifa, phone +972-79-696-1717, American-Italian, with Tabit reservations and Tabit ordering. JPost review 2025-08-24 gives pizzas at about NIS 68-72 and says dairy with no kashrut certificate. Hours are not on the own site and the JPost hours differ from the catalog, so oh is not set."
 },
 "n13625167777": {
 "r": "none",
@@ -781,11 +811,17 @@
 },
 "n1941821217": {
 "r": "conflict",
-"note": "Official dominos.co.il fetch refused (permission not answered), so the branch list was not checked. enjoyingisrael lists Domino's Haifa Neve Sha'anan at Shalom Aleichem 1 (Ziv Center), hours 12:15-02:45. That is not Trumpeldor and does not match the catalog's 24/7 hours. No branch found at Trumpeldor."
+"note": "Official dominos.co.il fetch refused (permission not answered), so the branch list was not checked. enjoyingisrael lists Domino's Haifa Neve Sha'anan at Shalom Aleichem 1 (Ziv Center), hours 12:15-02:45. That is not Trumpeldor and does not match the catalog's 24/7 hours. No branch found at Trumpeldor.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Official dominos.co.il loaded, but the Haifa-City page only says there are 4 Haifa branches and shows no addresses (the list did not render), so the Trumpeldor branch could not be confirmed. Undated enjoyingisrael listings give Haifa branches at Sderot Moria 108, Sderot HaNassi 119, Shalom Aleichem 1 (Neve Sha'anan) and Einstein, and none at Trumpeldor. No closure news found."
 },
 "n2112121039": {
 "r": "none",
-"note": "enjoyingisrael (an undated listing, (c)2018-2026) lists Domino's Pizza Carmel Haifa at Sderot Moria 108, hours 12:00-03:00, matching the catalog. The official dominos.co.il branch list could not be fetched (permission not answered). This rests on one aggregator, and the listing date is unknown. Downgraded to none: source undated/aggregator."
+"note": "enjoyingisrael (an undated listing, (c)2018-2026) lists Domino's Pizza Carmel Haifa at Sderot Moria 108, hours 12:00-03:00, matching the catalog. The official dominos.co.il branch list could not be fetched (permission not answered). This rests on one aggregator, and the listing date is unknown. Downgraded to none: source undated/aggregator.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Official dominos.co.il has a live branch page 'Domino's pizza Moria in Haifa' (/branches/Haifa-City/Moriah), open Saturdays too; the page text did not show the street address, so the match to Sderot Moriah 108 is by neighborhood (judgement). No closure news. (single: branch match by judgement)"
 },
 "w470332609": {
 "r": "none",
@@ -849,7 +885,10 @@
 },
 "n13351353085": {
 "r": "single",
-"note": "The ynetnews article of 2026-10-30 on the operator (Smart Service K&K) filing for court protection says the chain runs 12 restaurants, including three in Haifa, and reports no closures from the filing. It does not name the Palmer Gate branch. The Wolt public page shows 'KFC Downtown' at HaNamal 43, Haifa, near Sha'ar Palmer, so the branch match is my judgement. Israel Hayom 2025-03 lists the 8 branches that closed: Haifa downtown is not among them and is named as open. The official branch list (kfc.co.il) was blocked (permission not granted)."
+"note": "The ynetnews article of 2026-10-30 on the operator (Smart Service K&K) filing for court protection says the chain runs 12 restaurants, including three in Haifa, and reports no closures from the filing. It does not name the Palmer Gate branch. The Wolt public page shows 'KFC Downtown' at HaNamal 43, Haifa, near Sha'ar Palmer, so the branch match is my judgement. Israel Hayom 2025-03 lists the 8 branches that closed: Haifa downtown is not among them and is named as open. The official branch list (kfc.co.il) was blocked (permission not granted).",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Official site kfc.co.il branch list now opened: 'KFC העיר התחתית' at HaNamal 43, Haifa (one of 3 Haifa branches), with hours. Catalog 'שער פלמר' is adjacent to HaNamal St in downtown; match is judgement. ynetnews 2026-10 says chain still operates 3 Haifa branches. (single: branch match by judgement)"
 },
 "n14368680532": {
 "r": "none",
@@ -877,7 +916,10 @@
 },
 "n1387736525": {
 "r": "none",
-"note": "'Meat' (מיט) at Sderot HaNasi 129 appears only in the d.co.il directory and an undated enjoyingisrael listing (phone 04-8373222, site meat.rest.co.il). The rest.co.il and meat.rest.co.il fetches were refused. Not on the allowed source list. No closure news found. The Time Out 'Meat Kitchen (CLOSED)' is a different place in Tel Aviv."
+"note": "'Meat' (מיט) at Sderot HaNasi 129 appears only in the d.co.il directory and an undated enjoyingisrael listing (phone 04-8373222, site meat.rest.co.il). The rest.co.il and meat.rest.co.il fetches were refused. Not on the allowed source list. No closure news found. The Time Out 'Meat Kitchen (CLOSED)' is a different place in Tel Aviv.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Own site meat.rest.co.il was not fetched because its robots.txt could not be read. The only other sources are an undated enjoyingisrael listing (HaNassi 129, phone 04-8373222, 12:00-24:00) and the d.co.il directory, and neither counts as a recent source. No Tabit/Ontopo page and no closure news found."
 },
 "n4682539689": {
 "r": "conflict",
@@ -921,15 +963,24 @@
 },
 "n1387801851": {
 "r": "none",
-"note": "The official site pizzahut.co.il was blocked (permission not granted), so there is no official branch list. The d.co.il directory branch list includes 'Haifa: Moriah Blvd 13' (https://www.d.co.il/80174525/39460/), but that is an undated directory. No news on a closure."
+"note": "The official site pizzahut.co.il was blocked (permission not granted), so there is no official branch list. The d.co.il directory branch list includes 'Haifa: Moriah Blvd 13' (https://www.d.co.il/80174525/39460/), but that is an undated directory. No news on a closure.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official pizzahut.co.il branch list names 'Haifa - Moriah', Moriah 13, Haifa, with its own branch page. The page says kosher Badatz but does not name which Badatz, so k is not set. Its hours look garbled (closing before opening), so oh is not set. General phone 1-700-50-60-70."
 },
 "n4966260746": {
 "r": "conflict",
-"note": "Not on the d.co.il Haifa branch list (Moriah 13, HaNasi Blvd, Ben Gurion 53). A 'Tnuat/Tvuot HaAretz 9' branch is listed under Tel Aviv, so the catalog city or location may be wrong (my judgement). The official pizzahut.co.il was blocked."
+"note": "Not on the d.co.il Haifa branch list (Moriah 13, HaNasi Blvd, Ben Gurion 53). A 'Tnuat/Tvuot HaAretz 9' branch is listed under Tel Aviv, so the catalog city or location may be wrong (my judgement). The official pizzahut.co.il was blocked.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "The official pizzahut.co.il branch list has only 3 Haifa branches (Moriah 13, Technion, Ben Gurion 53). The 'Tnuvot/Tvuot HaAretz 9' branch is listed as Tel Aviv Towers/Givatayim, Tel Aviv, so the catalog city is likely wrong (my judgement). There is no Haifa branch on that street."
 },
 "n4513287189": {
 "r": "none",
-"note": "Pizza Hut Haifa, Ha-Knesiya alley (German Colony). Official site pizzahut.co.il fetch refused (permission timeout), so no official branch list. Only undated directories (enjoyingisrael 'Haifa-Hamoshava Hgermanit', d.co.il). No closure news found."
+"note": "Pizza Hut Haifa, Ha-Knesiya alley (German Colony). Official site pizzahut.co.il fetch refused (permission timeout), so no official branch list. Only undated directories (enjoyingisrael 'Haifa-Hamoshava Hgermanit', d.co.il). No closure news found.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Official pizzahut.co.il branch list has 'Haifa - German Colony' at Ben Gurion 53 (not kosher, open Shabbat, phone 1-700-50-60-70). The catalog has HaKnesiya alley, an alley in the German Colony, so the match is my judgement. Hours on the branch page are garbled (they read 00:00-11:00), so I left them out. (single: branch match by judgement)"
 },
 "n1113039312": {
 "r": "none",
@@ -1081,7 +1132,10 @@
 },
 "n4589773562": {
 "r": "none",
-"note": "d.co.il (undated directory) lists 'Avrada - Sushi Bar Burger', Derech HaYam 1, Atlit (Paz station at the Atlit entrance), phone 053-9417539. Fetching its rest.co.il page was refused because the permission request wasn't answered. No dated source found."
+"note": "d.co.il (undated directory) lists 'Avrada - Sushi Bar Burger', Derech HaYam 1, Atlit (Paz station at the Atlit entrance), phone 053-9417539. Fetching its rest.co.il page was refused because the permission request wasn't answered. No dated source found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Still only the undated d.co.il directory (Avrada sushi-bar-burger, Derech HaYam 1, Atlit, Paz station). Searches found no rest.co.il page, own site, Tabit/Ontopo page or dated news, and no closure news."
 },
 "n651512231": {
 "r": "none",
@@ -1153,15 +1207,24 @@
 },
 "n615949119": {
 "r": "none",
-"note": "No Aroma branch on a Megiddo street in Haifa found on the official site, in news or in directories (the official site has a 'Megido Junction' branch, which is a different place, not in Haifa). The branch list pages on aroma.co.il (find_store, the-cafes, sitemap) failed to load, so the branch list could not be checked."
+"note": "No Aroma branch on a Megiddo street in Haifa found on the official site, in news or in directories (the official site has a 'Megido Junction' branch, which is a different place, not in Haifa). The branch list pages on aroma.co.il (find_store, the-cafes, sitemap) failed to load, so the branch list could not be checked.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Aroma branch lists (find_store, sitemap, store_service) still return client errors. Searching aroma.co.il shows Haifa branches (Grand Kanyon, Azrieli, German Colony, Hof HaCarmel, Rambam, Haifa University, Lev HaMifratz) and a separate Megido Junction branch, which is not in Haifa. No Haifa branch on Megiddo street found."
 },
 "n2345870103": {
 "r": "none",
-"note": "Probably the Haifa University branch (the university is at Abba Hushi Blvd 199). Search shows an official page for it (aroma.co.il/en/store/haifa-university/), but it failed to load twice, so the address and operation could not be confirmed."
+"note": "Probably the Haifa University branch (the university is at Abba Hushi Blvd 199). Search shows an official page for it (aroma.co.il/en/store/haifa-university/), but it failed to load twice, so the address and operation could not be confirmed.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Official aroma.co.il/en/store/haifa-university/ exists in search but failed to load again (client_error), as did the-cafes list and en.aroma.co.il (robots unreachable). The University of Haifa 'Food on Campus' page lists 'Aroma Espresso Bar, University of Haifa', but it is undated (latest linked file 2025-08). No closure news."
 },
 "n2709761989": {
 "r": "none",
-"note": "Only an undated directory (d.co.il) lists an Aroma at Sderot HaHagana, Haifa. No official store page, booking page or news found. The aroma.co.il branch list failed to load."
+"note": "Only an undated directory (d.co.il) lists an Aroma at Sderot HaHagana, Haifa. No official store page, booking page or news found. The aroma.co.il branch list failed to load.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "The aroma.co.il branch list failed to load. The official Haifa store pages found in search (Azrieli Mall, Grand Mall, German Colony, Hof HaCarmel, Lev HaMifratz, Rambam, University) include none at Sderot HaHagana. Only d.co.il directory entries. No closure news found."
 },
 "n9221799932": {
 "r": "none",
@@ -1181,7 +1244,10 @@
 },
 "n4783333744": {
 "r": "none",
-"note": "The own site (arcaffe.co.il) fetch was refused because permission was not granted. No source found for an Arcaffe on HaRakia, Hof HaCarmel. No Tabit/Ontopo page and no closure news found."
+"note": "The own site (arcaffe.co.il) fetch was refused because permission was not granted. No source found for an Arcaffe on HaRakia, Hof HaCarmel. No Tabit/Ontopo page and no closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "The official arcaffe.co.il/branches list (51 branches) has no Hof HaCarmel/HaRakia branch. Its only Haifa-area branch is Savyonei Dania, Oscar Schindler 7, Haifa. I found no source for this place and no closure news. Missing from the list suggests it is gone, but no source says so."
 },
 "n4609369294": {
 "r": "none",
@@ -1261,7 +1327,10 @@
 },
 "n2912911050": {
 "r": "none",
-"note": "d.co.il directory lists Baronita at Hanadiv 27 with phone 052-6631881, site baronita.co.il and a review dated 2026-04 (a directory, so it does not count). The own site fetch was refused. JPost 2019 calls it kosher meat (too old). No Tabit/Ontopo or closure news found."
+"note": "d.co.il directory lists Baronita at Hanadiv 27 with phone 052-6631881, site baronita.co.il and a review dated 2026-04 (a directory, so it does not count). The own site fetch was refused. JPost 2019 calls it kosher meat (too old). No Tabit/Ontopo or closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site baronita.co.il is live: 'Orot HaBaron - Baronita', HaNadiv 27 Zichron Yaakov, Israeli menu, kosher with a 2026 kashrut certificate PDF (issuer not shown in the text). Phone 079-6996966. No closure news."
 },
 "n9221942584": {
 "r": "none",
@@ -1269,7 +1338,10 @@
 },
 "n1387594255": {
 "r": "none",
-"note": "Japanika chain; the official branch list at japanika.net was refused. Only undated aggregators (enjoyingisrael 'Carmel, Haifa') were found, so the Nasi Blvd 122 branch could not be confirmed."
+"note": "Japanika chain; the official branch list at japanika.net was refused. Only undated aggregators (enjoyingisrael 'Carmel, Haifa') were found, so the Nasi Blvd 122 branch could not be confirmed.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Official site japanika.net now opened, but its branch page loads branches by JS search only (no list in content); HaNasi 122 not confirmed. Haipo 2025-10 health-office closure order concerns a different branch (Hasolel 4, Big Krayot). Only undated aggregators otherwise."
 },
 "n4534088090": {
 "r": "none",
@@ -1557,11 +1629,17 @@
 },
 "n1387675858": {
 "r": "none",
-"note": "La Goffre waffle chain; official site lagoffre.co.il fetch blocked. Undated enjoyingisrael listing gives Haifa branch at Ben Gurion 25, not Sderot HaNassi - possible branch mismatch/move, unverified. No closure news found."
+"note": "La Goffre waffle chain; official site lagoffre.co.il fetch blocked. Undated enjoyingisrael listing gives Haifa branch at Ben Gurion 25, not Sderot HaNassi - possible branch mismatch/move, unverified. No closure news found.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Own site lagoffre.co.il is live (checked 2026-11). Its branch list has one Haifa branch, at Sderot Ben Gurion 37, Haifa (Su-Th 12:00-24:00; Fr 12:00-01:00; Sa 12:00-24:00). It has no branch on Sderot HaNassi, so the catalog branch is not on the official list (possibly moved or closed). No closure news found."
 },
 "n3162564023": {
 "r": "none",
-"note": "La Goffre waffle chain; official site lagoffre.co.il fetch blocked. Undated enjoyingisrael listing shows HaMeyasdim 56 Zichron Yaakov (matches street) but undated, so does not count. No dated source, no closure news."
+"note": "La Goffre waffle chain; official site lagoffre.co.il fetch blocked. Undated enjoyingisrael listing shows HaMeyasdim 56 Zichron Yaakov (matches street) but undated, so does not count. No dated source, no closure news.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Official lagoffre.co.il lists Zichron Yaakov under 'coming soon' (no address), which conflicts with the catalog listing an operating branch at HaMeyasdim. Only an undated enjoyingisrael listing gives HaMeyasdim 56. No dated news."
 },
 "n1994284028": {
 "r": "none",
@@ -1569,7 +1647,10 @@
 },
 "n553502885": {
 "r": "none",
-"note": "Only undated d.co.il directory listing (La Pachina pizzeria, HaGalil 100, site lapachina.co.il); own site fetch refused/blocked; no Tabit/Ontopo page, no news or closure article found"
+"note": "Only undated d.co.il directory listing (La Pachina pizzeria, HaGalil 100, site lapachina.co.il); own site fetch refused/blocked; no Tabit/Ontopo page, no news or closure article found",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site lapachina.co.il is live and names La Pachina at HaGalil 100, Neve Sha'anan, Haifa, phone 04-8226622, Su-Th 12-24, Sa from half an hour after Shabbat until 24, kosher Badatz Beit Yosef. Menu is pizza, pasta and pastries. No prices on the site. The Saturday hours are dynamic, so only the Su-Th hours are used."
 },
 "n6177021185": {
 "r": "ok",
@@ -1577,7 +1658,10 @@
 },
 "n4100370470": {
 "r": "none",
-"note": "Only old sources (Time Out 2017: HaNamal 26, site libira.co.il) and undated aggregators; own site fetch refused/blocked; no Tabit/Ontopo page; no closure news found"
+"note": "Only old sources (Time Out 2017: HaNamal 26, site libira.co.il) and undated aggregators; own site fetch refused/blocked; no Tabit/Ontopo page; no closure news found",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site libira.co.il live (updated 2025-10), names LiBira at HaNamal 26 Haifa, phone 04-374-0251, links to an active Tabit reservation page (title includes HaNamal 26) and Tabit ordering. Menu mains 80-136 NIS. No hours on site. No closure news."
 },
 "n3815028802": {
 "r": "conflict",
@@ -1721,7 +1805,10 @@
 },
 "n572537175": {
 "r": "conflict",
-"note": "d.co.il listing (dated ratings 2026-03..2026-08, no closure notice) gives address Kedoshei Yasi 1, Haifa, next to Paz station opposite the Congress Center, phone 053-4294059, site habokrim.rest.co.il, hours Su-We,Sa 12-22, Th 12-22:30, Fr 12-24. Address differs from catalog 'Moshe Flimann' (may be same corner, unverified). habokrim.rest.co.il fetch blocked (permission); tiuli page failed. No Tabit/Ontopo or closure news found; not in Time Out Haifa 2026-01 list."
+"note": "d.co.il listing (dated ratings 2026-03..2026-08, no closure notice) gives address Kedoshei Yasi 1, Haifa, next to Paz station opposite the Congress Center, phone 053-4294059, site habokrim.rest.co.il, hours Su-We,Sa 12-22, Th 12-22:30, Fr 12-24. Address differs from catalog 'Moshe Flimann' (may be same corner, unverified). habokrim.rest.co.il fetch blocked (permission); tiuli page failed. No Tabit/Ontopo or closure news found; not in Time Out Haifa 2026-01 list.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "habokrim.rest.co.il now redirects to the rest.co.il homepage (no business page) and tiuli fails to load. Earlier d.co.il data still gives Kedoshei Yasi 1 (next to the Paz station opposite the Congress Center), which differs from the catalog's Moshe Flimann. No Tabit/Ontopo, no 2025-26 news, no closure news."
 },
 "n5295451832": {
 "r": "conflict",
@@ -1753,7 +1840,10 @@
 },
 "n5263701321": {
 "r": "none",
-"note": "Time Out Hebrew street-food article 2020-01 confirms Shabtai Levi 12, phone 04-8524394, hours Su-Th 8-18, Fr 8-15 (https://timeout.co.il/%D7%90%D7%95%D7%9B%D7%9C-%D7%94%D7%A8%D7%97%D7%95%D7%91-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91-%D7%91%D7%97%D7%99%D7%A4%D7%94/) but no 2025-2026 source; hamichlol/kan pages could not be fetched; no closure news found."
+"note": "Time Out Hebrew street-food article 2020-01 confirms Shabtai Levi 12, phone 04-8524394, hours Su-Th 8-18, Fr 8-15 (https://timeout.co.il/%D7%90%D7%95%D7%9B%D7%9C-%D7%94%D7%A8%D7%97%D7%95%D7%91-%D7%94%D7%9B%D7%99-%D7%98%D7%95%D7%91-%D7%91%D7%97%D7%99%D7%A4%D7%94/) but no 2025-2026 source; hamichlol/kan pages could not be fetched; no closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "No new sources. Search found only older ynet sandwich articles and the Time Out 2020-01 piece; hamichlol and wanderlog are undated or failed to load; no own site, no Tabit/Ontopo, no closure news."
 },
 "n12653330701": {
 "r": "none",
@@ -1769,7 +1859,10 @@
 },
 "n4966260743": {
 "r": "none",
-"note": "Likely the Ad HaEtzem Express chain (drushim lists a Haifa branch). Official site adhaetzemex.co.il fetch blocked (permission not granted), so the branch list could not be checked; no Tabit/Ontopo or news naming the Histadrut Blvd branch"
+"note": "Likely the Ad HaEtzem Express chain (drushim lists a Haifa branch). Official site adhaetzemex.co.il fetch blocked (permission not granted), so the branch list could not be checked; no Tabit/Ontopo or news naming the Histadrut Blvd branch",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "The official adhaetzemex.co.il site lists only Shalom Ash 9, Rishon LeZion, plus catering city pages; Haifa is not among them. I found no Tabit/Ontopo page, news or other source for a Histadrut Blvd Haifa branch, and no closure news."
 },
 "n5613842523": {
 "r": "none",
@@ -1801,7 +1894,10 @@
 },
 "n4969176157": {
 "r": "none",
-"note": "Pizza Fadael is a multi-branch chain (Kiryat Ata, Nesher, Atlit, Haifa, Yokneam per undated listings); own site pizza-fadael.co.il fetch not permitted, so no branch list to confirm a Derech HaYam/Hof HaCarmel branch; no news."
+"note": "Pizza Fadael is a multi-branch chain (Kiryat Ata, Nesher, Atlit, Haifa, Yokneam per undated listings); own site pizza-fadael.co.il fetch not permitted, so no branch list to confirm a Derech HaYam/Hof HaCarmel branch; no news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Own site pizza-fadael.co.il could not be fetched (robots.txt unreachable). Only undated enjoyingisrael/d.co.il listings mention an Atlit branch. I found no Tabit/Ontopo page, dated news or closure news."
 },
 "n894089972": {
 "r": "none",
@@ -1825,7 +1921,10 @@
 },
 "n5255495084": {
 "r": "none",
-"note": "Official pizzahut.co.il fetch refused (permission timeout), so no branch-list check possible; searches found only directories (d.co.il) and Wolt pages, no dated news or Tabit/Ontopo; no closure news found"
+"note": "Official pizzahut.co.il fetch refused (permission timeout), so no branch-list check possible; searches found only directories (d.co.il) and Wolt pages, no dated news or Tabit/Ontopo; no closure news found",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Official pizzahut.co.il branch lists now load (Haifa area: Moriah 13, Technion, Ben Gurion 53; Northern region: 28 branches). None is on the Russell Berry promenade or in Kiryat Haim/Bat Galim, which suggests the branch is gone, but no closure article found. Only directories and Wolt otherwise; no Tabit/Ontopo."
 },
 "w284563918": {
 "r": "none",
@@ -1833,7 +1932,10 @@
 },
 "n4449119982": {
 "r": "none",
-"note": "pizzahut.co.il fetch refused; search found only directories, no dated source for a Daliyat al-Karmel branch; no closure news"
+"note": "pizzahut.co.il fetch refused; search found only directories, no dated source for a Daliyat al-Karmel branch; no closure news",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Official pizzahut.co.il branch list names a Daliyat al-Carmel branch (the only one in town), but gives the address as Sheikh Amin Tarif, not Beirut St. Branch match is my judgement. Branch page: not kosher, open on Shabbat, phone 1-700-50-60-70, hours Su-Th 11-23, Fr closed, Sa 11-23:30. (single: branch match by judgement)"
 },
 "n4908229922": {
 "r": "none",
@@ -1897,7 +1999,10 @@
 },
 "n2882883291": {
 "r": "none",
-"note": "Own site falafelzichron.co.il found via spinach.guide (aggregator lists HaMeyasdim 60, Zichron Yaakov) but fetch was blocked by permission; otherwise only undated aggregators (trip.com, totallyjewishtravel, spinach). No dated news, no Tabit/Ontopo, no closure news."
+"note": "Own site falafelzichron.co.il found via spinach.guide (aggregator lists HaMeyasdim 60, Zichron Yaakov) but fetch was blocked by permission; otherwise only undated aggregators (trip.com, totallyjewishtravel, spinach). No dated news, no Tabit/Ontopo, no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site falafelzichron.co.il is live. Its contact page names the main branch at HaMeyasdim 60, Zichron Yaakov, phone 04-6292226, kosher lemehadrin, closed Saturday. No closure news."
 },
 "n2021940021": {
 "r": "none",
@@ -2201,7 +2306,10 @@
 },
 "n3310626203": {
 "r": "none",
-"note": "Chain site shnitzel20teamim.co.il (found via d.co.il) could not be fetched because the permission was not granted. Only the undated enjoyingisrael/easy listings name a Zichron Yaakov branch; no Tabit/Ontopo or closure news."
+"note": "Chain site shnitzel20teamim.co.il (found via d.co.il) could not be fetched because the permission was not granted. Only the undated enjoyingisrael/easy listings name a Zichron Yaakov branch; no Tabit/Ontopo or closure news.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Official chain site shnitzel20teamim.co.il lists a Zichron Yaakov branch at Hanadiv 15, phone 04-6333061; the catalog has only the street HaNadiv. Its map link reuses the Or Akiva coordinates. No hours on the site and no closure news. (single: branch match by judgement)"
 },
 "n3691499208": {
 "r": "ok",
