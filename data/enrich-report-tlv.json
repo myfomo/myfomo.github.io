@@ -2,9 +2,9 @@
  "addr_osm": 0,
  "addr_partial": 0,
  "site_checked": 524,
- "site_jsonld": 60,
+ "site_jsonld": 59,
  "site_match": 18,
- "site_reject": 42,
+ "site_reject": 41,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -33,13 +33,6 @@
    "field": "hours",
    "osm": "Mo-We 12:00-22:30; Th-Fr 12:00-23:00; Sa 12:00-22:00; Su off",
    "site": "Mo,Tu,We 12:00-22:30; Th,Fr 12:00-23:00; Sa 12:00-22:00"
-  },
-  {
-   "id": "n1950416514",
-   "n": "איטלקיה בתחנה",
-   "field": "phone",
-   "osm": "+972723945751",
-   "site": "039331922"
   },
   {
    "id": "n2079034257",
@@ -89,13 +82,6 @@
    "field": "phone",
    "osm": "+972 3-560-4570",
    "site": "039256605"
-  },
-  {
-   "id": "n2862959844",
-   "n": "פרלה",
-   "field": "phone",
-   "osm": "+972 3 682 3823",
-   "site": "0549902099"
   },
   {
    "id": "n4209265800",
@@ -210,13 +196,6 @@
    "site": "036868657"
   },
   {
-   "id": "n7769735969",
-   "n": "Taizu",
-   "field": "phone",
-   "osm": "+972 035225005",
-   "site": "035225005"
-  },
-  {
    "id": "n10296516877",
    "n": "The Urban Bakery",
    "field": "hours",
@@ -253,12 +232,6 @@
   }
  ],
  "rejected_sites": [
-  {
-   "id": "n705556743",
-   "n": "מציצים",
-   "w": "https://bayz.co.il/en/mezizim-beach",
-   "why": "branch/name not confirmed"
-  },
   {
    "id": "n715207462",
    "n": "ארקפה",
@@ -506,8 +479,8 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 99,
- "phone_multi_skipped": 25,
+ "phone_confirmed": 87,
+ "phone_multi_skipped": 24,
  "coverage_after": {
   "address": "1319 (100%)",
   "hours": "418 (32%)",
@@ -516,5 +489,5 @@
   "cuisine": "996 (76%)",
   "extra_names": "766 (58%)"
  },
- "conflicts_n": 34
+ "conflicts_n": 31
 }
