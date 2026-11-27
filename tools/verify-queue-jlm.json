@@ -2349,6 +2349,34 @@
   "n4449974675": {
    "r": "none",
    "note": "itraveljerusalem.com (official Jerusalem tourism site) lists Abu Gosh Restaurant at Kvish HaShalom 65, phone 02-533-2019, non-kosher, open on Saturdays; the page is undated but shows it as open. Fodor's gives the same address and phone, also undated. Not the Lebanese Restaurant at HaShalom 88. No own site, Tabit or Ontopo page, or closure news found. Judged a match because the street (HaShalom) matches. Downgraded to none: sources undated."
+  },
+  "n5899838056": {
+   "r": "none",
+   "note": "Arabic and generic searches found no reliable source for this place on Suleiman al-Farisi St; no own site, Tabit or Ontopo page, and no closure news."
+  },
+  "n4445534689": {
+   "r": "none",
+   "note": "Searches in English and Arabic found only aggregator listings (wanderlog), which aren't allowed sources; no guide, own site, Tabit or Ontopo page, and no closure news."
+  },
+  "n5593444755": {
+   "r": "none",
+   "note": "Reshta (Hama'ayan, Ein Rafa) matches the catalog address according to JPost 2021-05. asif.org (updated 2024-03) and gordoniahotels.com (2024-12) also list it, but no 2025-2026 source was found. Own site reshta.co.il fetch was refused (permission timeout). No Tabit/Ontopo page and no closure news. Phone 02-9948520 per asif/JPost. Worth retrying the own site."
+  },
+  "n9557096580": {
+   "r": "none",
+   "note": "Searches for 'سرايا على البال' found nothing relevant; no own site, Tabit or Ontopo page, and no closure news."
+  },
+  "n4104487735": {
+   "r": "none",
+   "note": "Several Old City restaurant guides (psimonmyway 2025, private-tours-in-israel, jordannews) don't mention Basti; no own site, Tabit or Ontopo page, and no closure news."
+  },
+  "n3784277379": {
+   "r": "ok",
+   "note": "Own site austrianhospice.com live: Cafe Triest page at Via Dolorosa 37 says open daily from 10:00, kitchen until 21:00, closes 22:00. The hospice closed temporarily in 2025-06 during the Israel-Iran war (Synodal Times 2025-06-19); the live site now shows normal hours. No Tabit/Ontopo page found."
+  },
+  "n6445185487": {
+   "r": "none",
+   "note": "Searches for 'ملحمة الشعب' in Ras Khamis found nothing relevant; it is not the Old City Kabab Al-Shaab. No own site, Tabit or Ontopo page, and no closure news."
   }
  }
 }
