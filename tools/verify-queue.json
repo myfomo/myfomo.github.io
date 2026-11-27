@@ -1841,11 +1841,17 @@
    "note": "Ramat HaHayal branch closed ~2024 (Time Out 2026-11)"
   },
   "n1950416337": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Two searches (Hebrew/English) found no source naming a VERSE restaurant at Yeshivat Volozhin St; no Tabit/Ontopo page found"
   },
   "n4088125065": {
    "r": "none",
-   "note": "Maariv 2025-07 closures list has Vong heading but no explicit text"
+   "note": "Maariv 2025-07 closures list has Vong heading but no explicit text",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Own site vong.co.il fetch refused (permission). Time Out EN listing (Rothschild 15, undated/2016) has no closed marker; Time Out topic page latest 2021; no Tabit/Ontopo page found; no explicit closure news found (prior Maariv 2025-07 hint unconfirmed)"
   },
   "n12946465879": {
    "r": "ok",
@@ -1855,10 +1861,16 @@
    "d2": "2026-11-25"
   },
   "n6808110446": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Chain; no official branch list reachable naming Abarbanel 74; Time Out 2024-09 mentions chain generally, not this branch; only directories (easy, d.co.il); no closure news found"
   },
   "n4832284231": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Only undated directory (asianinisrael: Sushi Yoko, Florentin 5, site sushiyoko.co.il) and Time Out Casbah listing (Florentin 3, 2017); no recent dated source, no Tabit/Ontopo, no closure news"
   },
   "n904521171": {
    "r": "ok",
@@ -1866,30 +1878,51 @@
   },
   "n4719058338": {
    "r": "none",
-   "note": "guide marks closed (2021); not news"
+   "note": "guide marks closed (2021); not news",
+   "r2": "closed",
+   "d2": "2026-11-27",
+   "note2": "Mako 2013 review confirms Zakaim at Simtat Beit HaShoeva 20; Time Out 2017-05 says sold to new owners; Time Out 2018-08 (Sultana article) states 'after Zakaim was closed'"
   },
   "n8638095777": {
    "r": "ok",
    "note": "chain branch page, Ashtori HaParhi 14"
   },
   "n8558425245": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Two searches found nothing about a Zucca restaurant on Nemirover St"
   },
   "n3734549064": {
    "r": "none",
-   "note": "Ibn Gabirol branch closed 2025-03, not this one"
+   "note": "Ibn Gabirol branch closed 2025-03, not this one",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Own site zuppa.co.il fetch refused (permission). Mako 2015-11 confirms Zuppa Urban Food opened at Ahad Ha'am 19; Time Out/ice 2025-03 closure concerns Ibn Gabirol 138 only; no current source for Ahad Ha'am branch"
   },
   "n905260200": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Name/address ('3029') unidentifiable; search returned nothing relevant"
   },
   "n905254097": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Searches for 'Hazan Grill' / 'חזן גריל' Tel Aviv found no reliable source; catalog address is only '3029'."
   },
   "n6312373687": {
-   "r": "none"
+   "r": "none",
+   "r2": "ok",
+   "d2": "2026-11-27",
+   "note2": "Ontopo booking page active for Beit Kandinof, HaTsorfim 14, Tel Aviv-Yafo (the catalog gives only the street, so the house number is my judgement). Own site beitkandinof.com fetch was blocked. Time Out 2018 and Maariv 2022 reviews. Hours on Ontopo were unclear, so they are not given."
   },
   "n6979817592": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No source found for a 'Bukhara' restaurant on Ben Zvi. Time Out's 2025-02 list of Bukharan restaurants names Samarkand (Ben Zvi 34) and Pinat HaShlosha (Ben Zvi 84) but not Bukhara."
   },
   "n886140345": {
    "r": "conflict",
@@ -1898,40 +1931,76 @@
    "d2": "2026-11"
   },
   "n2821415024": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Searches for Abushdid at Levontin 16 (opening, closure, Hebrew and English) found no reliable recent source. Facebook was not checked."
   },
   "n12115550101": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Own site avantgarde-tlv.co.il fetch was blocked (permission not granted). Searches found no news, guide or Tabit/Ontopo page for Avantgarde at Raoul Wallenberg 18."
   },
   "n3346678355": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No source found for Olive on Lilienblum. 'Olive Leaf' (Time Out, closed) is a different venue."
   },
   "n13525891904": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No reliable source found for the Hod VeHadar halls at Shlomo HaMelech 31, Tel Aviv."
   },
   "w356596248": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No reliable source found for the Heichalei Malchut halls on Shlomo HaMelech, Tel Aviv."
   },
   "w355302125": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Bnei Brak event hall; searches (Hebrew name, Viznitz/catering variants) found no own site, no Tabit/Ontopo, no dated news on operation or closure; only Hamichlol/JDN unrelated hits"
   },
   "n13265255752": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No own site, booking page or dated article found for this hall on HaHashmonaim; only b144 directory listings (undated, not counted)"
   },
   "w355297692": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "No own site, booking page or dated source found for Continental halls at HaRav Ben Yaakov 17; only b144 directories and a gokosher 'Concord Events Center' listing (undated)"
   },
   "n13265255753": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Only 'Concord Tower' real-estate news and an undated gokosher listing; no dated source on the hall operating or closing; bhol article fetch failed"
   },
   "n12301597873": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Only the b144 directory lists Royal Halls at Shlomo HaMelech 31, Bnei Brak (undated, not counted); no own site, booking page or dated news found"
   },
   "n12532001091": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Time Out TA roundup 2025-01 lists it at Florentin 34 (catalog says 36; judged the same place on the new Florentin pedestrian mall); Time Out opening article 2024-08 (Florentin 36, older than 2025); no Tabit/Ontopo or own site found; no closure news"
   },
   "n13619385031": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Hebrew and English searches for Orios at Shapira 16 found nothing; the Time Out Shapira guide (2019) doesn't mention it; no Tabit/Ontopo, own site or closure news"
   },
   "n11428462557": {
    "r": "ok",
@@ -1946,21 +2015,36 @@
    "note": "own site"
   },
   "n12320289064": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Only atly and d.co.il directory pages (undated, not counted); the Time Out 'Passage' articles are about other venues (Allenby); no own site, booking page or closure news"
   },
   "n5288387321": {
-   "r": "none"
+   "r": "none",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Time Out TLV 2025-08 (Melvin Morris piece) says Indira, Indian restaurant founded 1991 in the London Ministore building, is celebrating 34 years. Branch match is my judgement: London Ministore is on Shaul HaMelech. Maariv 2018 review gives 2018 mains at 85-95 NIS. No Tabit/Ontopo, no own site, no closure news found."
   },
   "n1400686572": {
-   "r": "none"
+   "r": "none",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Found El Gaucho chain listings (Haifa, Netanya, Rishon, Eilat, Ramat Gan), all undated directories; no TLV Jabotinsky branch confirmed. JPost review article-836789 fetch blocked by permission. No Tabit/Ontopo, no closure news."
   },
   "w103768017": {
    "r": "none",
-   "note": "Only undated directory listing (enjoyingisrael); no Tabit/Ontopo; no closure news"
+   "note": "Only undated directory listing (enjoyingisrael); no Tabit/Ontopo; no closure news",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: still only undated listings (enjoyingisrael, wanderlog). Time Out (2018) and Mako (2016) Jaffa pieces do not mention it. No Tabit/Ontopo, no closure news."
   },
   "n4706508225": {
    "r": "none",
-   "note": "No web results on HaBarzel; no Tabit/Ontopo; no closure news"
+   "note": "No web results on HaBarzel; no Tabit/Ontopo; no closure news",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no results for Aligator on HaBarzel (Ramat HaHayal); no Tabit/Ontopo; no closure news."
   },
   "n12140544814": {
    "r": "ok",
@@ -1968,7 +2052,10 @@
   },
   "n4625883208": {
    "r": "none",
-   "note": "Only Alfredo Petah Tikva found; nothing for Martin Gehl TLV"
+   "note": "Only Alfredo Petah Tikva found; nothing for Martin Gehl TLV",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: nothing for Alfredo on Martin Gehl (TLV or Petah Tikva/Kiryat Arye); no Tabit/Ontopo; no closure news."
   },
   "n7194886836": {
    "r": "none",
@@ -2010,19 +2097,31 @@
   },
   "n4891582060": {
    "r": "none",
-   "note": "No Erlich restaurant found on Ef'al (may be Petah Tikva); no Tabit/Ontopo"
+   "note": "No Erlich restaurant found on Ef'al (may be Petah Tikva); no Tabit/Ontopo",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no Erlich restaurant found at Ef'al 22 (Ef'al St is in Petah Tikva/Kiryat Arye); no Tabit/Ontopo; no closure news."
   },
   "n11690042615": {
    "r": "none",
-   "note": "Duplicate of Erlich on Ef'al; no reliable source"
+   "note": "Duplicate of Erlich on Ef'al; no reliable source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: looks like a duplicate of Erlich on Ef'al (n4891582060); no reliable source found."
   },
   "w355302210": {
    "r": "none",
-   "note": "Armonot Chen is an event hall in Bnei Brak, not a TLV restaurant; likely misclassified"
+   "note": "Armonot Chen is an event hall in Bnei Brak, not a TLV restaurant; likely misclassified",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for Armonot Chen as a restaurant on Shlomo HaMelech; it looks like an event hall (possibly Bnei Brak), so it may be misclassified. No Tabit/Ontopo, no closure news."
   },
   "n1718632804": {
    "r": "none",
-   "note": "Only rest.co.il directory (Kedem 102 Jaffa); no Tabit/Ontopo; no closure news"
+   "note": "Only rest.co.il directory (Kedem 102 Jaffa); no Tabit/Ontopo; no closure news",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: still no source; searches for Babai Jaffa/Shtei HaAhayot/Kedem 102 found nothing; no Tabit/Ontopo; no closure news"
   },
   "n12140324986": {
    "r": "single",
@@ -2040,7 +2139,10 @@
   },
   "n8558425246": {
    "r": "none",
-   "note": "Wolt Bali food bar at Harugei Malchut 7, not Nemirover; branch unconfirmed"
+   "note": "Wolt Bali food bar at Harugei Malchut 7, not Nemirover; branch unconfirmed",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no non-Wolt source for Bali at Nemirover or Harugei Malchut; no Tabit/Ontopo; no closure news"
   },
   "n13482140275": {
    "r": "conflict",
@@ -2062,7 +2164,10 @@
   },
   "n9105286223": {
    "r": "none",
-   "note": "No source for Bis at Lehi 12"
+   "note": "No source for Bis at Lehi 12",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for Bis at Lehi 12 (Calcalist hit was B12 at Carlebach 12, unrelated); no closure news"
   },
   "n4253786262": {
    "r": "none",
@@ -2080,23 +2185,38 @@
   },
   "n1400687793": {
    "r": "none",
-   "note": "Black chain site down; no source for Kikar Schnitzer branch"
+   "note": "Black chain site down; no source for Kikar Schnitzer branch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Black site blackbarburger.co.il live again (JS-only, says 10 branches, no branch list visible); no Tabit/Ontopo; directory d.co.il shows only Azrieli TA, Rishon Planet, Beer Sheva branches; no news/closure found for Kikar Schnitzer branch"
   },
   "n1757673286": {
    "r": "none",
-   "note": "Black chain site down; no source for Derech Tel Aviv branch"
+   "note": "Black chain site down; no source for Derech Tel Aviv branch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Black site blackbarburger.co.il live again (JS-only, says 10 branches, no branch list visible); no Tabit/Ontopo; directory d.co.il shows only Azrieli TA, Rishon Planet, Beer Sheva branches; no news/closure found for Derech Tel Aviv branch"
   },
   "n5199503625": {
    "r": "none",
-   "note": "Black chain site down; Givat HaTahmoshet likely Jerusalem; unconfirmed"
+   "note": "Black chain site down; Givat HaTahmoshet likely Jerusalem; unconfirmed",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Black site blackbarburger.co.il live again (JS-only, says 10 branches, no branch list visible); no Tabit/Ontopo; directory d.co.il shows only Azrieli TA, Rishon Planet, Beer Sheva branches; no news/closure found for Givat HaTahmoshet branch (likely Jerusalem)"
   },
   "n5599780097": {
    "r": "none",
-   "note": "Black chain site down; HaYozma branch unconfirmed"
+   "note": "Black chain site down; HaYozma branch unconfirmed",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Black site blackbarburger.co.il live again (JS-only, says 10 branches, no branch list visible); no Tabit/Ontopo; directory d.co.il shows only Azrieli TA, Rishon Planet, Beer Sheva branches; no news/closure found for HaYozma branch"
   },
   "n11044131089": {
    "r": "none",
-   "note": "Black chain site down; Sheshet HaYamim 301 branch unconfirmed"
+   "note": "Black chain site down; Sheshet HaYamim 301 branch unconfirmed",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Black site blackbarburger.co.il live again (JS-only, says 10 branches, no branch list visible); no Tabit/Ontopo; directory d.co.il shows only Azrieli TA, Rishon Planet, Beer Sheva branches; no news/closure found for Sheshet HaYamim 301 branch"
   },
   "n904508667": {
    "r": "conflict",
