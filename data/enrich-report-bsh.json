@@ -1,7 +1,7 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 20,
+ "site_checked": 22,
  "site_jsonld": 0,
  "site_match": 0,
  "site_reject": 0,
@@ -18,8 +18,8 @@
  "coverage_after": {
   "address": "158 (100%)",
   "hours": "27 (17%)",
-  "phone": "23 (15%)",
-  "website": "23 (15%)",
+  "phone": "24 (15%)",
+  "website": "25 (16%)",
   "cuisine": "103 (65%)",
   "extra_names": "95 (60%)"
  },
