@@ -2845,11 +2845,17 @@
   },
   "n6150200748": {
    "r": "none",
-   "note": "Own site unreachable; only Time Out 2017 Dizengoff 166"
+   "note": "Own site unreachable; only Time Out 2017 Dizengoff 166",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Own site susu.co.il fetch refused (not retried). Time Out pieces about Dizengoff branch only from 2017-2019; Time Out 15 best burgers TA (2025-12) does not list Susu; no Tabit/Ontopo page and no closure news found."
   },
   "n6179097911": {
    "r": "none",
-   "note": "No source for Weizmann 4 branch"
+   "note": "No source for Weizmann 4 branch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Own site susu.co.il fetch refused. No source at all names a Weizmann 4 branch; Time Out 2017 mentions Dizengoff, Rothschild, Hashmonaim 96 and Gindi only. No Tabit/Ontopo, no closure news."
   },
   "n746735332": {
    "r": "none",
@@ -2868,39 +2874,66 @@
   },
   "n1688171048": {
    "r": "none",
-   "note": "Nothing found on Nirim"
+   "note": "Nothing found on Nirim",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Two searches (Hebrew/English) found nothing for a restaurant Sirim on Nirim St; no Tabit/Ontopo, no closure news."
   },
   "n2862959864": {
    "r": "none",
-   "note": "Nothing found on Frenkel"
+   "note": "Nothing found on Frenkel",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Nothing for Salvador on Frenkel/Florentin; Time Out Florentin best-of (2025-07) does not list it; Frenkel 7 Mexican spot in Time Out 2023 is Karnel, not Salvador."
   },
   "n1758265856": {
    "r": "none",
-   "note": "Only undated directories; own site failed"
+   "note": "Only undated directories; own site failed",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Only undated enjoyingisrael listing (Yehuda Halevi 47, chefsalad.co.il, 03-5600215); own site fetch refused; no news, Tabit/Ontopo or closure source found."
   },
   "n12122777470": {
    "r": "none",
-   "note": "Time Out 2023 opening only"
+   "note": "Time Out 2023 opening only",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Only Time Out 2023 opening article (Levinsky market). Not listed in Time Out Thai TA (2026-09) or Asian TA (2026-06) roundups; Time Out Levinsky market topic page has no closure item for it; no Tabit/Ontopo. Catalog website invalid."
   },
   "n2139853804": {
    "r": "none",
-   "note": "Likely office canteen; no source"
+   "note": "Likely office canteen; no source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Likely office canteen; no source names Stivim/Coin Commerce. Ahuzat Bayit 3 address is linked in Time Out (2016-2017) to a different restaurant 'Ahuzat Bayit 3'."
   },
   "n947438231": {
    "r": "none",
-   "note": "No source on Yirmiyahu"
+   "note": "No source on Yirmiyahu",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Time Out Yirmiyahu topic page has no Edna; only undated aggregators (wanderlog, vymaps) found; no Tabit/Ontopo, no closure news."
   },
   "n2577660826": {
    "r": "none",
-   "note": "Nothing found on Brali"
+   "note": "Nothing found on Brali",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hebrew/variant searches for 'עוף צלוחס' (Tel Aviv, Brali) found no site, no Tabit/Ontopo page, no news or closure report"
   },
   "n5125464364": {
    "r": "none",
-   "note": "Nothing found on HaTsanhanim"
+   "note": "Nothing found on HaTsanhanim",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hebrew and English ('Phanny Express') searches found no site, booking page, guide or closure news for HaTsanhanim"
   },
   "n10549077968": {
    "r": "none",
-   "note": "Pazza only in Givatayim/Herzliya; no HaMalben branch"
+   "note": "Pazza only in Givatayim/Herzliya; no HaMalben branch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out 2021-08 lists Pazza Pizza Bar only at Katzenelson 52 Givatayim and Sokolov 17 Herzliya; no Tabit/Ontopo page, no HaMalben Tel Aviv branch or closure news found"
   },
   "n5547241521": {
    "r": "ok",
@@ -2912,7 +2945,10 @@
   },
   "n347264382": {
    "r": "none",
-   "note": "Nothing found on Frishman"
+   "note": "Nothing found on Frishman",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Hebrew/English ('Forelin') searches found no site, booking page, guide or closure news on Frishman"
   },
   "n4377141791": {
    "r": "none",
@@ -2927,39 +2963,66 @@
   },
   "n12270410090": {
    "r": "none",
-   "note": "Nothing found on HaShikma"
+   "note": "Nothing found on HaShikma",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: searches for 'פינת הצלע' (HaShikma) found no site, booking page, guide or closure news"
   },
   "n4706508218": {
    "r": "none",
-   "note": "Chain active (i24 2026-09) but HaBarzel branch unconfirmed"
+   "note": "Chain active (i24 2026-09) but HaBarzel branch unconfirmed",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: own site pinat3.co.il and i24 article fetch refused (permission); directory lists Tel Aviv branch at Panorama Center, Derekh Ben-Zvi 84 (not HaBarzel); no Tabit/Ontopo page, no source naming a HaBarzel branch, no closure news"
   },
   "n1168974238": {
    "r": "none",
-   "note": "Official branch list has no Weissburg branch; no closure news"
+   "note": "Official branch list has no Weissburg branch; no closure news",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: official branch list pizzahut.co.il/branches.php fetch refused (permission); no news/guide naming a Weissburg branch; no closure news found"
   },
   "n10951337911": {
    "r": "none",
-   "note": "Official branch list has no Jabotinsky branch; no closure news"
+   "note": "Official branch list has no Jabotinsky branch; no closure news",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: official branch list pizzahut.co.il/branches.php fetch refused (permission); no news/guide naming a Jabotinsky Tel Aviv branch; no closure news found"
   },
   "n12270410086": {
    "r": "none",
-   "note": "Only Kadima branch found; nothing at HaMetzuda"
+   "note": "Only Kadima branch found; nothing at HaMetzuda",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no source for 'Pizza Petzetz' at HaMetzuda/Tel Aviv; ynet 'underground pizza' article is Zomer Pizza Club (unrelated); no Tabit/Ontopo, no closure news"
   },
   "n352905218": {
    "r": "none",
-   "note": "Only undated d.co.il Ben Yehuda 169"
+   "note": "Only undated d.co.il Ben Yehuda 169",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only undated d.co.il listing 'Pizza Pino' Ben Yehuda 169 (reviews 2013); no own site, no Tabit/Ontopo, no recent news or closure news"
   },
   "n1207157736": {
    "r": "none",
-   "note": "Own site failed; 2eat undated; Time Out 2015 only"
+   "note": "Own site failed; 2eat undated; Time Out 2015 only",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Own site fishmarket-tlv.co.il fetch not permitted (blocked). Time Out 'best kosher restaurants in Tel Aviv' 2025-11-04 (updated 2026-01) lists Fish Market, Shaul HaMelech 33, Tel Aviv Rabbinate kosher, described as veteran meat-kosher restaurant with fish name. No Tabit/Ontopo found; no closure news."
   },
   "n10549077967": {
    "r": "none",
-   "note": "Branches elsewhere (Ibn Gabirol 93); none on Katznelson"
+   "note": "Branches elsewhere (Ibn Gabirol 93); none on Katznelson",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Falafel 4 Ta'amim found at Ibn Gabirol 93 TA (spinach.guide), Yehuda HaLevi 49 (atly), Rishon LeZion and Jerusalem (d.co.il); nothing on Katznelson; no closure news"
   },
   "n4286327001": {
    "r": "none",
-   "note": "Nothing for Panorama at Kikar Atarim"
+   "note": "Nothing for Panorama at Kikar Atarim",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only Dan Panorama hotel restaurants (different location) found; nothing for Panorama at Kikar Atarim; no Tabit/Ontopo, no closure news"
   },
   "n2142604529": {
    "r": "single",
@@ -2969,7 +3032,10 @@
   },
   "n11678978180": {
    "r": "none",
-   "note": "Chain active; no Uzi Hitman branch matched"
+   "note": "Chain active; no Uzi Hitman branch matched",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Pastito chain active (Mako 2024-11 mentions Midtown TLV branch, 4 branches); no official branch list naming Uzi Hitman street; easy.co.il fetch failed; Wolt not used"
   },
   "n9300661521": {
    "r": "closed",
@@ -2984,7 +3050,10 @@
   },
   "n10161946945": {
    "r": "none",
-   "note": "Time Out 2021 Uziel 55 Ramat Gan only"
+   "note": "Time Out 2021 Uziel 55 Ramat Gan only",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "Own site chapo.burger fetch not permitted (blocked). Time Out 2021-05 review places Chapo at Uziel 55, Ramat Gan (phone 050-3435383 matches catalog) - city differs from catalog Tel Aviv. No recent (2025-2026) source, no Tabit/Ontopo, no closure news."
   },
   "n12531988291": {
    "r": "none",
@@ -2995,7 +3064,10 @@
   },
   "n5997818140": {
    "r": "none",
-   "note": "Nothing found for Jabotinsky 100"
+   "note": "Nothing found for Jabotinsky 100",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Facebook page soundfire770 not fetchable (robots); no web/news/Tabit/Ontopo source for Sound Fire / Tzlilei HaEsh at Jabotinsky 100; no closure news"
   },
   "n4379249697": {
    "r": "closed",
@@ -3003,11 +3075,17 @@
   },
   "n704317802": {
    "r": "none",
-   "note": "Nothing for Kikar Antin branch; chain site unreachable"
+   "note": "Nothing for Kikar Antin branch; chain site unreachable",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: searches (name+city, Tabit/Ontopo, closure) only return King George street articles and undated enjoyingisrael listings; no source for a Kikar Antin branch; no chain branch list found"
   },
   "n2388147118": {
    "r": "none",
-   "note": "Undated listings, Abba Hillel 7 Ramat Gan; chain site unreachable"
+   "note": "Undated listings, Abba Hillel 7 Ramat Gan; chain site unreachable",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only undated listings (enjoyingisrael Ramat Gan, d.co.il) for Abba Hillel 7 Ramat Gan (catalog city Tel Aviv); no Tabit/Ontopo, no dated news, no closure news; Facebook not checked"
   },
   "n12768157195": {
    "r": "conflict",
@@ -3029,7 +3107,10 @@
   },
   "n1310662759": {
    "r": "none",
-   "note": "Nothing for Cafe Zelik on Shenkin"
+   "note": "Nothing for Cafe Zelik on Shenkin",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Time Out Shenkin food map 2025-03 does not mention Zelik; only directory hits (easy.co.il) and a disallowed delivery listing that labels it Givatayim, suggesting branch/city mismatch; no reliable source"
   },
   "n1432492607": {
    "r": "none",
@@ -3047,7 +3128,10 @@
   },
   "n2264923579": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: likely the Jaffa fish restaurant 'Rauf et Atina' (Raouf & Atina) per a 2010 blog only; no recent source, no Tabit/Ontopo, no closure news"
   },
   "n12952209648": {
    "r": "ok",
@@ -3059,15 +3143,24 @@
   },
   "n12106439305": {
    "r": "none",
-   "note": "Only undated atly Herzl 24"
+   "note": "Only undated atly Herzl 24",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: own site https://retro.bis fetch blocked (permission not granted); only undated atly listing (Herzl 24); no Tabit/Ontopo or news"
   },
   "n2558517096": {
    "r": "none",
-   "note": "River chain; no HaTsela branch"
+   "note": "River chain; no HaTsela branch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: River chain (JPost on Herzliya Pituah opening, Rishon/Ramat Gan/Jerusalem branches) but no official branch list or source naming a HaTsela branch"
   },
   "n5410106624": {
    "r": "none",
-   "note": "River chain; no HaYozma branch"
+   "note": "River chain; no HaYozma branch",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: River chain; searches for HaYozma street branch found nothing; no official branch list reached"
   },
   "n3719261438": {
    "r": "single",
@@ -3077,7 +3170,10 @@
   },
   "n4706508229": {
    "r": "none",
-   "note": "Segev Express chain; no HaBarzel source"
+   "note": "Segev Express chain; no HaBarzel source",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: Segev Express chain only in easy.co.il directory and an Israel Hayom food item; no official branch list or source naming HaBarzel (Ramat HaHayal) branch"
   },
   "n4421914369": {
    "r": "single",
@@ -3087,11 +3183,17 @@
   },
   "n4625883209": {
    "r": "none",
-   "note": "Listings point to Petah Tikva/Begin 146; no Martin Gehl match"
+   "note": "Listings point to Petah Tikva/Begin 146; no Martin Gehl match",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: only undated aggregators (spinach.guide) list Sumsum Bar at Begin 146 and HaMasger 35; nothing for Martin Gehl; no closure news, no Tabit/Ontopo"
   },
   "n11518709323": {
    "r": "none",
-   "note": "Nothing for Ben Gurion 18"
+   "note": "Nothing for Ben Gurion 18",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: no Shipudi at Ben Gurion 18 in Time Out, directories or news; no Tabit/Ontopo; no closure news"
   },
   "n2264923690": {
    "r": "conflict",
@@ -3101,7 +3203,10 @@
   },
   "n12104156451": {
    "r": "none",
-   "note": "Walla 2010 only"
+   "note": "Walla 2010 only",
+   "r2": "single",
+   "d2": "2026-11-27",
+   "note2": "Time Out 2025-02 lists Shmaya at Vital 2 (Florentin) as a long-running workers' restaurant, meal ~50-70 NIS; catalog has Vital street without number, so the match is my judgement; no second recent source, no Tabit/Ontopo, no closure news"
   },
   "n1386787886": {
    "r": "none",
@@ -3130,11 +3235,17 @@
   },
   "n12529700323": {
    "r": "none",
-   "note": "Only undated atly Nahalat Yitzhak 22"
+   "note": "Only undated atly Nahalat Yitzhak 22",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: still only undated atly listing (Nahalat Yitzhak 22, kosher, Su-Th 11:30-16:00, FB tachanathahochel); no news, no Tabit/Ontopo, no closure news"
   },
   "n1626825016": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: nothing found for 15 Minutes pub at Arlozorov 15 in Time Out/news; no closure news"
   },
   "w149270614": {
    "r": "ok",
@@ -3142,11 +3253,17 @@
   },
   "n13482151608": {
    "r": "none",
-   "note": "Time Out 2025-07 Mivtzar at Moshe Maor 3, not 32; unconfirmed"
+   "note": "Time Out 2025-07 Mivtzar at Moshe Maor 3, not 32; unconfirmed",
+   "r2": "conflict",
+   "d2": "2026-11-27",
+   "note2": "Time Out 2025-07 (Mivtzar culture space with bar, Instagram 4t.ress, Wed-Sat from 20:00) and Time Out 2025-11 (4T Cafe inside Mivtzar) both give Moshe Maor 3, not 32; identity matched via the 4t.ress handle = catalog website, so the address match is my judgement Set to conflict: sources give Moshe Maor 3 vs catalog 32; both Time Out."
   },
   "n720924552": {
    "r": "none",
-   "note": "Nothing found"
+   "note": "Nothing found",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: nothing found for 70 Pilim at Bograshov 70 in Hebrew/English searches; no closure news"
   },
   "n2862959862": {
    "r": "none",
@@ -3171,7 +3288,10 @@
   },
   "n12112970845": {
    "r": "none",
-   "note": "Nothing found for Vital 6"
+   "note": "Nothing found for Vital 6",
+   "r2": "none",
+   "d2": "2026-11-27",
+   "note2": "Re-check: nothing found for B19 / b19tlv at Vital 6; no Tabit/Ontopo; no closure news"
   },
   "n2659433568": {
    "r": "ok",
