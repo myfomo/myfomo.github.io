@@ -1,7 +1,7 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 47,
+ "site_checked": 48,
  "site_jsonld": 4,
  "site_match": 3,
  "site_reject": 1,
@@ -49,8 +49,8 @@
   "address": "444 (100%)",
   "hours": "63 (14%)",
   "phone": "51 (11%)",
-  "website": "53 (12%)",
-  "cuisine": "294 (66%)",
+  "website": "54 (12%)",
+  "cuisine": "296 (67%)",
   "extra_names": "274 (62%)"
  },
  "conflicts_n": 3
