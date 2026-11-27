@@ -7617,6 +7617,174 @@
   "n4900327064": {
    "r": "none",
    "note": "No recent reliable source for Tamara at Ben Yehuda 96; Time Out sources (2014, timeout.com 2023) list Tamara yogurt at Rothschild 19 instead. Not in 2025-2026 ice cream guides; no Tabit/Ontopo; no closure news; only Facebook/directories."
+  },
+  "n384598569": {
+   "r": "conflict",
+   "note": "Own site still live and lists Yad Harutzim 13 (hours labelled 'Delivery Hours 2020', stale); Tabit pages exist; but Time Out 2023-03-28 announced closure in summer 2023 due to building redevelopment (owner planning new place on Rothschild). No confirmation of actual closing date found."
+  },
+  "n445977129": {
+   "r": "ok",
+   "note": "Own site branch page names 90 Herbert Samuel, lists hours/phone, no closure notice; Ontopo page exists but says not bookable via Ontopo; drink menu pints 26-37, cocktails 38-48"
+  },
+  "n558702490": {
+   "r": "closed",
+   "note": "Destroyed by fire July 2015 (Time Out 2015-07-23); Time Out 2020-03 says it closed after the fire, only a 3-day pop-up at Pastel in 2020. Own site mulyam.com blocked (fetch permission not granted)."
+  },
+  "n611110126": {
+   "r": "none",
+   "note": "No reliable source found for Cafe Neto at Kikar Mendel / TAU Gilman; Time Out cafeteria guides found are old (2015)."
+  },
+  "n681317089": {
+   "r": "ok",
+   "note": "Ontopo page active for Matteo, 87 Bograshov, Italian, booking widget, hours listed; own site matteo.co.il returned client_error"
+  },
+  "n720955813": {
+   "r": "conflict",
+   "note": "The Brasserie at Ibn Gabirol 70 closed in March 2020 (Time Out 2021-03). R2M's Delicatessen deli opened in its place in 2021-09 (Time Out), with hours Su-Th 07:00-20:00, Fr 07:00-16:00, Sa 08:00-14:00, so the catalog's 24/7 is wrong. No 2025-2026 source confirms the deli is open now. Own site delitlv.co.il blocked."
+  },
+  "n720999416": {
+   "r": "ok",
+   "note": "Own branch page rustico.co.il/rothschild live with Rothschild 15, phone and hours; Ontopo page active for Rothschild 15."
+  },
+  "n721908107": {
+   "r": "closed",
+   "note": "Already listed closed in closed-tlv.json (Time Out closure source, 2025-07); not re-researched."
+  },
+  "n723220062": {
+   "r": "closed",
+   "note": "Already listed closed in closed-tlv.json (Time Out closure source, 2025-07); not re-researched."
+  },
+  "n777401070": {
+   "r": "conflict",
+   "note": "Chain site waffle-bar.co.il/Branches.aspx lists only Jerusalem-area branches, no Tel Aviv / Ibn Gabirol 61; enjoyingisrael lists Ibn Gabirol 61 (kosher, dairy) but undated. Catalog site waffle-bar.co.il homepage blocked."
+  },
+  "n902619087": {
+   "r": "ok",
+   "note": "Ontopo page active for Baba Yaga, 12 HaYarkon, booking widget, business lunch 99 NIS; cuisine is Russian/European, not seafood (Ontopo + Time Out reviews 2022/2024); own site fetch blocked"
+  },
+  "n904541068": {
+   "r": "closed",
+   "note": "Already listed closed in closed-tlv.json (Time Out closure source, 2020); not re-researched."
+  },
+  "n940680945": {
+   "r": "closed",
+   "note": "Time Out 2016-11-02: Meir Adoni closes Catit and HaMazlala (Nahalat Binyamin) in early Dec 2016; only a 2020 pop-up since, no reopening. catit.co.il blocked."
+  },
+  "n1152595900": {
+   "r": "ok",
+   "note": "Own branch page live: Beni Efraim 209, phone 054-771-2136, hours (Friday close time truncated on page, omitted); branch labelled 'meat' (not a kosher statement)."
+  },
+  "n1201454401": {
+   "r": "none",
+   "note": "No reliable source found for a cafe named Coffee Star at Kikar Mendel / TAU campus; TAU food page does not list it; not on Ontopo/Tabit"
+  },
+  "n1340846227": {
+   "r": "conflict",
+   "note": "Tabit page active (cafe-italia, phone 035612888, hours 12:00-00:00) but shows no street address. Ontopo, Time Out and enjoyingisrael give Kremenetski 6, not Yosef Boxbaum (the catalog street came from OSM). Ontopo booking is not active. Own site blocked."
+  },
+  "n1376048247": {
+   "r": "closed",
+   "note": "Already listed closed in closed-tlv.json (Time Out closure source, 2023); not re-researched."
+  },
+  "n1438109988": {
+   "r": "single",
+   "note": "Time Out topic page shows a 2025-10-01 article on an event at HaAchim (Beit Zionei America, Ibn Gabirol 26 / Daniel Frisch corner). Ontopo page exists (Ibn Gabirol 26, +972 3-691-7171) but says not available for reservations; Tabit page exists without address. Own site blocked."
+  },
+  "n1585379892": {
+   "r": "ok",
+   "note": "Ontopo page active for Yaffo Tel Aviv, 98 Yigal Alon, booking open, 15th-anniversary events; Israeli/Mediterranean chef cuisine; own site fetch blocked"
+  },
+  "n1791481266": {
+   "r": "single",
+   "note": "Address is King George 81. Spotted by Locals 2025-06 recommends it; Calcalist 2024-08 shows it operating (older); Time Out EN listing 2019. Own site abudubi.com blocked; no Tabit/Ontopo page found."
+  },
+  "n1950416514": {
+   "r": "conflict",
+   "note": "Ontopo booking active for Italkia Ba'Tachana but gives address 5 Ashkelon St (catalog: Ashkelon 11a), phone +972 3-933-1922, site italiantlv.co.il; likely same venue in HaTahana compound, address number differs. Maariv review 2023-05."
+  },
+  "n1989338503": {
+   "r": "closed",
+   "note": "Time Out 2026-05-06: Petrozilia leaving Rothschild after 31 years (towers to be built) and moving to Sarona; own site now gives address Kalman Magen 3, Sarona, daytime service until 17:00, kosher Tel Aviv Rabbinate"
+  },
+  "n2078978173": {
+   "r": "conflict",
+   "note": "Spicehaus original bar closed (building under TAMA 38 renovation). Reopened as Spicehaus 2.0 at Dizengoff 116 (Time Out 2025-11-18, Mako 2025-11-18), daily from 18:00, cocktails NIS 49-59, not kosher. Catalog has 117, so this may be the old site or an address slip."
+  },
+  "n2078982726": {
+   "r": "closed",
+   "note": "Already listed closed in closed-tlv.json (Time Out closure source, 2024); not re-researched."
+  },
+  "n2078994157": {
+   "r": "closed",
+   "note": "Already listed closed in closed-tlv.json (Time Out closure source, 2026-05); not re-researched."
+  },
+  "n2079006787": {
+   "r": "ok",
+   "note": "Ontopo page active for Malka at 146 Menachem Begin (Azrieli Town), says it is a kosher Eyal Shani restaurant (certificate not named); Kipa 2026-08-23 lists it open Su-Th. ontopo.co.il/malka blocked, used ontopo.com."
+  },
+  "n2079006815": {
+   "r": "closed",
+   "note": "Already listed closed in closed-tlv.json (Time Out closure source, 2025); not re-researched."
+  },
+  "n2079008586": {
+   "r": "ok",
+   "note": "Own site has live branch page 'Tel Aviv Florentin St' with hours (street number not shown on page); phone/kosher not stated."
+  },
+  "n2079011985": {
+   "r": "ok",
+   "note": "Ontopo page active for Magazzino, 21 Menachem Begin, booking widget, business lunch 2 courses 118 NIS; Tabit reservation page also exists; own site fetch blocked"
+  },
+  "n2079180765": {
+   "r": "ok",
+   "note": "Own site has a live branch page for 40 Shabazi St (original Neve Tzedek shop), open daily 08:00-24:00, no closure notice. ynet 2020 lists it as not kosher."
+  },
+  "n2079185037": {
+   "r": "none",
+   "note": "Only older sources: Time Out Levinsky guide (2021, updated 2022-07) lists Levinsky 47 with phone 050-9954495; Time Out 2024-11-26 describes it as a veteran Persian restaurant in Levinsky Market, operating. No 2025-2026 source, no own site, booking page or closure news."
+  },
+  "n2079195330": {
+   "r": "ok",
+   "note": "Ontopo page active for MenTenten, 57 Nahalat Binyamin, Japanese/ramen, walk-in only (no advance booking); own site fetch blocked"
+  },
+  "n2288503811": {
+   "r": "ok",
+   "note": "Ontopo page 'M25 Brodetsky' active at Brodetsky 15 with phone +97239340248; own branch page m25meat.co.il/brodetzki in index but fetch blocked. No closure news."
+  },
+  "n2301194107": {
+   "r": "conflict",
+   "note": "Own site tal-bagels.co.il lists only one location: Karlibach 41, Tel Aviv (03-5610564); no Yael Man / north Tel Aviv branch. Time Out (2017) also lists Carlebach 41."
+  },
+  "n2322594229": {
+   "r": "conflict",
+   "note": "Own site branch list (Sarona, Netanya, Kiryat Bialik, Beer Sheva, Karmiel, Jerusalem) does NOT include Rothschild 45, and its tel-aviv-rothschild location URL shows the general list; Tabit still has a 'Max Brenner Rothschild' booking page; Time Out 2025-04 Rothschild mapping lists it at Rothschild 45. No closure article found"
+  },
+  "n2331669483": {
+   "r": "none",
+   "note": "No source places a Bahadunes branch at Bar Kochva 14, Bnei Brak. d.co.il lists Sokolov 72, Ramat HaSharon; wanderlog marks Dizengoff 175 TLV as permanently closed; easy.co.il failed. Own site blocked."
+  },
+  "n2468151850": {
+   "r": "ok",
+   "note": "Ontopo page active for La Shuk at Dizengoff 92 (Dizengoff Square), phone +97236033117, no closure notice; Time Out 2016 confirms Dizengoff 92. No own site found."
+  },
+  "n2556132735": {
+   "r": "closed",
+   "note": "Already listed closed in closed-tlv.json (Time Out closure source, 2025); not re-researched."
+  },
+  "n2640248971": {
+   "r": "ok",
+   "note": "Carlton hotel site live with 'Carlton On The Beach' page; it is a beachfront breakfast restaurant, not a bar; no street address/hours on page (hotel is by Atarim Square)"
+  },
+  "n2862959842": {
+   "r": "ok",
+   "note": "Ontopo page active for LENNYS, 7 Chayim Vital St, phone +972 3-518-6637, site lennys.co.il. Hours not set (Ontopo only). Own site blocked."
+  },
+  "n2862959844": {
+   "r": "ok",
+   "note": "Own site perlabar.com live, About page gives Florentin 8 Tel Aviv, phone 054-9902099; beer bar with 18 taps. No hours on page."
+  },
+  "n2862959846": {
+   "r": "ok",
+   "note": "Own site contact page names Florentin 19 with hours and phone; menu has a vegan section; cocktails 49, beer 26-35, snacks 36; Ontopo page also exists"
   }
  }
 }
