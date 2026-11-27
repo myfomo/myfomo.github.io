@@ -516,7 +516,10 @@
 },
 "n10075307017": {
 "r": "single",
-"note": "Catalog URL /bistro blocked (permission), but own site notredamecenter.org/allegro is live: Allegro Bistro & Cafe at Notre Dame Guest House, open daily, international menu; page gives no street address (Notre Dame Center is at HaTsanhanim 3); no Tabit/Ontopo; no closure news (downgraded to single: /bistro page not opened, branch match by judgement)"
+"note": "Catalog URL /bistro blocked (permission), but own site notredamecenter.org/allegro is live: Allegro Bistro & Cafe at Notre Dame Guest House, open daily, international menu; page gives no street address (Notre Dame Center is at HaTsanhanim 3); no Tabit/Ontopo; no closure news (downgraded to single: /bistro page not opened, branch match by judgement)",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site notredamecenter.org/allegro live today: Allegro Bistro & Cafe at Notre Dame (grounds of Notre Dame Center, HaTsanhanim 3; page gives no street address, branch match by judgement), open daily, international cuisine, phones 02-6279177/02-6279175. No prices/hours given. (single: branch match by judgement)"
 },
 "n14094330378": {
 "r": "single",
@@ -592,7 +595,10 @@
 },
 "n5297457825": {
 "r": "none",
-"note": "Own site 1868.co.il blocked (permission not granted); iTravelJerusalem pages (undated) list Zuta at 10 King David St, kosher, phone 02-622-2312, Su-Th from 18:00, Sa from 20:00; JPost 2024-01 mentions chef-owner of 1868 and Zuta; no 2025-2026 source, no Tabit/Ontopo found, no closure news"
+"note": "Own site 1868.co.il blocked (permission not granted); iTravelJerusalem pages (undated) list Zuta at 10 King David St, kosher, phone 02-622-2312, Su-Th from 18:00, Sa from 20:00; JPost 2024-01 mentions chef-owner of 1868 and Zuta; no 2025-2026 source, no Tabit/Ontopo found, no closure news",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site 1868.co.il live today: lists ZUTA cocktail bar (Zuta menu, kosher certificate PDF for 'ZUTA - בר קוקטיילים', Tabit reservation for '1868 & Zuta cocktail bar'), phone 02-6222312 matches catalog. Site gives no street address; the King David 10 match rests on the shared 1868 phone/earlier iTravelJerusalem listing (judgement). (single: branch match by judgement)"
 },
 "n6653239687": {
 "r": "none",
@@ -676,7 +682,10 @@
 },
 "n10244439955": {
 "r": "single",
-"note": "Own branch page gansipur.co.il/Jerusalem was blocked (permission not granted). Kipa 2026-07 recommends the operating Cafe Gan Sipur in Gan Sacher. Kipa 2023-08 review gives Ben Zvi Blvd, inside Sacher Park (catalog: Yitzhak Rabin), with mains around 74 NIS. No Tabit/Ontopo page found; no closure news."
+"note": "Own branch page gansipur.co.il/Jerusalem was blocked (permission not granted). Kipa 2026-07 recommends the operating Cafe Gan Sipur in Gan Sacher. Kipa 2023-08 review gives Ben Zvi Blvd, inside Sacher Park (catalog: Yitzhak Rabin), with mains around 74 NIS. No Tabit/Ontopo page found; no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Branch page /Jerusalem failed (client error), but own homepage gansipur.co.il live today lists Jerusalem branch as open (kosher mehadrin, certificate not named); Kipa 2026-07 recommends operating Cafe Gan Sipur in Sacher Park (Ben Zvi Blvd per Kipa 2023, catalog Yitzhak Rabin). No hours on site."
 },
 "n1406870393": {
 "r": "ok",
@@ -924,7 +933,10 @@
 },
 "n14340223283": {
 "r": "conflict",
-"note": "Denya Cafe chain found: Ontopo page Beit Hakerem (https://ontopo.co.il/en/40536602/), Givat Shaul branch at Kanfei Nesharim 35 (eluna 2019, enjoyingisrael); no source names a branch on Sarei Israel St. Own site denyacafe.co.il fetch blocked (permission). A Denya Bakery appears on Wolt, address not verified."
+"note": "Denya Cafe chain found: Ontopo page Beit Hakerem (https://ontopo.co.il/en/40536602/), Givat Shaul branch at Kanfei Nesharim 35 (eluna 2019, enjoyingisrael); no source names a branch on Sarei Israel St. Own site denyacafe.co.il fetch blocked (permission). A Denya Bakery appears on Wolt, address not verified.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site denyacafe.co.il lists a 'Jaffa branch' at Sarei Israel 15 (City Court), Jerusalem, with hours and phone. The site says Denya is kosher under Rabanut Mehadrin Jerusalem but doesn't say this covers every branch."
 },
 "n1366466398": {
 "r": "none",
@@ -936,7 +948,10 @@
 },
 "n4311168863": {
 "r": "none",
-"note": "Directory listings only (enjoyingisrael 'Domino's Pizza - Givaha Tzarfatit', Haezel 1; spinach.guide French Hill, Etsel St 1), undated and with differing hours; official dominos.co.il branch list fetch blocked (permission). No official branch confirmation."
+"note": "Directory listings only (enjoyingisrael 'Domino's Pizza - Givaha Tzarfatit', Haezel 1; spinach.guide French Hill, Etsel St 1), undated and with differing hours; official dominos.co.il branch list fetch blocked (permission). No official branch confirmation.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Official dominos.co.il branch page 'Domino's pizza Giva'a Zarfatit' (French Hill) is live (checked 2026-11). The page text gives no street address, so matching it to the catalog's Etzel St (French Hill) is my judgement, supported by undated listings showing Etzel 1. Jerusalem-City page says 3 branches (Talpiot, Beit HaKerem, French Hill). (single: branch match by judgement)"
 },
 "n7122942090": {
 "r": "none",
@@ -984,7 +999,10 @@
 },
 "n10770455105": {
 "r": "none",
-"note": "Hamiffal art space at HaMa'aravim 3 (matches the catalog). The latest reliable source is Time Out (2023-06, modified 2024-05), which said the cafe/bar was being renovated and would reopen soon. Fetching the own site hamiffal.com was blocked (permission not granted). No recent source and no closure news."
+"note": "Hamiffal art space at HaMa'aravim 3 (matches the catalog). The latest reliable source is Time Out (2023-06, modified 2024-05), which said the cafe/bar was being renovated and would reopen soon. Fetching the own site hamiffal.com was blocked (permission not granted). No recent source and no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site hamiffal.com live today: Ha-Ma'aravim 3, Jerusalem; hours table lists 'the Factory and the cafe' Su-Th 8-19, Fr 10-14 (page last modified 2025-03). No closure statement."
 },
 "n1364819211": {
 "r": "none",
@@ -1040,7 +1058,10 @@
 },
 "n5038899422": {
 "r": "none",
-"note": "Own site lapiedra.co.il fetch blocked (permission not answered). Ontopo page lists only La Piedra Arnona (Daniel Yanovsky 17), no Agron branch. Agron branch mentioned only in older sources: JPost 2024-03 (small Agron location), Time Out IL 2018 (Agron 1), itraveljerusalem (undated). No 2025-26 source for Agron branch; no closure news found."
+"note": "Own site lapiedra.co.il fetch blocked (permission not answered). Ontopo page lists only La Piedra Arnona (Daniel Yanovsky 17), no Agron branch. Agron branch mentioned only in older sources: JPost 2024-03 (small Agron location), Time Out IL 2018 (Agron 1), itraveljerusalem (undated). No 2025-26 source for Agron branch; no closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site lapiedra.co.il is live and lists the Agron branch at Gershon Agron 1, Jerusalem (near Paris Square): Su-We 12-23, Th 12-24, Sat from about 1.25h after Shabbat until 00:00 (the Sat hours aren't in the oh field). Kosher: Jerusalem Rabanut Mehadrin. Phone 1700-505-678. No reservations at this branch, only Tabit order/pickup. Ontopo/Tabit booking exists for Arnona only."
 },
 "n2150073666": {
 "r": "none",
@@ -1120,7 +1141,10 @@
 },
 "n2533310863": {
 "r": "none",
-"note": "itraveljerusalem lists Pasta Basta at Mahane Yehuda market ('Mahane Yehuda 8'), kosher label but no certificate named, and links the own site https://pastabasta.co.il/jerusalem/ (undated: https://www.itraveljerusalem.com/eat-drink/pasta-basta). Fetching the own site was refused (permission not answered), so it could not be checked. No Tabit/Ontopo page, no dated 2025-2026 source, no closure news found."
+"note": "itraveljerusalem lists Pasta Basta at Mahane Yehuda market ('Mahane Yehuda 8'), kosher label but no certificate named, and links the own site https://pastabasta.co.il/jerusalem/ (undated: https://www.itraveljerusalem.com/eat-drink/pasta-basta). Fetching the own site was refused (permission not answered), so it could not be checked. No Tabit/Ontopo page, no dated 2025-2026 source, no closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Own site pastabasta.co.il has a 'ירושלים שוק מחנה יהודה' branch page (https://pastabasta.co.il/jerusalem/), but every fetch of the domain failed (client_error). HaTut is a Mahane Yehuda alley, so the match is plausible. Mako 2019-09 mentions the first branch in Mahane Yehuda, which is too old to count. No Tabit or Ontopo page, no closure news."
 },
 "n7944723885": {
 "r": "none",
@@ -1152,7 +1176,10 @@
 },
 "n1419590085": {
 "r": "none",
-"note": "Roza is a kosher restaurant in the German Colony at Rachel Imenu 2, at the corner of the Emek Refaim area (a judgement match to the catalog's Emek Refaim). Sources are old: koshernexus 2014, kikar.co.il 2018-03, JPost 2019, plus undated itraveljerusalem. Nothing from 2025-2026. rest.co.il was blocked and tiuli failed to load. No Tabit/Ontopo page, no closure news."
+"note": "Roza is a kosher restaurant in the German Colony at Rachel Imenu 2, at the corner of the Emek Refaim area (a judgement match to the catalog's Emek Refaim). Sources are old: koshernexus 2014, kikar.co.il 2018-03, JPost 2019, plus undated itraveljerusalem. Nothing from 2025-2026. rest.co.il was blocked and tiuli failed to load. No Tabit/Ontopo page, no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Re-check: no own site, Tabit or Ontopo page found. tiuli page failed to load (client_error). Only old sources (JPost 2019, kikar 2018, eluna, itraveljerusalem undated). No closure news found."
 },
 "n1419595824": {
 "r": "none",
@@ -1196,7 +1223,10 @@
 },
 "n5594866985": {
 "r": "none",
-"note": "Hummus shel Tehina, Nisim Bachar 23: undated listings (itraveljerusalem, enjoyingisrael); Mako 2023-11 mentions a Jerusalem branch exists; HappyCow user report says closed 2026-01 (crowd source, not reliable). Own site hummustchina.co.il fetch blocked; no news of closure found."
+"note": "Hummus shel Tehina, Nisim Bachar 23: undated listings (itraveljerusalem, enjoyingisrael); Mako 2023-11 mentions a Jerusalem branch exists; HappyCow user report says closed 2026-01 (crowd source, not reliable). Own site hummustchina.co.il fetch blocked; no news of closure found.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Own site hummustchina.co.il now lists only two branches (Sderot, Herzl 51 and Beer Sheva, Yosef Ben Matityahu 70); no Jerusalem / Nisim Bachar branch. Undated listings still show Jerusalem; HappyCow user report says closed 2026-01 (not reliable). No dated closure news, so not marked closed."
 },
 "n4242714889": {
 "r": "none",
@@ -1216,11 +1246,17 @@
 },
 "n4721062833": {
 "r": "none",
-"note": "itraveljerusalem (undated) lists Coffee Bean at Jaffa 34 with site coffee-bean.co.il; own site fetch was blocked (permission not granted). Globes 2010-08 reports original Israeli franchise ordered to close all branches, so status uncertain; no recent source found"
+"note": "itraveljerusalem (undated) lists Coffee Bean at Jaffa 34 with site coffee-bean.co.il; own site fetch was blocked (permission not granted). Globes 2010-08 reports original Israeli franchise ordered to close all branches, so status uncertain; no recent source found",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site coffee-bean.co.il is live and lists the Jerusalem branch at Jaffa 34 (corner HaLenei HaMalka 1), phone 02-500-2011 (checked 2026-11). No hours, kosher info or prices on the site."
 },
 "n12063184858": {
 "r": "none",
-"note": "No source found for a Coffee Bean branch on Heleni HaMalka; own site coffee-bean.co.il fetch blocked (permission not granted); Globes 2010-08 reports earlier franchise closure in Israel"
+"note": "No source found for a Coffee Bean branch on Heleni HaMalka; own site coffee-bean.co.il fetch blocked (permission not granted); Globes 2010-08 reports earlier franchise closure in Israel",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site coffee-bean.co.il live today names its Jerusalem branch at Jaffa 34, corner Heleni HaMalka 1 (matches catalog street); phone 02-500-2011."
 },
 "n11156440686": {
 "r": "none",
@@ -1260,7 +1296,10 @@
 },
 "n13436566655": {
 "r": "none",
-"note": "Official waffle-bar.co.il fetch blocked (permission not granted). Undated listings (enjoyingisrael, gokosher: Paran 7, Ramat Eshkol, Mehadrin Harav Rubin, 02-5815434) match the address, but no dated 2025-2026 source, Tabit/Ontopo page or closure news found. Retry via the official branch list."
+"note": "Official waffle-bar.co.il fetch blocked (permission not granted). Undated listings (enjoyingisrael, gokosher: Paran 7, Ramat Eshkol, Mehadrin Harav Rubin, 02-5815434) match the address, but no dated 2025-2026 source, Tabit/Ontopo page or closure news found. Retry via the official branch list.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official branch list waffle-bar.co.il/Branches.aspx names the Ramat Eshkol branch at Paran 7, with hours, phone and Mehadrin Rubin kashrut. Site says online ordering is temporarily closed."
 },
 "n12816126409": {
 "r": "none",
@@ -1340,7 +1379,10 @@
 },
 "n13508726050": {
 "r": "none",
-"note": "Probably the same venue as w263259731 (Beit Yisrael halls, Ezrat Torah). d.co.il directory lists Ulamei Beit Yisrael at Ezrat Torah 18 with site beitisrael.co.il, but fetching the site was blocked (permission not granted). bhol.co.il articles could not be fetched. No Tabit/Ontopo. No closure news found."
+"note": "Probably the same venue as w263259731 (Beit Yisrael halls, Ezrat Torah). d.co.il directory lists Ulamei Beit Yisrael at Ezrat Torah 18 with site beitisrael.co.il, but fetching the site was blocked (permission not granted). bhol.co.il articles could not be fetched. No Tabit/Ontopo. No closure news found.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site beitisrael.co.il is live: Beit Israel event hall and catering at Ezrat Torah 18 (catalog says 19, judged the same venue). Kosher under Badatz Eda Haredit. Site metadata is from 2023-07. Also lists booking line 02-5384534. (single: branch match by judgement)"
 },
 "w263259731": {
 "r": "none",
@@ -1452,7 +1494,10 @@
 },
 "n12977805157": {
 "r": "conflict",
-"note": "Etrog Man (Uzi Eli) business is active: NLI blog 2024-10 says son Or Hazay runs it, and Gilles Pudlowski 2026-06 describes the shop. But all sources place it in Machane Yehuda (10 HaEgoz / Agrippas), not Ben Yehuda, plus a Carmel Market (Tel Aviv) shop. Founder died around 2022. Own site etrogman.com and walla could not be fetched (permission)."
+"note": "Etrog Man (Uzi Eli) business is active: NLI blog 2024-10 says son Or Hazay runs it, and Gilles Pudlowski 2026-06 describes the shop. But all sources place it in Machane Yehuda (10 HaEgoz / Agrippas), not Ben Yehuda, plus a Carmel Market (Tel Aviv) shop. Founder died around 2022. Own site etrogman.com and walla could not be fetched (permission).",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site etrogman.com live, lists a Ben Yehuda branch at Ben Yehuda 5 (077-7005065) plus Mahane Yehuda, Jewish Quarter and Carmel Market. This resolves the earlier conflict. It sells natural juices, extracts and cosmetics."
 },
 "n12979554724": {
 "r": "none",
@@ -1480,35 +1525,59 @@
 },
 "n561093066": {
 "r": "none",
-"note": "Chain branch on Churchill Blvd (probably the Hebrew University Mt Scopus campus). The official aroma.co.il branch list fetch failed (client_error). No reliable source found."
+"note": "Chain branch on Churchill Blvd (probably the Hebrew University Mt Scopus campus). The official aroma.co.il branch list fetch failed (client_error). No reliable source found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Official aroma.co.il branch list still not readable (homepage empty, /branches client_error). Search for Aroma at Hebrew University Mt Scopus / Churchill Blvd found nothing reliable."
 },
 "n1405933026": {
 "r": "none",
-"note": "Chain branch at Yitzhak Kariv 1 (probably Mamilla). The official aroma.co.il branch list fetch failed (client_error). Only a TotallyJewishTravel 'aroma mamilla' listing (not an allowed source)."
+"note": "Chain branch at Yitzhak Kariv 1 (probably Mamilla). The official aroma.co.il branch list fetch failed (client_error). Only a TotallyJewishTravel 'aroma mamilla' listing (not an allowed source).",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il branch list failed again (client_error). itraveljerusalem lists Aroma Mamilla (Mamilla St, 02-624-1367), but it is undated. No dated source naming Yitzhak Kariv 1 and no closure news."
 },
 "n3046208361": {
 "r": "none",
-"note": "Chain branch; official branch list aroma.co.il fetch refused (blocked). No reliable source naming an Aroma at the Chords Bridge (גשר המיתרים) found; no Tabit/Ontopo; no closure news."
+"note": "Chain branch; official branch list aroma.co.il fetch refused (blocked). No reliable source naming an Aroma at the Chords Bridge (גשר המיתרים) found; no Tabit/Ontopo; no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Official aroma.co.il store locator, sitemap and homepage failed or returned no content (client_error). Search lists a 'Jerusalem Central Station' Aroma store page, but no source names an Aroma at the Chords Bridge or pedestrian bridge. No closure news."
 },
 "n5599588163": {
 "r": "none",
-"note": "aroma.co.il blocked. Only an undated listing, enjoyingisrael.com/restaurants/38977 (Aroma Mahane Yehuda, Mahane Yehuda Market), with no street number and no 2025-26 date, so not counted as recent. Globes article about opening is old. No closure news found."
+"note": "aroma.co.il blocked. Only an undated listing, enjoyingisrael.com/restaurants/38977 (Aroma Mahane Yehuda, Mahane Yehuda Market), with no street number and no 2025-26 date, so not counted as recent. Globes article about opening is old. No closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il homepage renders no content and /branches fails (client_error) again. Only undated enjoyingisrael listing; closure searches found only other Aroma closures (Ben Gurion airport 2024, ice) and unrelated Mahane Yehuda closures. Nothing reliable about this branch."
 },
 "n12086682081": {
 "r": "none",
-"note": "aroma.co.il blocked. Two undated listings name Aroma Beit Hadfus 12, Givat Shaul: enjoyingisrael.com/restaurants/38945 and totallyjewishtravel TE53122 (Rabbanut). Neither has a 2025-26 date, so not counted as recent. No closure news found. Retry via the official store page."
+"note": "aroma.co.il blocked. Two undated listings name Aroma Beit Hadfus 12, Givat Shaul: enjoyingisrael.com/restaurants/38945 and totallyjewishtravel TE53122 (Rabbanut). Neither has a 2025-26 date, so not counted as recent. No closure news found. Retry via the official store page.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il homepage loads but empty; official store page for Beit Hadfus (aroma.co.il/store/בית-הדפוס, /en/store/printing-house) failed with client error and en.aroma.co.il robots unreachable, so branch not confirmed from own site. Only undated listings (enjoyingisrael, totallyjewishtravel) name Beit Hadfus 12. No closure news."
 },
 "n13537071150": {
 "r": "none",
-"note": "aroma.co.il blocked. No reliable source found for an Aroma at the Cardo / Jewish Quarter; no Tabit/Ontopo; no closure news."
+"note": "aroma.co.il blocked. No reliable source found for an Aroma at the Cardo / Jewish Quarter; no Tabit/Ontopo; no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il failed again (homepage has no branch list; /he/branches gave client_error). Searches found no dated or reliable source for an Aroma at the Cardo / Jewish Quarter, and no closure news."
 },
 "n4338262048": {
 "r": "none",
-"note": "aroma.co.il blocked. Address '38' may mean Route 38. An undated listing shows Aroma Shimshon Junction, Road 38, Sonol station (enjoyingisrael.com/restaurants/38992), but the branch match is my guess and the listing is undated. No closure news."
+"note": "aroma.co.il blocked. Address '38' may mean Route 38. An undated listing shows Aroma Shimshon Junction, Road 38, Sonol station (enjoyingisrael.com/restaurants/38992), but the branch match is my guess and the listing is undated. No closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il homepage gave no readable content; /branches and /find_store failed (client_error). Only undated listings (enjoyingisrael 'Aroma Shimshon Junction'), so the branch is still unidentified. No Tabit/Ontopo; no closure news."
 },
 "n5023240506": {
 "r": "none",
-"note": "aroma.co.il blocked. Could not identify which branch address '3955' (Mate Yehuda) refers to; searching the phone 02-6526780 found nothing reliable. No Tabit/Ontopo; no closure news."
+"note": "aroma.co.il blocked. Could not identify which branch address '3955' (Mate Yehuda) refers to; searching the phone 02-6526780 found nothing reliable. No Tabit/Ontopo; no closure news.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "aroma.co.il branch list still unreadable (client_error on /branches and /find_store; homepage has no text). Couldn't identify which branch '3955' or phone 02-6526780 is. No Tabit/Ontopo; no closure news."
 },
 "n760045185": {
 "r": "none",
@@ -1528,7 +1597,10 @@
 },
 "n560074149": {
 "r": "none",
-"note": "BBB Jerusalem branch at Hillel 35 opened in Dec 2017 (srugim.co.il/229286). The official site bbb.co.il fetch was blocked (permission). Tabit/Ontopo searches show other BBB branches but no Jerusalem Hillel page. No recent source and no closure news found."
+"note": "BBB Jerusalem branch at Hillel 35 opened in Dec 2017 (srugim.co.il/229286). The official site bbb.co.il fetch was blocked (permission). Tabit/Ontopo searches show other BBB branches but no Jerusalem Hillel page. No recent source and no closure news found.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "bbb.co.il not fetchable (robots.txt unreachable). Only srugim 2017 opening article for Hillel 35; no Tabit/Ontopo page; closure search found nothing about BBB Hillel."
 },
 "n12958839690": {
 "r": "none",
@@ -1604,7 +1676,10 @@
 },
 "n13949932135": {
 "r": "single",
-"note": "EnjoyingIsrael lists Aldo German Colony at Emek Refaim 46 (kosher, dairy) with hours, no date (copyright 2018-2026). Wolt page shows 'Aldo HaMoshava' at Rachel Imenu 1 (corner of Emek Refaim) - not an allowed source, address variance judged same branch. Own site aldo.co.il not fetched."
+"note": "EnjoyingIsrael lists Aldo German Colony at Emek Refaim 46 (kosher, dairy) with hours, no date (copyright 2018-2026). Wolt page shows 'Aldo HaMoshava' at Rachel Imenu 1 (corner of Emek Refaim) - not an allowed source, address variance judged same branch. Own site aldo.co.il not fetched.",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "Own site aldo.co.il not fetchable (robots.txt unreachable). The previous 'single' rested only on EnjoyingIsrael (undated) and Wolt (not allowed). JPost 2023-07 places Aldo at the Emek Refaim / Rachel Imenu corner (Emek Refaim 42), but that is too old. No 2025-2026 source and no closure news."
 },
 "n5245552326": {
 "r": "none",
@@ -1640,7 +1715,10 @@
 },
 "n2872794091": {
 "r": "ok",
-"note": "Own site ramakitchen.co.il live (about page, last modified 2024-05) naming Rama's Kitchen in Nataf; catalog only gives road 3978 Mateh Yehuda, Nataf match is judgement. Homepage fetch blocked; no hours/prices found; no Tabit/Ontopo; no closure news (only 2016 fire, reopened 2019 per ynet)"
+"note": "Own site ramakitchen.co.il live (about page, last modified 2024-05) naming Rama's Kitchen in Nataf; catalog only gives road 3978 Mateh Yehuda, Nataf match is judgement. Homepage fetch blocked; no hours/prices found; no Tabit/Ontopo; no closure news (only 2016 fire, reopened 2019 per ynet)",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site homepage is live: Rama's Kitchen in Nataf, Judean Hills. It is mainly for private events and has set service times (Th dinner 19:00; Fr 9:30, 12:00, 15:00; Sa 12:00, 15:00), so no range hours are given. The displayed phone is 050-901-0069; a phone link on the page uses the catalog number 050-370-0954. Ontopo booking link is on the site. Matching road 3978 to Nataf is a judgement. (single: branch match by judgement)"
 },
 "w921337131": {
 "r": "none",
@@ -1788,11 +1866,17 @@
 },
 "n11910527192": {
 "r": "none",
-"note": "Only a Ben Yehuda 16 location appears in sources (itraveljerusalem, insiders guide, koshernexus 2016, JPost 2020). Nothing for a Daniel Yanovsky branch. Own site muffinboutique.com fetch blocked (permission). No closure news."
+"note": "Only a Ben Yehuda 16 location appears in sources (itraveljerusalem, insiders guide, koshernexus 2016, JPost 2020). Nothing for a Daniel Yanovsky branch. Own site muffinboutique.com fetch blocked (permission). No closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site muffinboutique.com live today lists branch at 13 Daniel Yanovsky, Jerusalem with hours (Fr closes 13:30 in winter) and phone 02-500-0041; also Ben Yehuda 16. Kashrut certificate image only, not named."
 },
 "n14107541297": {
 "r": "none",
-"note": "Ben Yehuda 16 is documented only in old sources (koshernexus 2016, JPost 2020-09, Jerusalem insiders guide, kosher Rabbanut mehadrin). No 2025-2026 source. Own site muffinboutique.com fetch blocked (permission). No Tabit/Ontopo page and no closure news found."
+"note": "Ben Yehuda 16 is documented only in old sources (koshernexus 2016, JPost 2020-09, Jerusalem insiders guide, kosher Rabbanut mehadrin). No 2025-2026 source. Own site muffinboutique.com fetch blocked (permission). No Tabit/Ontopo page and no closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site muffinboutique.com is live and lists the Ben Yehuda 16 branch with hours and phone. Site copyright is 2021, and a kashrut certificate image was uploaded 2024-07 (certificate not readable, so k is not set). Friday closes 13:30 in winter."
 },
 "n4839762873": {
 "r": "none",
@@ -1804,7 +1888,10 @@
 },
 "n12958862559": {
 "r": "single",
-"note": "Time Out Israel (Hebrew) list of Jerusalem restaurants, 2026-01 (modified 2026-04), names Mona at Shmuel HaNagid 12. The English Time Out listing (2023) gives cuisine Mediterranean, price 3/4 and phone 02-622-2283. d.co.il gives the site monarest.co.il, but fetching it was blocked (permission). No Tabit/Ontopo page found."
+"note": "Time Out Israel (Hebrew) list of Jerusalem restaurants, 2026-01 (modified 2026-04), names Mona at Shmuel HaNagid 12. The English Time Out listing (2023) gives cuisine Mediterranean, price 3/4 and phone 02-622-2283. d.co.il gives the site monarest.co.il, but fetching it was blocked (permission). No Tabit/Ontopo page found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site monarest.co.il live today: Mona, chef bistro in a historic stone house in central Jerusalem (no address on page); Time Out Israel 2026-01 (mod 2026-04) gives Shmuel HaNagid 12; Time Out EN gives price 3. No Tabit/Ontopo."
 },
 "n1703341094": {
 "r": "single",
@@ -1920,7 +2007,10 @@
 },
 "n561070672": {
 "r": "single",
-"note": "Own site simajerusalem.co.il fetch refused (permission). World Jewish Travel listing (modified 2026-07) describes Sima steak house in Mahane Yehuda market, originally on Agrippas 1969; no explicit open/closed or street number, branch match by judgement (Agrippas borders the market). Wolt page exists. No Tabit/Ontopo, no closure news."
+"note": "Own site simajerusalem.co.il fetch refused (permission). World Jewish Travel listing (modified 2026-07) describes Sima steak house in Mahane Yehuda market, originally on Agrippas 1969; no explicit open/closed or street number, branch match by judgement (Agrippas borders the market). Wolt page exists. No Tabit/Ontopo, no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site simajerusalem.co.il live: Sima restaurant, Agripas 82 Jerusalem (matches Agripas), hours Su-We 11-23, Th 11-24, Fr 11-16, Sa closed, phone 02-6233002, Jerusalem mixed grill (me'orav yerushalmi). Tabit order link (ordering, not booking). Kosher not stated on page."
 },
 "n13431212535": {
 "r": "none",
@@ -1968,7 +2058,10 @@
 },
 "n5155559674": {
 "r": "single",
-"note": "Wolt public listing 'Meshek Ofaimme Jerusalem' at Yaakov Shaskin 17 live with hours (checked 2026-11); Mako 2021 and Time Out 2024 confirm a Beit HaKerem Ofaimme branch (Shaskin assumed to be it - judgement). Own site ofaimme.com fetch blocked. No Tabit/Ontopo found; no closure news found for this branch."
+"note": "Wolt public listing 'Meshek Ofaimme Jerusalem' at Yaakov Shaskin 17 live with hours (checked 2026-11); Mako 2021 and Time Out 2024 confirm a Beit HaKerem Ofaimme branch (Shaskin assumed to be it - judgement). Own site ofaimme.com fetch blocked. No Tabit/Ontopo found; no closure news found for this branch.",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Own site ofaimme.com is live and lists 'Farm shop and cafe at Beit HaKerem' at Beit HaKerem St 19, Jerusalem: Su-Th 08:00-18:00, Fr 08:00-13:00, phone 052-366-6850 (checked 2026-11). The catalog address is Yaakov Shaskin 17 and no source links the two, so it may be the same corner spot, but I can't confirm. Possible new address: Beit HaKerem 19, Jerusalem. Wolt not used. No Tabit/Ontopo; no closure news."
 },
 "w183963639": {
 "r": "none",
@@ -2088,11 +2181,17 @@
 },
 "n12958952654": {
 "r": "ok",
-"note": "Tabit reservation page for Chakra Jerusalem live; Ontopo page (King George 41, hours listed, but not bookable via Ontopo); Time Out Israel list 2025-11 (King George 41). Own site chakrarest.com fetch blocked. Hours differ between Tabit and Ontopo so not given."
+"note": "Tabit reservation page for Chakra Jerusalem live; Ontopo page (King George 41, hours listed, but not bookable via Ontopo); Time Out Israel list 2025-11 (King George 41). Own site chakrarest.com fetch blocked. Hours differ between Tabit and Ontopo so not given.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site chakrarest.com live today: King George 41, open Monday-Saturday from 18:00, phone 02-6252733; reservations via own page (Tabit only for gift cards). Previously Tabit page live and Time Out 2025-11."
 },
 "n14252461485": {
 "r": "none",
-"note": "Tziga ice cream, Beit Lehem Rd 31 (Baka): JPost 2023-07 guide only (not recent); own site tziga.co.il fetch blocked; no Tabit/Ontopo or closure news found."
+"note": "Tziga ice cream, Beit Lehem Rd 31 (Baka): JPost 2023-07 guide only (not recent); own site tziga.co.il fetch blocked; no Tabit/Ontopo or closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Own site tziga.co.il is live and names the single shop at Beit Lechem 31, Jerusalem, with hours and phone. No kosher certificate named. Has vegan options but is not fully vegan. No closure notice."
 },
 "n561068509": {
 "r": "closed",
@@ -2184,7 +2283,10 @@
 },
 "n560372942": {
 "r": "single",
-"note": "Wolt venue 'Caffit | HaMoshava' live at Emek Refaim 36 (matches), Jerusalem Rabbinate kosher, phone 02-563-5284, links to caffit.co.il/branches (fetch blocked). No Tabit/Ontopo page found; no closure news."
+"note": "Wolt venue 'Caffit | HaMoshava' live at Emek Refaim 36 (matches), Jerusalem Rabbinate kosher, phone 02-563-5284, links to caffit.co.il/branches (fetch blocked). No Tabit/Ontopo page found; no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official caffit.co.il branch page 'German Colony' live: Emek Refaim 36, Jerusalem, phone 02-563-5284, Jerusalem Rabbinate kosher, kosher dairy restaurant. Hours on page incomplete (Su-We 07:30-24:00, Fr until 16:00, Sat night 20:30-24:00, Th not listed) so not given. Kipa 2023 also lists Caffit on Emek Refaim."
 },
 "w230594163": {
 "r": "none",
@@ -2204,7 +2306,10 @@
 },
 "n13882750309": {
 "r": "single",
-"note": "Chain. The official site rubenisrael.co.il was blocked (permission not granted), so the branch list could not be checked. Wolt has a live 'Ruben | Kanfei Nesharim' page at Kanfei Nesharim 24 (the only current source). No Tabit/Ontopo page and no closure news."
+"note": "Chain. The official site rubenisrael.co.il was blocked (permission not granted), so the branch list could not be checked. Wolt has a live 'Ruben | Kanfei Nesharim' page at Kanfei Nesharim 24 (the only current source). No Tabit/Ontopo page and no closure news.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Active Ontopo page 'Ruben Jerusalem' at Kanfei Nesharim 24, Givat Shaul, linked from the official all_branches Ontopo page and the own site rubenisrael.co.il (which lists a Jerusalem branch). Kosher Badatz Rabbi Machpud is stated in the events section only, so k is not set."
 },
 "n561176393": {
 "r": "none",
@@ -2212,7 +2317,10 @@
 },
 "n14181068680": {
 "r": "none",
-"note": "Chain. roladin.co.il was blocked (permission not granted). d.co.il directory (undated) lists Roladin at Derech Hebron 101 (Beit HaNatziv), 02-5867371 (https://www.d.co.il/80182741/43740/). Wolt's Roladin Jerusalem brand page lists only Machane Yehuda, Central Station, Hadassah Ein Karem and Hadar Mall. No official branch list confirms this branch, and no closure news found."
+"note": "Chain. roladin.co.il was blocked (permission not granted). d.co.il directory (undated) lists Roladin at Derech Hebron 101 (Beit HaNatziv), 02-5867371 (https://www.d.co.il/80182741/43740/). Wolt's Roladin Jerusalem brand page lists only Machane Yehuda, Central Station, Hadassah Ein Karem and Hadar Mall. No official branch list confirms this branch, and no closure news found.",
+"r2": "ok",
+"d2": "2026-11-27",
+"note2": "Official Roladin branch page 'Beit HaNatziv' lists Derech Hebron 101, Jerusalem, with hours and phone; marked kosher but no certificate named, so k is not set."
 },
 "n14181091320": {
 "r": "conflict",
@@ -2284,7 +2392,10 @@
 },
 "n4995235125": {
 "r": "none",
-"note": "itraveljerusalem.com (undated) lists Abu Shukri on Al-Wad St, non-kosher, open Sat, FB facebook.com/AbuShukriRestaurant; NYT-syndicated piece (Jordan News, 2023-01) mentions it near Via Dolorosa; ynetnews 2023-09 mention. No dated 2025-2026 source; no Tabit/Ontopo; no closure news. Separate First Station branch exists (firststation.co.il fetch refused)"
+"note": "itraveljerusalem.com (undated) lists Abu Shukri on Al-Wad St, non-kosher, open Sat, FB facebook.com/AbuShukriRestaurant; NYT-syndicated piece (Jordan News, 2023-01) mentions it near Via Dolorosa; ynetnews 2023-09 mention. No dated 2025-2026 source; no Tabit/Ontopo; no closure news. Separate First Station branch exists (firststation.co.il fetch refused)",
+"r2": "none",
+"d2": "2026-11-27",
+"note2": "No own website (Facebook only). The 'new' hits are 2023-01 NYT reprints (Oman Observer, Jordan News) that mention the Abu Shukri restaurant near the Via Dolorosa; itraveljerusalem is undated. Closure-news search found only unrelated restaurants (Abu Ali, 2019). No dated 2025-26 source; no Tabit/Ontopo."
 },
 "n4449974674": {
 "r": "none",
@@ -2304,7 +2415,10 @@
 },
 "n3836310279": {
 "r": "conflict",
-"note": "Bulghourji Armenian restaurant per itraveljerusalem (Armenian Patriarchate St 6, Old City, non-kosher; site bulghourji.rest.co.il) and blog updated 2025-09; catalog address Ein al-Louza and type cafe don't match; rest.co.il fetch blocked (permission not granted); no Tabit/Ontopo"
+"note": "Bulghourji Armenian restaurant per itraveljerusalem (Armenian Patriarchate St 6, Old City, non-kosher; site bulghourji.rest.co.il) and blog updated 2025-09; catalog address Ein al-Louza and type cafe don't match; rest.co.il fetch blocked (permission not granted); no Tabit/Ontopo",
+"r2": "conflict",
+"d2": "2026-11-27",
+"note2": "Own site bulghourji.rest.co.il still not fetchable (robots unreachable). itraveljerusalem (undated) lists Bulghourji as an Armenian restaurant at Armenian Patriarchate St 6, Old City, non-kosher. That doesn't match the catalog's Ein al-Louza address or cafe type, and no source ties a Bulghurji to Ein al-Louza/Silwan. No Tabit/Ontopo; no closure news; no dated 2025-26 source."
 },
 "n6653239689": {
 "r": "none",
@@ -2360,7 +2474,10 @@
 },
 "n5593444755": {
 "r": "none",
-"note": "Reshta (Hama'ayan, Ein Rafa) matches the catalog address according to JPost 2021-05. asif.org (updated 2024-03) and gordoniahotels.com (2024-12) also list it, but no 2025-2026 source was found. Own site reshta.co.il fetch was refused (permission timeout). No Tabit/Ontopo page and no closure news. Phone 02-9948520 per asif/JPost. Worth retrying the own site."
+"note": "Reshta (Hama'ayan, Ein Rafa) matches the catalog address according to JPost 2021-05. asif.org (updated 2024-03) and gordoniahotels.com (2024-12) also list it, but no 2025-2026 source was found. Own site reshta.co.il fetch was refused (permission timeout). No Tabit/Ontopo page and no closure news. Phone 02-9948520 per asif/JPost. Worth retrying the own site.",
+"r2": "single",
+"d2": "2026-11-27",
+"note2": "Own site reshta.co.il live (Reshta, Ein Rafa, chef Ranem Barhoum, links Ontopo); Ontopo page active (address Israel Trail, Ein Rafa, phone 054-6257088). Catalog address 'HaMa'ayan' vs Ein Rafa matched by judgement (JPost 2021 placed it at Hama'ayan, Ein Rafa). Hours on own site garbled and differ from Ontopo, so not given; phones differ between site (055-4536293 / 02-9948520) and Ontopo, so not given. (single: branch match by judgement)"
 },
 "n9557096580": {
 "r": "none",
