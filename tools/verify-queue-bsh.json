@@ -480,6 +480,166 @@
 "n13301718420": {
 "r": "none",
 "note": "Golda chain. Official site goldaglida.co.il failed to fetch (client_error), so its branch list could not be checked. No news or other source found for a Mitzpe Ramon branch (catalog address '40', probably Route 40)."
+},
+"n1004459625": {
+"r": "none",
+"note": "Local chain Glida Be'er Sheva (orig. Hadassah 50) confirmed by Mako 2013 / Maariv 2019 (5 branches in city), but no branch list naming Yitzhak Nafcha; no own site, Tabit/Ontopo or recent dated source found; no closure news"
+},
+"n1011456804": {
+"r": "none",
+"note": "Glida Be'er Sheva chain; no source naming a Sderot Hel HaHandasa branch; only Mako 2013/Maariv 2019 chain articles (Hadassah 50, malls); no own site/booking/closure news. Likely duplicate of n5774765822"
+},
+"n5774765822": {
+"r": "none",
+"note": "Same as n1011456804 (likely duplicate OSM node); no branch-specific recent source, own site or closure news found"
+},
+"n1002894224": {
+"r": "none",
+"note": "Searches (HE/EN) for Glicha on Joe Alon found nothing relevant; no site, Tabit/Ontopo or news"
+},
+"n1668578406": {
+"r": "none",
+"note": "No reliable source for Diner 24 at Stashover Square; only directories/aggregators; no closure news"
+},
+"n5201870249": {
+"r": "none",
+"note": "No reliable source for bar HaBeer at Masada 6 (results were real-estate listings/aggregators); no closure news"
+},
+"n7064678720": {
+"r": "none",
+"note": "Little India, Ringelblum 15: Mako 2010 and ynet 2022-11 guide (vegetarian Indian, Su-Th 11-23, mains ~45-48 NIS) but no 2025-2026 source, own site or Tabit/Ontopo page; no closure news found"
+},
+"n4582564989": {
+"r": "none",
+"note": "Hummus shel Tahina: Time Out 2019 / Mako 2023-11 mention a Beer Sheva branch (opened 2012) without address; Israel Hayom 2025-02 covers only Sderot reopening (Herzl 51). No recent source for the Yosef ben Matityahu branch; no closure news"
+},
+"n4596954089": {
+"r": "single",
+"note": "Tickchak lists upcoming shows at HaHalutz 33, Be'er Sheva for Dec 2026 and Jan 2027. It is a culture and music venue rather than a bar. Time Out page is from 2018 (not recent). No own site found. No Tabit/Ontopo. No closure news."
+},
+"n4739265021": {
+"r": "none",
+"note": "Knaaniya is a cafe-deli in the Midreshet Ben-Gurion (Sde Boker) commercial center per Israel Hayom 2022-11; catalog says Sela'it St, Ramat Negev, which may be the same spot (judgement). No recent 2025-2026 source. The tiuli page fetch failed and wanderlog is undated. No Tabit/Ontopo. No closure news."
+},
+"n4076374688": {
+"r": "none",
+"note": "Searched Hebrew and English for HaMachtesh bar in Mitzpe Ramon (Nahal Tzihor). Nothing reliable found. No Tabit/Ontopo. No closure news."
+},
+"n5168590129": {
+"r": "none",
+"note": "HaMexicani chain is active: Israel Hayom 2026-08 lists 10 Be'er Sheva branches by name (Old City, Central Station, BIG, Grand Canyon, Ishpro Planet, University, Ramot, Palach 7, Negev Mall, HaPark), but none could be matched to Kikar Stashover. Own site mexicani.co.il fetch was not permitted. No Tabit/Ontopo. No closure news."
+},
+"n10136244480": {
+"r": "none",
+"note": "HaMexicani chain is active in Be'er Sheva (Israel Hayom 2026-08, 10 branches named), but no source ties a branch to Sderot HaArim HaTeumot. Own site mexicani.co.il was blocked. No Tabit/Ontopo. No closure news."
+},
+"n13152302287": {
+"r": "conflict",
+"note": "Israel Hayom 2026-08 lists HaMexicani branches at Tzomet Shoket and Beit Kama, both in Bnei Shimon council. The catalog address '293' cannot be tied to either one with certainty (judgement). Own site was blocked. No Tabit/Ontopo. No closure news. Set to conflict: cannot tie catalog address 293 to a branch."
+},
+"n13301756943": {
+"r": "single",
+"note": "Israel Hayom 2026-08 lists a HaMexicani branch in Mitzpe Ramon (Ein Avdat station listed separately). The d.co.il directory gives the address as Nahal Tzeiya 7, commercial center, which differs from catalog '40' (maybe Route 40; judgement). Own site was blocked. No Tabit/Ontopo. No closure news."
+},
+"n1004424621": {
+"r": "none",
+"note": "HaSifriya bar-restaurant (Kampai group) appears only in old articles: Israel Hayom 2015 and Mako 2018. Both give Yitzhak Nafcha 25 (Mevne complex), not Eliyahu Navi. No recent source, no own site, no Tabit/Ontopo, no closure news found."
+},
+"w1080598928": {
+"r": "none",
+"note": "Green falafel (Ha-Yarok) found only in older guides: ynet 2019-07 (KKL 20) and mako 2024-10 (corner of KKL 70). Catalog says Tchernichovsky, so the branch match is a judgement call. No 2025-2026 source and no site/Tabit/Ontopo page found."
+},
+"n7167752760": {
+"r": "none",
+"note": "No reliable source found for HaTzrif on Yosef ben Matityahu, Beer Sheva. No site/Tabit/Ontopo page and no closure news."
+},
+"n679183969": {
+"r": "none",
+"note": "Only undated aggregators (spinach.guide, vymaps) list Hakatze, and they give Har Oded St, not Har Ardon. The local listing mitzpe-ramon.co.il/listing/hakaze was blocked (permission). No dated news, no Tabit/Ontopo, no closure news."
+},
+"n5071586248": {
+"r": "ok",
+"note": "Sumsumiya: ynetnews 2025-12-27 (7 Nahal Tziah St, open evenings and Sat afternoon) and Calcalist review 2025-12-09 agree it operates. Own site mentioned but not found; no Tabit/Ontopo found."
+},
+"w574725173": {
+"r": "none",
+"note": "Generic 'dining hall' in Ramat Negev (probably a kibbutz dining hall). No identifiable public restaurant or source found."
+},
+"n5201870248": {
+"r": "ok",
+"note": "The official chain branch list (humus-eli-yahoo.com/restaurants) names Beer Sheva-Metzada, Derech Metzada 6, Merkaz HaNegev. Hours on the site look garbled, so they were not used. Kosher listed as 'Mehadrin' with no certifier named."
+},
+"n1667896746": {
+"r": "none",
+"note": "No reliable source found for the Hayati bar at Bialik 5, Beer Sheva (checked Time Out Beer Sheva topic, Maariv 2025-07). No Tabit/Ontopo page and no closure news."
+},
+"n7167752765": {
+"r": "none",
+"note": "No reliable source found for Halavi Li on Yosef ben Matityahu, Beer Sheva. No site/Tabit/Ontopo page and no closure news."
+},
+"n1667827792": {
+"r": "none",
+"note": "Web, Tabit/Ontopo and closure searches (Hebrew/English) found no own site, booking page or dated article for Kapiyot at Haim Hanani 70; only directory hits."
+},
+"n6680120385": {
+"r": "none",
+"note": "Lola Coffee, Smilansky 13 (Old City): Mako travel 2024-10 and Time Out Israel 2019 describe it (address matches), but no 2025-2026 source found. Own site lolab7.co.il fetch was blocked (permission). No closure news. No Tabit/Ontopo page."
+},
+"n2720468085": {
+"r": "none",
+"note": "No reliable source found for a Bedouin cafe/tent at Maale Dvashon (phone +972543066843); Tiuli article fetch failed; no own site or booking page."
+},
+"n1636212070": {
+"r": "none",
+"note": "Munchilla appears only on undated aggregators (wanderlog, evendo, vymaps) and d.co.il directory; no own site, Tabit/Ontopo page, dated article, or closure news."
+},
+"n1002894233": {
+"r": "none",
+"note": "Only a Wolt listing 'Mukpatzin | Be'er Sheva' (undated, not an allowed source); no own site, booking page, article or closure news."
+},
+"w996646244": {
+"r": "none",
+"note": "Only a public Wolt listing (undated): 'Mileva - neighborhood flavor bar', Shlomo HaMelech 2, Be'er Sheva, pizzas/starters, delivery Su-Th 18-24, Sa 19-24. Not an allowed/dated source; no own site, Tabit/Ontopo or articles found."
+},
+"n1668578419": {
+"r": "none",
+"note": "Searches found only generic directory pages (d.co.il, restaurantguru); no own site, booking page, article or closure news for Mister Burger on David HaMelech."
+},
+"n1668578421": {
+"r": "none",
+"note": "Searches found only generic directory pages (b144, d.co.il, restaurantguru); no own site, booking page, article or closure news for Mister Pizza on David HaMelech."
+},
+"w702607151": {
+"r": "none",
+"note": "Only undated tiuli.com listing found (fetch failed, client_error); no own site, no Tabit/Ontopo page, no news or closure report."
+},
+"w372316109": {
+"r": "none",
+"note": "No reliable source for a food outlet named Mifgash HaPikud; searches return only news about the Southern Command base on HaAtzmaut St slated for evacuation/redevelopment. No closure article found."
+},
+"n5728458069": {
+"r": "conflict",
+"note": "Official McDonald's locator (mcdonalds.co.il/איתור_מסעדה, checked 2026-11) lists 7 Beer Sheva branches, none at Eilat 15 (Big Hevron Rd 21, Grand Tuviyahu 125, One Center Nafcha 25, Cinema City HaHita 1, Planet Katinka 2, Central Station Shmaryahu Levin 4, Azrieli Negev Mall Eli Cohen junction). Catalog's no-Saturday hours fit a kosher mall branch, possibly Azrieli Negev Mall, but the address doesn't match any listed branch."
+},
+"n5981044016": {
+"r": "ok",
+"note": "Official locator lists two branches at Beit Kama junction: store 174 (non-kosher, Su 10-22, Mo-We 10:30-22, Th 10-22, Sa 10:30-22) and store 240 at the Paz station (kosher, Su-Th 10-21, Sa closed). Catalog address has no street, so branch match is by junction; the catalog's no-Saturday hours fit store 240. Hours not set because it's unclear which branch this is."
+},
+"n13301718865": {
+"r": "conflict",
+"note": "Official locator lists the only Mitzpe Ramon branch (store 260) at Sderot Ben Gurion 2, not Sderot KKL as in the catalog; the match rests on it being the only branch in town. Locator hours: Su 10:30-22, Mo-We 11-22, Sa 11-22 (Th/Fr unclear), not kosher-labelled. Set to conflict: catalog address (KKL) differs from official (Ben Gurion 2)."
+},
+"n1012407985": {
+"r": "none",
+"note": "Only directory listings (easy, b144, d.co.il) found; no own site, Tabit/Ontopo page, dated article or closure news for Max Shawarma on Hel HaHandasa Blvd."
+},
+"n1705752026": {
+"r": "none",
+"note": "No source found for Saiora in Bnei Shimon (searches returned unrelated results); no Tabit/Ontopo page and no closure news."
+},
+"n3791381839": {
+"r": "none",
+"note": "Only an undated weekend.co.il listing for 'Ahuzat Smilansky', Smilansky 23 (phone 08-6654854, French/Mediterranean chef restaurant and tapas bar). No own site, Tabit/Ontopo page, recent article or closure news found."
 }
 }
 }
