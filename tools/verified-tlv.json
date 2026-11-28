@@ -3869,6 +3869,139 @@
    "src": [
     "https://the-lobby.co.il/"
    ]
+  },
+  "n9113990169": {
+   "n": "Goodness",
+   "ok": "2026-05",
+   "cu": "טבעוני",
+   "vg": 1,
+   "src": [
+    "https://timeout.co.il/%d7%a4%d7%95%d7%a4-%d7%90%d7%a4-%d7%9b%d7%90%d7%9f-11/",
+    "https://www.spottedbylocals.com/telaviv/goodness"
+   ]
+  },
+  "n9514689217": {
+   "n": "תדר",
+   "ok": "2026-08",
+   "src": [
+    "https://timeout.co.il/עזיבות-בתדר/"
+   ]
+  },
+  "n10814517041": {
+   "n": "לאגר אנד אייל",
+   "ok": "2026-06",
+   "cu": "בר",
+   "src": [
+    "https://www.maariv.co.il/breaking-news/article-1332405"
+   ]
+  },
+  "n11032180205": {
+   "n": "ליי פו",
+   "ok": "2025-01",
+   "cu": "אסייתי",
+   "pr": 2,
+   "w": "https://laifu.co.il/",
+   "src": [
+    "https://timeout.co.il/מה-מזמינים-היום-060125/",
+    "https://timeout.co.il/ליי-פו/"
+   ]
+  },
+  "n11681574120": {
+   "n": "איטס קפיטריה",
+   "ok": "2026-11",
+   "cu": "קפה ובראנץ'",
+   "p": "03-5594486",
+   "bk": "https://ontopo.com/he/il/page/95766418",
+   "src": [
+    "https://ontopo.com/he/il/page/95766418",
+    "https://timeout.co.il/מיפוי-שינקין-2025/",
+    "https://www.ynetnews.com/food/article/rk11us0cwzl"
+   ]
+  },
+  "n11707859452": {
+   "n": "Shake Shack",
+   "ok": "2026-11",
+   "cu": "המבורגר",
+   "src": [
+    "https://www.ice.co.il/food/news/article/1136991",
+    "https://www.maariv.co.il/food/article-1182428"
+   ]
+  },
+  "n12031178323": {
+   "n": "אצל הטורקי",
+   "ok": "2025-06",
+   "cu": "בשרים",
+   "pr": 2,
+   "src": [
+    "https://www.mako.co.il/food-restaurants/best/Article-a718c9d49f52791026.htm"
+   ]
+  },
+  "n12090750683": {
+   "n": "פיצה יואב",
+   "ok": "2026-03",
+   "cu": "פיצה",
+   "src": [
+    "https://timeout.co.il/הפיצות-הכי-טובות/"
+   ]
+  },
+  "n12114461037": {
+   "n": "רדלר",
+   "ok": "2026-11",
+   "pr": 3,
+   "p": "+972 3 728 3830",
+   "bk": "https://ontopo.com/en/il/page/87625309",
+   "src": [
+    "https://ontopo.com/en/il/page/87625309",
+    "https://timeout.co.il/רדלר-אבי-ביטון/",
+    "https://ontopo.com/magazine/where-to-eat/nahalat-binyamin-food-crawl/"
+   ]
+  },
+  "n12114467379": {
+   "n": "Wine Shop",
+   "ok": "2026-11",
+   "cu": "בר יין",
+   "p": "+972 3 915 1144",
+   "bk": "https://tabitisrael.co.il/site/wine-shop",
+   "src": [
+    "https://tabitisrael.co.il/site/wine-shop",
+    "https://www.ynetnews.com/culture/lifestyle/article/ryazn5o8be"
+   ]
+  },
+  "n12114477414": {
+   "n": "גשן",
+   "ok": "2026-11",
+   "cu": "בשרים",
+   "p": "+972 3 560 0766",
+   "bk": "https://ontopo.com/en/il/page/goshen",
+   "src": [
+    "https://ontopo.com/en/il/page/goshen",
+    "https://timeout.co.il/the-hottest-street-in-tel-aviv-25-recommended-places-to-eat-on-nahalat-binyamin/"
+   ]
+  },
+  "n12131047251": {
+   "n": "לה טיגרה",
+   "ok": "2026-07",
+   "cu": "פיצה",
+   "src": [
+    "https://timeout.co.il/%d7%97%d7%93%d7%a9%d7%95%d7%aa-%d7%94%d7%90%d7%95%d7%9b%d7%9c-106/",
+    "https://jpost.com/consumerism/article-898569",
+    "https://timeout.co.il/%d7%9c%d7%94-%d7%98%d7%99%d7%92%d7%a8%d7%94-%d7%91%d7%96%d7%9c/"
+   ]
+  },
+  "n12187702248": {
+   "n": "הבורקס של אמא",
+   "ok": "2025-06",
+   "src": [
+    "https://www.maariv.co.il/food/article-1201578"
+   ]
+  },
+  "n12187705632": {
+   "n": "פיצה ברוקלין",
+   "ok": "2026-03",
+   "cu": "פיצה",
+   "src": [
+    "https://timeout.co.il/%d7%94%d7%a4%d7%99%d7%a6%d7%95%d7%aa-%d7%94%d7%9b%d7%99-%d7%98%d7%95%d7%91%d7%95%d7%aa/"
+   ]
   }
  }
 }

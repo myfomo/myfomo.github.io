@@ -18,10 +18,10 @@
 },
 "n9866149822": {
 "n": "אלגריה",
-"d": "2024-12",
+"d": "2024-11",
 "src": [
-"https://timeout.co.il/סגירות-מלחמה-שנה/",
-"https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
+"https://timeout.co.il/3-סגירות-נוב/",
+"https://timeout.co.il/%d7%a4%d7%95%d7%a4-%d7%90%d7%a4-%d7%9b%d7%90%d7%9f-11/"
 ]
 },
 "n4875397221": {
@@ -33,11 +33,11 @@
 ]
 },
 "n9215660717": {
-"n": "416 (הארבעה 16)",
+"n": "416",
 "d": "2023-10",
 "src": [
 "https://timeout.co.il/416-נסגרת/",
-"https://timeout.co.il/סגירות-מלחמה-שנה/"
+"https://timeout.co.il/%d7%a4%d7%95%d7%a4-%d7%90%d7%a4-%d7%9b%d7%90%d7%9f-11/"
 ]
 },
 "n9587310144": {
@@ -96,10 +96,11 @@
 ]
 },
 "n11247029737": {
-"n": "אורבי",
-"d": "2025",
+"n": "אורבי קפה",
+"d": "2025-07",
 "src": [
-"https://timeout.co.il/%d7%a1%d7%92%d7%99%d7%a8%d7%95%d7%aa-%d7%9e%d7%a1%d7%a2%d7%93%d7%94-%d7%aa%d7%a9%d7%a4%d7%94/"
+"https://timeout.co.il/%d7%90%d7%95%d7%a8%d7%91%d7%99-%d7%a1%d7%92%d7%99%d7%a8%d7%94/",
+"https://timeout.co.il/אורבי-פלורנטין/"
 ]
 },
 "n5273498821": {
@@ -124,7 +125,7 @@
 "n": "בושוויק",
 "d": "2026-02",
 "src": [
-"https://timeout.co.il/בושוויק-מרלוזה-סגירה/"
+"https://timeout.co.il/%d7%91%d7%95%d7%a9%d7%95%d7%95%d7%99%d7%a7-%d7%9e%d7%a8%d7%9c%d7%95%d7%96%d7%94-%d7%a1%d7%92%d7%99%d7%a8%d7%94/"
 ]
 },
 "n2078994157": {
@@ -486,6 +487,23 @@
 "d": "2026",
 "src": [
 "https://cafelix.co.il/"
+]
+},
+"n10778245405": {
+"n": "פיצה לילה",
+"d": "2026-04",
+"src": [
+"https://www.ice.co.il/food/news/article/1108502",
+"https://timeout.co.il/פיצה-לילה-הדסטארט/",
+"https://www.maariv.co.il/food/foodnews/article-1377521"
+]
+},
+"n11185427757": {
+"n": "ברגר",
+"d": "2024-06",
+"src": [
+"https://www.israelhayom.co.il/food/food-news/article/15948018",
+"https://www.maariv.co.il/food/article-1022131"
 ]
 }
 }

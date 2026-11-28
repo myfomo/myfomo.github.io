@@ -8147,6 +8147,94 @@
   "n9063618650": {
    "r": "ok",
    "note": "Own site the-lobby.co.il live: HaLechi 31 Bnei Brak, phone 052-8781859, home-style/ethnic food with daily menu, delivery ordering. Hours on site inconsistent (Su-Th 8:30-17:00 vs 9:00-16:30) so not recorded. Kosher cert not stated. No Tabit/Ontopo page; no closure news (bhol.co.il fetch failed)."
+  },
+  "n9113990169": {
+   "r": "ok",
+   "note": "Time Out 2026-05-28 pop-up article describes Goodness as operating on King George, hosting the pop-up. Spotted by Locals review 2025-08 (gives King George 41). Time Out 2024-07 reported a possible closure that did not happen. Fully vegan per Time Out/Maariv 2023. No own site found. Catalog address is only '32'. Time Out 2024 gives המלך ג'ורג' 32, so an address fix is suggested. Prices are from 2023 only, so no pr. https://timeout.co.il/%d7%a4%d7%95%d7%a4-%d7%90%d7%a4-%d7%9b%d7%90%d7%9f-11/ https://www.spottedbylocals.com/telaviv/goodness https://timeout.co.il/גודנס-עוד-לא-נסגרת/"
+  },
+  "n9215660717": {
+   "r": "closed",
+   "note": "Time Out 2023-10-18: 416 vegan resto-bar closed permanently after a final week. By then it had moved from HaArba'a to HaMakabim St near Betzalel Market, via a temporary space at TLV Mall. Own site was unfetchable. Time Out 2026-05 also lists 416 among closed vegan places. https://timeout.co.il/416-נסגרת/"
+  },
+  "n9514689217": {
+   "r": "single",
+   "note": "Time Out 2026-08-16: co-founders leaving Teder; the businesses at Beit Romano continue as usual, with no closure. Maariv 2026-10 covers the municipal plan for Beit Romano but does not state Teder's status. Mako 2016 gives Derech Yafo 9 (Beit Romano) and the pizza with Eyal Shani. Own site teder.fm was unfetchable. No Tabit/Ontopo found. Hours not verified. https://timeout.co.il/עזיבות-בתדר/"
+  },
+  "n9587310144": {
+   "r": "conflict",
+   "note": "Branch match uncertain: 416 closed 2023-10 (Time Out) but only HaArba'a/TLV Mall/HaMakabim locations are known; this Sokolov entry (coords Ramat HaSharon) not confirmed as a 416 branch. 416 closed permanently in 2023-10 per Time Out. Only one 416 location is known (HaArba'a, then TLV Mall, then HaMakabim). This Sokolov entry (coords look like Ramat HaSharon) is matched to that closure by judgement, not by a source naming the branch. https://timeout.co.il/416-נסגרת/"
+  },
+  "n9866149822": {
+   "r": "closed",
+   "note": "Time Out 2024-11-03 reports vegan Alegria closing (owner Maya Aloni quoted). Time Out 2026-05-28 lists Alegria among vegan places that closed. https://timeout.co.il/3-סגירות-נוב/"
+  },
+  "n10778245405": {
+   "r": "closed",
+   "note": "ice 2026-04-05: building at Merhavia 4 (Levinsky Market) collapsed, pizzeria stopped operating, temporary pop-up moved to Nafcha 3/Shenkin. Time Out 2026-04-16: Levinsky location closed until further notice, crowdfunding to rebuild. Maariv 2026-10-15: Shenkin pop-up turning into bistro 'Layla', no return date. Possibly temporary closure - recheck later."
+  },
+  "n10814517041": {
+   "r": "single",
+   "note": "Own site lagerandale.co.il unfetchable. Only recent source: Maariv 2026-06-13 Sarona complex review names 'Lager & Ale' beer bar among the group's venues in Sarona (operating status implied, not explicit) https://www.maariv.co.il/breaking-news/article-1332405 . atly lists a Herzl 17 address (other branch?). No closure news found."
+  },
+  "n10969248308": {
+   "r": "conflict",
+   "note": "Likely closed but no source meeting the closure rule. Community blog Asian Community Israel (2025-08) says the Mochikva store on Ben Yehuda was closing, with 18 days left: https://asianinisrael.netlify.app/2025/08/mochikva-closing. Time Out (2025-06-08) reports Sitti bakery opening a branch at Ben Yehuda 89, the same address: https://timeout.co.il/siti-%D7%91%D7%9F-%D7%99%D7%94%D7%95%D7%93%D7%94/. No news article or own post found. Own site mochikva.com could not be fetched (permission timeout). Last Time Out listing at this address is from 2022. No Tabit/Ontopo page found."
+  },
+  "n11032180205": {
+   "r": "single",
+   "note": "Time Out 'What to order today' (2025-01-06) recommends Lai Fu dim sum in Bograshov, with prices of 30-60 NIS, and names laifu.co.il: https://timeout.co.il/מה-מזמינים-היום-060125/. Time Out 2021 opening article gives Bograshov 31 and phone 077-4143139: https://timeout.co.il/ליי-פו/. No closure news (the 2026 Maariv Bograshov sushi closure is Mon Sushi Bar, a different place). No Tabit/Ontopo page found. Own site could not be fetched. Hours not confirmed."
+  },
+  "n11185427757": {
+   "r": "closed",
+   "note": "Israel Hayom (2024-06-20) reports that the Berger burger restaurant in Shuster Center, Ramat Aviv, closed; it was run by the Cafe Zoric group. Maariv 2023 gives Abba Ahimeir 21 with phone 03-5790917, which matches the catalog phone; the catalog says 17. Own site bergerbyzorik.co.il could not be fetched."
+  },
+  "n11247029737": {
+   "r": "closed",
+   "note": "Time Out (2025-07-16) says the Orby cafe in the Florentin Quadrangle (Me'on 5 per Time Out 2023) closes permanently on 2025-07-21 and the business is for sale. The Rothschild kiosk was a temporary pop-up opened in 2025-01."
+  },
+  "n11681574120": {
+   "r": "ok",
+   "note": "Ontopo page 'Eats Evening' (איטס ערב) active, Sheinkin 20, phone 03-5594486 (https://ontopo.com/he/il/page/95766418); Time Out Sheinkin map 2025-03 lists Eats at Sheinkin 20; ynetnews 2026-08 says Eats still operating (branch not named); separate Ontopo 'Eats Cafeteria' page shows Ben Gurion 75 branch; own site blocked; no closure news found"
+  },
+  "n11707859452": {
+   "r": "ok",
+   "note": "ice 2026-11-10 (first branch on Dizengoff, chain now 7 branches) + Maariv 2025-03 (Dizengoff branch events); street number not stated in sources, only one Dizengoff branch (judgement); no Tabit/Ontopo; own site blocked; no closure news"
+  },
+  "n12031178323": {
+   "r": "single",
+   "note": "Only Mako Or Yehuda guide 2025-06 (Harishonim 2, 03-5331352, kosher - no certificate named, shawarma 54-83 NIS, hours Su-Th 10:30-24:00 Fr 10:30-14:30 not stored, single source): https://www.mako.co.il/food-restaurants/best/Article-a718c9d49f52791026.htm; own site blocked; no Tabit/Ontopo; no closure news"
+  },
+  "n12090750683": {
+   "r": "single",
+   "note": "Only Time Out best-pizza list 2026-03 (modified 2026-10) lists Pizza Yoav at Vital 10: https://timeout.co.il/הפיצות-הכי-טובות/; own site blocked; no Tabit/Ontopo; no closure news"
+  },
+  "n12114461037": {
+   "r": "ok",
+   "note": "Ontopo active (Radler brasserie, Nahalat Binyamin 48, +972 3 728 3830; also separate 'Radler Bar' Ontopo pages); Time Out review 2026-05 (mains 88-118 NIS, hours 'from 19:00' disagree with Ontopo, not stored); Ontopo magazine 2026-07/11; own site blocked; no closure news"
+  },
+  "n12114467379": {
+   "r": "ok",
+   "note": "Tabit booking page active (Wine Shop, phone 03-9151144 matches catalog, address not shown; hours 17:00-00:00 differ from catalog, not stored) + ynetnews wine bars 2026-02 (24 Montefiore, wine bar, small plates Fridays); own site blocked; no closure news"
+  },
+  "n12114477414": {
+   "r": "ok",
+   "note": "Ontopo active (Goshen, Nahalat Binyamin 30, +972 3-560-0766; Ontopo-only hours not stored); Tabit page exists; Time Out Nahalat Binyamin guide 2025-11 (kosher meat restaurant, steaks, high prices; certificate not named); own site blocked; no closure news"
+  },
+  "n12131047251": {
+   "r": "ok",
+   "note": "Time Out 2026-07-01 food news lists La Tigre at Frenkel 9 // Alkalai 5 (aperitivo menu). Time Out 2025-10 covers the Basel branch opening and calls Florentin the mother restaurant. JPost 2026-06 covers the new Kiryat Ono branch and says the chain started in Florentin. Own site blocked. Hours not confirmed (Time Out's hours are garbled), so they are not set."
+  },
+  "n12184187992": {
+   "r": "closed",
+   "note": "Time Out 2026-02-25 reports that Bushwick (at the Fabric hotel, Nahalat Binyamin) and Marloza are closing (news broke 2026-02-24). No new location announced."
+  },
+  "n12187702248": {
+   "r": "single",
+   "note": "Maariv 2025-06-01 names it at Levinsky 46 (also called Borekas Levinsky); a borekas costs 35 NIS. Time Out 2021/2022 is older (spinach borekas vegan, phone 050-4622276). The catalog website 'https://mamaborekas' is invalid. No closure news. Only one recent source: https://www.maariv.co.il/food/article-1201578"
+  },
+  "n12187705632": {
+   "r": "single",
+   "note": "Time Out 2026-03-13 best-pizzas list names Brooklyn at Dizengoff 276 / Yehuda HaLevi 45 (New York-style). Time Out 2025-03 mentions Pizza Brooklyn without naming a branch. Own site blocked; Wolt not used. Only one recent source: https://timeout.co.il/הפיצות-הכי-טובות/"
   }
  }
 }
