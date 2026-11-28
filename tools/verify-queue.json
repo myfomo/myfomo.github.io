@@ -8178,7 +8178,7 @@
   },
   "n10969248308": {
    "r": "conflict",
-   "note": "Likely closed but no source meeting the closure rule. Community blog Asian Community Israel (2025-08) says the Mochikva store on Ben Yehuda was closing, with 18 days left: https://asianinisrael.netlify.app/2025/08/mochikva-closing. Time Out (2025-06-08) reports Sitti bakery opening a branch at Ben Yehuda 89, the same address: https://timeout.co.il/siti-%D7%91%D7%9F-%D7%99%D7%94%D7%95%D7%93%D7%94/. No news article or own post found. Own site mochikva.com could not be fetched (permission timeout). Last Time Out listing at this address is from 2022. No Tabit/Ontopo page found."
+   "note": "Likely closed but no source meeting the closure rule. Community blog Asian Community Israel (2025-08) says the Mochikva store on Ben Yehuda was closing, with 18 days left: https://asianinisrael.netlify.app/2025/08/mochikva-closing. Time Out (2025-06-08) reports Sitti bakery opening a branch at Ben Yehuda 89, the same address: https://timeout.co.il/siti-%D7%91%D7%9F-%D7%99%D7%94%D7%95%D7%93%D7%94/. No news article or own post found. Own site mochikva.com could not be fetched (permission timeout). Last Time Out listing at this address is from 2022. No Tabit/Ontopo page found. Own site mochikva.com now redirects to an expired-domain listing (2026-11-28)."
   },
   "n11032180205": {
    "r": "single",
@@ -8235,6 +8235,90 @@
   "n12187705632": {
    "r": "single",
    "note": "Time Out 2026-03-13 best-pizzas list names Brooklyn at Dizengoff 276 / Yehuda HaLevi 45 (New York-style). Time Out 2025-03 mentions Pizza Brooklyn without naming a branch. Own site blocked; Wolt not used. Only one recent source: https://timeout.co.il/הפיצות-הכי-טובות/"
+  },
+  "n9597836918": {
+   "r": "ok",
+   "note": "Own site olivery.co.il live: Olivery at Cameri plaza, Shaul HaMelech 23, phone 03-5446076, Ontopo booking link. Catalog address (Mishol Yosef Schmidt) is the lane by the Cameri; address fix to Shaul HaMelech 23 added."
+  },
+  "n9833787217": {
+   "r": "ok",
+   "note": "Own site port19.co.il live (modified 2026-04) lists branch Herzl 20 with hours and phone 03-6707929 (ext 4); not marked kosher."
+  },
+  "n9889139101": {
+   "r": "ok",
+   "note": "Own site lilyrosebar.com live: 'our new home Ibn Gabirol 148' (meta says 146), table reservations by phone 052-3763489; only opening times shown, hours not recorded."
+  },
+  "n9996994226": {
+   "r": "none",
+   "note": "Own site wineberry.co.il is a Shopify password page ('Opening soon'), no address; earlier search found no news, guide, Tabit or Ontopo source."
+  },
+  "n9997008817": {
+   "r": "ok",
+   "note": "Own site miznon.com/locations lists Ibn Gabirol 23, Tel Aviv (footer 2025). No hours/phone on site."
+  },
+  "n10176143226": {
+   "r": "ok",
+   "note": "Own site ohmama.co.il live (2026): King George 26, phone 054-8168618, hours shown, kosher under Tel Aviv-Jaffa Rabbinate."
+  },
+  "n10723520074": {
+   "r": "ok",
+   "note": "Own site dabush.co.il live (modified 2026-11): branch Ben Gurion 1 Bnei Brak (BSR 2 building), phone 03-6912175, hours shown, kosher Bnei Brak Rabbinate Mehadrin."
+  },
+  "n10814448814": {
+   "r": "ok",
+   "note": "Own site mixi.co.il live: 'Sarona Market branch: Aluf Kalman Magen 5'; phones 050-8883581/2 not clearly per branch so not recorded. Catalog address (Lova Eliav tunnel) not changed."
+  },
+  "n10814448815": {
+   "r": "ok",
+   "note": "Own site bayern-market.com (redirects to bayern.market) lists a Sarona Market branch with hours (garbled, not recorded); no address shown. Sausage brand stand."
+  },
+  "n10825017255": {
+   "r": "conflict",
+   "note": "containers-court.com/food/cafelix/ page is live but gives the location as the Bursa complex, Ramat Gan (catalog: Kikar Shnitzer, Tel Aviv); page is under 'cafelix' and footer dated 2018-2019, hours look mistyped. Name/branch match unclear."
+  },
+  "n10951309672": {
+   "r": "conflict",
+   "note": "Own site agvania.co.il live (2026-08) lists the Jabotinsky branch as Jabotinsky 155, Ramat Gan, phone 03-6773332; catalog has 'Jabotinsky, Tel Aviv' with Ramat Gan coordinates. Reliable new address: Jabotinsky 155, Ramat Gan."
+  },
+  "n10969247136": {
+   "r": "ok",
+   "note": "Own site halevantini.co.il live (modified 2026-05): Ben Yehuda 170, hours daily 11:00-23:00, phone 077-8048601, Ontopo booking."
+  },
+  "n10973300605": {
+   "r": "ok",
+   "note": "Own site caffe-tamati.co.il live: HaCarmel 12, hours Su-Th 7-17, Fr 7-15, phone 039506858 (coffee roaster/shop; latest article 2023-08)."
+  },
+  "n10989086591": {
+   "r": "none",
+   "note": "Own site ilans.co.il is an online coffee store (2026) listing only a head office at Sheshet HaYamim 30 Bnei Brak, no Menachem Begin 7 branch; no other recent source found."
+  },
+  "n11459880747": {
+   "r": "ok",
+   "note": "Own site panetti.co.il live: 'Sokolov 37, Ramat HaSharon' (matches coordinates), phones 058-5050055 / 03-6565808; hours garbled, not recorded; site dates 2017-2022."
+  },
+  "n11802320072": {
+   "r": "ok",
+   "note": "Own branch page pizzahut.co.il/branch/tlv-ramat-hachayal (modified 2026-03): HaNechoshet 1, phone 1-700-50-60-70, kosher Mehadrin Badatz Beit Yosef; hours look reversed, not recorded."
+  },
+  "n12090743890": {
+   "r": "none",
+   "note": "Only rol.co.il directory listing (undated): Vital 2 Florentin, from 18:00; plus Time Out EN 2017. No recent source, no Tabit/Ontopo."
+  },
+  "n12115346462": {
+   "r": "ok",
+   "note": "Own site etrogman.com live (modified 2026-10): contact page 'Carmel Market, Hillel HaZaken 18', phone 03-5567706; mainly an online shop, no hours."
+  },
+  "n12133763086": {
+   "r": "conflict",
+   "note": "Own branch page humus-eli-yahoo.com/restaurants lists no Florentin / Maon 4 branch (other TLV branches listed); enjoyingisrael (undated) still lists Maon 4. Possibly closed, but no closure source."
+  },
+  "n12147771610": {
+   "r": "ok",
+   "note": "Own site cafetov.org.il/branches (modified 2026-04) lists Frenkel 2 (Florentin), hours and phone 050-7979164; vegan category on menu."
+  },
+  "n12154646406": {
+   "r": "ok",
+   "note": "Own site lachmanina.co.il/branches lists 'HaBima, Marmorek 4', phone 03-5362124; hours appear mis-entered, not recorded."
   }
  }
 }

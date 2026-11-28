@@ -4002,6 +4002,152 @@
    "src": [
     "https://timeout.co.il/%d7%94%d7%a4%d7%99%d7%a6%d7%95%d7%aa-%d7%94%d7%9b%d7%99-%d7%98%d7%95%d7%91%d7%95%d7%aa/"
    ]
+  },
+  "n9597836918": {
+   "n": "אוליברי",
+   "ok": "2026-11",
+   "p": "03-5446076",
+   "w": "https://www.olivery.co.il",
+   "bk": "https://ontopo.com/he/il/page/55218717",
+   "src": [
+    "https://www.olivery.co.il/"
+   ]
+  },
+  "n9833787217": {
+   "n": "פורט 19",
+   "ok": "2026-11",
+   "oh": "Su 12:00-23:00; Mo-Sa 12:00-03:00",
+   "p": "03-6707929",
+   "w": "https://port19.co.il/",
+   "src": [
+    "https://port19.co.il/"
+   ]
+  },
+  "n9889139101": {
+   "n": "Lily Rose",
+   "ok": "2026-11",
+   "p": "052-3763489",
+   "w": "https://www.lilyrosebar.com/",
+   "src": [
+    "https://www.lilyrosebar.com/"
+   ]
+  },
+  "n9997008817": {
+   "n": "Miznon",
+   "ok": "2026-11",
+   "w": "https://miznon.com",
+   "src": [
+    "https://www.miznon.com/locations"
+   ]
+  },
+  "n10176143226": {
+   "n": "הו מאמא",
+   "ok": "2026-11",
+   "oh": "Su-Th 10:00-19:00; Fr 08:00-16:30; Sa off",
+   "p": "054-8168618",
+   "k": 1,
+   "w": "https://ohmama.co.il/",
+   "src": [
+    "https://ohmama.co.il/"
+   ]
+  },
+  "n10723520074": {
+   "n": "דבוש בסר בני ברק",
+   "ok": "2026-11",
+   "oh": "Su-Th 11:00-18:00; Fr off; Sa off",
+   "p": "03-6912175",
+   "k": 1,
+   "w": "https://www.dabush.co.il",
+   "src": [
+    "https://www.dabush.co.il/"
+   ]
+  },
+  "n10814448814": {
+   "n": "מיקסי סלט בר",
+   "ok": "2026-11",
+   "w": "https://mixi.co.il/",
+   "src": [
+    "https://mixi.co.il/"
+   ]
+  },
+  "n10814448815": {
+   "n": "Bayern Market",
+   "ok": "2026-11",
+   "w": "https://bayern.market/",
+   "src": [
+    "https://bayern.market/"
+   ]
+  },
+  "n10969247136": {
+   "n": "הלבנטיני",
+   "ok": "2026-11",
+   "oh": "Mo-Su 11:00-23:00",
+   "p": "077-8048601",
+   "w": "https://halevantini.co.il",
+   "bk": "http://ontopo.com/he/il/page/94384211",
+   "src": [
+    "https://halevantini.co.il/"
+   ]
+  },
+  "n10973300605": {
+   "n": "Caffe Tamati",
+   "ok": "2026-11",
+   "oh": "Su-Th 07:00-17:00; Fr 07:00-15:00",
+   "p": "03-9506858",
+   "cu": "קפה ובראנץ'",
+   "w": "https://caffe-tamati.co.il/",
+   "src": [
+    "https://caffe-tamati.co.il/"
+   ]
+  },
+  "n11459880747": {
+   "n": "Panetti",
+   "ok": "2026-11",
+   "p": "03-6565808",
+   "w": "https://www.panetti.co.il/",
+   "src": [
+    "https://www.panetti.co.il/"
+   ]
+  },
+  "n11802320072": {
+   "n": "Pizza Hut",
+   "ok": "2026-11",
+   "p": "1-700-50-60-70",
+   "k": 1,
+   "cu": "פיצה",
+   "w": "https://www.pizzahut.co.il/branch/tlv-ramat-hachayal/",
+   "src": [
+    "https://www.pizzahut.co.il/branch/tlv-ramat-hachayal/"
+   ]
+  },
+  "n12115346462": {
+   "n": "איש האתרוגים",
+   "ok": "2026-11",
+   "p": "03-5567706",
+   "w": "https://www.etrogman.com/",
+   "src": [
+    "https://www.etrogman.com/contact/"
+   ]
+  },
+  "n12147771610": {
+   "n": "קפה טוב",
+   "ok": "2026-11",
+   "oh": "Su-Th 08:30-16:00; Fr 08:00-13:00",
+   "p": "050-7979164",
+   "cu": "קפה ובראנץ'",
+   "w": "https://cafetov.org.il/",
+   "src": [
+    "https://cafetov.org.il/branches/"
+   ]
+  },
+  "n12154646406": {
+   "n": "לחמנינה",
+   "ok": "2026-11",
+   "p": "03-5362124",
+   "w": "https://lachmanina.co.il/",
+   "src": [
+    "https://lachmanina.co.il/branches/"
+   ]
   }
  }
 }
