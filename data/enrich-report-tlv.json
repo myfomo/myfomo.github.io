@@ -2,9 +2,9 @@
  "addr_osm": 0,
  "addr_partial": 0,
  "site_checked": 541,
- "site_jsonld": 66,
- "site_match": 19,
- "site_reject": 47,
+ "site_jsonld": 68,
+ "site_match": 20,
+ "site_reject": 48,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -33,6 +33,13 @@
    "field": "hours",
    "osm": "Su-Th 08:30-20:00; Fr 08:30-16:00; Sa off",
    "site": "Su 08:30-21:00; Tu 08:30-21:00; We 08:30-21:00; Th 08:30-21:00; Fr 08:30-16:00"
+  },
+  {
+   "id": "n2079180765",
+   "n": "אניטה",
+   "field": "phone",
+   "osm": "+972 3 624 6383",
+   "site": "039585573"
   },
   {
    "id": "n2079208883",
@@ -140,6 +147,13 @@
    "site": "Su,Mo,Tu,We,Th 12:00-20:00; Fr 11:00-15:00"
   },
   {
+   "id": "n6041389430",
+   "n": "גומבה תל אביב",
+   "field": "phone",
+   "osm": "03-9739954",
+   "site": "037743330"
+  },
+  {
    "id": "n6041389431",
    "n": "שניצל קומפני",
    "field": "phone",
@@ -182,6 +196,13 @@
    "site": "0549325656"
   },
   {
+   "id": "n9429290715",
+   "n": "המוסד לסנדוויצ'ים מיוחדים",
+   "field": "phone",
+   "osm": "+97235629896",
+   "site": "036038025"
+  },
+  {
    "id": "n10296516877",
    "n": "The Urban Bakery",
    "field": "hours",
@@ -208,6 +229,13 @@
    "field": "phone",
    "osm": "+972 54 223 0223",
    "site": "0537933664"
+  },
+  {
+   "id": "n12588113205",
+   "n": "קנסאי",
+   "field": "hours",
+   "osm": "Su-Th 11:00-23:00; Sa (sunset+01:00)-23:00",
+   "site": "Su,Mo,Tu,We,Th 11:00-23:00"
   },
   {
    "id": "n13532671475",
@@ -246,6 +274,12 @@
    "id": "n1419068446",
    "n": "ארקפה מילניום",
    "w": "https://arcaffe.co.il/branches/millennium/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n2079180765",
+   "n": "אניטה",
+   "w": "https://www.anita-gelato.com/our-locations/tel-aviv-neve-tsedek-40-shabazi-st/",
    "why": "branch/name not confirmed"
   },
   {
@@ -501,15 +535,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 97,
- "phone_multi_skipped": 28,
+ "phone_confirmed": 107,
+ "phone_multi_skipped": 29,
  "coverage_after": {
   "address": "1319 (100%)",
   "hours": "433 (33%)",
-  "phone": "460 (35%)",
+  "phone": "461 (35%)",
   "website": "577 (44%)",
-  "cuisine": "1010 (77%)",
+  "cuisine": "1012 (77%)",
   "extra_names": "774 (59%)"
  },
- "conflicts_n": 29
+ "conflicts_n": 33
 }

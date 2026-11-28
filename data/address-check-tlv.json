@@ -321,6 +321,13 @@
    "new": "בן יהודה 148",
    "status": "blocked",
    "why": "address already used by: Little Prague Restaurant (n2078991187, בן יהודה 148)"
+  },
+  "n9597836918": {
+   "name": "אוליברי",
+   "old": "משעול יוסף שמידט",
+   "new": "שאול המלך 23",
+   "status": "applied",
+   "moved_m": 23
   }
  },
  "dup": {
