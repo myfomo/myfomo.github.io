@@ -1,14 +1,14 @@
 {
  "addr_osm": 0,
  "addr_partial": 0,
- "site_checked": 540,
- "site_jsonld": 65,
+ "site_checked": 541,
+ "site_jsonld": 68,
  "site_match": 19,
- "site_reject": 46,
+ "site_reject": 49,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
- "cuisine_site": 2,
+ "cuisine_site": 1,
  "names_site": 0,
  "web_wd": 0,
  "names_wd": 0,
@@ -28,11 +28,25 @@
    "site": "Mo,Tu,We 12:00-22:30; Th,Fr 12:00-23:00; Sa 12:00-22:00"
   },
   {
+   "id": "n1950416514",
+   "n": "איטלקיה בתחנה",
+   "field": "phone",
+   "osm": "+972723945751",
+   "site": "039331922"
+  },
+  {
    "id": "n2079034257",
    "n": "Neroli",
    "field": "hours",
    "osm": "Su-Th 08:30-20:00; Fr 08:30-16:00; Sa off",
    "site": "Su 08:30-21:00; Tu 08:30-21:00; We 08:30-21:00; Th 08:30-21:00; Fr 08:30-16:00"
+  },
+  {
+   "id": "n2079180765",
+   "n": "אניטה",
+   "field": "phone",
+   "osm": "+972 3 624 6383",
+   "site": "039585573"
   },
   {
    "id": "n2079208883",
@@ -94,7 +108,7 @@
    "id": "n4798363423",
    "n": "בצ'יקלטה",
    "field": "phone",
-   "osm": "+972 53 937 5811",
+   "osm": "+972-3-643-3097",
    "site": "0554536125"
   },
   {
@@ -129,14 +143,14 @@
    "id": "n6005282986",
    "n": "Balinjera",
    "field": "hours",
-   "osm": "Su-Th 12:00-23:00; Fr 11:00-17:00; Sa 09:15-23:30",
+   "osm": "Su-Th 12:00-20:00; Fr 11:00-15:00",
    "site": "Su,Mo,Tu,We,Th 12:00-20:00; Fr 11:00-15:00"
   },
   {
    "id": "n6041389431",
    "n": "שניצל קומפני",
    "field": "phone",
-   "osm": "+972 3 622 2291",
+   "osm": "03-6222291",
    "site": "0506969222"
   },
   {
@@ -182,6 +196,13 @@
    "site": "036868657"
   },
   {
+   "id": "n7769735969",
+   "n": "Taizu",
+   "field": "phone",
+   "osm": "+972 035225005",
+   "site": "035225005"
+  },
+  {
    "id": "n10296516877",
    "n": "The Urban Bakery",
    "field": "hours",
@@ -219,6 +240,12 @@
  ],
  "rejected_sites": [
   {
+   "id": "n705556743",
+   "n": "מציצים",
+   "w": "https://bayz.co.il/en/mezizim-beach",
+   "why": "branch/name not confirmed"
+  },
+  {
    "id": "n715207462",
    "n": "ארקפה",
    "w": "https://arcaffe.co.il/branches/harel/",
@@ -246,6 +273,12 @@
    "id": "n1419068446",
    "n": "ארקפה",
    "w": "https://www.arcaffe.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n2079180765",
+   "n": "אניטה",
+   "w": "https://www.anita-gelato.com/our-locations/tel-aviv-neve-tsedek-40-shabazi-st/",
    "why": "branch/name not confirmed"
   },
   {
@@ -282,6 +315,12 @@
    "id": "n4263469840",
    "n": "Breakfast at Riverside",
    "w": "https://www.riverside.co.il/",
+   "why": "branch/name not confirmed"
+  },
+  {
+   "id": "n4706508221",
+   "n": "ארקפה רמת החייל",
+   "w": "https://arcaffe.co.il/branches/ramat-hachayal/",
    "why": "branch/name not confirmed"
   },
   {
@@ -495,15 +534,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 98,
- "phone_multi_skipped": 28,
+ "phone_confirmed": 110,
+ "phone_multi_skipped": 29,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "429 (33%)",
+  "hours": "430 (33%)",
   "phone": "459 (35%)",
-  "website": "576 (44%)",
-  "cuisine": "1000 (76%)",
+  "website": "577 (44%)",
+  "cuisine": "1003 (76%)",
   "extra_names": "772 (59%)"
  },
- "conflicts_n": 29
+ "conflicts_n": 32
 }
