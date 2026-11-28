@@ -2,9 +2,9 @@
  "addr_osm": 0,
  "addr_partial": 0,
  "site_checked": 541,
- "site_jsonld": 68,
+ "site_jsonld": 66,
  "site_match": 19,
- "site_reject": 49,
+ "site_reject": 47,
  "phone_site": 0,
  "hours_site": 0,
  "addr_site": 0,
@@ -28,25 +28,11 @@
    "site": "Mo,Tu,We 12:00-22:30; Th,Fr 12:00-23:00; Sa 12:00-22:00"
   },
   {
-   "id": "n1950416514",
-   "n": "איטלקיה בתחנה",
-   "field": "phone",
-   "osm": "+972723945751",
-   "site": "039331922"
-  },
-  {
    "id": "n2079034257",
    "n": "Neroli",
    "field": "hours",
    "osm": "Su-Th 08:30-20:00; Fr 08:30-16:00; Sa off",
    "site": "Su 08:30-21:00; Tu 08:30-21:00; We 08:30-21:00; Th 08:30-21:00; Fr 08:30-16:00"
-  },
-  {
-   "id": "n2079180765",
-   "n": "אניטה",
-   "field": "phone",
-   "osm": "+972 3 624 6383",
-   "site": "039585573"
   },
   {
    "id": "n2079208883",
@@ -84,6 +70,13 @@
    "site": "039256605"
   },
   {
+   "id": "n3930983766",
+   "n": "מטבח לילה",
+   "field": "phone",
+   "osm": "03-5660481",
+   "site": "0723909711"
+  },
+  {
    "id": "n4209265800",
    "n": "ארנולד",
    "field": "phone",
@@ -94,7 +87,7 @@
    "id": "n4263147702",
    "n": "איציק הגדול",
    "field": "phone",
-   "osm": "+972 3 6830033",
+   "osm": "03-6830033",
    "site": "037773337"
   },
   {
@@ -183,24 +176,10 @@
   },
   {
    "id": "n7635585985",
-   "n": "Yaffa Knafeh",
+   "n": "יאפא כנאפה",
    "field": "phone",
-   "osm": "97239702051",
+   "osm": "+972 3-970-2051",
    "site": "0549325656"
-  },
-  {
-   "id": "n7769668171",
-   "n": "Benedict",
-   "field": "phone",
-   "osm": "03-5107507",
-   "site": "036868657"
-  },
-  {
-   "id": "n7769735969",
-   "n": "Taizu",
-   "field": "phone",
-   "osm": "+972 035225005",
-   "site": "035225005"
   },
   {
    "id": "n10296516877",
@@ -240,12 +219,6 @@
  ],
  "rejected_sites": [
   {
-   "id": "n705556743",
-   "n": "מציצים",
-   "w": "https://bayz.co.il/en/mezizim-beach",
-   "why": "branch/name not confirmed"
-  },
-  {
    "id": "n715207462",
    "n": "ארקפה",
    "w": "https://arcaffe.co.il/branches/harel/",
@@ -271,14 +244,8 @@
   },
   {
    "id": "n1419068446",
-   "n": "ארקפה",
-   "w": "https://www.arcaffe.co.il/",
-   "why": "branch/name not confirmed"
-  },
-  {
-   "id": "n2079180765",
-   "n": "אניטה",
-   "w": "https://www.anita-gelato.com/our-locations/tel-aviv-neve-tsedek-40-shabazi-st/",
+   "n": "ארקפה מילניום",
+   "w": "https://arcaffe.co.il/branches/millennium/",
    "why": "branch/name not confirmed"
   },
   {
@@ -301,7 +268,7 @@
   },
   {
    "id": "n3930983766",
-   "n": "Night Kitchen",
+   "n": "מטבח לילה",
    "w": "https://nightkitchen.co.il/",
    "why": "branch/name not confirmed"
   },
@@ -534,15 +501,15 @@
    "why": "branch/name not confirmed"
   }
  ],
- "phone_confirmed": 110,
- "phone_multi_skipped": 29,
+ "phone_confirmed": 97,
+ "phone_multi_skipped": 28,
  "coverage_after": {
   "address": "1319 (100%)",
-  "hours": "430 (33%)",
-  "phone": "459 (35%)",
+  "hours": "433 (33%)",
+  "phone": "460 (35%)",
   "website": "577 (44%)",
-  "cuisine": "1003 (76%)",
-  "extra_names": "772 (59%)"
+  "cuisine": "1010 (77%)",
+  "extra_names": "774 (59%)"
  },
- "conflicts_n": 32
+ "conflicts_n": 29
 }
