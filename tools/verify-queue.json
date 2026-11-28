@@ -7947,6 +7947,206 @@
   "n6041389431": {
    "r": "ok",
    "note": "Own site branch list includes Yigal Alon branch, Yigal Alon 94 Tel Aviv, 03-6222291. No hours or prices on own site."
+  },
+  "n532054123": {
+   "r": "none",
+   "note": "cafecafe.co.il live but branch locator loads dynamically; no branch data readable for Tel Aviv Port (23 Yordei HaSira 1). No Tabit/Ontopo page found; no closure news found. Only aggregator listings (d.co.il, gokosher, enjoyingisrael) - not used as proof."
+  },
+  "n904508209": {
+   "r": "none",
+   "note": "Catalog site cafenimrod.com now serves an unrelated blog-style article site (domain appears repurposed), no business info. Time Out 2015 (https://timeout.co.il/סניף-נוסף-של-קפה-נמרוד-נפתח-באבן-גבירול/) says port branch opened 2006 - too old. No Tabit/Ontopo page found; no closure news found; only aggregators (easy, happycow, spinach)."
+  },
+  "n1419068446": {
+   "r": "ok",
+   "note": "Own site branch page 'ארקפה מילניום' lists HaArba'a 17 Tel Aviv, phone 03-9608156, Su-Th 07:00-18:00, Fr/Sa closed. Note: this is the Millennium branch, not Sarona (Sarona Market branch is at Aluf Kalman Magen 3). Site labels it 'בשרי' but names no kashrut certificate. No Tabit/Ontopo page found; no closure news."
+  },
+  "n1734928159": {
+   "r": "none",
+   "note": "Catalog site kalimera.co redirects to a GoDaddy domain-for-sale page (site gone). Searches found no news/guide coverage of Kalimera at Jaffa Port, no Tabit/Ontopo page, and no closure article. Possibly closed but no reliable source."
+  },
+  "n2079186344": {
+   "r": "conflict",
+   "note": "Own site branch list (pizza-shemesh.co.il/סניפים) lists Tel Aviv branches only at Israel Gouri 34, Beit El 12, Tzora 3 and Negba 1; Yehuda HaLevi 49 is NOT listed. Time Out review Oct 2023 (https://timeout.co.il/פיצה-שמש-ביקורת/) covered the Yehuda HaLevi 49 branch (Su-Th 11:00-23:45). No closure news found. Branch possibly closed."
+  },
+  "n2108063236": {
+   "r": "none",
+   "note": "Catalog website is a rest.co.il aggregator page. No own site, Tabit or Ontopo page found; no recent news/guide coverage and no closure news. Only aggregators (enjoyingisrael lists Eilat 11, phone +972-3-510-1919, which differs from the catalog phone; d.co.il, atly)."
+  },
+  "n2488604195": {
+   "r": "single",
+   "note": "Own site eazycafe.co.il is live and lists an 'ארלוזורוב' (Arlozorov) branch among 3 Tel Aviv branches, with no street number. Time Out 2016 (https://timeout.co.il/איזי-ביסטרו-קפה/) gives Arlozorov 76 corner Shlomo HaMelech, too old to count. No Tabit/Ontopo page; no closure news."
+  },
+  "n2862959843": {
+   "r": "none",
+   "note": "meat-night.co.il (and www.) could not be fetched (robots.txt unreachable, site may be down). Searches found no news/guide coverage of Meat Night at Vital 2 (a 2009 Mako piece covers a different bar, 'Mate', at Vital 2). No Tabit/Ontopo page; no closure news."
+  },
+  "n3237102685": {
+   "r": "none",
+   "note": "cafecafe.co.il branch locator loads dynamically; Neve Tzedek (Yehieli 5) branch could not be confirmed. No Tabit/Ontopo page found; no closure news found. Only aggregator listings (enjoyingisrael)."
+  },
+  "n3719209093": {
+   "r": "ok",
+   "note": "Own site silviabumper.co.il is live: sports bar at Ibn Gabirol 38 Tel Aviv, phone 054-894-1171, hours Su-Th 18:00 until last customer, Fr 20:00 until last customer, Sa 18:00 until last customer. Booking via WhatsApp only (no Tabit/Ontopo page found). No prices listed. No closure news."
+  },
+  "n3930983766": {
+   "r": "ok",
+   "note": "Catalog site nightkitchen.co.il now belongs to an unrelated kosher catering company (קייטרינג המטבח); catalog phone 072-3909711 is the caterer's number, so both should be dropped. The restaurant now runs as 'מטבח לילה החדשה' at Lilienblum 20, which has an active Ontopo page. Time Out 2026-04 says it reopened with a new chef after a makeover. Article hours (Mo-Sa 18-24) and Ontopo hours (Mo-Fr 18-23) disagree, so no oh. No closure news."
+  },
+  "n4086162177": {
+   "r": "conflict",
+   "note": "Own site kayser.co.il lists the branches Port (Hangar 22), Rothschild 7 and Midtown (Begin 144). The Rothschild branch is at Rothschild 7, not 5 as in the catalog. Time Out (2020) also gives Rothschild 7. Probably the same place, but the address does not match. No Tabit/Ontopo page found and no closure news. Address fix to Rothschild 7 added to address-fixes-tlv.json."
+  },
+  "n4263147702": {
+   "r": "ok",
+   "note": "Own site (itzikhagadol.co.il redirects to delivery.itzikhagadol.co.il) is live and lists David Raziel 3, 03-6830033, with an Ontopo link; ontopo.co.il was blocked by the fetch tool. Time Out reported a fire on 2024-12-22 that damaged about half the restaurant, and the restaurant said it would reopen ASAP. The live own site suggests it is operating. Kipa (2024-10) says it got Tel Aviv Rabbinate kashrut, but that is a news article only, so k not set. Mains in Kipa 2024: skewers ₪49-75, larger cuts more."
+  },
+  "n4422814389": {
+   "r": "ok",
+   "note": "Own site taqueria.co.il lists the restaurant at Levontin 28 (plus a delivery branch at Nirim 1), phone 03-6005280, hours daily 12:00-24:00, and a Tabit booking link. No closure news. Prices are only in PDF menus, not checked."
+  },
+  "n4486596789": {
+   "r": "single",
+   "note": "Own site burgus.co.il was unreachable (client error on every page). Tabit site page 'BBB יגאל אלון הכשר' shows phone 03-5638822 (matches catalog) and hours 12:00-23:00, but no address, and I could not confirm the page is active. Other listings (d.co.il, easy) give Yigal Alon 96, but they are aggregators. No closure news found."
+  },
+  "n4570441515": {
+   "r": "ok",
+   "note": "Own site eazycafe.co.il lists three branches: King George, Arlozorov and Florentin. No street number, hours or phone on the site. Time Out (2022-11) gives Florentin 38. No Tabit/Ontopo page and no closure news."
+  },
+  "n4988213724": {
+   "r": "ok",
+   "note": "Own site anastasiatlv.co.il lists Frishman 54, 03-5290095 and hours, says it is a vegan cafe and deli, and links to an Ontopo page, which is active and shows Frishman 54. Ontopo hours differ slightly, so oh is taken from the own site. No closure news. No prices."
+  },
+  "n5092192921": {
+   "r": "ok",
+   "note": "Own site desireclubtlv.co.il is live: a restaurant-bar and music club at Carlebach 25, phone 050-2102496. Its hours match the catalog (Sunday not listed). Booking is on the own site, not Tabit/Ontopo. No closure news. Cuisine changed from burger to bar based on the own site's description."
+  },
+  "n5181131266": {
+   "r": "closed",
+   "note": "Own site cafelix.co.il lists only Sgula 13, Tirzah 17 and Shlomo HaMelech 12; Merhavia 6 is not listed. The site embeds its own Instagram post 'מרחביה. הסוף.' and says 'סניף לוינסקי סגר דלתותיו וייפתח שוב במיקום חדש' (no new address). No date is given for the closure; seen on the own site 2026-11 (site modified 2026-11-26)."
+  },
+  "n5286808621": {
+   "r": "none",
+   "note": "Only sources: the rest.co.il listing (aggregator, no closure notice) and a Time Out article from 2015-08 about its opening. No own site, no Tabit/Ontopo page, no recent news, and no closure news found."
+  },
+  "n5362929525": {
+   "r": "ok",
+   "note": "Own site live (cafe/bar/live shows at Herzl 16, 'We're Open' banner, hours listed, Tabit link); Time Out tag page has Sep 2025 item on the Herzl 16 complex; no closure news. Own site gives only WhatsApp, no phone."
+  },
+  "n5380798323": {
+   "r": "ok",
+   "note": "Own site lists branch 'Bucke Ahad Ha'am 91' with hours; no closure notice. Own site phone is office number only (054-7008808), not used. No Tabit/Ontopo page found."
+  },
+  "n5514844521": {
+   "r": "ok",
+   "note": "Own site live, address Nehama 2, Tabit booking link; Time Out (2023) lists Nehama 2, price 2/4. Own site hours inconsistent (08:30-01:00 vs metadata 'from 09:00 till late') so not set. No closure news."
+  },
+  "n5599271226": {
+   "r": "ok",
+   "note": "Own site branch page 'Tel Aviv - Yigal Alon' (map Yigal Alon 53) listed, no closure notice; branch page shows no phone/hours."
+  },
+  "n5604755602": {
+   "r": "ok",
+   "note": "Own site live, '26 Hamburger Gourmet', Mikve Israel 26, phone 03-600-5109, Tabit takeaway ordering link (not booking); no hours/prices on site; no closure news."
+  },
+  "n5754884732": {
+   "r": "ok",
+   "note": "Own site (port-19.co.il redirects to port19.co.il) lists Tel Aviv HaHashmonaim 95 branch with hours, phone 03-6707929 ext 2; not marked kosher; no booking links."
+  },
+  "n6281521772": {
+   "r": "ok",
+   "note": "Own site live, Yirmiyahu 45, states kosher by Tel Aviv-Yafo Rabbinate; no phone/hours on site; no closure news found."
+  },
+  "n6316054686": {
+   "r": "conflict",
+   "note": "Own site bretonne.co.il unreachable (fetch client error). Time Out (2016-01) and Spotted by Locals place Bretonne creperie at Ibn Gabirol 52, Tel Aviv; no source found confirming Washington Blvd 22 Florentin. No closure news found."
+  },
+  "n6406434987": {
+   "r": "ok",
+   "note": "Own site lists Goocha Dizengoff, Dizengoff 171, phone 03-5222886; Ontopo booking page active (ontopo.co.il blocked, ontopo.com readable). Closure news found only for Nachmani branch, not this one. Hours only on Ontopo, not set."
+  },
+  "n6469411088": {
+   "r": "ok",
+   "note": "Own site branch page 'Tel Aviv - Azrieli Mall' (food court, floor 2; Azrieli = Menachem Begin 132), phone 03-6094770, kosher lemehadrin (certifier not named, so k not set); Sa opens 1h after Shabbat until 23:00 (not encoded)."
+  },
+  "n6564590385": {
+   "r": "none",
+   "note": "Own site espressobar.com is live but is a coffee online shop; homepage and /location page list no address (only phone 052-5780701), Yehuda HaMaccabi 55 not named. No Tabit/Ontopo page found. Searches found only aggregator listings (d.co.il, enjoyingisrael). No closure news found."
+  },
+  "n6925055585": {
+   "r": "conflict",
+   "note": "Own site littleprague.co.il Tel Aviv branch page (https://littleprague.co.il/he/tel-aviv-branch/) gives address Ben Yehuda 148, Tel Aviv (phone 03-5168137, Su-Th 14:00-22:00, Fr-Sa 12:00-late), not Geula / Kerem HaTeimanim as in catalog. Ontopo link on site is only for Bat Yam branch. No Tabit page, no closure/move news found. Address fix to Ben Yehuda 148 added to address-fixes-tlv.json."
+  },
+  "n6929570285": {
+   "r": "closed",
+   "note": "Time Out Tel Aviv (2026-05-10) reports ARIA (corner Nachalat Binyamin / Yehuda Halevi) closing permanently, last day 30.5.2026. No new address given."
+  },
+  "n7069646328": {
+   "r": "ok",
+   "note": "Own site hatraklin.co.il unreachable (client error). Ontopo page active: HaTraklin meat and wine bistro, 4 Heichal HaTalmud, phone +972 35660013, website hatraklin.co.il, regular weekly hours shown. Time Out 2014 article on move to this address. No closure news found."
+  },
+  "n7088100847": {
+   "r": "ok",
+   "note": "fatcow.co.il redirects to group site triger.co.il, which lists Fat Cow as an active brand (no address given). Tabit page 'Fat Cow | פאט קאו תל אביב' active with phone 03-7732591 (matches catalog), no address shown. Ontopo page (48284671) could not be fetched (server error). Time Out 2018 gives Dizengoff 265. No closure news found."
+  },
+  "n7194903657": {
+   "r": "ok",
+   "note": "Own site butchery.co.il unreachable (client error). Ontopo page active: Butchery de Bariloche, 4 HaBarzel St, phone +972 77-530-9700, website butchery.co.il, business lunch and an Argentine grill event on Tue 13 Oct listed; Sunday closed. No closure news found."
+  },
+  "n7211184690": {
+   "r": "conflict",
+   "note": "Own site branch page Cafe Cafe Ramat Gan - Marom Neve (Tirza 19), https://www.cafecafe.co.il/he/company/snifim/view/?ContentID=300, states the branch is 'temporarily closed' (הסניף סגור זמנית); no hours/phone shown. Labelled mehadrin (except heter mechira), no certifier named. No Tabit/Ontopo page found; no permanent-closure news."
+  },
+  "n7211406506": {
+   "r": "ok",
+   "note": "Own site branches page lists Sarona Market, Aluf Kalman Magen 3, Tel Aviv (hours given ambiguously: Sun-Thu 10:00-22:30 and Thu-Sat 10:00-23:00, so oh omitted). Tabit page 'Max Brenner שרונה תל אביב' active, phone 03-622-9435. Kosher only mentioned for products. No closure news found."
+  },
+  "n7635585985": {
+   "r": "ok",
+   "note": "Own site yaffaknafeh.com live, lists branch at Olei Zion 24 Tel Aviv-Yafo (and Beit Eshel 12), phone 03-9702051; menu of knafeh, baklava, malabi with prices (personal knafeh 20-25 NIS). No hours listed. No Tabit/Ontopo (counter shop). No closure news found."
+  },
+  "n7677654260": {
+   "r": "ok",
+   "note": "Own site nahatcoffee.com live, lists 'Nahat cafes' at Reines 20 Tel Aviv (plus Ashkelon 16 Hatachana and Cafe Ester at Zamenhof 1). No hours or phone listed. No Tabit/Ontopo page; no closure news found."
+  },
+  "n7769668171": {
+   "r": "ok",
+   "note": "Own site branch page 'Benedict Tel Aviv Sarona Market' lists Kalman Magen 3 (Sarona Market), hours Su-Sa 8:00-22:00, links a Tabit booking page; no closure news found. Ontopo not checked separately (Tabit used by own site)."
+  },
+  "n7769735969": {
+   "r": "ok",
+   "note": "Own site live: Menachem Begin 23 (Levinstein Tower), phone 03-5225005, 'AsiaTerranean' kitchen; Ontopo page active at same address. Hours only on Ontopo so not recorded. No closure news found."
+  },
+  "n8252071232": {
+   "r": "ok",
+   "note": "Own site live (bistro & wine bar, northern Ibn Gabirol, links Ontopo); Ontopo page active at Ibn Gabirol 192, phone 03-5460679. Menu mains ~62-98 NIS. Hours only from Ontopo so not recorded. No closure news found. Own site describes it as wine bar rather than pub."
+  },
+  "n8302822752": {
+   "r": "ok",
+   "note": "Own site Givatayim branch page lists Katznelson 113 Givatayim, hours Sun-Sat 12:00-22:00, phone 1700-700-165, Ontopo booking link. Georgian cuisine. No closure news for this branch."
+  },
+  "n8302822753": {
+   "r": "conflict",
+   "note": "Time Out (2020-12) reported Deda opening at Shalom Aleichem 14, but the own site branch list (deda.co.il/branches) now shows only Bat Yam, Rishon LeZion, Netanya, Givatayim - no Tel Aviv branch. No closure article found (Time Out 2025/2026 'Deda' closure items concern a different Florentin venue). Likely closed but unconfirmed. Sources: https://deda.co.il/branches/, https://timeout.co.il/%D7%93%D7%93%D7%94-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91/"
+  },
+  "n8700929117": {
+   "r": "ok",
+   "note": "Own site (florentina.co.il; catalog URL redirects there) lists Abarbanel 56, hours, phone 03-6050061, Italian, kosher dairy (no certificate named), pastas/pizzas 68-82 NIS; Ontopo page active at Abarbanel 56. No closure news."
+  },
+  "n8765736218": {
+   "r": "ok",
+   "note": "Own site shneor-cafe.com live: 20 Pinsker St, hours, phone 03-6296519, cafe-restaurant with Middle Eastern dishes. No Tabit/Ontopo page found; no closure news."
+  },
+  "n8862063017": {
+   "r": "closed",
+   "note": "Time Out (published 2024-07-15) reports MAKERS cafe-nursery at Mazeh 4 closing finally on Friday 19.7.2024; sale fell through, contents liquidated; no move."
+  },
+  "n9029057721": {
+   "r": "none",
+   "note": "No own site, Tabit or Ontopo page, or news article found. Only lead: enjoyingisrael.com listing (aggregator, undated) places Spicy Grill Bar at Haroe 133, Ramat Gan (kosher burgers, facebook.com/spicygbar) - does not match catalog Yehuda HaNasi, Tel Aviv. Wolt results ignored per brief. Sources: https://www.enjoyingisrael.com/restaurants/38797/spicy-grill-bar"
+  },
+  "n9063618650": {
+   "r": "ok",
+   "note": "Own site the-lobby.co.il live: HaLechi 31 Bnei Brak, phone 052-8781859, home-style/ethnic food with daily menu, delivery ordering. Hours on site inconsistent (Su-Th 8:30-17:00 vs 9:00-16:30) so not recorded. Kosher cert not stated. No Tabit/Ontopo page; no closure news (bhol.co.il fetch failed)."
   }
  }
 }

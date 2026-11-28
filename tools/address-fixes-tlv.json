@@ -346,6 +346,20 @@
     "https://timeout.co.il/ברי-היין-הטובים-בתל-אביב/"
    ],
    "note": "Catalog address street-only; Ontopo and Time Out give De Haas 1 (Kikar Milano)"
+  },
+  "n4086162177": {
+   "a": "שדרות רוטשילד 7",
+   "src": [
+    "https://www.kayser.co.il/"
+   ],
+   "note": "Maison Kayser Rothschild: own site and Time Out give Rothschild 7, catalog had 5"
+  },
+  "n6925055585": {
+   "a": "בן יהודה 148",
+   "src": [
+    "https://littleprague.co.il/he/tel-aviv-branch/"
+   ],
+   "note": "Little Prague Tel Aviv: own branch page gives Ben Yehuda 148, catalog had Geula (Kerem HaTeimanim)"
   }
  },
  "dup": {
